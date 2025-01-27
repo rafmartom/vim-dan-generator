@@ -1,0 +1,4 @@
+--langdef=dantags
+--langmap=dantags:.dan
+--kinddef-dantags=t,topic,topics
+--regex-dantags=/^#\s(.*)\s#(\s\(X\)){0,1}$/\1/t/
