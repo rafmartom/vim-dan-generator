@@ -9,49 +9,37 @@ source "$CURRENT_DIR/../scripts/helpers.sh"
 DOCU_PATH="$1"
 shift
 DOCU_NAME=$(basename ${0} '.sh')
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
+MAIN_TOUPDATE="${VIMDAN_DIR}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
 )
 # -------------------------------------
 # eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
 
-indexing_rules(){
-    if [ ! -d "${DOCU_PATH}/downloaded" ]; then
-        mkdir -p "${DOCU_PATH}/downloaded"
-    fi
+spidering_rules(){
 
-for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-    wget \
-    `##tBasic Startup Options` \
-      --execute robots=off \
-    `## Loggin and Input File Options` \
-    `## Download Options` \
-      --timestamping \
-    `## Directory Options` \
-      --directory-prefix=${DOCU_PATH}/downloaded \
-      -nH \
-    `## HTTP Options` \
-      --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59" \
-      --adjust-extension \
-    `## HTTPS Options` \
-      --no-check-certificate \
-    `## Recursive Retrieval Options` \
-      --recursive --level=4 \
-    `## Recursive Accept/Reject Options` \
-      --no-parent \
-      --reject '*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*json,*.css,*.png,*.xml,*.txt' \
-      --page-requisites \
-      ${DOWNLOAD_LINK}
-done
+    ## Iterate through each link of the documentation
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        standard_spider -l ${DOWNLOAD_LINK}
+    done
+
+}
+
+indexing_rules(){
+
+    ## Iterate through each link of the documentation
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        download_fromlist -l ${DOWNLOAD_LINK}
+    done
+
 }
 
 arranging_rules(){
 
-
-    ## Making a backup of the index, if it doesnt exists
+    ## Making a backup of the index, if it doesnt exist
     if [[ ! -d "${DOCU_PATH}/downloaded-bk" || ! "$(ls -A "${DOCU_PATH}/downloaded-bk" 2>/dev/null)" ]]; then
         cp -r ${DOCU_PATH}/downloaded ${DOCU_PATH}/downloaded-bk/
     fi
+
 
 
     # DOCUMENTATION SPECIFIC RULES
@@ -61,6 +49,8 @@ arranging_rules(){
     # Example, you want to remove the blog section that has been indexed
     # rm -r ${DOCU_PATH}/downloaded/blog
 
+    # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
+    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
     
 
     # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
@@ -73,11 +63,6 @@ arranging_rules(){
     ## Clean up the duplicate files
     # Keeping the least nested one
     jdupes -r -N -d ${DOCU_PATH}/downloaded/
-
-
-    ## Modifying documents
-    rename_lone_index
-    deestructuring_dir_tree
 }
 
 
@@ -98,7 +83,7 @@ parsing_rules(){
     #
     #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
     #
-    write_html_docu_multirule -f "" -b "" -cp
+    write_html_docu_multirule -f "" -b "" -cp -lp -c "105"
 
 
     # DOCUMENT CLEANUP RULES
@@ -112,9 +97,9 @@ parsing_rules(){
     ##
     ## Change accordingly
 
-    sed -e 's/[[:space:]]\+¶//g' \
-        -e "s/$(echo -ne '\u200b')//g" \
-        -i "${MAIN_TOUPDATE}"
+#    sed \
+#        -e "s/$(echo -ne '\u200b')//g" \
+#        -i "${MAIN_TOUPDATE}"
 
     # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
@@ -136,19 +121,21 @@ parsing_rules(){
     #    sed -i '11a\'$'\n''&@ g:dan_kw_question_list = "^Example:,^Reference"" @&' "${MAIN_TOUPDATE}"
     #    Note : there are Character limitations ",= and others wont be working
     
-    sed -i '11a\'$'\n''&@ g:dan_kw_question_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '12a\'$'\n''&@ g:dan_kw_nontext_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '13a\'$'\n''&@ g:dan_kw_linenr_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '14a\'$'\n''&@ g:dan_kw_warningmsg_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '15a\'$'\n''&@ g:dan_kw_colorcolumn_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '16a\'$'\n''&@ g:dan_kw_underlined_list = "^Responses" @&' "${MAIN_TOUPDATE}"
-    sed -i '17a\'$'\n''&@ g:dan_kw_preproc_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '18a\'$'\n''&@ g:dan_kw_comment_list = "^Parameters:" @&' "${MAIN_TOUPDATE}"
-    sed -i '19a\'$'\n''&@ g:dan_kw_identifier_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '20a\'$'\n''&@ g:dan_kw_ignore_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '21a\'$'\n''&@ g:dan_kw_statement_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '22a\'$'\n''&@ g:dan_kw_cursorline_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '23a\'$'\n''&@ g:dan_kw_tabline_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '10a\'$'\n''&@ The following lines are used by vim-dan, do not modify them! @&' "${MAIN_TOUPDATE}"
+    sed -i '12a\'$'\n''&@ g:dan_kw_question_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '13a\'$'\n''&@ g:dan_kw_nontext_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '14a\'$'\n''&@ g:dan_kw_linenr_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '15a\'$'\n''&@ g:dan_kw_warningmsg_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '16a\'$'\n''&@ g:dan_kw_colorcolumn_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '17a\'$'\n''&@ g:dan_kw_underlined_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '18a\'$'\n''&@ g:dan_kw_preproc_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '19a\'$'\n''&@ g:dan_kw_comment_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '20a\'$'\n''&@ g:dan_kw_identifier_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '21a\'$'\n''&@ g:dan_kw_ignore_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '22a\'$'\n''&@ g:dan_kw_statement_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '23a\'$'\n''&@ g:dan_kw_cursorline_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '24a\'$'\n''&@ g:dan_kw_tabline_list = "" @&' "${MAIN_TOUPDATE}"
+
     # EOF EOF EOF MODELINE FOR SYNTAX SPECIFIC PATTERNS FOR KEYWORDS
     # ---------------------------------------------------------------------------
 }
@@ -156,23 +143,27 @@ parsing_rules(){
 ## PARSING ARGUMENTS
 ## ------------------------------------
 # (do not touch)
-while getopts ":ipa" opt; do
+while getopts ":siap" opt; do
     case ${opt} in
+        s)
+            spidering_rules
+            ;;
         i)
             indexing_rules
-            ;;
-        p)
-            parsing_rules
             ;;
         a)
             arranging_rules
             ;;
+        p)
+            parsing_rules
+            ;;
         h | *)
-            echo "Usage: $0 [-i] [-p] [-a] [-h] "
+            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
             echo "Options:"
+            echo "  -s  Spidering"
             echo "  -i  Indexing"
-            echo "  -p  Parsing"
             echo "  -a  Arranging"
+            echo "  -p  Parsing"
             echo "  -h  Help"
             exit 0
             ;;

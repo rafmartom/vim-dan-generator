@@ -1,22 +1,41 @@
-#!/bin/bash
+#!/bin/bash 
+# @file vim-dan-generator
+# @brief Launcher file for vim-dan-generator documentation creation tool.
+# @description
+#   author: rafmartom <rafmartom@gmail.com>
 
-## Sourcing files
+
+## ----------------------------------------------------------------------------
+# @section SCRIPT_VAR_INITIALIZATION
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+if [[ -f "${CURRENT_DIR}/.vimdan_config" ]]; then
+    source "${CURRENT_DIR}/.vimdan_config"
+else
+    echo "[Error] Please create your own ./vim-dan-generator/.vimdan_config file" >&2
+    echo "In which you need to define the following variables:" >&2
+    echo "export VIMDAN_DIR=\"/path/to/vimdan/files\"" >&2
+    echo "export VIM_RTP_DIR=\"${HOME}/.vim\"" >&2
+    return 
+fi
 
 source "$CURRENT_DIR/scripts/helpers.sh"
 
-# Source the user config if it exists
-if [[ -f "${CURRENT_DIR}/.vimdan_config" ]]; then
-    source "${CURRENT_DIR}/.vimdan_config"
-fi
 
-
-## PARSING documentation ARGUMENT
-## ------------------------------------
-# 1st Check for existing documentations on the directory
+# Gathering all the documentations available
 declare -a documentations_array
 
 mapfile -t documentations_array < <(find $CURRENT_DIR/documentations/ -type f -name "*.sh" -exec basename {} .sh \; | sort )
+
+
+## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+## ----------------------------------------------------------------------------
+
+
+## ----------------------------------------------------------------------------
+# @section PROCESSING_ARGUMENTS
+# @description Description
 
 # Function to check if the documentation exists
 documentation_exists() {
@@ -46,24 +65,21 @@ if ! documentation_exists "$documentation"; then
     done
     exit 1
 fi
-## EOF EOF EOF PARSING documentation ARGUMENT
-## ------------------------------------
 
 
-## PROCESSING ARGUMENTS
-## ------------------------------------
-DOCU_NAME=$(basename ${documentation} '.sh')
-DOCU_PATH="${VIMDAN_DIR}/${DOCU_NAME}"
-MAIN_FILE="${DOCU_PATH}/${DOCU_NAME}.dan"
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
-## EOF EOF EOF PROCESSING ARGUMENTS
-## ------------------------------------
+# Processing the global vars
+export DOCU_NAME=$(basename ${documentation} '.sh')
+process_paths
+
+## EOF EOF EOF PROCESSING_ARGUMENTS 
+## ----------------------------------------------------------------------------
 
 
 
-## PARSING ARGUMENTS
-## ------------------------------------
-while getopts ":iupxradth" opt; do
+## ----------------------------------------------------------------------------
+# @section SELECTING_ACTION
+
+while getopts ":iupsxradth" opt; do
     case ${opt} in
         i)
             perform_install
@@ -73,6 +89,9 @@ while getopts ":iupxradth" opt; do
             ;;
         p)
             perform_parse
+            ;;
+        s)
+            perform_spider
             ;;
         x)
             perform_index
@@ -90,11 +109,12 @@ while getopts ":iupxradth" opt; do
             delete_index
             ;;
         h | *)
-            echo "Usage: $0 [documentation] [-i] [-u] [-p] [-x] [-r] [-t] [-d] [-h] [-a]"
+            echo "Usage: $0 [documentation] [-i] [-u] [-p] [-s] [-x] [-r] [-t] [-d] [-h] [-a]"
             echo "Options:"
             echo "  -i  Install Docu"
             echo "  -u  Update Docu"
             echo "  -p  Parse Docu"
+            echo "  -s  Spider Docu"
             echo "  -x  Index Docu"
             echo "  -r  Remove Docu"
             echo "  -t  Updating Tags"
@@ -105,5 +125,6 @@ while getopts ":iupxradth" opt; do
             ;;
     esac
 done
-## EOF EOF EOF PARSING ARGUMENTS
-## ------------------------------------
+
+## EOF EOF EOF SELECTING_ACTION 
+## ----------------------------------------------------------------------------

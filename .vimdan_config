@@ -1,3 +1,3 @@
-#VIMDAN_DIR="${HOME}/downloads/vim-dan"
-VIMDAN_DIR="${HOME}/baul-documents/vim-dan"
-VIM_RTP_DIR="${HOME}/.vim"
+export VIMDAN_DIR="${HOME}/downloads/vim-dan"
+#export VIMDAN_DIR="${HOME}/baul-documents/vim-dan"
+export VIM_RTP_DIR="${HOME}/.vim"

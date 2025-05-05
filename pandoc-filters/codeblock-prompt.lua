@@ -1,23 +1,61 @@
--- Script to Parse and Identify the programming languages
--- of each codeblock, User will be prompted for each codeblock
--- to identify its extension
--- -----------------------------------------------------------
+--- @script codeblock-prompt
+-- @author rafmartom <rafmartom@gmail.com>
+-- @usage
+-- Pandoc Lua Filter checking each Code Block and prompting the user to
+-- identify its extension. 
+--   It gives the user the previous 3 choices inputed 
+--
+-- Example:
+--
+--    scr_choice_1=$(mktemp)
+--    scr_choice_2=$(mktemp)
+--    scr_choice_3=$(mktemp)
+--    csv_path="ext.csv"
+--    scr_global_current_cb=$(mktemp)
+--    scr_csv_iterator_needs_catchup=$(mktemp)
+--
+-- pandoc -f html -t plain ./downloaded/spain.html \
+--    -V scr_choice_1=${scr_choice_1} \
+--    -V scr_choice_2=${scr_choice_2} \
+--    -V scr_choice_3=${scr_choice_3} \
+--    -V csv_path=${csv_path} \ 
+--    -V scr_global_current_cb=${scr_global_current_cb} \
+--    -V scr_csv_iterator_needs_catchup=${scr_csv_iterator_needs_catchup} \
+--    -L $(realpath codeblock-prompt.lua)"
+
+
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- IMPORT_DEPENDENCIES.
+-- @section IMPORT_DEPENDENCIES
+
 
 -- GETTING THE PATH WHERE THE SCRIPT IS SAVED
 script_path = debug.getinfo(1, "S").source:sub(2)
 -- Removing the filename to get the directory path
 script_path = script_path:match("(.*/)")
 project_path = script_path:match("(.*/)[^/]+/")
--------------------------------------------------------
 
-package.path = script_path .. "/lua_modules/share/lua/5.4/?.lua;" .. package.path
-package.cpath = script_path .. "/lua_modules/lib/lua/5.4/?.so;" .. package.cpath
+package.path = project_path .. "/lua_modules/share/lua/5.4/?.lua;" .. package.path
+package.cpath = project_path .. "/lua_modules/lib/lua/5.4/?.so;" .. package.cpath
 local ftcsv = require('ftcsv')
--- print('Into codeblock-prompt-script') -- DEBUGGING    
 
--- SCRIPT VARIABLE INITIALITATION
--- ------------------------------------
--- ------------------------------------
+
+-- EOF EOF EOF IMPORT_DEPENDENCIES 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+
+
+
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- SCRIPT_VAR_INITIALIZATION.
+-- @section SCRIPT_VAR_INITIALIZATION
+
+local DEBUG = false -- Activate the debugging mode
 local exit_status = nil
 local scr_choice_1 = nil
 local choice_1 = nil
@@ -43,16 +81,32 @@ local file_cb = nil
 local local_row_list = {}
 local local_list = {}
 
--- EOF EOF SCRIPT VARIABLE INITIALITATION
--- ------------------------------------
--- ------------------------------------
 
 
--- HELPER FUNCTION DEFINITIONS
--- -------------------------------------------------------
--- -------------------------------------------------------
+-- EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 
-local function saveVariableToFile(filePath, variableName, content)
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- HELPER_FUNCTIONS.
+-- @section HELPER_FUNCTIONS
+
+
+--- Print the statement if the debug mode is activated
+-- @usage local DEBUG = true -- Activate the debugging mode
+-- dprint('[DEBUG] myVar : ' , myVar) -- DEBUGGING
+function dprint(...)
+    if DEBUG then
+        print(...) 
+    end
+end
+
+--- Save a local variable to a file in the hard-drive
+-- This way we can transfer information from the Lua Script back to bash
+-- @usage saveVariableToFile(/path/to/file, "myVar", tostring(myVar))
+function saveVariableToFile(filePath, variableName, content)
     if not filePath then
         print(string.format("File path for %s is nil", variableName))
         return false
@@ -69,7 +123,16 @@ local function saveVariableToFile(filePath, variableName, content)
     end
 end
 
-local function loadFileContent(filePath)
+--- Load local variable to a file in the hard-drive
+-- @usage Use it in conjunction with CLI -V passed to pandoc
+--      This way you can recall values from previous filter calls.
+--      In the following assume var_filepath is storing a value in the hard-drive
+--      We could retrieve its content and store it in my_var
+-- Example:
+--
+-- var_filepath = tostring(PANDOC_WRITER_OPTIONS["variables"]["var_filepath"]) or nil
+-- exit_status, my_var = pcall(loadFileContent, var_filepath)
+function loadFileContent(filePath)
     if not filePath then
         error("No filePath inputed") 
     end
@@ -84,7 +147,8 @@ local function loadFileContent(filePath)
     end
 end
 
-local function file_exists(path)
+--- Check if there is a file in a certain path
+function file_exists(path)
     local file = io.open(path, "r")
     if file then
         file:close()
@@ -95,12 +159,10 @@ local function file_exists(path)
 end
 
 
---------- Will count the lines of a file, for a csv will give you the entry number + the header
-local function count_file_lines(file_path)
---print('into count_file_lines') -- DEBUGGING
---print('file_path : ' .. tostring(file_path)) -- DEBUGGING
+--- Count the lines of a file, for a csv will give you the entry number + the header
+function count_file_lines(csv_path)
 
-    local file = io.open(file_path, "r")
+    local file = io.open(csv_path, "r")
 --    if not file then return 0 end
     if not file then 
         print('not file')
@@ -114,13 +176,8 @@ local function count_file_lines(file_path)
 end
 
 
+--- Save a row of the csv into a list
 local function save_row_to_local_list(extension, filetype)
---print('into save_row_to_local_list') -- DEBUGGING
-
---print('extension : ' .. extension) -- DEBUGGING
---print('filetype : ' .. filetype) -- DEBUGGING
---print('file_cb : ' .. file_cb) -- DEBUGGING
---print('file_processed : ' .. file_processed) -- DEBUGGING
 
 
     -- Initialize the local_row_list entry
@@ -136,9 +193,8 @@ local function save_row_to_local_list(extension, filetype)
 end
 
 
--- Execute cmd in a new shell an capture the output in its return value
--- Ex: output = os.capture("node " "/scripts/helloWorld.js")
---------------------------------------------------------------------------
+--- Execute cmd in a new shell an capture the output in its return value
+-- @usage output = os.capture("node " "/scripts/helloWorld.js")
 function os.capture(cmd, raw)
   local f = assert(io.popen(cmd, 'r'))
   local s = assert(f:read('*a'))
@@ -149,11 +205,11 @@ function os.capture(cmd, raw)
   s = string.gsub(s, '[\n\r]+', ' ')
   return s
 end
---------------------------------------------------------------------------
 
 
+
+--- Display the prompt to the user for the current Code Block
 local function prompt_user (elem)
---print('into prompt_user') -- DEBUGGING
     print('--------------------------------------------------')
     print('--------------------------------------------------')
     print(elem.text)
@@ -199,17 +255,24 @@ local function prompt_user (elem)
     return extension
 end
 
--- EOF EOF EOF HELPER FUNCTION DEFINITIONS
--- -------------------------------------------------------
--- -------------------------------------------------------
+
+-- EOF EOF EOF HELPER_FUNCTIONS 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 
 
--- FUNCTIONS EXECUTED ON THE MAIN SEQUENCE
--- -------------------------------------------------------
--- -------------------------------------------------------
 
+
+
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- SUBROUTINE_DECLARATIONS.
+-- @section SUBROUTINE_DECLARATIONS
+
+--- Load the arguments of the filter from variables
 function loading_arguments (doc)
---print('Into loading_arguments') -- DEBUGGING    
+    dprint('[DEBUG] Into loading_arguments') -- DEBUGGING    
 
     -- Load contents into separate variables
     scr_choice_1 = tostring(PANDOC_WRITER_OPTIONS["variables"]["scr_choice_1"]) or nil
@@ -238,7 +301,7 @@ function loading_arguments (doc)
     scr_global_current_cb = tostring(PANDOC_WRITER_OPTIONS["variables"]["scr_global_current_cb"]) or 1
     exit_status, global_current_cb = pcall(loadFileContent, scr_global_current_cb)
 
---print('scr_global_current_cb : ' .. scr_global_current_cb) -- DEBUGGING
+    dprint('[DEBUG] scr_global_current_cb : ' .. scr_global_current_cb) -- DEBUGGING
 
 
     -- For first iteration of the script global_current_cb will be ""
@@ -255,8 +318,8 @@ function loading_arguments (doc)
     file_processed = tostring(PANDOC_WRITER_OPTIONS["variables"]["file_processed"]) or nil
 
 
---print('global_current_cb : ' .. global_current_cb) -- DEBUGGING
---print('global_current_cb : ' .. type(global_current_cb)) -- DEBUGGING
+    dprint('[DEBUG] global_current_cb : ' , global_current_cb) -- DEBUGGING
+    dprint('[DEBUG] global_current_cb : ' , type(global_current_cb)) -- DEBUGGING
 
 
 --    -- checking if global_current_cb exist (it doesnt for the first call of the script)
@@ -267,13 +330,12 @@ function loading_arguments (doc)
 --    end
     
 
---    print('global_current_cb : ' .. global_current_cb) -- DEBUGGING
---    print('global_current_cb length : ' .. #global_current_cb) -- DEBUGGING
+    dprint('[DEBUG] global_current_cb : ' , global_current_cb) -- DEBUGGING
 --    --global_current_cb = tonumber(global_current_cb)
 
 
--- print('csv_path : ' .. csv_path) -- DEBUGGING
--- print('choice_3 : ' .. choice_3) -- DEBUGGING
+    dprint('[DEBUG] csv_path : ' , csv_path) -- DEBUGGING
+    dprint('[DEBUG] choice_3 : ' , choice_3) -- DEBUGGING
 
     -- As we are calling this script for each file, and each file 
     -- has many CodeBlocks (cb)
@@ -302,6 +364,8 @@ end
 
 
 
+--- Does the element need prompting
+-- @usage
 -- The particularity of this script is that is inteded to get called 
 --    for each file of the vim-dan parse
 -- Meaning the extension csv can either
@@ -311,17 +375,16 @@ end
 --               In this case there will be no prompting to human
 --      - In the 2) case , its length is going to match with the cb's accrued until the last file that it stopped doing the parse . Unless the documentation has changed (in which case a new csv has to be created)
 --         For this last point, we consume the csv ourselves in a variable
-
-local function does_need_prompting (doc)
---print('into does_need_prompting') -- DEBUGGING
---print('csv_path : ' .. csv_path) -- DEBUGGING
+function does_need_prompting (doc)
+    dprint('into does_need_prompting') -- DEBUGGING
+    dprint('csv_path : ' , csv_path) -- DEBUGGING
 
 
     -- Getting the no of entries , minus 1 that is the header
     local csv_entries = count_file_lines(csv_path) - 1
 
---print('csv_entries : ' .. csv_entries) -- DEBUGGING
---print('global_current_cb : ' .. global_current_cb) -- DEBUGGING
+    dprint('csv_entries : ' , csv_entries) -- DEBUGGING
+    dprint('global_current_cb : ' , global_current_cb) -- DEBUGGING
 
 
     if csv_entries > global_current_cb then
@@ -331,12 +394,13 @@ local function does_need_prompting (doc)
     return doc
 end
 
-local function csv_iterator_catchup(doc)
-    -- We dont waste computing power catching up an iterator that is behind
+--- Catching up the csv_iterator the the current_cb 
+function csv_iterator_catchup(doc)
     if needs_prompting then
+    -- We dont waste computing power catching up an iterator that is behind
         return doc
     else
---print('Doing iterator catchup') -- DEBUGGING
+    dprint('Doing iterator catchup') -- DEBUGGING
         csv_iterator = ftcsv.parseLine(csv_path)
         for i=1, global_current_cb - 1 do
             csv_iterator()
@@ -345,14 +409,8 @@ local function csv_iterator_catchup(doc)
 end
 
 
-local function check_each_cb(elem)
---print('into check_each_cb') -- DEBUGGING
---print('csv_iterator_needs_catchup : ' .. tostring(csv_iterator_needs_catchup)) -- DEBUGGING
---print('global_current_cb : ' .. global_current_cb) -- DEBUGGING
---print('file_cb : ' .. file_cb) -- DEBUGGING
-
-
-
+--- The triggering function to check each Code Block
+function check_each_cb(elem)
     local extension = ''
     local filetype = ''
 
@@ -369,11 +427,6 @@ local function check_each_cb(elem)
     else
         local status, csv_row = csv_iterator()
 
---print('status : ' .. status) -- DEBUGGING
---for key, value in pairs(csv_row) do -- DEBUGGING
---    print('key : ' .. key)           -- DEBUGGING
---    print('value : ' .. value)       -- DEBUGGING
---end                                  -- DEBUGGING
 
         filetype = csv_row.filetype
     end
@@ -393,22 +446,19 @@ local function check_each_cb(elem)
 end
 
 
-local function save_csv(doc)
---print('into save_csv') -- DEBUGGING
---print('csv_iterator_needs_catchup : ' .. tostring(csv_iterator_needs_catchup)) -- DEBUGGING
--- print('local_list length : ' .. #local_list) -- DEBUGGING
-
-
--- Only save if there was actual human prompting
+--- Save the csv to disk
+-- @usage
+--  Only save if there was actual human prompting
 --  Basically the iterator was consumed
 --      And within the file there was at least one cb , so local_list will be populated
+function save_csv(doc)
 if needs_prompting and #local_list > 0 then
     -- SAVING A LIST AS CSV
     -- -----------------------------------
     local csvString = ftcsv.encode(local_list)
     -- Removing the header line
     csvString = csvString:match("^[^\n]*\n(.*)$")
---    print('csvString : ' .. csvString) -- DEBUGGING
+
     local file = assert(io.open(csv_path, "a"))
     print(csvString)
     file:write(csvString)
@@ -419,33 +469,32 @@ end
 end
 
 
-local function save_return_vars(doc)
---print('into save_return_vars') -- DEBUGGING
+--- Save the variables to disk for the next iteration of the filter
+function save_return_vars(doc)
     -- Usage for saving variables
     saveVariableToFile(scr_choice_1, "choice_1", choice_list[#choice_list])
     saveVariableToFile(scr_choice_2, "choice_2", choice_list[#choice_list - 1])
     saveVariableToFile(scr_choice_3, "choice_3", choice_list[#choice_list - 2])
 
---print('global_current_cb : ' .. global_current_cb) -- DEBUGGING
     saveVariableToFile(scr_global_current_cb, "global_current_cb", tostring(global_current_cb))
 
     return doc
 end
 
--- DEBUGGING FUNCTION
---local function printing_end_file(doc)
---    print('ENDING OF THE FILE !!')
---    print('ENDING OF THE FILE !!')
---    print('ENDING OF THE FILE !!')
---    return doc
---end
+
+-- EOF EOF EOF SUBROUTINE_DECLARATIONS 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
 
 
--- EOF EOF EOF FUNCTIONS EXECUTED ON THE MAIN SEQUENCE
--- -------------------------------------------------------
--- -------------------------------------------------------
 
 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- SUBROUTINE_CALLS.
+-- Define the flow of execution of the filter, calling the previously defined subroutines.
+-- @section SUBROUTINE_CALLS
 
 return {
     { Pandoc = loading_arguments },
@@ -454,5 +503,8 @@ return {
     { CodeBlock = check_each_cb } ,
     { Pandoc = save_csv } ,
     { Pandoc = save_return_vars } 
---    { Pandoc = printing_end_file }  -- DEBUGGING
 }
+
+-- EOF EOF EOF SUBROUTINE_CALLS 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
