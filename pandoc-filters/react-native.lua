@@ -1,22 +1,43 @@
---[[
-This filter will parse the text that is embedded in <div class="snack-player">, react element found in this documentation,
-that is storing actual information to be parsed.
---]]
+--- @script react-native
+-- @author rafmartom <rafmartom@gmail.com>
+-- @usage
+-- Multiline description of the script
+-- This filter will parse the text that is embedded in <div class="snack-player">,
+-- react element found in this documentation,
+-- that is storing actual information to be parsed.
+
+
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- IMPORT_DEPENDENCIES.
+-- @section IMPORT_DEPENDENCIES
+
 
 -- GETTING THE PATH WHERE THE SCRIPT IS SAVED
 script_path = debug.getinfo(1, "S").source:sub(2)
 -- Removing the filename to get the directory path
 script_path = script_path:match("(.*/)")
 project_path = script_path:match("(.*/)[^/]+/")
--------------------------------------------------------
 
 package.path = project_path .. "/lua_modules/share/lua/5.4/?.lua;" .. package.path
 package.cpath = project_path .. "/lua_modules/lib/lua/5.4/?.so;" .. package.cpath
-
 local httpUtil = require("http.util")
 
--- PARSING SPECIAL REACT ELEMENT SNACK-PLAYER
--- --------------------------------------------------------
+
+-- EOF EOF EOF IMPORT_DEPENDENCIES 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------
+
+--- FILTER_ELEMENTS.
+-- Description of the section
+-- @section FILTER_ELEMENTS
+
+--- Parsing special React Element Snack-player
 function Div(elem, meta)
     if elem.classes:includes("snack-player") then
         -- SELECTING AN ATTRIBUTE BY ATTRIBUTE NAME AND GETTING ITS VALUE
@@ -60,5 +81,8 @@ function Div(elem, meta)
         )
     end
 end
--- EOF EOF EOF PARSING SPECIAL REACT ELEMENT SNACK-PLAYER
--- --------------------------------------------------------
+
+
+-- EOF EOF EOF FILTER_ELEMENTS 
+-- ----------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------

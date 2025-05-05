@@ -1,0 +1,9145 @@
+                                                                               
+            88                                      88                         
+            ""                                      88                         
+                                                    88                         
+8b       d8 88 88,dPYba,,adPYba,            ,adPPYb,88 ,adPPYYba, 8b,dPPYba,   
+`8b     d8' 88 88P'   "88"    "8a aaaaaaaa a8"    `Y88 ""     `Y8 88P'   `"8a  
+ `8b   d8'  88 88      88      88 """""""" 8b       88 ,adPPPPP88 88       88  
+  `8b,d8'   88 88      88      88          "8a,   ,d88 88,    ,88 88       88  
+    "8"     88 88      88      88           `"8bbdP"Y8 `"8bbdP"Y8 88       88  
+                                                                               
+&@ The following lines are used by vim-dan, do not modify them! @&
+&@ g:dan_ext_list = "" @&
+&@ g:dan_kw_question_list = "^Description" @&
+&@ g:dan_kw_nontext_list = "^Parameters,^Type" @&
+&@ g:dan_kw_linenr_list = "^Parameter " @&
+&@ g:dan_kw_warningmsg_list = "^Returns" @&
+&@ g:dan_kw_colorcolumn_list = "" @&
+&@ g:dan_kw_underlined_list = "" @&
+&@ g:dan_kw_preproc_list = "" @&
+&@ g:dan_kw_comment_list = "" @&
+&@ g:dan_kw_identifier_list = "" @&
+&@ g:dan_kw_ignore_list = "" @&
+&@ g:dan_kw_statement_list = "" @&
+&@ g:dan_kw_cursorline_list = "" @&
+&@ g:dan_kw_tabline_list = "" @&
+                                                                               
+   _                _                    _       
+  (_)___        ___| |__   ___  ___ _ __(_) ___  
+  | / __|_____ / __| '_ \ / _ \/ _ \ '__| |/ _ \ 
+  | \__ \_____| (__| | | |  __/  __/ |  | | (_) |
+ _/ |___/      \___|_| |_|\___|\___|_|  |_|\___/ 
+|__/                                             
+Documentation indexed from :
+ - https://cheerio.js.org/ 
+Last parsed on : Tue 29 Apr 21:23:30 BST 2025
+ _____ ___   ____ 
+|_   _/ _ \ / ___|
+  | || | | | |    
+  | || |_| | |___ 
+  |_| \___/ \____|
+                  
+<L=1>Attribution</L>
+<L=2>blog</L>
+- blog
+	<L=3>Cheerio 1.0 Released, Batteries Included 🔋</L>
+	<L=4>New Website, Who Dis?</L>
+	<L=5>Tags</L>
+	- tags
+		<L=6>One post tagged with "announcement"</L>
+		<L=7>One post tagged with "intro"</L>
+		<L=8>One post tagged with "release"</L>
+		<L=9>One post tagged with "website"</L>
+- docs
+	- advanced
+		<L=a>Configuring Cheerio</L>
+		<L=b>Extending Cheerio</L>
+		<L=c>Extracting Data with the  extract  Method</L>
+	<L=d>cheerio</L>
+	- api
+		- classes
+			<L=e>Class:  abstract  Cheerio<T></L>
+		- functions
+			<L=f>Function: contains()</L>
+			<L=g>Function: decodeStream()</L>
+			<L=h>Function: fromURL()</L>
+			<L=i>Function: load()</L>
+			<L=j>Function: loadBuffer()</L>
+			<L=k>Function: merge()</L>
+			<L=l>Function: stringStream()</L>
+		- interfaces
+			<L=m>Interface: CheerioAPI()</L>
+			<L=n>Interface: CheerioOptions</L>
+			<L=o>Interface: CheerioRequestOptions</L>
+			<L=p>Interface: DecodeStreamOptions</L>
+			<L=q>Interface: HTMLParser2Options</L>
+		- type-aliases
+			<L=r>Type Alias: AcceptedElems<T></L>
+			<L=s>Type Alias: AcceptedFilters<T></L>
+			<L=t>Type Alias: BasicAcceptedElems<T></L>
+			<L=u>Type Alias: FilterFunction()<T></L>
+			<L=v>Type Alias: SelectorType</L>
+	- basics
+		<L=w>Loading Documents</L>
+		<L=x>Manipulating the DOM</L>
+		<L=y>Selecting Elements</L>
+		<L=z>Traversing the DOM</L>
+	- category
+		<L=A>Tutorials - Advanced</L>
+		<L=B>Tutorials - Basics</L>
+	<L=C>Welcome to Cheerio!</L>
+<L=D>cheerio</L>
+
+<B=1>Attribution
+& Attribution &
+    _   _   _        _ _           _   _             
+   / \ | |_| |_ _ __(_) |__  _   _| |_(_) ___  _ __  
+  / _ \| __| __| '__| | '_ \| | | | __| |/ _ \| '_ \ 
+ / ___ \ |_| |_| |  | | |_) | |_| | |_| | (_) | | | |
+/_/   \_\__|\__|_|  |_|_.__/ \__,_|\__|_|\___/|_| |_|
+                                                     
+Attribution
+
+[][][]
+
+Homepage images originate from OpenMoji, licensed under CC BY-SA 4.0. The color of the dancing man emoji
+was changed to align with the rest of the website.
+</B>
+=========================================================================================================
+<B=2>blog
+& blog &
+ _     _             
+| |__ | | ___   __ _ 
+| '_ \| |/ _ \ / _` |
+| |_) | | (_) | (_| |
+|_.__/|_|\___/ \__, |
+               |___/ 
+Cheerio 1.0 Released, Batteries Included 🔋
+
+August 7, 2024 · 3 min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio 1.0 is out! After 12 release candidates and just a short seven years after the initial 1.0
+release candidate, it is finally time to call Cheerio 1.0 complete. The theme for this release is
+"batteries included", with common use cases now supported out of the box.
+
+So grab a pair of double-As, and read below for what's new, what's changed, and how to upgrade!
+
+Tags:
+
+- release
+- announcement
+
+Read more
+
+New Website, Who Dis?
+
+February 13, 2023 · One min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio has a new website, and it's looking pretty good! This has been in the works for a while, and
+we're excited to finally share it with you. Let's walk through all that's new.
+
+[]note
+
+Cheerio's website is still a work-in-progress, and covers Cheerio's next release that isn't available
+yet. We would love your help in making this website better!
+
+Tags:
+
+- website
+- intro
+
+Read more
+</B>
+=========================================================================================================
+<B=3>Cheerio 1.0 Released, Batteries Included 🔋
+& Cheerio 1.0 Released, Batteries Included 🔋 &
+  ____ _                    _         _   ___  
+ / ___| |__   ___  ___ _ __(_) ___   / | / _ \ 
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \  | || | | |
+| |___| | | |  __/  __/ |  | | (_) | | || |_| |
+ \____|_| |_|\___|\___|_|  |_|\___/  |_(_)___/ 
+                                               
+ ____      _                         _   
+|  _ \ ___| | ___  __ _ ___  ___  __| |  
+| |_) / _ \ |/ _ \/ _` / __|/ _ \/ _` |  
+|  _ <  __/ |  __/ (_| \__ \  __/ (_| |_ 
+|_| \_\___|_|\___|\__,_|___/\___|\__,_( )
+                                      |/ 
+ ____        _   _            _           
+| __ )  __ _| |_| |_ ___ _ __(_) ___  ___ 
+|  _ \ / _` | __| __/ _ \ '__| |/ _ \/ __|
+| |_) | (_| | |_| ||  __/ |  | |  __/\__ \
+|____/ \__,_|\__|\__\___|_|  |_|\___||___/
+                                          
+ ___            _           _          _    /\/\ 
+|_ _|_ __   ___| |_   _  __| | ___  __| |   >  < 
+ | || '_ \ / __| | | | |/ _` |/ _ \/ _` |  _\/\ |
+ | || | | | (__| | |_| | (_| |  __/ (_| | / __` |
+|___|_| |_|\___|_|\__,_|\__,_|\___|\__,_| \____/ 
+                                                 
+Cheerio 1.0 Released, Batteries Included 🔋
+
+August 7, 2024 · 3 min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio 1.0 is out! After 12 release candidates and just a short seven years after the initial 1.0
+release candidate, it is finally time to call Cheerio 1.0 complete. The theme for this release is
+"batteries included", with common use cases now supported out of the box.
+
+So grab a pair of double-As, and read below for what's new, what's changed, and how to upgrade!
+
+New Website and Documentation
+
+Since the last release, we've published a new website and documentation for Cheerio. The new site
+features detailed guides and API documentation to get the most from Cheerio. Check it out at
+cheerio.js.org.
+
+A new way to load documents
+
+Loading documents into Cheerio has been revamped. Cheerio now supports multiple loading methods, each
+tailored to different use cases:
+
+- load: The classic method for parsing HTML or XML strings.
+- loadBuffer: Works with binary data, automatically detecting the document encoding.
+- stringStream and decodeStream: Parse HTML directly from streams.
+- fromURL: Fetch and parse HTML from a URL in one go.
+
+Dive deeper into these methods in the Loading Documents tutorial.
+
+Simplified Data Extraction
+
+The new extract method allows you to extract data from an HTML document and store it in an object. To
+fetch the latest release of Cheerio from GitHub and extract the release date and the release notes from
+the release page is now as simple as:
+
+    import * as cheerio from 'cheerio';
+
+    const $ = await cheerio.fromURL(
+      'https://github.com/cheeriojs/cheerio/releases',
+    );
+    const data = $.extract({
+      releases: [
+        {
+          // First, we select individual release sections.
+          selector: 'section',
+          // Then, we extract the release date, name, and notes from each section.
+          value: {
+            // Selectors are executed within the context of the selected element.
+            name: 'h2',
+            date: {
+              selector: 'relative-time',
+              // The actual release date is stored in the `datetime` attribute.
+              value: 'datetime',
+            },
+            notes: {
+              selector: '.markdown-body',
+              // We are looking for the HTML content of the element.
+              value: 'innerHTML',
+            },
+          },
+        },
+      ],
+    });
+
+[][]
+
+Read more about all of the available options in the Extracting Data guide.
+
+Breaking Changes and Upgrade Guide
+
+Cheerio 1.0 introduces several breaking changes, most notably:
+
+- The minimum NodeJS version is now 18.17 or higher.
+
+- Import paths were simplified. For example, use cheerio/slim instead of cheerio/lib/slim.
+
+- The deprecated default Cheerio instance and static methods were removed.
+
+  Before, it was possible to write code like this:
+
+      import cheerio, { html } from 'cheerio';
+
+      html(cheerio('<test></test>')); // ~ '<test></test>' -- NO LONGER WORKS
+
+  [][]
+
+  Make sure to always load documents first:
+
+      import * as cheerio from 'cheerio';
+
+      cheerio.load('<test></test>').html();
+
+  [][]
+
+- htmlparser2 options now reside exclusively under the xml key:
+
+      const $ = cheerio.load('<html>', {
+        xml: {
+          withStartIndices: true,
+        },
+      });
+
+  [][]
+
+- Node types previously re-exported by Cheerio must now be imported directly from domhandler.
+
+For a comprehensive list of changes, please consult the changelog.
+
+Upgrading to Cheerio 1.0
+
+To upgrade to Cheerio 1.0, just run:
+
+    npm install cheerio@latest
+
+[][]
+
+Get Involved
+
+Explore the new features and let us know what you think! Encounter an issue? Report it on our GitHub
+issue tracker. Have an idea for an improvement? Pull requests welcome :)
+
+Thank You
+
+Thanks to @jugglinmike for kick-starting Cheerio 1.0, and to all the contributors who have helped shape
+this release. We couldn't have done it without you.
+
+Thanks to our sponsors and backers for supporting Cheerio's development. If you use Cheerio at work,
+consider asking your company to support us!
+
+And finally, thank you for using Cheerio 🙇🙇‍♀️
+
+Tags:
+
+- release
+- announcement
+
+[]Edit this page
+
+Older post
+
+New Website, Who Dis?
+</B>
+=========================================================================================================
+<B=4>New Website, Who Dis?
+& New Website, Who Dis? &
+ _   _                __        __   _         _ _         
+| \ | | _____      __ \ \      / /__| |__  ___(_) |_ ___   
+|  \| |/ _ \ \ /\ / /  \ \ /\ / / _ \ '_ \/ __| | __/ _ \  
+| |\  |  __/\ V  V /    \ V  V /  __/ |_) \__ \ | ||  __/_ 
+|_| \_|\___| \_/\_/      \_/\_/ \___|_.__/|___/_|\__\___( )
+                                                        |/ 
+__        ___             ____  _    ___ 
+\ \      / / |__   ___   |  _ \(_)__|__ \
+ \ \ /\ / /| '_ \ / _ \  | | | | / __|/ /
+  \ V  V / | | | | (_) | | |_| | \__ \_| 
+   \_/\_/  |_| |_|\___/  |____/|_|___(_) 
+                                         
+New Website, Who Dis?
+
+February 13, 2023 · One min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio has a new website, and it's looking pretty good! This has been in the works for a while, and
+we're excited to finally share it with you. Let's walk through all that's new.
+
+[]note
+
+Cheerio's website is still a work-in-progress, and covers Cheerio's next release that isn't available
+yet. We would love your help in making this website better!
+
+Guides
+
+The Cheerio website now features a set of guides, helping you get started with the project. Even if
+you've used the project for a while, you might still learn something new!
+
+Most of these guides were written with the help of ChatGPT, which made it possible to generate
+high-quality content in a reasonable amount of time. While contents have been checked for accuracy, we
+are happy to accept pull requests to improve the guides.
+
+Get started with the intro guide.
+
+API Docs
+
+API docs, the old focus of the website, have been moved to a subdirectory. They are available at
+docs/api.
+
+Blog
+
+We're also starting a blog, where we'll share updates about the project. Feel free to subscribe to the
+RSS feed!
+
+Tags:
+
+- website
+- intro
+
+[]Edit this page
+
+Newer post
+
+Cheerio 1.0 Released, Batteries Included 🔋
+</B>
+=========================================================================================================
+<B=5>Tags
+& Tags &
+ _____               
+|_   _|_ _  __ _ ___ 
+  | |/ _` |/ _` / __|
+  | | (_| | (_| \__ \
+  |_|\__,_|\__, |___/
+           |___/     
+Tags
+
+A
+
+- announcement1
+
+---------------------------------------------------------------------------------------------------------
+
+I
+
+- intro1
+
+---------------------------------------------------------------------------------------------------------
+
+R
+
+- release1
+
+---------------------------------------------------------------------------------------------------------
+
+W
+
+- website1
+
+---------------------------------------------------------------------------------------------------------
+</B>
+=========================================================================================================
+<B=6>One post tagged with "announcement"
+& One post tagged with "announcement" &
+  ___                               _     _                             _ 
+ / _ \ _ __   ___   _ __   ___  ___| |_  | |_ __ _  __ _  __ _  ___  __| |
+| | | | '_ \ / _ \ | '_ \ / _ \/ __| __| | __/ _` |/ _` |/ _` |/ _ \/ _` |
+| |_| | | | |  __/ | |_) | (_) \__ \ |_  | || (_| | (_| | (_| |  __/ (_| |
+ \___/|_| |_|\___| | .__/ \___/|___/\__|  \__\__,_|\__, |\__, |\___|\__,_|
+                   |_|                             |___/ |___/            
+          _ _   _     
+__      _(_) |_| |__  
+\ \ /\ / / | __| '_ \ 
+ \ V  V /| | |_| | | |
+  \_/\_/ |_|\__|_| |_|
+                      
+ _ _                                                                  _   _ _ 
+( | )__ _ _ __  _ __   ___  _   _ _ __   ___ ___ _ __ ___   ___ _ __ | |_( | )
+ V V/ _` | '_ \| '_ \ / _ \| | | | '_ \ / __/ _ \ '_ ` _ \ / _ \ '_ \| __|V V 
+   | (_| | | | | | | | (_) | |_| | | | | (_|  __/ | | | | |  __/ | | | |_     
+    \__,_|_| |_|_| |_|\___/ \__,_|_| |_|\___\___|_| |_| |_|\___|_| |_|\__|    
+                                                                              
+One post tagged with "announcement"
+
+View all tags
+
+Cheerio 1.0 Released, Batteries Included 🔋
+
+August 7, 2024 · 3 min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio 1.0 is out! After 12 release candidates and just a short seven years after the initial 1.0
+release candidate, it is finally time to call Cheerio 1.0 complete. The theme for this release is
+"batteries included", with common use cases now supported out of the box.
+
+So grab a pair of double-As, and read below for what's new, what's changed, and how to upgrade!
+
+Tags:
+
+- release
+- announcement
+
+Read more
+</B>
+=========================================================================================================
+<B=7>One post tagged with "intro"
+& One post tagged with "intro" &
+  ___                               _     _                             _ 
+ / _ \ _ __   ___   _ __   ___  ___| |_  | |_ __ _  __ _  __ _  ___  __| |
+| | | | '_ \ / _ \ | '_ \ / _ \/ __| __| | __/ _` |/ _` |/ _` |/ _ \/ _` |
+| |_| | | | |  __/ | |_) | (_) \__ \ |_  | || (_| | (_| | (_| |  __/ (_| |
+ \___/|_| |_|\___| | .__/ \___/|___/\__|  \__\__,_|\__, |\__, |\___|\__,_|
+                   |_|                             |___/ |___/            
+          _ _   _       _ _ _       _            _ _ 
+__      _(_) |_| |__   ( | |_)_ __ | |_ _ __ ___( | )
+\ \ /\ / / | __| '_ \   V V| | '_ \| __| '__/ _ \V V 
+ \ V  V /| | |_| | | |     | | | | | |_| | | (_) |   
+  \_/\_/ |_|\__|_| |_|     |_|_| |_|\__|_|  \___/    
+                                                     
+One post tagged with "intro"
+
+View all tags
+
+New Website, Who Dis?
+
+February 13, 2023 · One min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio has a new website, and it's looking pretty good! This has been in the works for a while, and
+we're excited to finally share it with you. Let's walk through all that's new.
+
+[]note
+
+Cheerio's website is still a work-in-progress, and covers Cheerio's next release that isn't available
+yet. We would love your help in making this website better!
+
+Tags:
+
+- website
+- intro
+
+Read more
+</B>
+=========================================================================================================
+<B=8>One post tagged with "release"
+& One post tagged with "release" &
+  ___                               _     _                             _ 
+ / _ \ _ __   ___   _ __   ___  ___| |_  | |_ __ _  __ _  __ _  ___  __| |
+| | | | '_ \ / _ \ | '_ \ / _ \/ __| __| | __/ _` |/ _` |/ _` |/ _ \/ _` |
+| |_| | | | |  __/ | |_) | (_) \__ \ |_  | || (_| | (_| | (_| |  __/ (_| |
+ \___/|_| |_|\___| | .__/ \___/|___/\__|  \__\__,_|\__, |\__, |\___|\__,_|
+                   |_|                             |___/ |___/            
+          _ _   _       _ _          _                     _ _ 
+__      _(_) |_| |__   ( | )_ __ ___| | ___  __ _ ___  ___( | )
+\ \ /\ / / | __| '_ \   V V| '__/ _ \ |/ _ \/ _` / __|/ _ \V V 
+ \ V  V /| | |_| | | |     | | |  __/ |  __/ (_| \__ \  __/    
+  \_/\_/ |_|\__|_| |_|     |_|  \___|_|\___|\__,_|___/\___|    
+                                                               
+One post tagged with "release"
+
+View all tags
+
+Cheerio 1.0 Released, Batteries Included 🔋
+
+August 7, 2024 · 3 min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio 1.0 is out! After 12 release candidates and just a short seven years after the initial 1.0
+release candidate, it is finally time to call Cheerio 1.0 complete. The theme for this release is
+"batteries included", with common use cases now supported out of the box.
+
+So grab a pair of double-As, and read below for what's new, what's changed, and how to upgrade!
+
+Tags:
+
+- release
+- announcement
+
+Read more
+</B>
+=========================================================================================================
+<B=9>One post tagged with "website"
+& One post tagged with "website" &
+  ___                               _     _                             _ 
+ / _ \ _ __   ___   _ __   ___  ___| |_  | |_ __ _  __ _  __ _  ___  __| |
+| | | | '_ \ / _ \ | '_ \ / _ \/ __| __| | __/ _` |/ _` |/ _` |/ _ \/ _` |
+| |_| | | | |  __/ | |_) | (_) \__ \ |_  | || (_| | (_| | (_| |  __/ (_| |
+ \___/|_| |_|\___| | .__/ \___/|___/\__|  \__\__,_|\__, |\__, |\___|\__,_|
+                   |_|                             |___/ |___/            
+          _ _   _       _ _              _         _ _       _ _ 
+__      _(_) |_| |__   ( | )_      _____| |__  ___(_) |_ ___( | )
+\ \ /\ / / | __| '_ \   V V\ \ /\ / / _ \ '_ \/ __| | __/ _ \V V 
+ \ V  V /| | |_| | | |      \ V  V /  __/ |_) \__ \ | ||  __/    
+  \_/\_/ |_|\__|_| |_|       \_/\_/ \___|_.__/|___/_|\__\___|    
+                                                                 
+One post tagged with "website"
+
+View all tags
+
+New Website, Who Dis?
+
+February 13, 2023 · One min read
+
+[Felix Boehm]
+
+Felix Boehm
+
+Maintainer of Cheerio
+
+[]
+
+Cheerio has a new website, and it's looking pretty good! This has been in the works for a while, and
+we're excited to finally share it with you. Let's walk through all that's new.
+
+[]note
+
+Cheerio's website is still a work-in-progress, and covers Cheerio's next release that isn't available
+yet. We would love your help in making this website better!
+
+Tags:
+
+- website
+- intro
+
+Read more
+</B>
+=========================================================================================================
+<B=a>Configuring Cheerio
+& Configuring Cheerio &
+  ____             __ _                  _             
+ / ___|___  _ __  / _(_) __ _ _   _ _ __(_)_ __   __ _ 
+| |   / _ \| '_ \| |_| |/ _` | | | | '__| | '_ \ / _` |
+| |__| (_) | | | |  _| | (_| | |_| | |  | | | | | (_| |
+ \____\___/|_| |_|_| |_|\__, |\__,_|_|  |_|_| |_|\__, |
+                        |___/                    |___/ 
+  ____ _                    _       
+ / ___| |__   ___  ___ _ __(_) ___  
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \ 
+| |___| | | |  __/  __/ |  | | (_) |
+ \____|_| |_|\___|\___|_|  |_|\___/ 
+                                    
+- []
+- Tutorials - Advanced
+- Configuring Cheerio
+
+On this page
+
+Configuring Cheerio
+
+In this guide, we'll cover how to configure Cheerio to work with different types of documents, and how to
+use and configure the different parsers that ship with the library.
+
+Parsing HTML with parse5
+
+By default, Cheerio uses the parse5 parser for HTML documents. parse5 is an excellent project that
+rigorously conforms to the HTML standard. However, if you need to modify parsing options for HTML input,
+you may pass an extra object to .load():
+
+    const cheerio = require('cheerio');
+    const $ = cheerio.load('<noscript><h1>Nested Tag!</h1></noscript>', {
+      scriptingEnabled: false,
+    });
+
+[][]
+
+For example, if you want the contents of <noscript> tags to be parsed as HTML, you can set the
+scriptingEnabled option to false.
+
+For a full list of options and their effects, have a look at the API documentation.
+
+Fragment Mode
+
+By default, parse5 treats documents it receives as full HTML documents and will structure content in an
+<html> document element with nested <head> and <body> tags.
+
+    const $ = cheerio.load('<li>Apple</li><li>Banana</li>');
+
+    $.html(); // => '<html><head></head><body><li>Apple</li><li>Banana</li></body></html>'
+
+[][]
+
+parse5 also supports a "fragment mode" that allows you to parse HTML fragments, rather than complete
+documents. To use this mode, pass a boolean indicating whether you are parsing a full document to the
+.load() method:
+
+    // Note that we are passing `false`, as we are not parsing a full document.
+    const $ = cheerio.load('<li>Apple</li><li>Banana</li>', {}, false);
+
+    $.html(); // => '<li>Apple</li><li>Banana</li>'
+
+[][]
+
+This will parse the HTML fragment as a standalone document, rather than treating it as a part of a larger
+document.
+
+Parsing XML with htmlparser2
+
+By default, Cheerio uses htmlparser2 for XML documents. htmlparser2 is a fast and memory-efficient parser
+that can handle both HTML and XML. To parse XML, pass the xml option to .load():
+
+    const $ = cheerio.load('<ul id="fruits">...</ul>', {
+      xml: true,
+    });
+
+[][]
+
+If you need to customize the parsing options for XML input, you may pass an object as the xml option to
+.load(), with the options you want to change:
+
+    const $ = cheerio.load('<ul id="fruits">...</ul>', {
+      xml: {
+        withStartIndices: true,
+      },
+    });
+
+[][]
+
+When xml is set, the default options are:
+
+    {
+        xmlMode: true, // Enable htmlparser2's XML mode.
+        decodeEntities: true, // Decode HTML entities.
+        withStartIndices: false, // Add a `startIndex` property to nodes.
+        withEndIndices: false, // Add an `endIndex` property to nodes.
+    }
+
+[][]
+
+The options in the xml object are taken directly from htmlparser2, therefore any options that can be used
+in htmlparser2 are valid in cheerio as well.
+
+For a full list of options and their effects, see the API documentation.
+
+Using htmlparser2 for HTML
+
+Some users may wish to parse markup with the htmlparser2 library, and traverse and manipulate the
+resulting structure with Cheerio. This may be the case for those upgrading from pre-1.0 releases of
+Cheerio (which relied on htmlparser2), for those dealing with invalid markup (because htmlparser2 is more
+forgiving¹), or for those operating in performance-critical situations (because htmlparser2 is often
+faster and the resulting DOM consumes less memory).
+
+To support these cases, you can simply disable xmlMode inside of the xml option:
+
+    const $ = cheerio.load('<ul id="fruits">...</ul>', {
+      xml: {
+        // Disable `xmlMode` to parse HTML with htmlparser2.
+        xmlMode: false,
+      },
+    });
+
+[][]
+
+.load() also accepts a htmlparser2-compatible data structure as its first argument. Users may install
+htmlparser2, use it to parse input, and pass the result to .load():
+
+    import * as htmlparser2 from 'htmlparser2';
+    const dom = htmlparser2.parseDocument(document, options);
+
+    const $ = cheerio.load(dom);
+
+[][]
+
+The caveat of this method is that this will still use parse5's serializer, so the resulting output will
+be HTML, not XML, and not respect any of the supplied options. Disabling xmlMode, as shown above, is
+therefore the recommended approach.
+
+[]tip
+
+You can also use Cheerio's slim export, which always uses htmlparser2. This avoids loading parse5, which
+saves some bytes eg. in browser environments:
+
+    import * as cheerio from 'cheerio/slim';
+
+[][]
+
+Conclusion
+
+In this guide, we explored how to configure Cheerio for parsing HTML and XML documents using parse5 and
+htmlparser2 respectively. We also discussed how to modify parsing options and use htmlparser2 directly.
+
+Footnotes
+
+1.  Note that "more forgiving" means htmlparser2 has error-correcting mechanisms that aren't always a
+    match for the standards observed by web browsers. This behavior may be useful when parsing non-HTML
+    content. ↩
+
+[]Edit this page
+
+Previous
+
+The `extract` method
+
+Next
+
+Extending Cheerio
+
+- Parsing HTML with parse5
+  - Fragment Mode
+- Parsing XML with htmlparser2
+  - Using htmlparser2 for HTML
+- Conclusion
+</B>
+=========================================================================================================
+<B=b>Extending Cheerio
+& Extending Cheerio &
+ _____      _                 _ _             
+| ____|_  _| |_ ___ _ __   __| (_)_ __   __ _ 
+|  _| \ \/ / __/ _ \ '_ \ / _` | | '_ \ / _` |
+| |___ >  <| ||  __/ | | | (_| | | | | | (_| |
+|_____/_/\_\\__\___|_| |_|\__,_|_|_| |_|\__, |
+                                        |___/ 
+  ____ _                    _       
+ / ___| |__   ___  ___ _ __(_) ___  
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \ 
+| |___| | | |  __/  __/ |  | | (_) |
+ \____|_| |_|\___|\___|_|  |_|\___/ 
+                                    
+- []
+- Tutorials - Advanced
+- Extending Cheerio
+
+On this page
+
+Extending Cheerio
+
+Cheerio already provides many ways of working with documents, but sometimes you may want to add custom
+functionality. This guide will cover two approaches: adding custom CSS pseudo elements and writing
+plugins for Cheerio.
+
+Adding Custom CSS Pseudo-Classes
+
+The pseudos option is the extension point for adding pseudo-classes. It is a map from names to either
+strings of functions.
+
+- A string value is a selector that the element must match to be selected.
+- A function is called with the element as its first argument, and optional parameters as the second. If
+  it returns true, the element is selected.
+
+Here is an example of using the pseudos option:
+
+    const $ = cheerio.load('<div class="foo"></div><div data-bar="boo"></div>', {
+      pseudos: {
+        // `:foo` is an alias for `div.foo`
+        foo: 'div.foo',
+        // `:bar(val)` is equivalent to `[data-bar=val s]`
+        bar: (el, val) => el.attribs['data-bar'] === val,
+      },
+    });
+
+    $(':foo').length; // 1
+    $('div:bar(boo)').length; // 1
+    $('div:bar(baz)').length; // 0
+
+[][]
+
+Writing Plugins for Cheerio
+
+Once you have loaded a document, you may extend the prototype or the equivalent fn property with custom
+plugin methods. Here is an example:
+
+    const $ = cheerio.load('<html><body>Hello, <b>world</b>!</body></html>');
+    $.prototype.logHtml = function () {
+      console.log(this.html());
+    };
+
+    $('body').logHtml(); // logs "Hello, <b>world</b>!" to the console
+
+[][]
+
+If you're using TypeScript, you should add a type definition for your new method:
+
+    declare module 'cheerio' {
+      interface Cheerio<T> {
+        logHtml(this: Cheerio<T>): void;
+      }
+    }
+
+[][]
+
+[]Edit this page
+
+Previous
+
+Configuring Cheerio
+
+Next
+
+cheerio
+
+- Adding Custom CSS Pseudo-Classes
+- Writing Plugins for Cheerio
+</B>
+=========================================================================================================
+<B=c>Extracting Data with the  extract  Method
+& Extracting Data with the  extract  Method &
+ _____      _                  _   _               ____        _        
+| ____|_  _| |_ _ __ __ _  ___| |_(_)_ __   __ _  |  _ \  __ _| |_ __ _ 
+|  _| \ \/ / __| '__/ _` |/ __| __| | '_ \ / _` | | | | |/ _` | __/ _` |
+| |___ >  <| |_| | | (_| | (__| |_| | | | | (_| | | |_| | (_| | || (_| |
+|_____/_/\_\\__|_|  \__,_|\___|\__|_|_| |_|\__, | |____/ \__,_|\__\__,_|
+                                           |___/                        
+          _ _   _       _   _                       _                  _   
+__      _(_) |_| |__   | |_| |__   ___     _____  _| |_ _ __ __ _  ___| |_ 
+\ \ /\ / / | __| '_ \  | __| '_ \ / _ \   / _ \ \/ / __| '__/ _` |/ __| __|
+ \ V  V /| | |_| | | | | |_| | | |  __/  |  __/>  <| |_| | | (_| | (__| |_ 
+  \_/\_/ |_|\__|_| |_|  \__|_| |_|\___|   \___/_/\_\\__|_|  \__,_|\___|\__|
+                                                                           
+ __  __      _   _               _ 
+|  \/  | ___| |_| |__   ___   __| |
+| |\/| |/ _ \ __| '_ \ / _ \ / _` |
+| |  | |  __/ |_| | | | (_) | (_| |
+|_|  |_|\___|\__|_| |_|\___/ \__,_|
+                                   
+- []
+- Tutorials - Advanced
+- The `extract` method
+
+On this page
+
+Extracting Data with the extract Method
+
+The extract method allows you to extract data from an HTML document and store it in an object. The method
+takes a map object as a parameter, where the keys are the names of the properties to be created on the
+object, and the values are the selectors or descriptors to be used to extract the values.
+
+To use the extract method, you first need to import the library and load an HTML document. For example:
+
+    import * as cheerio from 'cheerio';
+
+    const $ = cheerio.load(`
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li class="blue sel">Three</li>
+        <li class="red">Four</li>
+      </ul>
+    `);
+
+[][]
+
+Once you have loaded the document, you can use the extract method on the loaded object to extract data
+from the document.
+
+Here are some examples of how to use the extract method:
+
+    // Extract the text content of the first .red element
+    const data = $.extract({
+      red: '.red',
+    });
+
+[][]
+
+This will return an object with a red property, whose value is the text content of the first .red
+element.
+
+To extract the text content of all .red elements, you can wrap the selector in an array:
+
+    // Extract the text content of all .red elements
+    const data = $.extract({
+      red: ['.red'],
+    });
+
+[][]
+
+This will return an object with a red property, whose value is an array of the text content of all .red
+elements.
+
+To be more specific about what you'd like to extract, you can pass an object with a selector and a value
+property. For example, to extract the text content of the first .red element and the href attribute of
+the first a element:
+
+    const data = $.extract({
+      red: '.red',
+      links: {
+        selector: 'a',
+        value: 'href',
+      },
+    });
+
+[][]
+
+The value property can be used to specify the name of the property to extract from the selected elements.
+In this case, we are extracting the href attribute from the <a> elements. This uses Cheerio's prop method
+under the hood.
+
+value defaults to textContent, which extracts the text content of the element.
+
+As an attribute with special logic inside the prop method, hrefs will be resolved relative to the
+document's URL. The document's URL will be set automatically when using fromURL to load the document.
+Otherwise, use the baseURL option to specify the documents URL.
+
+There are many props available here; have a look at the prop method for details. For example, to extract
+the outerHTML of all .red elements:
+
+    const data = $.extract({
+      red: [
+        {
+          selector: '.red',
+          value: 'outerHTML',
+        },
+      ],
+    });
+
+[][]
+
+You can also extract data from multiple nested elements by specifying an object as the value. For
+example, to extract the text content of all .red elements and the first .blue element in the first <ul>
+element, and the text content of all .sel elements in the second <ul> element:
+
+    const data = $.extract({
+      ul1: {
+        selector: 'ul:first',
+        value: {
+          red: ['.red'],
+          blue: '.blue',
+        },
+      },
+      ul2: {
+        selector: 'ul:eq(2)',
+        value: {
+          sel: ['.sel'],
+        },
+      },
+    });
+
+[][]
+
+This will return an object with ul1 and ul2 properties. The ul1 property will be an object with a red
+property, whose value is an array of the text content of all .red elements in the first ul element, and a
+blue property. The ul2 property will be an object with a sel property, whose value is an array of the
+text content of all .sel elements in the second <ul> element.
+
+Finally, you can pass a function as the value property. The function will be called with each of the
+selected elements, and the key of the property:
+
+    const data = $.extract({
+      links: [
+        {
+          selector: 'a',
+          value: (el, key) => {
+            const href = $(el).attr('href');
+            return `${key}=${href}`;
+          },
+        },
+      ],
+    });
+
+[][]
+
+This will extract the href attribute of all <a> elements and return a string in the form links=href_value
+for each element, where href_value is the value of the href attribute. The returned object will have a
+links property whose value is an array of these strings.
+
+Putting it all together
+
+Let's fetch the latest release of Cheerio from GitHub and extract the release date and the release notes
+from the release page:
+
+    import * as cheerio from 'cheerio';
+
+    const $ = await cheerio.fromURL(
+      'https://github.com/cheeriojs/cheerio/releases',
+    );
+
+    const data = $.extract({
+      releases: [
+        {
+          // First, we select individual release sections.
+          selector: 'section',
+          // Then, we extract the release date, name, and notes from each section.
+          value: {
+            // Selectors are executed within the context of the selected element.
+            name: 'h2',
+            date: {
+              selector: 'relative-time',
+              // The actual release date is stored in the `datetime` attribute.
+              value: 'datetime',
+            },
+            notes: {
+              selector: '.markdown-body',
+              // We are looking for the HTML content of the element.
+              value: 'innerHTML',
+            },
+          },
+        },
+      ],
+    });
+
+[][]
+
+[]Edit this page
+
+Previous
+
+Tutorials - Advanced
+
+Next
+
+Configuring Cheerio
+
+- Putting it all together
+</B>
+=========================================================================================================
+<B=d>cheerio
+& cheerio &
+      _                    _       
+  ___| |__   ___  ___ _ __(_) ___  
+ / __| '_ \ / _ \/ _ \ '__| |/ _ \ 
+| (__| | | |  __/  __/ |  | | (_) |
+ \___|_| |_|\___|\___|_|  |_|\___/ 
+                                   
+- []
+- cheerio
+
+On this page
+
+cheerio
+
+Loading
+
+- decodeStream
+- fromURL
+- load
+- loadBuffer
+- stringStream
+
+Other
+
+- Cheerio
+- CheerioAPI
+- CheerioOptions
+- CheerioRequestOptions
+- DecodeStreamOptions
+- HTMLParser2Options
+- AcceptedElems
+- AcceptedFilters
+- BasicAcceptedElems
+- FilterFunction
+- SelectorType
+
+Static
+
+- contains
+- merge
+
+[]Edit this page
+
+Previous
+
+Extending Cheerio
+
+Next
+
+Class: abstract Cheerio\<T\>
+
+- Loading
+- Other
+- Static
+</B>
+=========================================================================================================
+<B=e>Class:  abstract  Cheerio<T>
+& Class:  abstract  Cheerio<T> &
+  ____ _                          _         _                  _   
+ / ___| | __ _ ___ ___ _     __ _| |__  ___| |_ _ __ __ _  ___| |_ 
+| |   | |/ _` / __/ __(_)   / _` | '_ \/ __| __| '__/ _` |/ __| __|
+| |___| | (_| \__ \__ \_   | (_| | |_) \__ \ |_| | | (_| | (__| |_ 
+ \____|_|\__,_|___/___(_)   \__,_|_.__/|___/\__|_|  \__,_|\___|\__|
+                                                                   
+  ____ _                    _        _________  
+ / ___| |__   ___  ___ _ __(_) ___  / /_   _\ \ 
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \/ /  | |  \ \
+| |___| | | |  __/  __/ |  | | (_) \ \  | |  / /
+ \____|_| |_|\___|\___|_|  |_|\___/ \_\ |_| /_/ 
+                                                
+- []
+- cheerio
+- classes
+- Class: abstract Cheerio\<T\>
+
+On this page
+
+Class: abstract Cheerio<T>
+
+Defined in: src/cheerio.ts:39
+
+The cheerio class is the central class of the library. It wraps a set of elements and provides an API for
+traversing, modifying, and interacting with the set.
+
+Loading a document will return the Cheerio class bound to the root element of the document. The class
+will be instantiated when querying the document (when calling $('selector')).
+
+Example
+
+    <ul id="fruits">
+      <li class="apple">Apple</li>
+      <li class="orange">Orange</li>
+      <li class="pear">Pear</li>
+    </ul>
+
+[][]
+
+Extends
+
+- MethodsType.Iterable<T>
+
+Type Parameters
+
+• T
+
+Implements
+
+- ArrayLike<T>
+
+Indexable
+
+[index: number]: T
+
+Attributes
+
+addClass()
+
+  addClass<T, R>(this, value?): R
+
+Defined in: src/api/attributes.ts:947
+
+Adds class(es) to all of the matched elements. Also accepts a function.
+
+Type Parameters
+
+• T extends AnyNode
+
+• R extends ArrayLike<T>
+
+Parameters
+
+this
+
+R
+
+value?
+
+Name of new class.
+
+string | (this, i, className) => undefined | string
+
+Returns
+
+R
+
+The instance itself.
+
+Example
+
+    $('.pear').addClass('fruit').prop('outerHTML');
+    //=> <li class="pear fruit">Pear</li>
+
+    $('.apple').addClass('fruit red').prop('outerHTML');
+    //=> <li class="apple fruit red">Apple</li>
+
+[][]
+
+See
+
+https://api.jquery.com/addClass/
+
+---------------------------------------------------------------------------------------------------------
+
+attr()
+
+Call Signature
+
+  attr<T>(this, name): string | undefined
+
+Defined in: src/api/attributes.ts:119
+
+Method for getting attributes. Gets the attribute value for only the first element in the matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+Name of the attribute.
+
+Returns
+
+string | undefined
+
+The attribute's value.
+
+Example
+
+    $('ul').attr('id');
+    //=> fruits
+
+[][]
+
+See
+
+https://api.jquery.com/attr/
+
+Call Signature
+
+  attr<T>(this): Record<string, string> | undefined
+
+Defined in: src/api/attributes.ts:138
+
+Method for getting all attributes and their values of the first element in the matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Record<string, string> | undefined
+
+The attribute's values.
+
+Example
+
+    $('ul').attr();
+    //=> { id: 'fruits' }
+
+[][]
+
+See
+
+https://api.jquery.com/attr/
+
+Call Signature
+
+  attr<T>(this, name, value?): Cheerio<T>
+
+Defined in: src/api/attributes.ts:159
+
+Method for setting attributes. Sets the attribute value for only the first element in the matched set. If
+you set an attribute's value to null, you remove that attribute. You may also pass a map and function.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+Name of the attribute.
+
+value?
+
+The new value of the attribute.
+
+null | string | (this, i, attrib) => null | string
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.apple').attr('id', 'favorite').prop('outerHTML');
+    //=> <li class="apple" id="favorite">Apple</li>
+
+[][]
+
+See
+
+https://api.jquery.com/attr/
+
+Call Signature
+
+  attr<T>(this, values): Cheerio<T>
+
+Defined in: src/api/attributes.ts:184
+
+Method for setting multiple attributes at once. Sets the attribute value for only the first element in
+the matched set. If you set an attribute's value to null, you remove that attribute.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+values
+
+Record<string, null | string>
+
+Map of attribute names and values.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.apple').attr({ id: 'favorite' }).prop('outerHTML');
+    //=> <li class="apple" id="favorite">Apple</li>
+
+[][]
+
+See
+
+https://api.jquery.com/attr/
+
+---------------------------------------------------------------------------------------------------------
+
+data()
+
+Call Signature
+
+  data<T>(this, name): unknown
+
+Defined in: src/api/attributes.ts:643
+
+Method for getting data attributes, for only the first element in the matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+Name of the data attribute.
+
+Returns
+
+unknown
+
+The data attribute's value, or undefined if the attribute does not exist.
+
+Example
+
+    $('<div data-apple-color="red"></div>').data('apple-color');
+    //=> 'red'
+
+[][]
+
+See
+
+https://api.jquery.com/data/
+
+Call Signature
+
+  data<T>(this): Record<string, unknown>
+
+Defined in: src/api/attributes.ts:662
+
+Method for getting all of an element's data attributes, for only the first element in the matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Record<string, unknown>
+
+A map with all of the data attributes.
+
+Example
+
+    $('<div data-apple-color="red"></div>').data();
+    //=> { appleColor: 'red' }
+
+[][]
+
+See
+
+https://api.jquery.com/data/
+
+Call Signature
+
+  data<T>(this, name, value): Cheerio<T>
+
+Defined in: src/api/attributes.ts:684
+
+Method for setting data attributes, for only the first element in the matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+Name of the data attribute.
+
+value
+
+unknown
+
+The new value.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    const apple = $('.apple').data('kind', 'mac');
+
+    apple.data('kind');
+    //=> 'mac'
+
+[][]
+
+See
+
+https://api.jquery.com/data/
+
+Call Signature
+
+  data<T>(this, values): Cheerio<T>
+
+Defined in: src/api/attributes.ts:707
+
+Method for setting multiple data attributes at once, for only the first element in the matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+values
+
+Record<string, unknown>
+
+Map of names to values.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    const apple = $('.apple').data({ kind: 'mac' });
+
+    apple.data('kind');
+    //=> 'mac'
+
+[][]
+
+See
+
+https://api.jquery.com/data/
+
+---------------------------------------------------------------------------------------------------------
+
+hasClass()
+
+  hasClass<T>(this, className): boolean
+
+Defined in: src/api/attributes.ts:904
+
+Check to see if any of the matched elements have the given className.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+className
+
+string
+
+Name of the class.
+
+Returns
+
+boolean
+
+Indicates if an element has the given className.
+
+Example
+
+    $('.pear').hasClass('pear');
+    //=> true
+
+    $('apple').hasClass('fruit');
+    //=> false
+
+    $('li').hasClass('pear');
+    //=> true
+
+[][]
+
+See
+
+https://api.jquery.com/hasClass/
+
+---------------------------------------------------------------------------------------------------------
+
+prop()
+
+Call Signature
+
+  prop<T>(this, name): string | undefined
+
+Defined in: src/api/attributes.ts:302
+
+Method for getting and setting properties. Gets the property value for only the first element in the
+matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+Name of the property.
+
+"tagName" | "nodeName"
+
+Returns
+
+string | undefined
+
+If value is specified the instance itself, otherwise the prop's value.
+
+Example
+
+    $('input[type="checkbox"]').prop('checked');
+    //=> false
+
+    $('input[type="checkbox"]').prop('checked', true).val();
+    //=> ok
+
+[][]
+
+See
+
+https://api.jquery.com/prop/
+
+Call Signature
+
+  prop<T>(this, name): string | null
+
+Defined in: src/api/attributes.ts:306
+
+Method for getting and setting properties. Gets the property value for only the first element in the
+matched set.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+Name of the property.
+
+"innerText" | "innerHTML" | "outerHTML" | "textContent"
+
+Returns
+
+string | null
+
+If value is specified the instance itself, otherwise the prop's value.
+
+Example
+
+    $('input[type="checkbox"]').prop('checked');
+    //=> false
+
+    $('input[type="checkbox"]').prop('checked', true).val();
+    //=> ok
+
+[][]
+
+See
+
+https://api.jquery.com/prop/
+
+Call Signature
+
+  prop<T>(this, name): StyleProp | undefined
+
+Defined in: src/api/attributes.ts:317
+
+Get a parsed CSS style object.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+"style"
+
+Name of the property.
+
+Returns
+
+StyleProp | undefined
+
+The style object, or undefined if the element has no style attribute.
+
+Call Signature
+
+  prop<T>(this, name): string | undefined
+
+Defined in: src/api/attributes.ts:335
+
+Resolve href or src of supported elements. Requires the baseURI option to be set, and a global URL object
+to be part of the environment.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+Name of the property.
+
+"href" | "src"
+
+Returns
+
+string | undefined
+
+The resolved URL, or undefined if the element is not supported.
+
+Example
+
+    $('<img src="image.png">').prop('src');
+    //=> 'https://example.com/image.png'
+
+[][]
+
+Call Signature
+
+  prop<T, K>(this, name): Element[K]
+
+Defined in: src/api/attributes.ts:345
+
+Get a property of an element.
+
+Type Parameters
+
+• T extends AnyNode
+
+• K extends keyof Element
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+K
+
+Name of the property.
+
+Returns
+
+Element[K]
+
+The property's value.
+
+Call Signature
+
+  prop<T, K>(this, name, value): Cheerio<T>
+
+Defined in: src/api/attributes.ts:356
+
+Set a property of an element.
+
+Type Parameters
+
+• T extends AnyNode
+
+• K extends keyof Element
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+K
+
+Name of the property.
+
+value
+
+Value to set the property to.
+
+Element[K] | (this, i, prop) => undefined | null | string | number | Record<string, string> |
+TagSourceCodeLocation | Document | Element | CDATA | Text | Comment | ProcessingInstruction | ChildNode[]
+| {} | Attribute[] | <T>(this, recursive?) => T
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Call Signature
+
+  prop<T>(this, map): Cheerio<T>
+
+Defined in: src/api/attributes.ts:378
+
+Set multiple properties of an element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+map
+
+Record<string, undefined | null | string | number | boolean | Record<string, string> |
+TagSourceCodeLocation | Document | Element | CDATA | Text | Comment | ProcessingInstruction | ChildNode[]
+| {} | Attribute[] | <T>(this, recursive?) => T>
+
+Object of properties to set.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('input[type="checkbox"]').prop({
+      checked: true,
+      disabled: false,
+    });
+
+[][]
+
+Call Signature
+
+  prop<T>(this, name, value): Cheerio<T>
+
+Defined in: src/api/attributes.ts:389
+
+Set a property of an element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+Name of the property.
+
+value
+
+Value to set the property to.
+
+null | string | boolean | (this, i, prop) => string | boolean
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Call Signature
+
+  prop<T>(this, name): string
+
+Defined in: src/api/attributes.ts:404
+
+Get a property of an element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+The property's name.
+
+Returns
+
+string
+
+The property's value.
+
+---------------------------------------------------------------------------------------------------------
+
+removeAttr()
+
+  removeAttr<T>(this, name): Cheerio<T>
+
+Defined in: src/api/attributes.ts:868
+
+Method for removing attributes by name.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+Name of the attribute.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.pear').removeAttr('class').prop('outerHTML');
+    //=> <li>Pear</li>
+
+    $('.apple').attr('id', 'favorite');
+    $('.apple').removeAttr('id class').prop('outerHTML');
+    //=> <li>Apple</li>
+
+[][]
+
+See
+
+https://api.jquery.com/removeAttr/
+
+---------------------------------------------------------------------------------------------------------
+
+removeClass()
+
+  removeClass<T, R>(this, name?): R
+
+Defined in: src/api/attributes.ts:1015
+
+Removes one or more space-separated classes from the selected elements. If no className is defined, all
+classes will be removed. Also accepts a function.
+
+Type Parameters
+
+• T extends AnyNode
+
+• R extends ArrayLike<T>
+
+Parameters
+
+this
+
+R
+
+name?
+
+Name of the class. If not specified, removes all elements.
+
+string | (this, i, className) => undefined | string
+
+Returns
+
+R
+
+The instance itself.
+
+Example
+
+    $('.pear').removeClass('pear').prop('outerHTML');
+    //=> <li class="">Pear</li>
+
+    $('.apple').addClass('red').removeClass().prop('outerHTML');
+    //=> <li class="">Apple</li>
+
+[][]
+
+See
+
+https://api.jquery.com/removeClass/
+
+---------------------------------------------------------------------------------------------------------
+
+toggleClass()
+
+  toggleClass<T, R>(this, value?, stateVal?): R
+
+Defined in: src/api/attributes.ts:1086
+
+Add or remove class(es) from the matched elements, depending on either the class's presence or the value
+of the switch argument. Also accepts a function.
+
+Type Parameters
+
+• T extends AnyNode
+
+• R extends ArrayLike<T>
+
+Parameters
+
+this
+
+R
+
+value?
+
+Name of the class. Can also be a function.
+
+string | (this, i, className, stateVal?) => string
+
+stateVal?
+
+boolean
+
+If specified the state of the class.
+
+Returns
+
+R
+
+The instance itself.
+
+Example
+
+    $('.apple.green').toggleClass('fruit green red').prop('outerHTML');
+    //=> <li class="apple fruit red">Apple</li>
+
+    $('.apple.green').toggleClass('fruit green red', true).prop('outerHTML');
+    //=> <li class="apple green fruit red">Apple</li>
+
+[][]
+
+See
+
+https://api.jquery.com/toggleClass/
+
+---------------------------------------------------------------------------------------------------------
+
+val()
+
+Call Signature
+
+  val<T>(this): string | undefined | string[]
+
+Defined in: src/api/attributes.ts:757
+
+Method for getting the value of input, select, and textarea. Note: Support for map, and function has not
+been added yet.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+string | undefined | string[]
+
+The value.
+
+Example
+
+    $('input[type="text"]').val();
+    //=> input_text
+
+[][]
+
+See
+
+https://api.jquery.com/val/
+
+Call Signature
+
+  val<T>(this, value): Cheerio<T>
+
+Defined in: src/api/attributes.ts:776
+
+Method for setting the value of input, select, and textarea. Note: Support for map, and function has not
+been added yet.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+value
+
+The new value.
+
+string | string[]
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('input[type="text"]').val('test').prop('outerHTML');
+    //=> <input type="text" value="test"/>
+
+[][]
+
+See
+
+https://api.jquery.com/val/
+
+CSS
+
+css()
+
+Set multiple CSS properties for every matched element.
+
+Param
+
+The names of the properties.
+
+Param
+
+The new values.
+
+See
+
+https://api.jquery.com/css/
+
+Call Signature
+
+  css<T>(this, names?): Record<string, string> | undefined
+
+Defined in: src/api/css.ts:14
+
+Get the value of a style property for the first element in the set of matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+names?
+
+string[]
+
+Optionally the names of the properties of interest.
+
+Returns
+
+Record<string, string> | undefined
+
+The instance itself.
+
+A map of all of the style properties.
+
+Param
+
+The names of the properties.
+
+Param
+
+The new values.
+
+See
+
+https://api.jquery.com/css/
+
+See
+
+https://api.jquery.com/css/
+
+Call Signature
+
+  css<T>(this, name): string | undefined
+
+Defined in: src/api/css.ts:27
+
+Get the value of a style property for the first element in the set of matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+name
+
+string
+
+The name of the property.
+
+Returns
+
+string | undefined
+
+The instance itself.
+
+The property value for the given name.
+
+Param
+
+The names of the properties.
+
+Param
+
+The new values.
+
+See
+
+https://api.jquery.com/css/
+
+See
+
+https://api.jquery.com/css/
+
+Call Signature
+
+  css<T>(this, prop, val): Cheerio<T>
+
+Defined in: src/api/css.ts:40
+
+Set one CSS property for every matched element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+prop
+
+string
+
+The name of the property.
+
+val
+
+The new value.
+
+string | (this, i, style) => undefined | string
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+The instance itself.
+
+Param
+
+The names of the properties.
+
+Param
+
+The new values.
+
+See
+
+https://api.jquery.com/css/
+
+See
+
+https://api.jquery.com/css/
+
+Call Signature
+
+  css<T>(this, map): Cheerio<T>
+
+Defined in: src/api/css.ts:55
+
+Set multiple CSS properties for every matched element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+map
+
+Record<string, string>
+
+A map of property names and values.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+The instance itself.
+
+Param
+
+The names of the properties.
+
+Param
+
+The new values.
+
+See
+
+https://api.jquery.com/css/
+
+See
+
+https://api.jquery.com/css/
+
+Forms
+
+serialize()
+
+  serialize<T>(this): string
+
+Defined in: src/api/forms.ts:26
+
+Encode a set of form elements as a string for submission.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+string
+
+The serialized form.
+
+Example
+
+    $('<form><input name="foo" value="bar" /></form>').serialize();
+    //=> 'foo=bar'
+
+[][]
+
+See
+
+https://api.jquery.com/serialize/
+
+---------------------------------------------------------------------------------------------------------
+
+serializeArray()
+
+  serializeArray<T>(this): object[]
+
+Defined in: src/api/forms.ts:54
+
+Encode a set of form elements as an array of names and values.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+object[]
+
+The serialized form.
+
+Example
+
+    $('<form><input name="foo" value="bar" /></form>').serializeArray();
+    //=> [ { name: 'foo', value: 'bar' } ]
+
+[][]
+
+See
+
+https://api.jquery.com/serializeArray/
+
+Manipulation
+
+after()
+
+  after<T>(this, ...elems): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:640
+
+Insert content next to each element in the set of matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+elems
+
+HTML string, DOM element, array of DOM elements or Cheerio to insert after each element in the set of
+matched elements.
+
+BasicAcceptedElems<AnyNode>[] | [(this, i, html) => BasicAcceptedElems<AnyNode>]
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.apple').after('<li class="plum">Plum</li>');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="apple">Apple</li>
+    //      <li class="plum">Plum</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/after/
+
+---------------------------------------------------------------------------------------------------------
+
+append()
+
+  append<T>(this, ...elems): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:271
+
+Inserts content as the last child of each of the selected elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+elems
+
+BasicAcceptedElems<AnyNode>[] | [(this, i, html) => BasicAcceptedElems<AnyNode>]
+
+Returns
+
+Cheerio<T>
+
+Example
+
+    $('ul').append('<li class="plum">Plum</li>');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //      <li class="plum">Plum</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/append/
+
+---------------------------------------------------------------------------------------------------------
+
+appendTo()
+
+  appendTo<T>(this, target): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:208
+
+Insert every element in the set of matched elements to the end of the target.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+target
+
+BasicAcceptedElems<AnyNode>
+
+Element to append elements to.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('<li class="plum">Plum</li>').appendTo('#fruits');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //      <li class="plum">Plum</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/appendTo/
+
+---------------------------------------------------------------------------------------------------------
+
+before()
+
+  before<T>(this, ...elems): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:749
+
+Insert content previous to each element in the set of matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+elems
+
+HTML string, DOM element, array of DOM elements or Cheerio to insert before each element in the set of
+matched elements.
+
+BasicAcceptedElems<AnyNode>[] | [(this, i, html) => BasicAcceptedElems<AnyNode>]
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.apple').before('<li class="plum">Plum</li>');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="plum">Plum</li>
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/before/
+
+---------------------------------------------------------------------------------------------------------
+
+clone()
+
+  clone<T>(this): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:1102
+
+Clone the cheerio object.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Cheerio<T>
+
+The cloned object.
+
+Example
+
+    const moreFruit = $('#fruits').clone();
+
+[][]
+
+See
+
+https://api.jquery.com/clone/
+
+---------------------------------------------------------------------------------------------------------
+
+empty()
+
+  empty<T>(this): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:938
+
+Removes all children from each item in the selection. Text nodes and comment nodes are left as is.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('ul').empty();
+    $.html();
+    //=>  <ul id="fruits"></ul>
+
+[][]
+
+See
+
+https://api.jquery.com/empty/
+
+---------------------------------------------------------------------------------------------------------
+
+html()
+
+Call Signature
+
+  html<T>(this): string | null
+
+Defined in: src/api/manipulation.ts:966
+
+Gets an HTML content string from the first selected element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+string | null
+
+The HTML content string.
+
+Example
+
+    $('.orange').html();
+    //=> Orange
+
+    $('#fruits').html('<li class="mango">Mango</li>').html();
+    //=> <li class="mango">Mango</li>
+
+[][]
+
+See
+
+https://api.jquery.com/html/
+
+Call Signature
+
+  html<T>(this, str): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:982
+
+Replaces each selected element's content with the specified content.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+str
+
+The content to replace selection's contents with.
+
+string | Cheerio<T>
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.orange').html('<li class="mango">Mango</li>').html();
+    //=> <li class="mango">Mango</li>
+
+[][]
+
+See
+
+https://api.jquery.com/html/
+
+---------------------------------------------------------------------------------------------------------
+
+insertAfter()
+
+  insertAfter<T>(this, target): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:693
+
+Insert every element in the set of matched elements after the target.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+target
+
+BasicAcceptedElems<AnyNode>
+
+Element to insert elements after.
+
+Returns
+
+Cheerio<T>
+
+The set of newly inserted elements.
+
+Example
+
+    $('<li class="plum">Plum</li>').insertAfter('.apple');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="apple">Apple</li>
+    //      <li class="plum">Plum</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/insertAfter/
+
+---------------------------------------------------------------------------------------------------------
+
+insertBefore()
+
+  insertBefore<T>(this, target): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:802
+
+Insert every element in the set of matched elements before the target.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+target
+
+BasicAcceptedElems<AnyNode>
+
+Element to insert elements before.
+
+Returns
+
+Cheerio<T>
+
+The set of newly inserted elements.
+
+Example
+
+    $('<li class="plum">Plum</li>').insertBefore('.apple');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="plum">Plum</li>
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/insertBefore/
+
+---------------------------------------------------------------------------------------------------------
+
+prepend()
+
+  prepend<T>(this, ...elems): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:299
+
+Inserts content as the first child of each of the selected elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+elems
+
+BasicAcceptedElems<AnyNode>[] | [(this, i, html) => BasicAcceptedElems<AnyNode>]
+
+Returns
+
+Cheerio<T>
+
+Example
+
+    $('ul').prepend('<li class="plum">Plum</li>');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="plum">Plum</li>
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/prepend/
+
+---------------------------------------------------------------------------------------------------------
+
+prependTo()
+
+  prependTo<T>(this, target): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:241
+
+Insert every element in the set of matched elements to the beginning of the target.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+target
+
+BasicAcceptedElems<AnyNode>
+
+Element to prepend elements to.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('<li class="plum">Plum</li>').prependTo('#fruits');
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="plum">Plum</li>
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //      <li class="pear">Pear</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/prependTo/
+
+---------------------------------------------------------------------------------------------------------
+
+remove()
+
+  remove<T>(this, selector?): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:854
+
+Removes the set of matched elements from the DOM and all their children. selector filters the set of
+matched elements to be removed.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+string
+
+Optional selector for elements to remove.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.pear').remove();
+    $.html();
+    //=>  <ul id="fruits">
+    //      <li class="apple">Apple</li>
+    //      <li class="orange">Orange</li>
+    //    </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/remove/
+
+---------------------------------------------------------------------------------------------------------
+
+replaceWith()
+
+  replaceWith<T>(this, content): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:890
+
+Replaces matched elements with content.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+content
+
+AcceptedElems<AnyNode>
+
+Replacement for matched elements.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    const plum = $('<li class="plum">Plum</li>');
+    $('.pear').replaceWith(plum);
+    $.html();
+    //=> <ul id="fruits">
+    //     <li class="apple">Apple</li>
+    //     <li class="orange">Orange</li>
+    //     <li class="plum">Plum</li>
+    //   </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/replaceWith/
+
+---------------------------------------------------------------------------------------------------------
+
+text()
+
+Call Signature
+
+  text<T>(this): string
+
+Defined in: src/api/manipulation.ts:1040
+
+Get the combined text contents of each element in the set of matched elements, including their
+descendants.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+string
+
+The text contents of the collection.
+
+Example
+
+    $('.orange').text();
+    //=> Orange
+
+    $('ul').text();
+    //=>  Apple
+    //    Orange
+    //    Pear
+
+[][]
+
+See
+
+https://api.jquery.com/text/
+
+Call Signature
+
+  text<T>(this, str): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:1057
+
+Set the content of each element in the set of matched elements to the specified text.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+str
+
+The text to set as the content of each matched element.
+
+string | (this, i, text) => string
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Example
+
+    $('.orange').text('Orange');
+    //=> <div class="orange">Orange</div>
+
+[][]
+
+See
+
+https://api.jquery.com/text/
+
+---------------------------------------------------------------------------------------------------------
+
+toString()
+
+  toString<T>(this): string
+
+Defined in: src/api/manipulation.ts:1016
+
+Turns the collection to a string. Alias for .html().
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+string
+
+The rendered document.
+
+---------------------------------------------------------------------------------------------------------
+
+unwrap()
+
+  unwrap<T>(this, selector?): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:515
+
+The .unwrap() function, removes the parents of the set of matched elements from the DOM, leaving the
+matched elements in their place.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+string
+
+A selector to check the parent element against. If an element's parent does not match the selector, the
+element won't be unwrapped.
+
+Returns
+
+Cheerio<T>
+
+The instance itself, for chaining.
+
+Examples
+
+    const $ = cheerio.load(
+      '<div id=test>\n  <div><p>Hello</p></div>\n  <div><p>World</p></div>\n</div>',
+    );
+    $('#test p').unwrap();
+
+    //=> <div id=test>
+    //     <p>Hello</p>
+    //     <p>World</p>
+    //   </div>
+
+[][]
+
+    const $ = cheerio.load(
+      '<div id=test>\n  <p>Hello</p>\n  <b><p>World</p></b>\n</div>',
+    );
+    $('#test p').unwrap('b');
+
+    //=> <div id=test>
+    //     <p>Hello</p>
+    //     <p>World</p>
+    //   </div>
+
+[][]
+
+See
+
+https://api.jquery.com/unwrap/
+
+---------------------------------------------------------------------------------------------------------
+
+wrap()
+
+  wrap<T>(this, wrapper): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:404
+
+The .wrap() function can take any string or object that could be passed to the $() factory function to
+specify a DOM structure. This structure may be nested several levels deep, but should contain only one
+inmost element. A copy of this structure will be wrapped around each of the elements in the set of
+matched elements. This method returns the original set of elements for chaining purposes.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+wrapper
+
+AcceptedElems<AnyNode>
+
+The DOM structure to wrap around each element in the selection.
+
+Returns
+
+Cheerio<T>
+
+Example
+
+    const redFruit = $('<div class="red-fruit"></div>');
+    $('.apple').wrap(redFruit);
+
+    //=> <ul id="fruits">
+    //     <div class="red-fruit">
+    //      <li class="apple">Apple</li>
+    //     </div>
+    //     <li class="orange">Orange</li>
+    //     <li class="plum">Plum</li>
+    //   </ul>
+
+    const healthy = $('<div class="healthy"></div>');
+    $('li').wrap(healthy);
+
+    //=> <ul id="fruits">
+    //     <div class="healthy">
+    //       <li class="apple">Apple</li>
+    //     </div>
+    //     <div class="healthy">
+    //       <li class="orange">Orange</li>
+    //     </div>
+    //     <div class="healthy">
+    //        <li class="plum">Plum</li>
+    //     </div>
+    //   </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/wrap/
+
+---------------------------------------------------------------------------------------------------------
+
+wrapAll()
+
+  wrapAll<T>(this, wrapper): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:578
+
+The .wrapAll() function can take any string or object that could be passed to the $() function to specify
+a DOM structure. This structure may be nested several levels deep, but should contain only one inmost
+element. The structure will be wrapped around all of the elements in the set of matched elements, as a
+single group.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+wrapper
+
+AcceptedElems<T>
+
+The DOM structure to wrap around all matched elements in the selection.
+
+Returns
+
+Cheerio<T>
+
+The instance itself.
+
+Examples
+
+    const $ = cheerio.load(
+      '<div class="container"><div class="inner">First</div><div class="inner">Second</div></div>',
+    );
+    $('.inner').wrapAll("<div class='new'></div>");
+
+    //=> <div class="container">
+    //     <div class='new'>
+    //       <div class="inner">First</div>
+    //       <div class="inner">Second</div>
+    //     </div>
+    //   </div>
+
+[][]
+
+    const $ = cheerio.load(
+      '<span>Span 1</span><strong>Strong</strong><span>Span 2</span>',
+    );
+    const wrap = $('<div><p><em><b></b></em></p></div>');
+    $('span').wrapAll(wrap);
+
+    //=> <div>
+    //     <p>
+    //       <em>
+    //         <b>
+    //           <span>Span 1</span>
+    //           <span>Span 2</span>
+    //         </b>
+    //       </em>
+    //     </p>
+    //   </div>
+    //   <strong>Strong</strong>
+
+[][]
+
+See
+
+https://api.jquery.com/wrapAll/
+
+---------------------------------------------------------------------------------------------------------
+
+wrapInner()
+
+  wrapInner<T>(this, wrapper): Cheerio<T>
+
+Defined in: src/api/manipulation.ts:467
+
+The .wrapInner() function can take any string or object that could be passed to the $() factory function
+to specify a DOM structure. This structure may be nested several levels deep, but should contain only one
+inmost element. The structure will be wrapped around the content of each of the elements in the set of
+matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+wrapper
+
+AcceptedElems<AnyNode>
+
+The DOM structure to wrap around the content of each element in the selection.
+
+Returns
+
+Cheerio<T>
+
+The instance itself, for chaining.
+
+Example
+
+    const redFruit = $('<div class="red-fruit"></div>');
+    $('.apple').wrapInner(redFruit);
+
+    //=> <ul id="fruits">
+    //     <li class="apple">
+    //       <div class="red-fruit">Apple</div>
+    //     </li>
+    //     <li class="orange">Orange</li>
+    //     <li class="pear">Pear</li>
+    //   </ul>
+
+    const healthy = $('<div class="healthy"></div>');
+    $('li').wrapInner(healthy);
+
+    //=> <ul id="fruits">
+    //     <li class="apple">
+    //       <div class="healthy">Apple</div>
+    //     </li>
+    //     <li class="orange">
+    //       <div class="healthy">Orange</div>
+    //     </li>
+    //     <li class="pear">
+    //       <div class="healthy">Pear</div>
+    //     </li>
+    //   </ul>
+
+[][]
+
+See
+
+https://api.jquery.com/wrapInner/
+
+Other
+
+cheerio
+
+  cheerio: "[cheerio object]"
+
+Defined in: src/cheerio.ts:118
+
+---------------------------------------------------------------------------------------------------------
+
+length
+
+  length: number = 0
+
+Defined in: src/cheerio.ts:40
+
+Implementation of
+
+ArrayLike.length
+
+---------------------------------------------------------------------------------------------------------
+
+options
+
+  options: InternalOptions
+
+Defined in: src/cheerio.ts:43
+
+---------------------------------------------------------------------------------------------------------
+
+prevObject
+
+  prevObject: undefined | Cheerio<any>
+
+Defined in: src/cheerio.ts:77
+
+---------------------------------------------------------------------------------------------------------
+
+splice()
+
+  splice: (start, deleteCount?) => any[](start, deleteCount, ...items) => any[]
+
+Defined in: src/cheerio.ts:120
+
+Removes elements from an array and, if necessary, inserts new elements in their place, returning the
+deleted elements.
+
+Parameters
+
+start
+
+number
+
+The zero-based location in the array from which to start removing elements.
+
+deleteCount?
+
+number
+
+The number of elements to remove.
+
+Returns
+
+any[]
+
+An array containing the elements that were deleted.
+
+Removes elements from an array and, if necessary, inserts new elements in their place, returning the
+deleted elements.
+
+Parameters
+
+start
+
+number
+
+The zero-based location in the array from which to start removing elements.
+
+deleteCount
+
+number
+
+The number of elements to remove.
+
+items
+
+...any[]
+
+Elements to insert into the array in place of the deleted elements.
+
+Returns
+
+any[]
+
+An array containing the elements that were deleted.
+
+---------------------------------------------------------------------------------------------------------
+
+[iterator]()
+
+  [iterator](): Iterator<T>
+
+Defined in: website/node_modules/typescript/lib/lib.es2015.iterable.d.ts:49
+
+Returns
+
+Iterator<T>
+
+---------------------------------------------------------------------------------------------------------
+
+extract()
+
+  extract<M, T>(this, map): ExtractedMap<M>
+
+Defined in: src/api/extract.ts:60
+
+Extract multiple values from a document, and store them in an object.
+
+Type Parameters
+
+• M extends ExtractMap
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+map
+
+M
+
+An object containing key-value pairs. The keys are the names of the properties to be created on the
+object, and the values are the selectors to be used to extract the values.
+
+Returns
+
+ExtractedMap<M>
+
+An object containing the extracted values.
+
+---------------------------------------------------------------------------------------------------------
+
+filterArray()
+
+  filterArray<T>(nodes, match, xmlMode?, root?): Element[] | T[]
+
+Defined in: src/api/traversing.ts:787
+
+Type Parameters
+
+• T
+
+Parameters
+
+nodes
+
+T[]
+
+match
+
+AcceptedFilters<T>
+
+xmlMode?
+
+boolean
+
+root?
+
+Document
+
+Returns
+
+Element[] | T[]
+
+---------------------------------------------------------------------------------------------------------
+
+foo()
+
+  foo(this): void
+
+Defined in: src/cheerio.spec.ts:13
+
+Parameters
+
+this
+
+void
+
+Returns
+
+void
+
+---------------------------------------------------------------------------------------------------------
+
+myPlugin()
+
+  myPlugin(...args): object
+
+Defined in: src/cheerio.spec.ts:9
+
+Parameters
+
+args
+
+...unknown[]
+
+Returns
+
+object
+
+args
+
+  args: unknown[]
+
+context
+
+  context: Cheerio<T>
+
+---------------------------------------------------------------------------------------------------------
+
+toArray()
+
+  toArray<T>(this): T[]
+
+Defined in: src/api/traversing.ts:1027
+
+Retrieve all the DOM elements contained in the jQuery set as an array.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+T[]
+
+The contained items.
+
+Example
+
+    $('li').toArray();
+    //=> [ {...}, {...}, {...} ]
+
+[][]
+
+Traversing
+
+add()
+
+  add<S, T>(this, other, context?): Cheerio<S | T>
+
+Defined in: src/api/traversing.ts:1138
+
+Add elements to the set of matched elements.
+
+Type Parameters
+
+• S extends AnyNode
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+other
+
+Elements to add.
+
+string | S | Cheerio<S> | S[]
+
+context?
+
+Optionally the context of the new selection.
+
+string | Cheerio<S>
+
+Returns
+
+Cheerio<S | T>
+
+The combined set.
+
+Example
+
+    $('.apple').add('.orange').length;
+    //=> 2
+
+[][]
+
+See
+
+https://api.jquery.com/add/
+
+---------------------------------------------------------------------------------------------------------
+
+addBack()
+
+  addBack<T>(this, selector?): Cheerio<AnyNode>
+
+Defined in: src/api/traversing.ts:1164
+
+Add the previous set of elements on the stack to the current set, optionally filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+string
+
+Selector for the elements to add.
+
+Returns
+
+Cheerio<AnyNode>
+
+The combined set.
+
+Example
+
+    $('li').eq(0).addBack('.orange').length;
+    //=> 2
+
+[][]
+
+See
+
+https://api.jquery.com/addBack/
+
+---------------------------------------------------------------------------------------------------------
+
+children()
+
+  children<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:581
+
+Gets the element children of each element in the set of matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for children.
+
+Returns
+
+Cheerio<Element>
+
+The children.
+
+Example
+
+    $('#fruits').children().length;
+    //=> 3
+
+    $('#fruits').children('.pear').text();
+    //=> Pear
+
+[][]
+
+See
+
+https://api.jquery.com/children/
+
+---------------------------------------------------------------------------------------------------------
+
+closest()
+
+  closest<T>(this, selector?): Cheerio<AnyNode>
+
+Defined in: src/api/traversing.ts:341
+
+For each element in the set, get the first element that matches the selector by testing the element
+itself and traversing up through its ancestors in the DOM tree.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+Selector for the element to find.
+
+Returns
+
+Cheerio<AnyNode>
+
+The closest nodes.
+
+Example
+
+    $('.orange').closest();
+    //=> []
+
+    $('.orange').closest('.apple');
+    // => []
+
+    $('.orange').closest('li');
+    //=> [<li class="orange">Orange</li>]
+
+    $('.orange').closest('#fruits');
+    //=> [<ul id="fruits"> ... </ul>]
+
+[][]
+
+See
+
+https://api.jquery.com/closest/
+
+---------------------------------------------------------------------------------------------------------
+
+contents()
+
+  contents<T>(this): Cheerio<AnyNode>
+
+Defined in: src/api/traversing.ts:604
+
+Gets the children of each element in the set of matched elements, including text and comment nodes.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Cheerio<AnyNode>
+
+The children.
+
+Example
+
+    $('#fruits').contents().length;
+    //=> 3
+
+[][]
+
+See
+
+https://api.jquery.com/contents/
+
+---------------------------------------------------------------------------------------------------------
+
+each()
+
+  each<T>(this, fn): Cheerio<T>
+
+Defined in: src/api/traversing.ts:640
+
+Iterates over a cheerio object, executing a function for each matched element. When the callback is
+fired, the function is fired in the context of the DOM element, so this refers to the current element,
+which is equivalent to the function parameter element. To break out of the each loop early, return with
+false.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+fn
+
+(this, i, el) => boolean | void
+
+Function to execute.
+
+Returns
+
+Cheerio<T>
+
+The instance itself, useful for chaining.
+
+Example
+
+    const fruits = [];
+
+    $('li').each(function (i, elem) {
+      fruits[i] = $(this).text();
+    });
+
+    fruits.join(', ');
+    //=> Apple, Orange, Pear
+
+[][]
+
+See
+
+https://api.jquery.com/each/
+
+---------------------------------------------------------------------------------------------------------
+
+end()
+
+  end<T>(this): Cheerio<AnyNode>
+
+Defined in: src/api/traversing.ts:1118
+
+End the most recent filtering operation in the current chain and return the set of matched elements to
+its previous state.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Cheerio<AnyNode>
+
+The previous state of the set of matched elements.
+
+Example
+
+    $('li').eq(0).end().length;
+    //=> 3
+
+[][]
+
+See
+
+https://api.jquery.com/end/
+
+---------------------------------------------------------------------------------------------------------
+
+eq()
+
+  eq<T>(this, i): Cheerio<T>
+
+Defined in: src/api/traversing.ts:966
+
+Reduce the set of matched elements to the one at the specified index. Use .eq(-i) to count backwards from
+the last selected element.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+i
+
+number
+
+Index of the element to select.
+
+Returns
+
+Cheerio<T>
+
+The element at the ith position.
+
+Example
+
+    $('li').eq(0).text();
+    //=> Apple
+
+    $('li').eq(-1).text();
+    //=> Pear
+
+[][]
+
+See
+
+https://api.jquery.com/eq/
+
+---------------------------------------------------------------------------------------------------------
+
+filter()
+
+Call Signature
+
+  filter<T, S>(this, match): Cheerio<S>
+
+Defined in: src/api/traversing.ts:735
+
+Iterates over a cheerio object, reducing the set of selector elements to those that match the selector or
+pass the function's test.
+
+This is the definition for using type guards; have a look below for other ways to invoke this method. The
+function is executed in the context of the selected element, so this refers to the current element.
+
+Type Parameters
+
+• T
+
+• S
+
+Parameters
+
+this
+
+Cheerio<T>
+
+match
+
+(this, index, value) => value is S
+
+Value to look for, following the rules above.
+
+Returns
+
+Cheerio<S>
+
+The filtered collection.
+
+Example
+
+    $('li')
+      .filter(function (i, el) {
+        // this === el
+        return $(this).attr('class') === 'orange';
+      })
+      .attr('class'); //=> orange
+
+[][]
+
+See
+
+https://api.jquery.com/filter/
+
+Call Signature
+
+  filter<T, S>(this, match): Cheerio<S extends string ? Element : T>
+
+Defined in: src/api/traversing.ts:774
+
+Iterates over a cheerio object, reducing the set of selector elements to those that match the selector or
+pass the function's test.
+
+- When a Cheerio selection is specified, return only the elements contained in that selection.
+- When an element is specified, return only that element (if it is contained in the original selection).
+- If using the function method, the function is executed in the context of the selected element, so this
+  refers to the current element.
+
+Type Parameters
+
+• T
+
+• S
+
+Parameters
+
+this
+
+Cheerio<T>
+
+match
+
+S
+
+Value to look for, following the rules above. See AcceptedFilters.
+
+Returns
+
+Cheerio<S extends string ? Element : T>
+
+The filtered collection.
+
+Examples
+
+    $('li').filter('.orange').attr('class');
+    //=> orange
+
+[][]
+
+    $('li')
+      .filter(function (i, el) {
+        // this === el
+        return $(this).attr('class') === 'orange';
+      })
+      .attr('class'); //=> orange
+
+[][]
+
+See
+
+https://api.jquery.com/filter/
+
+---------------------------------------------------------------------------------------------------------
+
+find()
+
+  find<T>(this, selectorOrHaystack?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:47
+
+Get the descendants of each element in the current set of matched elements, filtered by a selector,
+jQuery object, or element.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selectorOrHaystack?
+
+Element to look for.
+
+string | Element | Cheerio<Element>
+
+Returns
+
+Cheerio<Element>
+
+The found elements.
+
+Example
+
+    $('#fruits').find('li').length;
+    //=> 3
+    $('#fruits').find($('.apple')).length;
+    //=> 1
+
+[][]
+
+See
+
+https://api.jquery.com/find/
+
+---------------------------------------------------------------------------------------------------------
+
+first()
+
+  first<T>(this): Cheerio<T>
+
+Defined in: src/api/traversing.ts:925
+
+Will select the first element of a cheerio object.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Cheerio<T>
+
+The first element.
+
+Example
+
+    $('#fruits').children().first().text();
+    //=> Apple
+
+[][]
+
+See
+
+https://api.jquery.com/first/
+
+---------------------------------------------------------------------------------------------------------
+
+get()
+
+Call Signature
+
+  get<T>(this, i): T | undefined
+
+Defined in: src/api/traversing.ts:992
+
+Retrieve one of the elements matched by the Cheerio object, at the ith position.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+i
+
+number
+
+Element to retrieve.
+
+Returns
+
+T | undefined
+
+The element at the ith position.
+
+Example
+
+    $('li').get(0).tagName;
+    //=> li
+
+[][]
+
+See
+
+https://api.jquery.com/get/
+
+Call Signature
+
+  get<T>(this): T[]
+
+Defined in: src/api/traversing.ts:1007
+
+Retrieve all elements matched by the Cheerio object, as an array.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+T[]
+
+All elements matched by the Cheerio object.
+
+Example
+
+    $('li').get().length;
+    //=> 3
+
+[][]
+
+See
+
+https://api.jquery.com/get/
+
+---------------------------------------------------------------------------------------------------------
+
+has()
+
+  has(this, selectorOrHaystack): Cheerio<AnyNode | Element>
+
+Defined in: src/api/traversing.ts:899
+
+Filters the set of matched elements to only those which have the given DOM element as a descendant or
+which have a descendant that matches the given selector. Equivalent to .filter(':has(selector)').
+
+Parameters
+
+this
+
+Cheerio<AnyNode>
+
+selectorOrHaystack
+
+Element to look for.
+
+string | Element | Cheerio<Element>
+
+Returns
+
+Cheerio<AnyNode | Element>
+
+The filtered collection.
+
+Examples
+
+    $('ul').has('.pear').attr('id');
+    //=> fruits
+
+[][]
+
+    $('ul').has($('.pear')[0]).attr('id');
+    //=> fruits
+
+[][]
+
+See
+
+https://api.jquery.com/has/
+
+---------------------------------------------------------------------------------------------------------
+
+index()
+
+  index<T>(this, selectorOrNeedle?): number
+
+Defined in: src/api/traversing.ts:1049
+
+Search for a given element from among the matched elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selectorOrNeedle?
+
+Element to look for.
+
+string | AnyNode | Cheerio<AnyNode>
+
+Returns
+
+number
+
+The index of the element.
+
+Example
+
+    $('.pear').index();
+    //=> 2 $('.orange').index('li');
+    //=> 1
+    $('.apple').index($('#fruit, li'));
+    //=> 1
+
+[][]
+
+See
+
+https://api.jquery.com/index/
+
+---------------------------------------------------------------------------------------------------------
+
+is()
+
+  is<T>(this, selector?): boolean
+
+Defined in: src/api/traversing.ts:810
+
+Checks the current list of elements and returns true if any of the elements match the selector. If using
+an element or Cheerio selection, returns true if any of the elements match. If using a predicate
+function, the function is executed in the context of the selected element, so this refers to the current
+element.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<T>
+
+Selector for the selection.
+
+Returns
+
+boolean
+
+Whether or not the selector matches an element of the instance.
+
+See
+
+https://api.jquery.com/is/
+
+---------------------------------------------------------------------------------------------------------
+
+last()
+
+  last<T>(this): Cheerio<T>
+
+Defined in: src/api/traversing.ts:943
+
+Will select the last element of a cheerio object.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+Returns
+
+Cheerio<T>
+
+The last element.
+
+Example
+
+    $('#fruits').children().last().text();
+    //=> Pear
+
+[][]
+
+See
+
+https://api.jquery.com/last/
+
+---------------------------------------------------------------------------------------------------------
+
+map()
+
+  map<T, M>(this, fn): Cheerio<M>
+
+Defined in: src/api/traversing.ts:676
+
+Pass each element in the current matched set through a function, producing a new Cheerio object
+containing the return values. The function can return an individual data item or an array of data items
+to be inserted into the resulting set. If an array is returned, the elements inside the array are
+inserted into the set. If the function returns null or undefined, no element will be inserted.
+
+Type Parameters
+
+• T
+
+• M
+
+Parameters
+
+this
+
+Cheerio<T>
+
+fn
+
+(this, i, el) => undefined | null | M | M[]
+
+Function to execute.
+
+Returns
+
+Cheerio<M>
+
+The mapped elements, wrapped in a Cheerio collection.
+
+Example
+
+    $('li')
+      .map(function (i, el) {
+        // this === el
+        return $(this).text();
+      })
+      .toArray()
+      .join(' ');
+    //=> "apple orange pear"
+
+[][]
+
+See
+
+https://api.jquery.com/map/
+
+---------------------------------------------------------------------------------------------------------
+
+next()
+
+  next<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:396
+
+Gets the next sibling of each selected element, optionally filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for sibling.
+
+Returns
+
+Cheerio<Element>
+
+The next nodes.
+
+Example
+
+    $('.apple').next().hasClass('orange');
+    //=> true
+
+[][]
+
+See
+
+https://api.jquery.com/next/
+
+---------------------------------------------------------------------------------------------------------
+
+nextAll()
+
+  nextAll<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:419
+
+Gets all the following siblings of the each selected element, optionally filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for siblings.
+
+Returns
+
+Cheerio<Element>
+
+The next nodes.
+
+Example
+
+    $('.apple').nextAll();
+    //=> [<li class="orange">Orange</li>, <li class="pear">Pear</li>]
+    $('.apple').nextAll('.orange');
+    //=> [<li class="orange">Orange</li>]
+
+[][]
+
+See
+
+https://api.jquery.com/nextAll/
+
+---------------------------------------------------------------------------------------------------------
+
+nextUntil()
+
+  nextUntil<T>(this, selector?, filterSelector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:448
+
+Gets all the following siblings up to but not including the element matched by the selector, optionally
+filtered by another selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+Selector for element to stop at.
+
+null | AcceptedFilters<Element>
+
+filterSelector?
+
+AcceptedFilters<Element>
+
+If specified filter for siblings.
+
+Returns
+
+Cheerio<Element>
+
+The next nodes.
+
+Example
+
+    $('.apple').nextUntil('.pear');
+    //=> [<li class="orange">Orange</li>]
+
+[][]
+
+See
+
+https://api.jquery.com/nextUntil/
+
+---------------------------------------------------------------------------------------------------------
+
+not()
+
+  not<T>(this, match): Cheerio<T>
+
+Defined in: src/api/traversing.ts:858
+
+Remove elements from the set of matched elements. Given a Cheerio object that represents a set of DOM
+elements, the .not() method constructs a new Cheerio object from a subset of the matching elements. The
+supplied selector is tested against each element; the elements that don't match the selector will be
+included in the result.
+
+The .not() method can take a function as its argument in the same way that .filter() does. Elements for
+which the function returns true are excluded from the filtered set; all other elements are included.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+match
+
+AcceptedFilters<T>
+
+Value to look for, following the rules above.
+
+Returns
+
+Cheerio<T>
+
+The filtered collection.
+
+Examples
+
+    $('li').not('.apple').length;
+    //=> 2
+
+[][]
+
+    $('li').not(function (i, el) {
+      // this === el
+      return $(this).attr('class') === 'orange';
+    }).length; //=> 2
+
+[][]
+
+See
+
+https://api.jquery.com/not/
+
+---------------------------------------------------------------------------------------------------------
+
+parent()
+
+  parent<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:245
+
+Get the parent of each element in the current set of matched elements, optionally filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for parent.
+
+Returns
+
+Cheerio<Element>
+
+The parents.
+
+Example
+
+    $('.pear').parent().attr('id');
+    //=> fruits
+
+[][]
+
+See
+
+https://api.jquery.com/parent/
+
+---------------------------------------------------------------------------------------------------------
+
+parents()
+
+  parents<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:271
+
+Get a set of parents filtered by selector of each element in the current set of match elements.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for parents.
+
+Returns
+
+Cheerio<Element>
+
+The parents.
+
+Example
+
+    $('.orange').parents().length;
+    //=> 2
+    $('.orange').parents('#fruits').length;
+    //=> 1
+
+[][]
+
+See
+
+https://api.jquery.com/parents/
+
+---------------------------------------------------------------------------------------------------------
+
+parentsUntil()
+
+  parentsUntil<T>(this, selector?, filterSelector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:305
+
+Get the ancestors of each element in the current set of matched elements, up to but not including the
+element matched by the selector, DOM node, or cheerio object.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+Selector for element to stop at.
+
+null | AcceptedFilters<Element>
+
+filterSelector?
+
+AcceptedFilters<Element>
+
+Optional filter for parents.
+
+Returns
+
+Cheerio<Element>
+
+The parents.
+
+Example
+
+    $('.orange').parentsUntil('#food').length;
+    //=> 1
+
+[][]
+
+See
+
+https://api.jquery.com/parentsUntil/
+
+---------------------------------------------------------------------------------------------------------
+
+prev()
+
+  prev<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:473
+
+Gets the previous sibling of each selected element optionally filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for siblings.
+
+Returns
+
+Cheerio<Element>
+
+The previous nodes.
+
+Example
+
+    $('.orange').prev().hasClass('apple');
+    //=> true
+
+[][]
+
+See
+
+https://api.jquery.com/prev/
+
+---------------------------------------------------------------------------------------------------------
+
+prevAll()
+
+  prevAll<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:497
+
+Gets all the preceding siblings of each selected element, optionally filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for siblings.
+
+Returns
+
+Cheerio<Element>
+
+The previous nodes.
+
+Example
+
+    $('.pear').prevAll();
+    //=> [<li class="orange">Orange</li>, <li class="apple">Apple</li>]
+
+    $('.pear').prevAll('.orange');
+    //=> [<li class="orange">Orange</li>]
+
+[][]
+
+See
+
+https://api.jquery.com/prevAll/
+
+---------------------------------------------------------------------------------------------------------
+
+prevUntil()
+
+  prevUntil<T>(this, selector?, filterSelector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:526
+
+Gets all the preceding siblings up to but not including the element matched by the selector, optionally
+filtered by another selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+Selector for element to stop at.
+
+null | AcceptedFilters<Element>
+
+filterSelector?
+
+AcceptedFilters<Element>
+
+If specified filter for siblings.
+
+Returns
+
+Cheerio<Element>
+
+The previous nodes.
+
+Example
+
+    $('.pear').prevUntil('.apple');
+    //=> [<li class="orange">Orange</li>]
+
+[][]
+
+See
+
+https://api.jquery.com/prevUntil/
+
+---------------------------------------------------------------------------------------------------------
+
+siblings()
+
+  siblings<T>(this, selector?): Cheerio<Element>
+
+Defined in: src/api/traversing.ts:554
+
+Get the siblings of each element (excluding the element) in the set of matched elements, optionally
+filtered by a selector.
+
+Type Parameters
+
+• T extends AnyNode
+
+Parameters
+
+this
+
+Cheerio<T>
+
+selector?
+
+AcceptedFilters<Element>
+
+If specified filter for siblings.
+
+Returns
+
+Cheerio<Element>
+
+The siblings.
+
+Example
+
+    $('.pear').siblings().length;
+    //=> 2
+
+    $('.pear').siblings('.orange').length;
+    //=> 1
+
+[][]
+
+See
+
+https://api.jquery.com/siblings/
+
+---------------------------------------------------------------------------------------------------------
+
+slice()
+
+  slice<T>(this, start?, end?): Cheerio<T>
+
+Defined in: src/api/traversing.ts:1095
+
+Gets the elements matching the specified range (0-based position).
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+Cheerio<T>
+
+start?
+
+number
+
+A position at which the elements begin to be selected. If negative, it indicates an offset from the end
+of the set.
+
+end?
+
+number
+
+A position at which the elements stop being selected. If negative, it indicates an offset from the end of
+the set. If omitted, the range continues until the end of the set.
+
+Returns
+
+Cheerio<T>
+
+The elements matching the specified range.
+
+Example
+
+    $('li').slice(1).eq(0).text();
+    //=> 'Orange'
+
+    $('li').slice(1, 2).length;
+    //=> 1
+
+[][]
+
+See
+
+https://api.jquery.com/slice/
+
+[]Edit this page
+
+Previous
+
+cheerio
+
+Next
+
+Function: contains()
+
+- Example
+- Extends
+- Type Parameters
+- Implements
+- Indexable
+- Attributes
+  - addClass()
+  - attr()
+  - data()
+  - hasClass()
+  - prop()
+  - removeAttr()
+  - removeClass()
+  - toggleClass()
+  - val()
+- CSS
+  - css()
+- Forms
+  - serialize()
+  - serializeArray()
+- Manipulation
+  - after()
+  - append()
+  - appendTo()
+  - before()
+  - clone()
+  - empty()
+  - html()
+  - insertAfter()
+  - insertBefore()
+  - prepend()
+  - prependTo()
+  - remove()
+  - replaceWith()
+  - text()
+  - toString()
+  - unwrap()
+  - wrap()
+  - wrapAll()
+  - wrapInner()
+- Other
+  - cheerio
+  - length
+  - options
+  - prevObject
+  - splice()
+  - [iterator]()
+  - extract()
+  - filterArray()
+  - foo()
+  - myPlugin()
+  - toArray()
+- Traversing
+  - add()
+  - addBack()
+  - children()
+  - closest()
+  - contents()
+  - each()
+  - end()
+  - eq()
+  - filter()
+  - find()
+  - first()
+  - get()
+  - has()
+  - index()
+  - is()
+  - last()
+  - map()
+  - next()
+  - nextAll()
+  - nextUntil()
+  - not()
+  - parent()
+  - parents()
+  - parentsUntil()
+  - prev()
+  - prevAll()
+  - prevUntil()
+  - siblings()
+  - slice()
+</B>
+=========================================================================================================
+<B=f>Function: contains()
+& Function: contains() &
+ _____                 _   _               
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_)
+|  _|| |_| | | | | (__| |_| | (_) | | | |_ 
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_)
+                                           
+                 _        _            ____  
+  ___ ___  _ __ | |_ __ _(_)_ __  ___ / /\ \ 
+ / __/ _ \| '_ \| __/ _` | | '_ \/ __| |  | |
+| (_| (_) | | | | || (_| | | | | \__ \ |  | |
+ \___\___/|_| |_|\__\__,_|_|_| |_|___/ |  | |
+                                      \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: contains()
+
+On this page
+
+Function: contains()
+
+  contains(container, contained): boolean
+
+Defined in: src/static.ts:218
+
+Checks to see if the contained DOM element is a descendant of the container DOM element.
+
+Parameters
+
+container
+
+AnyNode
+
+Potential parent node.
+
+contained
+
+AnyNode
+
+Potential child node.
+
+Returns
+
+boolean
+
+Indicates if the nodes contain one another.
+
+Alias
+
+Cheerio.contains
+
+See
+
+https://api.jquery.com/jQuery.contains/
+
+[]Edit this page
+
+Previous
+
+Class: abstract Cheerio\<T\>
+
+Next
+
+Function: decodeStream()
+
+- Parameters
+  - container
+  - contained
+- Returns
+- Alias
+- See
+</B>
+=========================================================================================================
+<B=g>Function: decodeStream()
+& Function: decodeStream() &
+ _____                 _   _               
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_)
+|  _|| |_| | | | | (__| |_| | (_) | | | |_ 
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_)
+                                           
+     _                    _      ____  _                             ____  
+  __| | ___  ___ ___   __| | ___/ ___|| |_ _ __ ___  __ _ _ __ ___  / /\ \ 
+ / _` |/ _ \/ __/ _ \ / _` |/ _ \___ \| __| '__/ _ \/ _` | '_ ` _ \| |  | |
+| (_| |  __/ (_| (_) | (_| |  __/___) | |_| | |  __/ (_| | | | | | | |  | |
+ \__,_|\___|\___\___/ \__,_|\___|____/ \__|_|  \___|\__,_|_| |_| |_| |  | |
+                                                                    \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: decodeStream()
+
+On this page
+
+Function: decodeStream()
+
+  decodeStream(options, cb): Writable
+
+Defined in: src/index.ts:160
+
+Parses a stream of buffers into a document.
+
+The stream is a Writable stream that accepts buffers. When the stream is finished, the callback is called
+with the loaded document.
+
+Parameters
+
+options
+
+DecodeStreamOptions
+
+The options to pass to Cheerio.
+
+cb
+
+(err, $) => void
+
+The callback to call when the stream is finished.
+
+Returns
+
+Writable
+
+The writable stream.
+
+[]Edit this page
+
+Previous
+
+Function: contains()
+
+Next
+
+Function: fromURL()
+
+- Parameters
+  - options
+  - cb
+- Returns
+</B>
+=========================================================================================================
+<B=h>Function: fromURL()
+& Function: fromURL() &
+ _____                 _   _               
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_)
+|  _|| |_| | | | | (__| |_| | (_) | | | |_ 
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_)
+                                           
+  __                     _   _ ____  _      ____  
+ / _|_ __ ___  _ __ ___ | | | |  _ \| |    / /\ \ 
+| |_| '__/ _ \| '_ ` _ \| | | | |_) | |   | |  | |
+|  _| | | (_) | | | | | | |_| |  _ <| |___| |  | |
+|_| |_|  \___/|_| |_| |_|\___/|_| \_\_____| |  | |
+                                           \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: fromURL()
+
+On this page
+
+Function: fromURL()
+
+  fromURL(url, options): Promise<CheerioAPI>
+
+Defined in: src/index.ts:213
+
+fromURL loads a document from a URL.
+
+By default, redirects are allowed and non-2xx responses are rejected.
+
+Parameters
+
+url
+
+The URL to load the document from.
+
+string | URL
+
+options
+
+CheerioRequestOptions = {}
+
+The options to pass to Cheerio.
+
+Returns
+
+Promise<CheerioAPI>
+
+The loaded document.
+
+Example
+
+    import * as cheerio from 'cheerio';
+
+    const $ = await cheerio.fromURL('https://example.com');
+
+[][]
+
+[]Edit this page
+
+Previous
+
+Function: decodeStream()
+
+Next
+
+Function: load()
+
+- Parameters
+  - url
+  - options
+- Returns
+- Example
+</B>
+=========================================================================================================
+<B=i>Function: load()
+& Function: load() &
+ _____                 _   _                 _                 _  ____  
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _  | | ___   __ _  __| |/ /\ \ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_) | |/ _ \ / _` |/ _` | |  | |
+|  _|| |_| | | | | (__| |_| | (_) | | | |_  | | (_) | (_| | (_| | |  | |
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_) |_|\___/ \__,_|\__,_| |  | |
+                                                                 \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: load()
+
+On this page
+
+Function: load()
+
+  load(content, options?, isDocument?): CheerioAPI
+
+Defined in: src/load-parse.ts:31
+
+Create a querying function, bound to a document created from the provided markup.
+
+Note that similar to web browser contexts, this operation may introduce <html>, <head>, and <body>
+elements; set isDocument to false to switch to fragment mode and disable this.
+
+Parameters
+
+content
+
+Markup to be loaded.
+
+string | AnyNode | AnyNode[] | Buffer
+
+options?
+
+Options for the created instance.
+
+null | CheerioOptions
+
+isDocument?
+
+boolean
+
+Allows parser to be switched to fragment mode.
+
+Returns
+
+CheerioAPI
+
+The loaded document.
+
+See
+
+https://cheerio.js.org/docs/basics/loading#load for additional usage information.
+
+[]Edit this page
+
+Previous
+
+Function: fromURL()
+
+Next
+
+Function: loadBuffer()
+
+- Parameters
+  - content
+  - options?
+  - isDocument?
+- Returns
+- See
+</B>
+=========================================================================================================
+<B=j>Function: loadBuffer()
+& Function: loadBuffer() &
+ _____                 _   _               
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_)
+|  _|| |_| | | | | (__| |_| | (_) | | | |_ 
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_)
+                                           
+ _                 _ ____         __  __            ____  
+| | ___   __ _  __| | __ ) _   _ / _|/ _| ___ _ __ / /\ \ 
+| |/ _ \ / _` |/ _` |  _ \| | | | |_| |_ / _ \ '__| |  | |
+| | (_) | (_| | (_| | |_) | |_| |  _|  _|  __/ |  | |  | |
+|_|\___/ \__,_|\__,_|____/ \__,_|_| |_|  \___|_|  | |  | |
+                                                   \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: loadBuffer()
+
+On this page
+
+Function: loadBuffer()
+
+  loadBuffer(buffer, options): CheerioAPI
+
+Defined in: src/index.ts:53
+
+Sniffs the encoding of a buffer, then creates a querying function bound to a document created from the
+buffer.
+
+Parameters
+
+buffer
+
+Buffer
+
+The buffer to sniff the encoding of.
+
+options
+
+DecodeStreamOptions = {}
+
+The options to pass to Cheerio.
+
+Returns
+
+CheerioAPI
+
+The loaded document.
+
+Example
+
+    import * as cheerio from 'cheerio';
+
+    const buffer = fs.readFileSync('index.html');
+    const $ = cheerio.loadBuffer(buffer);
+
+[][]
+
+[]Edit this page
+
+Previous
+
+Function: load()
+
+Next
+
+Function: merge()
+
+- Parameters
+  - buffer
+  - options
+- Returns
+- Example
+</B>
+=========================================================================================================
+<B=k>Function: merge()
+& Function: merge() &
+ _____                 _   _               
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_)
+|  _|| |_| | | | | (__| |_| | (_) | | | |_ 
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_)
+                                           
+                                ____  
+ _ __ ___   ___ _ __ __ _  ___ / /\ \ 
+| '_ ` _ \ / _ \ '__/ _` |/ _ \ |  | |
+| | | | | |  __/ | | (_| |  __/ |  | |
+|_| |_| |_|\___|_|  \__, |\___| |  | |
+                    |___/      \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: merge()
+
+On this page
+
+Function: merge()
+
+  merge<T>(arr1, arr2): ArrayLike<T> | undefined
+
+Defined in: src/static.ts:267
+
+$.merge().
+
+Type Parameters
+
+• T
+
+Parameters
+
+arr1
+
+Writable<ArrayLike<T>>
+
+First array.
+
+arr2
+
+ArrayLike<T>
+
+Second array.
+
+Returns
+
+ArrayLike<T> | undefined
+
+arr1, with elements of arr2 inserted.
+
+Alias
+
+Cheerio.merge
+
+See
+
+https://api.jquery.com/jQuery.merge/
+
+[]Edit this page
+
+Previous
+
+Function: loadBuffer()
+
+Next
+
+Function: stringStream()
+
+- Type Parameters
+- Parameters
+  - arr1
+  - arr2
+- Returns
+- Alias
+- See
+</B>
+=========================================================================================================
+<B=l>Function: stringStream()
+& Function: stringStream() &
+ _____                 _   _               
+|  ___|   _ _ __   ___| |_(_) ___  _ __  _ 
+| |_ | | | | '_ \ / __| __| |/ _ \| '_ \(_)
+|  _|| |_| | | | | (__| |_| | (_) | | | |_ 
+|_|   \__,_|_| |_|\___|\__|_|\___/|_| |_(_)
+                                           
+     _        _             ____  _                             ____  
+ ___| |_ _ __(_)_ __   __ _/ ___|| |_ _ __ ___  __ _ _ __ ___  / /\ \ 
+/ __| __| '__| | '_ \ / _` \___ \| __| '__/ _ \/ _` | '_ ` _ \| |  | |
+\__ \ |_| |  | | | | | (_| |___) | |_| | |  __/ (_| | | | | | | |  | |
+|___/\__|_|  |_|_| |_|\__, |____/ \__|_|  \___|\__,_|_| |_| |_| |  | |
+                      |___/                                    \_\/_/ 
+- []
+- cheerio
+- functions
+- Function: stringStream()
+
+On this page
+
+Function: stringStream()
+
+  stringStream(options, cb): Writable
+
+Defined in: src/index.ts:138
+
+Creates a stream that parses a sequence of strings into a document.
+
+The stream is a Writable stream that accepts strings. When the stream is finished, the callback is called
+with the loaded document.
+
+Parameters
+
+options
+
+CheerioOptions
+
+The options to pass to Cheerio.
+
+cb
+
+(err, $) => void
+
+The callback to call when the stream is finished.
+
+Returns
+
+Writable
+
+The writable stream.
+
+Example
+
+    import * as cheerio from 'cheerio';
+    import * as fs from 'fs';
+
+    const writeStream = cheerio.stringStream({}, (err, $) => {
+      if (err) {
+        // Handle error
+      }
+
+      console.log($('h1').text());
+      // Output: Hello, world!
+    });
+
+    fs.createReadStream('my-document.html', { encoding: 'utf8' }).pipe(
+      writeStream,
+    );
+
+[][]
+
+[]Edit this page
+
+Previous
+
+Function: merge()
+
+Next
+
+Interface: CheerioAPI()
+
+- Parameters
+  - options
+  - cb
+- Returns
+- Example
+</B>
+=========================================================================================================
+<B=m>Interface: CheerioAPI()
+& Interface: CheerioAPI() &
+ ___       _             __                  
+|_ _|_ __ | |_ ___ _ __ / _| __ _  ___ ___ _ 
+ | || '_ \| __/ _ \ '__| |_ / _` |/ __/ _ (_)
+ | || | | | ||  __/ |  |  _| (_| | (_|  __/_ 
+|___|_| |_|\__\___|_|  |_|  \__,_|\___\___(_)
+                                             
+  ____ _                    _         _    ____ ___  ____  
+ / ___| |__   ___  ___ _ __(_) ___   / \  |  _ \_ _|/ /\ \ 
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \ / _ \ | |_) | || |  | |
+| |___| | | |  __/  __/ |  | | (_) / ___ \|  __/| || |  | |
+ \____|_| |_|\___|\___|_|  |_|\___/_/   \_\_|  |___| |  | |
+                                                    \_\/_/ 
+- []
+- cheerio
+- interfaces
+- Interface: CheerioAPI()
+
+On this page
+
+Interface: CheerioAPI()
+
+Defined in: src/load.ts:21
+
+A querying function, bound to a document created from the provided markup.
+
+Also provides several helper methods for dealing with the document as a whole.
+
+Extends
+
+- StaticType
+
+  CheerioAPI<T, S>(selector?, context?, root?, options?): Cheerio<S extends SelectorType ? Element : T>
+
+Defined in: src/load.ts:67
+
+A querying function, bound to a document created from the provided markup.
+
+Also provides several helper methods for dealing with the document as a whole.
+
+Type Parameters
+
+• T extends AnyNode
+
+• S extends string
+
+Parameters
+
+selector?
+
+Either a selector to look for within the document, or the contents of a new Cheerio instance.
+
+S | BasicAcceptedElems<T>
+
+context?
+
+Either a selector to look for within the root, or the contents of the document to query.
+
+null | BasicAcceptedElems<AnyNode>
+
+root?
+
+BasicAcceptedElems<Document>
+
+Optional HTML document string.
+
+options?
+
+CheerioOptions
+
+Returns
+
+Cheerio<S extends SelectorType ? Element : T>
+
+Example
+
+    $('ul .pear').attr('class');
+    //=> pear
+
+    $('li[class=orange]').html();
+    //=> Orange
+
+    $('.apple', '#fruits').text();
+    //=> Apple
+
+[][]
+
+Optionally, you can also load HTML by passing the string as the selector:
+
+    $('<ul id="fruits">...</ul>');
+
+[][]
+
+Or the context:
+
+    $('ul', '<ul id="fruits">...</ul>');
+
+[][]
+
+Or as the root:
+
+    $('li', 'ul', '<ul id="fruits">...</ul>');
+
+[][]
+
+Deprecated
+
+~~load()~~
+
+  load: (content, options?, isDocument) => CheerioAPI
+
+Defined in: src/load.ts:104
+
+The .load static method defined on the "loaded" Cheerio factory function is deprecated. Users are
+encouraged to instead use the load function exported by the Cheerio module.
+
+Parameters
+
+content
+
+string | AnyNode | AnyNode[] | Buffer
+
+options?
+
+null | CheerioOptions
+
+isDocument?
+
+boolean = true
+
+Returns
+
+CheerioAPI
+
+Deprecated
+
+Use the load function exported by the Cheerio module.
+
+Example
+
+    const $ = cheerio.load('<h1>Hello, <span>world</span>.</h1>');
+
+[][]
+
+Other
+
+fn
+
+  fn: Cheerio<any>
+
+Defined in: src/load.ts:89
+
+Mimic jQuery's prototype alias for plugin authors.
+
+---------------------------------------------------------------------------------------------------------
+
+contains
+
+Re-exports contains
+
+---------------------------------------------------------------------------------------------------------
+
+merge
+
+Re-exports merge
+
+Static
+
+extract()
+
+  extract<M>(this, map): ExtractedMap<M>
+
+Defined in: src/static.ts:248
+
+Extract multiple values from a document, and store them in an object.
+
+Type Parameters
+
+• M extends ExtractMap
+
+Parameters
+
+this
+
+CheerioAPI
+
+map
+
+M
+
+An object containing key-value pairs. The keys are the names of the properties to be created on the
+object, and the values are the selectors to be used to extract the values.
+
+Returns
+
+ExtractedMap<M>
+
+An object containing the extracted values.
+
+Inherited from
+
+StaticType.extract
+
+---------------------------------------------------------------------------------------------------------
+
+html()
+
+Call Signature
+
+  html(this, options?): string
+
+Defined in: src/static.ts:58
+
+Renders the document.
+
+Parameters
+
+this
+
+CheerioAPI
+
+options?
+
+CheerioOptions
+
+Options for the renderer.
+
+Returns
+
+string
+
+The rendered document.
+
+Inherited from
+
+StaticType.html
+
+Call Signature
+
+  html(this, dom?, options?): string
+
+Defined in: src/static.ts:67
+
+Renders the document.
+
+Parameters
+
+this
+
+CheerioAPI
+
+dom?
+
+BasicAcceptedElems<AnyNode>
+
+Element to render.
+
+options?
+
+CheerioOptions
+
+Options for the renderer.
+
+Returns
+
+string
+
+The rendered document.
+
+Inherited from
+
+StaticType.html
+
+---------------------------------------------------------------------------------------------------------
+
+parseHTML()
+
+Call Signature
+
+  parseHTML(this, data, context?, keepScripts?): AnyNode[]
+
+Defined in: src/static.ts:152
+
+Parses a string into an array of DOM nodes. The context argument has no meaning for Cheerio, but it is
+maintained for API compatibility with jQuery.
+
+Parameters
+
+this
+
+CheerioAPI
+
+data
+
+string
+
+Markup that will be parsed.
+
+context?
+
+unknown
+
+Will be ignored. If it is a boolean it will be used as the value of keepScripts.
+
+keepScripts?
+
+boolean
+
+If false all scripts will be removed.
+
+Returns
+
+AnyNode[]
+
+The parsed DOM.
+
+Alias
+
+Cheerio.parseHTML
+
+See
+
+https://api.jquery.com/jQuery.parseHTML/
+
+Inherited from
+
+StaticType.parseHTML
+
+Call Signature
+
+  parseHTML(this, data?): null
+
+Defined in: src/static.ts:158
+
+Parses a string into an array of DOM nodes. The context argument has no meaning for Cheerio, but it is
+maintained for API compatibility with jQuery.
+
+Parameters
+
+this
+
+CheerioAPI
+
+data?
+
+Markup that will be parsed.
+
+null | ""
+
+Returns
+
+null
+
+The parsed DOM.
+
+Alias
+
+Cheerio.parseHTML
+
+See
+
+https://api.jquery.com/jQuery.parseHTML/
+
+Inherited from
+
+StaticType.parseHTML
+
+---------------------------------------------------------------------------------------------------------
+
+root()
+
+  root(this): Cheerio<Document>
+
+Defined in: src/static.ts:203
+
+Sometimes you need to work with the top-level root element. To query it, you can use $.root().
+
+Parameters
+
+this
+
+CheerioAPI
+
+Returns
+
+Cheerio<Document>
+
+Cheerio instance wrapping the root node.
+
+Example
+
+    $.root().append('<ul id="vegetables"></ul>').html();
+    //=> <ul id="fruits">...</ul><ul id="vegetables"></ul>
+
+[][]
+
+Alias
+
+Cheerio.root
+
+Inherited from
+
+StaticType.root
+
+---------------------------------------------------------------------------------------------------------
+
+text()
+
+  text(this, elements?): string
+
+Defined in: src/static.ts:124
+
+Render the document as text.
+
+This returns the textContent of the passed elements. The result will include the contents of <script> and
+<style> elements. To avoid this, use .prop('innerText') instead.
+
+Parameters
+
+this
+
+void | CheerioAPI
+
+elements?
+
+ArrayLike<AnyNode>
+
+Elements to render.
+
+Returns
+
+string
+
+The rendered document.
+
+Inherited from
+
+StaticType.text
+
+---------------------------------------------------------------------------------------------------------
+
+xml()
+
+  xml(this, dom?): string
+
+Defined in: src/static.ts:104
+
+Render the document as XML.
+
+Parameters
+
+this
+
+CheerioAPI
+
+dom?
+
+BasicAcceptedElems<AnyNode>
+
+Element to render.
+
+Returns
+
+string
+
+THe rendered document.
+
+Inherited from
+
+StaticType.xml
+
+[]Edit this page
+
+Previous
+
+Function: stringStream()
+
+Next
+
+Interface: CheerioOptions
+
+- Extends
+- Type Parameters
+- Parameters
+  - selector?
+  - context?
+  - root?
+  - options?
+- Returns
+- Example
+- Deprecated
+  - ~~load()~~
+- Other
+  - fn
+  - contains
+  - merge
+- Static
+  - extract()
+  - html()
+  - parseHTML()
+  - root()
+  - text()
+  - xml()
+</B>
+=========================================================================================================
+<B=n>Interface: CheerioOptions
+& Interface: CheerioOptions &
+ ___       _             __                  
+|_ _|_ __ | |_ ___ _ __ / _| __ _  ___ ___ _ 
+ | || '_ \| __/ _ \ '__| |_ / _` |/ __/ _ (_)
+ | || | | | ||  __/ |  |  _| (_| | (_|  __/_ 
+|___|_| |_|\__\___|_|  |_|  \__,_|\___\___(_)
+                                             
+  ____ _                    _        ___        _   _                 
+ / ___| |__   ___  ___ _ __(_) ___  / _ \ _ __ | |_(_) ___  _ __  ___ 
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \| | | | '_ \| __| |/ _ \| '_ \/ __|
+| |___| | | |  __/  __/ |  | | (_) | |_| | |_) | |_| | (_) | | | \__ \
+ \____|_| |_|\___|\___|_|  |_|\___/ \___/| .__/ \__|_|\___/|_| |_|___/
+                                         |_|                          
+- []
+- cheerio
+- interfaces
+- Interface: CheerioOptions
+
+On this page
+
+Interface: CheerioOptions
+
+Defined in: src/options.ts:22
+
+Options accepted by Cheerio.
+
+Please note that parser-specific options are only recognized if the relevant parser is used.
+
+Extends
+
+- ParserOptions<Htmlparser2TreeAdapterMap>
+
+Extended by
+
+- DecodeStreamOptions
+
+Properties
+
+baseURI?
+
+  optional baseURI: string | URL
+
+Defined in: src/options.ts:42
+
+The base URI for the document. Used to resolve the href and src props.
+
+---------------------------------------------------------------------------------------------------------
+
+onParseError?
+
+  optional onParseError: null | ParserErrorHandler
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:63
+
+Callback for parse errors.
+
+Default
+
+null
+
+Inherited from
+
+Parse5ParserOptions.onParseError
+
+---------------------------------------------------------------------------------------------------------
+
+pseudos?
+
+  optional pseudos: Record<string, string | (elem, value?) => boolean>
+
+Defined in: src/options.ts:81
+
+Extension point for pseudo-classes.
+
+Maps from names to either strings of functions.
+
+- A string value is a selector that the element must match to be selected.
+- A function is called with the element as its first argument, and optional parameters second. If it
+  returns true, the element is selected.
+
+Example
+
+    const $ = cheerio.load(
+      '<div class="foo"></div><div data-bar="boo"></div>',
+      {
+        pseudos: {
+          // `:foo` is an alias for `div.foo`
+          foo: 'div.foo',
+          // `:bar(val)` is equivalent to `[data-bar=val s]`
+          bar: (el, val) => el.attribs['data-bar'] === val,
+        },
+      },
+    );
+
+    $(':foo').length; // 1
+    $('div:bar(boo)').length; // 1
+    $('div:bar(baz)').length; // 0
+
+[][]
+
+---------------------------------------------------------------------------------------------------------
+
+quirksMode?
+
+  optional quirksMode: boolean
+
+Defined in: src/options.ts:51
+
+Is the document in quirks mode?
+
+This will lead to .className and #id being case-insensitive.
+
+Default
+
+    false
+
+[][]
+
+---------------------------------------------------------------------------------------------------------
+
+scriptingEnabled?
+
+  optional scriptingEnabled: boolean
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:40
+
+The scripting flag. If set to true, noscript element content will be parsed as text.
+
+Default
+
+true
+
+Inherited from
+
+Parse5ParserOptions.scriptingEnabled
+
+---------------------------------------------------------------------------------------------------------
+
+sourceCodeLocationInfo?
+
+  optional sourceCodeLocationInfo: boolean
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:51
+
+Enables source code location information. When enabled, each node (except the root node) will have a
+sourceCodeLocation property. If the node is not an empty element, sourceCodeLocation will be a
+ElementLocation object, otherwise it will be Location. If the element was implicitly created by the
+parser (as part of tree correction), its sourceCodeLocation property will be undefined.
+
+Default
+
+false
+
+Inherited from
+
+Parse5ParserOptions.sourceCodeLocationInfo
+
+---------------------------------------------------------------------------------------------------------
+
+treeAdapter?
+
+  optional treeAdapter: TreeAdapter<Htmlparser2TreeAdapterMap>
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:57
+
+Specifies the resulting tree format.
+
+Default
+
+treeAdapters.default
+
+Inherited from
+
+Parse5ParserOptions.treeAdapter
+
+---------------------------------------------------------------------------------------------------------
+
+xml?
+
+  optional xml: boolean | HTMLParser2Options
+
+Defined in: src/options.ts:31
+
+Recommended way of configuring htmlparser2 when wanting to parse XML.
+
+This will switch Cheerio to use htmlparser2.
+
+Default
+
+    false
+
+[][]
+
+---------------------------------------------------------------------------------------------------------
+
+~~xmlMode?~~
+
+  optional xmlMode: boolean
+
+Defined in: src/options.ts:39
+
+Enable xml mode, which will switch Cheerio to use htmlparser2.
+
+Deprecated
+
+Please use the xml option instead.
+
+Default
+
+    false
+
+[][]
+
+[]Edit this page
+
+Previous
+
+Interface: CheerioAPI()
+
+Next
+
+Interface: CheerioRequestOptions
+
+- Extends
+- Extended by
+- Properties
+  - baseURI?
+  - onParseError?
+  - pseudos?
+  - quirksMode?
+  - scriptingEnabled?
+  - sourceCodeLocationInfo?
+  - treeAdapter?
+  - xml?
+  - ~~xmlMode?~~
+</B>
+=========================================================================================================
+<B=o>Interface: CheerioRequestOptions
+& Interface: CheerioRequestOptions &
+ ___       _             __                  
+|_ _|_ __ | |_ ___ _ __ / _| __ _  ___ ___ _ 
+ | || '_ \| __/ _ \ '__| |_ / _` |/ __/ _ (_)
+ | || | | | ||  __/ |  |  _| (_| | (_|  __/_ 
+|___|_| |_|\__\___|_|  |_|  \__,_|\___\___(_)
+                                             
+  ____ _                    _       ____                            _    ___  
+ / ___| |__   ___  ___ _ __(_) ___ |  _ \ ___  __ _ _   _  ___  ___| |_ / _ \ 
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \| |_) / _ \/ _` | | | |/ _ \/ __| __| | | |
+| |___| | | |  __/  __/ |  | | (_) |  _ <  __/ (_| | |_| |  __/\__ \ |_| |_| |
+ \____|_| |_|\___|\___|_|  |_|\___/|_| \_\___|\__, |\__,_|\___||___/\__|\___/ 
+                                                 |_|                          
+       _   _                 
+ _ __ | |_(_) ___  _ __  ___ 
+| '_ \| __| |/ _ \| '_ \/ __|
+| |_) | |_| | (_) | | | \__ \
+| .__/ \__|_|\___/|_| |_|___/
+|_|                          
+- []
+- cheerio
+- interfaces
+- Interface: CheerioRequestOptions
+
+On this page
+
+Interface: CheerioRequestOptions
+
+Defined in: src/index.ts:180
+
+Options accepted by Cheerio.
+
+Please note that parser-specific options are only recognized if the relevant parser is used.
+
+Extends
+
+- DecodeStreamOptions
+
+Properties
+
+baseURI?
+
+  optional baseURI: string | URL
+
+Defined in: src/options.ts:42
+
+The base URI for the document. Used to resolve the href and src props.
+
+Inherited from
+
+DecodeStreamOptions.baseURI
+
+---------------------------------------------------------------------------------------------------------
+
+encoding?
+
+  optional encoding: SnifferOptions
+
+Defined in: src/index.ts:146
+
+Inherited from
+
+DecodeStreamOptions.encoding
+
+---------------------------------------------------------------------------------------------------------
+
+onParseError?
+
+  optional onParseError: null | ParserErrorHandler
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:63
+
+Callback for parse errors.
+
+Default
+
+null
+
+Inherited from
+
+DecodeStreamOptions.onParseError
+
+---------------------------------------------------------------------------------------------------------
+
+pseudos?
+
+  optional pseudos: Record<string, string | (elem, value?) => boolean>
+
+Defined in: src/options.ts:81
+
+Extension point for pseudo-classes.
+
+Maps from names to either strings of functions.
+
+- A string value is a selector that the element must match to be selected.
+- A function is called with the element as its first argument, and optional parameters second. If it
+  returns true, the element is selected.
+
+Example
+
+    const $ = cheerio.load(
+      '<div class="foo"></div><div data-bar="boo"></div>',
+      {
+        pseudos: {
+          // `:foo` is an alias for `div.foo`
+          foo: 'div.foo',
+          // `:bar(val)` is equivalent to `[data-bar=val s]`
+          bar: (el, val) => el.attribs['data-bar'] === val,
+        },
+      },
+    );
+
+    $(':foo').length; // 1
+    $('div:bar(boo)').length; // 1
+    $('div:bar(baz)').length; // 0
+
+[][]
+
+Inherited from
+
+DecodeStreamOptions.pseudos
+
+---------------------------------------------------------------------------------------------------------
+
+quirksMode?
+
+  optional quirksMode: boolean
+
+Defined in: src/options.ts:51
+
+Is the document in quirks mode?
+
+This will lead to .className and #id being case-insensitive.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+DecodeStreamOptions.quirksMode
+
+---------------------------------------------------------------------------------------------------------
+
+requestOptions?
+
+  optional requestOptions: object & Omit<RequestOptions<unknown>, "origin" | "path">
+
+Defined in: src/index.ts:182
+
+The options passed to undici's stream method.
+
+Type declaration
+
+dispatcher?
+
+  optional dispatcher: Dispatcher
+
+---------------------------------------------------------------------------------------------------------
+
+scriptingEnabled?
+
+  optional scriptingEnabled: boolean
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:40
+
+The scripting flag. If set to true, noscript element content will be parsed as text.
+
+Default
+
+true
+
+Inherited from
+
+DecodeStreamOptions.scriptingEnabled
+
+---------------------------------------------------------------------------------------------------------
+
+sourceCodeLocationInfo?
+
+  optional sourceCodeLocationInfo: boolean
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:51
+
+Enables source code location information. When enabled, each node (except the root node) will have a
+sourceCodeLocation property. If the node is not an empty element, sourceCodeLocation will be a
+ElementLocation object, otherwise it will be Location. If the element was implicitly created by the
+parser (as part of tree correction), its sourceCodeLocation property will be undefined.
+
+Default
+
+false
+
+Inherited from
+
+DecodeStreamOptions.sourceCodeLocationInfo
+
+---------------------------------------------------------------------------------------------------------
+
+treeAdapter?
+
+  optional treeAdapter: TreeAdapter<Htmlparser2TreeAdapterMap>
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:57
+
+Specifies the resulting tree format.
+
+Default
+
+treeAdapters.default
+
+Inherited from
+
+DecodeStreamOptions.treeAdapter
+
+---------------------------------------------------------------------------------------------------------
+
+xml?
+
+  optional xml: boolean | HTMLParser2Options
+
+Defined in: src/options.ts:31
+
+Recommended way of configuring htmlparser2 when wanting to parse XML.
+
+This will switch Cheerio to use htmlparser2.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+DecodeStreamOptions.xml
+
+---------------------------------------------------------------------------------------------------------
+
+~~xmlMode?~~
+
+  optional xmlMode: boolean
+
+Defined in: src/options.ts:39
+
+Enable xml mode, which will switch Cheerio to use htmlparser2.
+
+Deprecated
+
+Please use the xml option instead.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+DecodeStreamOptions.xmlMode
+
+[]Edit this page
+
+Previous
+
+Interface: CheerioOptions
+
+Next
+
+Interface: DecodeStreamOptions
+
+- Extends
+- Properties
+  - baseURI?
+  - encoding?
+  - onParseError?
+  - pseudos?
+  - quirksMode?
+  - requestOptions?
+  - scriptingEnabled?
+  - sourceCodeLocationInfo?
+  - treeAdapter?
+  - xml?
+  - ~~xmlMode?~~
+</B>
+=========================================================================================================
+<B=p>Interface: DecodeStreamOptions
+& Interface: DecodeStreamOptions &
+ ___       _             __                  
+|_ _|_ __ | |_ ___ _ __ / _| __ _  ___ ___ _ 
+ | || '_ \| __/ _ \ '__| |_ / _` |/ __/ _ (_)
+ | || | | | ||  __/ |  |  _| (_| | (_|  __/_ 
+|___|_| |_|\__\___|_|  |_|  \__,_|\___\___(_)
+                                             
+ ____                     _      ____  _                             ___  
+|  _ \  ___  ___ ___   __| | ___/ ___|| |_ _ __ ___  __ _ _ __ ___  / _ \ 
+| | | |/ _ \/ __/ _ \ / _` |/ _ \___ \| __| '__/ _ \/ _` | '_ ` _ \| | | |
+| |_| |  __/ (_| (_) | (_| |  __/___) | |_| | |  __/ (_| | | | | | | |_| |
+|____/ \___|\___\___/ \__,_|\___|____/ \__|_|  \___|\__,_|_| |_| |_|\___/ 
+                                                                          
+       _   _                 
+ _ __ | |_(_) ___  _ __  ___ 
+| '_ \| __| |/ _ \| '_ \/ __|
+| |_) | |_| | (_) | | | \__ \
+| .__/ \__|_|\___/|_| |_|___/
+|_|                          
+- []
+- cheerio
+- interfaces
+- Interface: DecodeStreamOptions
+
+On this page
+
+Interface: DecodeStreamOptions
+
+Defined in: src/index.ts:145
+
+Options accepted by Cheerio.
+
+Please note that parser-specific options are only recognized if the relevant parser is used.
+
+Extends
+
+- CheerioOptions
+
+Extended by
+
+- CheerioRequestOptions
+
+Properties
+
+baseURI?
+
+  optional baseURI: string | URL
+
+Defined in: src/options.ts:42
+
+The base URI for the document. Used to resolve the href and src props.
+
+Inherited from
+
+CheerioOptions.baseURI
+
+---------------------------------------------------------------------------------------------------------
+
+encoding?
+
+  optional encoding: SnifferOptions
+
+Defined in: src/index.ts:146
+
+---------------------------------------------------------------------------------------------------------
+
+onParseError?
+
+  optional onParseError: null | ParserErrorHandler
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:63
+
+Callback for parse errors.
+
+Default
+
+null
+
+Inherited from
+
+CheerioOptions.onParseError
+
+---------------------------------------------------------------------------------------------------------
+
+pseudos?
+
+  optional pseudos: Record<string, string | (elem, value?) => boolean>
+
+Defined in: src/options.ts:81
+
+Extension point for pseudo-classes.
+
+Maps from names to either strings of functions.
+
+- A string value is a selector that the element must match to be selected.
+- A function is called with the element as its first argument, and optional parameters second. If it
+  returns true, the element is selected.
+
+Example
+
+    const $ = cheerio.load(
+      '<div class="foo"></div><div data-bar="boo"></div>',
+      {
+        pseudos: {
+          // `:foo` is an alias for `div.foo`
+          foo: 'div.foo',
+          // `:bar(val)` is equivalent to `[data-bar=val s]`
+          bar: (el, val) => el.attribs['data-bar'] === val,
+        },
+      },
+    );
+
+    $(':foo').length; // 1
+    $('div:bar(boo)').length; // 1
+    $('div:bar(baz)').length; // 0
+
+[][]
+
+Inherited from
+
+CheerioOptions.pseudos
+
+---------------------------------------------------------------------------------------------------------
+
+quirksMode?
+
+  optional quirksMode: boolean
+
+Defined in: src/options.ts:51
+
+Is the document in quirks mode?
+
+This will lead to .className and #id being case-insensitive.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+CheerioOptions.quirksMode
+
+---------------------------------------------------------------------------------------------------------
+
+scriptingEnabled?
+
+  optional scriptingEnabled: boolean
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:40
+
+The scripting flag. If set to true, noscript element content will be parsed as text.
+
+Default
+
+true
+
+Inherited from
+
+CheerioOptions.scriptingEnabled
+
+---------------------------------------------------------------------------------------------------------
+
+sourceCodeLocationInfo?
+
+  optional sourceCodeLocationInfo: boolean
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:51
+
+Enables source code location information. When enabled, each node (except the root node) will have a
+sourceCodeLocation property. If the node is not an empty element, sourceCodeLocation will be a
+ElementLocation object, otherwise it will be Location. If the element was implicitly created by the
+parser (as part of tree correction), its sourceCodeLocation property will be undefined.
+
+Default
+
+false
+
+Inherited from
+
+CheerioOptions.sourceCodeLocationInfo
+
+---------------------------------------------------------------------------------------------------------
+
+treeAdapter?
+
+  optional treeAdapter: TreeAdapter<Htmlparser2TreeAdapterMap>
+
+Defined in: node_modules/parse5/dist/parser/index.d.ts:57
+
+Specifies the resulting tree format.
+
+Default
+
+treeAdapters.default
+
+Inherited from
+
+CheerioOptions.treeAdapter
+
+---------------------------------------------------------------------------------------------------------
+
+xml?
+
+  optional xml: boolean | HTMLParser2Options
+
+Defined in: src/options.ts:31
+
+Recommended way of configuring htmlparser2 when wanting to parse XML.
+
+This will switch Cheerio to use htmlparser2.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+CheerioOptions.xml
+
+---------------------------------------------------------------------------------------------------------
+
+~~xmlMode?~~
+
+  optional xmlMode: boolean
+
+Defined in: src/options.ts:39
+
+Enable xml mode, which will switch Cheerio to use htmlparser2.
+
+Deprecated
+
+Please use the xml option instead.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+CheerioOptions.xmlMode
+
+[]Edit this page
+
+Previous
+
+Interface: CheerioRequestOptions
+
+Next
+
+Interface: HTMLParser2Options
+
+- Extends
+- Extended by
+- Properties
+  - baseURI?
+  - encoding?
+  - onParseError?
+  - pseudos?
+  - quirksMode?
+  - scriptingEnabled?
+  - sourceCodeLocationInfo?
+  - treeAdapter?
+  - xml?
+  - ~~xmlMode?~~
+</B>
+=========================================================================================================
+<B=q>Interface: HTMLParser2Options
+& Interface: HTMLParser2Options &
+ ___       _             __                  
+|_ _|_ __ | |_ ___ _ __ / _| __ _  ___ ___ _ 
+ | || '_ \| __/ _ \ '__| |_ / _` |/ __/ _ (_)
+ | || | | | ||  __/ |  |  _| (_| | (_|  __/_ 
+|___|_| |_|\__\___|_|  |_|  \__,_|\___\___(_)
+                                             
+ _   _ _____ __  __ _     ____                         ____   ___        _   _ 
+| | | |_   _|  \/  | |   |  _ \ __ _ _ __ ___  ___ _ _|___ \ / _ \ _ __ | |_(_)
+| |_| | | | | |\/| | |   | |_) / _` | '__/ __|/ _ \ '__|__) | | | | '_ \| __| |
+|  _  | | | | |  | | |___|  __/ (_| | |  \__ \  __/ |  / __/| |_| | |_) | |_| |
+|_| |_| |_| |_|  |_|_____|_|   \__,_|_|  |___/\___|_| |_____|\___/| .__/ \__|_|
+                                                                  |_|          
+                 
+  ___  _ __  ___ 
+ / _ \| '_ \/ __|
+| (_) | | | \__ \
+ \___/|_| |_|___/
+                 
+- []
+- cheerio
+- interfaces
+- Interface: HTMLParser2Options
+
+On this page
+
+Interface: HTMLParser2Options
+
+Defined in: src/options.ts:12
+
+Options accepted by htmlparser2, the default parser for XML.
+
+See
+
+https://github.com/fb55/htmlparser2/wiki/Parser-options
+
+Extends
+
+- DomHandlerOptions.ParserOptions
+
+Properties
+
+decodeEntities?
+
+  optional decodeEntities: boolean
+
+Defined in: node_modules/htmlparser2/dist/esm/Parser.d.ts:17
+
+Decode entities within the document.
+
+Default
+
+    true
+
+[][]
+
+Inherited from
+
+HTMLParser2ParserOptions.decodeEntities
+
+---------------------------------------------------------------------------------------------------------
+
+lowerCaseAttributeNames?
+
+  optional lowerCaseAttributeNames: boolean
+
+Defined in: node_modules/htmlparser2/dist/esm/Parser.d.ts:29
+
+If set to true, all attribute names will be lowercased. This has noticeable impact on speed.
+
+Default
+
+    !xmlMode
+
+[][]
+
+Inherited from
+
+HTMLParser2ParserOptions.lowerCaseAttributeNames
+
+---------------------------------------------------------------------------------------------------------
+
+lowerCaseTags?
+
+  optional lowerCaseTags: boolean
+
+Defined in: node_modules/htmlparser2/dist/esm/Parser.d.ts:23
+
+If set to true, all tags will be lowercased.
+
+Default
+
+    !xmlMode
+
+[][]
+
+Inherited from
+
+HTMLParser2ParserOptions.lowerCaseTags
+
+---------------------------------------------------------------------------------------------------------
+
+recognizeCDATA?
+
+  optional recognizeCDATA: boolean
+
+Defined in: node_modules/htmlparser2/dist/esm/Parser.d.ts:36
+
+If set to true, CDATA sections will be recognized as text even if the xmlMode option is not enabled.
+NOTE: If xmlMode is set to true then CDATA sections will always be recognized as text.
+
+Default
+
+    xmlMode
+
+[][]
+
+Inherited from
+
+HTMLParser2ParserOptions.recognizeCDATA
+
+---------------------------------------------------------------------------------------------------------
+
+recognizeSelfClosing?
+
+  optional recognizeSelfClosing: boolean
+
+Defined in: node_modules/htmlparser2/dist/esm/Parser.d.ts:43
+
+If set to true, self-closing tags will trigger the onclosetag event even if xmlMode is not set to true.
+NOTE: If xmlMode is set to true then self-closing tags will always be recognized.
+
+Default
+
+    xmlMode
+
+[][]
+
+Inherited from
+
+HTMLParser2ParserOptions.recognizeSelfClosing
+
+---------------------------------------------------------------------------------------------------------
+
+Tokenizer?
+
+  optional Tokenizer: typeof default
+
+Defined in: node_modules/htmlparser2/dist/esm/Parser.d.ts:47
+
+Allows the default tokenizer to be overwritten.
+
+Inherited from
+
+HTMLParser2ParserOptions.Tokenizer
+
+---------------------------------------------------------------------------------------------------------
+
+withEndIndices?
+
+  optional withEndIndices: boolean
+
+Defined in: node_modules/domhandler/lib/esm/index.d.ts:19
+
+Add an endIndex property to nodes. When the parser is used in a non-streaming fashion, endIndex is an
+integer indicating the position of the end of the node in the document.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+DomHandlerOptions.withEndIndices
+
+---------------------------------------------------------------------------------------------------------
+
+withStartIndices?
+
+  optional withStartIndices: boolean
+
+Defined in: node_modules/domhandler/lib/esm/index.d.ts:11
+
+Add a startIndex property to nodes. When the parser is used in a non-streaming fashion, startIndex is an
+integer indicating the position of the start of the node in the document.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+DomHandlerOptions.withStartIndices
+
+---------------------------------------------------------------------------------------------------------
+
+xmlMode?
+
+  optional xmlMode: boolean
+
+Defined in: node_modules/domhandler/lib/esm/index.d.ts:25
+
+Treat the markup as XML.
+
+Default
+
+    false
+
+[][]
+
+Inherited from
+
+DomHandlerOptions.xmlMode
+
+[]Edit this page
+
+Previous
+
+Interface: DecodeStreamOptions
+
+Next
+
+Type Alias: AcceptedElems\<T\>
+
+- See
+- Extends
+- Properties
+  - decodeEntities?
+  - lowerCaseAttributeNames?
+  - lowerCaseTags?
+  - recognizeCDATA?
+  - recognizeSelfClosing?
+  - Tokenizer?
+  - withEndIndices?
+  - withStartIndices?
+  - xmlMode?
+</B>
+=========================================================================================================
+<B=r>Type Alias: AcceptedElems<T>
+& Type Alias: AcceptedElems<T> &
+ _____                      _    _ _             
+|_   _|   _ _ __   ___     / \  | (_) __ _ ___ _ 
+  | || | | | '_ \ / _ \   / _ \ | | |/ _` / __(_)
+  | || |_| | |_) |  __/  / ___ \| | | (_| \__ \_ 
+  |_| \__, | .__/ \___| /_/   \_\_|_|\__,_|___(_)
+      |___/|_|                                   
+    _                      _           _ _____ _                     _______ 
+   / \   ___ ___ ___ _ __ | |_ ___  __| | ____| | ___ _ __ ___  ___ / /_   _|
+  / _ \ / __/ __/ _ \ '_ \| __/ _ \/ _` |  _| | |/ _ \ '_ ` _ \/ __/ /  | |  
+ / ___ \ (_| (_|  __/ |_) | ||  __/ (_| | |___| |  __/ | | | | \__ \ \  | |  
+/_/   \_\___\___\___| .__/ \__\___|\__,_|_____|_|\___|_| |_| |_|___/\_\ |_|  
+                    |_|                                                      
+__  
+\ \ 
+ \ \
+ / /
+/_/ 
+    
+- []
+- cheerio
+- type-aliases
+- Type Alias: AcceptedElems\<T\>
+
+On this page
+
+Type Alias: AcceptedElems<T>
+
+  AcceptedElems<T>: BasicAcceptedElems<T> | (this, i, el) => BasicAcceptedElems<T>
+
+Defined in: src/types.ts:51
+
+Elements that can be passed to manipulation methods, including functions.
+
+Type Parameters
+
+• T extends AnyNode
+
+[]Edit this page
+
+Previous
+
+Interface: HTMLParser2Options
+
+Next
+
+Type Alias: AcceptedFilters\<T\>
+
+- Type Parameters
+</B>
+=========================================================================================================
+<B=s>Type Alias: AcceptedFilters<T>
+& Type Alias: AcceptedFilters<T> &
+ _____                      _    _ _             
+|_   _|   _ _ __   ___     / \  | (_) __ _ ___ _ 
+  | || | | | '_ \ / _ \   / _ \ | | |/ _` / __(_)
+  | || |_| | |_) |  __/  / ___ \| | | (_| \__ \_ 
+  |_| \__, | .__/ \___| /_/   \_\_|_|\__,_|___(_)
+      |___/|_|                                   
+    _                      _           _ _____ _ _ _                 _______ 
+   / \   ___ ___ ___ _ __ | |_ ___  __| |  ___(_) | |_ ___ _ __ ___ / /_   _|
+  / _ \ / __/ __/ _ \ '_ \| __/ _ \/ _` | |_  | | | __/ _ \ '__/ __/ /  | |  
+ / ___ \ (_| (_|  __/ |_) | ||  __/ (_| |  _| | | | ||  __/ |  \__ \ \  | |  
+/_/   \_\___\___\___| .__/ \__\___|\__,_|_|   |_|_|\__\___|_|  |___/\_\ |_|  
+                    |_|                                                      
+__  
+\ \ 
+ \ \
+ / /
+/_/ 
+    
+- []
+- cheerio
+- type-aliases
+- Type Alias: AcceptedFilters\<T\>
+
+On this page
+
+Type Alias: AcceptedFilters<T>
+
+  AcceptedFilters<T>: string | FilterFunction<T> | T | Cheerio<T>
+
+Defined in: src/types.ts:58
+
+Supported filter types, for traversal methods.
+
+Type Parameters
+
+• T
+
+[]Edit this page
+
+Previous
+
+Type Alias: AcceptedElems\<T\>
+
+Next
+
+Type Alias: BasicAcceptedElems\<T\>
+
+- Type Parameters
+</B>
+=========================================================================================================
+<B=t>Type Alias: BasicAcceptedElems<T>
+& Type Alias: BasicAcceptedElems<T> &
+ _____                      _    _ _             
+|_   _|   _ _ __   ___     / \  | (_) __ _ ___ _ 
+  | || | | | '_ \ / _ \   / _ \ | | |/ _` / __(_)
+  | || |_| | |_) |  __/  / ___ \| | | (_| \__ \_ 
+  |_| \__, | .__/ \___| /_/   \_\_|_|\__,_|___(_)
+      |___/|_|                                   
+ ____            _         _                      _           _ _____ _      
+| __ )  __ _ ___(_) ___   / \   ___ ___ ___ _ __ | |_ ___  __| | ____| | ___ 
+|  _ \ / _` / __| |/ __| / _ \ / __/ __/ _ \ '_ \| __/ _ \/ _` |  _| | |/ _ \
+| |_) | (_| \__ \ | (__ / ___ \ (_| (_|  __/ |_) | ||  __/ (_| | |___| |  __/
+|____/ \__,_|___/_|\___/_/   \_\___\___\___| .__/ \__\___|\__,_|_____|_|\___|
+                                           |_|                               
+                _________  
+ _ __ ___  ___ / /_   _\ \ 
+| '_ ` _ \/ __/ /  | |  \ \
+| | | | | \__ \ \  | |  / /
+|_| |_| |_|___/\_\ |_| /_/ 
+                           
+- []
+- cheerio
+- type-aliases
+- Type Alias: BasicAcceptedElems\<T\>
+
+On this page
+
+Type Alias: BasicAcceptedElems<T>
+
+  BasicAcceptedElems<T>: ArrayLike<T> | T | string
+
+Defined in: src/types.ts:49
+
+Elements that can be passed to manipulation methods.
+
+Type Parameters
+
+• T extends AnyNode
+
+[]Edit this page
+
+Previous
+
+Type Alias: AcceptedFilters\<T\>
+
+Next
+
+Type Alias: FilterFunction()\<T\>
+
+- Type Parameters
+</B>
+=========================================================================================================
+<B=u>Type Alias: FilterFunction()<T>
+& Type Alias: FilterFunction()<T> &
+ _____                      _    _ _             
+|_   _|   _ _ __   ___     / \  | (_) __ _ ___ _ 
+  | || | | | '_ \ / _ \   / _ \ | | |/ _` / __(_)
+  | || |_| | |_) |  __/  / ___ \| | | (_| \__ \_ 
+  |_| \__, | .__/ \___| /_/   \_\_|_|\__,_|___(_)
+      |___/|_|                                   
+ _____ _ _ _            _____                 _   _              ____   __
+|  ___(_) | |_ ___ _ __|  ___|   _ _ __   ___| |_(_) ___  _ __  / /\ \ / /
+| |_  | | | __/ _ \ '__| |_ | | | | '_ \ / __| __| |/ _ \| '_ \| |  | / / 
+|  _| | | | ||  __/ |  |  _|| |_| | | | | (__| |_| | (_) | | | | |  | \ \ 
+|_|   |_|_|\__\___|_|  |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_| |  | |\_\
+                                                                \_\/_/    
+ _______  
+|_   _\ \ 
+  | |  \ \
+  | |  / /
+  |_| /_/ 
+          
+- []
+- cheerio
+- type-aliases
+- Type Alias: FilterFunction()\<T\>
+
+On this page
+
+Type Alias: FilterFunction()<T>
+
+  FilterFunction<T>: (this, i, el) => boolean
+
+Defined in: src/types.ts:56
+
+Function signature, for traversal methods.
+
+Type Parameters
+
+• T
+
+Parameters
+
+this
+
+T
+
+i
+
+number
+
+el
+
+T
+
+Returns
+
+boolean
+
+[]Edit this page
+
+Previous
+
+Type Alias: BasicAcceptedElems\<T\>
+
+Next
+
+Type Alias: SelectorType
+
+- Type Parameters
+- Parameters
+  - this
+  - i
+  - el
+- Returns
+</B>
+=========================================================================================================
+<B=v>Type Alias: SelectorType
+& Type Alias: SelectorType &
+ _____                      _    _ _             
+|_   _|   _ _ __   ___     / \  | (_) __ _ ___ _ 
+  | || | | | '_ \ / _ \   / _ \ | | |/ _` / __(_)
+  | || |_| | |_) |  __/  / ___ \| | | (_| \__ \_ 
+  |_| \__, | .__/ \___| /_/   \_\_|_|\__,_|___(_)
+      |___/|_|                                   
+ ____       _           _            _____                 
+/ ___|  ___| | ___  ___| |_ ___  _ _|_   _|   _ _ __   ___ 
+\___ \ / _ \ |/ _ \/ __| __/ _ \| '__|| || | | | '_ \ / _ \
+ ___) |  __/ |  __/ (__| || (_) | |   | || |_| | |_) |  __/
+|____/ \___|_|\___|\___|\__\___/|_|   |_| \__, | .__/ \___|
+                                          |___/|_|         
+- []
+- cheerio
+- type-aliases
+- Type Alias: SelectorType
+
+Type Alias: SelectorType
+
+  SelectorType: `${SelectorSpecial}${AlphaNumeric}${string}` | `${AlphaNumeric}${string}`
+
+Defined in: src/types.ts:41
+
+Type for identifying selectors. Allows us to "upgrade" queries using selectors to return Elements.
+
+[]Edit this page
+
+Previous
+
+Type Alias: FilterFunction()\<T\>
+</B>
+=========================================================================================================
+<B=w>Loading Documents
+& Loading Documents &
+ _                    _ _             
+| |    ___   __ _  __| (_)_ __   __ _ 
+| |   / _ \ / _` |/ _` | | '_ \ / _` |
+| |__| (_) | (_| | (_| | | | | | (_| |
+|_____\___/ \__,_|\__,_|_|_| |_|\__, |
+                                |___/ 
+ ____                                        _       
+|  _ \  ___   ___ _   _ _ __ ___   ___ _ __ | |_ ___ 
+| | | |/ _ \ / __| | | | '_ ` _ \ / _ \ '_ \| __/ __|
+| |_| | (_) | (__| |_| | | | | | |  __/ | | | |_\__ \
+|____/ \___/ \___|\__,_|_| |_| |_|\___|_| |_|\__|___/
+                                                     
+- []
+- Tutorials - Basics
+- Loading Documents
+
+On this page
+
+Loading Documents
+
+In this guide, we'll take a look at how to load documents with Cheerio and when to use the different
+loading methods.
+
+[]tip
+
+If you're familiar with jQuery, then this step will be new to you. jQuery operates on the one, baked-in
+DOM. With Cheerio, we need to pass in the HTML document.
+
+[]Availability of methods
+
+The loadBuffer, stringStream, decodeStream, and fromURL methods are not available in the browser
+environment. Instead, use the load method to parse HTML strings.
+
+load
+
+The load method is the most basic way to parse an HTML or XML document with Cheerio. It takes a string
+containing the document as its argument and returns a Cheerio object that you can use to traverse and
+manipulate the document.
+
+Here's an example of how to use the load method:
+
+    import * as cheerio from 'cheerio';
+
+    const $ = cheerio.load('<h1>Hello, world!</h1>');
+
+    console.log($('h1').text());
+    // Output: Hello, world!
+
+[][]
+
+[]tip
+
+Similar to web browser contexts, load will introduce <html>, <head>, and <body> elements if they are not
+already present. You can set load's third argument to false to disable this.
+
+    const $ = cheerio.load('<ul id="fruits">...</ul>', null, false);
+
+    $.html();
+    //=> '<ul id="fruits">...</ul>'
+
+[][]
+
+Learn more about the load method in the API documentation.
+
+loadBuffer
+
+The loadBuffer method is similar to the load method, but it takes a buffer containing the document as its
+argument instead of a string. Cheerio will run the HTML encoding sniffing algorithm to determine the
+encoding of the document. This is useful when you have the document in binary form, such as when you're
+reading it from a file or receiving it over a network connection.
+
+Here's an example of how to use the loadBuffer method:
+
+    import * as cheerio from 'cheerio';
+    import * as fs from 'fs';
+
+    const buffer = fs.readFileSync('document.html');
+
+    const $ = cheerio.loadBuffer(buffer);
+
+    console.log($('title').text());
+    // Output: Hello, world!
+
+[][]
+
+Learn more about the loadBuffer method in the API documentation.
+
+stringStream
+
+When loading an HTML document from a stream and the encoding is known, you can use the stringStream
+method to parse it into a Cheerio object.
+
+    import * as cheerio from 'cheerio';
+    import * as fs from 'fs';
+
+    const writeStream = cheerio.stringStream({}, (err, $) => {
+      if (err) {
+        // Handle error
+      }
+
+      console.log($('title').text());
+      // Output: Hello, world!
+    });
+
+    fs.createReadStream('document.html', { encoding: 'utf8' }).pipe(writeStream);
+
+[][]
+
+Learn more about the stringStream method in the API documentation.
+
+decodeStream
+
+When loading an HTML document from a stream and the encoding is not known, you can use the decodeStream
+method to parse it into a Cheerio object. This method runs the HTML encoding sniffing algorithm to
+determine the encoding of the document.
+
+Here's an example of how to use the decodeStream method:
+
+    import * as cheerio from 'cheerio';
+    import * as fs from 'fs';
+
+    const writeStream = cheerio.decodeStream({}, (err, $) => {
+      if (err) {
+        // Handle error
+      }
+
+      console.log($('title').text());
+      // Output: Hello, world!
+    });
+
+    fs.createReadStream('document.html').pipe(writeStream);
+
+[][]
+
+Learn more about the decodeStream method in the API documentation.
+
+fromURL
+
+The fromURL method allows you to load a document from a URL. This method is asynchronous, so you need to
+use await (or a then block) to access the resulting Cheerio object.
+
+    import * as cheerio from 'cheerio';
+
+    const $ = await cheerio.fromURL('https://example.com');
+
+[][]
+
+Learn more about the fromURL method in the API documentation.
+
+Conclusion
+
+Cheerio provides several methods for loading HTML documents and parsing them into a DOM structure. These
+methods are useful for different scenarios, depending on the type and source of the HTML data. Users are
+encouraged to read through each of these methods and pick the one that best suits their needs.
+
+[]Edit this page
+
+Previous
+
+Tutorials - Basics
+
+Next
+
+Selecting Elements
+
+- load
+- loadBuffer
+- stringStream
+- decodeStream
+- fromURL
+- Conclusion
+</B>
+=========================================================================================================
+<B=x>Manipulating the DOM
+& Manipulating the DOM &
+ __  __             _             _       _   _               _   _          
+|  \/  | __ _ _ __ (_)_ __  _   _| | __ _| |_(_)_ __   __ _  | |_| |__   ___ 
+| |\/| |/ _` | '_ \| | '_ \| | | | |/ _` | __| | '_ \ / _` | | __| '_ \ / _ \
+| |  | | (_| | | | | | |_) | |_| | | (_| | |_| | | | | (_| | | |_| | | |  __/
+|_|  |_|\__,_|_| |_|_| .__/ \__,_|_|\__,_|\__|_|_| |_|\__, |  \__|_| |_|\___|
+                     |_|                              |___/                  
+ ____   ___  __  __ 
+|  _ \ / _ \|  \/  |
+| | | | | | | |\/| |
+| |_| | |_| | |  | |
+|____/ \___/|_|  |_|
+                    
+- []
+- Tutorials - Basics
+- Manipulating the DOM
+
+On this page
+
+Manipulating the DOM
+
+Now that you have learned the basics of using Cheerio and have gained some experience with loading and
+traversing documents, it's time to dive deeper into manipulating elements. Whether you want to modify
+element attributes and properties, add and remove classes, modify text and HTML content, or insert and
+remove elements, Cheerio provides a range of methods to help you do so.
+
+In this guide, we will focus specifically on manipulating elements within a document using Cheerio. We
+will cover methods for modifying element attributes and properties, adding and removing classes,
+modifying text and HTML content, inserting and removing elements, and handling errors and debugging. By
+the end of this guide, you will have a good understanding of how to use these methods to manipulate
+elements within a document using Cheerio.
+
+Modifying Element Attributes and Properties
+
+To modify the attributes and properties of a single element, you can use the attr() and prop() methods,
+respectively. Both methods take a key and a value as arguments, and allow you to get and set the
+attribute or property. When setting, they apply to all elements in the selection; when getting, they
+return a single value corresponding to the first element in the selection.
+
+    // Set the 'src' attribute of an image element
+    $('img').attr('src', 'https://example.com/image.jpg');
+
+    // Set the 'checked' property of a checkbox element
+    $('input[type="checkbox"]').prop('checked', true);
+
+    // Get the 'href' attribute of a link element
+    const href = $('a').attr('href');
+
+    // Get the 'disabled' property of a button element
+    const isDisabled = $('button').prop('disabled');
+
+[][]
+
+prop() is not limited to simple values like strings and booleans. You can also use it to get complex
+properties like the style object, or to resolve href or src URLs of supported elements. You can also use
+it to get the tagName, innerHTML, outerHTML, textContent, and innerText properties of a single element.
+
+    // Get the `style` object of an element
+    const style = $('div').prop('style');
+
+    // Get the resolved `src` URL of an image element
+    $('img').prop('src');
+
+    // Get the outerHTML of an element
+    const outerHTML = $('div').prop('outerHTML');
+
+    // Get the innerText of an element
+    const innerText = $('div').prop('innerText');
+
+[][]
+
+Adding and Removing Classes
+
+To add or remove classes from an element, you can use the addClass(), removeClass(), and toggleClass()
+methods. All three methods take a class name or a space-separated list of class names as an argument.
+They modify all elements in the selection.
+
+    // Add a class to an element
+    $('div').addClass('new-class');
+
+    // Add multiple classes to an element
+    $('div').addClass('new-class another-class');
+
+    // Remove a class from an element
+    $('div').removeClass('old-class');
+
+    // Remove multiple classes from an element
+    $('div').removeClass('old-class another-class');
+
+    // Toggle a class on an element (add if it doesn't exist, remove if it does)
+    $('div').toggleClass('active');
+
+[][]
+
+Modifying the Text Content of an Element
+
+To query or modify the text content of an element, you can use the text() method. Given a string as an
+argument, it sets the text content of every element in the selection to the given string. Without
+arguments, it returns the text content of every element (including its descendants) in the selection,
+concatenated together.
+
+    // Set the text content of an element
+    $('h1').text('Hello, World!');
+
+    // Get the text content of an element
+    const text = $('p').text();
+
+[][]
+
+[]Note
+
+text() returns the textContent of all passed elements. The result will include the contents of <script>
+and <style> elements. To avoid this, use .prop('innerText') instead.
+
+Modifying the HTML Content of an Element
+
+To query or modify the HTML content of an element, you can use the html() method. Given an HTML string as
+an argument, it sets the inner HTML of every element in the selection to the given string. Without
+arguments, it returns the inner HTML of the first element in the selection.
+
+    // Set the inner HTML of an element
+    $('div').html('<p>Hello, World!</p>');
+
+    // Get the inner HTML of an element
+    const html = $('div').html();
+
+[][]
+
+Inserting New Elements
+
+To insert new elements into a document, you can use the append(), prepend(), before(), and after()
+methods. These modify every element in the selection.
+
+    // Append an element to the end of a parent element
+    $('ul').append('<li>Item</li>');
+
+    // Prepend an element to the beginning of a parent element
+    $('ul').prepend('<li>Item</li>');
+
+    // Insert an element before a target element
+    $('li').before('<li>Item</li>');
+
+    // Insert an element after a target element
+    $('li').after('<li>Item</li>');
+
+[][]
+
+The insertAfter() and insertBefore() methods allow you to insert an element before or after a target
+element, respectively. Both methods take a string or a Cheerio object as an argument and insert the given
+element before or after the target element.
+
+    const $ = require('cheerio');
+
+    // Insert an element after a target element
+    $('<p>Inserted element</p>').insertAfter('h1');
+
+    // Insert an element before a target element
+    $('<p>Inserted element</p>').insertBefore('h1');
+
+[][]
+
+The prependTo() and appendTo() methods allow you to prepend or append an element to a parent element,
+respectively. Both methods take a string or a Cheerio object as an argument and insert the element at the
+beginning or end of the given parent element.
+
+    const $ = require('cheerio');
+
+    // Prepend an element to a parent element
+    $('<p>Inserted element</p>').prependTo('div');
+
+    // Append an element to a parent element
+    $('<p>Inserted element</p>').appendTo('div');
+
+[][]
+
+Wrapping and Unwrapping Elements
+
+Sometimes you may want to wrap an element in another element, or remove the element's parent element
+while keeping its children. To do this, you can use the wrap(), wrapInner(), and unwrap() methods.
+
+The wrap() method takes a string or a Cheerio object as an argument and wraps the element in the given
+element.
+
+    // Wrap an element in a div
+    $('p').wrap('<div></div>');
+
+[][]
+
+The wrapInner() method works similar to wrap(), but instead of wrapping the element itself, it wraps the
+element's inner HTML in the given element.
+
+    // Wrap the inner HTML of an element in a div
+    $('div').wrapInner('<div></div>');
+
+[][]
+
+The unwrap() method removes the element's parent element, while keeping the element and its children.
+
+    // Unwrap an element
+    $('p').unwrap();
+
+[][]
+
+Replacing Elements
+
+To replace an element with another element, you can use the replaceWith() method. It takes a string or a
+Cheerio object as an argument and replaces each element in the selection with the given element.
+
+    // Replace an element with another element
+    $('li').replaceWith('<li>Item</li>');
+
+[][]
+
+Note that the replaceWith() method removes the element from the document and replaces it with the given
+element or HTML string. If you want to keep the element and modify its contents, you can use the html()
+or text() methods instead.
+
+Removing Elements
+
+To remove an element from a document, you can use the remove() method. It removes each element in the
+selection, and all of their children, from the document.
+
+    // Remove an element from the document
+    $('li').remove();
+
+[][]
+
+Alternatively, you can remove the children of an element from the document, without removing the element
+itself, using the empty() method. It removes the children (but not text nodes or comments) of each
+element in the selection from the document.
+
+    // Remove an element's children from the document
+    $('li').empty();
+
+[][]
+
+Conclusion
+
+We learned how to manipulate elements within a document using Cheerio. We can modify element attributes
+and properties, add and remove classes, modify text and HTML content, insert and remove elements, and
+handle errors and debug our code. With these tools, you can easily manipulate a document to suit your
+needs.
+
+[]Edit this page
+
+Previous
+
+Traversing the DOM
+
+Next
+
+Tutorials - Advanced
+
+- Modifying Element Attributes and Properties
+- Adding and Removing Classes
+- Modifying the Text Content of an Element
+- Modifying the HTML Content of an Element
+- Inserting New Elements
+- Wrapping and Unwrapping Elements
+- Replacing Elements
+- Removing Elements
+- Conclusion
+</B>
+=========================================================================================================
+<B=y>Selecting Elements
+& Selecting Elements &
+ ____       _           _   _             
+/ ___|  ___| | ___  ___| |_(_)_ __   __ _ 
+\___ \ / _ \ |/ _ \/ __| __| | '_ \ / _` |
+ ___) |  __/ |  __/ (__| |_| | | | | (_| |
+|____/ \___|_|\___|\___|\__|_|_| |_|\__, |
+                                    |___/ 
+ _____ _                           _       
+| ____| | ___ _ __ ___   ___ _ __ | |_ ___ 
+|  _| | |/ _ \ '_ ` _ \ / _ \ '_ \| __/ __|
+| |___| |  __/ | | | | |  __/ | | | |_\__ \
+|_____|_|\___|_| |_| |_|\___|_| |_|\__|___/
+                                           
+- []
+- Tutorials - Basics
+- Selecting Elements
+
+Selecting Elements
+
+Cheerio allows users to select elements from an HTML document using CSS selectors. This allows you to
+select elements based on criteria such as their tag name, class name, and attribute values. This guide
+provides an overview of how to use CSS selectors to retrieve elements.
+
+To select elements with Cheerio, you first need to import the library and load a document. For example:
+
+    import * as cheerio from 'cheerio';
+
+    // Load the document using any of the methods described in the "Loading Documents" section.
+    const $ = cheerio.load('<html>...</html>');
+
+[][]
+
+Once you have loaded the document, you can use the $ function to select elements. The $ function works
+just like the $ function in jQuery, and allows you to select elements based on their tag name, class
+name, and attribute values.
+
+Here are some examples of how to use the $ function to select elements:
+
+- To select all the <p> elements in the document:
+
+    const $p = $('p');
+
+[][]
+
+[]tip
+
+The convention in Cheerio is to prefix the variable name with a $ to indicate that it contains a Cheerio
+object. This is not required, but it is a good practice to follow.
+
+- To select elements with a specific class name:
+
+    const $selected = $('.selected');
+
+[][]
+
+- To select elements with a specific attribute value:
+
+    const $selected = $('[data-selected=true]');
+
+[][]
+
+[]XML Namespaces
+
+You can select with XML Namespaces but due to the CSS specification, the colon (:) needs to be escaped
+for the selector to be valid.
+
+    $('[xml\\:id="main"');
+
+[][]
+
+- Selectors can be combined to select elements that match multiple criteria. For example, to select all
+  <p> elements with the class selected:
+
+    const $selected = $('p.selected');
+
+[][]
+
+- Further, you can use spaces ( ) to select elements that are descendants of other elements. For example,
+  to select all <p> elements that are descendants of <div> elements:
+
+    const $p = $('div p');
+
+[][]
+
+- You can also use the > character to select elements that are direct descendants of other elements. For
+  example, to select all <p> elements that are direct descendants of <div> elements:
+
+    const $p = $('div > p');
+
+[][]
+
+Please have a look at the documentation of Cheerio's underlying CSS selector library, css-select, for a
+list of all supported selectors. For example, to select <p> elements containing the word "hello":
+
+    const $p = $('p:contains("hello")');
+
+[][]
+
+Cheerio also supports several jQuery-specific extensions that allow you to select elements based on their
+position in the document. For example, to select the first <p> element in the document:
+
+    const $p = $('p:first');
+
+[][]
+
+Have a look at cheerio-select, the library that implements these extensions, to see what is available.
+
+For further information, please also have a look at jQuery's guide on selecting elements, as well as MDN.
+
+Finally, to add custom CSS pseudo-classes, have a look at the Extending Cheerio guide.
+
+[]Edit this page
+
+Previous
+
+Loading Documents
+
+Next
+
+Traversing the DOM
+</B>
+=========================================================================================================
+<B=z>Traversing the DOM
+& Traversing the DOM &
+ _____                             _               _   _          
+|_   _| __ __ ___   _____ _ __ ___(_)_ __   __ _  | |_| |__   ___ 
+  | || '__/ _` \ \ / / _ \ '__/ __| | '_ \ / _` | | __| '_ \ / _ \
+  | || | | (_| |\ V /  __/ |  \__ \ | | | | (_| | | |_| | | |  __/
+  |_||_|  \__,_| \_/ \___|_|  |___/_|_| |_|\__, |  \__|_| |_|\___|
+                                           |___/                  
+ ____   ___  __  __ 
+|  _ \ / _ \|  \/  |
+| | | | | | | |\/| |
+| |_| | |_| | |  | |
+|____/ \___/|_|  |_|
+                    
+- []
+- Tutorials - Basics
+- Traversing the DOM
+
+On this page
+
+Traversing the DOM
+
+Traversing a document with Cheerio allows you to select and manipulate specific elements within the
+document. Whether you want to move up and down the DOM tree, move sideways within the tree, or filter
+elements based on certain criteria, Cheerio provides a range of methods to help you do so.
+
+In this guide, we will go through the various methods available in Cheerio for traversing and filtering
+elements. We will cover methods for moving down the DOM tree, moving up the DOM tree, moving sideways
+within the tree, and filtering elements. By the end of this guide, you will have a good understanding of
+how to use these methods to select and manipulate elements within a document using Cheerio.
+
+[]tip
+
+This guide is intended to give you an overview of the various methods available in Cheerio for traversing
+and filtering elements. For a more detailed reference of these methods, see the API documentation.
+
+Moving Down the DOM Tree
+
+Cheerio provides several methods for moving down the DOM tree and selecting elements that are children or
+descendants of the current selection.
+
+find
+
+The find method allows you to locate specific elements within a selection. It takes a CSS selector as an
+argument and returns a new selection containing all elements that match the selector within the current
+selection.
+
+Here's an example of using find to select all <li> elements within a <ul> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>`,
+    );
+
+    const listItems = $('ul').find('li');
+    render(<>List item count: {listItems.length}</>);
+
+Result
+
+Loading...
+
+children
+
+The children method allows you to select the direct children of an element. It returns a new selection
+containing all direct children of the current selection.
+
+Here's an example of using children to select all <li> elements within a <ul> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>`,
+    );
+
+    const listItems = $('ul').children('li');
+    render(<>List item count: {listItems.length}</>);
+
+Result
+
+Loading...
+
+contents
+
+The contents method allows you to select all children of an element, including text and comment nodes. It
+returns a new selection containing all children of the current selection.
+
+Here's an example of using contents to select all children of a <div> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<div>
+        Text <p>Paragraph</p>
+      </div>`,
+    );
+
+    const contents = $('div').contents();
+    render(<>Contents count: {contents.length}</>);
+
+Result
+
+Loading...
+
+Moving Up the DOM Tree
+
+Cheerio provides several methods for moving up the DOM tree and selecting elements that are ancestors of
+the current selection.
+
+parent
+
+The parent method allows you to select the parent element of a selection. It returns a new selection
+containing the parent element of each element in the current selection.
+
+Here's an example of using parent to select the parent <ul> element of a <li> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+      </ul>`,
+    );
+
+    const list = $('li').parent();
+    render(<>{list.prop('tagName')}</>);
+
+Result
+
+Loading...
+
+parents and parentsUntil
+
+The parents method allows you to select all ancestor elements of a selection, up to the root element. It
+returns a new selection containing all ancestor elements of the current selection.
+
+The parentsUntil method is similar to parents, but allows you to specify an ancestor element as a stop
+point. It returns a new selection containing all ancestor elements of the current selection up to (but
+not including) the specified ancestor.
+
+Here's an example of using parents and parentsUntil to select ancestor elements of a <li> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<div>
+        <ul>
+          <li>Item 1</li>
+        </ul>
+      </div>`,
+    );
+
+    const ancestors = $('li').parents();
+    const ancestorsUntil = $('li').parentsUntil('div');
+
+    render(
+      <>
+        <p>
+          Ancestor count (also includes "body" and "html" tags): {ancestors.length}
+        </p>
+        <p>Ancestor count (until "div"): {ancestorsUntil.length}</p>
+      </>,
+    );
+
+Result
+
+Loading...
+
+closest
+
+The closest method allows you to select the closest ancestor matching a given selector. It returns a new
+selection containing the closest ancestor element that matches the selector. If no matching ancestor is
+found, the method returns an empty selection.
+
+Here's an example of using closest to select the closest ancestor <ul> element of a <li> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<div>
+        <ul>
+          <li>Item 1</li>
+        </ul>
+      </div>`,
+    );
+
+    const list = $('li').closest('ul');
+    render(<>{list.prop('tagName')}</>);
+
+Result
+
+Loading...
+
+Moving Sideways Within the DOM Tree
+
+Cheerio provides several methods for moving sideways within the DOM tree and selecting elements that are
+siblings of the current selection.
+
+next and prev
+
+The next method allows you to select the next sibling element of a selection. It returns a new selection
+containing the next sibling element (if there is one). If the given selection contains multiple elements,
+next includes the next sibling for each one.
+
+The prev method is similar to next, but allows you to select the previous sibling element. It returns a
+new selection containing the previous sibling element for each element in the given selection.
+
+Here's an example of using next and prev to select sibling elements of a <li> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>`,
+    );
+
+    const nextItem = $('li:first').next();
+    const prevItem = $('li:eq(1)').prev();
+
+    render(
+      <>
+        <p>Next: {nextItem.text()}</p>
+        <p>Prev: {prevItem.text()}</p>
+      </>,
+    );
+
+Result
+
+Loading...
+
+nextAll, prevAll, and siblings
+
+The nextAll method allows you to select all siblings after the current element. It returns a new
+selection containing all sibling elements after each element in the current selection.
+
+The prevAll method is similar to nextAll, but allows you to select all siblings before the current
+element. It returns a new selection containing all sibling elements before each element in the current
+selection.
+
+The siblings method allows you to select all siblings of a selection. It returns a new selection
+containing all sibling elements of each element in the current selection.
+
+Here's an example of using nextAll, prevAll, and siblings to select sibling elements of a <li> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>[1]</li>
+        <li>[2]</li>
+        <li>[3]</li>
+      </ul>`,
+    );
+
+    const nextAll = $('li:first').nextAll();
+    const prevAll = $('li:last').prevAll();
+    const siblings = $('li:eq(1)').siblings();
+
+    render(
+      <>
+        <p>Next All: {nextAll.text()}</p>
+        <p>Prev All: {prevAll.text()}</p>
+        <p>Siblings: {siblings.text()}</p>
+      </>,
+    );
+
+Result
+
+Loading...
+
+nextUntil and prevUntil
+
+The nextUntil method allows you to select all siblings after the current element up to a specified
+sibling. It takes a selector or a sibling element as an argument and returns a new selection containing
+all sibling elements after the current element up to (but not including) the specified element.
+
+The prevUntil method is similar to nextUntil, but allows you to select all siblings before the current
+element up to a specified sibling. It takes a selector or a sibling element as an argument and returns a
+new selection containing all sibling elements before the current element up to (but not including) the
+specified element.
+
+Here's an example of using nextUntil and prevUntil to select sibling elements of a <li> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>`,
+    );
+
+    const nextUntil = $('li:first').nextUntil('li:last-child');
+    const prevUntil = $('li:last').prevUntil('li:first-child');
+
+    render(
+      <>
+        <p>Next: {nextUntil.text()}</p>
+        <p>Prev: {prevUntil.text()}</p>
+      </>,
+    );
+
+Result
+
+Loading...
+
+Filtering elements
+
+Cheerio provides several methods for filtering elements within a selection.
+
+[]tip
+
+Most of these filters also exist as selectors. For example, the first method is available as the :first
+selector. Users are encouraged to use the selector syntax when possible, as it is more performant.
+
+eq
+
+The eq method allows you to select an element at a specified index within a selection. It takes an index
+as an argument and returns a new selection containing the element at the specified index.
+
+Here's an example of using eq to select the second <li> element within a <ul> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>`,
+    );
+
+    const secondItem = $('li').eq(1);
+    render(<>{secondItem.text()}</>);
+
+Result
+
+Loading...
+
+filter and not
+
+The filter method allows you to select elements that match a given selector. It takes a selector as an
+argument and returns a new selection containing only those elements that match the selector.
+
+The not method is similar to filter, but allows you to select elements that do not match a given
+selector. It takes a selector as an argument and returns a new selection containing only those elements
+that do not match the selector.
+
+Here's an example of using filter and not to select <li> elements within a <ul> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li class="item">Item 1</li>
+        <li>Item 2</li>
+      </ul>`,
+    );
+
+    const matchingItems = $('li').filter('.item');
+    const nonMatchingItems = $('li').not('.item');
+
+    render(
+      <>
+        <p>Matching: {matchingItems.text()}</p>
+        <p>Non-matching: {nonMatchingItems.text()}</p>
+      </>,
+    );
+
+Result
+
+Loading...
+
+has
+
+The has method allows you to select elements that contain an element matching a given selector. It takes
+a selector as an argument and returns a new selection containing only those elements that contain an
+element matching the selector.
+
+Here's an example of using has to select <li> elements within a <ul> element that contain a <strong>
+element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>
+          <strong>Item 2</strong>
+        </li>
+      </ul>`,
+    );
+
+    const matchingItems = $('li').has('strong');
+    render(<>{matchingItems.length}</>);
+
+Result
+
+Loading...
+
+first and last
+
+The first method allows you to select the first element in a selection. It returns a new selection
+containing the first element.
+
+The last method is similar to first, but allows you to select the last element in a selection. It returns
+a new selection containing the last element.
+
+Here's an example of using first and last to select elements within a <ul> element:
+
+Live Editor
+
+    const $ = cheerio.load(
+      `<ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>`,
+    );
+
+    const firstItem = $('li').first();
+    const lastItem = $('li').last();
+
+    render(
+      <>
+        <p>First: {firstItem.text()}</p>
+        <p>Last: {lastItem.text()}</p>
+      </>,
+    );
+
+Result
+
+Loading...
+
+Conclusion
+
+Cheerio provides a range of methods for traversing and filtering elements within a document. These
+methods allow you to move up and down the DOM tree, move sideways within the tree, and filter elements
+based on various criteria. By using these methods, you can easily select and manipulate elements within a
+document using Cheerio.
+
+[]Edit this page
+
+Previous
+
+Selecting Elements
+
+Next
+
+Manipulating the DOM
+
+- Moving Down the DOM Tree
+  - find
+  - children
+  - contents
+- Moving Up the DOM Tree
+  - parent
+  - parents and parentsUntil
+  - closest
+- Moving Sideways Within the DOM Tree
+  - next and prev
+- nextAll, prevAll, and siblings
+  - nextUntil and prevUntil
+- Filtering elements
+  - eq
+  - filter and not
+  - has
+  - first and last
+- Conclusion
+</B>
+=========================================================================================================
+<B=A>Tutorials - Advanced
+& Tutorials - Advanced &
+ _____      _             _       _             
+|_   _|   _| |_ ___  _ __(_) __ _| |___         
+  | || | | | __/ _ \| '__| |/ _` | / __|  _____ 
+  | || |_| | || (_) | |  | | (_| | \__ \ |_____|
+  |_| \__,_|\__\___/|_|  |_|\__,_|_|___/        
+                                                
+    _       _                               _ 
+   / \   __| |_   ____ _ _ __   ___ ___  __| |
+  / _ \ / _` \ \ / / _` | '_ \ / __/ _ \/ _` |
+ / ___ \ (_| |\ V / (_| | | | | (_|  __/ (_| |
+/_/   \_\__,_| \_/ \__,_|_| |_|\___\___|\__,_|
+                                              
+- []
+- Tutorials - Advanced
+
+Tutorials - Advanced
+
+📄️ The `extract` method
+
+Extract multiple values at once.
+
+📄️ Configuring Cheerio
+
+Configure Cheerio to work with different documents.
+
+📄️ Extending Cheerio
+
+Create custom pseudo-classes and plugins.
+
+Previous
+
+Manipulating the DOM
+
+Next
+
+The `extract` method
+</B>
+=========================================================================================================
+<B=B>Tutorials - Basics
+& Tutorials - Basics &
+ _____      _             _       _               ____            _          
+|_   _|   _| |_ ___  _ __(_) __ _| |___          | __ )  __ _ ___(_) ___ ___ 
+  | || | | | __/ _ \| '__| |/ _` | / __|  _____  |  _ \ / _` / __| |/ __/ __|
+  | || |_| | || (_) | |  | | (_| | \__ \ |_____| | |_) | (_| \__ \ | (__\__ \
+  |_| \__,_|\__\___/|_|  |_|\__,_|_|___/         |____/ \__,_|___/_|\___|___/
+                                                                             
+- []
+- Tutorials - Basics
+
+Tutorials - Basics
+
+📄️ Loading Documents
+
+A walkthrough of different loading methods.
+
+📄️ Selecting Elements
+
+An introduction to CSS selectors.
+
+📄️ Traversing the DOM
+
+Traverse the DOM tree and filter elements.
+
+📄️ Manipulating the DOM
+
+Methods to manipulate elements within a document.
+
+Previous
+
+Introduction
+
+Next
+
+Loading Documents
+</B>
+=========================================================================================================
+<B=C>Welcome to Cheerio!
+& Welcome to Cheerio! &
+__        __   _                            _        
+\ \      / /__| | ___ ___  _ __ ___   ___  | |_ ___  
+ \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \ 
+  \ V  V /  __/ | (_| (_) | | | | | |  __/ | || (_) |
+   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/ 
+                                                     
+  ____ _                    _       _ 
+ / ___| |__   ___  ___ _ __(_) ___ | |
+| |   | '_ \ / _ \/ _ \ '__| |/ _ \| |
+| |___| | | |  __/  __/ |  | | (_) |_|
+ \____|_| |_|\___|\___|_|  |_|\___/(_)
+                                      
+- []
+- Introduction
+
+On this page
+
+Welcome to Cheerio!
+
+Let's get a quick overview of Cheerio in less than 5 minutes.
+
+Getting Started
+
+Let's install Cheerio and its dependencies.
+
+Setting up Node.js
+
+To install Cheerio, you will need to have Node.js installed on your system.
+
+- Download the latest version of Node.js:
+  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+
+Installing Cheerio
+
+Once you have set up Node.js, you can use the following command to install Cheerio:
+
+- npm
+- Yarn
+- pnpm
+
+    npm install cheerio
+
+[][]
+
+    yarn add cheerio
+
+[][]
+
+    pnpm add cheerio
+
+[][]
+
+Importing Cheerio
+
+Once Cheerio is installed, you can import it into your JavaScript code using the import statement:
+
+    import * as cheerio from 'cheerio';
+
+[][]
+
+If you are on an older environment (or prefer using CommonJS), you can use the require function:
+
+    const cheerio = require('cheerio');
+
+[][]
+
+Using Cheerio
+
+After importing Cheerio, you can start using it to manipulate and scrape web page data.
+
+Loading a Document
+
+The easiest way of loading HTML is to use the load function:
+
+    const $ = cheerio.load('<h2 class="title">Hello world</h2>');
+
+[][]
+
+This will load the HTML string into Cheerio and return a Cheerio object. You can then use this object to
+traverse the DOM and manipulate the data.
+
+Learn more about loading documents.
+
+[]note
+
+Cheerio is not a web browser. Cheerio parses markup and provides an API for traversing/manipulating the
+resulting data structure. It does not interpret the result as a web browser does. Specifically, it does
+not produce a visual rendering, apply CSS, load external resources, or execute JavaScript which is common
+for a SPA (single page application). This makes Cheerio much, much faster than other solutions. If your
+use case requires any of this functionality, you should consider browser automation software like
+Puppeteer and Playwright or DOM emulation projects like JSDom.
+
+Selecting Elements
+
+Once you have loaded a document, you can use the returned function to select elements from the document.
+
+Here, we will select the h2 element with the class title, and then get the text from it:
+
+    $('h2.title').text(); // "Hello world"
+
+[][]
+
+Learn more about selecting elements.
+
+Traversing the DOM
+
+The $ function returns a Cheerio object, which is similar to an array of DOM elements. It is possible to
+use this object as a starting point to further traverse the DOM. For example, you can use the find
+function to select elements within the selected elements:
+
+    $('h2.title').find('.subtitle').text();
+
+[][]
+
+There are many other functions that can be used to traverse the DOM. Learn more about traversing the DOM.
+
+Manipulating Elements
+
+Once you have selected an element, you can use the Cheerio object to manipulate the element.
+
+Here, we will select the h2 element with the class title, and then change the text inside it. We also add
+a new h3 element to the document:
+
+    $('h2.title').text('Hello there!');
+
+    $('h2').after('<h3>How are you?</h3>');
+
+[][]
+
+Learn more about manipulating elements.
+
+[]Edit this page
+
+Next
+
+Tutorials - Basics
+
+- Getting Started
+  - Setting up Node.js
+  - Installing Cheerio
+  - Importing Cheerio
+- Using Cheerio
+  - Loading a Document
+  - Selecting Elements
+  - Traversing the DOM
+  - Manipulating Elements
+</B>
+=========================================================================================================
+<B=D>cheerio
+& cheerio &
+      _                    _       
+  ___| |__   ___  ___ _ __(_) ___  
+ / __| '_ \ / _ \/ _ \ '__| |/ _ \ 
+| (__| | | |  __/  __/ |  | | (_) |
+ \___|_| |_|\___|\___|_|  |_|\___/ 
+                                   
+Skip to main content
+
+Cheerio 1.0 is out! Learn more about what's new
+
+[]
+
+[]
+
+[Cheerio Logo][Cheerio Logo]
+
+CheerioTutorialAPIBlog
+
+GitHub[]
+
+[][]
+
+[]Search
+
+cheerio
+
+The fast, flexible & elegant library for parsing and manipulating HTML and XML.
+
+Get Started!
+
+[]
+
+Proven syntax
+
+Cheerio implements a subset of core jQuery. Cheerio removes all the DOM inconsistencies and browser cruft
+from the jQuery library, revealing its truly gorgeous API.
+
+[]
+
+Blazingly fast
+
+Cheerio works with a very simple, consistent DOM model. As a result parsing, manipulating, and rendering
+are incredibly efficient.
+
+[]
+
+Incredibly flexible
+
+Cheerio can parse nearly any HTML or XML document. Cheerio works in both browser and server environments.
+
+Supported and Backed by
+
+[Tidelift logo]
+
+Tidelift
+
+[Github logo]
+
+Github
+
+[AirBnB logo]
+
+AirBnB
+
+[]
+
+…and you?
+
+What Our Users Say
+
+[Axel Rauschmayer's avatar]
+
+Axel Rauschmayer
+
+@rauschma
+
+For transforming HTML via Node.js scripts, @mattmueller's cheerio works really well.
+
+Aug 3, 2015, 2:35 AM
+
+[Valeri Karpov's avatar]
+
+Valeri Karpov
+
+@code_barbarian
+
+Cheerio is a weird npm module: most devs have never heard of it, but I rarely build an app without it.
+So much utility for quick and easy HTML transformations.
+
+Jan 19, 2023, 7:09 PM
+
+[Thomas Boutell's avatar]
+
+Thomas Boutell
+
+@boutell
+
+You probably shouldn't use jQuery, but if you're great at jQuery, you're going to be really popular on
+server-side projects that need web scraping or HTML transformation. "npm install cheerio" ahoy!
+
+Jul 8, 2021, 7:52 PM
+
+[Alistair G MacDonald's avatar]
+
+Alistair G MacDonald
+
+@html5js
+
+Looking for a faster, cleaner alternative to basic JSDOM? Try Cheerio! #npm #javascript #nodejs
+
+Jan 6, 2015, 3:50 AM
+
+[Yogini Bende's avatar]
+
+Yogini Bende
+
+@hey_yogini
+
+Cheerio is 🔥
+
+Dec 3, 2021, 12:56 PM
+
+[Jonny Frodsham's avatar]
+
+Jonny Frodsham
+
+@jonnyfrodsham
+
+Needed to do a quick web scrape in Node for a demo. Seems like I'm back using jQuery in the super
+timesaving cheerio npm package 😯
+
+Nov 30, 2017, 2:40 PM
+
+[Thomas Steiner's avatar]
+
+Thomas Steiner
+
+@tomayac
+
+npm install cheerio. That's the #jQuery DOM API for #nodeJS essentially. Thanks, @MattMueller
+
+Nov 1, 2012, 3:59 PM
+
+[Mike Pennisi's avatar]
+
+Mike Pennisi
+
+@JugglinMike
+
+Thank you @fb55 for tirelessly pushing Cheerio to version 1.0. That library helps so many developers
+expand their horizons beyond the browser, and you've been making it possible for a decade!
+
+Jun 11, 2021, 4:57 AM
+
+[Matthew Phillips's avatar]
+
+Matthew Phillips
+
+@matthewcp
+
+Cheerio is (still) such a useful tool for manipulating HTML. Shout to @MattMueller for saving me an
+untold amount of time over the years.
+
+Oct 23, 2019, 12:46 PM
+
+Learn more about Cheerio ❯
+
+Docs
+
+- Tutorial
+- API
+
+Community
+
+- Stack Overflow[]
+- GitHub[]
+
+More
+
+- Blog
+- Attribution
+
+Copyright © 2025 The Cheerio contributors
+</B>
+=========================================================================================================

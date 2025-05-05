@@ -1,11 +1,10 @@
 vim9script
-# freddieventura
+# Author : rafmartom
 # File with some funtions to use on vim-dan
-# main.docudan
+# <docu-name>.dan
 # Set it to refresh tags and highlighted notes such as
 # noremap <F5> :call dan#Refreshloclist()<CR>:silent! ctags -R ./ 2>/dev/null<CR>
 
-var VIMDAN_DIR = "/home/fakuve/baul-documents/vim-dan"
 
 # Close tab of the loclist that belongs to currentBuffer
 export def Closeloclist()
@@ -109,29 +108,15 @@ enddef
 #  We need to direct ctags to the right file within the right
 #  documentation dir
 export def UpdateTags()
-    # Trimming dan.vim , out of filename
-    var DOCU_NAME = matchstr(expand('%'), '\/[^/]*\(\.dan\)\@=')
+    var ABSOLUTE_DIR = expand('%:p:h')
+    var FILENAME_NOEXT = expand('%:t:r')
+    var FILENAME = expand('%:t')
 
-    # Equivalent to :silent! !ctags ${VIMDAN_DIR}/${DOCU_NAME}/${DOCU_NAME}.dan -f ${VIMDAN_DIR}/${DOCU_NAME}/tags  2>/dev/null
-    execute 'silent! !ctags -f ' .. VIMDAN_DIR .. '/' .. DOCU_NAME .. '/tags ' .. VIMDAN_DIR .. '/' .. DOCU_NAME .. '/' .. DOCU_NAME .. '.dan 2>/dev/null'
+    # Equivalent to :silent! !ctags -f ${ABSOLUTE_DIR}/.tags${FILENAME_NOEXT} ${ABSOLUTE_DIR}/${FILENAME} 2>/dev/null
+    execute 'silent! !ctags -f ' .. ABSOLUTE_DIR .. '/.tags' .. FILENAME_NOEXT .. ' ' .. ABSOLUTE_DIR .. '/' .. FILENAME .. ' 2>/dev/null'
+
 enddef
 # -----------------------------------------------
-
-
-# Updating tags for the current opened vim-dan main file 
-# (LEGACY, in use for main.<DOCU_NAME>dan)
-# -----------------------------------------------
-#  We need to direct ctags to the right file within the right
-#  documentation dir
-export def UpdateTagsLegacy()
-    # Trimming dan.vim , out of filename
-    var DOCU_NAME = matchstr(expand('%'), '\(main\.\)\@<=.*\(dan\)\@=')
-
-    # Equivalent to :silent! !ctags ${VIMDAN_DIR}/${DOCU_NAME}/main.${DOCU_NAME}.dan -f ${VIMDAN_DIR}/${DOCU_NAME}/tags  2>/dev/null
-    execute 'silent! !ctags -f ' .. VIMDAN_DIR .. '/' .. DOCU_NAME .. '/tags ' .. VIMDAN_DIR .. '/' .. DOCU_NAME .. '/main.' .. DOCU_NAME .. 'dan 2>/dev/null'
-enddef
-# -----------------------------------------------
-
 
 
 # Concealing (X)
