@@ -20,33 +20,71 @@ if has("conceal")
   setlocal cole=2 cocu=nc
 endif
 
+" Link Source
+syn region danLinkSource start="<L=[[:alnum:]#]\+>" end="</L>" contains=danLinkSourceOTag,danLinkSourceCTag oneline keepend
+
+hi def link danLinkSource ColorColumn
+
+
+syn match danLinkSourceOTag contained "<L=[[:alnum:]#]\+>" conceal
+syn match danLinkSourceCTag contained "</L>" conceal
+
+
+" Block Link Target
+syn region danBlockLinkTarget start="<B=[[:alnum:]]\+>" end="$" contains=danBlockLinkTargetTag oneline keepend
+
+hi def link danBlockLinkTarget String
+
+syn match danBlockLinkTargetTag contained "<B=[[:alnum:]]\+>" conceal
+
+
+" Inline Link Target
+
+syn region danInlineLinkTarget start="<I=[[:alnum:]]\+>" end="$" contains=danInlineLinkTargetTag oneline keepend
+
+syn match danInlineLinkTargetTag contained "<I=[[:alnum:]]\+>" conceal
+
+
+
+
+
+
+
 " Links from
-syn region danLinkfromEntry start="&" end="&" contains=danLinkfromAmper,danLinkFromParentName oneline
+syn region danLinkfromEntry start="&" end="&" contains=danLinkfromAmper,danLinkFromParentName oneline keepend
 
 if has("conceal")
   syn match danLinkfromAmper contained "&" conceal
+  syn match danInlineLinkfromChars "%\$.*%\$" conceal
 "  syn match danLinkFromParentName contained "@[-./,=\"[:alnum:]_~) ]*@" conceal
   syn match danLinkFromParentName contained "@.*@" conceal
 "  syn match danCodeDelimiter "```\w*$" conceal
 else
   syn match danLinkfromAmper contained "&"
 "  syn match danLinkFromParentName contained "@[-./,=\"[:alnum:]_~) ]*@"
-  syn match danLinkFromParentName contained "@.*@" conceal
+  syn match danLinkFromParentName contained "@.*@"
 endif
 
+syn match danSectionDelim	"^===.*===\%(\s(X)\)\{,1}$" contains=danX
+syn match danSectionDelim	"^---.*--\%(\s(X)\)\{,1}$" contains=danX
 
-hi def link danLinkfromEntry Identifier
+"hi def link danLinkfromEntry Identifier
+hi def link danLinkfromEntry NonText
 hi def link danLinkFromAmper Ignore
 hi def link danLinkFromParentName Ignore
+
+hi def link danSectionDelim PreProc
 
 " Links to
 syn match danLinktoEntry "^#\s.*\s#$" contains=danLinktoHash
 syn match danLinktoEntryXed "^#\s.*\s#\%(\s(X)\)\{,1}$" contains=danLinktoHash,danX
 syn match danLinktoHash contained "#" conceal
+syn match danLinkMarker "\[+\]"
 
 hi def link danLinktoHash Ignore
 hi def link danLinktoEntry String
 hi def link danLinktoEntryXed String
+hi def link danLinkMarker SpecialKey
 
 " (X) Annotation
 syn match danX "(X)"
@@ -165,8 +203,8 @@ if g:syntax_executed_no >= 1
     if exists('g:dan_kw_preproc_list')
         for dan_kw_preproc in g:dan_kw_preproc_list
             " Substitute execute for echo if you want to troubleshoot the command
-            execute 'syn match dan_kw_preproc_' . dan_kw_prepoc_no . ' "' . dan_kw_prepoc . '" ' . 'contains=danX'
-            execute 'hi def link dan_kw_preproc_' . dan_kw_prepoc_no ' PreProc'
+            execute 'syn match dan_kw_preproc_' . dan_kw_preproc_no . ' "' . dan_kw_preproc . '" ' . 'contains=danX'
+            execute 'hi def link dan_kw_preproc_' . dan_kw_preproc_no ' PreProc'
 
 
             let g:dan_kw_preproc_no += 1

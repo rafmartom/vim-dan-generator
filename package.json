@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "commander": "^13.1.0",
+    "csv-parser": "^3.2.0",
+    "json2csv": "^6.0.0-alpha.2",
+    "puppeteer-core": "^24.2.0",
+    "unbzip2-stream": "^1.4.3"
+  }
+}

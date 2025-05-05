@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></li>
+<li><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></li>
+</ul>
+
+
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/codeblock-prompt.html">codeblock-prompt</a></li>
+  <li><strong>indexing-target-links</strong></li>
+  <li><a href="../scripts/links-anchor.html">links-anchor</a></li>
+  <li><a href="../scripts/links-internal.html">links-internal</a></li>
+  <li><a href="../scripts/react-native.html">react-native</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Script <code>indexing-target-links</code></h1>
+<p></p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Pandoc Lua Filter for use in vim-dan-generator that parses all the target links of a given file
+  into a .csv file  we call &quot;target-links-index.csv&quot;
+    It will be writting them into a .csv
+        - {DOCU_PATH}/target-links-index.csv
+        path,label,is_anchor,anchor_id,buid,iid,
+            - path: The file its originated on
+                /guidance/living-in-spain.html
+            - is_anchor: Parsing all the html elements which has id=&quot;&quot; , true if they come from that
+            - label:
+                - If it is the one addressing the file (is_anchor=false) its parsed title ${paths_linkto[$path]}
+                - If is_anchor=true , is element.textContent()
+            - anchor_id: html id=&quot;&quot; property value.
+            - buid: Block Unique ID, ID assigned to the file
+            - iid: Inline ID, ID assigned to the anchor ID
+
+an example of &quot;target-links-index.csv&quot;
+
+path                      ,is_anchor,label        ,anchor_id,buid,iid,
+/guidance/living-in-spain.html,false,&quot;Living in Spain&quot;,,f3,,
+/guidance/living-in-spain.html,true,&quot;Introduction&quot;,&quot;topicIntro&quot;,f3,1,
+/guidance/living-in-spain.html,true,&quot;Considerations&quot;,&quot;topicConsider&quot;,f3,2,
+/guidance/living-in-zambia.html,false,&quot;Living in Zambia&quot;,,f4,,
+/guidance/living-in-zambia.html,true,&quot;Introduction&quot;,&quot;topicIntro&quot;,f4,,1
+/guidance/living-in-zambia.html,true,&quot;Considerations&quot;,&quot;topicConsider&quot;,f4,,2
+
+ Note 1: Filter is applied in a per file basis, in order to create a complete index of the link
+     it is meant to be used in a iteration of all the files
+
+ Note 2: Filter is meant to be used in the process of indexing the target links, which
+     Doesn&apos;t involve any writting process, thus redirect output to /dev/null
+
+Example:
+</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: rafmartom <rafmartom@gmail.com></li>
+    </ul>
+
+
+<h2><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#dprint">dprint (...)</a></td>
+	<td class="summary">Print the statement if the debug mode is activated</td>
+	</tr>
+</table>
+<h2><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loading_arguments">loading_arguments (doc)</a></td>
+	<td class="summary">Load the arguments of the filter from variables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#append_block_link">append_block_link (doc)</a></td>
+	<td class="summary">It appends the entry of the current file as a block_link to the "target-links-index.csv"</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="HELPER_FUNCTIONS"></a>HELPER_FUNCTIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "dprint"></a>
+    <strong>dprint (...)</strong>
+    </dt>
+    <dd>
+    Print the statement if the debug mode is activated
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> DEBUG = <span class="keyword">true</span> <span class="comment">-- Activate the debugging mode
+</span> <span class="function-name">dprint</span>(<span class="string">'[DEBUG] myVar : '</span> , myVar) <span class="comment">-- DEBUGGING</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="SUBROUTINE_DECLARATIONS"></a>SUBROUTINE_DECLARATIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loading_arguments"></a>
+    <strong>loading_arguments (doc)</strong>
+    </dt>
+    <dd>
+    Load the arguments of the filter from variables
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "append_block_link"></a>
+    <strong>append_block_link (doc)</strong>
+    </dt>
+    <dd>
+    It appends the entry of the current file as a block_link to the "target-links-index.csv"
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        Description of Output
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-04-19 12:17:14 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

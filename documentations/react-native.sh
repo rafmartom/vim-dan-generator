@@ -1,64 +1,67 @@
-#!/bin/bash
+#!/bin/bash 
+# @file react-native
+# @brief vim-dan ruleset file for documentation on adobe ai program.
+# @description
+#   author: rafmartom <rafmartom@gmail.com>
 
-# DECLARING VARIABLES AND PROCESSING ARGS
-# -------------------------------------
-# (do not touch)
+
+## ----------------------------------------------------------------------------
+# @section SCRIPT_VAR_INITIALIZATION
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
-DOCU_PATH="$1"
-shift
-DOCU_NAME=$(basename ${0} '.sh')
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
 https://reactnative.dev/
 )
-# -------------------------------------
-# eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
+
+## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+## ----------------------------------------------------------------------------
+
+
+
+
+## ----------------------------------------------------------------------------
+# @section ACTION_DEFINITION
+# @description Ruleset for each individual stage of vim-dan
+
+spidering_rules(){
+
+    ## Iterate through each link of the documentation
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        standard_spider -l ${DOWNLOAD_LINK}
+    done
+
+}
 
 indexing_rules(){
-    if [ ! -d "${DOCU_PATH}/downloaded" ]; then
-        mkdir -p "${DOCU_PATH}/downloaded"
-    fi
 
-for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-    wget \
-    `##tBasic Startup Options` \
-      --execute robots=off \
-    `## Loggin and Input File Options` \
-    `## Download Options` \
-      --timestamping \
-    `## Directory Options` \
-      --directory-prefix=${DOCU_PATH}/downloaded \
-      -nH \
-    `## HTTP Options` \
-      --user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59" \
-      --adjust-extension \
-    `## HTTPS Options` \
-      --no-check-certificate \
-    `## Recursive Retrieval Options` \
-      --recursive --level=4 \
-    `## Recursive Accept/Reject Options` \
-      --no-parent \
-      --reject '*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*json,*.css,*.png,*.xml,*.txt' \
-      --page-requisites \
-      ${DOWNLOAD_LINK}
-done
+    ## Iterate through each link of the documentation
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        download_fromlist -l ${DOWNLOAD_LINK}
+    done
+
 }
 
 arranging_rules(){
 
-
-    ## Making a backup of the index, if it doesnt exists
+    ## Making a backup of the index, if it doesnt exist
     if [[ ! -d "${DOCU_PATH}/downloaded-bk" || ! "$(ls -A "${DOCU_PATH}/downloaded-bk" 2>/dev/null)" ]]; then
         cp -r ${DOCU_PATH}/downloaded ${DOCU_PATH}/downloaded-bk/
     fi
 
-# DOCUMENTATION SPECIFIC RULES
-# ---------------------------------------------------------------------------
+    # DOCUMENTATION SPECIFIC RULES
+    # ---------------------------------------------------------------------------
+    # Add below statments regarding to arranging_rules that are specific for this documentation
 
-    ## Removing first level files except "docs.html"
-    find "${DOCU_PATH}/downloaded/" -maxdepth 1 -type f -not -name "docs.html" -delete
+    # Example, you want to remove the blog section that has been indexed
+    # rm -r ${DOCU_PATH}/downloaded/blog
+
+    # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
+    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
+
+    ## Removing first level files 
+    find "${DOCU_PATH}/downloaded/" -maxdepth 1 -type f -delete
 
     ## Removing non-interest files
 
@@ -73,91 +76,156 @@ arranging_rules(){
     rm -r ${DOCU_PATH}/downloaded/docs/assets
     rm -r "${DOCU_PATH}/downloaded/docs/next"
 
-# EOF EOF EOF DOCUMENTATION SPECIFIC RULES
-# ---------------------------------------------------------------------------
 
-    ## Cleaning up documents
+    # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
+    # ---------------------------------------------------------------------------
 
-    ## Clean up the duplicates
+
+    ## Files cleanup
+
+    ## Clean up the duplicate files
     # Keeping the least nested one
     jdupes -r -N -d ${DOCU_PATH}/downloaded/
 
 
     ## Modifying documents
-
-
-    rename_lone_index
-    deestructuring_dir_tree
-
 }
 
 
 parsing_rules(){
 
     write_header
-    write_html_docu_multirule -f "h1" -b "article" -cp -L "$(realpath ${CURRENT_DIR}/../pandoc-filters/react-native.lua)"
+    ## Change below the html tags to be parsed -f for titles , -b for body
+    # Example: 
+    #    We parse the Titles of the Topics by using 'h1'
+    #    We parse the Content of the Pages by using 'article'
+    
+    #    write_html_docu_multirule -f "h1" -b "article" -cp
+    #
+    #  Other Example:
+    #    You may use various tags, the firstone to be found will be used
+    #    In the documentation downloaded some pages are different than others
+    #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
+    #
+    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
+    #
+    
+
+    write_html_docu_multirule -f "h1" -b "article" -cp -L "$(realpath ${CURRENT_DIR}/../pandoc-filters/react-native.lua)" -il -c "105"
 
 
-    # DOCUMENTATION SPECIFIC RULES
+    # DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
-
     ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
 
-    sed -e '/^(\[\] )*\[\]$/d' \
+    sed \
+        -e '/^Previous$/d' \
+        -e '/^Next$/d' \
+        -E -e '/^(\[\] )*\[\]$/d' \
+        -E -e '/^(\[\])*\[\]$/d' \
         -e "s/$(echo -ne '\u200b')//g" \
         -e 's/^\[\] //' \
         -i "${MAIN_TOUPDATE}"
 
-    # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
+
     # MODELINE FOR SYNTAX SPECIFIC PATTERNS FOR KEYWORDS
     # ---------------------------------------------------------------------------
     # Change below the keywords you want to be highlighted
+    #    The syntax highlighting will be using Default groups , such as Question , NonText etc...
+    #        Introduce the patterns that you want to be highlighted with the same style than those groups
+    #
+    #    For instance to highlight the Pattern "^Reference" and "^Example:" which are repeated throughout the documentation 
+    #    In this example I want to highlight it with Green Letter, normal foreground. 
+    #         I will be using then the Question group
+    #         So Using coma separated
+    #           
+    #    sed -i '11a\'$'\n''&@ g:dan_kw_question_list = "^Example:,^Reference"" @&' "${MAIN_TOUPDATE}"
+    #    Note : there are Character limitations ",= and others wont be working
     
-    sed -i '11a\'$'\n''&@ g:dan_kw_question_list = "^Example:,^Reference"" @&' "${MAIN_TOUPDATE}"
-    sed -i '12a\'$'\n''&@ g:dan_kw_nontext_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '13a\'$'\n''&@ g:dan_kw_linenr_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '14a\'$'\n''&@ g:dan_kw_warningmsg_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '15a\'$'\n''&@ g:dan_kw_colorcolumn_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '16a\'$'\n''&@ g:dan_kw_underlined_list = "^Responses" @&' "${MAIN_TOUPDATE}"
-    sed -i '17a\'$'\n''&@ g:dan_kw_preproc_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '18a\'$'\n''&@ g:dan_kw_comment_list = "^Parameters:" @&' "${MAIN_TOUPDATE}"
-    sed -i '19a\'$'\n''&@ g:dan_kw_identifier_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '20a\'$'\n''&@ g:dan_kw_ignore_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '21a\'$'\n''&@ g:dan_kw_statement_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '22a\'$'\n''&@ g:dan_kw_cursorline_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '23a\'$'\n''&@ g:dan_kw_tabline_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '10a\'$'\n''&@ The following lines are used by vim-dan, do not modify them! @&' "${MAIN_TOUPDATE}"
+    sed -i '12a\'$'\n''&@ g:dan_kw_question_list = "^Description" @&' "${MAIN_TOUPDATE}"
+    sed -i '13a\'$'\n''&@ g:dan_kw_nontext_list = "^Parameters,^Type" @&' "${MAIN_TOUPDATE}"
+    sed -i '14a\'$'\n''&@ g:dan_kw_linenr_list = "^Parameter " @&' "${MAIN_TOUPDATE}"
+    sed -i '15a\'$'\n''&@ g:dan_kw_warningmsg_list = "^Returns" @&' "${MAIN_TOUPDATE}"
+    sed -i '16a\'$'\n''&@ g:dan_kw_colorcolumn_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '17a\'$'\n''&@ g:dan_kw_underlined_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '18a\'$'\n''&@ g:dan_kw_preproc_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '19a\'$'\n''&@ g:dan_kw_comment_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '20a\'$'\n''&@ g:dan_kw_identifier_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '21a\'$'\n''&@ g:dan_kw_ignore_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '22a\'$'\n''&@ g:dan_kw_statement_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '23a\'$'\n''&@ g:dan_kw_cursorline_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '24a\'$'\n''&@ g:dan_kw_tabline_list = "" @&' "${MAIN_TOUPDATE}"
+
     # EOF EOF EOF MODELINE FOR SYNTAX SPECIFIC PATTERNS FOR KEYWORDS
     # ---------------------------------------------------------------------------
+    
+
+    # TUCKING IN THE IN-LINE LINKS AS MUCH AS POSSIBLE
+    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
+
+    for ((i=1; i<=5; i++)); do
+        awk -f "$CURRENT_DIR"/../scripts/pile-consecutive-inline-links.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
+    done
+
+##  @todo if uncommented, in-line tags will be appended to the end of the previous line
+##         i.e: accessed and manipulated to modify the appearance of the associated text frame.<I=1><I=2>
+##        This would be desired but it seems to be breaking the functionality with the current configuration of ctags
+##
+##    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
+    # ---------------------------------------------------------------------------
+
 }
 
-## PARSING ARGUMENTS
-## ------------------------------------
-# (do not touch)
-while getopts ":ipa" opt; do
+
+## EOF EOF EOF ACTION_DEFINITION
+## ----------------------------------------------------------------------------
+
+
+
+
+## ----------------------------------------------------------------------------
+# @section SELECTING_ACTION
+# @brief Not to be customised
+
+while getopts ":siap" opt; do
     case ${opt} in
+        s)
+            spidering_rules
+            ;;
         i)
             indexing_rules
-            ;;
-        p)
-            parsing_rules
             ;;
         a)
             arranging_rules
             ;;
+        p)
+            parsing_rules
+            ;;
         h | *)
-            echo "Usage: $0 [-i] [-p] [-a] [-h] "
+            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
             echo "Options:"
+            echo "  -s  Spidering"
             echo "  -i  Indexing"
-            echo "  -p  Parsing"
             echo "  -a  Arranging"
+            echo "  -p  Parsing"
             echo "  -h  Help"
             exit 0
             ;;
     esac
 done
-## EOF EOF EOF PARSING ARGUMENTS
-## ------------------------------------
+
+## EOF EOF EOF SELECTING_ACTION 
+## ----------------------------------------------------------------------------

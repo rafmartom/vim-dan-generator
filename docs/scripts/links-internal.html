@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></li>
+<li><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></li>
+</ul>
+
+
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/codeblock-prompt.html">codeblock-prompt</a></li>
+  <li><a href="../scripts/indexing-target-links.html">indexing-target-links</a></li>
+  <li><a href="../scripts/links-anchor.html">links-anchor</a></li>
+  <li><strong>links-internal</strong></li>
+  <li><a href="../scripts/react-native.html">react-native</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Script <code>links-internal</code></h1>
+<p></p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Pandoc lua filter to parse all the link elements for vim-dan.
+
+It checks every link element parsed by the reader, checking its href property.
+
+For each relative link (e.g., `href=&quot;/guidance/living-in-spain&quot;`):
+
+  1. Search if it exists locally in the downloaded PATH:
+     `${DOCU_PATH}/downloaded/guidance/living-in-spain.html`
+
+  2. If it exists:
+     - Adds a Link Source there
+     - `Inline Link Source =&gt; &lt;L=${BUID}#${IID}&gt;${LABEL}&lt;/L&gt;
+     -   or
+     - `Block  Link Source =&gt; &lt;L=${BUID}&gt;${LABEL}&lt;/L&gt;
+     - Example: `&lt;L=F3&gt;Living in Spain&lt;/L&gt;
+
+Example:
+
+pandoc -f html -t plain ./downloaded/spain.html \
+  -L danlinkfrom-href.lua \
+  -V docu_path=&quot;$(readlink -f ./)&quot;
+
+pandoc -f html -t plain ./downloaded/jsobjref/Application.html \
+  -L id-danlinkto.lua \
+  -V file_processed=&quot;./downloaded/jsobjref/Application.html&quot; \
+  -V objects_toparse=&quot;Span,Div&quot; \
+  | sed -E &apos;:a; N; s/\n(%\$.*?%\$)/ \1/&apos;
+</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: rafmartom <rafmartom@gmail.com></li>
+    </ul>
+
+
+<h2><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#strip_lead_slash">strip_lead_slash (myPath)</a></td>
+	<td class="summary">Strip leading slash of a path</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#append_html">append_html (myPath)</a></td>
+	<td class="summary">Append .html to the myPath string if is not present</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#strip_html">strip_html (myPath)</a></td>
+	<td class="summary">strip_html strips the ".html" present in myPath</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#basename">basename (myPath)</a></td>
+	<td class="summary">Get the basename of a path</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#create_danlinkfrom">create_danlinkfrom (href)</a></td>
+	<td class="summary">Create the danlinkfrom string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fileExists">fileExists (full_path)</a></td>
+	<td class="summary">Check if a file exists</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#isDir">isDir (myPath)</a></td>
+	<td class="summary">Check if a path refers to a dir</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#dprint">dprint (...)</a></td>
+	<td class="summary">Print the statement if the debug mode is activated</td>
+	</tr>
+</table>
+<h2><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loading_arguments">loading_arguments (doc)</a></td>
+	<td class="summary">Load the arguments of the filter from variables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#check_links">check_links (elem)</a></td>
+	<td class="summary">Check each link</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="HELPER_FUNCTIONS"></a>HELPER_FUNCTIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "strip_lead_slash"></a>
+    <strong>strip_lead_slash (myPath)</strong>
+    </dt>
+    <dd>
+    Strip leading slash of a path
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "append_html"></a>
+    <strong>append_html (myPath)</strong>
+    </dt>
+    <dd>
+    Append .html to the myPath string if is not present
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "strip_html"></a>
+    <strong>strip_html (myPath)</strong>
+    </dt>
+    <dd>
+    strip_html strips the ".html" present in myPath
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "basename"></a>
+    <strong>basename (myPath)</strong>
+    </dt>
+    <dd>
+    Get the basename of a path
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "create_danlinkfrom"></a>
+    <strong>create_danlinkfrom (href)</strong>
+    </dt>
+    <dd>
+    Create the danlinkfrom string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fileExists"></a>
+    <strong>fileExists (full_path)</strong>
+    </dt>
+    <dd>
+    Check if a file exists
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">full_path</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "isDir"></a>
+    <strong>isDir (myPath)</strong>
+    </dt>
+    <dd>
+    Check if a path refers to a dir
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "dprint"></a>
+    <strong>dprint (...)</strong>
+    </dt>
+    <dd>
+    Print the statement if the debug mode is activated
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> DEBUG = <span class="keyword">true</span> <span class="comment">-- Activate the debugging mode
+</span> <span class="function-name">dprint</span>(<span class="string">'[DEBUG] myVar : '</span> , myVar) <span class="comment">-- DEBUGGING</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="SUBROUTINE_DECLARATIONS"></a>SUBROUTINE_DECLARATIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loading_arguments"></a>
+    <strong>loading_arguments (doc)</strong>
+    </dt>
+    <dd>
+    Load the arguments of the filter from variables
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "check_links"></a>
+    <strong>check_links (elem)</strong>
+    </dt>
+    <dd>
+    Check each link
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-04-19 12:17:14 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

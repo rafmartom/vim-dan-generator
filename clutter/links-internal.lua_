@@ -1,0 +1,205 @@
+-- Pandoc lua script to parse all the link elements for vim-dan
+--
+--    It checks every link element parsed, by the reader, check its href property
+--    For each relative link i.e. ( href="/guidance/linving-in-spain" )
+--       Search if it exists locally in the downloaded PATH
+--          ${DOCU_PATH}/downloaded/guidance/living-in-spain.html
+--          It it does exists
+--            Add a danlinkfrom on there
+-- danlinkfrom => & @${linkfrom_prefix}@ ${linkfrom_title} &"
+--          In the example & @guidance/living-in-spain.html@ living-in-spain &"
+--
+--  Example
+--    pandoc -f html -t plain ./downloaded/spain.html -L danlinkfrom-href.lua -V docu_path="$(readlink -f ./)" 
+--    pandoc -f html -t plain ./downloaded/jsobjref/Application.html -L id-danlinkto.lua -V file_processed="./downloaded/jsobjref/Application.html" -V objects_toparse="Span,Div" | sed -E ':a; N; s/\n(%\$.*?%\$)/ \1/'
+
+-- GETTING THE PATH WHERE THE SCRIPT IS SAVED
+script_path = debug.getinfo(1, "S").source:sub(2)
+-- Removing the filename to get the directory path
+script_path = script_path:match("(.*/)")
+project_path = script_path:match("(.*/)[^/]+/")
+-------------------------------------------------------
+
+
+package.path = script_path .. "/lua_modules/share/lua/5.4/?.lua;" .. package.path
+package.cpath = script_path .. "/lua_modules/lib/lua/5.4/?.so;" .. package.cpath
+local PATH = require "path"
+
+
+-- HELPER FUNCTIONS
+-- -------------------------------------------------------
+
+-- Function to strip leading slash
+local function strip_lead_slash(myPath)
+    return string.gsub(myPath, "^/", "")
+end
+
+-- Function to append .html if needed
+local function append_html(myPath)
+    if not string.match(myPath, "%.html$") then
+        return myPath .. ".html"
+    end
+    return myPath
+end
+
+-- Function to strip .html if needed
+local function strip_html(myPath)
+    return string.gsub(myPath, "%.html$", "")
+end
+
+-- Function to get the basename of a path
+local function basename(myPath)
+    return string.match(myPath, "[^/]+$")
+end
+
+-- Function to create the danlinkfrom string
+local function create_danlinkfrom(href)
+    local linkfrom_prefix = append_html(href)
+--    local linkfrom_title = strip_html(basename(href))
+    local linkfrom_title = PATH.basename(href)
+    return '& @' .. linkfrom_prefix .. '@ ' .. linkfrom_title .. ' &'
+end
+
+
+-- Function to check if a file exists
+local function fileExists(full_path)
+    local file = io.open(full_path, "r")
+    if file then
+        file:close()
+        return true
+    else
+        return false
+    end
+end
+
+local function isDir(myPath)
+    if string.match(myPath, "/$") then
+        return true
+    end
+    return false
+end
+
+-- EOF EOF EOF HELPER FUNCTIONS
+-- -------------------------------------------------------
+
+
+-- SCRIPT VARIABLE INITIALITATION
+-- -------------------------------------------------------
+
+local exit_status = nil
+local docu_path = nil
+local file_processed = nil
+
+-- EOF EOF SCRIPT VARIABLE INITIALITATION
+-- -------------------------------------------------------
+
+
+
+-- FUNCTIONS EXECUTED ON THE MAIN SEQUENCE
+-- -------------------------------------------------------
+
+function loading_arguments (doc)
+    -- Load contents into separate variables
+    docu_path = tostring(PANDOC_WRITER_OPTIONS["variables"]["docu_path"]) or nil
+    file_processed = tostring(PANDOC_WRITER_OPTIONS["variables"]["file_processed"]) or nil
+    links_anchor = tostring(PANDOC_WRITER_OPTIONS["variables"]["links_anchor"]) or nil
+
+    return doc
+end
+
+
+local function check_links(elem)
+    local href = elem.target  
+    local danlinkfrom = null 
+    local full_path = null
+    local rel_path = href
+    
+
+    href_basename = PATH.basename(href)
+
+    -- Correction for urls that finnish in path
+    --  for instance href="../footagesource/" that will be pointing to
+    --         href="../footagesource/index.html"
+    if ( isDir(href) ) then
+        href = href .. "index.html"
+    end
+
+
+    -- Sorting the kind of link we have
+    -- Remember:
+    --   External Links : (Either absolute or relative) Start with https:// or http://
+    --       <a href="https://www.google.com">Google</a> 
+    --   Anchor Links :
+    --       <a href="#section1">Jump to Section 1</a>
+    --   Internal Absolute Links : 
+    --       <a href="/about/us.html">About Us</a>
+    --   Internal Relative Links :
+    --       <a href="about/us.html">About Us</a>
+    --       <a href="../about/us.html">About Us</a>
+    
+
+print('href : ' .. href) -- DEBUGGING
+
+    -- Skipping Anchor links , External Links and Scheme Relative Links
+    if href_basename:match("^#%a") and links_anchor == nil then
+print('Skipping anchorlinks') -- DEBUGGING
+
+        return
+    elseif href:match("^#$") or href:match("^https?://") or href:match("^//") then
+print('Is a External Link or just the empty #') -- DEBUGGING
+
+        return
+    -- Handling Internal Absolute Links
+    elseif href:match("^/") then
+print('Is Internal Absolute Link') -- DEBUGGING
+        full_path = docu_path .. "/downloaded" ..  href
+        rel_path = href
+
+    -- Handling Internal Relative Links
+    elseif href:match("^%.") or href:match("^%a") or href_basename:match("^#%a") then
+print('Is Internal Relative Link') -- DEBUGGING
+        full_path = PATH.normalize(docu_path .. "/downloaded" .. PATH.dirname(file_processed)) .. '/' .. href
+        rel_path = PATH.normalize(PATH.dirname(file_processed)) .. '/' .. href
+--        full_path = PATH.normalize(docu_path .. "/downloaded" .. PATH.dirname(file_processed) .. '/' .. href)
+--        rel_path = PATH.normalize(PATH.dirname(file_processed) .. '/' .. href)
+    else
+print('Link type not recognised') -- DEBUGGING
+    end
+
+--    -- If they are Internal Relative Links Normalize the paths
+--    if href:match("^%.") then
+----print('into if')
+--        full_path = PATH.normalize(docu_path .. "/downloaded" .. PATH.dirname(file_processed) .. '/' .. href)
+--        rel_path = PATH.normalize(PATH.dirname(file_processed) .. '/' .. href)
+--    -- Otherwise get their full_path in the system
+--    else
+----print('into else')
+--        full_path = docu_path .. "/downloaded" ..  href
+--        rel_path = href
+--    end
+
+
+
+    full_path = append_html(full_path)
+
+--print('Checking link full_path : ' .. full_path) -- DEBUGGING
+
+    -- Check on each file if it exists
+    if fileExists(full_path) then  
+        local link_text = pandoc.utils.stringify(elem.content)
+        local linkfrom_title = PATH.basename(full_path)
+        return pandoc.Str('&' .. link_text .. '@' .. rel_path .. '@&')
+--        return pandoc.Str('[+]' .. '&' .. link_text .. '@' .. rel_path .. '@&')
+--        return pandoc.Str('& @' .. rel_path .. '@ ' .. '[+] ' .. link_text .. ' &')
+    end
+end
+
+-- EOF EOF EOF FUNCTIONS EXECUTED ON THE MAIN SEQUENCE
+-- -------------------------------------------------------
+
+
+
+return {
+    { Pandoc = loading_arguments },
+    { Link = check_links } 
+}

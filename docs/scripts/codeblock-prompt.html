@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></li>
+<li><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></li>
+</ul>
+
+
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><strong>codeblock-prompt</strong></li>
+  <li><a href="../scripts/indexing-target-links.html">indexing-target-links</a></li>
+  <li><a href="../scripts/links-anchor.html">links-anchor</a></li>
+  <li><a href="../scripts/links-internal.html">links-internal</a></li>
+  <li><a href="../scripts/react-native.html">react-native</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Script <code>codeblock-prompt</code></h1>
+<p></p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Pandoc Lua Filter checking each Code Block and prompting the user to
+identify its extension.
+  It gives the user the previous 3 choices inputed
+
+Example:
+
+   scr_choice_1=$(mktemp)
+   scr_choice_2=$(mktemp)
+   scr_choice_3=$(mktemp)
+   csv_path=&quot;ext.csv&quot;
+   scr_global_current_cb=$(mktemp)
+   scr_csv_iterator_needs_catchup=$(mktemp)
+
+pandoc -f html -t plain ./downloaded/spain.html \
+   -V scr_choice_1=${scr_choice_1} \
+   -V scr_choice_2=${scr_choice_2} \
+   -V scr_choice_3=${scr_choice_3} \
+   -V csv_path=${csv_path} \
+   -V scr_global_current_cb=${scr_global_current_cb} \
+   -V scr_csv_iterator_needs_catchup=${scr_csv_iterator_needs_catchup} \
+   -L $(realpath codeblock-prompt.lua)&quot;
+</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: rafmartom <rafmartom@gmail.com></li>
+    </ul>
+
+
+<h2><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#dprint">dprint (...)</a></td>
+	<td class="summary">Print the statement if the debug mode is activated</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#saveVariableToFile">saveVariableToFile (filePath, variableName, content)</a></td>
+	<td class="summary">Save a local variable to a file in the hard-drive
+ This way we can transfer information from the Lua Script back to bash</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loadFileContent">loadFileContent (filePath)</a></td>
+	<td class="summary">Load local variable to a file in the hard-drive</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#file_exists">file_exists (path)</a></td>
+	<td class="summary">Check if there is a file in a certain path</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#count_file_lines">count_file_lines (csv_path)</a></td>
+	<td class="summary">Count the lines of a file, for a csv will give you the entry number + the header</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#os.capture">os.capture (cmd, raw)</a></td>
+	<td class="summary">Execute cmd in a new shell an capture the output in its return value</td>
+	</tr>
+</table>
+<h2><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loading_arguments">loading_arguments (doc)</a></td>
+	<td class="summary">Load the arguments of the filter from variables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#does_need_prompting">does_need_prompting (doc)</a></td>
+	<td class="summary">Does the element need prompting</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#csv_iterator_catchup">csv_iterator_catchup (doc)</a></td>
+	<td class="summary">Catching up the csv_iterator the the current_cb</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#check_each_cb">check_each_cb (elem)</a></td>
+	<td class="summary">The triggering function to check each Code Block</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#save_csv">save_csv (doc)</a></td>
+	<td class="summary">Save the csv to disk</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#save_return_vars">save_return_vars (doc)</a></td>
+	<td class="summary">Save the variables to disk for the next iteration of the filter</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="HELPER_FUNCTIONS"></a>HELPER_FUNCTIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "dprint"></a>
+    <strong>dprint (...)</strong>
+    </dt>
+    <dd>
+    Print the statement if the debug mode is activated
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> DEBUG = <span class="keyword">true</span> <span class="comment">-- Activate the debugging mode
+</span> <span class="function-name">dprint</span>(<span class="string">'[DEBUG] myVar : '</span> , myVar) <span class="comment">-- DEBUGGING</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "saveVariableToFile"></a>
+    <strong>saveVariableToFile (filePath, variableName, content)</strong>
+    </dt>
+    <dd>
+    Save a local variable to a file in the hard-drive
+ This way we can transfer information from the Lua Script back to bash
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filePath</span>
+
+        </li>
+        <li><span class="parameter">variableName</span>
+
+        </li>
+        <li><span class="parameter">content</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="function-name">saveVariableToFile</span>(/path/to/file, <span class="string">"myVar"</span>, <span class="global">tostring</span>(myVar))</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "loadFileContent"></a>
+    <strong>loadFileContent (filePath)</strong>
+    </dt>
+    <dd>
+    Load local variable to a file in the hard-drive
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filePath</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Use it <span class="keyword">in</span> conjunction with CLI -V passed to pandoc
+     This way you can recall values from previous filter calls.
+     In the following assume var_filepath is storing a value <span class="keyword">in</span> the hard-drive
+     We could retrieve its content <span class="keyword">and</span> store it <span class="keyword">in</span> my_var
+Example:
+
+var_filepath = <span class="global">tostring</span>(PANDOC_WRITER_OPTIONS[<span class="string">"variables"</span>][<span class="string">"var_filepath"</span>]) <span class="keyword">or</span> <span class="keyword">nil</span>
+exit_status, my_var = <span class="global">pcall</span>(loadFileContent, var_filepath)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "file_exists"></a>
+    <strong>file_exists (path)</strong>
+    </dt>
+    <dd>
+    Check if there is a file in a certain path
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">path</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "count_file_lines"></a>
+    <strong>count_file_lines (csv_path)</strong>
+    </dt>
+    <dd>
+    Count the lines of a file, for a csv will give you the entry number + the header
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">csv_path</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "os.capture"></a>
+    <strong>os.capture (cmd, raw)</strong>
+    </dt>
+    <dd>
+    Execute cmd in a new shell an capture the output in its return value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">cmd</span>
+
+        </li>
+        <li><span class="parameter">raw</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">output = <span class="global">os</span>.<span class="function-name">capture</span>(<span class="string">"node "</span> <span class="string">"/scripts/helloWorld.js"</span>)</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="SUBROUTINE_DECLARATIONS"></a>SUBROUTINE_DECLARATIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loading_arguments"></a>
+    <strong>loading_arguments (doc)</strong>
+    </dt>
+    <dd>
+    Load the arguments of the filter from variables
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "does_need_prompting"></a>
+    <strong>does_need_prompting (doc)</strong>
+    </dt>
+    <dd>
+    Does the element need prompting
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">The particularity of this script is that is inteded to get called
+   <span class="keyword">for</span> each file of the vim-dan parse
+Meaning the extension csv can either
+     - <span class="number">1</span>) Not <span class="function-name">Exists</span> (we have created it <span class="keyword">while</span> assigning the variables)
+     - <span class="number">2</span>) Exists but its length be lower than all documentation <span class="function-name">cb</span><span class="string">'s
+     - 3) Exists and its length is the same as all documentation cb'</span>s
+              In this case there will be no prompting to human
+     - In the <span class="number">2</span>) case , its length is going to match with the <span class="function-name">cb</span>'s accrued <span class="keyword">until</span> the last file that it stopped doing the parse . Unless the documentation has <span class="function-name">changed</span> (<span class="keyword">in</span> which case a new csv has to be created)
+        For this last point, we consume the csv ourselves <span class="keyword">in</span> a variable</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "csv_iterator_catchup"></a>
+    <strong>csv_iterator_catchup (doc)</strong>
+    </dt>
+    <dd>
+    Catching up the csv_iterator the the current_cb
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "check_each_cb"></a>
+    <strong>check_each_cb (elem)</strong>
+    </dt>
+    <dd>
+    The triggering function to check each Code Block
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "save_csv"></a>
+    <strong>save_csv (doc)</strong>
+    </dt>
+    <dd>
+    Save the csv to disk
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Only save <span class="keyword">if</span> there was actual human prompting
+Basically the iterator was consumed
+    And within the file there was at least one cb , so local_list will be populated</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "save_return_vars"></a>
+    <strong>save_return_vars (doc)</strong>
+    </dt>
+    <dd>
+    Save the variables to disk for the next iteration of the filter
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+        Usage for saving variables
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-04-19 12:17:14 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
