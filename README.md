@@ -30,6 +30,11 @@ The following is good
 & Packages I use& (X)
 ```
 
+## Documentation generation diagram
+
+![vim-dan-generator diagram](./vim-dan-generator-graph.png)
+
+
 ## Pending documentations
 
 - https://www.perl.org/

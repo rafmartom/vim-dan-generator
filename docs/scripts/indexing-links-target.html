@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></li>
+<li><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></li>
+</ul>
+
+
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/codeblock-prompt.html">codeblock-prompt</a></li>
+  <li><strong>indexing-links-target</strong></li>
+  <li><a href="../scripts/inline-links-writing.html">inline-links-writing</a></li>
+  <li><a href="../scripts/inuse-links-indexing.html">inuse-links-indexing</a></li>
+  <li><a href="../scripts/no-permalinks-writing.html">no-permalinks-writing</a></li>
+  <li><a href="../scripts/react-native.html">react-native</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Script <code>indexing-links-target</code></h1>
+<p></p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Pandoc Lua Filter for use in vim-dan-generator that parses all the links target of a given file
+  into a .csv file  we call &quot;links-target-index.csv&quot;
+    It will be writting them into a .csv
+        - {DOCU_PATH}/links-target-index.csv
+        path,label,is_anchor,anchor_id,buid,iid,
+            - path: The file its originated on
+                /guidance/living-in-spain.html
+            - is_anchor: Parsing all the html elements which has id=&quot;&quot; , true if they come from that
+            - pandoc_data_type: Origin of the anchor link , such as &quot;CodeBlock&quot;, &quot;Div&quot;, &quot;Header&quot;
+            - label:
+                - If it is the one addressing the file (is_anchor=false) its parsed title ${paths_linkto[$path]}
+                - If is_anchor=true , is element.textContent()
+            - anchor_id: html id=&quot;&quot; property value.
+            - buid: Block Unique ID, ID assigned to the file
+            - iid: Inline ID, ID assigned to the anchor ID
+
+an example of &quot;links-target-index.csv&quot;
+
+path                      ,is_anchor,pandoc_data_type ,label        ,anchor_id,buid,iid,
+/guidance/living-in-spain.html,false,,&quot;Living in Spain&quot;,,f3,,
+/guidance/living-in-spain.html,true,&quot;Header&quot;,&quot;Introduction&quot;,&quot;topicIntro&quot;,f3,1,
+/guidance/living-in-spain.html,true,&quot;Header&quot;,&quot;Considerations&quot;,&quot;topicConsider&quot;,f3,2,
+/guidance/living-in-zambia.html,false,,&quot;Living in Zambia&quot;,,f4,,
+/guidance/living-in-zambia.html,true,&quot;Header&quot;,&quot;Introduction&quot;,&quot;topicIntro&quot;,f4,,1
+/guidance/living-in-zambia.html,true,&quot;Header&quot;,&quot;Considerations&quot;,&quot;topicConsider&quot;,f4,,2
+
+ Note 1: Filter is applied in a per file basis, in order to create a complete index of the link
+     it is meant to be used in a iteration of all the files
+
+ Note 2: Filter is meant to be used in the process of indexing the target links, which
+     Doesn&apos;t involve any writting process, thus redirect output to /dev/null
+
+Example:
+ (an iteration of it)
+sed &apos;s/role=&quot;main&quot;//g&apos; | pup -i 0 --pre &apos;li.current, .rst-content&apos; | \
+     pandoc -f html -t plain -o /dev/null \
+-L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua)&quot; \
+-V file_processed=&quot;./jsobjref/ExportOptionsPhotoshop.html&quot; \
+-V csv_path=/home/fakuve/downloads/vim-dan/adobe-ai/links-target-index.csv \
+-V parsed_title=&quot;ExportOptionsPhotoshop&quot; -V file_no=34
+
+ This is inside a
+
+   for file in &quot;${files_array[@]}&quot;; do
+       for title_parsing in &quot;${title_parsing_array[@]}&quot;; do
+       done
+   done
+</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: rafmartom <rafmartom@gmail.com></li>
+    </ul>
+
+
+<h2><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#dprint">dprint (...)</a></td>
+	<td class="summary">Print the statement if the debug mode is activated</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#generate_uid">generate_uid (input_counter)</a></td>
+	<td class="summary">Generate a vim-dan ID</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#decimal_to_alphanum">decimal_to_alphanum (input_no)</a></td>
+	<td class="summary">Transforms a decimal number to base-62 alphanumeric string
+ Maps numbers to [0-9a-zA-Z] (in that order)</td>
+	</tr>
+</table>
+<h2><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loading_arguments">loading_arguments (doc)</a></td>
+	<td class="summary">Load the arguments of the filter from variables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#append_block_link">append_block_link (doc)</a></td>
+	<td class="summary">Appends the entry of the current file as a block_link to the "links-target-index.csv"</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#append_inline_link">append_inline_link (elem, elem_type)</a></td>
+	<td class="summary">Appends an entry for an inline_link to the "links-target-index.csv"
+ This function iterates through each element that is subject to become a link-target</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="HELPER_FUNCTIONS"></a>HELPER_FUNCTIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "dprint"></a>
+    <strong>dprint (...)</strong>
+    </dt>
+    <dd>
+    Print the statement if the debug mode is activated
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> DEBUG = <span class="keyword">true</span> <span class="comment">-- Activate the debugging mode
+</span> <span class="function-name">dprint</span>(<span class="string">'[DEBUG] myVar : '</span> , myVar) <span class="comment">-- DEBUGGING</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "generate_uid"></a>
+    <strong>generate_uid (input_counter)</strong>
+    </dt>
+    <dd>
+    Generate a vim-dan ID
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input_counter</span>
+         The counter taking as reference.
+   For BUID it will be the file_no , for IID will be the inline_link_target_counter
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "decimal_to_alphanum"></a>
+    <strong>decimal_to_alphanum (input_no)</strong>
+    </dt>
+    <dd>
+    Transforms a decimal number to base-62 alphanumeric string
+ Maps numbers to [0-9a-zA-Z] (in that order)
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input_no</span>
+         The decimal number to convert (must be >= 0)
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string The base-62 alphanumeric representation
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="SUBROUTINE_DECLARATIONS"></a>SUBROUTINE_DECLARATIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loading_arguments"></a>
+    <strong>loading_arguments (doc)</strong>
+    </dt>
+    <dd>
+    Load the arguments of the filter from variables
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "append_block_link"></a>
+    <strong>append_block_link (doc)</strong>
+    </dt>
+    <dd>
+    Appends the entry of the current file as a block_link to the "links-target-index.csv"
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "append_inline_link"></a>
+    <strong>append_inline_link (elem, elem_type)</strong>
+    </dt>
+    <dd>
+    Appends an entry for an inline_link to the "links-target-index.csv"
+ This function iterates through each element that is subject to become a link-target
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+        </li>
+        <li><span class="parameter">elem_type</span>
+        Discard elements with no id
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-05-09 15:32:56 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

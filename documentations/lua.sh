@@ -72,8 +72,13 @@ arranging_rules(){
     ## Modifying documents
 }
 
-
 parsing_rules(){
+
+    parse_html_docu_multirule -f "nothing" -b "body"
+
+}
+
+writting_rules(){
 
     write_header
     ## Change below the html tags to be parsed -f for titles , -b for body
@@ -157,7 +162,12 @@ while getopts ":siap" opt; do
             spidering_rules
             ;;
         i)
-            indexing_rules
+            # Check if a start row number was provided
+            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
+                start_row="$2"
+                shift
+            fi
+            indexing_rules "$start_row"
             ;;
         a)
             arranging_rules

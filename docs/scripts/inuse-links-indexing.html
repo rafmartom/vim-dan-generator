@@ -1,0 +1,690 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></li>
+<li><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></li>
+</ul>
+
+
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/codeblock-prompt.html">codeblock-prompt</a></li>
+  <li><a href="../scripts/indexing-links-target.html">indexing-links-target</a></li>
+  <li><a href="../scripts/inline-links-writing.html">inline-links-writing</a></li>
+  <li><strong>inuse-links-indexing</strong></li>
+  <li><a href="../scripts/no-permalinks-writing.html">no-permalinks-writing</a></li>
+  <li><a href="../scripts/react-native.html">react-native</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Script <code>inuse-links-indexing</code></h1>
+<p></p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Pandoc lua filter for vim-dan which populates the column in_use of the links-index.csv
+
+It checks every link element parsed by the reader, checking its href property, and see if
+   it passes all the criteria of usage such as :
+     - Point to an existant file
+     - Point to an existant tag
+
+ - Logic behind it (the same as ./inline-links
+
+   0 - Discard all External Links or Unknown
+     &lt;a href=&quot;https://www.google.com&quot;&gt;Google&lt;/a&gt;
+
+   1 - Separate the path part from the anchor path it has such
+
+   2 - (only for Relative Links) Normalize them
+
+
+For each relative link (e.g., `href=&quot;/guidance/living-in-spain&quot;`):
+
+   3 - . Search if the path exists locally in the downloaded PATH:
+     `${DOCU_PATH}/downloaded/guidance/living-in-spain.html`
+
+ If it does
+     - If it is not an anchor link
+      3. Search in the ${DOCU_PATH}/links-index.csv for its BUID
+         Write an Inline Absolute Link
+         &lt;L=BUID&gt;label&lt;/L&gt;
+
+
+     - If it is an anchor link
+      3. Search in the ${DOCU_PATH}/links-index.csv
+         Write an Inline Relative Link
+         &lt;L=BUID#IID&gt;label&lt;/L&gt;
+   4 - If the link passes all the criteria write a 1 in the last column of the csv (in_use)
+        Otherwise write a 0
+
+Example:
+
+ pandoc -f html -t plain -o ${content_dump} \
+-L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua)&quot;\
+-V docu_path=${DOCU_PATH} \
+-V file_processed=\&quot;${filename}\&quot; \
+-V links_index_csv=${links_index_csv}
+
+</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: rafmartom <rafmartom@gmail.com></li>
+    </ul>
+
+
+<h2><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#dprint">dprint (...)</a></td>
+	<td class="summary">Print the statement if the debug mode is activated</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#strip_lead_slash">strip_lead_slash (myPath)</a></td>
+	<td class="summary">Strip leading slash of a path</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#append_html">append_html (myPath)</a></td>
+	<td class="summary">Append .html to the myPath string if is not present</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#strip_html">strip_html (myPath)</a></td>
+	<td class="summary">strip_html strips the ".html" present in myPath</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#basename">basename (myPath)</a></td>
+	<td class="summary">Get the basename of a path</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#create_danlinkfrom">create_danlinkfrom (href)</a></td>
+	<td class="summary">Create the danlinkfrom string</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#file_exists">file_exists (full_path)</a></td>
+	<td class="summary">Check if a file exists</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_dir">is_dir (input_path)</a></td>
+	<td class="summary">Check if a path refers to a dir</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#separate_path_from_anchor">separate_path_from_anchor (href)</a></td>
+	<td class="summary">Separates the path from the anchor part in a URL</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_relative_link">is_relative_link (href)</a></td>
+	<td class="summary">Check if link it has got a relative path on it</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_external_link">is_external_link (href)</a></td>
+	<td class="summary">Check if the link refers to an external resource</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_buid_from_link">get_buid_from_link (rel_path, links_index_csv)</a></td>
+	<td class="summary">Retrieves the vim-dan BUID of a link from a links-index.csv</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#get_iid_from_link">get_iid_from_link (rel_path, anchor, links_index_csv)</a></td>
+	<td class="summary">Retrieves the vim-dan IID of a link from a links-index.csv</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loading_csv">loading_csv (links_index_csv)</a></td>
+	<td class="summary">Loading the csv in use for the filter</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#mark_links_in_use">mark_links_in_use (rel_path, anchor, entries)</a></td>
+	<td class="summary">Marks in_use=true if the entry matches the target rel_path and anchor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#list">list</a></td>
+	<td class="summary">Saves the modified entries back to CSV</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#save_list_to_csv">save_list_to_csv (list, headers, links_index_csv)</a></td>
+	<td class="summary">Saves the modified entries back to CSV</td>
+	</tr>
+</table>
+<h2><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loading_arguments">loading_arguments (doc)</a></td>
+	<td class="summary">Load the arguments of the filter from variables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#check_links">check_links (elem)</a></td>
+	<td class="summary">Triggering subroutine to check each link found</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="HELPER_FUNCTIONS"></a>HELPER_FUNCTIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "dprint"></a>
+    <strong>dprint (...)</strong>
+    </dt>
+    <dd>
+    Print the statement if the debug mode is activated
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> DEBUG = <span class="keyword">true</span> <span class="comment">-- Activate the debugging mode
+</span> <span class="function-name">dprint</span>(<span class="string">'[DEBUG] myVar : '</span> , myVar) <span class="comment">-- DEBUGGING</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "strip_lead_slash"></a>
+    <strong>strip_lead_slash (myPath)</strong>
+    </dt>
+    <dd>
+    Strip leading slash of a path
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "append_html"></a>
+    <strong>append_html (myPath)</strong>
+    </dt>
+    <dd>
+    Append .html to the myPath string if is not present
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "strip_html"></a>
+    <strong>strip_html (myPath)</strong>
+    </dt>
+    <dd>
+    strip_html strips the ".html" present in myPath
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "basename"></a>
+    <strong>basename (myPath)</strong>
+    </dt>
+    <dd>
+    Get the basename of a path
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">myPath</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "create_danlinkfrom"></a>
+    <strong>create_danlinkfrom (href)</strong>
+    </dt>
+    <dd>
+    Create the danlinkfrom string
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "file_exists"></a>
+    <strong>file_exists (full_path)</strong>
+    </dt>
+    <dd>
+    Check if a file exists
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">full_path</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_dir"></a>
+    <strong>is_dir (input_path)</strong>
+    </dt>
+    <dd>
+    Check if a path refers to a dir
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">input_path</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "separate_path_from_anchor"></a>
+    <strong>separate_path_from_anchor (href)</strong>
+    </dt>
+    <dd>
+    Separates the path from the anchor part in a URL
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+         string The URL to be analyzed (e.g., "page.html#section")
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        string The base path portion (everything before '#')</li>
+        <li>
+        string|boolean The anchor portion (after '#'), or false if no anchor exists</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> path, anchor = <span class="function-name">separate_path_from_anchor</span>(<span class="string">"file.html#intro"</span>)
+<span class="comment">-- path = "file.html", anchor = "intro"
+</span><span class="keyword">local</span> path, anchor = <span class="function-name">separate_path_from_anchor</span>(<span class="string">"file.html"</span>)
+<span class="comment">-- path = "file.html", anchor = false</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "is_relative_link"></a>
+    <strong>is_relative_link (href)</strong>
+    </dt>
+    <dd>
+    Check if link it has got a relative path on it
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+         Link to be analized
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        True if it has a relative path on it
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "is_external_link"></a>
+    <strong>is_external_link (href)</strong>
+    </dt>
+    <dd>
+    Check if the link refers to an external resource
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+         Link to be analized
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        True if is external
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "get_buid_from_link"></a>
+    <strong>get_buid_from_link (rel_path, links_index_csv)</strong>
+    </dt>
+    <dd>
+    Retrieves the vim-dan BUID of a link from a links-index.csv
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rel_path</span>
+         The required argument. Must not be nil or empty.
+        </li>
+        <li><span class="parameter">links_index_csv</span>
+         The csv with the info of the links
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string|nil: The BUID if found, or nil if not found.
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "get_iid_from_link"></a>
+    <strong>get_iid_from_link (rel_path, anchor, links_index_csv)</strong>
+    </dt>
+    <dd>
+    Retrieves the vim-dan IID of a link from a links-index.csv
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rel_path</span>
+         string: The required path. Must not be nil or empty.
+        </li>
+        <li><span class="parameter">anchor</span>
+         string: The required anchor ID. Must not be nil or empty.
+        </li>
+        <li><span class="parameter">links_index_csv</span>
+         string: Path to the CSV with link info.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        string|nil: The IID if found, or nil if not found.
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "loading_csv"></a>
+    <strong>loading_csv (links_index_csv)</strong>
+    </dt>
+    <dd>
+    Loading the csv in use for the filter
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">links_index_csv</span>
+         The csv with the info of the links
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        list: entries</li>
+        <li>
+        list: headers</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "mark_links_in_use"></a>
+    <strong>mark_links_in_use (rel_path, anchor, entries)</strong>
+    </dt>
+    <dd>
+    Marks in_use=true if the entry matches the target rel_path and anchor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">rel_path</span>
+         string: The relative path to match
+        </li>
+        <li><span class="parameter">anchor</span>
+         string: The anchor to match
+        </li>
+        <li><span class="parameter">entries</span>
+         table: List of the entries of the loaded in memory links_index_csv
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "list"></a>
+    <strong>list</strong>
+    </dt>
+    <dd>
+    Saves the modified entries back to CSV
+
+
+    <ul>
+        <li><span class="parameter">list</span>
+         table: The modified entries
+        </li>
+        <li><span class="parameter">headers</span>
+         table: The CSV headers
+        </li>
+        <li><span class="parameter">links_index_csv</span>
+         string: Path to save the CSV file
+function save_list_to_csv(list, headers, links_index_csv)
+    local file = io.open(links_index_csv, "w")
+
+    -- Write headers first if they exist
+    if headers then
+        file:write(table.concat(headers, ",") .. "\n")
+    end
+
+    -- Write each entry
+    for _, entry in ipairs(list) do
+        file:write(table.concat(entry, ",") .. "\n")
+    end
+
+    file:close()
+end
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "save_list_to_csv"></a>
+    <strong>save_list_to_csv (list, headers, links_index_csv)</strong>
+    </dt>
+    <dd>
+    Saves the modified entries back to CSV
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">list</span>
+         table: The modified entries (array of arrays)
+        </li>
+        <li><span class="parameter">headers</span>
+         table: The CSV headers
+        </li>
+        <li><span class="parameter">links_index_csv</span>
+         string: Path to save the CSV file
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="SUBROUTINE_DECLARATIONS"></a>SUBROUTINE_DECLARATIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loading_arguments"></a>
+    <strong>loading_arguments (doc)</strong>
+    </dt>
+    <dd>
+    Load the arguments of the filter from variables
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "check_links"></a>
+    <strong>check_links (elem)</strong>
+    </dt>
+    <dd>
+    Triggering subroutine to check each link found
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-05-09 15:32:56 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
