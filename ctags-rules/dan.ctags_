@@ -1,6 +1,0 @@
---langdef=dantags
---langmap=dantags:.dan
---kinddef-dantags=b,block,blocks
---kinddef-dantags=i,inline,inlines
---regex-dantags=/^#\s(.*)\s#(\s\(X\)){0,1}$/\1/b/
---regex-dantags=/^%\$(.*)%\$/\1/i/

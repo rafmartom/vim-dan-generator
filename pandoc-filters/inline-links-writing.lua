@@ -54,6 +54,7 @@ local ftcsv= require('ftcsv')
 -- @section SCRIPT_VAR_INITIALIZATION
 
 local DEBUG = false -- Activate the debugging mode
+local block_counter = 0 -- DEBUGGING
 
 local links_index_csv = nil
 local file_processed = nil
@@ -172,6 +173,8 @@ end
 --             is_anchor = 'true' and in_use = 'true'
 function check_link_source(elem)
     href = elem.target
+dprint('[DEBUG] href : ' .. href) -- DEBUGGING
+
 
     local ok, result = pcall(pandoc.utils.stringify, elem.content)
     if ok then
@@ -194,6 +197,19 @@ dprint('[DEBUG] path before NORMALIZED : ' .. tostring(path)) -- DEBUGGING
     --   and Normalize path component to the root marked by docu_path
     if not path then
         path = file_processed
+    elseif path:match("^/") then
+        -- if href is '/en-US/docs/Web/CSS/Nesting_selector' the path doesnt need to be normalized
+        
+        -- if path ends without extension
+        -- either it ends on a / directory , add index.html 
+        if path:match("%/$") then
+            path = path .. 'index.html'
+
+        -- or it ends on a file without extension , add .html
+        elseif not path:match("%.html$") then
+            path = path .. '.html'
+
+        end
     else 
         path = PATH.normalize(PATH.dirname(file_processed) .. '/' .. path)
     end
@@ -248,30 +264,31 @@ dprint('[DEBUG] anchor : ' .. tostring(anchor)) -- DEBUGGING
 end
 
 
-
---- Check for each element found against 'links-index.csv'
---    Form its appropriate link target if it is
---              is_anchor = 'true' and in_use = 'true'
 function check_link_target(elem, elem_type)
+    block_counter = block_counter + 1
     -- Get the normalized path of the file being processed
     rel_path = PATH.normalize(file_processed)
 
     -- Normalize relative paths:
-    -- Add './' if it doesn't start with './' or '/'
-    -- If it starts with '/', just prepend '.'
     if not rel_path:match('^%./') and not rel_path:match('^/') then
         rel_path = './' .. rel_path
     elseif rel_path:match('^/') then
         rel_path = '.' .. rel_path
     end
 
-    anchor_id = elem.identifier
+--    dprint('[DEBUG] elem_type', elem_type)
+--    dprint('[DEBUG] block_counter : ' .. block_counter) -- DEBUGGING
 
---dprint('[DEBUG] rel_path : ' .. rel_path) -- DEBUGGING
---dprint('[DEBUG] anchor_id : ' .. anchor_id) -- DEBUGGING
+    -- if element doesnt have id then it cannot be link_target
+    anchor_id = elem.identifier or ""  -- Default to empty string if nil
+    if anchor_id == "" then
+        return elem  -- Return unchanged if no anchor_id
+    end
 
---    link_text = pandoc.utils.stringify(elem.content)
+--    dprint('[DEBUG] rel_path : ' .. rel_path)
+--    dprint('[DEBUG] anchor_id : ' .. anchor_id)
 
+    -- Rest of your function remains the same...
     local ok, result = pcall(pandoc.utils.stringify, elem.content)
     if ok then
         link_text = result
@@ -279,7 +296,7 @@ function check_link_target(elem, elem_type)
         return elem
     end
 
---dprint('[DEBUG] link_text : ' .. link_text) -- DEBUGGING
+-- dprint('[DEBUG] link_text : ' .. link_text) -- DEBUGGING
 
     for i, entry in ipairs(entries) do
 
@@ -319,7 +336,7 @@ function check_link_target(elem, elem_type)
             elseif elem_type == 'Figure' then
                 return pandoc.Div(new_content, elem.attr)  -- fallback
             elseif elem_type == 'Header'  then
---                dprint('[DEBUG] returning a Header: ') -- DEBUGGING
+                dprint('[DEBUG] returning a Header: ') -- DEBUGGING
 --                return pandoc.Header(new_content, elem.attr)
                 return pandoc.Header(elem.level, new_content, elem.attr)
             elseif elem_type == 'Table'  then
@@ -355,6 +372,113 @@ function check_link_target(elem, elem_type)
     return elem
 
 end
+
+------- Check for each element found against 'links-index.csv'
+------    Form its appropriate link target if it is
+------              is_anchor = 'true' and in_use = 'true'
+----function check_link_target(elem, elem_type)
+----    -- Get the normalized path of the file being processed
+----    rel_path = PATH.normalize(file_processed)
+----
+----    -- Normalize relative paths:
+----    -- Add './' if it doesn't start with './' or '/'
+----    -- If it starts with '/', just prepend '.'
+----    if not rel_path:match('^%./') and not rel_path:match('^/') then
+----        rel_path = './' .. rel_path
+----    elseif rel_path:match('^/') then
+----        rel_path = '.' .. rel_path
+----    end
+----
+----    anchor_id = elem.identifier
+----
+----dprint('[DEBUG] rel_path : ' .. rel_path) -- DEBUGGING
+----dprint('[DEBUG] anchor_id : ' .. anchor_id) -- DEBUGGING
+----
+------    link_text = pandoc.utils.stringify(elem.content)
+----
+----    local ok, result = pcall(pandoc.utils.stringify, elem.content)
+----    if ok then
+----        link_text = result
+----    else
+----        return elem
+----    end
+----
+----dprint('[DEBUG] link_text : ' .. link_text) -- DEBUGGING
+----
+----    for i, entry in ipairs(entries) do
+----
+----        if entry[1] == rel_path and entry[5] == anchor_id and entry[8] == 'true'  then
+----
+----        local new_content = {}
+----
+----
+----        -- Traverse through the content of the div
+----        for _, block in ipairs(elem.content) do
+----            -- For Para elements, we will wrap the inline content with Emph
+----            if block.t == "Para" then
+----                local inline_content = {}
+----                for _, inline in ipairs(block.content) do
+----                    table.insert(inline_content, inline)
+----                end
+----                -- Add the modified Para to the new content
+----                table.insert(new_content, pandoc.Para(inline_content))
+----            else
+----                -- If it's not a Para, keep the block as is (you could add more conditions here)
+----                table.insert(new_content, block)
+----            end
+----        end
+----
+----
+----        -- All link target that are referred to in_use = 'true'
+----            formed_link = '<I=' .. entry[7] .. '>' 
+----
+----            dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
+----            table.insert(new_content, pandoc.Str(formed_link))
+----
+----            if elem_type == 'CodeBlock'  then 
+----                return pandoc.CodeBlock(new_content, elem.attr)
+----            elseif elem_type == 'Div'  then
+------                dprint('[DEBUG] returning a Div : ') -- DEBUGGING
+----                return pandoc.Div(new_content, elem.attr)
+----            elseif elem_type == 'Figure' then
+----                return pandoc.Div(new_content, elem.attr)  -- fallback
+----            elseif elem_type == 'Header'  then
+------                dprint('[DEBUG] returning a Header: ') -- DEBUGGING
+------                return pandoc.Header(new_content, elem.attr)
+----                return pandoc.Header(elem.level, new_content, elem.attr)
+----            elseif elem_type == 'Table'  then
+----                return pandoc.Table(new_content, elem.attr)
+----            elseif elem_type == 'Code'  then
+----                return pandoc.Code(new_content, elem.attr)
+----            elseif elem_type == 'Image'  then
+----                return pandoc.Image(new_content, elem.attr)
+----            elseif elem_type == 'Link'  then
+----                return pandoc.Link(new_content, elem.attr)
+----            elseif elem_type == 'Span'  then
+----                return pandoc.Span(new_content, elem.attr)
+----            elseif elem_type == 'Cell'  then
+----                return pandoc.Plain(new_content) -- or handle specially
+----            elseif elem_type == 'TableFoot' or elem_type == 'TableHead'  then
+----                return pandoc.Plain(new_content)  -- also custom
+----            elseif elem_type == 'Para'  then
+----                return pandoc.Para(new_content, elem.attr)
+----            elseif elem_type == 'BlockQuote'  then
+----                return pandoc.BlockQuote(new_content, elem.attr)
+----            elseif elem_type == 'BulletList'  then
+----                return pandoc.BulletList(new_content, elem.attr)
+----            elseif elem_type == 'OrderedList'  then
+----                return pandoc.OrderedList(new_content, elem.attr)
+----            else
+------                dprint('[DEBUG] unrecognised AST object : ' ) -- DEBUGGING
+----                return elem
+----            end
+----
+----        end 
+----    end
+----
+----    return elem
+----
+----end
 
 
 

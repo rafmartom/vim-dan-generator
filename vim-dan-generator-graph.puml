@@ -1,0 +1,49 @@
+@startuml
+
+header Overview of the generation of a vim-dan documentation for mdn-parent (MDN Web Docs)
+
+[*] --> Spidered : perform_spider
+Spidered : - Index links collected in a csv
+Spidered --> Spidered_filtered : perform_filter
+note right of Spidered : ./index-links/https___developer.mozilla.org_en-US_docs_Web.csv.bz2\nGenerated
+
+Spidered_filtered : - Index links csv filtered from uninteresting files
+
+Spidered_filtered --> Indexed : perform_index 
+Indexed : Download each single .html file
+Indexed : - Process can be breaking up in different hosts
+Indexed : hostA$ ./vim-dan-generator.sh mdn-parent -x 
+Indexed : hostB$ ./vim-dan-generator.sh mdn-parent -x 21266
+Indexed : hostC$ ./vim-dan-generator.sh mdn-parent -x 42532
+Indexed : Note: hostB will start downloading from file of the index-links.csv 21266 onwards
+Indexed :       hostC from 42532
+Indexed : Upon completed you should be merging the hostA$ index-links.csv , with hostB and hostC
+Indexed : And pull the files from hostB and hostC to hostA via rsync
+note right of Indexed : ${HOME}/downloads/vim-dan/mdn-parent/downloaded/*\n files Downloaded
+
+Indexed --> Arranged : perform_arrange
+Arranged : - Arrange the files in subdirectories, and filenames that can help the parsing process 
+Arranged : - Delete unecessary files that have passed the perform_filter process 
+Arranged : - Delete duplicates
+Arranged : - In case of child documentations, pull the files from its parent documentation
+
+Arranged --> Parsed : perform_parse
+Parsed : - Iterate in each single file, according to the html selectors for titles and content
+Parsed : - Parse all the link sources and link targets into a links-parsed.csv
+Parsed : - This is an overview of which links that are going to be used and which discarded on the writting process 
+Parsed : - It will assign <BUID> and the <IID>
+note right of Parsed : ./links-parsed/mdn-parent-links-parsed.csv \n Generated
+
+Parsed --> Written : perform_write
+Written : - Iterate in each single file, according to the html selectors for titles and content
+Written : - Write the documentation in a file according to vim-dan syntax
+Written : - TOC will be appended on top of the documentation
+Written : - Write the links that have been parsed on links-index.csv
+Written : - Generate the main documentation file "${DOCU}.dan" file 
+note right of Written: ${HOME}/downloads/vim-dan/mdn-parent.dan \n Generated
+
+Written --> Tagged : perform_tags
+Tagged : - Generate the ".tags${DOCU}" file necessary for the linking functionality to work
+note right of Tagged: ${HOME}/downloads/vim-dan/.tagsmdn-parent \n Generated
+
+@enduml

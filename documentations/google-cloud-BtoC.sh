@@ -32,6 +32,14 @@ spidering_rules(){
 
 }
 
+
+filtering_rules(){
+
+    echo "This is a child documentation"
+    echo "No Filtering will take place in here"
+
+}
+
 indexing_rules(){
 
     echo "This is a child documentation"
@@ -76,7 +84,7 @@ arranging_rules(){
 }
 
 
-parsing_rules(){
+writting_rules(){
 
     write_header
     ## Change below the html tags to be parsed -f for titles , -b for body
@@ -180,30 +188,23 @@ parsing_rules(){
 # @section SELECTING_ACTION
 # @brief Not to be customised
 
-while getopts ":siap" opt; do
+while getopts ":sfx:apwh" opt; do
     case ${opt} in
-        s)
-            spidering_rules
+        s) spiderind_rules ;;
+        f) filtering_rules ;;
+        x) 
+            if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then
+                indexing_rules "$OPTARG"
+            else
+                echo "Error: -x requires a numeric row number" >&2
+                exit 1
+            fi
             ;;
-        i)
-            indexing_rules
-            ;;
-        a)
-            arranging_rules
-            ;;
-        p)
-            parsing_rules
-            ;;
-        h | *)
-            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
-            echo "Options:"
-            echo "  -s  Spidering"
-            echo "  -i  Indexing"
-            echo "  -a  Arranging"
-            echo "  -p  Parsing"
-            echo "  -h  Help"
-            exit 0
-            ;;
+        a) arranging_rules ;;
+        p) parsing_rules ;;
+        w) writting_rules ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+        :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
     esac
 done
 

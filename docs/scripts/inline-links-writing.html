@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></li>
+<li><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></li>
+</ul>
+
+
+<h2>Scripts</h2>
+<ul class="nowrap">
+  <li><a href="../scripts/codeblock-prompt.html">codeblock-prompt</a></li>
+  <li><a href="../scripts/indexing-links-target.html">indexing-links-target</a></li>
+  <li><strong>inline-links-writing</strong></li>
+  <li><a href="../scripts/inuse-links-indexing.html">inuse-links-indexing</a></li>
+  <li><a href="../scripts/no-permalinks-writing.html">no-permalinks-writing</a></li>
+  <li><a href="../scripts/react-native.html">react-native</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Script <code>inline-links-writing</code></h1>
+<p></p>
+<p></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Pandoc Lua Filter for use in vim-dan-generator in the writting process, it will analize each
+     link source and link target found, and match it against a &apos;links-index.csv&apos; previously
+     processed by filters &apos;links-indexing.lua&apos; , and &apos;inuse-links-indexing.lua&apos;
+     on &apos;links-index.csv&apos; checking against it
+     - Will write
+         - All link source that are referred to is_anchor = &apos;false&apos;
+         - All link source that are referred to is_anchor = &apos;true&apos; and in_use = &apos;true&apos;
+         - All link target that are referred to in_use = &apos;true&apos;
+
+
+pandoc -f html -t plain ./downloaded/spain.html \
+  -L danlinkfrom-href.lua \
+  -V docu_path=&quot;$(readlink -f ./)&quot;
+
+pandoc -f html -t plain ./downloaded/jsobjref/Application.html \
+  -V file_processed=&quot;./downloaded/jsobjref/Application.html&quot; \
+  -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inline-links-writing.lua)&quot; \
+  -V links_index_csv=/home/fakuve/downloads/vim-dan/adobe-ai/links-index.csv \
+
+</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: rafmartom <rafmartom@gmail.com></li>
+    </ul>
+
+
+<h2><a href="#HELPER_FUNCTIONS">HELPER_FUNCTIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#dprint">dprint (...)</a></td>
+	<td class="summary">Print the statement if the debug mode is activated</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#is_external_link">is_external_link (href)</a></td>
+	<td class="summary">Check if the link refers to an external resource</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#separate_path_from_anchor">separate_path_from_anchor (href)</a></td>
+	<td class="summary">Separates the path from the anchor part in a URL</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#loading_csv">loading_csv (links_index_csv)</a></td>
+	<td class="summary">Loading the csv in use for the filter</td>
+	</tr>
+</table>
+<h2><a href="#SUBROUTINE_DECLARATIONS">SUBROUTINE_DECLARATIONS </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#loading_arguments">loading_arguments (doc)</a></td>
+	<td class="summary">Load the arguments of the filter from variables</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#check_link_source">check_link_source (elem)</a></td>
+	<td class="summary">Check each link source <a> HTML tag against 'links-index.csv'
+    Form its appropiate link source if it is
+      Either is_anchor = 'false'
+             is_anchor = 'true' and in_use = 'true'</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="HELPER_FUNCTIONS"></a>HELPER_FUNCTIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "dprint"></a>
+    <strong>dprint (...)</strong>
+    </dt>
+    <dd>
+    Print the statement if the debug mode is activated
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> DEBUG = <span class="keyword">true</span> <span class="comment">-- Activate the debugging mode
+</span> <span class="function-name">dprint</span>(<span class="string">'[DEBUG] myVar : '</span> , myVar) <span class="comment">-- DEBUGGING</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "is_external_link"></a>
+    <strong>is_external_link (href)</strong>
+    </dt>
+    <dd>
+    Check if the link refers to an external resource
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+         Link to be analized
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        True if is external
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "separate_path_from_anchor"></a>
+    <strong>separate_path_from_anchor (href)</strong>
+    </dt>
+    <dd>
+    Separates the path from the anchor part in a URL
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">href</span>
+         string The URL to be analyzed (e.g., "page.html#section")
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        string The base path portion (everything before '#')</li>
+        <li>
+        string|boolean The anchor portion (after '#'), or false if no anchor exists</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> path, anchor = <span class="function-name">separate_path_from_anchor</span>(<span class="string">"file.html#intro"</span>)
+<span class="comment">-- path = "file.html", anchor = "intro"
+</span><span class="keyword">local</span> path, anchor = <span class="function-name">separate_path_from_anchor</span>(<span class="string">"file.html"</span>)
+<span class="comment">-- path = "file.html", anchor = false</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "loading_csv"></a>
+    <strong>loading_csv (links_index_csv)</strong>
+    </dt>
+    <dd>
+    Loading the csv in use for the filter
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">links_index_csv</span>
+         The csv with the info of the links
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        list: entries</li>
+        <li>
+        list: headers</li>
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="SUBROUTINE_DECLARATIONS"></a>SUBROUTINE_DECLARATIONS </h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "loading_arguments"></a>
+    <strong>loading_arguments (doc)</strong>
+    </dt>
+    <dd>
+    Load the arguments of the filter from variables
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">doc</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "check_link_source"></a>
+    <strong>check_link_source (elem)</strong>
+    </dt>
+    <dd>
+    Check each link source <a> HTML tag against 'links-index.csv'
+    Form its appropiate link source if it is
+      Either is_anchor = 'false'
+             is_anchor = 'true' and in_use = 'true'
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">elem</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/lunarmodules/LDoc">LDoc 1.5.0</a></i>
+<i style="float:right;">Last updated 2025-05-09 15:32:56 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

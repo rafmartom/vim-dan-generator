@@ -57,7 +57,7 @@ arranging_rules(){
 }
 
 
-parsing_rules(){
+writting_rules(){
 
     echo "This is a parent documentation"
     echo "Because of its size and/or organization,"
@@ -80,7 +80,12 @@ while getopts ":siap" opt; do
             spidering_rules
             ;;
         i)
-            indexing_rules
+            # Check if a start row number was provided
+            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
+                start_row="$2"
+                shift
+            fi
+            indexing_rules "$start_row"
             ;;
         a)
             arranging_rules

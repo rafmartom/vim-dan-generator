@@ -8,14 +8,11 @@ author: rafmartom <rafmartom@gmail.com>
 
 ## Index
 
-* [perform_install](#performinstall)
-* [perform_update](#performupdate)
 * [perform_spider](#performspider)
 * [perform_index](#performindex)
 * [perform_arrange](#performarrange)
 * [perform_parse](#performparse)
-* [perform_remove](#performremove)
-* [delete_index](#deleteindex)
+* [perform_tags](#performtags)
 * [process_paths](#processpaths)
 * [install_autoload](#installautoload)
 * [perform_patch](#performpatch)
@@ -48,22 +45,6 @@ author: rafmartom <rafmartom@gmail.com>
 Sub-routines that are called by external files
 They are mainly called by the main file
 Thus they are triggered by the main stages of the Dan Documentation Generation
-
-### perform_install
-
-Peforms a local installation of an already generated documentation
-
-#### Output on stdout
-
-* Return Description
-
-### perform_update
-
-Updates the local file of a certain documentation, keeping when possible the dan-highlighted lines
-
-#### Output on stdout
-
-* Return Description
 
 ### perform_spider
 
@@ -172,25 +153,9 @@ If there are issues in any of the stages, then you may need to adapt these rules
 
 * Return Description
 
-### perform_remove
+### perform_tags
 
-It will remove a certain dan documentation localy. It will also remove the dan files.
-For this last reason is not recommended to use it, as the dan files are one per documentation just delete it manualy.
-
-#### Output on stdout
-
-* Return Description
-
-### delete_index
-
-Delete the Indexed files for a certain documentation.
-Good to save up space once the documentation has been parsed, the index files are not longer needed.
-Mind that if you are creating a new documentation and are defining a rule-set, if you are unsure that 
-Some rules may be changed it is better to keep it.
-
-#### Output on stdout
-
-* Return Description
+Performs the tagging stage of a documentation
 
 ## Internal_subroutines
 
@@ -489,12 +454,6 @@ Standard Spidering Subroutines implemented across different documentations
 
 Performs an inte
 
-#### Options
-
-* **-l \<DOWNLOAD_LINK\>**
-
-  Option Description
-
 #### Output on stdout
 
 * Return Description
@@ -527,18 +486,6 @@ Out of a <websiteLinks>.csv created from standard_spider()
 Download each link
 - Updating the .csv with status code
 - Download it to DOCU_PATH/downloaded
-
-#### Options
-
-* **-w \<WAIT\>**
-
-  Seconds to wait per link
-
-* **-r \<WAIT_RETRY\>**
-
-  Seconds to wait per unsuccesful download
-
-* -l <DOWNLOAD_LINK>
 
 #### Output on stdout
 

@@ -11,7 +11,7 @@ shift
 DOCU_NAME=$(basename ${0} '.sh')
 MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
-https://developers.google.com
+https://developer.mozilla.org/en-US/docs/
 )
 # -------------------------------------
 # eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
@@ -48,7 +48,7 @@ arranging_rules(){
 }
 
 
-writting_rules(){
+parsing_rules(){
 
     echo "This is a parent documentation"
     echo "Because of its size and/or organization,"
@@ -71,12 +71,7 @@ while getopts ":siap" opt; do
             spidering_rules
             ;;
         i)
-            # Check if a start row number was provided
-            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
-                start_row="$2"
-                shift
-            fi
-            indexing_rules "$start_row"
+            indexing_rules
             ;;
         a)
             arranging_rules

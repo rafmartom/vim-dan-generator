@@ -79,50 +79,43 @@ process_paths
 ## ----------------------------------------------------------------------------
 # @section SELECTING_ACTION
 
-while getopts ":iupsxradth" opt; do
+while getopts ":sfx:apwth" opt; do
     case ${opt} in
-        i)
-            perform_install
+        s) perform_spider ;;
+        f) perform_filter ;;
+        x) 
+            if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then
+                perform_index "$OPTARG"
+            else
+                echo "Error: -x requires a numeric row number" >&2
+                exit 1
+            fi
             ;;
-        u)
-            perform_update
-            ;;
-        p)
-            perform_parse
-            ;;
-        s)
-            perform_spider
-            ;;
-        x)
-            perform_index
-            ;;
-        r)
-            perform_remove
-            ;;
-        a)
-            perform_arrange
-            ;;
-        t)
-            updating_tags
-            ;;
-        d)
-            delete_index
-            ;;
-        h | *)
-            echo "Usage: $0 [documentation] [-i] [-u] [-p] [-s] [-x] [-r] [-t] [-d] [-h] [-a]"
+        a) perform_arrange ;;
+        p) perform_parse ;;
+        w) perform_write ;;
+        t) perform_tags ;;
+        h) 
+            echo "Usage: $0 [-s] [-f] [-x ROW] [-a] [-p] [-w] [-t] [-h]"
+            echo ""
             echo "Options:"
-            echo "  -i  Install Docu"
-            echo "  -u  Update Docu"
-            echo "  -p  Parse Docu"
-            echo "  -s  Spider Docu"
-            echo "  -x  Index Docu"
-            echo "  -r  Remove Docu"
-            echo "  -t  Updating Tags"
-            echo "  -d  Delete Index"
-            echo "  -a  Arraging Docu files"
-            echo "  -h  Help"
+            echo "  -s    Spider documentation (collect links)"
+            echo "  -f    Filter spidered results"
+            echo "  -x ROW Index documentation at specific ROW number"
+            echo "  -a    Arrange documentation files"
+            echo "  -p    Parse documentation content"
+            echo "  -w    Write processed output"
+            echo "  -t    Generate tags/metadata"
+            echo "  -h    Show this help message"
+            echo ""
+            echo "Examples:"
+            echo "  $0 -s -f       # Spider and filter docs"
+            echo "  $0 -x 42       # Index row 42"
+            echo "  $0 -a -p -w    # Arrange, parse, and write"
             exit 0
             ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+        :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
     esac
 done
 
