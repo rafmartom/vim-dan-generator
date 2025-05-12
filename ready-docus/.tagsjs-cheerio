@@ -25,43 +25,2077 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	6.1.0	/6e6c9a2ed/
+!_TAG_PROGRAM_VERSION	6.1.0	/d7b87f476/
+1	js-cheerio.dan	/^    <I=1>$/;"	i	line:1207	language:dantags	regex:a
 1	js-cheerio.dan	/^<B=1>Attribution$/;"	b	line:93	language:dantags
-2	js-cheerio.dan	/^<B=2>blog$/;"	b	line:109	language:dantags
-3	js-cheerio.dan	/^<B=3>Cheerio 1.0 Released, Batteries Included 🔋$/;"	b	line:170	language:dantags
-4	js-cheerio.dan	/^<B=4>New Website, Who Dis?$/;"	b	line:346	language:dantags
-5	js-cheerio.dan	/^<B=5>Tags$/;"	b	line:413	language:dantags
-6	js-cheerio.dan	/^<B=6>One post tagged with "announcement"$/;"	b	line:448	language:dantags
-7	js-cheerio.dan	/^<B=7>One post tagged with "intro"$/;"	b	line:498	language:dantags
-8	js-cheerio.dan	/^<B=8>One post tagged with "release"$/;"	b	line:544	language:dantags
-9	js-cheerio.dan	/^<B=9>One post tagged with "website"$/;"	b	line:588	language:dantags
-A	js-cheerio.dan	/^<B=A>Tutorials - Advanced$/;"	b	line:8731	language:dantags
-B	js-cheerio.dan	/^<B=B>Tutorials - Basics$/;"	b	line:8771	language:dantags
-C	js-cheerio.dan	/^<B=C>Welcome to Cheerio!$/;"	b	line:8809	language:dantags
-D	js-cheerio.dan	/^<B=D>cheerio$/;"	b	line:8959	language:dantags
-a	js-cheerio.dan	/^<B=a>Configuring Cheerio$/;"	b	line:634	language:dantags
-b	js-cheerio.dan	/^<B=b>Extending Cheerio$/;"	b	line:810	language:dantags
-c	js-cheerio.dan	/^<B=c>Extracting Data with the  extract  Method$/;"	b	line:900	language:dantags
-d	js-cheerio.dan	/^<B=d>cheerio$/;"	b	line:1110	language:dantags
-e	js-cheerio.dan	/^<B=e>Class:  abstract  Cheerio<T>$/;"	b	line:1167	language:dantags
-f	js-cheerio.dan	/^<B=f>Function: contains()$/;"	b	line:5338	language:dantags
-g	js-cheerio.dan	/^<B=g>Function: decodeStream()$/;"	b	line:5413	language:dantags
-h	js-cheerio.dan	/^<B=h>Function: fromURL()$/;"	b	line:5481	language:dantags
-i	js-cheerio.dan	/^<B=i>Function: load()$/;"	b	line:5557	language:dantags
-j	js-cheerio.dan	/^<B=j>Function: loadBuffer()$/;"	b	line:5631	language:dantags
-k	js-cheerio.dan	/^<B=k>Function: merge()$/;"	b	line:5707	language:dantags
-l	js-cheerio.dan	/^<B=l>Function: stringStream()$/;"	b	line:5787	language:dantags
-m	js-cheerio.dan	/^<B=m>Interface: CheerioAPI()$/;"	b	line:5876	language:dantags
-n	js-cheerio.dan	/^<B=n>Interface: CheerioOptions$/;"	b	line:6382	language:dantags
-o	js-cheerio.dan	/^<B=o>Interface: CheerioRequestOptions$/;"	b	line:6620	language:dantags
-p	js-cheerio.dan	/^<B=p>Interface: DecodeStreamOptions$/;"	b	line:6909	language:dantags
-q	js-cheerio.dan	/^<B=q>Interface: HTMLParser2Options$/;"	b	line:7182	language:dantags
-r	js-cheerio.dan	/^<B=r>Type Alias: AcceptedElems<T>$/;"	b	line:7425	language:dantags
-s	js-cheerio.dan	/^<B=s>Type Alias: AcceptedFilters<T>$/;"	b	line:7477	language:dantags
-t	js-cheerio.dan	/^<B=t>Type Alias: BasicAcceptedElems<T>$/;"	b	line:7529	language:dantags
-u	js-cheerio.dan	/^<B=u>Type Alias: FilterFunction()<T>$/;"	b	line:7581	language:dantags
-v	js-cheerio.dan	/^<B=v>Type Alias: SelectorType$/;"	b	line:7656	language:dantags
-w	js-cheerio.dan	/^<B=w>Loading Documents$/;"	b	line:7690	language:dantags
-x	js-cheerio.dan	/^<B=x>Manipulating the DOM$/;"	b	line:7865	language:dantags
-y	js-cheerio.dan	/^<B=y>Selecting Elements$/;"	b	line:8130	language:dantags
-z	js-cheerio.dan	/^<B=z>Traversing the DOM$/;"	b	line:8253	language:dantags
+10	js-cheerio.dan	/^Alias <L=m#10><\/L><I=10>$/;"	i	line:5690	language:dantags	regex:m
+10	js-cheerio.dan	/^Returns <L=e#10><\/L><I=10>$/;"	i	line:1813	language:dantags	regex:e
+11	js-cheerio.dan	/^Example <L=e#11><\/L><I=11>$/;"	i	line:1818	language:dantags	regex:e
+11	js-cheerio.dan	/^See <L=m#11><\/L><I=11>$/;"	i	line:5693	language:dantags	regex:m
+12	js-cheerio.dan	/^Inherited from <L=m#12><\/L><I=12>$/;"	i	line:5696	language:dantags	regex:m
+12	js-cheerio.dan	/^See <L=e#12><\/L><I=12>$/;"	i	line:1826	language:dantags	regex:e
+13	js-cheerio.dan	/^Call Signature <L=e#13><\/L><I=13>$/;"	i	line:1829	language:dantags	regex:e
+13	js-cheerio.dan	/^root() <L=m#13><\/L><I=13>$/;"	i	line:5701	language:dantags	regex:m
+14	js-cheerio.dan	/^Parameters <L=m#14><\/L><I=14>$/;"	i	line:5708	language:dantags	regex:m
+14	js-cheerio.dan	/^Type Parameters <L=e#14><\/L><I=14>$/;"	i	line:1836	language:dantags	regex:e
+15	js-cheerio.dan	/^Parameters <L=e#15><\/L><I=15>$/;"	i	line:1839	language:dantags	regex:e
+15	js-cheerio.dan	/^this <L=m#15><\/L><I=15>$/;"	i	line:5709	language:dantags	regex:m
+16	js-cheerio.dan	/^Returns <L=m#16><\/L><I=16>$/;"	i	line:5712	language:dantags	regex:m
+16	js-cheerio.dan	/^this <L=e#16><\/L><I=16>$/;"	i	line:1840	language:dantags	regex:e
+17	js-cheerio.dan	/^Example <L=m#17><\/L><I=17>$/;"	i	line:5717	language:dantags	regex:m
+17	js-cheerio.dan	/^name <L=e#17><\/L><I=17>$/;"	i	line:1843	language:dantags	regex:e
+18	js-cheerio.dan	/^Alias <L=m#18><\/L><I=18>$/;"	i	line:5725	language:dantags	regex:m
+18	js-cheerio.dan	/^value <L=e#18><\/L><I=18>$/;"	i	line:1848	language:dantags	regex:e
+19	js-cheerio.dan	/^Inherited from <L=m#19><\/L><I=19>$/;"	i	line:5728	language:dantags	regex:m
+19	js-cheerio.dan	/^Returns <L=e#19><\/L><I=19>$/;"	i	line:1853	language:dantags	regex:e
+1A	js-cheerio.dan	/^See <L=e#1A><\/L><I=1A>$/;"	i	line:1990	language:dantags	regex:e
+1B	js-cheerio.dan	/^Call Signature <L=e#1B><\/L><I=1B>$/;"	i	line:1993	language:dantags	regex:e
+1C	js-cheerio.dan	/^Type Parameters <L=e#1C><\/L><I=1C>$/;"	i	line:2001	language:dantags	regex:e
+1D	js-cheerio.dan	/^Parameters <L=e#1D><\/L><I=1D>$/;"	i	line:2004	language:dantags	regex:e
+1E	js-cheerio.dan	/^this <L=e#1E><\/L><I=1E>$/;"	i	line:2005	language:dantags	regex:e
+1F	js-cheerio.dan	/^name <L=e#1F><\/L><I=1F>$/;"	i	line:2008	language:dantags	regex:e
+1G	js-cheerio.dan	/^Returns <L=e#1G><\/L><I=1G>$/;"	i	line:2013	language:dantags	regex:e
+1H	js-cheerio.dan	/^Example <L=e#1H><\/L><I=1H>$/;"	i	line:2018	language:dantags	regex:e
+1I	js-cheerio.dan	/^See <L=e#1I><\/L><I=1I>$/;"	i	line:2029	language:dantags	regex:e
+1J	js-cheerio.dan	/^Call Signature <L=e#1J><\/L><I=1J>$/;"	i	line:2032	language:dantags	regex:e
+1K	js-cheerio.dan	/^Type Parameters <L=e#1K><\/L><I=1K>$/;"	i	line:2039	language:dantags	regex:e
+1L	js-cheerio.dan	/^Parameters <L=e#1L><\/L><I=1L>$/;"	i	line:2042	language:dantags	regex:e
+1M	js-cheerio.dan	/^this <L=e#1M><\/L><I=1M>$/;"	i	line:2043	language:dantags	regex:e
+1N	js-cheerio.dan	/^name <L=e#1N><\/L><I=1N>$/;"	i	line:2046	language:dantags	regex:e
+1O	js-cheerio.dan	/^Returns <L=e#1O><\/L><I=1O>$/;"	i	line:2051	language:dantags	regex:e
+1P	js-cheerio.dan	/^Call Signature <L=e#1P><\/L><I=1P>$/;"	i	line:2056	language:dantags	regex:e
+1Q	js-cheerio.dan	/^Type Parameters <L=e#1Q><\/L><I=1Q>$/;"	i	line:2064	language:dantags	regex:e
+1R	js-cheerio.dan	/^Parameters <L=e#1R><\/L><I=1R>$/;"	i	line:2067	language:dantags	regex:e
+1S	js-cheerio.dan	/^this <L=e#1S><\/L><I=1S>$/;"	i	line:2068	language:dantags	regex:e
+1T	js-cheerio.dan	/^name <L=e#1T><\/L><I=1T>$/;"	i	line:2071	language:dantags	regex:e
+1U	js-cheerio.dan	/^Returns <L=e#1U><\/L><I=1U>$/;"	i	line:2076	language:dantags	regex:e
+1V	js-cheerio.dan	/^Example <L=e#1V><\/L><I=1V>$/;"	i	line:2081	language:dantags	regex:e
+1W	js-cheerio.dan	/^Call Signature <L=e#1W><\/L><I=1W>$/;"	i	line:2089	language:dantags	regex:e
+1X	js-cheerio.dan	/^Type Parameters <L=e#1X><\/L><I=1X>$/;"	i	line:2096	language:dantags	regex:e
+1Y	js-cheerio.dan	/^Parameters <L=e#1Y><\/L><I=1Y>$/;"	i	line:2101	language:dantags	regex:e
+1Z	js-cheerio.dan	/^this <L=e#1Z><\/L><I=1Z>$/;"	i	line:2102	language:dantags	regex:e
+1a	js-cheerio.dan	/^Example <L=e#1a><\/L><I=1a>$/;"	i	line:1858	language:dantags	regex:e
+1a	js-cheerio.dan	/^text() <L=m#1a><\/L><I=1a>$/;"	i	line:5733	language:dantags	regex:m
+1b	js-cheerio.dan	/^Parameters <L=m#1b><\/L><I=1b>$/;"	i	line:5743	language:dantags	regex:m
+1b	js-cheerio.dan	/^See <L=e#1b><\/L><I=1b>$/;"	i	line:1868	language:dantags	regex:e
+1c	js-cheerio.dan	/^Call Signature <L=e#1c><\/L><I=1c>$/;"	i	line:1871	language:dantags	regex:e
+1c	js-cheerio.dan	/^this <L=m#1c><\/L><I=1c>$/;"	i	line:5744	language:dantags	regex:m
+1d	js-cheerio.dan	/^Type Parameters <L=e#1d><\/L><I=1d>$/;"	i	line:1878	language:dantags	regex:e
+1d	js-cheerio.dan	/^elements? <L=m#1d><\/L><I=1d>$/;"	i	line:5747	language:dantags	regex:m
+1e	js-cheerio.dan	/^Parameters <L=e#1e><\/L><I=1e>$/;"	i	line:1881	language:dantags	regex:e
+1e	js-cheerio.dan	/^Returns <L=m#1e><\/L><I=1e>$/;"	i	line:5752	language:dantags	regex:m
+1f	js-cheerio.dan	/^Inherited from <L=m#1f><\/L><I=1f>$/;"	i	line:5757	language:dantags	regex:m
+1f	js-cheerio.dan	/^this <L=e#1f><\/L><I=1f>$/;"	i	line:1882	language:dantags	regex:e
+1g	js-cheerio.dan	/^values <L=e#1g><\/L><I=1g>$/;"	i	line:1885	language:dantags	regex:e
+1g	js-cheerio.dan	/^xml() <L=m#1g><\/L><I=1g>$/;"	i	line:5762	language:dantags	regex:m
+1h	js-cheerio.dan	/^Parameters <L=m#1h><\/L><I=1h>$/;"	i	line:5769	language:dantags	regex:m
+1h	js-cheerio.dan	/^Returns <L=e#1h><\/L><I=1h>$/;"	i	line:1890	language:dantags	regex:e
+1i	js-cheerio.dan	/^Example <L=e#1i><\/L><I=1i>$/;"	i	line:1895	language:dantags	regex:e
+1i	js-cheerio.dan	/^this <L=m#1i><\/L><I=1i>$/;"	i	line:5770	language:dantags	regex:m
+1j	js-cheerio.dan	/^See <L=e#1j><\/L><I=1j>$/;"	i	line:1905	language:dantags	regex:e
+1j	js-cheerio.dan	/^dom? <L=m#1j><\/L><I=1j>$/;"	i	line:5773	language:dantags	regex:m
+1k	js-cheerio.dan	/^Returns <L=m#1k><\/L><I=1k>$/;"	i	line:5778	language:dantags	regex:m
+1k	js-cheerio.dan	/^hasClass() <L=e#1k><\/L><I=1k>$/;"	i	line:1910	language:dantags	regex:e
+1l	js-cheerio.dan	/^Inherited from <L=m#1l><\/L><I=1l>$/;"	i	line:5783	language:dantags	regex:m
+1l	js-cheerio.dan	/^Type Parameters <L=e#1l><\/L><I=1l>$/;"	i	line:1917	language:dantags	regex:e
+1m	js-cheerio.dan	/^Parameters <L=e#1m><\/L><I=1m>$/;"	i	line:1920	language:dantags	regex:e
+1n	js-cheerio.dan	/^this <L=e#1n><\/L><I=1n>$/;"	i	line:1921	language:dantags	regex:e
+1o	js-cheerio.dan	/^className <L=e#1o><\/L><I=1o>$/;"	i	line:1924	language:dantags	regex:e
+1p	js-cheerio.dan	/^Returns <L=e#1p><\/L><I=1p>$/;"	i	line:1929	language:dantags	regex:e
+1q	js-cheerio.dan	/^Example <L=e#1q><\/L><I=1q>$/;"	i	line:1934	language:dantags	regex:e
+1r	js-cheerio.dan	/^See <L=e#1r><\/L><I=1r>$/;"	i	line:1948	language:dantags	regex:e
+1s	js-cheerio.dan	/^prop() <L=e#1s><\/L><I=1s>$/;"	i	line:1953	language:dantags	regex:e
+1t	js-cheerio.dan	/^Call Signature <L=e#1t><\/L><I=1t>$/;"	i	line:1954	language:dantags	regex:e
+1u	js-cheerio.dan	/^Type Parameters <L=e#1u><\/L><I=1u>$/;"	i	line:1962	language:dantags	regex:e
+1v	js-cheerio.dan	/^Parameters <L=e#1v><\/L><I=1v>$/;"	i	line:1965	language:dantags	regex:e
+1w	js-cheerio.dan	/^this <L=e#1w><\/L><I=1w>$/;"	i	line:1966	language:dantags	regex:e
+1x	js-cheerio.dan	/^name <L=e#1x><\/L><I=1x>$/;"	i	line:1969	language:dantags	regex:e
+1y	js-cheerio.dan	/^Returns <L=e#1y><\/L><I=1y>$/;"	i	line:1974	language:dantags	regex:e
+1z	js-cheerio.dan	/^Example <L=e#1z><\/L><I=1z>$/;"	i	line:1979	language:dantags	regex:e
+2	js-cheerio.dan	/^ load  <L=w#2><\/L><I=2>$/;"	i	line:6823	language:dantags	regex:w
+2	js-cheerio.dan	/^<B=2>blog$/;"	b	line:144	language:dantags
+2	js-cheerio.dan	/^Adding Custom CSS Pseudo-Classes <L=b#2><\/L><I=2>$/;"	i	line:1230	language:dantags	regex:b
+2	js-cheerio.dan	/^Example <L=e#2><\/L><I=2>$/;"	i	line:1551	language:dantags	regex:e
+2	js-cheerio.dan	/^Extends <L=m#2><\/L><I=2>$/;"	i	line:5412	language:dantags	regex:m
+2	js-cheerio.dan	/^Extends <L=n#2><\/L><I=2>$/;"	i	line:5809	language:dantags	regex:n
+2	js-cheerio.dan	/^Extends <L=o#2><\/L><I=2>$/;"	i	line:6006	language:dantags	regex:o
+2	js-cheerio.dan	/^Extends <L=p#2><\/L><I=2>$/;"	i	line:6238	language:dantags	regex:p
+2	js-cheerio.dan	/^Getting Started <L=C#2><\/L><I=2>$/;"	i	line:7993	language:dantags	regex:C
+2	js-cheerio.dan	/^Loading <L=d#2><\/L><I=2>$/;"	i	line:1502	language:dantags	regex:d
+2	js-cheerio.dan	/^Modifying Element Attributes and Properties <L=x#2><\/L><I=2>$/;"	i	line:6979	language:dantags	regex:x
+2	js-cheerio.dan	/^Moving Down the DOM Tree <L=z#2><\/L><I=2>$/;"	i	line:7376	language:dantags	regex:z
+2	js-cheerio.dan	/^Parameters <L=f#2><\/L><I=2>$/;"	i	line:5070	language:dantags	regex:f
+2	js-cheerio.dan	/^Parameters <L=g#2><\/L><I=2>$/;"	i	line:5118	language:dantags	regex:g
+2	js-cheerio.dan	/^Parameters <L=h#2><\/L><I=2>$/;"	i	line:5159	language:dantags	regex:h
+2	js-cheerio.dan	/^Parameters <L=i#2><\/L><I=2>$/;"	i	line:5204	language:dantags	regex:i
+2	js-cheerio.dan	/^Parameters <L=j#2><\/L><I=2>$/;"	i	line:5252	language:dantags	regex:j
+2	js-cheerio.dan	/^Parameters <L=l#2><\/L><I=2>$/;"	i	line:5352	language:dantags	regex:l
+2	js-cheerio.dan	/^Putting it all together <L=c#2><\/L><I=2>$/;"	i	line:1453	language:dantags	regex:c
+2	js-cheerio.dan	/^See <L=q#2><\/L><I=2>$/;"	i	line:6455	language:dantags	regex:q
+2	js-cheerio.dan	/^Type Parameters <L=k#2><\/L><I=2>$/;"	i	line:5301	language:dantags	regex:k
+2	js-cheerio.dan	/^Type Parameters <L=r#2><\/L><I=2>$/;"	i	line:6658	language:dantags	regex:r
+2	js-cheerio.dan	/^Type Parameters <L=s#2><\/L><I=2>$/;"	i	line:6690	language:dantags	regex:s
+2	js-cheerio.dan	/^Type Parameters <L=t#2><\/L><I=2>$/;"	i	line:6722	language:dantags	regex:t
+2	js-cheerio.dan	/^Type Parameters <L=u#2><\/L><I=2>$/;"	i	line:6754	language:dantags	regex:u
+20	js-cheerio.dan	/^name <L=e#20><\/L><I=20>$/;"	i	line:2105	language:dantags	regex:e
+21	js-cheerio.dan	/^Returns <L=e#21><\/L><I=21>$/;"	i	line:2110	language:dantags	regex:e
+22	js-cheerio.dan	/^Call Signature <L=e#22><\/L><I=22>$/;"	i	line:2115	language:dantags	regex:e
+23	js-cheerio.dan	/^Type Parameters <L=e#23><\/L><I=23>$/;"	i	line:2122	language:dantags	regex:e
+24	js-cheerio.dan	/^Parameters <L=e#24><\/L><I=24>$/;"	i	line:2127	language:dantags	regex:e
+25	js-cheerio.dan	/^this <L=e#25><\/L><I=25>$/;"	i	line:2128	language:dantags	regex:e
+26	js-cheerio.dan	/^name <L=e#26><\/L><I=26>$/;"	i	line:2131	language:dantags	regex:e
+27	js-cheerio.dan	/^value <L=e#27><\/L><I=27>$/;"	i	line:2136	language:dantags	regex:e
+28	js-cheerio.dan	/^Returns <L=e#28><\/L><I=28>$/;"	i	line:2143	language:dantags	regex:e
+29	js-cheerio.dan	/^Call Signature <L=e#29><\/L><I=29>$/;"	i	line:2148	language:dantags	regex:e
+2A	js-cheerio.dan	/^See <L=e#2A><\/L><I=2A>$/;"	i	line:2276	language:dantags	regex:e
+2B	js-cheerio.dan	/^removeClass() <L=e#2B><\/L><I=2B>$/;"	i	line:2281	language:dantags	regex:e
+2C	js-cheerio.dan	/^Type Parameters <L=e#2C><\/L><I=2C>$/;"	i	line:2289	language:dantags	regex:e
+2D	js-cheerio.dan	/^Parameters <L=e#2D><\/L><I=2D>$/;"	i	line:2294	language:dantags	regex:e
+2E	js-cheerio.dan	/^this <L=e#2E><\/L><I=2E>$/;"	i	line:2295	language:dantags	regex:e
+2F	js-cheerio.dan	/^name? <L=e#2F><\/L><I=2F>$/;"	i	line:2298	language:dantags	regex:e
+2G	js-cheerio.dan	/^Returns <L=e#2G><\/L><I=2G>$/;"	i	line:2303	language:dantags	regex:e
+2H	js-cheerio.dan	/^Example <L=e#2H><\/L><I=2H>$/;"	i	line:2308	language:dantags	regex:e
+2I	js-cheerio.dan	/^See <L=e#2I><\/L><I=2I>$/;"	i	line:2319	language:dantags	regex:e
+2J	js-cheerio.dan	/^toggleClass() <L=e#2J><\/L><I=2J>$/;"	i	line:2324	language:dantags	regex:e
+2K	js-cheerio.dan	/^Type Parameters <L=e#2K><\/L><I=2K>$/;"	i	line:2332	language:dantags	regex:e
+2L	js-cheerio.dan	/^Parameters <L=e#2L><\/L><I=2L>$/;"	i	line:2337	language:dantags	regex:e
+2M	js-cheerio.dan	/^this <L=e#2M><\/L><I=2M>$/;"	i	line:2338	language:dantags	regex:e
+2N	js-cheerio.dan	/^value? <L=e#2N><\/L><I=2N>$/;"	i	line:2341	language:dantags	regex:e
+2O	js-cheerio.dan	/^stateVal? <L=e#2O><\/L><I=2O>$/;"	i	line:2346	language:dantags	regex:e
+2P	js-cheerio.dan	/^Returns <L=e#2P><\/L><I=2P>$/;"	i	line:2351	language:dantags	regex:e
+2Q	js-cheerio.dan	/^Example <L=e#2Q><\/L><I=2Q>$/;"	i	line:2356	language:dantags	regex:e
+2R	js-cheerio.dan	/^See <L=e#2R><\/L><I=2R>$/;"	i	line:2367	language:dantags	regex:e
+2S	js-cheerio.dan	/^val() <L=e#2S><\/L><I=2S>$/;"	i	line:2372	language:dantags	regex:e
+2T	js-cheerio.dan	/^Call Signature <L=e#2T><\/L><I=2T>$/;"	i	line:2373	language:dantags	regex:e
+2U	js-cheerio.dan	/^Type Parameters <L=e#2U><\/L><I=2U>$/;"	i	line:2381	language:dantags	regex:e
+2V	js-cheerio.dan	/^Parameters <L=e#2V><\/L><I=2V>$/;"	i	line:2384	language:dantags	regex:e
+2W	js-cheerio.dan	/^this <L=e#2W><\/L><I=2W>$/;"	i	line:2385	language:dantags	regex:e
+2X	js-cheerio.dan	/^Returns <L=e#2X><\/L><I=2X>$/;"	i	line:2388	language:dantags	regex:e
+2Y	js-cheerio.dan	/^Example <L=e#2Y><\/L><I=2Y>$/;"	i	line:2393	language:dantags	regex:e
+2Z	js-cheerio.dan	/^See <L=e#2Z><\/L><I=2Z>$/;"	i	line:2401	language:dantags	regex:e
+2a	js-cheerio.dan	/^Type Parameters <L=e#2a><\/L><I=2a>$/;"	i	line:2155	language:dantags	regex:e
+2b	js-cheerio.dan	/^Parameters <L=e#2b><\/L><I=2b>$/;"	i	line:2158	language:dantags	regex:e
+2c	js-cheerio.dan	/^this <L=e#2c><\/L><I=2c>$/;"	i	line:2159	language:dantags	regex:e
+2d	js-cheerio.dan	/^map <L=e#2d><\/L><I=2d>$/;"	i	line:2162	language:dantags	regex:e
+2e	js-cheerio.dan	/^Returns <L=e#2e><\/L><I=2e>$/;"	i	line:2170	language:dantags	regex:e
+2f	js-cheerio.dan	/^Example <L=e#2f><\/L><I=2f>$/;"	i	line:2175	language:dantags	regex:e
+2g	js-cheerio.dan	/^Call Signature <L=e#2g><\/L><I=2g>$/;"	i	line:2185	language:dantags	regex:e
+2h	js-cheerio.dan	/^Type Parameters <L=e#2h><\/L><I=2h>$/;"	i	line:2192	language:dantags	regex:e
+2i	js-cheerio.dan	/^Parameters <L=e#2i><\/L><I=2i>$/;"	i	line:2195	language:dantags	regex:e
+2j	js-cheerio.dan	/^this <L=e#2j><\/L><I=2j>$/;"	i	line:2196	language:dantags	regex:e
+2k	js-cheerio.dan	/^name <L=e#2k><\/L><I=2k>$/;"	i	line:2199	language:dantags	regex:e
+2l	js-cheerio.dan	/^value <L=e#2l><\/L><I=2l>$/;"	i	line:2204	language:dantags	regex:e
+2m	js-cheerio.dan	/^Returns <L=e#2m><\/L><I=2m>$/;"	i	line:2209	language:dantags	regex:e
+2n	js-cheerio.dan	/^Call Signature <L=e#2n><\/L><I=2n>$/;"	i	line:2214	language:dantags	regex:e
+2o	js-cheerio.dan	/^Type Parameters <L=e#2o><\/L><I=2o>$/;"	i	line:2221	language:dantags	regex:e
+2p	js-cheerio.dan	/^Parameters <L=e#2p><\/L><I=2p>$/;"	i	line:2224	language:dantags	regex:e
+2q	js-cheerio.dan	/^this <L=e#2q><\/L><I=2q>$/;"	i	line:2225	language:dantags	regex:e
+2r	js-cheerio.dan	/^name <L=e#2r><\/L><I=2r>$/;"	i	line:2228	language:dantags	regex:e
+2s	js-cheerio.dan	/^Returns <L=e#2s><\/L><I=2s>$/;"	i	line:2233	language:dantags	regex:e
+2t	js-cheerio.dan	/^removeAttr() <L=e#2t><\/L><I=2t>$/;"	i	line:2240	language:dantags	regex:e
+2u	js-cheerio.dan	/^Type Parameters <L=e#2u><\/L><I=2u>$/;"	i	line:2247	language:dantags	regex:e
+2v	js-cheerio.dan	/^Parameters <L=e#2v><\/L><I=2v>$/;"	i	line:2250	language:dantags	regex:e
+2w	js-cheerio.dan	/^this <L=e#2w><\/L><I=2w>$/;"	i	line:2251	language:dantags	regex:e
+2x	js-cheerio.dan	/^name <L=e#2x><\/L><I=2x>$/;"	i	line:2254	language:dantags	regex:e
+2y	js-cheerio.dan	/^Returns <L=e#2y><\/L><I=2y>$/;"	i	line:2259	language:dantags	regex:e
+2z	js-cheerio.dan	/^Example <L=e#2z><\/L><I=2z>$/;"	i	line:2264	language:dantags	regex:e
+3	js-cheerio.dan	/^ find  <L=z#3><\/L><I=3>$/;"	i	line:7380	language:dantags	regex:z
+3	js-cheerio.dan	/^ loadBuffer  <L=w#3><\/L><I=3>$/;"	i	line:6857	language:dantags	regex:w
+3	js-cheerio.dan	/^<B=3>Cheerio 1.0 Released, Batteries Included 🔋$/;"	b	line:250	language:dantags
+3	js-cheerio.dan	/^Adding and Removing Classes <L=x#3><\/L><I=3>$/;"	i	line:7022	language:dantags	regex:x
+3	js-cheerio.dan	/^Extended by <L=n#3><\/L><I=3>$/;"	i	line:5812	language:dantags	regex:n
+3	js-cheerio.dan	/^Extended by <L=p#3><\/L><I=3>$/;"	i	line:6241	language:dantags	regex:p
+3	js-cheerio.dan	/^Extends <L=e#3><\/L><I=3>$/;"	i	line:1562	language:dantags	regex:e
+3	js-cheerio.dan	/^Extends <L=q#3><\/L><I=3>$/;"	i	line:6458	language:dantags	regex:q
+3	js-cheerio.dan	/^Other <L=d#3><\/L><I=3>$/;"	i	line:1509	language:dantags	regex:d
+3	js-cheerio.dan	/^Parameters <L=k#3><\/L><I=3>$/;"	i	line:5304	language:dantags	regex:k
+3	js-cheerio.dan	/^Parameters <L=u#3><\/L><I=3>$/;"	i	line:6757	language:dantags	regex:u
+3	js-cheerio.dan	/^Parsing HTML with parse5 <L=a#3><\/L><I=3>$/;"	i	line:1060	language:dantags	regex:a
+3	js-cheerio.dan	/^Properties <L=o#3><\/L><I=3>$/;"	i	line:6009	language:dantags	regex:o
+3	js-cheerio.dan	/^Setting up Node.js <L=C#3><\/L><I=3>$/;"	i	line:7996	language:dantags	regex:C
+3	js-cheerio.dan	/^Type Parameters <L=m#3><\/L><I=3>$/;"	i	line:5424	language:dantags	regex:m
+3	js-cheerio.dan	/^Writing Plugins for Cheerio <L=b#3><\/L><I=3>$/;"	i	line:1257	language:dantags	regex:b
+3	js-cheerio.dan	/^buffer <L=j#3><\/L><I=3>$/;"	i	line:5253	language:dantags	regex:j
+3	js-cheerio.dan	/^container <L=f#3><\/L><I=3>$/;"	i	line:5071	language:dantags	regex:f
+3	js-cheerio.dan	/^content <L=i#3><\/L><I=3>$/;"	i	line:5205	language:dantags	regex:i
+3	js-cheerio.dan	/^options <L=g#3><\/L><I=3>$/;"	i	line:5119	language:dantags	regex:g
+3	js-cheerio.dan	/^options <L=l#3><\/L><I=3>$/;"	i	line:5353	language:dantags	regex:l
+3	js-cheerio.dan	/^url <L=h#3><\/L><I=3>$/;"	i	line:5160	language:dantags	regex:h
+30	js-cheerio.dan	/^Call Signature <L=e#30><\/L><I=30>$/;"	i	line:2404	language:dantags	regex:e
+31	js-cheerio.dan	/^Type Parameters <L=e#31><\/L><I=31>$/;"	i	line:2412	language:dantags	regex:e
+32	js-cheerio.dan	/^Parameters <L=e#32><\/L><I=32>$/;"	i	line:2415	language:dantags	regex:e
+33	js-cheerio.dan	/^this <L=e#33><\/L><I=33>$/;"	i	line:2416	language:dantags	regex:e
+34	js-cheerio.dan	/^value <L=e#34><\/L><I=34>$/;"	i	line:2419	language:dantags	regex:e
+35	js-cheerio.dan	/^Returns <L=e#35><\/L><I=35>$/;"	i	line:2424	language:dantags	regex:e
+36	js-cheerio.dan	/^Example <L=e#36><\/L><I=36>$/;"	i	line:2429	language:dantags	regex:e
+37	js-cheerio.dan	/^See <L=e#37><\/L><I=37>$/;"	i	line:2437	language:dantags	regex:e
+38	js-cheerio.dan	/^CSS <L=e#38><\/L><I=38>$/;"	i	line:2440	language:dantags	regex:e
+39	js-cheerio.dan	/^css() <L=e#39><\/L><I=39>$/;"	i	line:2441	language:dantags	regex:e
+3A	js-cheerio.dan	/^this <L=e#3A><\/L><I=3A>$/;"	i	line:2540	language:dantags	regex:e
+3B	js-cheerio.dan	/^prop <L=e#3B><\/L><I=3B>$/;"	i	line:2543	language:dantags	regex:e
+3C	js-cheerio.dan	/^val <L=e#3C><\/L><I=3C>$/;"	i	line:2548	language:dantags	regex:e
+3D	js-cheerio.dan	/^Returns <L=e#3D><\/L><I=3D>$/;"	i	line:2553	language:dantags	regex:e
+3E	js-cheerio.dan	/^Param <L=e#3E><\/L><I=3E>$/;"	i	line:2560	language:dantags	regex:e
+3F	js-cheerio.dan	/^Param <L=e#3F><\/L><I=3F>$/;"	i	line:2563	language:dantags	regex:e
+3G	js-cheerio.dan	/^See <L=e#3G><\/L><I=3G>$/;"	i	line:2566	language:dantags	regex:e
+3H	js-cheerio.dan	/^See <L=e#3H><\/L><I=3H>$/;"	i	line:2569	language:dantags	regex:e
+3I	js-cheerio.dan	/^Call Signature <L=e#3I><\/L><I=3I>$/;"	i	line:2572	language:dantags	regex:e
+3J	js-cheerio.dan	/^Type Parameters <L=e#3J><\/L><I=3J>$/;"	i	line:2579	language:dantags	regex:e
+3K	js-cheerio.dan	/^Parameters <L=e#3K><\/L><I=3K>$/;"	i	line:2582	language:dantags	regex:e
+3L	js-cheerio.dan	/^this <L=e#3L><\/L><I=3L>$/;"	i	line:2583	language:dantags	regex:e
+3M	js-cheerio.dan	/^map <L=e#3M><\/L><I=3M>$/;"	i	line:2586	language:dantags	regex:e
+3N	js-cheerio.dan	/^Returns <L=e#3N><\/L><I=3N>$/;"	i	line:2591	language:dantags	regex:e
+3O	js-cheerio.dan	/^Param <L=e#3O><\/L><I=3O>$/;"	i	line:2598	language:dantags	regex:e
+3P	js-cheerio.dan	/^Param <L=e#3P><\/L><I=3P>$/;"	i	line:2601	language:dantags	regex:e
+3Q	js-cheerio.dan	/^See <L=e#3Q><\/L><I=3Q>$/;"	i	line:2604	language:dantags	regex:e
+3R	js-cheerio.dan	/^See <L=e#3R><\/L><I=3R>$/;"	i	line:2607	language:dantags	regex:e
+3S	js-cheerio.dan	/^Forms <L=e#3S><\/L><I=3S>$/;"	i	line:2610	language:dantags	regex:e
+3T	js-cheerio.dan	/^serialize() <L=e#3T><\/L><I=3T>$/;"	i	line:2611	language:dantags	regex:e
+3U	js-cheerio.dan	/^Type Parameters <L=e#3U><\/L><I=3U>$/;"	i	line:2618	language:dantags	regex:e
+3V	js-cheerio.dan	/^Parameters <L=e#3V><\/L><I=3V>$/;"	i	line:2621	language:dantags	regex:e
+3W	js-cheerio.dan	/^this <L=e#3W><\/L><I=3W>$/;"	i	line:2622	language:dantags	regex:e
+3X	js-cheerio.dan	/^Returns <L=e#3X><\/L><I=3X>$/;"	i	line:2625	language:dantags	regex:e
+3Y	js-cheerio.dan	/^Example <L=e#3Y><\/L><I=3Y>$/;"	i	line:2630	language:dantags	regex:e
+3Z	js-cheerio.dan	/^See <L=e#3Z><\/L><I=3Z>$/;"	i	line:2638	language:dantags	regex:e
+3a	js-cheerio.dan	/^Param <L=e#3a><\/L><I=3a>$/;"	i	line:2444	language:dantags	regex:e
+3b	js-cheerio.dan	/^Param <L=e#3b><\/L><I=3b>$/;"	i	line:2447	language:dantags	regex:e
+3c	js-cheerio.dan	/^See <L=e#3c><\/L><I=3c>$/;"	i	line:2450	language:dantags	regex:e
+3d	js-cheerio.dan	/^Call Signature <L=e#3d><\/L><I=3d>$/;"	i	line:2453	language:dantags	regex:e
+3e	js-cheerio.dan	/^Type Parameters <L=e#3e><\/L><I=3e>$/;"	i	line:2460	language:dantags	regex:e
+3f	js-cheerio.dan	/^Parameters <L=e#3f><\/L><I=3f>$/;"	i	line:2463	language:dantags	regex:e
+3g	js-cheerio.dan	/^this <L=e#3g><\/L><I=3g>$/;"	i	line:2464	language:dantags	regex:e
+3h	js-cheerio.dan	/^names? <L=e#3h><\/L><I=3h>$/;"	i	line:2467	language:dantags	regex:e
+3i	js-cheerio.dan	/^Returns <L=e#3i><\/L><I=3i>$/;"	i	line:2472	language:dantags	regex:e
+3j	js-cheerio.dan	/^Param <L=e#3j><\/L><I=3j>$/;"	i	line:2479	language:dantags	regex:e
+3k	js-cheerio.dan	/^Param <L=e#3k><\/L><I=3k>$/;"	i	line:2482	language:dantags	regex:e
+3l	js-cheerio.dan	/^See <L=e#3l><\/L><I=3l>$/;"	i	line:2485	language:dantags	regex:e
+3m	js-cheerio.dan	/^See <L=e#3m><\/L><I=3m>$/;"	i	line:2488	language:dantags	regex:e
+3n	js-cheerio.dan	/^Call Signature <L=e#3n><\/L><I=3n>$/;"	i	line:2491	language:dantags	regex:e
+3o	js-cheerio.dan	/^Type Parameters <L=e#3o><\/L><I=3o>$/;"	i	line:2498	language:dantags	regex:e
+3p	js-cheerio.dan	/^Parameters <L=e#3p><\/L><I=3p>$/;"	i	line:2501	language:dantags	regex:e
+3q	js-cheerio.dan	/^this <L=e#3q><\/L><I=3q>$/;"	i	line:2502	language:dantags	regex:e
+3r	js-cheerio.dan	/^name <L=e#3r><\/L><I=3r>$/;"	i	line:2505	language:dantags	regex:e
+3s	js-cheerio.dan	/^Returns <L=e#3s><\/L><I=3s>$/;"	i	line:2510	language:dantags	regex:e
+3t	js-cheerio.dan	/^Param <L=e#3t><\/L><I=3t>$/;"	i	line:2517	language:dantags	regex:e
+3u	js-cheerio.dan	/^Param <L=e#3u><\/L><I=3u>$/;"	i	line:2520	language:dantags	regex:e
+3v	js-cheerio.dan	/^See <L=e#3v><\/L><I=3v>$/;"	i	line:2523	language:dantags	regex:e
+3w	js-cheerio.dan	/^See <L=e#3w><\/L><I=3w>$/;"	i	line:2526	language:dantags	regex:e
+3x	js-cheerio.dan	/^Call Signature <L=e#3x><\/L><I=3x>$/;"	i	line:2529	language:dantags	regex:e
+3y	js-cheerio.dan	/^Type Parameters <L=e#3y><\/L><I=3y>$/;"	i	line:2536	language:dantags	regex:e
+3z	js-cheerio.dan	/^Parameters <L=e#3z><\/L><I=3z>$/;"	i	line:2539	language:dantags	regex:e
+4	js-cheerio.dan	/^ children  <L=z#4><\/L><I=4>$/;"	i	line:7405	language:dantags	regex:z
+4	js-cheerio.dan	/^ stringStream  <L=w#4><\/L><I=4>$/;"	i	line:6881	language:dantags	regex:w
+4	js-cheerio.dan	/^<B=4>New Website, Who Dis?$/;"	b	line:479	language:dantags
+4	js-cheerio.dan	/^Fragment Mode <L=a#4><\/L><I=4>$/;"	i	line:1079	language:dantags	regex:a
+4	js-cheerio.dan	/^Installing Cheerio <L=C#4><\/L><I=4>$/;"	i	line:8002	language:dantags	regex:C
+4	js-cheerio.dan	/^Modifying the Text Content of an Element <L=x#4><\/L><I=4>$/;"	i	line:7046	language:dantags	regex:x
+4	js-cheerio.dan	/^Parameters <L=m#4><\/L><I=4>$/;"	i	line:5429	language:dantags	regex:m
+4	js-cheerio.dan	/^Properties <L=n#4><\/L><I=4>$/;"	i	line:5815	language:dantags	regex:n
+4	js-cheerio.dan	/^Properties <L=p#4><\/L><I=4>$/;"	i	line:6244	language:dantags	regex:p
+4	js-cheerio.dan	/^Properties <L=q#4><\/L><I=4>$/;"	i	line:6461	language:dantags	regex:q
+4	js-cheerio.dan	/^Static <L=d#4><\/L><I=4>$/;"	i	line:1522	language:dantags	regex:d
+4	js-cheerio.dan	/^Type Parameters <L=e#4><\/L><I=4>$/;"	i	line:1565	language:dantags	regex:e
+4	js-cheerio.dan	/^arr1 <L=k#4><\/L><I=4>$/;"	i	line:5305	language:dantags	regex:k
+4	js-cheerio.dan	/^baseURI? <L=o#4><\/L><I=4>$/;"	i	line:6010	language:dantags	regex:o
+4	js-cheerio.dan	/^cb <L=g#4><\/L><I=4>$/;"	i	line:5124	language:dantags	regex:g
+4	js-cheerio.dan	/^cb <L=l#4><\/L><I=4>$/;"	i	line:5358	language:dantags	regex:l
+4	js-cheerio.dan	/^contained <L=f#4><\/L><I=4>$/;"	i	line:5076	language:dantags	regex:f
+4	js-cheerio.dan	/^options <L=h#4><\/L><I=4>$/;"	i	line:5165	language:dantags	regex:h
+4	js-cheerio.dan	/^options <L=j#4><\/L><I=4>$/;"	i	line:5258	language:dantags	regex:j
+4	js-cheerio.dan	/^options? <L=i#4><\/L><I=4>$/;"	i	line:5210	language:dantags	regex:i
+4	js-cheerio.dan	/^this <L=u#4><\/L><I=4>$/;"	i	line:6758	language:dantags	regex:u
+40	js-cheerio.dan	/^serializeArray() <L=e#40><\/L><I=40>$/;"	i	line:2643	language:dantags	regex:e
+41	js-cheerio.dan	/^Type Parameters <L=e#41><\/L><I=41>$/;"	i	line:2650	language:dantags	regex:e
+42	js-cheerio.dan	/^Parameters <L=e#42><\/L><I=42>$/;"	i	line:2653	language:dantags	regex:e
+43	js-cheerio.dan	/^this <L=e#43><\/L><I=43>$/;"	i	line:2654	language:dantags	regex:e
+44	js-cheerio.dan	/^Returns <L=e#44><\/L><I=44>$/;"	i	line:2657	language:dantags	regex:e
+45	js-cheerio.dan	/^Example <L=e#45><\/L><I=45>$/;"	i	line:2662	language:dantags	regex:e
+46	js-cheerio.dan	/^See <L=e#46><\/L><I=46>$/;"	i	line:2670	language:dantags	regex:e
+47	js-cheerio.dan	/^Manipulation <L=e#47><\/L><I=47>$/;"	i	line:2673	language:dantags	regex:e
+48	js-cheerio.dan	/^after() <L=e#48><\/L><I=48>$/;"	i	line:2674	language:dantags	regex:e
+49	js-cheerio.dan	/^Type Parameters <L=e#49><\/L><I=49>$/;"	i	line:2681	language:dantags	regex:e
+4A	js-cheerio.dan	/^elems <L=e#4A><\/L><I=4A>$/;"	i	line:2816	language:dantags	regex:e
+4B	js-cheerio.dan	/^Returns <L=e#4B><\/L><I=4B>$/;"	i	line:2823	language:dantags	regex:e
+4C	js-cheerio.dan	/^Example <L=e#4C><\/L><I=4C>$/;"	i	line:2828	language:dantags	regex:e
+4D	js-cheerio.dan	/^See <L=e#4D><\/L><I=4D>$/;"	i	line:2842	language:dantags	regex:e
+4E	js-cheerio.dan	/^clone() <L=e#4E><\/L><I=4E>$/;"	i	line:2847	language:dantags	regex:e
+4F	js-cheerio.dan	/^Type Parameters <L=e#4F><\/L><I=4F>$/;"	i	line:2854	language:dantags	regex:e
+4G	js-cheerio.dan	/^Parameters <L=e#4G><\/L><I=4G>$/;"	i	line:2857	language:dantags	regex:e
+4H	js-cheerio.dan	/^this <L=e#4H><\/L><I=4H>$/;"	i	line:2858	language:dantags	regex:e
+4I	js-cheerio.dan	/^Returns <L=e#4I><\/L><I=4I>$/;"	i	line:2861	language:dantags	regex:e
+4J	js-cheerio.dan	/^Example <L=e#4J><\/L><I=4J>$/;"	i	line:2866	language:dantags	regex:e
+4K	js-cheerio.dan	/^See <L=e#4K><\/L><I=4K>$/;"	i	line:2873	language:dantags	regex:e
+4L	js-cheerio.dan	/^empty() <L=e#4L><\/L><I=4L>$/;"	i	line:2878	language:dantags	regex:e
+4M	js-cheerio.dan	/^Type Parameters <L=e#4M><\/L><I=4M>$/;"	i	line:2885	language:dantags	regex:e
+4N	js-cheerio.dan	/^Parameters <L=e#4N><\/L><I=4N>$/;"	i	line:2888	language:dantags	regex:e
+4O	js-cheerio.dan	/^this <L=e#4O><\/L><I=4O>$/;"	i	line:2889	language:dantags	regex:e
+4P	js-cheerio.dan	/^Returns <L=e#4P><\/L><I=4P>$/;"	i	line:2892	language:dantags	regex:e
+4Q	js-cheerio.dan	/^Example <L=e#4Q><\/L><I=4Q>$/;"	i	line:2897	language:dantags	regex:e
+4R	js-cheerio.dan	/^See <L=e#4R><\/L><I=4R>$/;"	i	line:2906	language:dantags	regex:e
+4S	js-cheerio.dan	/^html() <L=e#4S><\/L><I=4S>$/;"	i	line:2911	language:dantags	regex:e
+4T	js-cheerio.dan	/^Call Signature <L=e#4T><\/L><I=4T>$/;"	i	line:2912	language:dantags	regex:e
+4U	js-cheerio.dan	/^Type Parameters <L=e#4U><\/L><I=4U>$/;"	i	line:2919	language:dantags	regex:e
+4V	js-cheerio.dan	/^Parameters <L=e#4V><\/L><I=4V>$/;"	i	line:2922	language:dantags	regex:e
+4W	js-cheerio.dan	/^this <L=e#4W><\/L><I=4W>$/;"	i	line:2923	language:dantags	regex:e
+4X	js-cheerio.dan	/^Returns <L=e#4X><\/L><I=4X>$/;"	i	line:2926	language:dantags	regex:e
+4Y	js-cheerio.dan	/^Example <L=e#4Y><\/L><I=4Y>$/;"	i	line:2931	language:dantags	regex:e
+4Z	js-cheerio.dan	/^See <L=e#4Z><\/L><I=4Z>$/;"	i	line:2942	language:dantags	regex:e
+4a	js-cheerio.dan	/^Parameters <L=e#4a><\/L><I=4a>$/;"	i	line:2684	language:dantags	regex:e
+4b	js-cheerio.dan	/^this <L=e#4b><\/L><I=4b>$/;"	i	line:2685	language:dantags	regex:e
+4c	js-cheerio.dan	/^elems <L=e#4c><\/L><I=4c>$/;"	i	line:2688	language:dantags	regex:e
+4d	js-cheerio.dan	/^Returns <L=e#4d><\/L><I=4d>$/;"	i	line:2695	language:dantags	regex:e
+4e	js-cheerio.dan	/^Example <L=e#4e><\/L><I=4e>$/;"	i	line:2700	language:dantags	regex:e
+4f	js-cheerio.dan	/^See <L=e#4f><\/L><I=4f>$/;"	i	line:2714	language:dantags	regex:e
+4g	js-cheerio.dan	/^append() <L=e#4g><\/L><I=4g>$/;"	i	line:2719	language:dantags	regex:e
+4h	js-cheerio.dan	/^Type Parameters <L=e#4h><\/L><I=4h>$/;"	i	line:2726	language:dantags	regex:e
+4i	js-cheerio.dan	/^Parameters <L=e#4i><\/L><I=4i>$/;"	i	line:2729	language:dantags	regex:e
+4j	js-cheerio.dan	/^this <L=e#4j><\/L><I=4j>$/;"	i	line:2730	language:dantags	regex:e
+4k	js-cheerio.dan	/^elems <L=e#4k><\/L><I=4k>$/;"	i	line:2733	language:dantags	regex:e
+4l	js-cheerio.dan	/^Returns <L=e#4l><\/L><I=4l>$/;"	i	line:2737	language:dantags	regex:e
+4m	js-cheerio.dan	/^Example <L=e#4m><\/L><I=4m>$/;"	i	line:2740	language:dantags	regex:e
+4n	js-cheerio.dan	/^See <L=e#4n><\/L><I=4n>$/;"	i	line:2754	language:dantags	regex:e
+4o	js-cheerio.dan	/^appendTo() <L=e#4o><\/L><I=4o>$/;"	i	line:2759	language:dantags	regex:e
+4p	js-cheerio.dan	/^Type Parameters <L=e#4p><\/L><I=4p>$/;"	i	line:2766	language:dantags	regex:e
+4q	js-cheerio.dan	/^Parameters <L=e#4q><\/L><I=4q>$/;"	i	line:2769	language:dantags	regex:e
+4r	js-cheerio.dan	/^this <L=e#4r><\/L><I=4r>$/;"	i	line:2770	language:dantags	regex:e
+4s	js-cheerio.dan	/^target <L=e#4s><\/L><I=4s>$/;"	i	line:2773	language:dantags	regex:e
+4t	js-cheerio.dan	/^Returns <L=e#4t><\/L><I=4t>$/;"	i	line:2778	language:dantags	regex:e
+4u	js-cheerio.dan	/^Example <L=e#4u><\/L><I=4u>$/;"	i	line:2783	language:dantags	regex:e
+4v	js-cheerio.dan	/^See <L=e#4v><\/L><I=4v>$/;"	i	line:2797	language:dantags	regex:e
+4w	js-cheerio.dan	/^before() <L=e#4w><\/L><I=4w>$/;"	i	line:2802	language:dantags	regex:e
+4x	js-cheerio.dan	/^Type Parameters <L=e#4x><\/L><I=4x>$/;"	i	line:2809	language:dantags	regex:e
+4y	js-cheerio.dan	/^Parameters <L=e#4y><\/L><I=4y>$/;"	i	line:2812	language:dantags	regex:e
+4z	js-cheerio.dan	/^this <L=e#4z><\/L><I=4z>$/;"	i	line:2813	language:dantags	regex:e
+5	js-cheerio.dan	/^ contents  <L=z#5><\/L><I=5>$/;"	i	line:7429	language:dantags	regex:z
+5	js-cheerio.dan	/^ decodeStream  <L=w#5><\/L><I=5>$/;"	i	line:6905	language:dantags	regex:w
+5	js-cheerio.dan	/^<B=5>Tags$/;"	b	line:595	language:dantags
+5	js-cheerio.dan	/^Implements <L=e#5><\/L><I=5>$/;"	i	line:1568	language:dantags	regex:e
+5	js-cheerio.dan	/^Importing Cheerio <L=C#5><\/L><I=5>$/;"	i	line:8027	language:dantags	regex:C
+5	js-cheerio.dan	/^Inherited from <L=o#5><\/L><I=5>$/;"	i	line:6017	language:dantags	regex:o
+5	js-cheerio.dan	/^Modifying the HTML Content of an Element <L=x#5><\/L><I=5>$/;"	i	line:7067	language:dantags	regex:x
+5	js-cheerio.dan	/^Parsing XML with htmlparser2 <L=a#5><\/L><I=5>$/;"	i	line:1107	language:dantags	regex:a
+5	js-cheerio.dan	/^Returns <L=f#5><\/L><I=5>$/;"	i	line:5081	language:dantags	regex:f
+5	js-cheerio.dan	/^Returns <L=g#5><\/L><I=5>$/;"	i	line:5129	language:dantags	regex:g
+5	js-cheerio.dan	/^Returns <L=h#5><\/L><I=5>$/;"	i	line:5170	language:dantags	regex:h
+5	js-cheerio.dan	/^Returns <L=j#5><\/L><I=5>$/;"	i	line:5263	language:dantags	regex:j
+5	js-cheerio.dan	/^Returns <L=l#5><\/L><I=5>$/;"	i	line:5363	language:dantags	regex:l
+5	js-cheerio.dan	/^arr2 <L=k#5><\/L><I=5>$/;"	i	line:5310	language:dantags	regex:k
+5	js-cheerio.dan	/^baseURI? <L=n#5><\/L><I=5>$/;"	i	line:5816	language:dantags	regex:n
+5	js-cheerio.dan	/^baseURI? <L=p#5><\/L><I=5>$/;"	i	line:6245	language:dantags	regex:p
+5	js-cheerio.dan	/^decodeEntities? <L=q#5><\/L><I=5>$/;"	i	line:6462	language:dantags	regex:q
+5	js-cheerio.dan	/^i <L=u#5><\/L><I=5>$/;"	i	line:6761	language:dantags	regex:u
+5	js-cheerio.dan	/^isDocument? <L=i#5><\/L><I=5>$/;"	i	line:5215	language:dantags	regex:i
+5	js-cheerio.dan	/^selector? <L=m#5><\/L><I=5>$/;"	i	line:5430	language:dantags	regex:m
+50	js-cheerio.dan	/^Call Signature <L=e#50><\/L><I=50>$/;"	i	line:2945	language:dantags	regex:e
+51	js-cheerio.dan	/^Type Parameters <L=e#51><\/L><I=51>$/;"	i	line:2952	language:dantags	regex:e
+52	js-cheerio.dan	/^Parameters <L=e#52><\/L><I=52>$/;"	i	line:2955	language:dantags	regex:e
+53	js-cheerio.dan	/^this <L=e#53><\/L><I=53>$/;"	i	line:2956	language:dantags	regex:e
+54	js-cheerio.dan	/^str <L=e#54><\/L><I=54>$/;"	i	line:2959	language:dantags	regex:e
+55	js-cheerio.dan	/^Returns <L=e#55><\/L><I=55>$/;"	i	line:2964	language:dantags	regex:e
+56	js-cheerio.dan	/^Example <L=e#56><\/L><I=56>$/;"	i	line:2969	language:dantags	regex:e
+57	js-cheerio.dan	/^See <L=e#57><\/L><I=57>$/;"	i	line:2977	language:dantags	regex:e
+58	js-cheerio.dan	/^insertAfter() <L=e#58><\/L><I=58>$/;"	i	line:2982	language:dantags	regex:e
+59	js-cheerio.dan	/^Type Parameters <L=e#59><\/L><I=59>$/;"	i	line:2989	language:dantags	regex:e
+5A	js-cheerio.dan	/^target <L=e#5A><\/L><I=5A>$/;"	i	line:3122	language:dantags	regex:e
+5B	js-cheerio.dan	/^Returns <L=e#5B><\/L><I=5B>$/;"	i	line:3127	language:dantags	regex:e
+5C	js-cheerio.dan	/^Example <L=e#5C><\/L><I=5C>$/;"	i	line:3132	language:dantags	regex:e
+5D	js-cheerio.dan	/^See <L=e#5D><\/L><I=5D>$/;"	i	line:3146	language:dantags	regex:e
+5E	js-cheerio.dan	/^remove() <L=e#5E><\/L><I=5E>$/;"	i	line:3151	language:dantags	regex:e
+5F	js-cheerio.dan	/^Type Parameters <L=e#5F><\/L><I=5F>$/;"	i	line:3159	language:dantags	regex:e
+5G	js-cheerio.dan	/^Parameters <L=e#5G><\/L><I=5G>$/;"	i	line:3162	language:dantags	regex:e
+5H	js-cheerio.dan	/^this <L=e#5H><\/L><I=5H>$/;"	i	line:3163	language:dantags	regex:e
+5I	js-cheerio.dan	/^selector? <L=e#5I><\/L><I=5I>$/;"	i	line:3166	language:dantags	regex:e
+5J	js-cheerio.dan	/^Returns <L=e#5J><\/L><I=5J>$/;"	i	line:3171	language:dantags	regex:e
+5K	js-cheerio.dan	/^Example <L=e#5K><\/L><I=5K>$/;"	i	line:3176	language:dantags	regex:e
+5L	js-cheerio.dan	/^See <L=e#5L><\/L><I=5L>$/;"	i	line:3188	language:dantags	regex:e
+5M	js-cheerio.dan	/^replaceWith() <L=e#5M><\/L><I=5M>$/;"	i	line:3193	language:dantags	regex:e
+5N	js-cheerio.dan	/^Type Parameters <L=e#5N><\/L><I=5N>$/;"	i	line:3200	language:dantags	regex:e
+5O	js-cheerio.dan	/^Parameters <L=e#5O><\/L><I=5O>$/;"	i	line:3203	language:dantags	regex:e
+5P	js-cheerio.dan	/^this <L=e#5P><\/L><I=5P>$/;"	i	line:3204	language:dantags	regex:e
+5Q	js-cheerio.dan	/^content <L=e#5Q><\/L><I=5Q>$/;"	i	line:3207	language:dantags	regex:e
+5R	js-cheerio.dan	/^Returns <L=e#5R><\/L><I=5R>$/;"	i	line:3212	language:dantags	regex:e
+5S	js-cheerio.dan	/^Example <L=e#5S><\/L><I=5S>$/;"	i	line:3217	language:dantags	regex:e
+5T	js-cheerio.dan	/^See <L=e#5T><\/L><I=5T>$/;"	i	line:3231	language:dantags	regex:e
+5U	js-cheerio.dan	/^text() <L=e#5U><\/L><I=5U>$/;"	i	line:3236	language:dantags	regex:e
+5V	js-cheerio.dan	/^Call Signature <L=e#5V><\/L><I=5V>$/;"	i	line:3237	language:dantags	regex:e
+5W	js-cheerio.dan	/^Type Parameters <L=e#5W><\/L><I=5W>$/;"	i	line:3245	language:dantags	regex:e
+5X	js-cheerio.dan	/^Parameters <L=e#5X><\/L><I=5X>$/;"	i	line:3248	language:dantags	regex:e
+5Y	js-cheerio.dan	/^this <L=e#5Y><\/L><I=5Y>$/;"	i	line:3249	language:dantags	regex:e
+5Z	js-cheerio.dan	/^Returns <L=e#5Z><\/L><I=5Z>$/;"	i	line:3252	language:dantags	regex:e
+5a	js-cheerio.dan	/^Parameters <L=e#5a><\/L><I=5a>$/;"	i	line:2992	language:dantags	regex:e
+5b	js-cheerio.dan	/^this <L=e#5b><\/L><I=5b>$/;"	i	line:2993	language:dantags	regex:e
+5c	js-cheerio.dan	/^target <L=e#5c><\/L><I=5c>$/;"	i	line:2996	language:dantags	regex:e
+5d	js-cheerio.dan	/^Returns <L=e#5d><\/L><I=5d>$/;"	i	line:3001	language:dantags	regex:e
+5e	js-cheerio.dan	/^Example <L=e#5e><\/L><I=5e>$/;"	i	line:3006	language:dantags	regex:e
+5f	js-cheerio.dan	/^See <L=e#5f><\/L><I=5f>$/;"	i	line:3020	language:dantags	regex:e
+5g	js-cheerio.dan	/^insertBefore() <L=e#5g><\/L><I=5g>$/;"	i	line:3025	language:dantags	regex:e
+5h	js-cheerio.dan	/^Type Parameters <L=e#5h><\/L><I=5h>$/;"	i	line:3032	language:dantags	regex:e
+5i	js-cheerio.dan	/^Parameters <L=e#5i><\/L><I=5i>$/;"	i	line:3035	language:dantags	regex:e
+5j	js-cheerio.dan	/^this <L=e#5j><\/L><I=5j>$/;"	i	line:3036	language:dantags	regex:e
+5k	js-cheerio.dan	/^target <L=e#5k><\/L><I=5k>$/;"	i	line:3039	language:dantags	regex:e
+5l	js-cheerio.dan	/^Returns <L=e#5l><\/L><I=5l>$/;"	i	line:3044	language:dantags	regex:e
+5m	js-cheerio.dan	/^Example <L=e#5m><\/L><I=5m>$/;"	i	line:3049	language:dantags	regex:e
+5n	js-cheerio.dan	/^See <L=e#5n><\/L><I=5n>$/;"	i	line:3063	language:dantags	regex:e
+5o	js-cheerio.dan	/^prepend() <L=e#5o><\/L><I=5o>$/;"	i	line:3068	language:dantags	regex:e
+5p	js-cheerio.dan	/^Type Parameters <L=e#5p><\/L><I=5p>$/;"	i	line:3075	language:dantags	regex:e
+5q	js-cheerio.dan	/^Parameters <L=e#5q><\/L><I=5q>$/;"	i	line:3078	language:dantags	regex:e
+5r	js-cheerio.dan	/^this <L=e#5r><\/L><I=5r>$/;"	i	line:3079	language:dantags	regex:e
+5s	js-cheerio.dan	/^elems <L=e#5s><\/L><I=5s>$/;"	i	line:3082	language:dantags	regex:e
+5t	js-cheerio.dan	/^Returns <L=e#5t><\/L><I=5t>$/;"	i	line:3086	language:dantags	regex:e
+5u	js-cheerio.dan	/^Example <L=e#5u><\/L><I=5u>$/;"	i	line:3089	language:dantags	regex:e
+5v	js-cheerio.dan	/^See <L=e#5v><\/L><I=5v>$/;"	i	line:3103	language:dantags	regex:e
+5w	js-cheerio.dan	/^prependTo() <L=e#5w><\/L><I=5w>$/;"	i	line:3108	language:dantags	regex:e
+5x	js-cheerio.dan	/^Type Parameters <L=e#5x><\/L><I=5x>$/;"	i	line:3115	language:dantags	regex:e
+5y	js-cheerio.dan	/^Parameters <L=e#5y><\/L><I=5y>$/;"	i	line:3118	language:dantags	regex:e
+5z	js-cheerio.dan	/^this <L=e#5z><\/L><I=5z>$/;"	i	line:3119	language:dantags	regex:e
+6	js-cheerio.dan	/^ fromURL  <L=w#6><\/L><I=6>$/;"	i	line:6932	language:dantags	regex:w
+6	js-cheerio.dan	/^<B=6>One post tagged with "announcement"$/;"	b	line:675	language:dantags
+6	js-cheerio.dan	/^Alias <L=f#6><\/L><I=6>$/;"	i	line:5086	language:dantags	regex:f
+6	js-cheerio.dan	/^Default <L=q#6><\/L><I=6>$/;"	i	line:6469	language:dantags	regex:q
+6	js-cheerio.dan	/^Example <L=h#6><\/L><I=6>$/;"	i	line:5175	language:dantags	regex:h
+6	js-cheerio.dan	/^Example <L=j#6><\/L><I=6>$/;"	i	line:5268	language:dantags	regex:j
+6	js-cheerio.dan	/^Example <L=l#6><\/L><I=6>$/;"	i	line:5368	language:dantags	regex:l
+6	js-cheerio.dan	/^Indexable <L=e#6><\/L><I=6>$/;"	i	line:1571	language:dantags	regex:e
+6	js-cheerio.dan	/^Inherited from <L=p#6><\/L><I=6>$/;"	i	line:6252	language:dantags	regex:p
+6	js-cheerio.dan	/^Inserting New Elements <L=x#6><\/L><I=6>$/;"	i	line:7082	language:dantags	regex:x
+6	js-cheerio.dan	/^Moving Up the DOM Tree <L=z#6><\/L><I=6>$/;"	i	line:7452	language:dantags	regex:z
+6	js-cheerio.dan	/^Returns <L=i#6><\/L><I=6>$/;"	i	line:5220	language:dantags	regex:i
+6	js-cheerio.dan	/^Returns <L=k#6><\/L><I=6>$/;"	i	line:5315	language:dantags	regex:k
+6	js-cheerio.dan	/^Using  htmlparser2  for HTML <L=a#6><\/L><I=6>$/;"	i	line:1150	language:dantags	regex:a
+6	js-cheerio.dan	/^Using Cheerio <L=C#6><\/L><I=6>$/;"	i	line:8044	language:dantags	regex:C
+6	js-cheerio.dan	/^context? <L=m#6><\/L><I=6>$/;"	i	line:5435	language:dantags	regex:m
+6	js-cheerio.dan	/^el <L=u#6><\/L><I=6>$/;"	i	line:6764	language:dantags	regex:u
+6	js-cheerio.dan	/^encoding? <L=o#6><\/L><I=6>$/;"	i	line:6022	language:dantags	regex:o
+6	js-cheerio.dan	/^onParseError? <L=n#6><\/L><I=6>$/;"	i	line:5825	language:dantags	regex:n
+60	js-cheerio.dan	/^Example <L=e#60><\/L><I=60>$/;"	i	line:3257	language:dantags	regex:e
+61	js-cheerio.dan	/^See <L=e#61><\/L><I=61>$/;"	i	line:3270	language:dantags	regex:e
+62	js-cheerio.dan	/^Call Signature <L=e#62><\/L><I=62>$/;"	i	line:3273	language:dantags	regex:e
+63	js-cheerio.dan	/^Type Parameters <L=e#63><\/L><I=63>$/;"	i	line:3280	language:dantags	regex:e
+64	js-cheerio.dan	/^Parameters <L=e#64><\/L><I=64>$/;"	i	line:3283	language:dantags	regex:e
+65	js-cheerio.dan	/^this <L=e#65><\/L><I=65>$/;"	i	line:3284	language:dantags	regex:e
+66	js-cheerio.dan	/^str <L=e#66><\/L><I=66>$/;"	i	line:3287	language:dantags	regex:e
+67	js-cheerio.dan	/^Returns <L=e#67><\/L><I=67>$/;"	i	line:3292	language:dantags	regex:e
+68	js-cheerio.dan	/^Example <L=e#68><\/L><I=68>$/;"	i	line:3297	language:dantags	regex:e
+69	js-cheerio.dan	/^See <L=e#69><\/L><I=69>$/;"	i	line:3305	language:dantags	regex:e
+6A	js-cheerio.dan	/^Returns <L=e#6A><\/L><I=6A>$/;"	i	line:3474	language:dantags	regex:e
+6B	js-cheerio.dan	/^Examples <L=e#6B><\/L><I=6B>$/;"	i	line:3479	language:dantags	regex:e
+6C	js-cheerio.dan	/^See <L=e#6C><\/L><I=6C>$/;"	i	line:3518	language:dantags	regex:e
+6D	js-cheerio.dan	/^wrapInner() <L=e#6D><\/L><I=6D>$/;"	i	line:3523	language:dantags	regex:e
+6E	js-cheerio.dan	/^Type Parameters <L=e#6E><\/L><I=6E>$/;"	i	line:3533	language:dantags	regex:e
+6F	js-cheerio.dan	/^Parameters <L=e#6F><\/L><I=6F>$/;"	i	line:3536	language:dantags	regex:e
+6G	js-cheerio.dan	/^this <L=e#6G><\/L><I=6G>$/;"	i	line:3537	language:dantags	regex:e
+6H	js-cheerio.dan	/^wrapper <L=e#6H><\/L><I=6H>$/;"	i	line:3540	language:dantags	regex:e
+6I	js-cheerio.dan	/^Returns <L=e#6I><\/L><I=6I>$/;"	i	line:3545	language:dantags	regex:e
+6J	js-cheerio.dan	/^Example <L=e#6J><\/L><I=6J>$/;"	i	line:3550	language:dantags	regex:e
+6K	js-cheerio.dan	/^See <L=e#6K><\/L><I=6K>$/;"	i	line:3581	language:dantags	regex:e
+6L	js-cheerio.dan	/^Other <L=e#6L><\/L><I=6L>$/;"	i	line:3584	language:dantags	regex:e
+6M	js-cheerio.dan	/^cheerio <L=e#6M><\/L><I=6M>$/;"	i	line:3585	language:dantags	regex:e
+6N	js-cheerio.dan	/^length <L=e#6N><\/L><I=6N>$/;"	i	line:3592	language:dantags	regex:e
+6O	js-cheerio.dan	/^Implementation of <L=e#6O><\/L><I=6O>$/;"	i	line:3597	language:dantags	regex:e
+6P	js-cheerio.dan	/^options <L=e#6P><\/L><I=6P>$/;"	i	line:3602	language:dantags	regex:e
+6Q	js-cheerio.dan	/^prevObject <L=e#6Q><\/L><I=6Q>$/;"	i	line:3609	language:dantags	regex:e
+6R	js-cheerio.dan	/^splice() <L=e#6R><\/L><I=6R>$/;"	i	line:3616	language:dantags	regex:e
+6S	js-cheerio.dan	/^Parameters <L=e#6S><\/L><I=6S>$/;"	i	line:3624	language:dantags	regex:e
+6T	js-cheerio.dan	/^start <L=e#6T><\/L><I=6T>$/;"	i	line:3625	language:dantags	regex:e
+6U	js-cheerio.dan	/^deleteCount? <L=e#6U><\/L><I=6U>$/;"	i	line:3630	language:dantags	regex:e
+6V	js-cheerio.dan	/^Returns <L=e#6V><\/L><I=6V>$/;"	i	line:3635	language:dantags	regex:e
+6W	js-cheerio.dan	/^Parameters <L=e#6W><\/L><I=6W>$/;"	i	line:3643	language:dantags	regex:e
+6X	js-cheerio.dan	/^start <L=e#6X><\/L><I=6X>$/;"	i	line:3644	language:dantags	regex:e
+6Y	js-cheerio.dan	/^deleteCount <L=e#6Y><\/L><I=6Y>$/;"	i	line:3649	language:dantags	regex:e
+6Z	js-cheerio.dan	/^items <L=e#6Z><\/L><I=6Z>$/;"	i	line:3654	language:dantags	regex:e
+6a	js-cheerio.dan	/^toString() <L=e#6a><\/L><I=6a>$/;"	i	line:3310	language:dantags	regex:e
+6b	js-cheerio.dan	/^Type Parameters <L=e#6b><\/L><I=6b>$/;"	i	line:3317	language:dantags	regex:e
+6c	js-cheerio.dan	/^Parameters <L=e#6c><\/L><I=6c>$/;"	i	line:3320	language:dantags	regex:e
+6d	js-cheerio.dan	/^this <L=e#6d><\/L><I=6d>$/;"	i	line:3321	language:dantags	regex:e
+6e	js-cheerio.dan	/^Returns <L=e#6e><\/L><I=6e>$/;"	i	line:3324	language:dantags	regex:e
+6f	js-cheerio.dan	/^unwrap() <L=e#6f><\/L><I=6f>$/;"	i	line:3331	language:dantags	regex:e
+6g	js-cheerio.dan	/^Type Parameters <L=e#6g><\/L><I=6g>$/;"	i	line:3339	language:dantags	regex:e
+6h	js-cheerio.dan	/^Parameters <L=e#6h><\/L><I=6h>$/;"	i	line:3342	language:dantags	regex:e
+6i	js-cheerio.dan	/^this <L=e#6i><\/L><I=6i>$/;"	i	line:3343	language:dantags	regex:e
+6j	js-cheerio.dan	/^selector? <L=e#6j><\/L><I=6j>$/;"	i	line:3346	language:dantags	regex:e
+6k	js-cheerio.dan	/^Returns <L=e#6k><\/L><I=6k>$/;"	i	line:3352	language:dantags	regex:e
+6l	js-cheerio.dan	/^Examples <L=e#6l><\/L><I=6l>$/;"	i	line:3357	language:dantags	regex:e
+6m	js-cheerio.dan	/^See <L=e#6m><\/L><I=6m>$/;"	i	line:3386	language:dantags	regex:e
+6n	js-cheerio.dan	/^wrap() <L=e#6n><\/L><I=6n>$/;"	i	line:3391	language:dantags	regex:e
+6o	js-cheerio.dan	/^Type Parameters <L=e#6o><\/L><I=6o>$/;"	i	line:3401	language:dantags	regex:e
+6p	js-cheerio.dan	/^Parameters <L=e#6p><\/L><I=6p>$/;"	i	line:3404	language:dantags	regex:e
+6q	js-cheerio.dan	/^this <L=e#6q><\/L><I=6q>$/;"	i	line:3405	language:dantags	regex:e
+6r	js-cheerio.dan	/^wrapper <L=e#6r><\/L><I=6r>$/;"	i	line:3408	language:dantags	regex:e
+6s	js-cheerio.dan	/^Returns <L=e#6s><\/L><I=6s>$/;"	i	line:3413	language:dantags	regex:e
+6t	js-cheerio.dan	/^Example <L=e#6t><\/L><I=6t>$/;"	i	line:3416	language:dantags	regex:e
+6u	js-cheerio.dan	/^See <L=e#6u><\/L><I=6u>$/;"	i	line:3447	language:dantags	regex:e
+6v	js-cheerio.dan	/^wrapAll() <L=e#6v><\/L><I=6v>$/;"	i	line:3452	language:dantags	regex:e
+6w	js-cheerio.dan	/^Type Parameters <L=e#6w><\/L><I=6w>$/;"	i	line:3462	language:dantags	regex:e
+6x	js-cheerio.dan	/^Parameters <L=e#6x><\/L><I=6x>$/;"	i	line:3465	language:dantags	regex:e
+6y	js-cheerio.dan	/^this <L=e#6y><\/L><I=6y>$/;"	i	line:3466	language:dantags	regex:e
+6z	js-cheerio.dan	/^wrapper <L=e#6z><\/L><I=6z>$/;"	i	line:3469	language:dantags	regex:e
+7	js-cheerio.dan	/^ parent  <L=z#7><\/L><I=7>$/;"	i	line:7456	language:dantags	regex:z
+7	js-cheerio.dan	/^<B=7>One post tagged with "intro"$/;"	b	line:770	language:dantags
+7	js-cheerio.dan	/^Alias <L=k#7><\/L><I=7>$/;"	i	line:5320	language:dantags	regex:k
+7	js-cheerio.dan	/^Attributes <L=e#7><\/L><I=7>$/;"	i	line:1574	language:dantags	regex:e
+7	js-cheerio.dan	/^Conclusion <L=a#7><\/L><I=7>$/;"	i	line:1197	language:dantags	regex:a
+7	js-cheerio.dan	/^Conclusion <L=w#7><\/L><I=7>$/;"	i	line:6946	language:dantags	regex:w
+7	js-cheerio.dan	/^Default <L=n#7><\/L><I=7>$/;"	i	line:5832	language:dantags	regex:n
+7	js-cheerio.dan	/^Inherited from <L=o#7><\/L><I=7>$/;"	i	line:6027	language:dantags	regex:o
+7	js-cheerio.dan	/^Inherited from <L=q#7><\/L><I=7>$/;"	i	line:6476	language:dantags	regex:q
+7	js-cheerio.dan	/^Loading a Document <L=C#7><\/L><I=7>$/;"	i	line:8047	language:dantags	regex:C
+7	js-cheerio.dan	/^Returns <L=u#7><\/L><I=7>$/;"	i	line:6767	language:dantags	regex:u
+7	js-cheerio.dan	/^See <L=f#7><\/L><I=7>$/;"	i	line:5089	language:dantags	regex:f
+7	js-cheerio.dan	/^See <L=i#7><\/L><I=7>$/;"	i	line:5225	language:dantags	regex:i
+7	js-cheerio.dan	/^Wrapping and Unwrapping Elements <L=x#7><\/L><I=7>$/;"	i	line:7135	language:dantags	regex:x
+7	js-cheerio.dan	/^encoding? <L=p#7><\/L><I=7>$/;"	i	line:6257	language:dantags	regex:p
+7	js-cheerio.dan	/^root? <L=m#7><\/L><I=7>$/;"	i	line:5440	language:dantags	regex:m
+70	js-cheerio.dan	/^Returns <L=e#70><\/L><I=70>$/;"	i	line:3659	language:dantags	regex:e
+71	js-cheerio.dan	/^[iterator]() <L=e#71><\/L><I=71>$/;"	i	line:3666	language:dantags	regex:e
+72	js-cheerio.dan	/^Returns <L=e#72><\/L><I=72>$/;"	i	line:3671	language:dantags	regex:e
+73	js-cheerio.dan	/^extract() <L=e#73><\/L><I=73>$/;"	i	line:3676	language:dantags	regex:e
+74	js-cheerio.dan	/^Type Parameters <L=e#74><\/L><I=74>$/;"	i	line:3683	language:dantags	regex:e
+75	js-cheerio.dan	/^Parameters <L=e#75><\/L><I=75>$/;"	i	line:3688	language:dantags	regex:e
+76	js-cheerio.dan	/^this <L=e#76><\/L><I=76>$/;"	i	line:3689	language:dantags	regex:e
+77	js-cheerio.dan	/^map <L=e#77><\/L><I=77>$/;"	i	line:3692	language:dantags	regex:e
+78	js-cheerio.dan	/^Returns <L=e#78><\/L><I=78>$/;"	i	line:3698	language:dantags	regex:e
+79	js-cheerio.dan	/^filterArray() <L=e#79><\/L><I=79>$/;"	i	line:3705	language:dantags	regex:e
+7A	js-cheerio.dan	/^Parameters <L=e#7A><\/L><I=7A>$/;"	i	line:3805	language:dantags	regex:e
+7B	js-cheerio.dan	/^this <L=e#7B><\/L><I=7B>$/;"	i	line:3806	language:dantags	regex:e
+7C	js-cheerio.dan	/^other <L=e#7C><\/L><I=7C>$/;"	i	line:3809	language:dantags	regex:e
+7D	js-cheerio.dan	/^context? <L=e#7D><\/L><I=7D>$/;"	i	line:3814	language:dantags	regex:e
+7E	js-cheerio.dan	/^Returns <L=e#7E><\/L><I=7E>$/;"	i	line:3819	language:dantags	regex:e
+7F	js-cheerio.dan	/^Example <L=e#7F><\/L><I=7F>$/;"	i	line:3824	language:dantags	regex:e
+7G	js-cheerio.dan	/^See <L=e#7G><\/L><I=7G>$/;"	i	line:3832	language:dantags	regex:e
+7H	js-cheerio.dan	/^addBack() <L=e#7H><\/L><I=7H>$/;"	i	line:3837	language:dantags	regex:e
+7I	js-cheerio.dan	/^Type Parameters <L=e#7I><\/L><I=7I>$/;"	i	line:3844	language:dantags	regex:e
+7J	js-cheerio.dan	/^Parameters <L=e#7J><\/L><I=7J>$/;"	i	line:3847	language:dantags	regex:e
+7K	js-cheerio.dan	/^this <L=e#7K><\/L><I=7K>$/;"	i	line:3848	language:dantags	regex:e
+7L	js-cheerio.dan	/^selector? <L=e#7L><\/L><I=7L>$/;"	i	line:3851	language:dantags	regex:e
+7M	js-cheerio.dan	/^Returns <L=e#7M><\/L><I=7M>$/;"	i	line:3856	language:dantags	regex:e
+7N	js-cheerio.dan	/^Example <L=e#7N><\/L><I=7N>$/;"	i	line:3861	language:dantags	regex:e
+7O	js-cheerio.dan	/^See <L=e#7O><\/L><I=7O>$/;"	i	line:3869	language:dantags	regex:e
+7P	js-cheerio.dan	/^children() <L=e#7P><\/L><I=7P>$/;"	i	line:3874	language:dantags	regex:e
+7Q	js-cheerio.dan	/^Type Parameters <L=e#7Q><\/L><I=7Q>$/;"	i	line:3881	language:dantags	regex:e
+7R	js-cheerio.dan	/^Parameters <L=e#7R><\/L><I=7R>$/;"	i	line:3884	language:dantags	regex:e
+7S	js-cheerio.dan	/^this <L=e#7S><\/L><I=7S>$/;"	i	line:3885	language:dantags	regex:e
+7T	js-cheerio.dan	/^selector? <L=e#7T><\/L><I=7T>$/;"	i	line:3888	language:dantags	regex:e
+7U	js-cheerio.dan	/^Returns <L=e#7U><\/L><I=7U>$/;"	i	line:3893	language:dantags	regex:e
+7V	js-cheerio.dan	/^Example <L=e#7V><\/L><I=7V>$/;"	i	line:3898	language:dantags	regex:e
+7W	js-cheerio.dan	/^See <L=e#7W><\/L><I=7W>$/;"	i	line:3909	language:dantags	regex:e
+7X	js-cheerio.dan	/^closest() <L=e#7X><\/L><I=7X>$/;"	i	line:3914	language:dantags	regex:e
+7Y	js-cheerio.dan	/^Type Parameters <L=e#7Y><\/L><I=7Y>$/;"	i	line:3922	language:dantags	regex:e
+7Z	js-cheerio.dan	/^Parameters <L=e#7Z><\/L><I=7Z>$/;"	i	line:3925	language:dantags	regex:e
+7a	js-cheerio.dan	/^Type Parameters <L=e#7a><\/L><I=7a>$/;"	i	line:3710	language:dantags	regex:e
+7b	js-cheerio.dan	/^Parameters <L=e#7b><\/L><I=7b>$/;"	i	line:3713	language:dantags	regex:e
+7c	js-cheerio.dan	/^nodes <L=e#7c><\/L><I=7c>$/;"	i	line:3714	language:dantags	regex:e
+7d	js-cheerio.dan	/^match <L=e#7d><\/L><I=7d>$/;"	i	line:3717	language:dantags	regex:e
+7e	js-cheerio.dan	/^xmlMode? <L=e#7e><\/L><I=7e>$/;"	i	line:3720	language:dantags	regex:e
+7f	js-cheerio.dan	/^root? <L=e#7f><\/L><I=7f>$/;"	i	line:3723	language:dantags	regex:e
+7g	js-cheerio.dan	/^Returns <L=e#7g><\/L><I=7g>$/;"	i	line:3726	language:dantags	regex:e
+7h	js-cheerio.dan	/^foo() <L=e#7h><\/L><I=7h>$/;"	i	line:3731	language:dantags	regex:e
+7i	js-cheerio.dan	/^Parameters <L=e#7i><\/L><I=7i>$/;"	i	line:3736	language:dantags	regex:e
+7j	js-cheerio.dan	/^this <L=e#7j><\/L><I=7j>$/;"	i	line:3737	language:dantags	regex:e
+7k	js-cheerio.dan	/^Returns <L=e#7k><\/L><I=7k>$/;"	i	line:3740	language:dantags	regex:e
+7l	js-cheerio.dan	/^myPlugin() <L=e#7l><\/L><I=7l>$/;"	i	line:3745	language:dantags	regex:e
+7m	js-cheerio.dan	/^Parameters <L=e#7m><\/L><I=7m>$/;"	i	line:3750	language:dantags	regex:e
+7n	js-cheerio.dan	/^args <L=e#7n><\/L><I=7n>$/;"	i	line:3751	language:dantags	regex:e
+7o	js-cheerio.dan	/^Returns <L=e#7o><\/L><I=7o>$/;"	i	line:3754	language:dantags	regex:e
+7p	js-cheerio.dan	/^args <L=e#7p><\/L><I=7p>$/;"	i	line:3757	language:dantags	regex:e
+7q	js-cheerio.dan	/^context <L=e#7q><\/L><I=7q>$/;"	i	line:3760	language:dantags	regex:e
+7r	js-cheerio.dan	/^toArray() <L=e#7r><\/L><I=7r>$/;"	i	line:3765	language:dantags	regex:e
+7s	js-cheerio.dan	/^Type Parameters <L=e#7s><\/L><I=7s>$/;"	i	line:3772	language:dantags	regex:e
+7t	js-cheerio.dan	/^Parameters <L=e#7t><\/L><I=7t>$/;"	i	line:3775	language:dantags	regex:e
+7u	js-cheerio.dan	/^this <L=e#7u><\/L><I=7u>$/;"	i	line:3776	language:dantags	regex:e
+7v	js-cheerio.dan	/^Returns <L=e#7v><\/L><I=7v>$/;"	i	line:3779	language:dantags	regex:e
+7w	js-cheerio.dan	/^Example <L=e#7w><\/L><I=7w>$/;"	i	line:3784	language:dantags	regex:e
+7x	js-cheerio.dan	/^Traversing <L=e#7x><\/L><I=7x>$/;"	i	line:3792	language:dantags	regex:e
+7y	js-cheerio.dan	/^add() <L=e#7y><\/L><I=7y>$/;"	i	line:3793	language:dantags	regex:e
+7z	js-cheerio.dan	/^Type Parameters <L=e#7z><\/L><I=7z>$/;"	i	line:3800	language:dantags	regex:e
+8	js-cheerio.dan	/^ parents  and  parentsUntil  <L=z#8><\/L><I=8>$/;"	i	line:7479	language:dantags	regex:z
+8	js-cheerio.dan	/^<B=8>One post tagged with "release"$/;"	b	line:861	language:dantags
+8	js-cheerio.dan	/^Footnotes <L=a#8><\/L><I=8>$/;"	i	line:1202	language:dantags	regex:a
+8	js-cheerio.dan	/^Inherited from <L=n#8><\/L><I=8>$/;"	i	line:5835	language:dantags	regex:n
+8	js-cheerio.dan	/^Replacing Elements <L=x#8><\/L><I=8>$/;"	i	line:7170	language:dantags	regex:x
+8	js-cheerio.dan	/^See <L=k#8><\/L><I=8>$/;"	i	line:5323	language:dantags	regex:k
+8	js-cheerio.dan	/^Selecting Elements <L=C#8><\/L><I=8>$/;"	i	line:8070	language:dantags	regex:C
+8	js-cheerio.dan	/^addClass() <L=e#8><\/L><I=8>$/;"	i	line:1575	language:dantags	regex:e
+8	js-cheerio.dan	/^lowerCaseAttributeNames? <L=q#8><\/L><I=8>$/;"	i	line:6481	language:dantags	regex:q
+8	js-cheerio.dan	/^onParseError? <L=o#8><\/L><I=8>$/;"	i	line:6032	language:dantags	regex:o
+8	js-cheerio.dan	/^onParseError? <L=p#8><\/L><I=8>$/;"	i	line:6264	language:dantags	regex:p
+8	js-cheerio.dan	/^options? <L=m#8><\/L><I=8>$/;"	i	line:5445	language:dantags	regex:m
+80	js-cheerio.dan	/^this <L=e#80><\/L><I=80>$/;"	i	line:3926	language:dantags	regex:e
+81	js-cheerio.dan	/^selector? <L=e#81><\/L><I=81>$/;"	i	line:3929	language:dantags	regex:e
+82	js-cheerio.dan	/^Returns <L=e#82><\/L><I=82>$/;"	i	line:3934	language:dantags	regex:e
+83	js-cheerio.dan	/^Example <L=e#83><\/L><I=83>$/;"	i	line:3939	language:dantags	regex:e
+84	js-cheerio.dan	/^See <L=e#84><\/L><I=84>$/;"	i	line:3956	language:dantags	regex:e
+85	js-cheerio.dan	/^contents() <L=e#85><\/L><I=85>$/;"	i	line:3961	language:dantags	regex:e
+86	js-cheerio.dan	/^Type Parameters <L=e#86><\/L><I=86>$/;"	i	line:3968	language:dantags	regex:e
+87	js-cheerio.dan	/^Parameters <L=e#87><\/L><I=87>$/;"	i	line:3971	language:dantags	regex:e
+88	js-cheerio.dan	/^this <L=e#88><\/L><I=88>$/;"	i	line:3972	language:dantags	regex:e
+89	js-cheerio.dan	/^Returns <L=e#89><\/L><I=89>$/;"	i	line:3975	language:dantags	regex:e
+8A	js-cheerio.dan	/^Call Signature <L=e#8A><\/L><I=8A>$/;"	i	line:4114	language:dantags	regex:e
+8B	js-cheerio.dan	/^Type Parameters <L=e#8B><\/L><I=8B>$/;"	i	line:4125	language:dantags	regex:e
+8C	js-cheerio.dan	/^Parameters <L=e#8C><\/L><I=8C>$/;"	i	line:4130	language:dantags	regex:e
+8D	js-cheerio.dan	/^this <L=e#8D><\/L><I=8D>$/;"	i	line:4131	language:dantags	regex:e
+8E	js-cheerio.dan	/^match <L=e#8E><\/L><I=8E>$/;"	i	line:4134	language:dantags	regex:e
+8F	js-cheerio.dan	/^Returns <L=e#8F><\/L><I=8F>$/;"	i	line:4139	language:dantags	regex:e
+8G	js-cheerio.dan	/^Example <L=e#8G><\/L><I=8G>$/;"	i	line:4144	language:dantags	regex:e
+8H	js-cheerio.dan	/^See <L=e#8H><\/L><I=8H>$/;"	i	line:4156	language:dantags	regex:e
+8I	js-cheerio.dan	/^Call Signature <L=e#8I><\/L><I=8I>$/;"	i	line:4159	language:dantags	regex:e
+8J	js-cheerio.dan	/^Type Parameters <L=e#8J><\/L><I=8J>$/;"	i	line:4173	language:dantags	regex:e
+8K	js-cheerio.dan	/^Parameters <L=e#8K><\/L><I=8K>$/;"	i	line:4178	language:dantags	regex:e
+8L	js-cheerio.dan	/^this <L=e#8L><\/L><I=8L>$/;"	i	line:4179	language:dantags	regex:e
+8M	js-cheerio.dan	/^match <L=e#8M><\/L><I=8M>$/;"	i	line:4182	language:dantags	regex:e
+8N	js-cheerio.dan	/^Returns <L=e#8N><\/L><I=8N>$/;"	i	line:4187	language:dantags	regex:e
+8O	js-cheerio.dan	/^Examples <L=e#8O><\/L><I=8O>$/;"	i	line:4192	language:dantags	regex:e
+8P	js-cheerio.dan	/^See <L=e#8P><\/L><I=8P>$/;"	i	line:4211	language:dantags	regex:e
+8Q	js-cheerio.dan	/^find() <L=e#8Q><\/L><I=8Q>$/;"	i	line:4216	language:dantags	regex:e
+8R	js-cheerio.dan	/^Type Parameters <L=e#8R><\/L><I=8R>$/;"	i	line:4224	language:dantags	regex:e
+8S	js-cheerio.dan	/^Parameters <L=e#8S><\/L><I=8S>$/;"	i	line:4227	language:dantags	regex:e
+8T	js-cheerio.dan	/^this <L=e#8T><\/L><I=8T>$/;"	i	line:4228	language:dantags	regex:e
+8U	js-cheerio.dan	/^selectorOrHaystack? <L=e#8U><\/L><I=8U>$/;"	i	line:4231	language:dantags	regex:e
+8V	js-cheerio.dan	/^Returns <L=e#8V><\/L><I=8V>$/;"	i	line:4236	language:dantags	regex:e
+8W	js-cheerio.dan	/^Example <L=e#8W><\/L><I=8W>$/;"	i	line:4241	language:dantags	regex:e
+8X	js-cheerio.dan	/^See <L=e#8X><\/L><I=8X>$/;"	i	line:4251	language:dantags	regex:e
+8Y	js-cheerio.dan	/^first() <L=e#8Y><\/L><I=8Y>$/;"	i	line:4256	language:dantags	regex:e
+8Z	js-cheerio.dan	/^Type Parameters <L=e#8Z><\/L><I=8Z>$/;"	i	line:4263	language:dantags	regex:e
+8a	js-cheerio.dan	/^Example <L=e#8a><\/L><I=8a>$/;"	i	line:3980	language:dantags	regex:e
+8b	js-cheerio.dan	/^See <L=e#8b><\/L><I=8b>$/;"	i	line:3988	language:dantags	regex:e
+8c	js-cheerio.dan	/^each() <L=e#8c><\/L><I=8c>$/;"	i	line:3993	language:dantags	regex:e
+8d	js-cheerio.dan	/^Type Parameters <L=e#8d><\/L><I=8d>$/;"	i	line:4003	language:dantags	regex:e
+8e	js-cheerio.dan	/^Parameters <L=e#8e><\/L><I=8e>$/;"	i	line:4006	language:dantags	regex:e
+8f	js-cheerio.dan	/^this <L=e#8f><\/L><I=8f>$/;"	i	line:4007	language:dantags	regex:e
+8g	js-cheerio.dan	/^fn <L=e#8g><\/L><I=8g>$/;"	i	line:4010	language:dantags	regex:e
+8h	js-cheerio.dan	/^Returns <L=e#8h><\/L><I=8h>$/;"	i	line:4015	language:dantags	regex:e
+8i	js-cheerio.dan	/^Example <L=e#8i><\/L><I=8i>$/;"	i	line:4020	language:dantags	regex:e
+8j	js-cheerio.dan	/^See <L=e#8j><\/L><I=8j>$/;"	i	line:4034	language:dantags	regex:e
+8k	js-cheerio.dan	/^end() <L=e#8k><\/L><I=8k>$/;"	i	line:4039	language:dantags	regex:e
+8l	js-cheerio.dan	/^Type Parameters <L=e#8l><\/L><I=8l>$/;"	i	line:4047	language:dantags	regex:e
+8m	js-cheerio.dan	/^Parameters <L=e#8m><\/L><I=8m>$/;"	i	line:4050	language:dantags	regex:e
+8n	js-cheerio.dan	/^this <L=e#8n><\/L><I=8n>$/;"	i	line:4051	language:dantags	regex:e
+8o	js-cheerio.dan	/^Returns <L=e#8o><\/L><I=8o>$/;"	i	line:4054	language:dantags	regex:e
+8p	js-cheerio.dan	/^Example <L=e#8p><\/L><I=8p>$/;"	i	line:4059	language:dantags	regex:e
+8q	js-cheerio.dan	/^See <L=e#8q><\/L><I=8q>$/;"	i	line:4067	language:dantags	regex:e
+8r	js-cheerio.dan	/^eq() <L=e#8r><\/L><I=8r>$/;"	i	line:4072	language:dantags	regex:e
+8s	js-cheerio.dan	/^Type Parameters <L=e#8s><\/L><I=8s>$/;"	i	line:4080	language:dantags	regex:e
+8t	js-cheerio.dan	/^Parameters <L=e#8t><\/L><I=8t>$/;"	i	line:4083	language:dantags	regex:e
+8u	js-cheerio.dan	/^this <L=e#8u><\/L><I=8u>$/;"	i	line:4084	language:dantags	regex:e
+8v	js-cheerio.dan	/^i <L=e#8v><\/L><I=8v>$/;"	i	line:4087	language:dantags	regex:e
+8w	js-cheerio.dan	/^Returns <L=e#8w><\/L><I=8w>$/;"	i	line:4092	language:dantags	regex:e
+8x	js-cheerio.dan	/^Example <L=e#8x><\/L><I=8x>$/;"	i	line:4097	language:dantags	regex:e
+8y	js-cheerio.dan	/^See <L=e#8y><\/L><I=8y>$/;"	i	line:4108	language:dantags	regex:e
+8z	js-cheerio.dan	/^filter() <L=e#8z><\/L><I=8z>$/;"	i	line:4113	language:dantags	regex:e
+9	js-cheerio.dan	/^ closest  <L=z#9><\/L><I=9>$/;"	i	line:7517	language:dantags	regex:z
+9	js-cheerio.dan	/^<B=9>One post tagged with "website"$/;"	b	line:950	language:dantags
+9	js-cheerio.dan	/^Default <L=o#9><\/L><I=9>$/;"	i	line:6039	language:dantags	regex:o
+9	js-cheerio.dan	/^Default <L=p#9><\/L><I=9>$/;"	i	line:6271	language:dantags	regex:p
+9	js-cheerio.dan	/^Default <L=q#9><\/L><I=9>$/;"	i	line:6488	language:dantags	regex:q
+9	js-cheerio.dan	/^Removing Elements <L=x#9><\/L><I=9>$/;"	i	line:7186	language:dantags	regex:x
+9	js-cheerio.dan	/^Returns <L=m#9><\/L><I=9>$/;"	i	line:5448	language:dantags	regex:m
+9	js-cheerio.dan	/^Traversing the DOM <L=C#9><\/L><I=9>$/;"	i	line:8083	language:dantags	regex:C
+9	js-cheerio.dan	/^Type Parameters <L=e#9><\/L><I=9>$/;"	i	line:1582	language:dantags	regex:e
+9	js-cheerio.dan	/^pseudos? <L=n#9><\/L><I=9>$/;"	i	line:5840	language:dantags	regex:n
+90	js-cheerio.dan	/^Parameters <L=e#90><\/L><I=90>$/;"	i	line:4266	language:dantags	regex:e
+91	js-cheerio.dan	/^this <L=e#91><\/L><I=91>$/;"	i	line:4267	language:dantags	regex:e
+92	js-cheerio.dan	/^Returns <L=e#92><\/L><I=92>$/;"	i	line:4270	language:dantags	regex:e
+93	js-cheerio.dan	/^Example <L=e#93><\/L><I=93>$/;"	i	line:4275	language:dantags	regex:e
+94	js-cheerio.dan	/^See <L=e#94><\/L><I=94>$/;"	i	line:4283	language:dantags	regex:e
+95	js-cheerio.dan	/^get() <L=e#95><\/L><I=95>$/;"	i	line:4288	language:dantags	regex:e
+96	js-cheerio.dan	/^Call Signature <L=e#96><\/L><I=96>$/;"	i	line:4289	language:dantags	regex:e
+97	js-cheerio.dan	/^Type Parameters <L=e#97><\/L><I=97>$/;"	i	line:4296	language:dantags	regex:e
+98	js-cheerio.dan	/^Parameters <L=e#98><\/L><I=98>$/;"	i	line:4299	language:dantags	regex:e
+99	js-cheerio.dan	/^this <L=e#99><\/L><I=99>$/;"	i	line:4300	language:dantags	regex:e
+9A	js-cheerio.dan	/^is() <L=e#9A><\/L><I=9A>$/;"	i	line:4438	language:dantags	regex:e
+9B	js-cheerio.dan	/^Type Parameters <L=e#9B><\/L><I=9B>$/;"	i	line:4448	language:dantags	regex:e
+9C	js-cheerio.dan	/^Parameters <L=e#9C><\/L><I=9C>$/;"	i	line:4451	language:dantags	regex:e
+9D	js-cheerio.dan	/^this <L=e#9D><\/L><I=9D>$/;"	i	line:4452	language:dantags	regex:e
+9E	js-cheerio.dan	/^selector? <L=e#9E><\/L><I=9E>$/;"	i	line:4455	language:dantags	regex:e
+9F	js-cheerio.dan	/^Returns <L=e#9F><\/L><I=9F>$/;"	i	line:4460	language:dantags	regex:e
+9G	js-cheerio.dan	/^See <L=e#9G><\/L><I=9G>$/;"	i	line:4465	language:dantags	regex:e
+9H	js-cheerio.dan	/^last() <L=e#9H><\/L><I=9H>$/;"	i	line:4470	language:dantags	regex:e
+9I	js-cheerio.dan	/^Type Parameters <L=e#9I><\/L><I=9I>$/;"	i	line:4477	language:dantags	regex:e
+9J	js-cheerio.dan	/^Parameters <L=e#9J><\/L><I=9J>$/;"	i	line:4480	language:dantags	regex:e
+9K	js-cheerio.dan	/^this <L=e#9K><\/L><I=9K>$/;"	i	line:4481	language:dantags	regex:e
+9L	js-cheerio.dan	/^Returns <L=e#9L><\/L><I=9L>$/;"	i	line:4484	language:dantags	regex:e
+9M	js-cheerio.dan	/^Example <L=e#9M><\/L><I=9M>$/;"	i	line:4489	language:dantags	regex:e
+9N	js-cheerio.dan	/^See <L=e#9N><\/L><I=9N>$/;"	i	line:4497	language:dantags	regex:e
+9O	js-cheerio.dan	/^map() <L=e#9O><\/L><I=9O>$/;"	i	line:4502	language:dantags	regex:e
+9P	js-cheerio.dan	/^Type Parameters <L=e#9P><\/L><I=9P>$/;"	i	line:4512	language:dantags	regex:e
+9Q	js-cheerio.dan	/^Parameters <L=e#9Q><\/L><I=9Q>$/;"	i	line:4517	language:dantags	regex:e
+9R	js-cheerio.dan	/^this <L=e#9R><\/L><I=9R>$/;"	i	line:4518	language:dantags	regex:e
+9S	js-cheerio.dan	/^fn <L=e#9S><\/L><I=9S>$/;"	i	line:4521	language:dantags	regex:e
+9T	js-cheerio.dan	/^Returns <L=e#9T><\/L><I=9T>$/;"	i	line:4526	language:dantags	regex:e
+9U	js-cheerio.dan	/^Example <L=e#9U><\/L><I=9U>$/;"	i	line:4531	language:dantags	regex:e
+9V	js-cheerio.dan	/^See <L=e#9V><\/L><I=9V>$/;"	i	line:4545	language:dantags	regex:e
+9W	js-cheerio.dan	/^next() <L=e#9W><\/L><I=9W>$/;"	i	line:4550	language:dantags	regex:e
+9X	js-cheerio.dan	/^Type Parameters <L=e#9X><\/L><I=9X>$/;"	i	line:4557	language:dantags	regex:e
+9Y	js-cheerio.dan	/^Parameters <L=e#9Y><\/L><I=9Y>$/;"	i	line:4560	language:dantags	regex:e
+9Z	js-cheerio.dan	/^this <L=e#9Z><\/L><I=9Z>$/;"	i	line:4561	language:dantags	regex:e
+9a	js-cheerio.dan	/^i <L=e#9a><\/L><I=9a>$/;"	i	line:4303	language:dantags	regex:e
+9b	js-cheerio.dan	/^Returns <L=e#9b><\/L><I=9b>$/;"	i	line:4308	language:dantags	regex:e
+9c	js-cheerio.dan	/^Example <L=e#9c><\/L><I=9c>$/;"	i	line:4313	language:dantags	regex:e
+9d	js-cheerio.dan	/^See <L=e#9d><\/L><I=9d>$/;"	i	line:4321	language:dantags	regex:e
+9e	js-cheerio.dan	/^Call Signature <L=e#9e><\/L><I=9e>$/;"	i	line:4324	language:dantags	regex:e
+9f	js-cheerio.dan	/^Type Parameters <L=e#9f><\/L><I=9f>$/;"	i	line:4331	language:dantags	regex:e
+9g	js-cheerio.dan	/^Parameters <L=e#9g><\/L><I=9g>$/;"	i	line:4334	language:dantags	regex:e
+9h	js-cheerio.dan	/^this <L=e#9h><\/L><I=9h>$/;"	i	line:4335	language:dantags	regex:e
+9i	js-cheerio.dan	/^Returns <L=e#9i><\/L><I=9i>$/;"	i	line:4338	language:dantags	regex:e
+9j	js-cheerio.dan	/^Example <L=e#9j><\/L><I=9j>$/;"	i	line:4343	language:dantags	regex:e
+9k	js-cheerio.dan	/^See <L=e#9k><\/L><I=9k>$/;"	i	line:4351	language:dantags	regex:e
+9l	js-cheerio.dan	/^has() <L=e#9l><\/L><I=9l>$/;"	i	line:4356	language:dantags	regex:e
+9m	js-cheerio.dan	/^Parameters <L=e#9m><\/L><I=9m>$/;"	i	line:4364	language:dantags	regex:e
+9n	js-cheerio.dan	/^this <L=e#9n><\/L><I=9n>$/;"	i	line:4365	language:dantags	regex:e
+9o	js-cheerio.dan	/^selectorOrHaystack <L=e#9o><\/L><I=9o>$/;"	i	line:4368	language:dantags	regex:e
+9p	js-cheerio.dan	/^Returns <L=e#9p><\/L><I=9p>$/;"	i	line:4373	language:dantags	regex:e
+9q	js-cheerio.dan	/^Examples <L=e#9q><\/L><I=9q>$/;"	i	line:4378	language:dantags	regex:e
+9r	js-cheerio.dan	/^See <L=e#9r><\/L><I=9r>$/;"	i	line:4393	language:dantags	regex:e
+9s	js-cheerio.dan	/^index() <L=e#9s><\/L><I=9s>$/;"	i	line:4398	language:dantags	regex:e
+9t	js-cheerio.dan	/^Type Parameters <L=e#9t><\/L><I=9t>$/;"	i	line:4405	language:dantags	regex:e
+9u	js-cheerio.dan	/^Parameters <L=e#9u><\/L><I=9u>$/;"	i	line:4408	language:dantags	regex:e
+9v	js-cheerio.dan	/^this <L=e#9v><\/L><I=9v>$/;"	i	line:4409	language:dantags	regex:e
+9w	js-cheerio.dan	/^selectorOrNeedle? <L=e#9w><\/L><I=9w>$/;"	i	line:4412	language:dantags	regex:e
+9x	js-cheerio.dan	/^Returns <L=e#9x><\/L><I=9x>$/;"	i	line:4417	language:dantags	regex:e
+9y	js-cheerio.dan	/^Example <L=e#9y><\/L><I=9y>$/;"	i	line:4422	language:dantags	regex:e
+9z	js-cheerio.dan	/^See <L=e#9z><\/L><I=9z>$/;"	i	line:4433	language:dantags	regex:e
+A	js-cheerio.dan	/^<B=A>Tutorials - Advanced$/;"	b	line:7802	language:dantags
+A	js-cheerio.dan	/^name <L=e#A><\/L><I=A>$/;"	i	line:1699	language:dantags	regex:e
+A	js-cheerio.dan	/^options? <L=m#A><\/L><I=A>$/;"	i	line:5582	language:dantags	regex:m
+B	js-cheerio.dan	/^<B=B>Tutorials - Basics$/;"	b	line:7889	language:dantags
+B	js-cheerio.dan	/^Returns <L=m#B><\/L><I=B>$/;"	i	line:5587	language:dantags	regex:m
+B	js-cheerio.dan	/^value? <L=e#B><\/L><I=B>$/;"	i	line:1704	language:dantags	regex:e
+C	js-cheerio.dan	/^<B=C>Welcome to Cheerio!$/;"	b	line:7975	language:dantags
+C	js-cheerio.dan	/^Inherited from <L=m#C><\/L><I=C>$/;"	i	line:5592	language:dantags	regex:m
+C	js-cheerio.dan	/^Returns <L=e#C><\/L><I=C>$/;"	i	line:1709	language:dantags	regex:e
+C#2	js-cheerio.dan	/^Getting Started <L=C#2><\/L><I=2>$/;"	i	line:7993	language:dantags	regex:C
+C#3	js-cheerio.dan	/^Setting up Node.js <L=C#3><\/L><I=3>$/;"	i	line:7996	language:dantags	regex:C
+C#4	js-cheerio.dan	/^Installing Cheerio <L=C#4><\/L><I=4>$/;"	i	line:8002	language:dantags	regex:C
+C#5	js-cheerio.dan	/^Importing Cheerio <L=C#5><\/L><I=5>$/;"	i	line:8027	language:dantags	regex:C
+C#6	js-cheerio.dan	/^Using Cheerio <L=C#6><\/L><I=6>$/;"	i	line:8044	language:dantags	regex:C
+C#7	js-cheerio.dan	/^Loading a Document <L=C#7><\/L><I=7>$/;"	i	line:8047	language:dantags	regex:C
+C#8	js-cheerio.dan	/^Selecting Elements <L=C#8><\/L><I=8>$/;"	i	line:8070	language:dantags	regex:C
+C#9	js-cheerio.dan	/^Traversing the DOM <L=C#9><\/L><I=9>$/;"	i	line:8083	language:dantags	regex:C
+C#a	js-cheerio.dan	/^Manipulating Elements <L=C#a><\/L><I=a>$/;"	i	line:8097	language:dantags	regex:C
+D	js-cheerio.dan	/^<B=D>cheerio$/;"	b	line:8114	language:dantags
+D	js-cheerio.dan	/^Call Signature <L=m#D><\/L><I=D>$/;"	i	line:5595	language:dantags	regex:m
+D	js-cheerio.dan	/^Example <L=e#D><\/L><I=D>$/;"	i	line:1714	language:dantags	regex:e
+E	js-cheerio.dan	/^Parameters <L=m#E><\/L><I=E>$/;"	i	line:5602	language:dantags	regex:m
+E	js-cheerio.dan	/^See <L=e#E><\/L><I=E>$/;"	i	line:1722	language:dantags	regex:e
+F	js-cheerio.dan	/^Call Signature <L=e#F><\/L><I=F>$/;"	i	line:1725	language:dantags	regex:e
+F	js-cheerio.dan	/^this <L=m#F><\/L><I=F>$/;"	i	line:5603	language:dantags	regex:m
+G	js-cheerio.dan	/^Type Parameters <L=e#G><\/L><I=G>$/;"	i	line:1733	language:dantags	regex:e
+G	js-cheerio.dan	/^dom? <L=m#G><\/L><I=G>$/;"	i	line:5606	language:dantags	regex:m
+H	js-cheerio.dan	/^Parameters <L=e#H><\/L><I=H>$/;"	i	line:1736	language:dantags	regex:e
+H	js-cheerio.dan	/^options? <L=m#H><\/L><I=H>$/;"	i	line:5611	language:dantags	regex:m
+I	js-cheerio.dan	/^Returns <L=m#I><\/L><I=I>$/;"	i	line:5616	language:dantags	regex:m
+I	js-cheerio.dan	/^this <L=e#I><\/L><I=I>$/;"	i	line:1737	language:dantags	regex:e
+J	js-cheerio.dan	/^Inherited from <L=m#J><\/L><I=J>$/;"	i	line:5621	language:dantags	regex:m
+J	js-cheerio.dan	/^values <L=e#J><\/L><I=J>$/;"	i	line:1740	language:dantags	regex:e
+K	js-cheerio.dan	/^Returns <L=e#K><\/L><I=K>$/;"	i	line:1745	language:dantags	regex:e
+K	js-cheerio.dan	/^parseHTML() <L=m#K><\/L><I=K>$/;"	i	line:5626	language:dantags	regex:m
+L	js-cheerio.dan	/^Call Signature <L=m#L><\/L><I=L>$/;"	i	line:5627	language:dantags	regex:m
+L	js-cheerio.dan	/^Example <L=e#L><\/L><I=L>$/;"	i	line:1750	language:dantags	regex:e
+M	js-cheerio.dan	/^Parameters <L=m#M><\/L><I=M>$/;"	i	line:5635	language:dantags	regex:m
+M	js-cheerio.dan	/^See <L=e#M><\/L><I=M>$/;"	i	line:1758	language:dantags	regex:e
+N	js-cheerio.dan	/^data() <L=e#N><\/L><I=N>$/;"	i	line:1763	language:dantags	regex:e
+N	js-cheerio.dan	/^this <L=m#N><\/L><I=N>$/;"	i	line:5636	language:dantags	regex:m
+O	js-cheerio.dan	/^Call Signature <L=e#O><\/L><I=O>$/;"	i	line:1764	language:dantags	regex:e
+O	js-cheerio.dan	/^data <L=m#O><\/L><I=O>$/;"	i	line:5639	language:dantags	regex:m
+P	js-cheerio.dan	/^Type Parameters <L=e#P><\/L><I=P>$/;"	i	line:1771	language:dantags	regex:e
+P	js-cheerio.dan	/^context? <L=m#P><\/L><I=P>$/;"	i	line:5644	language:dantags	regex:m
+Q	js-cheerio.dan	/^Parameters <L=e#Q><\/L><I=Q>$/;"	i	line:1774	language:dantags	regex:e
+Q	js-cheerio.dan	/^keepScripts? <L=m#Q><\/L><I=Q>$/;"	i	line:5649	language:dantags	regex:m
+R	js-cheerio.dan	/^Returns <L=m#R><\/L><I=R>$/;"	i	line:5654	language:dantags	regex:m
+R	js-cheerio.dan	/^this <L=e#R><\/L><I=R>$/;"	i	line:1775	language:dantags	regex:e
+S	js-cheerio.dan	/^Alias <L=m#S><\/L><I=S>$/;"	i	line:5659	language:dantags	regex:m
+S	js-cheerio.dan	/^name <L=e#S><\/L><I=S>$/;"	i	line:1778	language:dantags	regex:e
+T	js-cheerio.dan	/^Returns <L=e#T><\/L><I=T>$/;"	i	line:1783	language:dantags	regex:e
+T	js-cheerio.dan	/^See <L=m#T><\/L><I=T>$/;"	i	line:5662	language:dantags	regex:m
+U	js-cheerio.dan	/^Example <L=e#U><\/L><I=U>$/;"	i	line:1788	language:dantags	regex:e
+U	js-cheerio.dan	/^Inherited from <L=m#U><\/L><I=U>$/;"	i	line:5665	language:dantags	regex:m
+V	js-cheerio.dan	/^Call Signature <L=m#V><\/L><I=V>$/;"	i	line:5668	language:dantags	regex:m
+V	js-cheerio.dan	/^See <L=e#V><\/L><I=V>$/;"	i	line:1796	language:dantags	regex:e
+W	js-cheerio.dan	/^Call Signature <L=e#W><\/L><I=W>$/;"	i	line:1799	language:dantags	regex:e
+W	js-cheerio.dan	/^Parameters <L=m#W><\/L><I=W>$/;"	i	line:5676	language:dantags	regex:m
+X	js-cheerio.dan	/^Type Parameters <L=e#X><\/L><I=X>$/;"	i	line:1806	language:dantags	regex:e
+X	js-cheerio.dan	/^this <L=m#X><\/L><I=X>$/;"	i	line:5677	language:dantags	regex:m
+Y	js-cheerio.dan	/^Parameters <L=e#Y><\/L><I=Y>$/;"	i	line:1809	language:dantags	regex:e
+Y	js-cheerio.dan	/^data? <L=m#Y><\/L><I=Y>$/;"	i	line:5680	language:dantags	regex:m
+Z	js-cheerio.dan	/^Returns <L=m#Z><\/L><I=Z>$/;"	i	line:5685	language:dantags	regex:m
+Z	js-cheerio.dan	/^this <L=e#Z><\/L><I=Z>$/;"	i	line:1810	language:dantags	regex:e
+a	js-cheerio.dan	/^<B=a>Configuring Cheerio$/;"	b	line:1041	language:dantags
+a	js-cheerio.dan	/^Conclusion <L=x#a><\/L><I=a>$/;"	i	line:7208	language:dantags	regex:x
+a	js-cheerio.dan	/^Example <L=m#a><\/L><I=a>$/;"	i	line:5451	language:dantags	regex:m
+a	js-cheerio.dan	/^Example <L=n#a><\/L><I=a>$/;"	i	line:5853	language:dantags	regex:n
+a	js-cheerio.dan	/^Inherited from <L=o#a><\/L><I=a>$/;"	i	line:6042	language:dantags	regex:o
+a	js-cheerio.dan	/^Inherited from <L=p#a><\/L><I=a>$/;"	i	line:6274	language:dantags	regex:p
+a	js-cheerio.dan	/^Inherited from <L=q#a><\/L><I=a>$/;"	i	line:6495	language:dantags	regex:q
+a	js-cheerio.dan	/^Manipulating Elements <L=C#a><\/L><I=a>$/;"	i	line:8097	language:dantags	regex:C
+a	js-cheerio.dan	/^Moving Sideways Within the DOM Tree <L=z#a><\/L><I=a>$/;"	i	line:7543	language:dantags	regex:z
+a	js-cheerio.dan	/^Parameters <L=e#a><\/L><I=a>$/;"	i	line:1587	language:dantags	regex:e
+a#1	js-cheerio.dan	/^    <I=1>$/;"	i	line:1207	language:dantags	regex:a
+a#3	js-cheerio.dan	/^Parsing HTML with parse5 <L=a#3><\/L><I=3>$/;"	i	line:1060	language:dantags	regex:a
+a#4	js-cheerio.dan	/^Fragment Mode <L=a#4><\/L><I=4>$/;"	i	line:1079	language:dantags	regex:a
+a#5	js-cheerio.dan	/^Parsing XML with htmlparser2 <L=a#5><\/L><I=5>$/;"	i	line:1107	language:dantags	regex:a
+a#6	js-cheerio.dan	/^Using  htmlparser2  for HTML <L=a#6><\/L><I=6>$/;"	i	line:1150	language:dantags	regex:a
+a#7	js-cheerio.dan	/^Conclusion <L=a#7><\/L><I=7>$/;"	i	line:1197	language:dantags	regex:a
+a#8	js-cheerio.dan	/^Footnotes <L=a#8><\/L><I=8>$/;"	i	line:1202	language:dantags	regex:a
+a0	js-cheerio.dan	/^selector? <L=e#a0><\/L><I=a0>$/;"	i	line:4564	language:dantags	regex:e
+a1	js-cheerio.dan	/^Returns <L=e#a1><\/L><I=a1>$/;"	i	line:4569	language:dantags	regex:e
+a2	js-cheerio.dan	/^Example <L=e#a2><\/L><I=a2>$/;"	i	line:4574	language:dantags	regex:e
+a3	js-cheerio.dan	/^See <L=e#a3><\/L><I=a3>$/;"	i	line:4582	language:dantags	regex:e
+a4	js-cheerio.dan	/^nextAll() <L=e#a4><\/L><I=a4>$/;"	i	line:4587	language:dantags	regex:e
+a5	js-cheerio.dan	/^Type Parameters <L=e#a5><\/L><I=a5>$/;"	i	line:4594	language:dantags	regex:e
+a6	js-cheerio.dan	/^Parameters <L=e#a6><\/L><I=a6>$/;"	i	line:4597	language:dantags	regex:e
+a7	js-cheerio.dan	/^this <L=e#a7><\/L><I=a7>$/;"	i	line:4598	language:dantags	regex:e
+a8	js-cheerio.dan	/^selector? <L=e#a8><\/L><I=a8>$/;"	i	line:4601	language:dantags	regex:e
+a9	js-cheerio.dan	/^Returns <L=e#a9><\/L><I=a9>$/;"	i	line:4606	language:dantags	regex:e
+aA	js-cheerio.dan	/^See <L=e#aA><\/L><I=aA>$/;"	i	line:4754	language:dantags	regex:e
+aB	js-cheerio.dan	/^parents() <L=e#aB><\/L><I=aB>$/;"	i	line:4759	language:dantags	regex:e
+aC	js-cheerio.dan	/^Type Parameters <L=e#aC><\/L><I=aC>$/;"	i	line:4766	language:dantags	regex:e
+aD	js-cheerio.dan	/^Parameters <L=e#aD><\/L><I=aD>$/;"	i	line:4769	language:dantags	regex:e
+aE	js-cheerio.dan	/^this <L=e#aE><\/L><I=aE>$/;"	i	line:4770	language:dantags	regex:e
+aF	js-cheerio.dan	/^selector? <L=e#aF><\/L><I=aF>$/;"	i	line:4773	language:dantags	regex:e
+aG	js-cheerio.dan	/^Returns <L=e#aG><\/L><I=aG>$/;"	i	line:4778	language:dantags	regex:e
+aH	js-cheerio.dan	/^Example <L=e#aH><\/L><I=aH>$/;"	i	line:4783	language:dantags	regex:e
+aI	js-cheerio.dan	/^See <L=e#aI><\/L><I=aI>$/;"	i	line:4793	language:dantags	regex:e
+aJ	js-cheerio.dan	/^parentsUntil() <L=e#aJ><\/L><I=aJ>$/;"	i	line:4798	language:dantags	regex:e
+aK	js-cheerio.dan	/^Type Parameters <L=e#aK><\/L><I=aK>$/;"	i	line:4806	language:dantags	regex:e
+aL	js-cheerio.dan	/^Parameters <L=e#aL><\/L><I=aL>$/;"	i	line:4809	language:dantags	regex:e
+aM	js-cheerio.dan	/^this <L=e#aM><\/L><I=aM>$/;"	i	line:4810	language:dantags	regex:e
+aN	js-cheerio.dan	/^selector? <L=e#aN><\/L><I=aN>$/;"	i	line:4813	language:dantags	regex:e
+aO	js-cheerio.dan	/^filterSelector? <L=e#aO><\/L><I=aO>$/;"	i	line:4818	language:dantags	regex:e
+aP	js-cheerio.dan	/^Returns <L=e#aP><\/L><I=aP>$/;"	i	line:4823	language:dantags	regex:e
+aQ	js-cheerio.dan	/^Example <L=e#aQ><\/L><I=aQ>$/;"	i	line:4828	language:dantags	regex:e
+aR	js-cheerio.dan	/^See <L=e#aR><\/L><I=aR>$/;"	i	line:4836	language:dantags	regex:e
+aS	js-cheerio.dan	/^prev() <L=e#aS><\/L><I=aS>$/;"	i	line:4841	language:dantags	regex:e
+aT	js-cheerio.dan	/^Type Parameters <L=e#aT><\/L><I=aT>$/;"	i	line:4848	language:dantags	regex:e
+aU	js-cheerio.dan	/^Parameters <L=e#aU><\/L><I=aU>$/;"	i	line:4851	language:dantags	regex:e
+aV	js-cheerio.dan	/^this <L=e#aV><\/L><I=aV>$/;"	i	line:4852	language:dantags	regex:e
+aW	js-cheerio.dan	/^selector? <L=e#aW><\/L><I=aW>$/;"	i	line:4855	language:dantags	regex:e
+aX	js-cheerio.dan	/^Returns <L=e#aX><\/L><I=aX>$/;"	i	line:4860	language:dantags	regex:e
+aY	js-cheerio.dan	/^Example <L=e#aY><\/L><I=aY>$/;"	i	line:4865	language:dantags	regex:e
+aZ	js-cheerio.dan	/^See <L=e#aZ><\/L><I=aZ>$/;"	i	line:4873	language:dantags	regex:e
+aa	js-cheerio.dan	/^Example <L=e#aa><\/L><I=aa>$/;"	i	line:4611	language:dantags	regex:e
+ab	js-cheerio.dan	/^See <L=e#ab><\/L><I=ab>$/;"	i	line:4621	language:dantags	regex:e
+ac	js-cheerio.dan	/^nextUntil() <L=e#ac><\/L><I=ac>$/;"	i	line:4626	language:dantags	regex:e
+ad	js-cheerio.dan	/^Type Parameters <L=e#ad><\/L><I=ad>$/;"	i	line:4634	language:dantags	regex:e
+ae	js-cheerio.dan	/^Parameters <L=e#ae><\/L><I=ae>$/;"	i	line:4637	language:dantags	regex:e
+af	js-cheerio.dan	/^this <L=e#af><\/L><I=af>$/;"	i	line:4638	language:dantags	regex:e
+ag	js-cheerio.dan	/^selector? <L=e#ag><\/L><I=ag>$/;"	i	line:4641	language:dantags	regex:e
+ah	js-cheerio.dan	/^filterSelector? <L=e#ah><\/L><I=ah>$/;"	i	line:4646	language:dantags	regex:e
+ai	js-cheerio.dan	/^Returns <L=e#ai><\/L><I=ai>$/;"	i	line:4651	language:dantags	regex:e
+aj	js-cheerio.dan	/^Example <L=e#aj><\/L><I=aj>$/;"	i	line:4656	language:dantags	regex:e
+ak	js-cheerio.dan	/^See <L=e#ak><\/L><I=ak>$/;"	i	line:4664	language:dantags	regex:e
+al	js-cheerio.dan	/^not() <L=e#al><\/L><I=al>$/;"	i	line:4669	language:dantags	regex:e
+am	js-cheerio.dan	/^Type Parameters <L=e#am><\/L><I=am>$/;"	i	line:4683	language:dantags	regex:e
+an	js-cheerio.dan	/^Parameters <L=e#an><\/L><I=an>$/;"	i	line:4686	language:dantags	regex:e
+ao	js-cheerio.dan	/^this <L=e#ao><\/L><I=ao>$/;"	i	line:4687	language:dantags	regex:e
+ap	js-cheerio.dan	/^match <L=e#ap><\/L><I=ap>$/;"	i	line:4690	language:dantags	regex:e
+aq	js-cheerio.dan	/^Returns <L=e#aq><\/L><I=aq>$/;"	i	line:4695	language:dantags	regex:e
+ar	js-cheerio.dan	/^Examples <L=e#ar><\/L><I=ar>$/;"	i	line:4700	language:dantags	regex:e
+as	js-cheerio.dan	/^See <L=e#as><\/L><I=as>$/;"	i	line:4717	language:dantags	regex:e
+at	js-cheerio.dan	/^parent() <L=e#at><\/L><I=at>$/;"	i	line:4722	language:dantags	regex:e
+au	js-cheerio.dan	/^Type Parameters <L=e#au><\/L><I=au>$/;"	i	line:4729	language:dantags	regex:e
+av	js-cheerio.dan	/^Parameters <L=e#av><\/L><I=av>$/;"	i	line:4732	language:dantags	regex:e
+aw	js-cheerio.dan	/^this <L=e#aw><\/L><I=aw>$/;"	i	line:4733	language:dantags	regex:e
+ax	js-cheerio.dan	/^selector? <L=e#ax><\/L><I=ax>$/;"	i	line:4736	language:dantags	regex:e
+ay	js-cheerio.dan	/^Returns <L=e#ay><\/L><I=ay>$/;"	i	line:4741	language:dantags	regex:e
+az	js-cheerio.dan	/^Example <L=e#az><\/L><I=az>$/;"	i	line:4746	language:dantags	regex:e
+b	js-cheerio.dan	/^ next  and  prev  <L=z#b><\/L><I=b>$/;"	i	line:7547	language:dantags	regex:z
+b	js-cheerio.dan	/^<B=b>Extending Cheerio$/;"	b	line:1210	language:dantags
+b	js-cheerio.dan	/^Deprecated <L=m#b><\/L><I=b>$/;"	i	line:5489	language:dantags	regex:m
+b	js-cheerio.dan	/^lowerCaseTags? <L=q#b><\/L><I=b>$/;"	i	line:6500	language:dantags	regex:q
+b	js-cheerio.dan	/^pseudos? <L=o#b><\/L><I=b>$/;"	i	line:6047	language:dantags	regex:o
+b	js-cheerio.dan	/^pseudos? <L=p#b><\/L><I=b>$/;"	i	line:6279	language:dantags	regex:p
+b	js-cheerio.dan	/^quirksMode? <L=n#b><\/L><I=b>$/;"	i	line:5876	language:dantags	regex:n
+b	js-cheerio.dan	/^this <L=e#b><\/L><I=b>$/;"	i	line:1588	language:dantags	regex:e
+b#2	js-cheerio.dan	/^Adding Custom CSS Pseudo-Classes <L=b#2><\/L><I=2>$/;"	i	line:1230	language:dantags	regex:b
+b#3	js-cheerio.dan	/^Writing Plugins for Cheerio <L=b#3><\/L><I=3>$/;"	i	line:1257	language:dantags	regex:b
+b0	js-cheerio.dan	/^prevAll() <L=e#b0><\/L><I=b0>$/;"	i	line:4878	language:dantags	regex:e
+b1	js-cheerio.dan	/^Type Parameters <L=e#b1><\/L><I=b1>$/;"	i	line:4885	language:dantags	regex:e
+b2	js-cheerio.dan	/^Parameters <L=e#b2><\/L><I=b2>$/;"	i	line:4888	language:dantags	regex:e
+b3	js-cheerio.dan	/^this <L=e#b3><\/L><I=b3>$/;"	i	line:4889	language:dantags	regex:e
+b4	js-cheerio.dan	/^selector? <L=e#b4><\/L><I=b4>$/;"	i	line:4892	language:dantags	regex:e
+b5	js-cheerio.dan	/^Returns <L=e#b5><\/L><I=b5>$/;"	i	line:4897	language:dantags	regex:e
+b6	js-cheerio.dan	/^Example <L=e#b6><\/L><I=b6>$/;"	i	line:4902	language:dantags	regex:e
+b7	js-cheerio.dan	/^See <L=e#b7><\/L><I=b7>$/;"	i	line:4913	language:dantags	regex:e
+b8	js-cheerio.dan	/^prevUntil() <L=e#b8><\/L><I=b8>$/;"	i	line:4918	language:dantags	regex:e
+b9	js-cheerio.dan	/^Type Parameters <L=e#b9><\/L><I=b9>$/;"	i	line:4926	language:dantags	regex:e
+ba	js-cheerio.dan	/^Parameters <L=e#ba><\/L><I=ba>$/;"	i	line:4929	language:dantags	regex:e
+bb	js-cheerio.dan	/^this <L=e#bb><\/L><I=bb>$/;"	i	line:4930	language:dantags	regex:e
+bc	js-cheerio.dan	/^selector? <L=e#bc><\/L><I=bc>$/;"	i	line:4933	language:dantags	regex:e
+bd	js-cheerio.dan	/^filterSelector? <L=e#bd><\/L><I=bd>$/;"	i	line:4938	language:dantags	regex:e
+be	js-cheerio.dan	/^Returns <L=e#be><\/L><I=be>$/;"	i	line:4943	language:dantags	regex:e
+bf	js-cheerio.dan	/^Example <L=e#bf><\/L><I=bf>$/;"	i	line:4948	language:dantags	regex:e
+bg	js-cheerio.dan	/^See <L=e#bg><\/L><I=bg>$/;"	i	line:4956	language:dantags	regex:e
+bh	js-cheerio.dan	/^siblings() <L=e#bh><\/L><I=bh>$/;"	i	line:4961	language:dantags	regex:e
+bi	js-cheerio.dan	/^Type Parameters <L=e#bi><\/L><I=bi>$/;"	i	line:4969	language:dantags	regex:e
+bj	js-cheerio.dan	/^Parameters <L=e#bj><\/L><I=bj>$/;"	i	line:4972	language:dantags	regex:e
+bk	js-cheerio.dan	/^this <L=e#bk><\/L><I=bk>$/;"	i	line:4973	language:dantags	regex:e
+bl	js-cheerio.dan	/^selector? <L=e#bl><\/L><I=bl>$/;"	i	line:4976	language:dantags	regex:e
+bm	js-cheerio.dan	/^Returns <L=e#bm><\/L><I=bm>$/;"	i	line:4981	language:dantags	regex:e
+bn	js-cheerio.dan	/^Example <L=e#bn><\/L><I=bn>$/;"	i	line:4986	language:dantags	regex:e
+bo	js-cheerio.dan	/^See <L=e#bo><\/L><I=bo>$/;"	i	line:4997	language:dantags	regex:e
+bp	js-cheerio.dan	/^slice() <L=e#bp><\/L><I=bp>$/;"	i	line:5002	language:dantags	regex:e
+bq	js-cheerio.dan	/^Type Parameters <L=e#bq><\/L><I=bq>$/;"	i	line:5009	language:dantags	regex:e
+br	js-cheerio.dan	/^Parameters <L=e#br><\/L><I=br>$/;"	i	line:5012	language:dantags	regex:e
+bs	js-cheerio.dan	/^this <L=e#bs><\/L><I=bs>$/;"	i	line:5013	language:dantags	regex:e
+bt	js-cheerio.dan	/^start? <L=e#bt><\/L><I=bt>$/;"	i	line:5016	language:dantags	regex:e
+bu	js-cheerio.dan	/^end? <L=e#bu><\/L><I=bu>$/;"	i	line:5022	language:dantags	regex:e
+bv	js-cheerio.dan	/^Returns <L=e#bv><\/L><I=bv>$/;"	i	line:5028	language:dantags	regex:e
+bw	js-cheerio.dan	/^Example <L=e#bw><\/L><I=bw>$/;"	i	line:5033	language:dantags	regex:e
+bx	js-cheerio.dan	/^See <L=e#bx><\/L><I=bx>$/;"	i	line:5044	language:dantags	regex:e
+c	js-cheerio.dan	/^ nextAll  ,  prevAll  , and  siblings  <L=z#c><\/L><I=c>$/;"	i	line:7583	language:dantags	regex:z
+c	js-cheerio.dan	/^<B=c>Extracting Data with the  extract  Method$/;"	b	line:1285	language:dantags
+c	js-cheerio.dan	/^Default <L=n#c><\/L><I=c>$/;"	i	line:5885	language:dantags	regex:n
+c	js-cheerio.dan	/^Default <L=q#c><\/L><I=c>$/;"	i	line:6507	language:dantags	regex:q
+c	js-cheerio.dan	/^Example <L=o#c><\/L><I=c>$/;"	i	line:6060	language:dantags	regex:o
+c	js-cheerio.dan	/^Example <L=p#c><\/L><I=c>$/;"	i	line:6292	language:dantags	regex:p
+c	js-cheerio.dan	/^value? <L=e#c><\/L><I=c>$/;"	i	line:1591	language:dantags	regex:e
+c	js-cheerio.dan	/^~~load()~~ <L=m#c><\/L><I=c>$/;"	i	line:5490	language:dantags	regex:m
+c#2	js-cheerio.dan	/^Putting it all together <L=c#2><\/L><I=2>$/;"	i	line:1453	language:dantags	regex:c
+d	js-cheerio.dan	/^ nextUntil  and  prevUntil  <L=z#d><\/L><I=d>$/;"	i	line:7625	language:dantags	regex:z
+d	js-cheerio.dan	/^<B=d>cheerio$/;"	b	line:1492	language:dantags
+d	js-cheerio.dan	/^Inherited from <L=o#d><\/L><I=d>$/;"	i	line:6081	language:dantags	regex:o
+d	js-cheerio.dan	/^Inherited from <L=p#d><\/L><I=d>$/;"	i	line:6313	language:dantags	regex:p
+d	js-cheerio.dan	/^Inherited from <L=q#d><\/L><I=d>$/;"	i	line:6514	language:dantags	regex:q
+d	js-cheerio.dan	/^Parameters <L=m#d><\/L><I=d>$/;"	i	line:5498	language:dantags	regex:m
+d	js-cheerio.dan	/^Returns <L=e#d><\/L><I=d>$/;"	i	line:1596	language:dantags	regex:e
+d	js-cheerio.dan	/^scriptingEnabled? <L=n#d><\/L><I=d>$/;"	i	line:5894	language:dantags	regex:n
+d#2	js-cheerio.dan	/^Loading <L=d#2><\/L><I=2>$/;"	i	line:1502	language:dantags	regex:d
+d#3	js-cheerio.dan	/^Other <L=d#3><\/L><I=3>$/;"	i	line:1509	language:dantags	regex:d
+d#4	js-cheerio.dan	/^Static <L=d#4><\/L><I=4>$/;"	i	line:1522	language:dantags	regex:d
+e	js-cheerio.dan	/^<B=e>Class:  abstract  Cheerio<T>$/;"	b	line:1527	language:dantags
+e	js-cheerio.dan	/^Default <L=n#e><\/L><I=e>$/;"	i	line:5901	language:dantags	regex:n
+e	js-cheerio.dan	/^Example <L=e#e><\/L><I=e>$/;"	i	line:1601	language:dantags	regex:e
+e	js-cheerio.dan	/^Filtering elements <L=z#e><\/L><I=e>$/;"	i	line:7664	language:dantags	regex:z
+e	js-cheerio.dan	/^content <L=m#e><\/L><I=e>$/;"	i	line:5499	language:dantags	regex:m
+e	js-cheerio.dan	/^quirksMode? <L=o#e><\/L><I=e>$/;"	i	line:6086	language:dantags	regex:o
+e	js-cheerio.dan	/^quirksMode? <L=p#e><\/L><I=e>$/;"	i	line:6318	language:dantags	regex:p
+e	js-cheerio.dan	/^recognizeCDATA? <L=q#e><\/L><I=e>$/;"	i	line:6519	language:dantags	regex:q
+e#10	js-cheerio.dan	/^Returns <L=e#10><\/L><I=10>$/;"	i	line:1813	language:dantags	regex:e
+e#11	js-cheerio.dan	/^Example <L=e#11><\/L><I=11>$/;"	i	line:1818	language:dantags	regex:e
+e#12	js-cheerio.dan	/^See <L=e#12><\/L><I=12>$/;"	i	line:1826	language:dantags	regex:e
+e#13	js-cheerio.dan	/^Call Signature <L=e#13><\/L><I=13>$/;"	i	line:1829	language:dantags	regex:e
+e#14	js-cheerio.dan	/^Type Parameters <L=e#14><\/L><I=14>$/;"	i	line:1836	language:dantags	regex:e
+e#15	js-cheerio.dan	/^Parameters <L=e#15><\/L><I=15>$/;"	i	line:1839	language:dantags	regex:e
+e#16	js-cheerio.dan	/^this <L=e#16><\/L><I=16>$/;"	i	line:1840	language:dantags	regex:e
+e#17	js-cheerio.dan	/^name <L=e#17><\/L><I=17>$/;"	i	line:1843	language:dantags	regex:e
+e#18	js-cheerio.dan	/^value <L=e#18><\/L><I=18>$/;"	i	line:1848	language:dantags	regex:e
+e#19	js-cheerio.dan	/^Returns <L=e#19><\/L><I=19>$/;"	i	line:1853	language:dantags	regex:e
+e#1A	js-cheerio.dan	/^See <L=e#1A><\/L><I=1A>$/;"	i	line:1990	language:dantags	regex:e
+e#1B	js-cheerio.dan	/^Call Signature <L=e#1B><\/L><I=1B>$/;"	i	line:1993	language:dantags	regex:e
+e#1C	js-cheerio.dan	/^Type Parameters <L=e#1C><\/L><I=1C>$/;"	i	line:2001	language:dantags	regex:e
+e#1D	js-cheerio.dan	/^Parameters <L=e#1D><\/L><I=1D>$/;"	i	line:2004	language:dantags	regex:e
+e#1E	js-cheerio.dan	/^this <L=e#1E><\/L><I=1E>$/;"	i	line:2005	language:dantags	regex:e
+e#1F	js-cheerio.dan	/^name <L=e#1F><\/L><I=1F>$/;"	i	line:2008	language:dantags	regex:e
+e#1G	js-cheerio.dan	/^Returns <L=e#1G><\/L><I=1G>$/;"	i	line:2013	language:dantags	regex:e
+e#1H	js-cheerio.dan	/^Example <L=e#1H><\/L><I=1H>$/;"	i	line:2018	language:dantags	regex:e
+e#1I	js-cheerio.dan	/^See <L=e#1I><\/L><I=1I>$/;"	i	line:2029	language:dantags	regex:e
+e#1J	js-cheerio.dan	/^Call Signature <L=e#1J><\/L><I=1J>$/;"	i	line:2032	language:dantags	regex:e
+e#1K	js-cheerio.dan	/^Type Parameters <L=e#1K><\/L><I=1K>$/;"	i	line:2039	language:dantags	regex:e
+e#1L	js-cheerio.dan	/^Parameters <L=e#1L><\/L><I=1L>$/;"	i	line:2042	language:dantags	regex:e
+e#1M	js-cheerio.dan	/^this <L=e#1M><\/L><I=1M>$/;"	i	line:2043	language:dantags	regex:e
+e#1N	js-cheerio.dan	/^name <L=e#1N><\/L><I=1N>$/;"	i	line:2046	language:dantags	regex:e
+e#1O	js-cheerio.dan	/^Returns <L=e#1O><\/L><I=1O>$/;"	i	line:2051	language:dantags	regex:e
+e#1P	js-cheerio.dan	/^Call Signature <L=e#1P><\/L><I=1P>$/;"	i	line:2056	language:dantags	regex:e
+e#1Q	js-cheerio.dan	/^Type Parameters <L=e#1Q><\/L><I=1Q>$/;"	i	line:2064	language:dantags	regex:e
+e#1R	js-cheerio.dan	/^Parameters <L=e#1R><\/L><I=1R>$/;"	i	line:2067	language:dantags	regex:e
+e#1S	js-cheerio.dan	/^this <L=e#1S><\/L><I=1S>$/;"	i	line:2068	language:dantags	regex:e
+e#1T	js-cheerio.dan	/^name <L=e#1T><\/L><I=1T>$/;"	i	line:2071	language:dantags	regex:e
+e#1U	js-cheerio.dan	/^Returns <L=e#1U><\/L><I=1U>$/;"	i	line:2076	language:dantags	regex:e
+e#1V	js-cheerio.dan	/^Example <L=e#1V><\/L><I=1V>$/;"	i	line:2081	language:dantags	regex:e
+e#1W	js-cheerio.dan	/^Call Signature <L=e#1W><\/L><I=1W>$/;"	i	line:2089	language:dantags	regex:e
+e#1X	js-cheerio.dan	/^Type Parameters <L=e#1X><\/L><I=1X>$/;"	i	line:2096	language:dantags	regex:e
+e#1Y	js-cheerio.dan	/^Parameters <L=e#1Y><\/L><I=1Y>$/;"	i	line:2101	language:dantags	regex:e
+e#1Z	js-cheerio.dan	/^this <L=e#1Z><\/L><I=1Z>$/;"	i	line:2102	language:dantags	regex:e
+e#1a	js-cheerio.dan	/^Example <L=e#1a><\/L><I=1a>$/;"	i	line:1858	language:dantags	regex:e
+e#1b	js-cheerio.dan	/^See <L=e#1b><\/L><I=1b>$/;"	i	line:1868	language:dantags	regex:e
+e#1c	js-cheerio.dan	/^Call Signature <L=e#1c><\/L><I=1c>$/;"	i	line:1871	language:dantags	regex:e
+e#1d	js-cheerio.dan	/^Type Parameters <L=e#1d><\/L><I=1d>$/;"	i	line:1878	language:dantags	regex:e
+e#1e	js-cheerio.dan	/^Parameters <L=e#1e><\/L><I=1e>$/;"	i	line:1881	language:dantags	regex:e
+e#1f	js-cheerio.dan	/^this <L=e#1f><\/L><I=1f>$/;"	i	line:1882	language:dantags	regex:e
+e#1g	js-cheerio.dan	/^values <L=e#1g><\/L><I=1g>$/;"	i	line:1885	language:dantags	regex:e
+e#1h	js-cheerio.dan	/^Returns <L=e#1h><\/L><I=1h>$/;"	i	line:1890	language:dantags	regex:e
+e#1i	js-cheerio.dan	/^Example <L=e#1i><\/L><I=1i>$/;"	i	line:1895	language:dantags	regex:e
+e#1j	js-cheerio.dan	/^See <L=e#1j><\/L><I=1j>$/;"	i	line:1905	language:dantags	regex:e
+e#1k	js-cheerio.dan	/^hasClass() <L=e#1k><\/L><I=1k>$/;"	i	line:1910	language:dantags	regex:e
+e#1l	js-cheerio.dan	/^Type Parameters <L=e#1l><\/L><I=1l>$/;"	i	line:1917	language:dantags	regex:e
+e#1m	js-cheerio.dan	/^Parameters <L=e#1m><\/L><I=1m>$/;"	i	line:1920	language:dantags	regex:e
+e#1n	js-cheerio.dan	/^this <L=e#1n><\/L><I=1n>$/;"	i	line:1921	language:dantags	regex:e
+e#1o	js-cheerio.dan	/^className <L=e#1o><\/L><I=1o>$/;"	i	line:1924	language:dantags	regex:e
+e#1p	js-cheerio.dan	/^Returns <L=e#1p><\/L><I=1p>$/;"	i	line:1929	language:dantags	regex:e
+e#1q	js-cheerio.dan	/^Example <L=e#1q><\/L><I=1q>$/;"	i	line:1934	language:dantags	regex:e
+e#1r	js-cheerio.dan	/^See <L=e#1r><\/L><I=1r>$/;"	i	line:1948	language:dantags	regex:e
+e#1s	js-cheerio.dan	/^prop() <L=e#1s><\/L><I=1s>$/;"	i	line:1953	language:dantags	regex:e
+e#1t	js-cheerio.dan	/^Call Signature <L=e#1t><\/L><I=1t>$/;"	i	line:1954	language:dantags	regex:e
+e#1u	js-cheerio.dan	/^Type Parameters <L=e#1u><\/L><I=1u>$/;"	i	line:1962	language:dantags	regex:e
+e#1v	js-cheerio.dan	/^Parameters <L=e#1v><\/L><I=1v>$/;"	i	line:1965	language:dantags	regex:e
+e#1w	js-cheerio.dan	/^this <L=e#1w><\/L><I=1w>$/;"	i	line:1966	language:dantags	regex:e
+e#1x	js-cheerio.dan	/^name <L=e#1x><\/L><I=1x>$/;"	i	line:1969	language:dantags	regex:e
+e#1y	js-cheerio.dan	/^Returns <L=e#1y><\/L><I=1y>$/;"	i	line:1974	language:dantags	regex:e
+e#1z	js-cheerio.dan	/^Example <L=e#1z><\/L><I=1z>$/;"	i	line:1979	language:dantags	regex:e
+e#2	js-cheerio.dan	/^Example <L=e#2><\/L><I=2>$/;"	i	line:1551	language:dantags	regex:e
+e#20	js-cheerio.dan	/^name <L=e#20><\/L><I=20>$/;"	i	line:2105	language:dantags	regex:e
+e#21	js-cheerio.dan	/^Returns <L=e#21><\/L><I=21>$/;"	i	line:2110	language:dantags	regex:e
+e#22	js-cheerio.dan	/^Call Signature <L=e#22><\/L><I=22>$/;"	i	line:2115	language:dantags	regex:e
+e#23	js-cheerio.dan	/^Type Parameters <L=e#23><\/L><I=23>$/;"	i	line:2122	language:dantags	regex:e
+e#24	js-cheerio.dan	/^Parameters <L=e#24><\/L><I=24>$/;"	i	line:2127	language:dantags	regex:e
+e#25	js-cheerio.dan	/^this <L=e#25><\/L><I=25>$/;"	i	line:2128	language:dantags	regex:e
+e#26	js-cheerio.dan	/^name <L=e#26><\/L><I=26>$/;"	i	line:2131	language:dantags	regex:e
+e#27	js-cheerio.dan	/^value <L=e#27><\/L><I=27>$/;"	i	line:2136	language:dantags	regex:e
+e#28	js-cheerio.dan	/^Returns <L=e#28><\/L><I=28>$/;"	i	line:2143	language:dantags	regex:e
+e#29	js-cheerio.dan	/^Call Signature <L=e#29><\/L><I=29>$/;"	i	line:2148	language:dantags	regex:e
+e#2A	js-cheerio.dan	/^See <L=e#2A><\/L><I=2A>$/;"	i	line:2276	language:dantags	regex:e
+e#2B	js-cheerio.dan	/^removeClass() <L=e#2B><\/L><I=2B>$/;"	i	line:2281	language:dantags	regex:e
+e#2C	js-cheerio.dan	/^Type Parameters <L=e#2C><\/L><I=2C>$/;"	i	line:2289	language:dantags	regex:e
+e#2D	js-cheerio.dan	/^Parameters <L=e#2D><\/L><I=2D>$/;"	i	line:2294	language:dantags	regex:e
+e#2E	js-cheerio.dan	/^this <L=e#2E><\/L><I=2E>$/;"	i	line:2295	language:dantags	regex:e
+e#2F	js-cheerio.dan	/^name? <L=e#2F><\/L><I=2F>$/;"	i	line:2298	language:dantags	regex:e
+e#2G	js-cheerio.dan	/^Returns <L=e#2G><\/L><I=2G>$/;"	i	line:2303	language:dantags	regex:e
+e#2H	js-cheerio.dan	/^Example <L=e#2H><\/L><I=2H>$/;"	i	line:2308	language:dantags	regex:e
+e#2I	js-cheerio.dan	/^See <L=e#2I><\/L><I=2I>$/;"	i	line:2319	language:dantags	regex:e
+e#2J	js-cheerio.dan	/^toggleClass() <L=e#2J><\/L><I=2J>$/;"	i	line:2324	language:dantags	regex:e
+e#2K	js-cheerio.dan	/^Type Parameters <L=e#2K><\/L><I=2K>$/;"	i	line:2332	language:dantags	regex:e
+e#2L	js-cheerio.dan	/^Parameters <L=e#2L><\/L><I=2L>$/;"	i	line:2337	language:dantags	regex:e
+e#2M	js-cheerio.dan	/^this <L=e#2M><\/L><I=2M>$/;"	i	line:2338	language:dantags	regex:e
+e#2N	js-cheerio.dan	/^value? <L=e#2N><\/L><I=2N>$/;"	i	line:2341	language:dantags	regex:e
+e#2O	js-cheerio.dan	/^stateVal? <L=e#2O><\/L><I=2O>$/;"	i	line:2346	language:dantags	regex:e
+e#2P	js-cheerio.dan	/^Returns <L=e#2P><\/L><I=2P>$/;"	i	line:2351	language:dantags	regex:e
+e#2Q	js-cheerio.dan	/^Example <L=e#2Q><\/L><I=2Q>$/;"	i	line:2356	language:dantags	regex:e
+e#2R	js-cheerio.dan	/^See <L=e#2R><\/L><I=2R>$/;"	i	line:2367	language:dantags	regex:e
+e#2S	js-cheerio.dan	/^val() <L=e#2S><\/L><I=2S>$/;"	i	line:2372	language:dantags	regex:e
+e#2T	js-cheerio.dan	/^Call Signature <L=e#2T><\/L><I=2T>$/;"	i	line:2373	language:dantags	regex:e
+e#2U	js-cheerio.dan	/^Type Parameters <L=e#2U><\/L><I=2U>$/;"	i	line:2381	language:dantags	regex:e
+e#2V	js-cheerio.dan	/^Parameters <L=e#2V><\/L><I=2V>$/;"	i	line:2384	language:dantags	regex:e
+e#2W	js-cheerio.dan	/^this <L=e#2W><\/L><I=2W>$/;"	i	line:2385	language:dantags	regex:e
+e#2X	js-cheerio.dan	/^Returns <L=e#2X><\/L><I=2X>$/;"	i	line:2388	language:dantags	regex:e
+e#2Y	js-cheerio.dan	/^Example <L=e#2Y><\/L><I=2Y>$/;"	i	line:2393	language:dantags	regex:e
+e#2Z	js-cheerio.dan	/^See <L=e#2Z><\/L><I=2Z>$/;"	i	line:2401	language:dantags	regex:e
+e#2a	js-cheerio.dan	/^Type Parameters <L=e#2a><\/L><I=2a>$/;"	i	line:2155	language:dantags	regex:e
+e#2b	js-cheerio.dan	/^Parameters <L=e#2b><\/L><I=2b>$/;"	i	line:2158	language:dantags	regex:e
+e#2c	js-cheerio.dan	/^this <L=e#2c><\/L><I=2c>$/;"	i	line:2159	language:dantags	regex:e
+e#2d	js-cheerio.dan	/^map <L=e#2d><\/L><I=2d>$/;"	i	line:2162	language:dantags	regex:e
+e#2e	js-cheerio.dan	/^Returns <L=e#2e><\/L><I=2e>$/;"	i	line:2170	language:dantags	regex:e
+e#2f	js-cheerio.dan	/^Example <L=e#2f><\/L><I=2f>$/;"	i	line:2175	language:dantags	regex:e
+e#2g	js-cheerio.dan	/^Call Signature <L=e#2g><\/L><I=2g>$/;"	i	line:2185	language:dantags	regex:e
+e#2h	js-cheerio.dan	/^Type Parameters <L=e#2h><\/L><I=2h>$/;"	i	line:2192	language:dantags	regex:e
+e#2i	js-cheerio.dan	/^Parameters <L=e#2i><\/L><I=2i>$/;"	i	line:2195	language:dantags	regex:e
+e#2j	js-cheerio.dan	/^this <L=e#2j><\/L><I=2j>$/;"	i	line:2196	language:dantags	regex:e
+e#2k	js-cheerio.dan	/^name <L=e#2k><\/L><I=2k>$/;"	i	line:2199	language:dantags	regex:e
+e#2l	js-cheerio.dan	/^value <L=e#2l><\/L><I=2l>$/;"	i	line:2204	language:dantags	regex:e
+e#2m	js-cheerio.dan	/^Returns <L=e#2m><\/L><I=2m>$/;"	i	line:2209	language:dantags	regex:e
+e#2n	js-cheerio.dan	/^Call Signature <L=e#2n><\/L><I=2n>$/;"	i	line:2214	language:dantags	regex:e
+e#2o	js-cheerio.dan	/^Type Parameters <L=e#2o><\/L><I=2o>$/;"	i	line:2221	language:dantags	regex:e
+e#2p	js-cheerio.dan	/^Parameters <L=e#2p><\/L><I=2p>$/;"	i	line:2224	language:dantags	regex:e
+e#2q	js-cheerio.dan	/^this <L=e#2q><\/L><I=2q>$/;"	i	line:2225	language:dantags	regex:e
+e#2r	js-cheerio.dan	/^name <L=e#2r><\/L><I=2r>$/;"	i	line:2228	language:dantags	regex:e
+e#2s	js-cheerio.dan	/^Returns <L=e#2s><\/L><I=2s>$/;"	i	line:2233	language:dantags	regex:e
+e#2t	js-cheerio.dan	/^removeAttr() <L=e#2t><\/L><I=2t>$/;"	i	line:2240	language:dantags	regex:e
+e#2u	js-cheerio.dan	/^Type Parameters <L=e#2u><\/L><I=2u>$/;"	i	line:2247	language:dantags	regex:e
+e#2v	js-cheerio.dan	/^Parameters <L=e#2v><\/L><I=2v>$/;"	i	line:2250	language:dantags	regex:e
+e#2w	js-cheerio.dan	/^this <L=e#2w><\/L><I=2w>$/;"	i	line:2251	language:dantags	regex:e
+e#2x	js-cheerio.dan	/^name <L=e#2x><\/L><I=2x>$/;"	i	line:2254	language:dantags	regex:e
+e#2y	js-cheerio.dan	/^Returns <L=e#2y><\/L><I=2y>$/;"	i	line:2259	language:dantags	regex:e
+e#2z	js-cheerio.dan	/^Example <L=e#2z><\/L><I=2z>$/;"	i	line:2264	language:dantags	regex:e
+e#3	js-cheerio.dan	/^Extends <L=e#3><\/L><I=3>$/;"	i	line:1562	language:dantags	regex:e
+e#30	js-cheerio.dan	/^Call Signature <L=e#30><\/L><I=30>$/;"	i	line:2404	language:dantags	regex:e
+e#31	js-cheerio.dan	/^Type Parameters <L=e#31><\/L><I=31>$/;"	i	line:2412	language:dantags	regex:e
+e#32	js-cheerio.dan	/^Parameters <L=e#32><\/L><I=32>$/;"	i	line:2415	language:dantags	regex:e
+e#33	js-cheerio.dan	/^this <L=e#33><\/L><I=33>$/;"	i	line:2416	language:dantags	regex:e
+e#34	js-cheerio.dan	/^value <L=e#34><\/L><I=34>$/;"	i	line:2419	language:dantags	regex:e
+e#35	js-cheerio.dan	/^Returns <L=e#35><\/L><I=35>$/;"	i	line:2424	language:dantags	regex:e
+e#36	js-cheerio.dan	/^Example <L=e#36><\/L><I=36>$/;"	i	line:2429	language:dantags	regex:e
+e#37	js-cheerio.dan	/^See <L=e#37><\/L><I=37>$/;"	i	line:2437	language:dantags	regex:e
+e#38	js-cheerio.dan	/^CSS <L=e#38><\/L><I=38>$/;"	i	line:2440	language:dantags	regex:e
+e#39	js-cheerio.dan	/^css() <L=e#39><\/L><I=39>$/;"	i	line:2441	language:dantags	regex:e
+e#3A	js-cheerio.dan	/^this <L=e#3A><\/L><I=3A>$/;"	i	line:2540	language:dantags	regex:e
+e#3B	js-cheerio.dan	/^prop <L=e#3B><\/L><I=3B>$/;"	i	line:2543	language:dantags	regex:e
+e#3C	js-cheerio.dan	/^val <L=e#3C><\/L><I=3C>$/;"	i	line:2548	language:dantags	regex:e
+e#3D	js-cheerio.dan	/^Returns <L=e#3D><\/L><I=3D>$/;"	i	line:2553	language:dantags	regex:e
+e#3E	js-cheerio.dan	/^Param <L=e#3E><\/L><I=3E>$/;"	i	line:2560	language:dantags	regex:e
+e#3F	js-cheerio.dan	/^Param <L=e#3F><\/L><I=3F>$/;"	i	line:2563	language:dantags	regex:e
+e#3G	js-cheerio.dan	/^See <L=e#3G><\/L><I=3G>$/;"	i	line:2566	language:dantags	regex:e
+e#3H	js-cheerio.dan	/^See <L=e#3H><\/L><I=3H>$/;"	i	line:2569	language:dantags	regex:e
+e#3I	js-cheerio.dan	/^Call Signature <L=e#3I><\/L><I=3I>$/;"	i	line:2572	language:dantags	regex:e
+e#3J	js-cheerio.dan	/^Type Parameters <L=e#3J><\/L><I=3J>$/;"	i	line:2579	language:dantags	regex:e
+e#3K	js-cheerio.dan	/^Parameters <L=e#3K><\/L><I=3K>$/;"	i	line:2582	language:dantags	regex:e
+e#3L	js-cheerio.dan	/^this <L=e#3L><\/L><I=3L>$/;"	i	line:2583	language:dantags	regex:e
+e#3M	js-cheerio.dan	/^map <L=e#3M><\/L><I=3M>$/;"	i	line:2586	language:dantags	regex:e
+e#3N	js-cheerio.dan	/^Returns <L=e#3N><\/L><I=3N>$/;"	i	line:2591	language:dantags	regex:e
+e#3O	js-cheerio.dan	/^Param <L=e#3O><\/L><I=3O>$/;"	i	line:2598	language:dantags	regex:e
+e#3P	js-cheerio.dan	/^Param <L=e#3P><\/L><I=3P>$/;"	i	line:2601	language:dantags	regex:e
+e#3Q	js-cheerio.dan	/^See <L=e#3Q><\/L><I=3Q>$/;"	i	line:2604	language:dantags	regex:e
+e#3R	js-cheerio.dan	/^See <L=e#3R><\/L><I=3R>$/;"	i	line:2607	language:dantags	regex:e
+e#3S	js-cheerio.dan	/^Forms <L=e#3S><\/L><I=3S>$/;"	i	line:2610	language:dantags	regex:e
+e#3T	js-cheerio.dan	/^serialize() <L=e#3T><\/L><I=3T>$/;"	i	line:2611	language:dantags	regex:e
+e#3U	js-cheerio.dan	/^Type Parameters <L=e#3U><\/L><I=3U>$/;"	i	line:2618	language:dantags	regex:e
+e#3V	js-cheerio.dan	/^Parameters <L=e#3V><\/L><I=3V>$/;"	i	line:2621	language:dantags	regex:e
+e#3W	js-cheerio.dan	/^this <L=e#3W><\/L><I=3W>$/;"	i	line:2622	language:dantags	regex:e
+e#3X	js-cheerio.dan	/^Returns <L=e#3X><\/L><I=3X>$/;"	i	line:2625	language:dantags	regex:e
+e#3Y	js-cheerio.dan	/^Example <L=e#3Y><\/L><I=3Y>$/;"	i	line:2630	language:dantags	regex:e
+e#3Z	js-cheerio.dan	/^See <L=e#3Z><\/L><I=3Z>$/;"	i	line:2638	language:dantags	regex:e
+e#3a	js-cheerio.dan	/^Param <L=e#3a><\/L><I=3a>$/;"	i	line:2444	language:dantags	regex:e
+e#3b	js-cheerio.dan	/^Param <L=e#3b><\/L><I=3b>$/;"	i	line:2447	language:dantags	regex:e
+e#3c	js-cheerio.dan	/^See <L=e#3c><\/L><I=3c>$/;"	i	line:2450	language:dantags	regex:e
+e#3d	js-cheerio.dan	/^Call Signature <L=e#3d><\/L><I=3d>$/;"	i	line:2453	language:dantags	regex:e
+e#3e	js-cheerio.dan	/^Type Parameters <L=e#3e><\/L><I=3e>$/;"	i	line:2460	language:dantags	regex:e
+e#3f	js-cheerio.dan	/^Parameters <L=e#3f><\/L><I=3f>$/;"	i	line:2463	language:dantags	regex:e
+e#3g	js-cheerio.dan	/^this <L=e#3g><\/L><I=3g>$/;"	i	line:2464	language:dantags	regex:e
+e#3h	js-cheerio.dan	/^names? <L=e#3h><\/L><I=3h>$/;"	i	line:2467	language:dantags	regex:e
+e#3i	js-cheerio.dan	/^Returns <L=e#3i><\/L><I=3i>$/;"	i	line:2472	language:dantags	regex:e
+e#3j	js-cheerio.dan	/^Param <L=e#3j><\/L><I=3j>$/;"	i	line:2479	language:dantags	regex:e
+e#3k	js-cheerio.dan	/^Param <L=e#3k><\/L><I=3k>$/;"	i	line:2482	language:dantags	regex:e
+e#3l	js-cheerio.dan	/^See <L=e#3l><\/L><I=3l>$/;"	i	line:2485	language:dantags	regex:e
+e#3m	js-cheerio.dan	/^See <L=e#3m><\/L><I=3m>$/;"	i	line:2488	language:dantags	regex:e
+e#3n	js-cheerio.dan	/^Call Signature <L=e#3n><\/L><I=3n>$/;"	i	line:2491	language:dantags	regex:e
+e#3o	js-cheerio.dan	/^Type Parameters <L=e#3o><\/L><I=3o>$/;"	i	line:2498	language:dantags	regex:e
+e#3p	js-cheerio.dan	/^Parameters <L=e#3p><\/L><I=3p>$/;"	i	line:2501	language:dantags	regex:e
+e#3q	js-cheerio.dan	/^this <L=e#3q><\/L><I=3q>$/;"	i	line:2502	language:dantags	regex:e
+e#3r	js-cheerio.dan	/^name <L=e#3r><\/L><I=3r>$/;"	i	line:2505	language:dantags	regex:e
+e#3s	js-cheerio.dan	/^Returns <L=e#3s><\/L><I=3s>$/;"	i	line:2510	language:dantags	regex:e
+e#3t	js-cheerio.dan	/^Param <L=e#3t><\/L><I=3t>$/;"	i	line:2517	language:dantags	regex:e
+e#3u	js-cheerio.dan	/^Param <L=e#3u><\/L><I=3u>$/;"	i	line:2520	language:dantags	regex:e
+e#3v	js-cheerio.dan	/^See <L=e#3v><\/L><I=3v>$/;"	i	line:2523	language:dantags	regex:e
+e#3w	js-cheerio.dan	/^See <L=e#3w><\/L><I=3w>$/;"	i	line:2526	language:dantags	regex:e
+e#3x	js-cheerio.dan	/^Call Signature <L=e#3x><\/L><I=3x>$/;"	i	line:2529	language:dantags	regex:e
+e#3y	js-cheerio.dan	/^Type Parameters <L=e#3y><\/L><I=3y>$/;"	i	line:2536	language:dantags	regex:e
+e#3z	js-cheerio.dan	/^Parameters <L=e#3z><\/L><I=3z>$/;"	i	line:2539	language:dantags	regex:e
+e#4	js-cheerio.dan	/^Type Parameters <L=e#4><\/L><I=4>$/;"	i	line:1565	language:dantags	regex:e
+e#40	js-cheerio.dan	/^serializeArray() <L=e#40><\/L><I=40>$/;"	i	line:2643	language:dantags	regex:e
+e#41	js-cheerio.dan	/^Type Parameters <L=e#41><\/L><I=41>$/;"	i	line:2650	language:dantags	regex:e
+e#42	js-cheerio.dan	/^Parameters <L=e#42><\/L><I=42>$/;"	i	line:2653	language:dantags	regex:e
+e#43	js-cheerio.dan	/^this <L=e#43><\/L><I=43>$/;"	i	line:2654	language:dantags	regex:e
+e#44	js-cheerio.dan	/^Returns <L=e#44><\/L><I=44>$/;"	i	line:2657	language:dantags	regex:e
+e#45	js-cheerio.dan	/^Example <L=e#45><\/L><I=45>$/;"	i	line:2662	language:dantags	regex:e
+e#46	js-cheerio.dan	/^See <L=e#46><\/L><I=46>$/;"	i	line:2670	language:dantags	regex:e
+e#47	js-cheerio.dan	/^Manipulation <L=e#47><\/L><I=47>$/;"	i	line:2673	language:dantags	regex:e
+e#48	js-cheerio.dan	/^after() <L=e#48><\/L><I=48>$/;"	i	line:2674	language:dantags	regex:e
+e#49	js-cheerio.dan	/^Type Parameters <L=e#49><\/L><I=49>$/;"	i	line:2681	language:dantags	regex:e
+e#4A	js-cheerio.dan	/^elems <L=e#4A><\/L><I=4A>$/;"	i	line:2816	language:dantags	regex:e
+e#4B	js-cheerio.dan	/^Returns <L=e#4B><\/L><I=4B>$/;"	i	line:2823	language:dantags	regex:e
+e#4C	js-cheerio.dan	/^Example <L=e#4C><\/L><I=4C>$/;"	i	line:2828	language:dantags	regex:e
+e#4D	js-cheerio.dan	/^See <L=e#4D><\/L><I=4D>$/;"	i	line:2842	language:dantags	regex:e
+e#4E	js-cheerio.dan	/^clone() <L=e#4E><\/L><I=4E>$/;"	i	line:2847	language:dantags	regex:e
+e#4F	js-cheerio.dan	/^Type Parameters <L=e#4F><\/L><I=4F>$/;"	i	line:2854	language:dantags	regex:e
+e#4G	js-cheerio.dan	/^Parameters <L=e#4G><\/L><I=4G>$/;"	i	line:2857	language:dantags	regex:e
+e#4H	js-cheerio.dan	/^this <L=e#4H><\/L><I=4H>$/;"	i	line:2858	language:dantags	regex:e
+e#4I	js-cheerio.dan	/^Returns <L=e#4I><\/L><I=4I>$/;"	i	line:2861	language:dantags	regex:e
+e#4J	js-cheerio.dan	/^Example <L=e#4J><\/L><I=4J>$/;"	i	line:2866	language:dantags	regex:e
+e#4K	js-cheerio.dan	/^See <L=e#4K><\/L><I=4K>$/;"	i	line:2873	language:dantags	regex:e
+e#4L	js-cheerio.dan	/^empty() <L=e#4L><\/L><I=4L>$/;"	i	line:2878	language:dantags	regex:e
+e#4M	js-cheerio.dan	/^Type Parameters <L=e#4M><\/L><I=4M>$/;"	i	line:2885	language:dantags	regex:e
+e#4N	js-cheerio.dan	/^Parameters <L=e#4N><\/L><I=4N>$/;"	i	line:2888	language:dantags	regex:e
+e#4O	js-cheerio.dan	/^this <L=e#4O><\/L><I=4O>$/;"	i	line:2889	language:dantags	regex:e
+e#4P	js-cheerio.dan	/^Returns <L=e#4P><\/L><I=4P>$/;"	i	line:2892	language:dantags	regex:e
+e#4Q	js-cheerio.dan	/^Example <L=e#4Q><\/L><I=4Q>$/;"	i	line:2897	language:dantags	regex:e
+e#4R	js-cheerio.dan	/^See <L=e#4R><\/L><I=4R>$/;"	i	line:2906	language:dantags	regex:e
+e#4S	js-cheerio.dan	/^html() <L=e#4S><\/L><I=4S>$/;"	i	line:2911	language:dantags	regex:e
+e#4T	js-cheerio.dan	/^Call Signature <L=e#4T><\/L><I=4T>$/;"	i	line:2912	language:dantags	regex:e
+e#4U	js-cheerio.dan	/^Type Parameters <L=e#4U><\/L><I=4U>$/;"	i	line:2919	language:dantags	regex:e
+e#4V	js-cheerio.dan	/^Parameters <L=e#4V><\/L><I=4V>$/;"	i	line:2922	language:dantags	regex:e
+e#4W	js-cheerio.dan	/^this <L=e#4W><\/L><I=4W>$/;"	i	line:2923	language:dantags	regex:e
+e#4X	js-cheerio.dan	/^Returns <L=e#4X><\/L><I=4X>$/;"	i	line:2926	language:dantags	regex:e
+e#4Y	js-cheerio.dan	/^Example <L=e#4Y><\/L><I=4Y>$/;"	i	line:2931	language:dantags	regex:e
+e#4Z	js-cheerio.dan	/^See <L=e#4Z><\/L><I=4Z>$/;"	i	line:2942	language:dantags	regex:e
+e#4a	js-cheerio.dan	/^Parameters <L=e#4a><\/L><I=4a>$/;"	i	line:2684	language:dantags	regex:e
+e#4b	js-cheerio.dan	/^this <L=e#4b><\/L><I=4b>$/;"	i	line:2685	language:dantags	regex:e
+e#4c	js-cheerio.dan	/^elems <L=e#4c><\/L><I=4c>$/;"	i	line:2688	language:dantags	regex:e
+e#4d	js-cheerio.dan	/^Returns <L=e#4d><\/L><I=4d>$/;"	i	line:2695	language:dantags	regex:e
+e#4e	js-cheerio.dan	/^Example <L=e#4e><\/L><I=4e>$/;"	i	line:2700	language:dantags	regex:e
+e#4f	js-cheerio.dan	/^See <L=e#4f><\/L><I=4f>$/;"	i	line:2714	language:dantags	regex:e
+e#4g	js-cheerio.dan	/^append() <L=e#4g><\/L><I=4g>$/;"	i	line:2719	language:dantags	regex:e
+e#4h	js-cheerio.dan	/^Type Parameters <L=e#4h><\/L><I=4h>$/;"	i	line:2726	language:dantags	regex:e
+e#4i	js-cheerio.dan	/^Parameters <L=e#4i><\/L><I=4i>$/;"	i	line:2729	language:dantags	regex:e
+e#4j	js-cheerio.dan	/^this <L=e#4j><\/L><I=4j>$/;"	i	line:2730	language:dantags	regex:e
+e#4k	js-cheerio.dan	/^elems <L=e#4k><\/L><I=4k>$/;"	i	line:2733	language:dantags	regex:e
+e#4l	js-cheerio.dan	/^Returns <L=e#4l><\/L><I=4l>$/;"	i	line:2737	language:dantags	regex:e
+e#4m	js-cheerio.dan	/^Example <L=e#4m><\/L><I=4m>$/;"	i	line:2740	language:dantags	regex:e
+e#4n	js-cheerio.dan	/^See <L=e#4n><\/L><I=4n>$/;"	i	line:2754	language:dantags	regex:e
+e#4o	js-cheerio.dan	/^appendTo() <L=e#4o><\/L><I=4o>$/;"	i	line:2759	language:dantags	regex:e
+e#4p	js-cheerio.dan	/^Type Parameters <L=e#4p><\/L><I=4p>$/;"	i	line:2766	language:dantags	regex:e
+e#4q	js-cheerio.dan	/^Parameters <L=e#4q><\/L><I=4q>$/;"	i	line:2769	language:dantags	regex:e
+e#4r	js-cheerio.dan	/^this <L=e#4r><\/L><I=4r>$/;"	i	line:2770	language:dantags	regex:e
+e#4s	js-cheerio.dan	/^target <L=e#4s><\/L><I=4s>$/;"	i	line:2773	language:dantags	regex:e
+e#4t	js-cheerio.dan	/^Returns <L=e#4t><\/L><I=4t>$/;"	i	line:2778	language:dantags	regex:e
+e#4u	js-cheerio.dan	/^Example <L=e#4u><\/L><I=4u>$/;"	i	line:2783	language:dantags	regex:e
+e#4v	js-cheerio.dan	/^See <L=e#4v><\/L><I=4v>$/;"	i	line:2797	language:dantags	regex:e
+e#4w	js-cheerio.dan	/^before() <L=e#4w><\/L><I=4w>$/;"	i	line:2802	language:dantags	regex:e
+e#4x	js-cheerio.dan	/^Type Parameters <L=e#4x><\/L><I=4x>$/;"	i	line:2809	language:dantags	regex:e
+e#4y	js-cheerio.dan	/^Parameters <L=e#4y><\/L><I=4y>$/;"	i	line:2812	language:dantags	regex:e
+e#4z	js-cheerio.dan	/^this <L=e#4z><\/L><I=4z>$/;"	i	line:2813	language:dantags	regex:e
+e#5	js-cheerio.dan	/^Implements <L=e#5><\/L><I=5>$/;"	i	line:1568	language:dantags	regex:e
+e#50	js-cheerio.dan	/^Call Signature <L=e#50><\/L><I=50>$/;"	i	line:2945	language:dantags	regex:e
+e#51	js-cheerio.dan	/^Type Parameters <L=e#51><\/L><I=51>$/;"	i	line:2952	language:dantags	regex:e
+e#52	js-cheerio.dan	/^Parameters <L=e#52><\/L><I=52>$/;"	i	line:2955	language:dantags	regex:e
+e#53	js-cheerio.dan	/^this <L=e#53><\/L><I=53>$/;"	i	line:2956	language:dantags	regex:e
+e#54	js-cheerio.dan	/^str <L=e#54><\/L><I=54>$/;"	i	line:2959	language:dantags	regex:e
+e#55	js-cheerio.dan	/^Returns <L=e#55><\/L><I=55>$/;"	i	line:2964	language:dantags	regex:e
+e#56	js-cheerio.dan	/^Example <L=e#56><\/L><I=56>$/;"	i	line:2969	language:dantags	regex:e
+e#57	js-cheerio.dan	/^See <L=e#57><\/L><I=57>$/;"	i	line:2977	language:dantags	regex:e
+e#58	js-cheerio.dan	/^insertAfter() <L=e#58><\/L><I=58>$/;"	i	line:2982	language:dantags	regex:e
+e#59	js-cheerio.dan	/^Type Parameters <L=e#59><\/L><I=59>$/;"	i	line:2989	language:dantags	regex:e
+e#5A	js-cheerio.dan	/^target <L=e#5A><\/L><I=5A>$/;"	i	line:3122	language:dantags	regex:e
+e#5B	js-cheerio.dan	/^Returns <L=e#5B><\/L><I=5B>$/;"	i	line:3127	language:dantags	regex:e
+e#5C	js-cheerio.dan	/^Example <L=e#5C><\/L><I=5C>$/;"	i	line:3132	language:dantags	regex:e
+e#5D	js-cheerio.dan	/^See <L=e#5D><\/L><I=5D>$/;"	i	line:3146	language:dantags	regex:e
+e#5E	js-cheerio.dan	/^remove() <L=e#5E><\/L><I=5E>$/;"	i	line:3151	language:dantags	regex:e
+e#5F	js-cheerio.dan	/^Type Parameters <L=e#5F><\/L><I=5F>$/;"	i	line:3159	language:dantags	regex:e
+e#5G	js-cheerio.dan	/^Parameters <L=e#5G><\/L><I=5G>$/;"	i	line:3162	language:dantags	regex:e
+e#5H	js-cheerio.dan	/^this <L=e#5H><\/L><I=5H>$/;"	i	line:3163	language:dantags	regex:e
+e#5I	js-cheerio.dan	/^selector? <L=e#5I><\/L><I=5I>$/;"	i	line:3166	language:dantags	regex:e
+e#5J	js-cheerio.dan	/^Returns <L=e#5J><\/L><I=5J>$/;"	i	line:3171	language:dantags	regex:e
+e#5K	js-cheerio.dan	/^Example <L=e#5K><\/L><I=5K>$/;"	i	line:3176	language:dantags	regex:e
+e#5L	js-cheerio.dan	/^See <L=e#5L><\/L><I=5L>$/;"	i	line:3188	language:dantags	regex:e
+e#5M	js-cheerio.dan	/^replaceWith() <L=e#5M><\/L><I=5M>$/;"	i	line:3193	language:dantags	regex:e
+e#5N	js-cheerio.dan	/^Type Parameters <L=e#5N><\/L><I=5N>$/;"	i	line:3200	language:dantags	regex:e
+e#5O	js-cheerio.dan	/^Parameters <L=e#5O><\/L><I=5O>$/;"	i	line:3203	language:dantags	regex:e
+e#5P	js-cheerio.dan	/^this <L=e#5P><\/L><I=5P>$/;"	i	line:3204	language:dantags	regex:e
+e#5Q	js-cheerio.dan	/^content <L=e#5Q><\/L><I=5Q>$/;"	i	line:3207	language:dantags	regex:e
+e#5R	js-cheerio.dan	/^Returns <L=e#5R><\/L><I=5R>$/;"	i	line:3212	language:dantags	regex:e
+e#5S	js-cheerio.dan	/^Example <L=e#5S><\/L><I=5S>$/;"	i	line:3217	language:dantags	regex:e
+e#5T	js-cheerio.dan	/^See <L=e#5T><\/L><I=5T>$/;"	i	line:3231	language:dantags	regex:e
+e#5U	js-cheerio.dan	/^text() <L=e#5U><\/L><I=5U>$/;"	i	line:3236	language:dantags	regex:e
+e#5V	js-cheerio.dan	/^Call Signature <L=e#5V><\/L><I=5V>$/;"	i	line:3237	language:dantags	regex:e
+e#5W	js-cheerio.dan	/^Type Parameters <L=e#5W><\/L><I=5W>$/;"	i	line:3245	language:dantags	regex:e
+e#5X	js-cheerio.dan	/^Parameters <L=e#5X><\/L><I=5X>$/;"	i	line:3248	language:dantags	regex:e
+e#5Y	js-cheerio.dan	/^this <L=e#5Y><\/L><I=5Y>$/;"	i	line:3249	language:dantags	regex:e
+e#5Z	js-cheerio.dan	/^Returns <L=e#5Z><\/L><I=5Z>$/;"	i	line:3252	language:dantags	regex:e
+e#5a	js-cheerio.dan	/^Parameters <L=e#5a><\/L><I=5a>$/;"	i	line:2992	language:dantags	regex:e
+e#5b	js-cheerio.dan	/^this <L=e#5b><\/L><I=5b>$/;"	i	line:2993	language:dantags	regex:e
+e#5c	js-cheerio.dan	/^target <L=e#5c><\/L><I=5c>$/;"	i	line:2996	language:dantags	regex:e
+e#5d	js-cheerio.dan	/^Returns <L=e#5d><\/L><I=5d>$/;"	i	line:3001	language:dantags	regex:e
+e#5e	js-cheerio.dan	/^Example <L=e#5e><\/L><I=5e>$/;"	i	line:3006	language:dantags	regex:e
+e#5f	js-cheerio.dan	/^See <L=e#5f><\/L><I=5f>$/;"	i	line:3020	language:dantags	regex:e
+e#5g	js-cheerio.dan	/^insertBefore() <L=e#5g><\/L><I=5g>$/;"	i	line:3025	language:dantags	regex:e
+e#5h	js-cheerio.dan	/^Type Parameters <L=e#5h><\/L><I=5h>$/;"	i	line:3032	language:dantags	regex:e
+e#5i	js-cheerio.dan	/^Parameters <L=e#5i><\/L><I=5i>$/;"	i	line:3035	language:dantags	regex:e
+e#5j	js-cheerio.dan	/^this <L=e#5j><\/L><I=5j>$/;"	i	line:3036	language:dantags	regex:e
+e#5k	js-cheerio.dan	/^target <L=e#5k><\/L><I=5k>$/;"	i	line:3039	language:dantags	regex:e
+e#5l	js-cheerio.dan	/^Returns <L=e#5l><\/L><I=5l>$/;"	i	line:3044	language:dantags	regex:e
+e#5m	js-cheerio.dan	/^Example <L=e#5m><\/L><I=5m>$/;"	i	line:3049	language:dantags	regex:e
+e#5n	js-cheerio.dan	/^See <L=e#5n><\/L><I=5n>$/;"	i	line:3063	language:dantags	regex:e
+e#5o	js-cheerio.dan	/^prepend() <L=e#5o><\/L><I=5o>$/;"	i	line:3068	language:dantags	regex:e
+e#5p	js-cheerio.dan	/^Type Parameters <L=e#5p><\/L><I=5p>$/;"	i	line:3075	language:dantags	regex:e
+e#5q	js-cheerio.dan	/^Parameters <L=e#5q><\/L><I=5q>$/;"	i	line:3078	language:dantags	regex:e
+e#5r	js-cheerio.dan	/^this <L=e#5r><\/L><I=5r>$/;"	i	line:3079	language:dantags	regex:e
+e#5s	js-cheerio.dan	/^elems <L=e#5s><\/L><I=5s>$/;"	i	line:3082	language:dantags	regex:e
+e#5t	js-cheerio.dan	/^Returns <L=e#5t><\/L><I=5t>$/;"	i	line:3086	language:dantags	regex:e
+e#5u	js-cheerio.dan	/^Example <L=e#5u><\/L><I=5u>$/;"	i	line:3089	language:dantags	regex:e
+e#5v	js-cheerio.dan	/^See <L=e#5v><\/L><I=5v>$/;"	i	line:3103	language:dantags	regex:e
+e#5w	js-cheerio.dan	/^prependTo() <L=e#5w><\/L><I=5w>$/;"	i	line:3108	language:dantags	regex:e
+e#5x	js-cheerio.dan	/^Type Parameters <L=e#5x><\/L><I=5x>$/;"	i	line:3115	language:dantags	regex:e
+e#5y	js-cheerio.dan	/^Parameters <L=e#5y><\/L><I=5y>$/;"	i	line:3118	language:dantags	regex:e
+e#5z	js-cheerio.dan	/^this <L=e#5z><\/L><I=5z>$/;"	i	line:3119	language:dantags	regex:e
+e#6	js-cheerio.dan	/^Indexable <L=e#6><\/L><I=6>$/;"	i	line:1571	language:dantags	regex:e
+e#60	js-cheerio.dan	/^Example <L=e#60><\/L><I=60>$/;"	i	line:3257	language:dantags	regex:e
+e#61	js-cheerio.dan	/^See <L=e#61><\/L><I=61>$/;"	i	line:3270	language:dantags	regex:e
+e#62	js-cheerio.dan	/^Call Signature <L=e#62><\/L><I=62>$/;"	i	line:3273	language:dantags	regex:e
+e#63	js-cheerio.dan	/^Type Parameters <L=e#63><\/L><I=63>$/;"	i	line:3280	language:dantags	regex:e
+e#64	js-cheerio.dan	/^Parameters <L=e#64><\/L><I=64>$/;"	i	line:3283	language:dantags	regex:e
+e#65	js-cheerio.dan	/^this <L=e#65><\/L><I=65>$/;"	i	line:3284	language:dantags	regex:e
+e#66	js-cheerio.dan	/^str <L=e#66><\/L><I=66>$/;"	i	line:3287	language:dantags	regex:e
+e#67	js-cheerio.dan	/^Returns <L=e#67><\/L><I=67>$/;"	i	line:3292	language:dantags	regex:e
+e#68	js-cheerio.dan	/^Example <L=e#68><\/L><I=68>$/;"	i	line:3297	language:dantags	regex:e
+e#69	js-cheerio.dan	/^See <L=e#69><\/L><I=69>$/;"	i	line:3305	language:dantags	regex:e
+e#6A	js-cheerio.dan	/^Returns <L=e#6A><\/L><I=6A>$/;"	i	line:3474	language:dantags	regex:e
+e#6B	js-cheerio.dan	/^Examples <L=e#6B><\/L><I=6B>$/;"	i	line:3479	language:dantags	regex:e
+e#6C	js-cheerio.dan	/^See <L=e#6C><\/L><I=6C>$/;"	i	line:3518	language:dantags	regex:e
+e#6D	js-cheerio.dan	/^wrapInner() <L=e#6D><\/L><I=6D>$/;"	i	line:3523	language:dantags	regex:e
+e#6E	js-cheerio.dan	/^Type Parameters <L=e#6E><\/L><I=6E>$/;"	i	line:3533	language:dantags	regex:e
+e#6F	js-cheerio.dan	/^Parameters <L=e#6F><\/L><I=6F>$/;"	i	line:3536	language:dantags	regex:e
+e#6G	js-cheerio.dan	/^this <L=e#6G><\/L><I=6G>$/;"	i	line:3537	language:dantags	regex:e
+e#6H	js-cheerio.dan	/^wrapper <L=e#6H><\/L><I=6H>$/;"	i	line:3540	language:dantags	regex:e
+e#6I	js-cheerio.dan	/^Returns <L=e#6I><\/L><I=6I>$/;"	i	line:3545	language:dantags	regex:e
+e#6J	js-cheerio.dan	/^Example <L=e#6J><\/L><I=6J>$/;"	i	line:3550	language:dantags	regex:e
+e#6K	js-cheerio.dan	/^See <L=e#6K><\/L><I=6K>$/;"	i	line:3581	language:dantags	regex:e
+e#6L	js-cheerio.dan	/^Other <L=e#6L><\/L><I=6L>$/;"	i	line:3584	language:dantags	regex:e
+e#6M	js-cheerio.dan	/^cheerio <L=e#6M><\/L><I=6M>$/;"	i	line:3585	language:dantags	regex:e
+e#6N	js-cheerio.dan	/^length <L=e#6N><\/L><I=6N>$/;"	i	line:3592	language:dantags	regex:e
+e#6O	js-cheerio.dan	/^Implementation of <L=e#6O><\/L><I=6O>$/;"	i	line:3597	language:dantags	regex:e
+e#6P	js-cheerio.dan	/^options <L=e#6P><\/L><I=6P>$/;"	i	line:3602	language:dantags	regex:e
+e#6Q	js-cheerio.dan	/^prevObject <L=e#6Q><\/L><I=6Q>$/;"	i	line:3609	language:dantags	regex:e
+e#6R	js-cheerio.dan	/^splice() <L=e#6R><\/L><I=6R>$/;"	i	line:3616	language:dantags	regex:e
+e#6S	js-cheerio.dan	/^Parameters <L=e#6S><\/L><I=6S>$/;"	i	line:3624	language:dantags	regex:e
+e#6T	js-cheerio.dan	/^start <L=e#6T><\/L><I=6T>$/;"	i	line:3625	language:dantags	regex:e
+e#6U	js-cheerio.dan	/^deleteCount? <L=e#6U><\/L><I=6U>$/;"	i	line:3630	language:dantags	regex:e
+e#6V	js-cheerio.dan	/^Returns <L=e#6V><\/L><I=6V>$/;"	i	line:3635	language:dantags	regex:e
+e#6W	js-cheerio.dan	/^Parameters <L=e#6W><\/L><I=6W>$/;"	i	line:3643	language:dantags	regex:e
+e#6X	js-cheerio.dan	/^start <L=e#6X><\/L><I=6X>$/;"	i	line:3644	language:dantags	regex:e
+e#6Y	js-cheerio.dan	/^deleteCount <L=e#6Y><\/L><I=6Y>$/;"	i	line:3649	language:dantags	regex:e
+e#6Z	js-cheerio.dan	/^items <L=e#6Z><\/L><I=6Z>$/;"	i	line:3654	language:dantags	regex:e
+e#6a	js-cheerio.dan	/^toString() <L=e#6a><\/L><I=6a>$/;"	i	line:3310	language:dantags	regex:e
+e#6b	js-cheerio.dan	/^Type Parameters <L=e#6b><\/L><I=6b>$/;"	i	line:3317	language:dantags	regex:e
+e#6c	js-cheerio.dan	/^Parameters <L=e#6c><\/L><I=6c>$/;"	i	line:3320	language:dantags	regex:e
+e#6d	js-cheerio.dan	/^this <L=e#6d><\/L><I=6d>$/;"	i	line:3321	language:dantags	regex:e
+e#6e	js-cheerio.dan	/^Returns <L=e#6e><\/L><I=6e>$/;"	i	line:3324	language:dantags	regex:e
+e#6f	js-cheerio.dan	/^unwrap() <L=e#6f><\/L><I=6f>$/;"	i	line:3331	language:dantags	regex:e
+e#6g	js-cheerio.dan	/^Type Parameters <L=e#6g><\/L><I=6g>$/;"	i	line:3339	language:dantags	regex:e
+e#6h	js-cheerio.dan	/^Parameters <L=e#6h><\/L><I=6h>$/;"	i	line:3342	language:dantags	regex:e
+e#6i	js-cheerio.dan	/^this <L=e#6i><\/L><I=6i>$/;"	i	line:3343	language:dantags	regex:e
+e#6j	js-cheerio.dan	/^selector? <L=e#6j><\/L><I=6j>$/;"	i	line:3346	language:dantags	regex:e
+e#6k	js-cheerio.dan	/^Returns <L=e#6k><\/L><I=6k>$/;"	i	line:3352	language:dantags	regex:e
+e#6l	js-cheerio.dan	/^Examples <L=e#6l><\/L><I=6l>$/;"	i	line:3357	language:dantags	regex:e
+e#6m	js-cheerio.dan	/^See <L=e#6m><\/L><I=6m>$/;"	i	line:3386	language:dantags	regex:e
+e#6n	js-cheerio.dan	/^wrap() <L=e#6n><\/L><I=6n>$/;"	i	line:3391	language:dantags	regex:e
+e#6o	js-cheerio.dan	/^Type Parameters <L=e#6o><\/L><I=6o>$/;"	i	line:3401	language:dantags	regex:e
+e#6p	js-cheerio.dan	/^Parameters <L=e#6p><\/L><I=6p>$/;"	i	line:3404	language:dantags	regex:e
+e#6q	js-cheerio.dan	/^this <L=e#6q><\/L><I=6q>$/;"	i	line:3405	language:dantags	regex:e
+e#6r	js-cheerio.dan	/^wrapper <L=e#6r><\/L><I=6r>$/;"	i	line:3408	language:dantags	regex:e
+e#6s	js-cheerio.dan	/^Returns <L=e#6s><\/L><I=6s>$/;"	i	line:3413	language:dantags	regex:e
+e#6t	js-cheerio.dan	/^Example <L=e#6t><\/L><I=6t>$/;"	i	line:3416	language:dantags	regex:e
+e#6u	js-cheerio.dan	/^See <L=e#6u><\/L><I=6u>$/;"	i	line:3447	language:dantags	regex:e
+e#6v	js-cheerio.dan	/^wrapAll() <L=e#6v><\/L><I=6v>$/;"	i	line:3452	language:dantags	regex:e
+e#6w	js-cheerio.dan	/^Type Parameters <L=e#6w><\/L><I=6w>$/;"	i	line:3462	language:dantags	regex:e
+e#6x	js-cheerio.dan	/^Parameters <L=e#6x><\/L><I=6x>$/;"	i	line:3465	language:dantags	regex:e
+e#6y	js-cheerio.dan	/^this <L=e#6y><\/L><I=6y>$/;"	i	line:3466	language:dantags	regex:e
+e#6z	js-cheerio.dan	/^wrapper <L=e#6z><\/L><I=6z>$/;"	i	line:3469	language:dantags	regex:e
+e#7	js-cheerio.dan	/^Attributes <L=e#7><\/L><I=7>$/;"	i	line:1574	language:dantags	regex:e
+e#70	js-cheerio.dan	/^Returns <L=e#70><\/L><I=70>$/;"	i	line:3659	language:dantags	regex:e
+e#71	js-cheerio.dan	/^[iterator]() <L=e#71><\/L><I=71>$/;"	i	line:3666	language:dantags	regex:e
+e#72	js-cheerio.dan	/^Returns <L=e#72><\/L><I=72>$/;"	i	line:3671	language:dantags	regex:e
+e#73	js-cheerio.dan	/^extract() <L=e#73><\/L><I=73>$/;"	i	line:3676	language:dantags	regex:e
+e#74	js-cheerio.dan	/^Type Parameters <L=e#74><\/L><I=74>$/;"	i	line:3683	language:dantags	regex:e
+e#75	js-cheerio.dan	/^Parameters <L=e#75><\/L><I=75>$/;"	i	line:3688	language:dantags	regex:e
+e#76	js-cheerio.dan	/^this <L=e#76><\/L><I=76>$/;"	i	line:3689	language:dantags	regex:e
+e#77	js-cheerio.dan	/^map <L=e#77><\/L><I=77>$/;"	i	line:3692	language:dantags	regex:e
+e#78	js-cheerio.dan	/^Returns <L=e#78><\/L><I=78>$/;"	i	line:3698	language:dantags	regex:e
+e#79	js-cheerio.dan	/^filterArray() <L=e#79><\/L><I=79>$/;"	i	line:3705	language:dantags	regex:e
+e#7A	js-cheerio.dan	/^Parameters <L=e#7A><\/L><I=7A>$/;"	i	line:3805	language:dantags	regex:e
+e#7B	js-cheerio.dan	/^this <L=e#7B><\/L><I=7B>$/;"	i	line:3806	language:dantags	regex:e
+e#7C	js-cheerio.dan	/^other <L=e#7C><\/L><I=7C>$/;"	i	line:3809	language:dantags	regex:e
+e#7D	js-cheerio.dan	/^context? <L=e#7D><\/L><I=7D>$/;"	i	line:3814	language:dantags	regex:e
+e#7E	js-cheerio.dan	/^Returns <L=e#7E><\/L><I=7E>$/;"	i	line:3819	language:dantags	regex:e
+e#7F	js-cheerio.dan	/^Example <L=e#7F><\/L><I=7F>$/;"	i	line:3824	language:dantags	regex:e
+e#7G	js-cheerio.dan	/^See <L=e#7G><\/L><I=7G>$/;"	i	line:3832	language:dantags	regex:e
+e#7H	js-cheerio.dan	/^addBack() <L=e#7H><\/L><I=7H>$/;"	i	line:3837	language:dantags	regex:e
+e#7I	js-cheerio.dan	/^Type Parameters <L=e#7I><\/L><I=7I>$/;"	i	line:3844	language:dantags	regex:e
+e#7J	js-cheerio.dan	/^Parameters <L=e#7J><\/L><I=7J>$/;"	i	line:3847	language:dantags	regex:e
+e#7K	js-cheerio.dan	/^this <L=e#7K><\/L><I=7K>$/;"	i	line:3848	language:dantags	regex:e
+e#7L	js-cheerio.dan	/^selector? <L=e#7L><\/L><I=7L>$/;"	i	line:3851	language:dantags	regex:e
+e#7M	js-cheerio.dan	/^Returns <L=e#7M><\/L><I=7M>$/;"	i	line:3856	language:dantags	regex:e
+e#7N	js-cheerio.dan	/^Example <L=e#7N><\/L><I=7N>$/;"	i	line:3861	language:dantags	regex:e
+e#7O	js-cheerio.dan	/^See <L=e#7O><\/L><I=7O>$/;"	i	line:3869	language:dantags	regex:e
+e#7P	js-cheerio.dan	/^children() <L=e#7P><\/L><I=7P>$/;"	i	line:3874	language:dantags	regex:e
+e#7Q	js-cheerio.dan	/^Type Parameters <L=e#7Q><\/L><I=7Q>$/;"	i	line:3881	language:dantags	regex:e
+e#7R	js-cheerio.dan	/^Parameters <L=e#7R><\/L><I=7R>$/;"	i	line:3884	language:dantags	regex:e
+e#7S	js-cheerio.dan	/^this <L=e#7S><\/L><I=7S>$/;"	i	line:3885	language:dantags	regex:e
+e#7T	js-cheerio.dan	/^selector? <L=e#7T><\/L><I=7T>$/;"	i	line:3888	language:dantags	regex:e
+e#7U	js-cheerio.dan	/^Returns <L=e#7U><\/L><I=7U>$/;"	i	line:3893	language:dantags	regex:e
+e#7V	js-cheerio.dan	/^Example <L=e#7V><\/L><I=7V>$/;"	i	line:3898	language:dantags	regex:e
+e#7W	js-cheerio.dan	/^See <L=e#7W><\/L><I=7W>$/;"	i	line:3909	language:dantags	regex:e
+e#7X	js-cheerio.dan	/^closest() <L=e#7X><\/L><I=7X>$/;"	i	line:3914	language:dantags	regex:e
+e#7Y	js-cheerio.dan	/^Type Parameters <L=e#7Y><\/L><I=7Y>$/;"	i	line:3922	language:dantags	regex:e
+e#7Z	js-cheerio.dan	/^Parameters <L=e#7Z><\/L><I=7Z>$/;"	i	line:3925	language:dantags	regex:e
+e#7a	js-cheerio.dan	/^Type Parameters <L=e#7a><\/L><I=7a>$/;"	i	line:3710	language:dantags	regex:e
+e#7b	js-cheerio.dan	/^Parameters <L=e#7b><\/L><I=7b>$/;"	i	line:3713	language:dantags	regex:e
+e#7c	js-cheerio.dan	/^nodes <L=e#7c><\/L><I=7c>$/;"	i	line:3714	language:dantags	regex:e
+e#7d	js-cheerio.dan	/^match <L=e#7d><\/L><I=7d>$/;"	i	line:3717	language:dantags	regex:e
+e#7e	js-cheerio.dan	/^xmlMode? <L=e#7e><\/L><I=7e>$/;"	i	line:3720	language:dantags	regex:e
+e#7f	js-cheerio.dan	/^root? <L=e#7f><\/L><I=7f>$/;"	i	line:3723	language:dantags	regex:e
+e#7g	js-cheerio.dan	/^Returns <L=e#7g><\/L><I=7g>$/;"	i	line:3726	language:dantags	regex:e
+e#7h	js-cheerio.dan	/^foo() <L=e#7h><\/L><I=7h>$/;"	i	line:3731	language:dantags	regex:e
+e#7i	js-cheerio.dan	/^Parameters <L=e#7i><\/L><I=7i>$/;"	i	line:3736	language:dantags	regex:e
+e#7j	js-cheerio.dan	/^this <L=e#7j><\/L><I=7j>$/;"	i	line:3737	language:dantags	regex:e
+e#7k	js-cheerio.dan	/^Returns <L=e#7k><\/L><I=7k>$/;"	i	line:3740	language:dantags	regex:e
+e#7l	js-cheerio.dan	/^myPlugin() <L=e#7l><\/L><I=7l>$/;"	i	line:3745	language:dantags	regex:e
+e#7m	js-cheerio.dan	/^Parameters <L=e#7m><\/L><I=7m>$/;"	i	line:3750	language:dantags	regex:e
+e#7n	js-cheerio.dan	/^args <L=e#7n><\/L><I=7n>$/;"	i	line:3751	language:dantags	regex:e
+e#7o	js-cheerio.dan	/^Returns <L=e#7o><\/L><I=7o>$/;"	i	line:3754	language:dantags	regex:e
+e#7p	js-cheerio.dan	/^args <L=e#7p><\/L><I=7p>$/;"	i	line:3757	language:dantags	regex:e
+e#7q	js-cheerio.dan	/^context <L=e#7q><\/L><I=7q>$/;"	i	line:3760	language:dantags	regex:e
+e#7r	js-cheerio.dan	/^toArray() <L=e#7r><\/L><I=7r>$/;"	i	line:3765	language:dantags	regex:e
+e#7s	js-cheerio.dan	/^Type Parameters <L=e#7s><\/L><I=7s>$/;"	i	line:3772	language:dantags	regex:e
+e#7t	js-cheerio.dan	/^Parameters <L=e#7t><\/L><I=7t>$/;"	i	line:3775	language:dantags	regex:e
+e#7u	js-cheerio.dan	/^this <L=e#7u><\/L><I=7u>$/;"	i	line:3776	language:dantags	regex:e
+e#7v	js-cheerio.dan	/^Returns <L=e#7v><\/L><I=7v>$/;"	i	line:3779	language:dantags	regex:e
+e#7w	js-cheerio.dan	/^Example <L=e#7w><\/L><I=7w>$/;"	i	line:3784	language:dantags	regex:e
+e#7x	js-cheerio.dan	/^Traversing <L=e#7x><\/L><I=7x>$/;"	i	line:3792	language:dantags	regex:e
+e#7y	js-cheerio.dan	/^add() <L=e#7y><\/L><I=7y>$/;"	i	line:3793	language:dantags	regex:e
+e#7z	js-cheerio.dan	/^Type Parameters <L=e#7z><\/L><I=7z>$/;"	i	line:3800	language:dantags	regex:e
+e#8	js-cheerio.dan	/^addClass() <L=e#8><\/L><I=8>$/;"	i	line:1575	language:dantags	regex:e
+e#80	js-cheerio.dan	/^this <L=e#80><\/L><I=80>$/;"	i	line:3926	language:dantags	regex:e
+e#81	js-cheerio.dan	/^selector? <L=e#81><\/L><I=81>$/;"	i	line:3929	language:dantags	regex:e
+e#82	js-cheerio.dan	/^Returns <L=e#82><\/L><I=82>$/;"	i	line:3934	language:dantags	regex:e
+e#83	js-cheerio.dan	/^Example <L=e#83><\/L><I=83>$/;"	i	line:3939	language:dantags	regex:e
+e#84	js-cheerio.dan	/^See <L=e#84><\/L><I=84>$/;"	i	line:3956	language:dantags	regex:e
+e#85	js-cheerio.dan	/^contents() <L=e#85><\/L><I=85>$/;"	i	line:3961	language:dantags	regex:e
+e#86	js-cheerio.dan	/^Type Parameters <L=e#86><\/L><I=86>$/;"	i	line:3968	language:dantags	regex:e
+e#87	js-cheerio.dan	/^Parameters <L=e#87><\/L><I=87>$/;"	i	line:3971	language:dantags	regex:e
+e#88	js-cheerio.dan	/^this <L=e#88><\/L><I=88>$/;"	i	line:3972	language:dantags	regex:e
+e#89	js-cheerio.dan	/^Returns <L=e#89><\/L><I=89>$/;"	i	line:3975	language:dantags	regex:e
+e#8A	js-cheerio.dan	/^Call Signature <L=e#8A><\/L><I=8A>$/;"	i	line:4114	language:dantags	regex:e
+e#8B	js-cheerio.dan	/^Type Parameters <L=e#8B><\/L><I=8B>$/;"	i	line:4125	language:dantags	regex:e
+e#8C	js-cheerio.dan	/^Parameters <L=e#8C><\/L><I=8C>$/;"	i	line:4130	language:dantags	regex:e
+e#8D	js-cheerio.dan	/^this <L=e#8D><\/L><I=8D>$/;"	i	line:4131	language:dantags	regex:e
+e#8E	js-cheerio.dan	/^match <L=e#8E><\/L><I=8E>$/;"	i	line:4134	language:dantags	regex:e
+e#8F	js-cheerio.dan	/^Returns <L=e#8F><\/L><I=8F>$/;"	i	line:4139	language:dantags	regex:e
+e#8G	js-cheerio.dan	/^Example <L=e#8G><\/L><I=8G>$/;"	i	line:4144	language:dantags	regex:e
+e#8H	js-cheerio.dan	/^See <L=e#8H><\/L><I=8H>$/;"	i	line:4156	language:dantags	regex:e
+e#8I	js-cheerio.dan	/^Call Signature <L=e#8I><\/L><I=8I>$/;"	i	line:4159	language:dantags	regex:e
+e#8J	js-cheerio.dan	/^Type Parameters <L=e#8J><\/L><I=8J>$/;"	i	line:4173	language:dantags	regex:e
+e#8K	js-cheerio.dan	/^Parameters <L=e#8K><\/L><I=8K>$/;"	i	line:4178	language:dantags	regex:e
+e#8L	js-cheerio.dan	/^this <L=e#8L><\/L><I=8L>$/;"	i	line:4179	language:dantags	regex:e
+e#8M	js-cheerio.dan	/^match <L=e#8M><\/L><I=8M>$/;"	i	line:4182	language:dantags	regex:e
+e#8N	js-cheerio.dan	/^Returns <L=e#8N><\/L><I=8N>$/;"	i	line:4187	language:dantags	regex:e
+e#8O	js-cheerio.dan	/^Examples <L=e#8O><\/L><I=8O>$/;"	i	line:4192	language:dantags	regex:e
+e#8P	js-cheerio.dan	/^See <L=e#8P><\/L><I=8P>$/;"	i	line:4211	language:dantags	regex:e
+e#8Q	js-cheerio.dan	/^find() <L=e#8Q><\/L><I=8Q>$/;"	i	line:4216	language:dantags	regex:e
+e#8R	js-cheerio.dan	/^Type Parameters <L=e#8R><\/L><I=8R>$/;"	i	line:4224	language:dantags	regex:e
+e#8S	js-cheerio.dan	/^Parameters <L=e#8S><\/L><I=8S>$/;"	i	line:4227	language:dantags	regex:e
+e#8T	js-cheerio.dan	/^this <L=e#8T><\/L><I=8T>$/;"	i	line:4228	language:dantags	regex:e
+e#8U	js-cheerio.dan	/^selectorOrHaystack? <L=e#8U><\/L><I=8U>$/;"	i	line:4231	language:dantags	regex:e
+e#8V	js-cheerio.dan	/^Returns <L=e#8V><\/L><I=8V>$/;"	i	line:4236	language:dantags	regex:e
+e#8W	js-cheerio.dan	/^Example <L=e#8W><\/L><I=8W>$/;"	i	line:4241	language:dantags	regex:e
+e#8X	js-cheerio.dan	/^See <L=e#8X><\/L><I=8X>$/;"	i	line:4251	language:dantags	regex:e
+e#8Y	js-cheerio.dan	/^first() <L=e#8Y><\/L><I=8Y>$/;"	i	line:4256	language:dantags	regex:e
+e#8Z	js-cheerio.dan	/^Type Parameters <L=e#8Z><\/L><I=8Z>$/;"	i	line:4263	language:dantags	regex:e
+e#8a	js-cheerio.dan	/^Example <L=e#8a><\/L><I=8a>$/;"	i	line:3980	language:dantags	regex:e
+e#8b	js-cheerio.dan	/^See <L=e#8b><\/L><I=8b>$/;"	i	line:3988	language:dantags	regex:e
+e#8c	js-cheerio.dan	/^each() <L=e#8c><\/L><I=8c>$/;"	i	line:3993	language:dantags	regex:e
+e#8d	js-cheerio.dan	/^Type Parameters <L=e#8d><\/L><I=8d>$/;"	i	line:4003	language:dantags	regex:e
+e#8e	js-cheerio.dan	/^Parameters <L=e#8e><\/L><I=8e>$/;"	i	line:4006	language:dantags	regex:e
+e#8f	js-cheerio.dan	/^this <L=e#8f><\/L><I=8f>$/;"	i	line:4007	language:dantags	regex:e
+e#8g	js-cheerio.dan	/^fn <L=e#8g><\/L><I=8g>$/;"	i	line:4010	language:dantags	regex:e
+e#8h	js-cheerio.dan	/^Returns <L=e#8h><\/L><I=8h>$/;"	i	line:4015	language:dantags	regex:e
+e#8i	js-cheerio.dan	/^Example <L=e#8i><\/L><I=8i>$/;"	i	line:4020	language:dantags	regex:e
+e#8j	js-cheerio.dan	/^See <L=e#8j><\/L><I=8j>$/;"	i	line:4034	language:dantags	regex:e
+e#8k	js-cheerio.dan	/^end() <L=e#8k><\/L><I=8k>$/;"	i	line:4039	language:dantags	regex:e
+e#8l	js-cheerio.dan	/^Type Parameters <L=e#8l><\/L><I=8l>$/;"	i	line:4047	language:dantags	regex:e
+e#8m	js-cheerio.dan	/^Parameters <L=e#8m><\/L><I=8m>$/;"	i	line:4050	language:dantags	regex:e
+e#8n	js-cheerio.dan	/^this <L=e#8n><\/L><I=8n>$/;"	i	line:4051	language:dantags	regex:e
+e#8o	js-cheerio.dan	/^Returns <L=e#8o><\/L><I=8o>$/;"	i	line:4054	language:dantags	regex:e
+e#8p	js-cheerio.dan	/^Example <L=e#8p><\/L><I=8p>$/;"	i	line:4059	language:dantags	regex:e
+e#8q	js-cheerio.dan	/^See <L=e#8q><\/L><I=8q>$/;"	i	line:4067	language:dantags	regex:e
+e#8r	js-cheerio.dan	/^eq() <L=e#8r><\/L><I=8r>$/;"	i	line:4072	language:dantags	regex:e
+e#8s	js-cheerio.dan	/^Type Parameters <L=e#8s><\/L><I=8s>$/;"	i	line:4080	language:dantags	regex:e
+e#8t	js-cheerio.dan	/^Parameters <L=e#8t><\/L><I=8t>$/;"	i	line:4083	language:dantags	regex:e
+e#8u	js-cheerio.dan	/^this <L=e#8u><\/L><I=8u>$/;"	i	line:4084	language:dantags	regex:e
+e#8v	js-cheerio.dan	/^i <L=e#8v><\/L><I=8v>$/;"	i	line:4087	language:dantags	regex:e
+e#8w	js-cheerio.dan	/^Returns <L=e#8w><\/L><I=8w>$/;"	i	line:4092	language:dantags	regex:e
+e#8x	js-cheerio.dan	/^Example <L=e#8x><\/L><I=8x>$/;"	i	line:4097	language:dantags	regex:e
+e#8y	js-cheerio.dan	/^See <L=e#8y><\/L><I=8y>$/;"	i	line:4108	language:dantags	regex:e
+e#8z	js-cheerio.dan	/^filter() <L=e#8z><\/L><I=8z>$/;"	i	line:4113	language:dantags	regex:e
+e#9	js-cheerio.dan	/^Type Parameters <L=e#9><\/L><I=9>$/;"	i	line:1582	language:dantags	regex:e
+e#90	js-cheerio.dan	/^Parameters <L=e#90><\/L><I=90>$/;"	i	line:4266	language:dantags	regex:e
+e#91	js-cheerio.dan	/^this <L=e#91><\/L><I=91>$/;"	i	line:4267	language:dantags	regex:e
+e#92	js-cheerio.dan	/^Returns <L=e#92><\/L><I=92>$/;"	i	line:4270	language:dantags	regex:e
+e#93	js-cheerio.dan	/^Example <L=e#93><\/L><I=93>$/;"	i	line:4275	language:dantags	regex:e
+e#94	js-cheerio.dan	/^See <L=e#94><\/L><I=94>$/;"	i	line:4283	language:dantags	regex:e
+e#95	js-cheerio.dan	/^get() <L=e#95><\/L><I=95>$/;"	i	line:4288	language:dantags	regex:e
+e#96	js-cheerio.dan	/^Call Signature <L=e#96><\/L><I=96>$/;"	i	line:4289	language:dantags	regex:e
+e#97	js-cheerio.dan	/^Type Parameters <L=e#97><\/L><I=97>$/;"	i	line:4296	language:dantags	regex:e
+e#98	js-cheerio.dan	/^Parameters <L=e#98><\/L><I=98>$/;"	i	line:4299	language:dantags	regex:e
+e#99	js-cheerio.dan	/^this <L=e#99><\/L><I=99>$/;"	i	line:4300	language:dantags	regex:e
+e#9A	js-cheerio.dan	/^is() <L=e#9A><\/L><I=9A>$/;"	i	line:4438	language:dantags	regex:e
+e#9B	js-cheerio.dan	/^Type Parameters <L=e#9B><\/L><I=9B>$/;"	i	line:4448	language:dantags	regex:e
+e#9C	js-cheerio.dan	/^Parameters <L=e#9C><\/L><I=9C>$/;"	i	line:4451	language:dantags	regex:e
+e#9D	js-cheerio.dan	/^this <L=e#9D><\/L><I=9D>$/;"	i	line:4452	language:dantags	regex:e
+e#9E	js-cheerio.dan	/^selector? <L=e#9E><\/L><I=9E>$/;"	i	line:4455	language:dantags	regex:e
+e#9F	js-cheerio.dan	/^Returns <L=e#9F><\/L><I=9F>$/;"	i	line:4460	language:dantags	regex:e
+e#9G	js-cheerio.dan	/^See <L=e#9G><\/L><I=9G>$/;"	i	line:4465	language:dantags	regex:e
+e#9H	js-cheerio.dan	/^last() <L=e#9H><\/L><I=9H>$/;"	i	line:4470	language:dantags	regex:e
+e#9I	js-cheerio.dan	/^Type Parameters <L=e#9I><\/L><I=9I>$/;"	i	line:4477	language:dantags	regex:e
+e#9J	js-cheerio.dan	/^Parameters <L=e#9J><\/L><I=9J>$/;"	i	line:4480	language:dantags	regex:e
+e#9K	js-cheerio.dan	/^this <L=e#9K><\/L><I=9K>$/;"	i	line:4481	language:dantags	regex:e
+e#9L	js-cheerio.dan	/^Returns <L=e#9L><\/L><I=9L>$/;"	i	line:4484	language:dantags	regex:e
+e#9M	js-cheerio.dan	/^Example <L=e#9M><\/L><I=9M>$/;"	i	line:4489	language:dantags	regex:e
+e#9N	js-cheerio.dan	/^See <L=e#9N><\/L><I=9N>$/;"	i	line:4497	language:dantags	regex:e
+e#9O	js-cheerio.dan	/^map() <L=e#9O><\/L><I=9O>$/;"	i	line:4502	language:dantags	regex:e
+e#9P	js-cheerio.dan	/^Type Parameters <L=e#9P><\/L><I=9P>$/;"	i	line:4512	language:dantags	regex:e
+e#9Q	js-cheerio.dan	/^Parameters <L=e#9Q><\/L><I=9Q>$/;"	i	line:4517	language:dantags	regex:e
+e#9R	js-cheerio.dan	/^this <L=e#9R><\/L><I=9R>$/;"	i	line:4518	language:dantags	regex:e
+e#9S	js-cheerio.dan	/^fn <L=e#9S><\/L><I=9S>$/;"	i	line:4521	language:dantags	regex:e
+e#9T	js-cheerio.dan	/^Returns <L=e#9T><\/L><I=9T>$/;"	i	line:4526	language:dantags	regex:e
+e#9U	js-cheerio.dan	/^Example <L=e#9U><\/L><I=9U>$/;"	i	line:4531	language:dantags	regex:e
+e#9V	js-cheerio.dan	/^See <L=e#9V><\/L><I=9V>$/;"	i	line:4545	language:dantags	regex:e
+e#9W	js-cheerio.dan	/^next() <L=e#9W><\/L><I=9W>$/;"	i	line:4550	language:dantags	regex:e
+e#9X	js-cheerio.dan	/^Type Parameters <L=e#9X><\/L><I=9X>$/;"	i	line:4557	language:dantags	regex:e
+e#9Y	js-cheerio.dan	/^Parameters <L=e#9Y><\/L><I=9Y>$/;"	i	line:4560	language:dantags	regex:e
+e#9Z	js-cheerio.dan	/^this <L=e#9Z><\/L><I=9Z>$/;"	i	line:4561	language:dantags	regex:e
+e#9a	js-cheerio.dan	/^i <L=e#9a><\/L><I=9a>$/;"	i	line:4303	language:dantags	regex:e
+e#9b	js-cheerio.dan	/^Returns <L=e#9b><\/L><I=9b>$/;"	i	line:4308	language:dantags	regex:e
+e#9c	js-cheerio.dan	/^Example <L=e#9c><\/L><I=9c>$/;"	i	line:4313	language:dantags	regex:e
+e#9d	js-cheerio.dan	/^See <L=e#9d><\/L><I=9d>$/;"	i	line:4321	language:dantags	regex:e
+e#9e	js-cheerio.dan	/^Call Signature <L=e#9e><\/L><I=9e>$/;"	i	line:4324	language:dantags	regex:e
+e#9f	js-cheerio.dan	/^Type Parameters <L=e#9f><\/L><I=9f>$/;"	i	line:4331	language:dantags	regex:e
+e#9g	js-cheerio.dan	/^Parameters <L=e#9g><\/L><I=9g>$/;"	i	line:4334	language:dantags	regex:e
+e#9h	js-cheerio.dan	/^this <L=e#9h><\/L><I=9h>$/;"	i	line:4335	language:dantags	regex:e
+e#9i	js-cheerio.dan	/^Returns <L=e#9i><\/L><I=9i>$/;"	i	line:4338	language:dantags	regex:e
+e#9j	js-cheerio.dan	/^Example <L=e#9j><\/L><I=9j>$/;"	i	line:4343	language:dantags	regex:e
+e#9k	js-cheerio.dan	/^See <L=e#9k><\/L><I=9k>$/;"	i	line:4351	language:dantags	regex:e
+e#9l	js-cheerio.dan	/^has() <L=e#9l><\/L><I=9l>$/;"	i	line:4356	language:dantags	regex:e
+e#9m	js-cheerio.dan	/^Parameters <L=e#9m><\/L><I=9m>$/;"	i	line:4364	language:dantags	regex:e
+e#9n	js-cheerio.dan	/^this <L=e#9n><\/L><I=9n>$/;"	i	line:4365	language:dantags	regex:e
+e#9o	js-cheerio.dan	/^selectorOrHaystack <L=e#9o><\/L><I=9o>$/;"	i	line:4368	language:dantags	regex:e
+e#9p	js-cheerio.dan	/^Returns <L=e#9p><\/L><I=9p>$/;"	i	line:4373	language:dantags	regex:e
+e#9q	js-cheerio.dan	/^Examples <L=e#9q><\/L><I=9q>$/;"	i	line:4378	language:dantags	regex:e
+e#9r	js-cheerio.dan	/^See <L=e#9r><\/L><I=9r>$/;"	i	line:4393	language:dantags	regex:e
+e#9s	js-cheerio.dan	/^index() <L=e#9s><\/L><I=9s>$/;"	i	line:4398	language:dantags	regex:e
+e#9t	js-cheerio.dan	/^Type Parameters <L=e#9t><\/L><I=9t>$/;"	i	line:4405	language:dantags	regex:e
+e#9u	js-cheerio.dan	/^Parameters <L=e#9u><\/L><I=9u>$/;"	i	line:4408	language:dantags	regex:e
+e#9v	js-cheerio.dan	/^this <L=e#9v><\/L><I=9v>$/;"	i	line:4409	language:dantags	regex:e
+e#9w	js-cheerio.dan	/^selectorOrNeedle? <L=e#9w><\/L><I=9w>$/;"	i	line:4412	language:dantags	regex:e
+e#9x	js-cheerio.dan	/^Returns <L=e#9x><\/L><I=9x>$/;"	i	line:4417	language:dantags	regex:e
+e#9y	js-cheerio.dan	/^Example <L=e#9y><\/L><I=9y>$/;"	i	line:4422	language:dantags	regex:e
+e#9z	js-cheerio.dan	/^See <L=e#9z><\/L><I=9z>$/;"	i	line:4433	language:dantags	regex:e
+e#A	js-cheerio.dan	/^name <L=e#A><\/L><I=A>$/;"	i	line:1699	language:dantags	regex:e
+e#B	js-cheerio.dan	/^value? <L=e#B><\/L><I=B>$/;"	i	line:1704	language:dantags	regex:e
+e#C	js-cheerio.dan	/^Returns <L=e#C><\/L><I=C>$/;"	i	line:1709	language:dantags	regex:e
+e#D	js-cheerio.dan	/^Example <L=e#D><\/L><I=D>$/;"	i	line:1714	language:dantags	regex:e
+e#E	js-cheerio.dan	/^See <L=e#E><\/L><I=E>$/;"	i	line:1722	language:dantags	regex:e
+e#F	js-cheerio.dan	/^Call Signature <L=e#F><\/L><I=F>$/;"	i	line:1725	language:dantags	regex:e
+e#G	js-cheerio.dan	/^Type Parameters <L=e#G><\/L><I=G>$/;"	i	line:1733	language:dantags	regex:e
+e#H	js-cheerio.dan	/^Parameters <L=e#H><\/L><I=H>$/;"	i	line:1736	language:dantags	regex:e
+e#I	js-cheerio.dan	/^this <L=e#I><\/L><I=I>$/;"	i	line:1737	language:dantags	regex:e
+e#J	js-cheerio.dan	/^values <L=e#J><\/L><I=J>$/;"	i	line:1740	language:dantags	regex:e
+e#K	js-cheerio.dan	/^Returns <L=e#K><\/L><I=K>$/;"	i	line:1745	language:dantags	regex:e
+e#L	js-cheerio.dan	/^Example <L=e#L><\/L><I=L>$/;"	i	line:1750	language:dantags	regex:e
+e#M	js-cheerio.dan	/^See <L=e#M><\/L><I=M>$/;"	i	line:1758	language:dantags	regex:e
+e#N	js-cheerio.dan	/^data() <L=e#N><\/L><I=N>$/;"	i	line:1763	language:dantags	regex:e
+e#O	js-cheerio.dan	/^Call Signature <L=e#O><\/L><I=O>$/;"	i	line:1764	language:dantags	regex:e
+e#P	js-cheerio.dan	/^Type Parameters <L=e#P><\/L><I=P>$/;"	i	line:1771	language:dantags	regex:e
+e#Q	js-cheerio.dan	/^Parameters <L=e#Q><\/L><I=Q>$/;"	i	line:1774	language:dantags	regex:e
+e#R	js-cheerio.dan	/^this <L=e#R><\/L><I=R>$/;"	i	line:1775	language:dantags	regex:e
+e#S	js-cheerio.dan	/^name <L=e#S><\/L><I=S>$/;"	i	line:1778	language:dantags	regex:e
+e#T	js-cheerio.dan	/^Returns <L=e#T><\/L><I=T>$/;"	i	line:1783	language:dantags	regex:e
+e#U	js-cheerio.dan	/^Example <L=e#U><\/L><I=U>$/;"	i	line:1788	language:dantags	regex:e
+e#V	js-cheerio.dan	/^See <L=e#V><\/L><I=V>$/;"	i	line:1796	language:dantags	regex:e
+e#W	js-cheerio.dan	/^Call Signature <L=e#W><\/L><I=W>$/;"	i	line:1799	language:dantags	regex:e
+e#X	js-cheerio.dan	/^Type Parameters <L=e#X><\/L><I=X>$/;"	i	line:1806	language:dantags	regex:e
+e#Y	js-cheerio.dan	/^Parameters <L=e#Y><\/L><I=Y>$/;"	i	line:1809	language:dantags	regex:e
+e#Z	js-cheerio.dan	/^this <L=e#Z><\/L><I=Z>$/;"	i	line:1810	language:dantags	regex:e
+e#a	js-cheerio.dan	/^Parameters <L=e#a><\/L><I=a>$/;"	i	line:1587	language:dantags	regex:e
+e#a0	js-cheerio.dan	/^selector? <L=e#a0><\/L><I=a0>$/;"	i	line:4564	language:dantags	regex:e
+e#a1	js-cheerio.dan	/^Returns <L=e#a1><\/L><I=a1>$/;"	i	line:4569	language:dantags	regex:e
+e#a2	js-cheerio.dan	/^Example <L=e#a2><\/L><I=a2>$/;"	i	line:4574	language:dantags	regex:e
+e#a3	js-cheerio.dan	/^See <L=e#a3><\/L><I=a3>$/;"	i	line:4582	language:dantags	regex:e
+e#a4	js-cheerio.dan	/^nextAll() <L=e#a4><\/L><I=a4>$/;"	i	line:4587	language:dantags	regex:e
+e#a5	js-cheerio.dan	/^Type Parameters <L=e#a5><\/L><I=a5>$/;"	i	line:4594	language:dantags	regex:e
+e#a6	js-cheerio.dan	/^Parameters <L=e#a6><\/L><I=a6>$/;"	i	line:4597	language:dantags	regex:e
+e#a7	js-cheerio.dan	/^this <L=e#a7><\/L><I=a7>$/;"	i	line:4598	language:dantags	regex:e
+e#a8	js-cheerio.dan	/^selector? <L=e#a8><\/L><I=a8>$/;"	i	line:4601	language:dantags	regex:e
+e#a9	js-cheerio.dan	/^Returns <L=e#a9><\/L><I=a9>$/;"	i	line:4606	language:dantags	regex:e
+e#aA	js-cheerio.dan	/^See <L=e#aA><\/L><I=aA>$/;"	i	line:4754	language:dantags	regex:e
+e#aB	js-cheerio.dan	/^parents() <L=e#aB><\/L><I=aB>$/;"	i	line:4759	language:dantags	regex:e
+e#aC	js-cheerio.dan	/^Type Parameters <L=e#aC><\/L><I=aC>$/;"	i	line:4766	language:dantags	regex:e
+e#aD	js-cheerio.dan	/^Parameters <L=e#aD><\/L><I=aD>$/;"	i	line:4769	language:dantags	regex:e
+e#aE	js-cheerio.dan	/^this <L=e#aE><\/L><I=aE>$/;"	i	line:4770	language:dantags	regex:e
+e#aF	js-cheerio.dan	/^selector? <L=e#aF><\/L><I=aF>$/;"	i	line:4773	language:dantags	regex:e
+e#aG	js-cheerio.dan	/^Returns <L=e#aG><\/L><I=aG>$/;"	i	line:4778	language:dantags	regex:e
+e#aH	js-cheerio.dan	/^Example <L=e#aH><\/L><I=aH>$/;"	i	line:4783	language:dantags	regex:e
+e#aI	js-cheerio.dan	/^See <L=e#aI><\/L><I=aI>$/;"	i	line:4793	language:dantags	regex:e
+e#aJ	js-cheerio.dan	/^parentsUntil() <L=e#aJ><\/L><I=aJ>$/;"	i	line:4798	language:dantags	regex:e
+e#aK	js-cheerio.dan	/^Type Parameters <L=e#aK><\/L><I=aK>$/;"	i	line:4806	language:dantags	regex:e
+e#aL	js-cheerio.dan	/^Parameters <L=e#aL><\/L><I=aL>$/;"	i	line:4809	language:dantags	regex:e
+e#aM	js-cheerio.dan	/^this <L=e#aM><\/L><I=aM>$/;"	i	line:4810	language:dantags	regex:e
+e#aN	js-cheerio.dan	/^selector? <L=e#aN><\/L><I=aN>$/;"	i	line:4813	language:dantags	regex:e
+e#aO	js-cheerio.dan	/^filterSelector? <L=e#aO><\/L><I=aO>$/;"	i	line:4818	language:dantags	regex:e
+e#aP	js-cheerio.dan	/^Returns <L=e#aP><\/L><I=aP>$/;"	i	line:4823	language:dantags	regex:e
+e#aQ	js-cheerio.dan	/^Example <L=e#aQ><\/L><I=aQ>$/;"	i	line:4828	language:dantags	regex:e
+e#aR	js-cheerio.dan	/^See <L=e#aR><\/L><I=aR>$/;"	i	line:4836	language:dantags	regex:e
+e#aS	js-cheerio.dan	/^prev() <L=e#aS><\/L><I=aS>$/;"	i	line:4841	language:dantags	regex:e
+e#aT	js-cheerio.dan	/^Type Parameters <L=e#aT><\/L><I=aT>$/;"	i	line:4848	language:dantags	regex:e
+e#aU	js-cheerio.dan	/^Parameters <L=e#aU><\/L><I=aU>$/;"	i	line:4851	language:dantags	regex:e
+e#aV	js-cheerio.dan	/^this <L=e#aV><\/L><I=aV>$/;"	i	line:4852	language:dantags	regex:e
+e#aW	js-cheerio.dan	/^selector? <L=e#aW><\/L><I=aW>$/;"	i	line:4855	language:dantags	regex:e
+e#aX	js-cheerio.dan	/^Returns <L=e#aX><\/L><I=aX>$/;"	i	line:4860	language:dantags	regex:e
+e#aY	js-cheerio.dan	/^Example <L=e#aY><\/L><I=aY>$/;"	i	line:4865	language:dantags	regex:e
+e#aZ	js-cheerio.dan	/^See <L=e#aZ><\/L><I=aZ>$/;"	i	line:4873	language:dantags	regex:e
+e#aa	js-cheerio.dan	/^Example <L=e#aa><\/L><I=aa>$/;"	i	line:4611	language:dantags	regex:e
+e#ab	js-cheerio.dan	/^See <L=e#ab><\/L><I=ab>$/;"	i	line:4621	language:dantags	regex:e
+e#ac	js-cheerio.dan	/^nextUntil() <L=e#ac><\/L><I=ac>$/;"	i	line:4626	language:dantags	regex:e
+e#ad	js-cheerio.dan	/^Type Parameters <L=e#ad><\/L><I=ad>$/;"	i	line:4634	language:dantags	regex:e
+e#ae	js-cheerio.dan	/^Parameters <L=e#ae><\/L><I=ae>$/;"	i	line:4637	language:dantags	regex:e
+e#af	js-cheerio.dan	/^this <L=e#af><\/L><I=af>$/;"	i	line:4638	language:dantags	regex:e
+e#ag	js-cheerio.dan	/^selector? <L=e#ag><\/L><I=ag>$/;"	i	line:4641	language:dantags	regex:e
+e#ah	js-cheerio.dan	/^filterSelector? <L=e#ah><\/L><I=ah>$/;"	i	line:4646	language:dantags	regex:e
+e#ai	js-cheerio.dan	/^Returns <L=e#ai><\/L><I=ai>$/;"	i	line:4651	language:dantags	regex:e
+e#aj	js-cheerio.dan	/^Example <L=e#aj><\/L><I=aj>$/;"	i	line:4656	language:dantags	regex:e
+e#ak	js-cheerio.dan	/^See <L=e#ak><\/L><I=ak>$/;"	i	line:4664	language:dantags	regex:e
+e#al	js-cheerio.dan	/^not() <L=e#al><\/L><I=al>$/;"	i	line:4669	language:dantags	regex:e
+e#am	js-cheerio.dan	/^Type Parameters <L=e#am><\/L><I=am>$/;"	i	line:4683	language:dantags	regex:e
+e#an	js-cheerio.dan	/^Parameters <L=e#an><\/L><I=an>$/;"	i	line:4686	language:dantags	regex:e
+e#ao	js-cheerio.dan	/^this <L=e#ao><\/L><I=ao>$/;"	i	line:4687	language:dantags	regex:e
+e#ap	js-cheerio.dan	/^match <L=e#ap><\/L><I=ap>$/;"	i	line:4690	language:dantags	regex:e
+e#aq	js-cheerio.dan	/^Returns <L=e#aq><\/L><I=aq>$/;"	i	line:4695	language:dantags	regex:e
+e#ar	js-cheerio.dan	/^Examples <L=e#ar><\/L><I=ar>$/;"	i	line:4700	language:dantags	regex:e
+e#as	js-cheerio.dan	/^See <L=e#as><\/L><I=as>$/;"	i	line:4717	language:dantags	regex:e
+e#at	js-cheerio.dan	/^parent() <L=e#at><\/L><I=at>$/;"	i	line:4722	language:dantags	regex:e
+e#au	js-cheerio.dan	/^Type Parameters <L=e#au><\/L><I=au>$/;"	i	line:4729	language:dantags	regex:e
+e#av	js-cheerio.dan	/^Parameters <L=e#av><\/L><I=av>$/;"	i	line:4732	language:dantags	regex:e
+e#aw	js-cheerio.dan	/^this <L=e#aw><\/L><I=aw>$/;"	i	line:4733	language:dantags	regex:e
+e#ax	js-cheerio.dan	/^selector? <L=e#ax><\/L><I=ax>$/;"	i	line:4736	language:dantags	regex:e
+e#ay	js-cheerio.dan	/^Returns <L=e#ay><\/L><I=ay>$/;"	i	line:4741	language:dantags	regex:e
+e#az	js-cheerio.dan	/^Example <L=e#az><\/L><I=az>$/;"	i	line:4746	language:dantags	regex:e
+e#b	js-cheerio.dan	/^this <L=e#b><\/L><I=b>$/;"	i	line:1588	language:dantags	regex:e
+e#b0	js-cheerio.dan	/^prevAll() <L=e#b0><\/L><I=b0>$/;"	i	line:4878	language:dantags	regex:e
+e#b1	js-cheerio.dan	/^Type Parameters <L=e#b1><\/L><I=b1>$/;"	i	line:4885	language:dantags	regex:e
+e#b2	js-cheerio.dan	/^Parameters <L=e#b2><\/L><I=b2>$/;"	i	line:4888	language:dantags	regex:e
+e#b3	js-cheerio.dan	/^this <L=e#b3><\/L><I=b3>$/;"	i	line:4889	language:dantags	regex:e
+e#b4	js-cheerio.dan	/^selector? <L=e#b4><\/L><I=b4>$/;"	i	line:4892	language:dantags	regex:e
+e#b5	js-cheerio.dan	/^Returns <L=e#b5><\/L><I=b5>$/;"	i	line:4897	language:dantags	regex:e
+e#b6	js-cheerio.dan	/^Example <L=e#b6><\/L><I=b6>$/;"	i	line:4902	language:dantags	regex:e
+e#b7	js-cheerio.dan	/^See <L=e#b7><\/L><I=b7>$/;"	i	line:4913	language:dantags	regex:e
+e#b8	js-cheerio.dan	/^prevUntil() <L=e#b8><\/L><I=b8>$/;"	i	line:4918	language:dantags	regex:e
+e#b9	js-cheerio.dan	/^Type Parameters <L=e#b9><\/L><I=b9>$/;"	i	line:4926	language:dantags	regex:e
+e#ba	js-cheerio.dan	/^Parameters <L=e#ba><\/L><I=ba>$/;"	i	line:4929	language:dantags	regex:e
+e#bb	js-cheerio.dan	/^this <L=e#bb><\/L><I=bb>$/;"	i	line:4930	language:dantags	regex:e
+e#bc	js-cheerio.dan	/^selector? <L=e#bc><\/L><I=bc>$/;"	i	line:4933	language:dantags	regex:e
+e#bd	js-cheerio.dan	/^filterSelector? <L=e#bd><\/L><I=bd>$/;"	i	line:4938	language:dantags	regex:e
+e#be	js-cheerio.dan	/^Returns <L=e#be><\/L><I=be>$/;"	i	line:4943	language:dantags	regex:e
+e#bf	js-cheerio.dan	/^Example <L=e#bf><\/L><I=bf>$/;"	i	line:4948	language:dantags	regex:e
+e#bg	js-cheerio.dan	/^See <L=e#bg><\/L><I=bg>$/;"	i	line:4956	language:dantags	regex:e
+e#bh	js-cheerio.dan	/^siblings() <L=e#bh><\/L><I=bh>$/;"	i	line:4961	language:dantags	regex:e
+e#bi	js-cheerio.dan	/^Type Parameters <L=e#bi><\/L><I=bi>$/;"	i	line:4969	language:dantags	regex:e
+e#bj	js-cheerio.dan	/^Parameters <L=e#bj><\/L><I=bj>$/;"	i	line:4972	language:dantags	regex:e
+e#bk	js-cheerio.dan	/^this <L=e#bk><\/L><I=bk>$/;"	i	line:4973	language:dantags	regex:e
+e#bl	js-cheerio.dan	/^selector? <L=e#bl><\/L><I=bl>$/;"	i	line:4976	language:dantags	regex:e
+e#bm	js-cheerio.dan	/^Returns <L=e#bm><\/L><I=bm>$/;"	i	line:4981	language:dantags	regex:e
+e#bn	js-cheerio.dan	/^Example <L=e#bn><\/L><I=bn>$/;"	i	line:4986	language:dantags	regex:e
+e#bo	js-cheerio.dan	/^See <L=e#bo><\/L><I=bo>$/;"	i	line:4997	language:dantags	regex:e
+e#bp	js-cheerio.dan	/^slice() <L=e#bp><\/L><I=bp>$/;"	i	line:5002	language:dantags	regex:e
+e#bq	js-cheerio.dan	/^Type Parameters <L=e#bq><\/L><I=bq>$/;"	i	line:5009	language:dantags	regex:e
+e#br	js-cheerio.dan	/^Parameters <L=e#br><\/L><I=br>$/;"	i	line:5012	language:dantags	regex:e
+e#bs	js-cheerio.dan	/^this <L=e#bs><\/L><I=bs>$/;"	i	line:5013	language:dantags	regex:e
+e#bt	js-cheerio.dan	/^start? <L=e#bt><\/L><I=bt>$/;"	i	line:5016	language:dantags	regex:e
+e#bu	js-cheerio.dan	/^end? <L=e#bu><\/L><I=bu>$/;"	i	line:5022	language:dantags	regex:e
+e#bv	js-cheerio.dan	/^Returns <L=e#bv><\/L><I=bv>$/;"	i	line:5028	language:dantags	regex:e
+e#bw	js-cheerio.dan	/^Example <L=e#bw><\/L><I=bw>$/;"	i	line:5033	language:dantags	regex:e
+e#bx	js-cheerio.dan	/^See <L=e#bx><\/L><I=bx>$/;"	i	line:5044	language:dantags	regex:e
+e#c	js-cheerio.dan	/^value? <L=e#c><\/L><I=c>$/;"	i	line:1591	language:dantags	regex:e
+e#d	js-cheerio.dan	/^Returns <L=e#d><\/L><I=d>$/;"	i	line:1596	language:dantags	regex:e
+e#e	js-cheerio.dan	/^Example <L=e#e><\/L><I=e>$/;"	i	line:1601	language:dantags	regex:e
+e#f	js-cheerio.dan	/^See <L=e#f><\/L><I=f>$/;"	i	line:1612	language:dantags	regex:e
+e#g	js-cheerio.dan	/^attr() <L=e#g><\/L><I=g>$/;"	i	line:1617	language:dantags	regex:e
+e#h	js-cheerio.dan	/^Call Signature <L=e#h><\/L><I=h>$/;"	i	line:1618	language:dantags	regex:e
+e#i	js-cheerio.dan	/^Type Parameters <L=e#i><\/L><I=i>$/;"	i	line:1625	language:dantags	regex:e
+e#j	js-cheerio.dan	/^Parameters <L=e#j><\/L><I=j>$/;"	i	line:1628	language:dantags	regex:e
+e#k	js-cheerio.dan	/^this <L=e#k><\/L><I=k>$/;"	i	line:1629	language:dantags	regex:e
+e#l	js-cheerio.dan	/^name <L=e#l><\/L><I=l>$/;"	i	line:1632	language:dantags	regex:e
+e#m	js-cheerio.dan	/^Returns <L=e#m><\/L><I=m>$/;"	i	line:1637	language:dantags	regex:e
+e#n	js-cheerio.dan	/^Example <L=e#n><\/L><I=n>$/;"	i	line:1642	language:dantags	regex:e
+e#o	js-cheerio.dan	/^See <L=e#o><\/L><I=o>$/;"	i	line:1650	language:dantags	regex:e
+e#p	js-cheerio.dan	/^Call Signature <L=e#p><\/L><I=p>$/;"	i	line:1653	language:dantags	regex:e
+e#q	js-cheerio.dan	/^Type Parameters <L=e#q><\/L><I=q>$/;"	i	line:1660	language:dantags	regex:e
+e#r	js-cheerio.dan	/^Parameters <L=e#r><\/L><I=r>$/;"	i	line:1663	language:dantags	regex:e
+e#s	js-cheerio.dan	/^this <L=e#s><\/L><I=s>$/;"	i	line:1664	language:dantags	regex:e
+e#t	js-cheerio.dan	/^Returns <L=e#t><\/L><I=t>$/;"	i	line:1667	language:dantags	regex:e
+e#u	js-cheerio.dan	/^Example <L=e#u><\/L><I=u>$/;"	i	line:1672	language:dantags	regex:e
+e#v	js-cheerio.dan	/^See <L=e#v><\/L><I=v>$/;"	i	line:1680	language:dantags	regex:e
+e#w	js-cheerio.dan	/^Call Signature <L=e#w><\/L><I=w>$/;"	i	line:1683	language:dantags	regex:e
+e#x	js-cheerio.dan	/^Type Parameters <L=e#x><\/L><I=x>$/;"	i	line:1692	language:dantags	regex:e
+e#y	js-cheerio.dan	/^Parameters <L=e#y><\/L><I=y>$/;"	i	line:1695	language:dantags	regex:e
+e#z	js-cheerio.dan	/^this <L=e#z><\/L><I=z>$/;"	i	line:1696	language:dantags	regex:e
+f	js-cheerio.dan	/^ eq  <L=z#f><\/L><I=f>$/;"	i	line:7673	language:dantags	regex:z
+f	js-cheerio.dan	/^<B=f>Function: contains()$/;"	b	line:5048	language:dantags
+f	js-cheerio.dan	/^Default <L=o#f><\/L><I=f>$/;"	i	line:6095	language:dantags	regex:o
+f	js-cheerio.dan	/^Default <L=p#f><\/L><I=f>$/;"	i	line:6327	language:dantags	regex:p
+f	js-cheerio.dan	/^Default <L=q#f><\/L><I=f>$/;"	i	line:6527	language:dantags	regex:q
+f	js-cheerio.dan	/^Inherited from <L=n#f><\/L><I=f>$/;"	i	line:5904	language:dantags	regex:n
+f	js-cheerio.dan	/^See <L=e#f><\/L><I=f>$/;"	i	line:1612	language:dantags	regex:e
+f	js-cheerio.dan	/^options? <L=m#f><\/L><I=f>$/;"	i	line:5502	language:dantags	regex:m
+f#2	js-cheerio.dan	/^Parameters <L=f#2><\/L><I=2>$/;"	i	line:5070	language:dantags	regex:f
+f#3	js-cheerio.dan	/^container <L=f#3><\/L><I=3>$/;"	i	line:5071	language:dantags	regex:f
+f#4	js-cheerio.dan	/^contained <L=f#4><\/L><I=4>$/;"	i	line:5076	language:dantags	regex:f
+f#5	js-cheerio.dan	/^Returns <L=f#5><\/L><I=5>$/;"	i	line:5081	language:dantags	regex:f
+f#6	js-cheerio.dan	/^Alias <L=f#6><\/L><I=6>$/;"	i	line:5086	language:dantags	regex:f
+f#7	js-cheerio.dan	/^See <L=f#7><\/L><I=7>$/;"	i	line:5089	language:dantags	regex:f
+g	js-cheerio.dan	/^ filter  and  not  <L=z#g><\/L><I=g>$/;"	i	line:7697	language:dantags	regex:z
+g	js-cheerio.dan	/^<B=g>Function: decodeStream()$/;"	b	line:5093	language:dantags
+g	js-cheerio.dan	/^Inherited from <L=o#g><\/L><I=g>$/;"	i	line:6102	language:dantags	regex:o
+g	js-cheerio.dan	/^Inherited from <L=p#g><\/L><I=g>$/;"	i	line:6334	language:dantags	regex:p
+g	js-cheerio.dan	/^Inherited from <L=q#g><\/L><I=g>$/;"	i	line:6534	language:dantags	regex:q
+g	js-cheerio.dan	/^attr() <L=e#g><\/L><I=g>$/;"	i	line:1617	language:dantags	regex:e
+g	js-cheerio.dan	/^isDocument? <L=m#g><\/L><I=g>$/;"	i	line:5505	language:dantags	regex:m
+g	js-cheerio.dan	/^sourceCodeLocationInfo? <L=n#g><\/L><I=g>$/;"	i	line:5909	language:dantags	regex:n
+g#2	js-cheerio.dan	/^Parameters <L=g#2><\/L><I=2>$/;"	i	line:5118	language:dantags	regex:g
+g#3	js-cheerio.dan	/^options <L=g#3><\/L><I=3>$/;"	i	line:5119	language:dantags	regex:g
+g#4	js-cheerio.dan	/^cb <L=g#4><\/L><I=4>$/;"	i	line:5124	language:dantags	regex:g
+g#5	js-cheerio.dan	/^Returns <L=g#5><\/L><I=5>$/;"	i	line:5129	language:dantags	regex:g
+h	js-cheerio.dan	/^ has  <L=z#h><\/L><I=h>$/;"	i	line:7733	language:dantags	regex:z
+h	js-cheerio.dan	/^<B=h>Function: fromURL()$/;"	b	line:5135	language:dantags
+h	js-cheerio.dan	/^Call Signature <L=e#h><\/L><I=h>$/;"	i	line:1618	language:dantags	regex:e
+h	js-cheerio.dan	/^Default <L=n#h><\/L><I=h>$/;"	i	line:5919	language:dantags	regex:n
+h	js-cheerio.dan	/^Returns <L=m#h><\/L><I=h>$/;"	i	line:5508	language:dantags	regex:m
+h	js-cheerio.dan	/^recognizeSelfClosing? <L=q#h><\/L><I=h>$/;"	i	line:6539	language:dantags	regex:q
+h	js-cheerio.dan	/^requestOptions? <L=o#h><\/L><I=h>$/;"	i	line:6107	language:dantags	regex:o
+h	js-cheerio.dan	/^scriptingEnabled? <L=p#h><\/L><I=h>$/;"	i	line:6339	language:dantags	regex:p
+h#2	js-cheerio.dan	/^Parameters <L=h#2><\/L><I=2>$/;"	i	line:5159	language:dantags	regex:h
+h#3	js-cheerio.dan	/^url <L=h#3><\/L><I=3>$/;"	i	line:5160	language:dantags	regex:h
+h#4	js-cheerio.dan	/^options <L=h#4><\/L><I=4>$/;"	i	line:5165	language:dantags	regex:h
+h#5	js-cheerio.dan	/^Returns <L=h#5><\/L><I=5>$/;"	i	line:5170	language:dantags	regex:h
+h#6	js-cheerio.dan	/^Example <L=h#6><\/L><I=6>$/;"	i	line:5175	language:dantags	regex:h
+i	js-cheerio.dan	/^ first  and  last  <L=z#i><\/L><I=i>$/;"	i	line:7761	language:dantags	regex:z
+i	js-cheerio.dan	/^<B=i>Function: load()$/;"	b	line:5185	language:dantags
+i	js-cheerio.dan	/^Default <L=p#i><\/L><I=i>$/;"	i	line:6346	language:dantags	regex:p
+i	js-cheerio.dan	/^Default <L=q#i><\/L><I=i>$/;"	i	line:6547	language:dantags	regex:q
+i	js-cheerio.dan	/^Deprecated <L=m#i><\/L><I=i>$/;"	i	line:5511	language:dantags	regex:m
+i	js-cheerio.dan	/^Inherited from <L=n#i><\/L><I=i>$/;"	i	line:5922	language:dantags	regex:n
+i	js-cheerio.dan	/^Type Parameters <L=e#i><\/L><I=i>$/;"	i	line:1625	language:dantags	regex:e
+i	js-cheerio.dan	/^Type declaration <L=o#i><\/L><I=i>$/;"	i	line:6114	language:dantags	regex:o
+i#2	js-cheerio.dan	/^Parameters <L=i#2><\/L><I=2>$/;"	i	line:5204	language:dantags	regex:i
+i#3	js-cheerio.dan	/^content <L=i#3><\/L><I=3>$/;"	i	line:5205	language:dantags	regex:i
+i#4	js-cheerio.dan	/^options? <L=i#4><\/L><I=4>$/;"	i	line:5210	language:dantags	regex:i
+i#5	js-cheerio.dan	/^isDocument? <L=i#5><\/L><I=5>$/;"	i	line:5215	language:dantags	regex:i
+i#6	js-cheerio.dan	/^Returns <L=i#6><\/L><I=6>$/;"	i	line:5220	language:dantags	regex:i
+i#7	js-cheerio.dan	/^See <L=i#7><\/L><I=7>$/;"	i	line:5225	language:dantags	regex:i
+j	js-cheerio.dan	/^<B=j>Function: loadBuffer()$/;"	b	line:5229	language:dantags
+j	js-cheerio.dan	/^Conclusion <L=z#j><\/L><I=j>$/;"	i	line:7795	language:dantags	regex:z
+j	js-cheerio.dan	/^Example <L=m#j><\/L><I=j>$/;"	i	line:5514	language:dantags	regex:m
+j	js-cheerio.dan	/^Inherited from <L=p#j><\/L><I=j>$/;"	i	line:6349	language:dantags	regex:p
+j	js-cheerio.dan	/^Inherited from <L=q#j><\/L><I=j>$/;"	i	line:6554	language:dantags	regex:q
+j	js-cheerio.dan	/^Parameters <L=e#j><\/L><I=j>$/;"	i	line:1628	language:dantags	regex:e
+j	js-cheerio.dan	/^dispatcher? <L=o#j><\/L><I=j>$/;"	i	line:6115	language:dantags	regex:o
+j	js-cheerio.dan	/^treeAdapter? <L=n#j><\/L><I=j>$/;"	i	line:5927	language:dantags	regex:n
+j#2	js-cheerio.dan	/^Parameters <L=j#2><\/L><I=2>$/;"	i	line:5252	language:dantags	regex:j
+j#3	js-cheerio.dan	/^buffer <L=j#3><\/L><I=3>$/;"	i	line:5253	language:dantags	regex:j
+j#4	js-cheerio.dan	/^options <L=j#4><\/L><I=4>$/;"	i	line:5258	language:dantags	regex:j
+j#5	js-cheerio.dan	/^Returns <L=j#5><\/L><I=5>$/;"	i	line:5263	language:dantags	regex:j
+j#6	js-cheerio.dan	/^Example <L=j#6><\/L><I=6>$/;"	i	line:5268	language:dantags	regex:j
+k	js-cheerio.dan	/^<B=k>Function: merge()$/;"	b	line:5279	language:dantags
+k	js-cheerio.dan	/^Default <L=n#k><\/L><I=k>$/;"	i	line:5934	language:dantags	regex:n
+k	js-cheerio.dan	/^Other <L=m#k><\/L><I=k>$/;"	i	line:5521	language:dantags	regex:m
+k	js-cheerio.dan	/^Tokenizer? <L=q#k><\/L><I=k>$/;"	i	line:6559	language:dantags	regex:q
+k	js-cheerio.dan	/^scriptingEnabled? <L=o#k><\/L><I=k>$/;"	i	line:6120	language:dantags	regex:o
+k	js-cheerio.dan	/^sourceCodeLocationInfo? <L=p#k><\/L><I=k>$/;"	i	line:6354	language:dantags	regex:p
+k	js-cheerio.dan	/^this <L=e#k><\/L><I=k>$/;"	i	line:1629	language:dantags	regex:e
+k#2	js-cheerio.dan	/^Type Parameters <L=k#2><\/L><I=2>$/;"	i	line:5301	language:dantags	regex:k
+k#3	js-cheerio.dan	/^Parameters <L=k#3><\/L><I=3>$/;"	i	line:5304	language:dantags	regex:k
+k#4	js-cheerio.dan	/^arr1 <L=k#4><\/L><I=4>$/;"	i	line:5305	language:dantags	regex:k
+k#5	js-cheerio.dan	/^arr2 <L=k#5><\/L><I=5>$/;"	i	line:5310	language:dantags	regex:k
+k#6	js-cheerio.dan	/^Returns <L=k#6><\/L><I=6>$/;"	i	line:5315	language:dantags	regex:k
+k#7	js-cheerio.dan	/^Alias <L=k#7><\/L><I=7>$/;"	i	line:5320	language:dantags	regex:k
+k#8	js-cheerio.dan	/^See <L=k#8><\/L><I=8>$/;"	i	line:5323	language:dantags	regex:k
+l	js-cheerio.dan	/^<B=l>Function: stringStream()$/;"	b	line:5327	language:dantags
+l	js-cheerio.dan	/^Default <L=o#l><\/L><I=l>$/;"	i	line:6127	language:dantags	regex:o
+l	js-cheerio.dan	/^Default <L=p#l><\/L><I=l>$/;"	i	line:6364	language:dantags	regex:p
+l	js-cheerio.dan	/^Inherited from <L=n#l><\/L><I=l>$/;"	i	line:5937	language:dantags	regex:n
+l	js-cheerio.dan	/^Inherited from <L=q#l><\/L><I=l>$/;"	i	line:6566	language:dantags	regex:q
+l	js-cheerio.dan	/^fn <L=m#l><\/L><I=l>$/;"	i	line:5522	language:dantags	regex:m
+l	js-cheerio.dan	/^name <L=e#l><\/L><I=l>$/;"	i	line:1632	language:dantags	regex:e
+l#2	js-cheerio.dan	/^Parameters <L=l#2><\/L><I=2>$/;"	i	line:5352	language:dantags	regex:l
+l#3	js-cheerio.dan	/^options <L=l#3><\/L><I=3>$/;"	i	line:5353	language:dantags	regex:l
+l#4	js-cheerio.dan	/^cb <L=l#4><\/L><I=4>$/;"	i	line:5358	language:dantags	regex:l
+l#5	js-cheerio.dan	/^Returns <L=l#5><\/L><I=5>$/;"	i	line:5363	language:dantags	regex:l
+l#6	js-cheerio.dan	/^Example <L=l#6><\/L><I=6>$/;"	i	line:5368	language:dantags	regex:l
+m	js-cheerio.dan	/^<B=m>Interface: CheerioAPI()$/;"	b	line:5390	language:dantags
+m	js-cheerio.dan	/^Inherited from <L=o#m><\/L><I=m>$/;"	i	line:6130	language:dantags	regex:o
+m	js-cheerio.dan	/^Inherited from <L=p#m><\/L><I=m>$/;"	i	line:6367	language:dantags	regex:p
+m	js-cheerio.dan	/^Returns <L=e#m><\/L><I=m>$/;"	i	line:1637	language:dantags	regex:e
+m	js-cheerio.dan	/^contains <L=m#m><\/L><I=m>$/;"	i	line:5531	language:dantags	regex:m
+m	js-cheerio.dan	/^withEndIndices? <L=q#m><\/L><I=m>$/;"	i	line:6571	language:dantags	regex:q
+m	js-cheerio.dan	/^xml? <L=n#m><\/L><I=m>$/;"	i	line:5942	language:dantags	regex:n
+m#10	js-cheerio.dan	/^Alias <L=m#10><\/L><I=10>$/;"	i	line:5690	language:dantags	regex:m
+m#11	js-cheerio.dan	/^See <L=m#11><\/L><I=11>$/;"	i	line:5693	language:dantags	regex:m
+m#12	js-cheerio.dan	/^Inherited from <L=m#12><\/L><I=12>$/;"	i	line:5696	language:dantags	regex:m
+m#13	js-cheerio.dan	/^root() <L=m#13><\/L><I=13>$/;"	i	line:5701	language:dantags	regex:m
+m#14	js-cheerio.dan	/^Parameters <L=m#14><\/L><I=14>$/;"	i	line:5708	language:dantags	regex:m
+m#15	js-cheerio.dan	/^this <L=m#15><\/L><I=15>$/;"	i	line:5709	language:dantags	regex:m
+m#16	js-cheerio.dan	/^Returns <L=m#16><\/L><I=16>$/;"	i	line:5712	language:dantags	regex:m
+m#17	js-cheerio.dan	/^Example <L=m#17><\/L><I=17>$/;"	i	line:5717	language:dantags	regex:m
+m#18	js-cheerio.dan	/^Alias <L=m#18><\/L><I=18>$/;"	i	line:5725	language:dantags	regex:m
+m#19	js-cheerio.dan	/^Inherited from <L=m#19><\/L><I=19>$/;"	i	line:5728	language:dantags	regex:m
+m#1a	js-cheerio.dan	/^text() <L=m#1a><\/L><I=1a>$/;"	i	line:5733	language:dantags	regex:m
+m#1b	js-cheerio.dan	/^Parameters <L=m#1b><\/L><I=1b>$/;"	i	line:5743	language:dantags	regex:m
+m#1c	js-cheerio.dan	/^this <L=m#1c><\/L><I=1c>$/;"	i	line:5744	language:dantags	regex:m
+m#1d	js-cheerio.dan	/^elements? <L=m#1d><\/L><I=1d>$/;"	i	line:5747	language:dantags	regex:m
+m#1e	js-cheerio.dan	/^Returns <L=m#1e><\/L><I=1e>$/;"	i	line:5752	language:dantags	regex:m
+m#1f	js-cheerio.dan	/^Inherited from <L=m#1f><\/L><I=1f>$/;"	i	line:5757	language:dantags	regex:m
+m#1g	js-cheerio.dan	/^xml() <L=m#1g><\/L><I=1g>$/;"	i	line:5762	language:dantags	regex:m
+m#1h	js-cheerio.dan	/^Parameters <L=m#1h><\/L><I=1h>$/;"	i	line:5769	language:dantags	regex:m
+m#1i	js-cheerio.dan	/^this <L=m#1i><\/L><I=1i>$/;"	i	line:5770	language:dantags	regex:m
+m#1j	js-cheerio.dan	/^dom? <L=m#1j><\/L><I=1j>$/;"	i	line:5773	language:dantags	regex:m
+m#1k	js-cheerio.dan	/^Returns <L=m#1k><\/L><I=1k>$/;"	i	line:5778	language:dantags	regex:m
+m#1l	js-cheerio.dan	/^Inherited from <L=m#1l><\/L><I=1l>$/;"	i	line:5783	language:dantags	regex:m
+m#2	js-cheerio.dan	/^Extends <L=m#2><\/L><I=2>$/;"	i	line:5412	language:dantags	regex:m
+m#3	js-cheerio.dan	/^Type Parameters <L=m#3><\/L><I=3>$/;"	i	line:5424	language:dantags	regex:m
+m#4	js-cheerio.dan	/^Parameters <L=m#4><\/L><I=4>$/;"	i	line:5429	language:dantags	regex:m
+m#5	js-cheerio.dan	/^selector? <L=m#5><\/L><I=5>$/;"	i	line:5430	language:dantags	regex:m
+m#6	js-cheerio.dan	/^context? <L=m#6><\/L><I=6>$/;"	i	line:5435	language:dantags	regex:m
+m#7	js-cheerio.dan	/^root? <L=m#7><\/L><I=7>$/;"	i	line:5440	language:dantags	regex:m
+m#8	js-cheerio.dan	/^options? <L=m#8><\/L><I=8>$/;"	i	line:5445	language:dantags	regex:m
+m#9	js-cheerio.dan	/^Returns <L=m#9><\/L><I=9>$/;"	i	line:5448	language:dantags	regex:m
+m#A	js-cheerio.dan	/^options? <L=m#A><\/L><I=A>$/;"	i	line:5582	language:dantags	regex:m
+m#B	js-cheerio.dan	/^Returns <L=m#B><\/L><I=B>$/;"	i	line:5587	language:dantags	regex:m
+m#C	js-cheerio.dan	/^Inherited from <L=m#C><\/L><I=C>$/;"	i	line:5592	language:dantags	regex:m
+m#D	js-cheerio.dan	/^Call Signature <L=m#D><\/L><I=D>$/;"	i	line:5595	language:dantags	regex:m
+m#E	js-cheerio.dan	/^Parameters <L=m#E><\/L><I=E>$/;"	i	line:5602	language:dantags	regex:m
+m#F	js-cheerio.dan	/^this <L=m#F><\/L><I=F>$/;"	i	line:5603	language:dantags	regex:m
+m#G	js-cheerio.dan	/^dom? <L=m#G><\/L><I=G>$/;"	i	line:5606	language:dantags	regex:m
+m#H	js-cheerio.dan	/^options? <L=m#H><\/L><I=H>$/;"	i	line:5611	language:dantags	regex:m
+m#I	js-cheerio.dan	/^Returns <L=m#I><\/L><I=I>$/;"	i	line:5616	language:dantags	regex:m
+m#J	js-cheerio.dan	/^Inherited from <L=m#J><\/L><I=J>$/;"	i	line:5621	language:dantags	regex:m
+m#K	js-cheerio.dan	/^parseHTML() <L=m#K><\/L><I=K>$/;"	i	line:5626	language:dantags	regex:m
+m#L	js-cheerio.dan	/^Call Signature <L=m#L><\/L><I=L>$/;"	i	line:5627	language:dantags	regex:m
+m#M	js-cheerio.dan	/^Parameters <L=m#M><\/L><I=M>$/;"	i	line:5635	language:dantags	regex:m
+m#N	js-cheerio.dan	/^this <L=m#N><\/L><I=N>$/;"	i	line:5636	language:dantags	regex:m
+m#O	js-cheerio.dan	/^data <L=m#O><\/L><I=O>$/;"	i	line:5639	language:dantags	regex:m
+m#P	js-cheerio.dan	/^context? <L=m#P><\/L><I=P>$/;"	i	line:5644	language:dantags	regex:m
+m#Q	js-cheerio.dan	/^keepScripts? <L=m#Q><\/L><I=Q>$/;"	i	line:5649	language:dantags	regex:m
+m#R	js-cheerio.dan	/^Returns <L=m#R><\/L><I=R>$/;"	i	line:5654	language:dantags	regex:m
+m#S	js-cheerio.dan	/^Alias <L=m#S><\/L><I=S>$/;"	i	line:5659	language:dantags	regex:m
+m#T	js-cheerio.dan	/^See <L=m#T><\/L><I=T>$/;"	i	line:5662	language:dantags	regex:m
+m#U	js-cheerio.dan	/^Inherited from <L=m#U><\/L><I=U>$/;"	i	line:5665	language:dantags	regex:m
+m#V	js-cheerio.dan	/^Call Signature <L=m#V><\/L><I=V>$/;"	i	line:5668	language:dantags	regex:m
+m#W	js-cheerio.dan	/^Parameters <L=m#W><\/L><I=W>$/;"	i	line:5676	language:dantags	regex:m
+m#X	js-cheerio.dan	/^this <L=m#X><\/L><I=X>$/;"	i	line:5677	language:dantags	regex:m
+m#Y	js-cheerio.dan	/^data? <L=m#Y><\/L><I=Y>$/;"	i	line:5680	language:dantags	regex:m
+m#Z	js-cheerio.dan	/^Returns <L=m#Z><\/L><I=Z>$/;"	i	line:5685	language:dantags	regex:m
+m#a	js-cheerio.dan	/^Example <L=m#a><\/L><I=a>$/;"	i	line:5451	language:dantags	regex:m
+m#b	js-cheerio.dan	/^Deprecated <L=m#b><\/L><I=b>$/;"	i	line:5489	language:dantags	regex:m
+m#c	js-cheerio.dan	/^~~load()~~ <L=m#c><\/L><I=c>$/;"	i	line:5490	language:dantags	regex:m
+m#d	js-cheerio.dan	/^Parameters <L=m#d><\/L><I=d>$/;"	i	line:5498	language:dantags	regex:m
+m#e	js-cheerio.dan	/^content <L=m#e><\/L><I=e>$/;"	i	line:5499	language:dantags	regex:m
+m#f	js-cheerio.dan	/^options? <L=m#f><\/L><I=f>$/;"	i	line:5502	language:dantags	regex:m
+m#g	js-cheerio.dan	/^isDocument? <L=m#g><\/L><I=g>$/;"	i	line:5505	language:dantags	regex:m
+m#h	js-cheerio.dan	/^Returns <L=m#h><\/L><I=h>$/;"	i	line:5508	language:dantags	regex:m
+m#i	js-cheerio.dan	/^Deprecated <L=m#i><\/L><I=i>$/;"	i	line:5511	language:dantags	regex:m
+m#j	js-cheerio.dan	/^Example <L=m#j><\/L><I=j>$/;"	i	line:5514	language:dantags	regex:m
+m#k	js-cheerio.dan	/^Other <L=m#k><\/L><I=k>$/;"	i	line:5521	language:dantags	regex:m
+m#l	js-cheerio.dan	/^fn <L=m#l><\/L><I=l>$/;"	i	line:5522	language:dantags	regex:m
+m#m	js-cheerio.dan	/^contains <L=m#m><\/L><I=m>$/;"	i	line:5531	language:dantags	regex:m
+m#n	js-cheerio.dan	/^merge <L=m#n><\/L><I=n>$/;"	i	line:5536	language:dantags	regex:m
+m#o	js-cheerio.dan	/^Static <L=m#o><\/L><I=o>$/;"	i	line:5539	language:dantags	regex:m
+m#p	js-cheerio.dan	/^extract() <L=m#p><\/L><I=p>$/;"	i	line:5540	language:dantags	regex:m
+m#q	js-cheerio.dan	/^Type Parameters <L=m#q><\/L><I=q>$/;"	i	line:5547	language:dantags	regex:m
+m#r	js-cheerio.dan	/^Parameters <L=m#r><\/L><I=r>$/;"	i	line:5550	language:dantags	regex:m
+m#s	js-cheerio.dan	/^this <L=m#s><\/L><I=s>$/;"	i	line:5551	language:dantags	regex:m
+m#t	js-cheerio.dan	/^map <L=m#t><\/L><I=t>$/;"	i	line:5554	language:dantags	regex:m
+m#u	js-cheerio.dan	/^Returns <L=m#u><\/L><I=u>$/;"	i	line:5560	language:dantags	regex:m
+m#v	js-cheerio.dan	/^Inherited from <L=m#v><\/L><I=v>$/;"	i	line:5565	language:dantags	regex:m
+m#w	js-cheerio.dan	/^html() <L=m#w><\/L><I=w>$/;"	i	line:5570	language:dantags	regex:m
+m#x	js-cheerio.dan	/^Call Signature <L=m#x><\/L><I=x>$/;"	i	line:5571	language:dantags	regex:m
+m#y	js-cheerio.dan	/^Parameters <L=m#y><\/L><I=y>$/;"	i	line:5578	language:dantags	regex:m
+m#z	js-cheerio.dan	/^this <L=m#z><\/L><I=z>$/;"	i	line:5579	language:dantags	regex:m
+n	js-cheerio.dan	/^<B=n>Interface: CheerioOptions$/;"	b	line:5787	language:dantags
+n	js-cheerio.dan	/^Default <L=n#n><\/L><I=n>$/;"	i	line:5951	language:dantags	regex:n
+n	js-cheerio.dan	/^Default <L=q#n><\/L><I=n>$/;"	i	line:6579	language:dantags	regex:q
+n	js-cheerio.dan	/^Example <L=e#n><\/L><I=n>$/;"	i	line:1642	language:dantags	regex:e
+n	js-cheerio.dan	/^merge <L=m#n><\/L><I=n>$/;"	i	line:5536	language:dantags	regex:m
+n	js-cheerio.dan	/^sourceCodeLocationInfo? <L=o#n><\/L><I=n>$/;"	i	line:6135	language:dantags	regex:o
+n	js-cheerio.dan	/^treeAdapter? <L=p#n><\/L><I=n>$/;"	i	line:6372	language:dantags	regex:p
+n#2	js-cheerio.dan	/^Extends <L=n#2><\/L><I=2>$/;"	i	line:5809	language:dantags	regex:n
+n#3	js-cheerio.dan	/^Extended by <L=n#3><\/L><I=3>$/;"	i	line:5812	language:dantags	regex:n
+n#4	js-cheerio.dan	/^Properties <L=n#4><\/L><I=4>$/;"	i	line:5815	language:dantags	regex:n
+n#5	js-cheerio.dan	/^baseURI? <L=n#5><\/L><I=5>$/;"	i	line:5816	language:dantags	regex:n
+n#6	js-cheerio.dan	/^onParseError? <L=n#6><\/L><I=6>$/;"	i	line:5825	language:dantags	regex:n
+n#7	js-cheerio.dan	/^Default <L=n#7><\/L><I=7>$/;"	i	line:5832	language:dantags	regex:n
+n#8	js-cheerio.dan	/^Inherited from <L=n#8><\/L><I=8>$/;"	i	line:5835	language:dantags	regex:n
+n#9	js-cheerio.dan	/^pseudos? <L=n#9><\/L><I=9>$/;"	i	line:5840	language:dantags	regex:n
+n#a	js-cheerio.dan	/^Example <L=n#a><\/L><I=a>$/;"	i	line:5853	language:dantags	regex:n
+n#b	js-cheerio.dan	/^quirksMode? <L=n#b><\/L><I=b>$/;"	i	line:5876	language:dantags	regex:n
+n#c	js-cheerio.dan	/^Default <L=n#c><\/L><I=c>$/;"	i	line:5885	language:dantags	regex:n
+n#d	js-cheerio.dan	/^scriptingEnabled? <L=n#d><\/L><I=d>$/;"	i	line:5894	language:dantags	regex:n
+n#e	js-cheerio.dan	/^Default <L=n#e><\/L><I=e>$/;"	i	line:5901	language:dantags	regex:n
+n#f	js-cheerio.dan	/^Inherited from <L=n#f><\/L><I=f>$/;"	i	line:5904	language:dantags	regex:n
+n#g	js-cheerio.dan	/^sourceCodeLocationInfo? <L=n#g><\/L><I=g>$/;"	i	line:5909	language:dantags	regex:n
+n#h	js-cheerio.dan	/^Default <L=n#h><\/L><I=h>$/;"	i	line:5919	language:dantags	regex:n
+n#i	js-cheerio.dan	/^Inherited from <L=n#i><\/L><I=i>$/;"	i	line:5922	language:dantags	regex:n
+n#j	js-cheerio.dan	/^treeAdapter? <L=n#j><\/L><I=j>$/;"	i	line:5927	language:dantags	regex:n
+n#k	js-cheerio.dan	/^Default <L=n#k><\/L><I=k>$/;"	i	line:5934	language:dantags	regex:n
+n#l	js-cheerio.dan	/^Inherited from <L=n#l><\/L><I=l>$/;"	i	line:5937	language:dantags	regex:n
+n#m	js-cheerio.dan	/^xml? <L=n#m><\/L><I=m>$/;"	i	line:5942	language:dantags	regex:n
+n#n	js-cheerio.dan	/^Default <L=n#n><\/L><I=n>$/;"	i	line:5951	language:dantags	regex:n
+n#o	js-cheerio.dan	/^~~xmlMode?~~ <L=n#o><\/L><I=o>$/;"	i	line:5960	language:dantags	regex:n
+n#p	js-cheerio.dan	/^Deprecated <L=n#p><\/L><I=p>$/;"	i	line:5967	language:dantags	regex:n
+n#q	js-cheerio.dan	/^Default <L=n#q><\/L><I=q>$/;"	i	line:5970	language:dantags	regex:n
+o	js-cheerio.dan	/^<B=o>Interface: CheerioRequestOptions$/;"	b	line:5978	language:dantags
+o	js-cheerio.dan	/^Default <L=o#o><\/L><I=o>$/;"	i	line:6145	language:dantags	regex:o
+o	js-cheerio.dan	/^Default <L=p#o><\/L><I=o>$/;"	i	line:6379	language:dantags	regex:p
+o	js-cheerio.dan	/^Inherited from <L=q#o><\/L><I=o>$/;"	i	line:6586	language:dantags	regex:q
+o	js-cheerio.dan	/^See <L=e#o><\/L><I=o>$/;"	i	line:1650	language:dantags	regex:e
+o	js-cheerio.dan	/^Static <L=m#o><\/L><I=o>$/;"	i	line:5539	language:dantags	regex:m
+o	js-cheerio.dan	/^~~xmlMode?~~ <L=n#o><\/L><I=o>$/;"	i	line:5960	language:dantags	regex:n
+o#2	js-cheerio.dan	/^Extends <L=o#2><\/L><I=2>$/;"	i	line:6006	language:dantags	regex:o
+o#3	js-cheerio.dan	/^Properties <L=o#3><\/L><I=3>$/;"	i	line:6009	language:dantags	regex:o
+o#4	js-cheerio.dan	/^baseURI? <L=o#4><\/L><I=4>$/;"	i	line:6010	language:dantags	regex:o
+o#5	js-cheerio.dan	/^Inherited from <L=o#5><\/L><I=5>$/;"	i	line:6017	language:dantags	regex:o
+o#6	js-cheerio.dan	/^encoding? <L=o#6><\/L><I=6>$/;"	i	line:6022	language:dantags	regex:o
+o#7	js-cheerio.dan	/^Inherited from <L=o#7><\/L><I=7>$/;"	i	line:6027	language:dantags	regex:o
+o#8	js-cheerio.dan	/^onParseError? <L=o#8><\/L><I=8>$/;"	i	line:6032	language:dantags	regex:o
+o#9	js-cheerio.dan	/^Default <L=o#9><\/L><I=9>$/;"	i	line:6039	language:dantags	regex:o
+o#a	js-cheerio.dan	/^Inherited from <L=o#a><\/L><I=a>$/;"	i	line:6042	language:dantags	regex:o
+o#b	js-cheerio.dan	/^pseudos? <L=o#b><\/L><I=b>$/;"	i	line:6047	language:dantags	regex:o
+o#c	js-cheerio.dan	/^Example <L=o#c><\/L><I=c>$/;"	i	line:6060	language:dantags	regex:o
+o#d	js-cheerio.dan	/^Inherited from <L=o#d><\/L><I=d>$/;"	i	line:6081	language:dantags	regex:o
+o#e	js-cheerio.dan	/^quirksMode? <L=o#e><\/L><I=e>$/;"	i	line:6086	language:dantags	regex:o
+o#f	js-cheerio.dan	/^Default <L=o#f><\/L><I=f>$/;"	i	line:6095	language:dantags	regex:o
+o#g	js-cheerio.dan	/^Inherited from <L=o#g><\/L><I=g>$/;"	i	line:6102	language:dantags	regex:o
+o#h	js-cheerio.dan	/^requestOptions? <L=o#h><\/L><I=h>$/;"	i	line:6107	language:dantags	regex:o
+o#i	js-cheerio.dan	/^Type declaration <L=o#i><\/L><I=i>$/;"	i	line:6114	language:dantags	regex:o
+o#j	js-cheerio.dan	/^dispatcher? <L=o#j><\/L><I=j>$/;"	i	line:6115	language:dantags	regex:o
+o#k	js-cheerio.dan	/^scriptingEnabled? <L=o#k><\/L><I=k>$/;"	i	line:6120	language:dantags	regex:o
+o#l	js-cheerio.dan	/^Default <L=o#l><\/L><I=l>$/;"	i	line:6127	language:dantags	regex:o
+o#m	js-cheerio.dan	/^Inherited from <L=o#m><\/L><I=m>$/;"	i	line:6130	language:dantags	regex:o
+o#n	js-cheerio.dan	/^sourceCodeLocationInfo? <L=o#n><\/L><I=n>$/;"	i	line:6135	language:dantags	regex:o
+o#o	js-cheerio.dan	/^Default <L=o#o><\/L><I=o>$/;"	i	line:6145	language:dantags	regex:o
+o#p	js-cheerio.dan	/^Inherited from <L=o#p><\/L><I=p>$/;"	i	line:6148	language:dantags	regex:o
+o#q	js-cheerio.dan	/^treeAdapter? <L=o#q><\/L><I=q>$/;"	i	line:6153	language:dantags	regex:o
+o#r	js-cheerio.dan	/^Default <L=o#r><\/L><I=r>$/;"	i	line:6160	language:dantags	regex:o
+o#s	js-cheerio.dan	/^Inherited from <L=o#s><\/L><I=s>$/;"	i	line:6163	language:dantags	regex:o
+o#t	js-cheerio.dan	/^xml? <L=o#t><\/L><I=t>$/;"	i	line:6168	language:dantags	regex:o
+o#u	js-cheerio.dan	/^Default <L=o#u><\/L><I=u>$/;"	i	line:6177	language:dantags	regex:o
+o#v	js-cheerio.dan	/^Inherited from <L=o#v><\/L><I=v>$/;"	i	line:6184	language:dantags	regex:o
+o#w	js-cheerio.dan	/^~~xmlMode?~~ <L=o#w><\/L><I=w>$/;"	i	line:6189	language:dantags	regex:o
+o#x	js-cheerio.dan	/^Deprecated <L=o#x><\/L><I=x>$/;"	i	line:6196	language:dantags	regex:o
+o#y	js-cheerio.dan	/^Default <L=o#y><\/L><I=y>$/;"	i	line:6199	language:dantags	regex:o
+o#z	js-cheerio.dan	/^Inherited from <L=o#z><\/L><I=z>$/;"	i	line:6206	language:dantags	regex:o
+p	js-cheerio.dan	/^<B=p>Interface: DecodeStreamOptions$/;"	b	line:6210	language:dantags
+p	js-cheerio.dan	/^Call Signature <L=e#p><\/L><I=p>$/;"	i	line:1653	language:dantags	regex:e
+p	js-cheerio.dan	/^Deprecated <L=n#p><\/L><I=p>$/;"	i	line:5967	language:dantags	regex:n
+p	js-cheerio.dan	/^Inherited from <L=o#p><\/L><I=p>$/;"	i	line:6148	language:dantags	regex:o
+p	js-cheerio.dan	/^Inherited from <L=p#p><\/L><I=p>$/;"	i	line:6382	language:dantags	regex:p
+p	js-cheerio.dan	/^extract() <L=m#p><\/L><I=p>$/;"	i	line:5540	language:dantags	regex:m
+p	js-cheerio.dan	/^withStartIndices? <L=q#p><\/L><I=p>$/;"	i	line:6591	language:dantags	regex:q
+p#2	js-cheerio.dan	/^Extends <L=p#2><\/L><I=2>$/;"	i	line:6238	language:dantags	regex:p
+p#3	js-cheerio.dan	/^Extended by <L=p#3><\/L><I=3>$/;"	i	line:6241	language:dantags	regex:p
+p#4	js-cheerio.dan	/^Properties <L=p#4><\/L><I=4>$/;"	i	line:6244	language:dantags	regex:p
+p#5	js-cheerio.dan	/^baseURI? <L=p#5><\/L><I=5>$/;"	i	line:6245	language:dantags	regex:p
+p#6	js-cheerio.dan	/^Inherited from <L=p#6><\/L><I=6>$/;"	i	line:6252	language:dantags	regex:p
+p#7	js-cheerio.dan	/^encoding? <L=p#7><\/L><I=7>$/;"	i	line:6257	language:dantags	regex:p
+p#8	js-cheerio.dan	/^onParseError? <L=p#8><\/L><I=8>$/;"	i	line:6264	language:dantags	regex:p
+p#9	js-cheerio.dan	/^Default <L=p#9><\/L><I=9>$/;"	i	line:6271	language:dantags	regex:p
+p#a	js-cheerio.dan	/^Inherited from <L=p#a><\/L><I=a>$/;"	i	line:6274	language:dantags	regex:p
+p#b	js-cheerio.dan	/^pseudos? <L=p#b><\/L><I=b>$/;"	i	line:6279	language:dantags	regex:p
+p#c	js-cheerio.dan	/^Example <L=p#c><\/L><I=c>$/;"	i	line:6292	language:dantags	regex:p
+p#d	js-cheerio.dan	/^Inherited from <L=p#d><\/L><I=d>$/;"	i	line:6313	language:dantags	regex:p
+p#e	js-cheerio.dan	/^quirksMode? <L=p#e><\/L><I=e>$/;"	i	line:6318	language:dantags	regex:p
+p#f	js-cheerio.dan	/^Default <L=p#f><\/L><I=f>$/;"	i	line:6327	language:dantags	regex:p
+p#g	js-cheerio.dan	/^Inherited from <L=p#g><\/L><I=g>$/;"	i	line:6334	language:dantags	regex:p
+p#h	js-cheerio.dan	/^scriptingEnabled? <L=p#h><\/L><I=h>$/;"	i	line:6339	language:dantags	regex:p
+p#i	js-cheerio.dan	/^Default <L=p#i><\/L><I=i>$/;"	i	line:6346	language:dantags	regex:p
+p#j	js-cheerio.dan	/^Inherited from <L=p#j><\/L><I=j>$/;"	i	line:6349	language:dantags	regex:p
+p#k	js-cheerio.dan	/^sourceCodeLocationInfo? <L=p#k><\/L><I=k>$/;"	i	line:6354	language:dantags	regex:p
+p#l	js-cheerio.dan	/^Default <L=p#l><\/L><I=l>$/;"	i	line:6364	language:dantags	regex:p
+p#m	js-cheerio.dan	/^Inherited from <L=p#m><\/L><I=m>$/;"	i	line:6367	language:dantags	regex:p
+p#n	js-cheerio.dan	/^treeAdapter? <L=p#n><\/L><I=n>$/;"	i	line:6372	language:dantags	regex:p
+p#o	js-cheerio.dan	/^Default <L=p#o><\/L><I=o>$/;"	i	line:6379	language:dantags	regex:p
+p#p	js-cheerio.dan	/^Inherited from <L=p#p><\/L><I=p>$/;"	i	line:6382	language:dantags	regex:p
+p#q	js-cheerio.dan	/^xml? <L=p#q><\/L><I=q>$/;"	i	line:6387	language:dantags	regex:p
+p#r	js-cheerio.dan	/^Default <L=p#r><\/L><I=r>$/;"	i	line:6396	language:dantags	regex:p
+p#s	js-cheerio.dan	/^Inherited from <L=p#s><\/L><I=s>$/;"	i	line:6403	language:dantags	regex:p
+p#t	js-cheerio.dan	/^~~xmlMode?~~ <L=p#t><\/L><I=t>$/;"	i	line:6408	language:dantags	regex:p
+p#u	js-cheerio.dan	/^Deprecated <L=p#u><\/L><I=u>$/;"	i	line:6415	language:dantags	regex:p
+p#v	js-cheerio.dan	/^Default <L=p#v><\/L><I=v>$/;"	i	line:6418	language:dantags	regex:p
+p#w	js-cheerio.dan	/^Inherited from <L=p#w><\/L><I=w>$/;"	i	line:6425	language:dantags	regex:p
+q	js-cheerio.dan	/^<B=q>Interface: HTMLParser2Options$/;"	b	line:6429	language:dantags
+q	js-cheerio.dan	/^Default <L=n#q><\/L><I=q>$/;"	i	line:5970	language:dantags	regex:n
+q	js-cheerio.dan	/^Default <L=q#q><\/L><I=q>$/;"	i	line:6599	language:dantags	regex:q
+q	js-cheerio.dan	/^Type Parameters <L=e#q><\/L><I=q>$/;"	i	line:1660	language:dantags	regex:e
+q	js-cheerio.dan	/^Type Parameters <L=m#q><\/L><I=q>$/;"	i	line:5547	language:dantags	regex:m
+q	js-cheerio.dan	/^treeAdapter? <L=o#q><\/L><I=q>$/;"	i	line:6153	language:dantags	regex:o
+q	js-cheerio.dan	/^xml? <L=p#q><\/L><I=q>$/;"	i	line:6387	language:dantags	regex:p
+q#2	js-cheerio.dan	/^See <L=q#2><\/L><I=2>$/;"	i	line:6455	language:dantags	regex:q
+q#3	js-cheerio.dan	/^Extends <L=q#3><\/L><I=3>$/;"	i	line:6458	language:dantags	regex:q
+q#4	js-cheerio.dan	/^Properties <L=q#4><\/L><I=4>$/;"	i	line:6461	language:dantags	regex:q
+q#5	js-cheerio.dan	/^decodeEntities? <L=q#5><\/L><I=5>$/;"	i	line:6462	language:dantags	regex:q
+q#6	js-cheerio.dan	/^Default <L=q#6><\/L><I=6>$/;"	i	line:6469	language:dantags	regex:q
+q#7	js-cheerio.dan	/^Inherited from <L=q#7><\/L><I=7>$/;"	i	line:6476	language:dantags	regex:q
+q#8	js-cheerio.dan	/^lowerCaseAttributeNames? <L=q#8><\/L><I=8>$/;"	i	line:6481	language:dantags	regex:q
+q#9	js-cheerio.dan	/^Default <L=q#9><\/L><I=9>$/;"	i	line:6488	language:dantags	regex:q
+q#a	js-cheerio.dan	/^Inherited from <L=q#a><\/L><I=a>$/;"	i	line:6495	language:dantags	regex:q
+q#b	js-cheerio.dan	/^lowerCaseTags? <L=q#b><\/L><I=b>$/;"	i	line:6500	language:dantags	regex:q
+q#c	js-cheerio.dan	/^Default <L=q#c><\/L><I=c>$/;"	i	line:6507	language:dantags	regex:q
+q#d	js-cheerio.dan	/^Inherited from <L=q#d><\/L><I=d>$/;"	i	line:6514	language:dantags	regex:q
+q#e	js-cheerio.dan	/^recognizeCDATA? <L=q#e><\/L><I=e>$/;"	i	line:6519	language:dantags	regex:q
+q#f	js-cheerio.dan	/^Default <L=q#f><\/L><I=f>$/;"	i	line:6527	language:dantags	regex:q
+q#g	js-cheerio.dan	/^Inherited from <L=q#g><\/L><I=g>$/;"	i	line:6534	language:dantags	regex:q
+q#h	js-cheerio.dan	/^recognizeSelfClosing? <L=q#h><\/L><I=h>$/;"	i	line:6539	language:dantags	regex:q
+q#i	js-cheerio.dan	/^Default <L=q#i><\/L><I=i>$/;"	i	line:6547	language:dantags	regex:q
+q#j	js-cheerio.dan	/^Inherited from <L=q#j><\/L><I=j>$/;"	i	line:6554	language:dantags	regex:q
+q#k	js-cheerio.dan	/^Tokenizer? <L=q#k><\/L><I=k>$/;"	i	line:6559	language:dantags	regex:q
+q#l	js-cheerio.dan	/^Inherited from <L=q#l><\/L><I=l>$/;"	i	line:6566	language:dantags	regex:q
+q#m	js-cheerio.dan	/^withEndIndices? <L=q#m><\/L><I=m>$/;"	i	line:6571	language:dantags	regex:q
+q#n	js-cheerio.dan	/^Default <L=q#n><\/L><I=n>$/;"	i	line:6579	language:dantags	regex:q
+q#o	js-cheerio.dan	/^Inherited from <L=q#o><\/L><I=o>$/;"	i	line:6586	language:dantags	regex:q
+q#p	js-cheerio.dan	/^withStartIndices? <L=q#p><\/L><I=p>$/;"	i	line:6591	language:dantags	regex:q
+q#q	js-cheerio.dan	/^Default <L=q#q><\/L><I=q>$/;"	i	line:6599	language:dantags	regex:q
+q#r	js-cheerio.dan	/^Inherited from <L=q#r><\/L><I=r>$/;"	i	line:6606	language:dantags	regex:q
+q#s	js-cheerio.dan	/^xmlMode? <L=q#s><\/L><I=s>$/;"	i	line:6611	language:dantags	regex:q
+q#t	js-cheerio.dan	/^Default <L=q#t><\/L><I=t>$/;"	i	line:6618	language:dantags	regex:q
+q#u	js-cheerio.dan	/^Inherited from <L=q#u><\/L><I=u>$/;"	i	line:6625	language:dantags	regex:q
+r	js-cheerio.dan	/^<B=r>Type Alias: AcceptedElems<T>$/;"	b	line:6629	language:dantags
+r	js-cheerio.dan	/^Default <L=o#r><\/L><I=r>$/;"	i	line:6160	language:dantags	regex:o
+r	js-cheerio.dan	/^Default <L=p#r><\/L><I=r>$/;"	i	line:6396	language:dantags	regex:p
+r	js-cheerio.dan	/^Inherited from <L=q#r><\/L><I=r>$/;"	i	line:6606	language:dantags	regex:q
+r	js-cheerio.dan	/^Parameters <L=e#r><\/L><I=r>$/;"	i	line:1663	language:dantags	regex:e
+r	js-cheerio.dan	/^Parameters <L=m#r><\/L><I=r>$/;"	i	line:5550	language:dantags	regex:m
+r#2	js-cheerio.dan	/^Type Parameters <L=r#2><\/L><I=2>$/;"	i	line:6658	language:dantags	regex:r
+s	js-cheerio.dan	/^<B=s>Type Alias: AcceptedFilters<T>$/;"	b	line:6662	language:dantags
+s	js-cheerio.dan	/^Inherited from <L=o#s><\/L><I=s>$/;"	i	line:6163	language:dantags	regex:o
+s	js-cheerio.dan	/^Inherited from <L=p#s><\/L><I=s>$/;"	i	line:6403	language:dantags	regex:p
+s	js-cheerio.dan	/^this <L=e#s><\/L><I=s>$/;"	i	line:1664	language:dantags	regex:e
+s	js-cheerio.dan	/^this <L=m#s><\/L><I=s>$/;"	i	line:5551	language:dantags	regex:m
+s	js-cheerio.dan	/^xmlMode? <L=q#s><\/L><I=s>$/;"	i	line:6611	language:dantags	regex:q
+s#2	js-cheerio.dan	/^Type Parameters <L=s#2><\/L><I=2>$/;"	i	line:6690	language:dantags	regex:s
+t	js-cheerio.dan	/^<B=t>Type Alias: BasicAcceptedElems<T>$/;"	b	line:6694	language:dantags
+t	js-cheerio.dan	/^Default <L=q#t><\/L><I=t>$/;"	i	line:6618	language:dantags	regex:q
+t	js-cheerio.dan	/^Returns <L=e#t><\/L><I=t>$/;"	i	line:1667	language:dantags	regex:e
+t	js-cheerio.dan	/^map <L=m#t><\/L><I=t>$/;"	i	line:5554	language:dantags	regex:m
+t	js-cheerio.dan	/^xml? <L=o#t><\/L><I=t>$/;"	i	line:6168	language:dantags	regex:o
+t	js-cheerio.dan	/^~~xmlMode?~~ <L=p#t><\/L><I=t>$/;"	i	line:6408	language:dantags	regex:p
+t#2	js-cheerio.dan	/^Type Parameters <L=t#2><\/L><I=2>$/;"	i	line:6722	language:dantags	regex:t
+u	js-cheerio.dan	/^<B=u>Type Alias: FilterFunction()<T>$/;"	b	line:6726	language:dantags
+u	js-cheerio.dan	/^Default <L=o#u><\/L><I=u>$/;"	i	line:6177	language:dantags	regex:o
+u	js-cheerio.dan	/^Deprecated <L=p#u><\/L><I=u>$/;"	i	line:6415	language:dantags	regex:p
+u	js-cheerio.dan	/^Example <L=e#u><\/L><I=u>$/;"	i	line:1672	language:dantags	regex:e
+u	js-cheerio.dan	/^Inherited from <L=q#u><\/L><I=u>$/;"	i	line:6625	language:dantags	regex:q
+u	js-cheerio.dan	/^Returns <L=m#u><\/L><I=u>$/;"	i	line:5560	language:dantags	regex:m
+u#2	js-cheerio.dan	/^Type Parameters <L=u#2><\/L><I=2>$/;"	i	line:6754	language:dantags	regex:u
+u#3	js-cheerio.dan	/^Parameters <L=u#3><\/L><I=3>$/;"	i	line:6757	language:dantags	regex:u
+u#4	js-cheerio.dan	/^this <L=u#4><\/L><I=4>$/;"	i	line:6758	language:dantags	regex:u
+u#5	js-cheerio.dan	/^i <L=u#5><\/L><I=5>$/;"	i	line:6761	language:dantags	regex:u
+u#6	js-cheerio.dan	/^el <L=u#6><\/L><I=6>$/;"	i	line:6764	language:dantags	regex:u
+u#7	js-cheerio.dan	/^Returns <L=u#7><\/L><I=7>$/;"	i	line:6767	language:dantags	regex:u
+v	js-cheerio.dan	/^<B=v>Type Alias: SelectorType$/;"	b	line:6771	language:dantags
+v	js-cheerio.dan	/^Default <L=p#v><\/L><I=v>$/;"	i	line:6418	language:dantags	regex:p
+v	js-cheerio.dan	/^Inherited from <L=m#v><\/L><I=v>$/;"	i	line:5565	language:dantags	regex:m
+v	js-cheerio.dan	/^Inherited from <L=o#v><\/L><I=v>$/;"	i	line:6184	language:dantags	regex:o
+v	js-cheerio.dan	/^See <L=e#v><\/L><I=v>$/;"	i	line:1680	language:dantags	regex:e
+w	js-cheerio.dan	/^<B=w>Loading Documents$/;"	b	line:6794	language:dantags
+w	js-cheerio.dan	/^Call Signature <L=e#w><\/L><I=w>$/;"	i	line:1683	language:dantags	regex:e
+w	js-cheerio.dan	/^Inherited from <L=p#w><\/L><I=w>$/;"	i	line:6425	language:dantags	regex:p
+w	js-cheerio.dan	/^html() <L=m#w><\/L><I=w>$/;"	i	line:5570	language:dantags	regex:m
+w	js-cheerio.dan	/^~~xmlMode?~~ <L=o#w><\/L><I=w>$/;"	i	line:6189	language:dantags	regex:o
+w#2	js-cheerio.dan	/^ load  <L=w#2><\/L><I=2>$/;"	i	line:6823	language:dantags	regex:w
+w#3	js-cheerio.dan	/^ loadBuffer  <L=w#3><\/L><I=3>$/;"	i	line:6857	language:dantags	regex:w
+w#4	js-cheerio.dan	/^ stringStream  <L=w#4><\/L><I=4>$/;"	i	line:6881	language:dantags	regex:w
+w#5	js-cheerio.dan	/^ decodeStream  <L=w#5><\/L><I=5>$/;"	i	line:6905	language:dantags	regex:w
+w#6	js-cheerio.dan	/^ fromURL  <L=w#6><\/L><I=6>$/;"	i	line:6932	language:dantags	regex:w
+w#7	js-cheerio.dan	/^Conclusion <L=w#7><\/L><I=7>$/;"	i	line:6946	language:dantags	regex:w
+x	js-cheerio.dan	/^<B=x>Manipulating the DOM$/;"	b	line:6952	language:dantags
+x	js-cheerio.dan	/^Call Signature <L=m#x><\/L><I=x>$/;"	i	line:5571	language:dantags	regex:m
+x	js-cheerio.dan	/^Deprecated <L=o#x><\/L><I=x>$/;"	i	line:6196	language:dantags	regex:o
+x	js-cheerio.dan	/^Type Parameters <L=e#x><\/L><I=x>$/;"	i	line:1692	language:dantags	regex:e
+x#2	js-cheerio.dan	/^Modifying Element Attributes and Properties <L=x#2><\/L><I=2>$/;"	i	line:6979	language:dantags	regex:x
+x#3	js-cheerio.dan	/^Adding and Removing Classes <L=x#3><\/L><I=3>$/;"	i	line:7022	language:dantags	regex:x
+x#4	js-cheerio.dan	/^Modifying the Text Content of an Element <L=x#4><\/L><I=4>$/;"	i	line:7046	language:dantags	regex:x
+x#5	js-cheerio.dan	/^Modifying the HTML Content of an Element <L=x#5><\/L><I=5>$/;"	i	line:7067	language:dantags	regex:x
+x#6	js-cheerio.dan	/^Inserting New Elements <L=x#6><\/L><I=6>$/;"	i	line:7082	language:dantags	regex:x
+x#7	js-cheerio.dan	/^Wrapping and Unwrapping Elements <L=x#7><\/L><I=7>$/;"	i	line:7135	language:dantags	regex:x
+x#8	js-cheerio.dan	/^Replacing Elements <L=x#8><\/L><I=8>$/;"	i	line:7170	language:dantags	regex:x
+x#9	js-cheerio.dan	/^Removing Elements <L=x#9><\/L><I=9>$/;"	i	line:7186	language:dantags	regex:x
+x#a	js-cheerio.dan	/^Conclusion <L=x#a><\/L><I=a>$/;"	i	line:7208	language:dantags	regex:x
+y	js-cheerio.dan	/^<B=y>Selecting Elements$/;"	b	line:7215	language:dantags
+y	js-cheerio.dan	/^Default <L=o#y><\/L><I=y>$/;"	i	line:6199	language:dantags	regex:o
+y	js-cheerio.dan	/^Parameters <L=e#y><\/L><I=y>$/;"	i	line:1695	language:dantags	regex:e
+y	js-cheerio.dan	/^Parameters <L=m#y><\/L><I=y>$/;"	i	line:5578	language:dantags	regex:m
+z	js-cheerio.dan	/^<B=z>Traversing the DOM$/;"	b	line:7345	language:dantags
+z	js-cheerio.dan	/^Inherited from <L=o#z><\/L><I=z>$/;"	i	line:6206	language:dantags	regex:o
+z	js-cheerio.dan	/^this <L=e#z><\/L><I=z>$/;"	i	line:1696	language:dantags	regex:e
+z	js-cheerio.dan	/^this <L=m#z><\/L><I=z>$/;"	i	line:5579	language:dantags	regex:m
+z#2	js-cheerio.dan	/^Moving Down the DOM Tree <L=z#2><\/L><I=2>$/;"	i	line:7376	language:dantags	regex:z
+z#3	js-cheerio.dan	/^ find  <L=z#3><\/L><I=3>$/;"	i	line:7380	language:dantags	regex:z
+z#4	js-cheerio.dan	/^ children  <L=z#4><\/L><I=4>$/;"	i	line:7405	language:dantags	regex:z
+z#5	js-cheerio.dan	/^ contents  <L=z#5><\/L><I=5>$/;"	i	line:7429	language:dantags	regex:z
+z#6	js-cheerio.dan	/^Moving Up the DOM Tree <L=z#6><\/L><I=6>$/;"	i	line:7452	language:dantags	regex:z
+z#7	js-cheerio.dan	/^ parent  <L=z#7><\/L><I=7>$/;"	i	line:7456	language:dantags	regex:z
+z#8	js-cheerio.dan	/^ parents  and  parentsUntil  <L=z#8><\/L><I=8>$/;"	i	line:7479	language:dantags	regex:z
+z#9	js-cheerio.dan	/^ closest  <L=z#9><\/L><I=9>$/;"	i	line:7517	language:dantags	regex:z
+z#a	js-cheerio.dan	/^Moving Sideways Within the DOM Tree <L=z#a><\/L><I=a>$/;"	i	line:7543	language:dantags	regex:z
+z#b	js-cheerio.dan	/^ next  and  prev  <L=z#b><\/L><I=b>$/;"	i	line:7547	language:dantags	regex:z
+z#c	js-cheerio.dan	/^ nextAll  ,  prevAll  , and  siblings  <L=z#c><\/L><I=c>$/;"	i	line:7583	language:dantags	regex:z
+z#d	js-cheerio.dan	/^ nextUntil  and  prevUntil  <L=z#d><\/L><I=d>$/;"	i	line:7625	language:dantags	regex:z
+z#e	js-cheerio.dan	/^Filtering elements <L=z#e><\/L><I=e>$/;"	i	line:7664	language:dantags	regex:z
+z#f	js-cheerio.dan	/^ eq  <L=z#f><\/L><I=f>$/;"	i	line:7673	language:dantags	regex:z
+z#g	js-cheerio.dan	/^ filter  and  not  <L=z#g><\/L><I=g>$/;"	i	line:7697	language:dantags	regex:z
+z#h	js-cheerio.dan	/^ has  <L=z#h><\/L><I=h>$/;"	i	line:7733	language:dantags	regex:z
+z#i	js-cheerio.dan	/^ first  and  last  <L=z#i><\/L><I=i>$/;"	i	line:7761	language:dantags	regex:z
+z#j	js-cheerio.dan	/^Conclusion <L=z#j><\/L><I=j>$/;"	i	line:7795	language:dantags	regex:z

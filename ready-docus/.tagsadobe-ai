@@ -25,7 +25,7 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	6.1.0	/d7b87f476/
+!_TAG_PROGRAM_VERSION	6.1.0	/6e6c9a2ed/
 1	adobe-ai.dan	/^<B=1>Index$/;"	b	line:234	language:dantags
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:10198	language:dantags	regex:w
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:10493	language:dantags	regex:x
@@ -153,25 +153,25 @@
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:4265	language:dantags	regex:h
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:4486	language:dantags	regex:i
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:45263	language:dantags	regex:2u
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:45367	language:dantags	regex:2v
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:45539	language:dantags	regex:2x
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:45820	language:dantags	regex:2z
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:45962	language:dantags	regex:2A
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:46281	language:dantags	regex:2C
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:46348	language:dantags	regex:2D
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:46593	language:dantags	regex:2F
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:46826	language:dantags	regex:2G
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:47217	language:dantags	regex:2J
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:47283	language:dantags	regex:2K
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:47609	language:dantags	regex:2N
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:47766	language:dantags	regex:2O
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:48099	language:dantags	regex:2Q
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:48171	language:dantags	regex:2R
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:48339	language:dantags	regex:2S
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:48472	language:dantags	regex:2U
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:48606	language:dantags	regex:2W
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:45366	language:dantags	regex:2v
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:45537	language:dantags	regex:2x
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:45818	language:dantags	regex:2z
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:45960	language:dantags	regex:2A
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:46279	language:dantags	regex:2C
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:46346	language:dantags	regex:2D
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:46591	language:dantags	regex:2F
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:46824	language:dantags	regex:2G
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:47214	language:dantags	regex:2J
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:47280	language:dantags	regex:2K
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:47606	language:dantags	regex:2N
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:47763	language:dantags	regex:2O
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:48096	language:dantags	regex:2Q
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:48168	language:dantags	regex:2R
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:48336	language:dantags	regex:2S
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:48469	language:dantags	regex:2U
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:48603	language:dantags	regex:2W
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:4862	language:dantags	regex:k
-1	adobe-ai.dan	/^<I=1>$/;"	i	line:48689	language:dantags	regex:2X
+1	adobe-ai.dan	/^<I=1>$/;"	i	line:48686	language:dantags	regex:2X
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:529	language:dantags	regex:3
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:5654	language:dantags	regex:l
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:5832	language:dantags	regex:m
@@ -188,13 +188,13 @@
 1	adobe-ai.dan	/^<I=1>$/;"	i	line:9956	language:dantags	regex:v
 1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:19458	language:dantags	regex:13
 1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:45072	language:dantags	regex:2t
-1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46180	language:dantags	regex:2B
-1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47118	language:dantags	regex:2I
-1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47996	language:dantags	regex:2P
+1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46178	language:dantags	regex:2B
+1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47116	language:dantags	regex:2I
+1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47993	language:dantags	regex:2P
 1	adobe-ai.dan	/^<I=1><I=49>$/;"	i	line:42611	language:dantags	regex:2o
 1	adobe-ai.dan	/^<I=1><I=d>$/;"	i	line:602	language:dantags	regex:4
 1	adobe-ai.dan	/^AlternateGlyphsForm <I=1>$/;"	i	line:42572	language:dantags	regex:2o
-1	adobe-ai.dan	/^Em space units <I=1>$/;"	i	line:48327	language:dantags	regex:2S
+1	adobe-ai.dan	/^Em space units <I=1>$/;"	i	line:48324	language:dantags	regex:2S
 1	adobe-ai.dan	/^Installing scripts in the Scripts menu <I=1>$/;"	i	line:587	language:dantags	regex:4
 1	adobe-ai.dan	/^Viewing the JavaScript object model <I=1>$/;"	i	line:927	language:dantags	regex:7
 10	adobe-ai.dan	/^<B=10>Matrix$/;"	b	line:18215	language:dantags
@@ -1458,9 +1458,9 @@
 2	adobe-ai.dan	/^<B=2>Welcome to the Adobe Illustrator Scripting Guide!$/;"	b	line:257	language:dantags
 2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:19458	language:dantags	regex:13
 2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:45072	language:dantags	regex:2t
-2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46180	language:dantags	regex:2B
-2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47118	language:dantags	regex:2I
-2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47996	language:dantags	regex:2P
+2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46178	language:dantags	regex:2B
+2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47116	language:dantags	regex:2I
+2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47993	language:dantags	regex:2P
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:10212	language:dantags	regex:w
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:10507	language:dantags	regex:x
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:10720	language:dantags	regex:y
@@ -1586,20 +1586,20 @@
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:4279	language:dantags	regex:h
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:4500	language:dantags	regex:i
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:45289	language:dantags	regex:2u
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:45402	language:dantags	regex:2v
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:45583	language:dantags	regex:2x
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:45826	language:dantags	regex:2z
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:45981	language:dantags	regex:2A
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:46398	language:dantags	regex:2D
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:46677	language:dantags	regex:2F
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:46840	language:dantags	regex:2G
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:47326	language:dantags	regex:2K
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:47630	language:dantags	regex:2N
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:47786	language:dantags	regex:2O
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:48181	language:dantags	regex:2R
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:48620	language:dantags	regex:2W
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:45400	language:dantags	regex:2v
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:45581	language:dantags	regex:2x
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:45824	language:dantags	regex:2z
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:45979	language:dantags	regex:2A
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:46396	language:dantags	regex:2D
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:46675	language:dantags	regex:2F
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:46838	language:dantags	regex:2G
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:47323	language:dantags	regex:2K
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:47627	language:dantags	regex:2N
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:47783	language:dantags	regex:2O
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:48178	language:dantags	regex:2R
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:48617	language:dantags	regex:2W
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:4876	language:dantags	regex:k
-2	adobe-ai.dan	/^<I=2>$/;"	i	line:48808	language:dantags	regex:2X
+2	adobe-ai.dan	/^<I=2>$/;"	i	line:48805	language:dantags	regex:2X
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:535	language:dantags	regex:3
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:5668	language:dantags	regex:l
 2	adobe-ai.dan	/^<I=2>$/;"	i	line:5846	language:dantags	regex:m
@@ -1774,109 +1774,109 @@
 29#7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:38267	language:dantags	regex:29
 29#8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:38267	language:dantags	regex:29
 29#g	adobe-ai.dan	/^<I=g>$/;"	i	line:38169	language:dantags	regex:29
-2A	adobe-ai.dan	/^<B=2A>Working with the perspective grid$/;"	b	line:45872	language:dantags
-2A#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45962	language:dantags	regex:2A
-2A#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45981	language:dantags	regex:2A
-2A#3	adobe-ai.dan	/^<I=3>$/;"	i	line:46012	language:dantags	regex:2A
-2A#4	adobe-ai.dan	/^<I=4>$/;"	i	line:46059	language:dantags	regex:2A
-2A#5	adobe-ai.dan	/^<I=5>$/;"	i	line:46094	language:dantags	regex:2A
-2B	adobe-ai.dan	/^<B=2B>Working with text frames$/;"	b	line:46104	language:dantags
-2B#1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46180	language:dantags	regex:2B
-2B#2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46180	language:dantags	regex:2B
-2C	adobe-ai.dan	/^<B=2C>Your first Illustrator script$/;"	b	line:46190	language:dantags
-2C#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46281	language:dantags	regex:2C
-2D	adobe-ai.dan	/^<B=2D>Creating paths and shapes$/;"	b	line:46291	language:dantags
-2D#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46348	language:dantags	regex:2D
-2D#2	adobe-ai.dan	/^<I=2>$/;"	i	line:46398	language:dantags	regex:2D
-2D#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46416	language:dantags	regex:2D
-2D#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46416	language:dantags	regex:2D
-2D#5	adobe-ai.dan	/^<I=5>$/;"	i	line:46451	language:dantags	regex:2D
-2D#6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46470	language:dantags	regex:2D
-2D#7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46470	language:dantags	regex:2D
-2E	adobe-ai.dan	/^<B=2E>For more information$/;"	b	line:46480	language:dantags
-2F	adobe-ai.dan	/^<B=2F>Accessing and referencing objects$/;"	b	line:46526	language:dantags
-2F#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46593	language:dantags	regex:2F
-2F#2	adobe-ai.dan	/^<I=2>$/;"	i	line:46677	language:dantags	regex:2F
-2F#3	adobe-ai.dan	/^<I=3>$/;"	i	line:46697	language:dantags	regex:2F
-2F#4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46726	language:dantags	regex:2F
-2F#5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46726	language:dantags	regex:2F
-2G	adobe-ai.dan	/^<B=2G>Working with the perspective grid$/;"	b	line:46736	language:dantags
-2G#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46826	language:dantags	regex:2G
-2G#2	adobe-ai.dan	/^<I=2>$/;"	i	line:46840	language:dantags	regex:2G
-2G#3	adobe-ai.dan	/^<I=3>$/;"	i	line:46871	language:dantags	regex:2G
-2G#4	adobe-ai.dan	/^<I=4>$/;"	i	line:46921	language:dantags	regex:2G
-2G#5	adobe-ai.dan	/^<I=5>$/;"	i	line:46965	language:dantags	regex:2G
-2H	adobe-ai.dan	/^<B=2H>Working with methods in JavaScript$/;"	b	line:46975	language:dantags
-2I	adobe-ai.dan	/^<B=2I>Working with text frames$/;"	b	line:47044	language:dantags
-2I#1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47118	language:dantags	regex:2I
-2I#2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47118	language:dantags	regex:2I
-2J	adobe-ai.dan	/^<B=2J>Your first Illustrator script$/;"	b	line:47128	language:dantags
-2J#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47217	language:dantags	regex:2J
-2K	adobe-ai.dan	/^<B=2K>Creating paths and shapes$/;"	b	line:47227	language:dantags
-2K#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47283	language:dantags	regex:2K
-2K#2	adobe-ai.dan	/^<I=2>$/;"	i	line:47326	language:dantags	regex:2K
-2K#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47345	language:dantags	regex:2K
-2K#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47345	language:dantags	regex:2K
-2K#5	adobe-ai.dan	/^<I=5>$/;"	i	line:47381	language:dantags	regex:2K
-2K#6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47402	language:dantags	regex:2K
-2K#7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47402	language:dantags	regex:2K
-2L	adobe-ai.dan	/^<B=2L>Working with enumeration values$/;"	b	line:47412	language:dantags
+2A	adobe-ai.dan	/^<B=2A>Working with the perspective grid$/;"	b	line:45870	language:dantags
+2A#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45960	language:dantags	regex:2A
+2A#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45979	language:dantags	regex:2A
+2A#3	adobe-ai.dan	/^<I=3>$/;"	i	line:46010	language:dantags	regex:2A
+2A#4	adobe-ai.dan	/^<I=4>$/;"	i	line:46057	language:dantags	regex:2A
+2A#5	adobe-ai.dan	/^<I=5>$/;"	i	line:46092	language:dantags	regex:2A
+2B	adobe-ai.dan	/^<B=2B>Working with text frames$/;"	b	line:46102	language:dantags
+2B#1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46178	language:dantags	regex:2B
+2B#2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:46178	language:dantags	regex:2B
+2C	adobe-ai.dan	/^<B=2C>Your first Illustrator script$/;"	b	line:46188	language:dantags
+2C#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46279	language:dantags	regex:2C
+2D	adobe-ai.dan	/^<B=2D>Creating paths and shapes$/;"	b	line:46289	language:dantags
+2D#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46346	language:dantags	regex:2D
+2D#2	adobe-ai.dan	/^<I=2>$/;"	i	line:46396	language:dantags	regex:2D
+2D#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46414	language:dantags	regex:2D
+2D#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46414	language:dantags	regex:2D
+2D#5	adobe-ai.dan	/^<I=5>$/;"	i	line:46449	language:dantags	regex:2D
+2D#6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46468	language:dantags	regex:2D
+2D#7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46468	language:dantags	regex:2D
+2E	adobe-ai.dan	/^<B=2E>For more information$/;"	b	line:46478	language:dantags
+2F	adobe-ai.dan	/^<B=2F>Accessing and referencing objects$/;"	b	line:46524	language:dantags
+2F#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46591	language:dantags	regex:2F
+2F#2	adobe-ai.dan	/^<I=2>$/;"	i	line:46675	language:dantags	regex:2F
+2F#3	adobe-ai.dan	/^<I=3>$/;"	i	line:46695	language:dantags	regex:2F
+2F#4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46724	language:dantags	regex:2F
+2F#5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46724	language:dantags	regex:2F
+2G	adobe-ai.dan	/^<B=2G>Working with the perspective grid$/;"	b	line:46734	language:dantags
+2G#1	adobe-ai.dan	/^<I=1>$/;"	i	line:46824	language:dantags	regex:2G
+2G#2	adobe-ai.dan	/^<I=2>$/;"	i	line:46838	language:dantags	regex:2G
+2G#3	adobe-ai.dan	/^<I=3>$/;"	i	line:46869	language:dantags	regex:2G
+2G#4	adobe-ai.dan	/^<I=4>$/;"	i	line:46919	language:dantags	regex:2G
+2G#5	adobe-ai.dan	/^<I=5>$/;"	i	line:46963	language:dantags	regex:2G
+2H	adobe-ai.dan	/^<B=2H>Working with methods in JavaScript$/;"	b	line:46973	language:dantags
+2I	adobe-ai.dan	/^<B=2I>Working with text frames$/;"	b	line:47042	language:dantags
+2I#1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47116	language:dantags	regex:2I
+2I#2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47116	language:dantags	regex:2I
+2J	adobe-ai.dan	/^<B=2J>Your first Illustrator script$/;"	b	line:47126	language:dantags
+2J#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47214	language:dantags	regex:2J
+2K	adobe-ai.dan	/^<B=2K>Creating paths and shapes$/;"	b	line:47224	language:dantags
+2K#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47280	language:dantags	regex:2K
+2K#2	adobe-ai.dan	/^<I=2>$/;"	i	line:47323	language:dantags	regex:2K
+2K#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47342	language:dantags	regex:2K
+2K#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47342	language:dantags	regex:2K
+2K#5	adobe-ai.dan	/^<I=5>$/;"	i	line:47378	language:dantags	regex:2K
+2K#6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47399	language:dantags	regex:2K
+2K#7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47399	language:dantags	regex:2K
+2L	adobe-ai.dan	/^<B=2L>Working with enumeration values$/;"	b	line:47409	language:dantags
 2L	adobe-ai.dan	/^<I=G><I=2L>$/;"	i	line:1882	language:dantags	regex:9
-2M	adobe-ai.dan	/^<B=2M>For more information$/;"	b	line:47490	language:dantags
+2M	adobe-ai.dan	/^<B=2M>For more information$/;"	b	line:47487	language:dantags
 2M	adobe-ai.dan	/^<I=H><I=2M>$/;"	i	line:1911	language:dantags	regex:9
-2N	adobe-ai.dan	/^<B=2N>Accessing and referencing objects$/;"	b	line:47535	language:dantags
-2N#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47609	language:dantags	regex:2N
-2N#2	adobe-ai.dan	/^<I=2>$/;"	i	line:47630	language:dantags	regex:2N
-2N#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47667	language:dantags	regex:2N
-2N#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47667	language:dantags	regex:2N
-2O	adobe-ai.dan	/^<B=2O>Working with the perspective grid$/;"	b	line:47677	language:dantags
+2N	adobe-ai.dan	/^<B=2N>Accessing and referencing objects$/;"	b	line:47532	language:dantags
+2N#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47606	language:dantags	regex:2N
+2N#2	adobe-ai.dan	/^<I=2>$/;"	i	line:47627	language:dantags	regex:2N
+2N#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47664	language:dantags	regex:2N
+2N#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47664	language:dantags	regex:2N
+2O	adobe-ai.dan	/^<B=2O>Working with the perspective grid$/;"	b	line:47674	language:dantags
 2O	adobe-ai.dan	/^<I=J><I=2O>$/;"	i	line:1955	language:dantags	regex:9
-2O#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47766	language:dantags	regex:2O
-2O#2	adobe-ai.dan	/^<I=2>$/;"	i	line:47786	language:dantags	regex:2O
-2O#3	adobe-ai.dan	/^<I=3>$/;"	i	line:47816	language:dantags	regex:2O
-2O#4	adobe-ai.dan	/^<I=4>$/;"	i	line:47864	language:dantags	regex:2O
-2O#5	adobe-ai.dan	/^<I=5>$/;"	i	line:47910	language:dantags	regex:2O
-2P	adobe-ai.dan	/^<B=2P>Working with text frames$/;"	b	line:47920	language:dantags
-2P#1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47996	language:dantags	regex:2P
-2P#2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47996	language:dantags	regex:2P
-2Q	adobe-ai.dan	/^<B=2Q>Your first Illustrator script$/;"	b	line:48006	language:dantags
-2Q#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48099	language:dantags	regex:2Q
-2R	adobe-ai.dan	/^<B=2R>Launching and quitting Illustrator from a script$/;"	b	line:48109	language:dantags
-2R#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48171	language:dantags	regex:2R
-2R#2	adobe-ai.dan	/^<I=2>$/;"	i	line:48181	language:dantags	regex:2R
-2R#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48229	language:dantags	regex:2R
-2R#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48229	language:dantags	regex:2R
-2R#5	adobe-ai.dan	/^<I=5>$/;"	i	line:48243	language:dantags	regex:2R
-2R#6	adobe-ai.dan	/^<I=6>$/;"	i	line:48251	language:dantags	regex:2R
-2R#7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48260	language:dantags	regex:2R
-2R#8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48260	language:dantags	regex:2R
-2S	adobe-ai.dan	/^<B=2S>Measurement Units$/;"	b	line:48270	language:dantags
-2S#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48339	language:dantags	regex:2S
-2S#1	adobe-ai.dan	/^Em space units <I=1>$/;"	i	line:48327	language:dantags	regex:2S
-2S#6	adobe-ai.dan	/^<I=6>$/;"	i	line:48326	language:dantags	regex:2S
-2T	adobe-ai.dan	/^<B=2T>Paths and shapes$/;"	b	line:48349	language:dantags
+2O#1	adobe-ai.dan	/^<I=1>$/;"	i	line:47763	language:dantags	regex:2O
+2O#2	adobe-ai.dan	/^<I=2>$/;"	i	line:47783	language:dantags	regex:2O
+2O#3	adobe-ai.dan	/^<I=3>$/;"	i	line:47813	language:dantags	regex:2O
+2O#4	adobe-ai.dan	/^<I=4>$/;"	i	line:47861	language:dantags	regex:2O
+2O#5	adobe-ai.dan	/^<I=5>$/;"	i	line:47907	language:dantags	regex:2O
+2P	adobe-ai.dan	/^<B=2P>Working with text frames$/;"	b	line:47917	language:dantags
+2P#1	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47993	language:dantags	regex:2P
+2P#2	adobe-ai.dan	/^<I=1><I=2>$/;"	i	line:47993	language:dantags	regex:2P
+2Q	adobe-ai.dan	/^<B=2Q>Your first Illustrator script$/;"	b	line:48003	language:dantags
+2Q#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48096	language:dantags	regex:2Q
+2R	adobe-ai.dan	/^<B=2R>Launching and quitting Illustrator from a script$/;"	b	line:48106	language:dantags
+2R#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48168	language:dantags	regex:2R
+2R#2	adobe-ai.dan	/^<I=2>$/;"	i	line:48178	language:dantags	regex:2R
+2R#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48226	language:dantags	regex:2R
+2R#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48226	language:dantags	regex:2R
+2R#5	adobe-ai.dan	/^<I=5>$/;"	i	line:48240	language:dantags	regex:2R
+2R#6	adobe-ai.dan	/^<I=6>$/;"	i	line:48248	language:dantags	regex:2R
+2R#7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48257	language:dantags	regex:2R
+2R#8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48257	language:dantags	regex:2R
+2S	adobe-ai.dan	/^<B=2S>Measurement Units$/;"	b	line:48267	language:dantags
+2S#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48336	language:dantags	regex:2S
+2S#1	adobe-ai.dan	/^Em space units <I=1>$/;"	i	line:48324	language:dantags	regex:2S
+2S#6	adobe-ai.dan	/^<I=6>$/;"	i	line:48323	language:dantags	regex:2S
+2T	adobe-ai.dan	/^<B=2T>Paths and shapes$/;"	b	line:48346	language:dantags
 2T	adobe-ai.dan	/^<I=O><I=2T>$/;"	i	line:2076	language:dantags	regex:9
-2U	adobe-ai.dan	/^<B=2U>Page-item positioning and dimensions$/;"	b	line:48396	language:dantags
-2U#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48472	language:dantags	regex:2U
-2V	adobe-ai.dan	/^<B=2V>Printing Illustrator documents$/;"	b	line:48482	language:dantags
-2W	adobe-ai.dan	/^<B=2W>User-interaction levels$/;"	b	line:48540	language:dantags
-2W#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48606	language:dantags	regex:2W
-2W#2	adobe-ai.dan	/^<I=2>$/;"	i	line:48620	language:dantags	regex:2W
-2W#3	adobe-ai.dan	/^<I=3>$/;"	i	line:48635	language:dantags	regex:2W
-2X	adobe-ai.dan	/^<B=2X>Working with objects$/;"	b	line:48645	language:dantags
+2U	adobe-ai.dan	/^<B=2U>Page-item positioning and dimensions$/;"	b	line:48393	language:dantags
+2U#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48469	language:dantags	regex:2U
+2V	adobe-ai.dan	/^<B=2V>Printing Illustrator documents$/;"	b	line:48479	language:dantags
+2W	adobe-ai.dan	/^<B=2W>User-interaction levels$/;"	b	line:48537	language:dantags
+2W#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48603	language:dantags	regex:2W
+2W#2	adobe-ai.dan	/^<I=2>$/;"	i	line:48617	language:dantags	regex:2W
+2W#3	adobe-ai.dan	/^<I=3>$/;"	i	line:48632	language:dantags	regex:2W
+2X	adobe-ai.dan	/^<B=2X>Working with objects$/;"	b	line:48642	language:dantags
 2X	adobe-ai.dan	/^<I=S><I=2X>$/;"	i	line:2157	language:dantags	regex:9
-2X#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48689	language:dantags	regex:2X
-2X#2	adobe-ai.dan	/^<I=2>$/;"	i	line:48808	language:dantags	regex:2X
-2X#3	adobe-ai.dan	/^<I=3>$/;"	i	line:48831	language:dantags	regex:2X
-2X#4	adobe-ai.dan	/^<I=4>$/;"	i	line:48845	language:dantags	regex:2X
-2X#5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48864	language:dantags	regex:2X
-2X#6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48864	language:dantags	regex:2X
-2X#7	adobe-ai.dan	/^<I=7>$/;"	i	line:48875	language:dantags	regex:2X
-2X#8	adobe-ai.dan	/^<I=8>$/;"	i	line:48881	language:dantags	regex:2X
-2X#9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48889	language:dantags	regex:2X
-2X#a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48889	language:dantags	regex:2X
-2X#b	adobe-ai.dan	/^<I=b>$/;"	i	line:48911	language:dantags	regex:2X
-2Y	adobe-ai.dan	/^<B=2Y>search$/;"	b	line:48921	language:dantags
+2X#1	adobe-ai.dan	/^<I=1>$/;"	i	line:48686	language:dantags	regex:2X
+2X#2	adobe-ai.dan	/^<I=2>$/;"	i	line:48805	language:dantags	regex:2X
+2X#3	adobe-ai.dan	/^<I=3>$/;"	i	line:48828	language:dantags	regex:2X
+2X#4	adobe-ai.dan	/^<I=4>$/;"	i	line:48842	language:dantags	regex:2X
+2X#5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48861	language:dantags	regex:2X
+2X#6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48861	language:dantags	regex:2X
+2X#7	adobe-ai.dan	/^<I=7>$/;"	i	line:48872	language:dantags	regex:2X
+2X#8	adobe-ai.dan	/^<I=8>$/;"	i	line:48878	language:dantags	regex:2X
+2X#9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48886	language:dantags	regex:2X
+2X#a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48886	language:dantags	regex:2X
+2X#b	adobe-ai.dan	/^<I=b>$/;"	i	line:48908	language:dantags	regex:2X
+2Y	adobe-ai.dan	/^<B=2Y>search$/;"	b	line:48918	language:dantags
 2a	adobe-ai.dan	/^<B=2a>TextFonts$/;"	b	line:38277	language:dantags
 2a#1	adobe-ai.dan	/^<I=1>$/;"	i	line:38328	language:dantags	regex:2a
 2a#2	adobe-ai.dan	/^<I=2>$/;"	i	line:38342	language:dantags	regex:2a
@@ -2521,26 +2521,26 @@
 2u#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45263	language:dantags	regex:2u
 2u#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45289	language:dantags	regex:2u
 2v	adobe-ai.dan	/^<B=2v>Top-Level (containing) Objects$/;"	b	line:45299	language:dantags
-2v#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45367	language:dantags	regex:2v
-2v#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45402	language:dantags	regex:2v
-2v#3	adobe-ai.dan	/^<I=3>$/;"	i	line:45419	language:dantags	regex:2v
-2w	adobe-ai.dan	/^<B=2w>Transformations$/;"	b	line:45429	language:dantags
-2x	adobe-ai.dan	/^<B=2x>Creating paths and shapes$/;"	b	line:45479	language:dantags
-2x#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45539	language:dantags	regex:2x
-2x#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45583	language:dantags	regex:2x
-2x#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45600	language:dantags	regex:2x
-2x#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45600	language:dantags	regex:2x
-2x#5	adobe-ai.dan	/^<I=5>$/;"	i	line:45622	language:dantags	regex:2x
-2x#6	adobe-ai.dan	/^<I=6>$/;"	i	line:45642	language:dantags	regex:2x
-2x#7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45663	language:dantags	regex:2x
-2x#8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45663	language:dantags	regex:2x
-2y	adobe-ai.dan	/^<B=2y>For more information$/;"	b	line:45673	language:dantags
+2v#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45366	language:dantags	regex:2v
+2v#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45400	language:dantags	regex:2v
+2v#3	adobe-ai.dan	/^<I=3>$/;"	i	line:45417	language:dantags	regex:2v
+2w	adobe-ai.dan	/^<B=2w>Transformations$/;"	b	line:45427	language:dantags
+2x	adobe-ai.dan	/^<B=2x>Creating paths and shapes$/;"	b	line:45477	language:dantags
+2x#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45537	language:dantags	regex:2x
+2x#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45581	language:dantags	regex:2x
+2x#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45598	language:dantags	regex:2x
+2x#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45598	language:dantags	regex:2x
+2x#5	adobe-ai.dan	/^<I=5>$/;"	i	line:45620	language:dantags	regex:2x
+2x#6	adobe-ai.dan	/^<I=6>$/;"	i	line:45640	language:dantags	regex:2x
+2x#7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45661	language:dantags	regex:2x
+2x#8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45661	language:dantags	regex:2x
+2y	adobe-ai.dan	/^<B=2y>For more information$/;"	b	line:45671	language:dantags
 2y	adobe-ai.dan	/^<I=N><I=2y>$/;"	i	line:33862	language:dantags	regex:1N
-2z	adobe-ai.dan	/^<B=2z>Object references$/;"	b	line:45719	language:dantags
-2z#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45820	language:dantags	regex:2z
-2z#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45826	language:dantags	regex:2z
-2z#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45862	language:dantags	regex:2z
-2z#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45862	language:dantags	regex:2z
+2z	adobe-ai.dan	/^<B=2z>Object references$/;"	b	line:45717	language:dantags
+2z#1	adobe-ai.dan	/^<I=1>$/;"	i	line:45818	language:dantags	regex:2z
+2z#2	adobe-ai.dan	/^<I=2>$/;"	i	line:45824	language:dantags	regex:2z
+2z#3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45860	language:dantags	regex:2z
+2z#4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45860	language:dantags	regex:2z
 3	adobe-ai.dan	/^<B=3>Changelog$/;"	b	line:496	language:dantags
 3	adobe-ai.dan	/^<I=2><I=3>$/;"	i	line:13937	language:dantags	regex:L
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:1005	language:dantags	regex:7
@@ -2617,14 +2617,14 @@
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:41677	language:dantags	regex:2i
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:41972	language:dantags	regex:2k
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:44804	language:dantags	regex:2p
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:45419	language:dantags	regex:2v
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:46012	language:dantags	regex:2A
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:45417	language:dantags	regex:2v
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:46010	language:dantags	regex:2A
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:4657	language:dantags	regex:j
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:46697	language:dantags	regex:2F
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:46871	language:dantags	regex:2G
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:47816	language:dantags	regex:2O
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:48635	language:dantags	regex:2W
-3	adobe-ai.dan	/^<I=3>$/;"	i	line:48831	language:dantags	regex:2X
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:46695	language:dantags	regex:2F
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:46869	language:dantags	regex:2G
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:47813	language:dantags	regex:2O
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:48632	language:dantags	regex:2W
+3	adobe-ai.dan	/^<I=3>$/;"	i	line:48828	language:dantags	regex:2X
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:4890	language:dantags	regex:k
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:539	language:dantags	regex:3
 3	adobe-ai.dan	/^<I=3>$/;"	i	line:6314	language:dantags	regex:o
@@ -2688,12 +2688,12 @@
 3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:4291	language:dantags	regex:h
 3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:4512	language:dantags	regex:i
 3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45130	language:dantags	regex:2t
-3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45600	language:dantags	regex:2x
-3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45862	language:dantags	regex:2z
-3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46416	language:dantags	regex:2D
-3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47345	language:dantags	regex:2K
-3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47667	language:dantags	regex:2N
-3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48229	language:dantags	regex:2R
+3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45598	language:dantags	regex:2x
+3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45860	language:dantags	regex:2z
+3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46414	language:dantags	regex:2D
+3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47342	language:dantags	regex:2K
+3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47664	language:dantags	regex:2N
+3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48226	language:dantags	regex:2R
 3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:5680	language:dantags	regex:l
 3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:5858	language:dantags	regex:m
 3	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:6038	language:dantags	regex:n
@@ -2760,12 +2760,12 @@
 4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:4291	language:dantags	regex:h
 4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:4512	language:dantags	regex:i
 4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45130	language:dantags	regex:2t
-4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45600	language:dantags	regex:2x
-4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45862	language:dantags	regex:2z
-4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46416	language:dantags	regex:2D
-4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47345	language:dantags	regex:2K
-4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47667	language:dantags	regex:2N
-4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48229	language:dantags	regex:2R
+4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45598	language:dantags	regex:2x
+4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:45860	language:dantags	regex:2z
+4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:46414	language:dantags	regex:2D
+4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47342	language:dantags	regex:2K
+4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:47664	language:dantags	regex:2N
+4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:48226	language:dantags	regex:2R
 4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:5680	language:dantags	regex:l
 4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:5858	language:dantags	regex:m
 4	adobe-ai.dan	/^<I=3><I=4>$/;"	i	line:6038	language:dantags	regex:n
@@ -2834,10 +2834,10 @@
 4	adobe-ai.dan	/^<I=4>$/;"	i	line:41246	language:dantags	regex:2h
 4	adobe-ai.dan	/^<I=4>$/;"	i	line:41691	language:dantags	regex:2i
 4	adobe-ai.dan	/^<I=4>$/;"	i	line:41986	language:dantags	regex:2k
-4	adobe-ai.dan	/^<I=4>$/;"	i	line:46059	language:dantags	regex:2A
-4	adobe-ai.dan	/^<I=4>$/;"	i	line:46921	language:dantags	regex:2G
-4	adobe-ai.dan	/^<I=4>$/;"	i	line:47864	language:dantags	regex:2O
-4	adobe-ai.dan	/^<I=4>$/;"	i	line:48845	language:dantags	regex:2X
+4	adobe-ai.dan	/^<I=4>$/;"	i	line:46057	language:dantags	regex:2A
+4	adobe-ai.dan	/^<I=4>$/;"	i	line:46919	language:dantags	regex:2G
+4	adobe-ai.dan	/^<I=4>$/;"	i	line:47861	language:dantags	regex:2O
+4	adobe-ai.dan	/^<I=4>$/;"	i	line:48842	language:dantags	regex:2X
 4	adobe-ai.dan	/^<I=4>$/;"	i	line:4904	language:dantags	regex:k
 4	adobe-ai.dan	/^<I=4>$/;"	i	line:6328	language:dantags	regex:o
 4	adobe-ai.dan	/^<I=4>$/;"	i	line:8181	language:dantags	regex:p
@@ -2856,7 +2856,7 @@
 4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:35734	language:dantags	regex:1Y
 4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:37887	language:dantags	regex:27
 4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:4162	language:dantags	regex:g
-4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46726	language:dantags	regex:2F
+4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46724	language:dantags	regex:2F
 4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:669	language:dantags	regex:4
 4	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:844	language:dantags	regex:5
 4	adobe-ai.dan	/^AutoCADColors <I=4>$/;"	i	line:42642	language:dantags	regex:2o
@@ -2933,7 +2933,7 @@
 5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:35734	language:dantags	regex:1Y
 5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:37887	language:dantags	regex:27
 5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:4162	language:dantags	regex:g
-5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46726	language:dantags	regex:2F
+5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:46724	language:dantags	regex:2F
 5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:669	language:dantags	regex:4
 5	adobe-ai.dan	/^<I=4><I=5>$/;"	i	line:844	language:dantags	regex:5
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:10012	language:dantags	regex:v
@@ -3029,13 +3029,13 @@
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:4317	language:dantags	regex:h
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:45153	language:dantags	regex:2t
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:4547	language:dantags	regex:i
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:45622	language:dantags	regex:2x
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:46094	language:dantags	regex:2A
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:46451	language:dantags	regex:2D
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:46965	language:dantags	regex:2G
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:47381	language:dantags	regex:2K
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:47910	language:dantags	regex:2O
-5	adobe-ai.dan	/^<I=5>$/;"	i	line:48243	language:dantags	regex:2R
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:45620	language:dantags	regex:2x
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:46092	language:dantags	regex:2A
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:46449	language:dantags	regex:2D
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:46963	language:dantags	regex:2G
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:47378	language:dantags	regex:2K
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:47907	language:dantags	regex:2O
+5	adobe-ai.dan	/^<I=5>$/;"	i	line:48240	language:dantags	regex:2R
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:4918	language:dantags	regex:k
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:5698	language:dantags	regex:l
 5	adobe-ai.dan	/^<I=5>$/;"	i	line:5876	language:dantags	regex:m
@@ -3063,7 +3063,7 @@
 5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:38249	language:dantags	regex:29
 5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:41703	language:dantags	regex:2i
 5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:42120	language:dantags	regex:2l
-5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48864	language:dantags	regex:2X
+5	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48861	language:dantags	regex:2X
 5	adobe-ai.dan	/^<I=5><I=s>$/;"	i	line:15142	language:dantags	regex:N
 5	adobe-ai.dan	/^<I=5><I=s>$/;"	i	line:8472	language:dantags	regex:q
 5	adobe-ai.dan	/^AutoCADCompatibility <I=5>$/;"	i	line:42657	language:dantags	regex:2o
@@ -3152,7 +3152,7 @@
 6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:38249	language:dantags	regex:29
 6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:41703	language:dantags	regex:2i
 6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:42120	language:dantags	regex:2l
-6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48864	language:dantags	regex:2X
+6	adobe-ai.dan	/^<I=5><I=6>$/;"	i	line:48861	language:dantags	regex:2X
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:10026	language:dantags	regex:v
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:10270	language:dantags	regex:w
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:10563	language:dantags	regex:x
@@ -3232,10 +3232,10 @@
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:4190	language:dantags	regex:g
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:42269	language:dantags	regex:2m
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:4339	language:dantags	regex:h
-6	adobe-ai.dan	/^<I=6>$/;"	i	line:45642	language:dantags	regex:2x
+6	adobe-ai.dan	/^<I=6>$/;"	i	line:45640	language:dantags	regex:2x
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:4569	language:dantags	regex:i
-6	adobe-ai.dan	/^<I=6>$/;"	i	line:48251	language:dantags	regex:2R
-6	adobe-ai.dan	/^<I=6>$/;"	i	line:48326	language:dantags	regex:2S
+6	adobe-ai.dan	/^<I=6>$/;"	i	line:48248	language:dantags	regex:2R
+6	adobe-ai.dan	/^<I=6>$/;"	i	line:48323	language:dantags	regex:2S
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:4932	language:dantags	regex:k
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:5720	language:dantags	regex:l
 6	adobe-ai.dan	/^<I=6>$/;"	i	line:5890	language:dantags	regex:m
@@ -3269,8 +3269,8 @@
 6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:38400	language:dantags	regex:2a
 6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:40879	language:dantags	regex:2f
 6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:42012	language:dantags	regex:2k
-6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46470	language:dantags	regex:2D
-6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47402	language:dantags	regex:2K
+6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46468	language:dantags	regex:2D
+6	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47399	language:dantags	regex:2K
 6	adobe-ai.dan	/^AutoCADExportFileFormat <I=6>$/;"	i	line:42676	language:dantags	regex:2o
 60	adobe-ai.dan	/^<I=1S><I=60>$/;"	i	line:44603	language:dantags	regex:2o
 61	adobe-ai.dan	/^<I=1T><I=61>$/;"	i	line:44616	language:dantags	regex:2o
@@ -3303,8 +3303,8 @@
 7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:38400	language:dantags	regex:2a
 7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:40879	language:dantags	regex:2f
 7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:42012	language:dantags	regex:2k
-7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46470	language:dantags	regex:2D
-7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47402	language:dantags	regex:2K
+7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:46468	language:dantags	regex:2D
+7	adobe-ai.dan	/^<I=6><I=7>$/;"	i	line:47399	language:dantags	regex:2K
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:10040	language:dantags	regex:v
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:10284	language:dantags	regex:w
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:10577	language:dantags	regex:x
@@ -3371,7 +3371,7 @@
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:42291	language:dantags	regex:2m
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:4361	language:dantags	regex:h
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:4591	language:dantags	regex:i
-7	adobe-ai.dan	/^<I=7>$/;"	i	line:48875	language:dantags	regex:2X
+7	adobe-ai.dan	/^<I=7>$/;"	i	line:48872	language:dantags	regex:2X
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:4946	language:dantags	regex:k
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:5742	language:dantags	regex:l
 7	adobe-ai.dan	/^<I=7>$/;"	i	line:6100	language:dantags	regex:n
@@ -3408,8 +3408,8 @@
 7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:38267	language:dantags	regex:29
 7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:41719	language:dantags	regex:2i
 7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:4202	language:dantags	regex:g
-7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45663	language:dantags	regex:2x
-7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48260	language:dantags	regex:2R
+7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45661	language:dantags	regex:2x
+7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48257	language:dantags	regex:2R
 7	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:5902	language:dantags	regex:m
 7	adobe-ai.dan	/^AutoCADExportOption <I=7>$/;"	i	line:42687	language:dantags	regex:2o
 7#1	adobe-ai.dan	/^<I=1>$/;"	i	line:954	language:dantags	regex:7
@@ -3445,8 +3445,8 @@
 8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:38267	language:dantags	regex:29
 8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:41719	language:dantags	regex:2i
 8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:4202	language:dantags	regex:g
-8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45663	language:dantags	regex:2x
-8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48260	language:dantags	regex:2R
+8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:45661	language:dantags	regex:2x
+8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:48257	language:dantags	regex:2R
 8	adobe-ai.dan	/^<I=7><I=8>$/;"	i	line:5902	language:dantags	regex:m
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:10054	language:dantags	regex:v
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:10298	language:dantags	regex:w
@@ -3494,7 +3494,7 @@
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:40381	language:dantags	regex:2e
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:41054	language:dantags	regex:2g
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:41314	language:dantags	regex:2h
-8	adobe-ai.dan	/^<I=8>$/;"	i	line:48881	language:dantags	regex:2X
+8	adobe-ai.dan	/^<I=8>$/;"	i	line:48878	language:dantags	regex:2X
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:4960	language:dantags	regex:k
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:6384	language:dantags	regex:o
 8	adobe-ai.dan	/^<I=8>$/;"	i	line:724	language:dantags	regex:5
@@ -3638,7 +3638,7 @@
 9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:35941	language:dantags	regex:1Z
 9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:36257	language:dantags	regex:21
 9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:41066	language:dantags	regex:2g
-9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48889	language:dantags	regex:2X
+9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48886	language:dantags	regex:2X
 9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:5951	language:dantags	regex:m
 9	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:8563	language:dantags	regex:q
 9	adobe-ai.dan	/^AutoCADRasterFormat <I=9>$/;"	i	line:42711	language:dantags	regex:2o
@@ -4457,7 +4457,7 @@ a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:34917	language:dantags	regex:1T
 a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:35941	language:dantags	regex:1Z
 a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:36257	language:dantags	regex:21
 a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:41066	language:dantags	regex:2g
-a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48889	language:dantags	regex:2X
+a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:48886	language:dantags	regex:2X
 a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:5951	language:dantags	regex:m
 a	adobe-ai.dan	/^<I=9><I=a>$/;"	i	line:8563	language:dantags	regex:q
 a	adobe-ai.dan	/^<I=a>$/;"	i	line:10082	language:dantags	regex:v
@@ -4599,7 +4599,7 @@ b	adobe-ai.dan	/^<I=b>$/;"	i	line:39872	language:dantags	regex:2d
 b	adobe-ai.dan	/^<I=b>$/;"	i	line:40423	language:dantags	regex:2e
 b	adobe-ai.dan	/^<I=b>$/;"	i	line:41102	language:dantags	regex:2g
 b	adobe-ai.dan	/^<I=b>$/;"	i	line:41362	language:dantags	regex:2h
-b	adobe-ai.dan	/^<I=b>$/;"	i	line:48911	language:dantags	regex:2X
+b	adobe-ai.dan	/^<I=b>$/;"	i	line:48908	language:dantags	regex:2X
 b	adobe-ai.dan	/^<I=b>$/;"	i	line:5002	language:dantags	regex:k
 b	adobe-ai.dan	/^<I=b>$/;"	i	line:6426	language:dantags	regex:o
 b	adobe-ai.dan	/^<I=b>$/;"	i	line:8279	language:dantags	regex:p

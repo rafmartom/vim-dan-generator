@@ -214,7 +214,7 @@ function append_block_link(doc)
     buid = generate_uid(tonumber(file_no))
     iid = ''
 
-    output_str = string.format("%s,%s,%s,%s,%s,%s,%s,false\n", rel_path, is_anchor, pandoc_data_type, surround_by_quotes(label), surround_by_quotes(anchor_id), buid, iid)
+    output_str = string.format("%s,%s,%s,%s,%s,%s,%s,true\n", rel_path, is_anchor, pandoc_data_type, surround_by_quotes(label), surround_by_quotes(anchor_id), buid, iid)
 
     -- Append to file (like "echo ... >> file" in bash)
     local file = io.open(links_index_csv, "a")  -- "a" = append mode

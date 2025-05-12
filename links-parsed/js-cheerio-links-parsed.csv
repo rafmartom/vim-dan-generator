@@ -1,0 +1,1085 @@
+rel_path,is_anchor,pandoc_data_type,label,anchor_id,buid,iid,in_use
+./attribution.html,false,,Attribution,,1,,true
+./blog.html,false,,blog,,2,,true
+./blog/cheerio-1.0.html,false,,"Cheerio 1.0 Released, Batteries Included 🔋",,3,,true
+./blog/new-website.html,false,,"New Website, Who Dis?",,4,,true
+./blog/tags.html,false,,Tags,,5,,true
+./blog/tags/announcement.html,false,,One post tagged with announcement,,6,,true
+./blog/tags/intro.html,false,,One post tagged with intro,,7,,true
+./blog/tags/release.html,false,,One post tagged with release,,8,,true
+./blog/tags/website.html,false,,One post tagged with website,,9,,true
+./docs/advanced/configuring-cheerio.html,false,,Configuring Cheerio,,a,,true
+./docs/advanced/configuring-cheerio.html,true,Div,Configuring Cheerio,user-content-fn-1,a,1,true
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,configuring-cheerio,a,2,false
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,parsing-html-with-parse5,a,3,true
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,fragment-mode,a,4,true
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,parsing-xml-with-htmlparser2,a,5,true
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,using-htmlparser2-for-html,a,6,true
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,conclusion,a,7,true
+./docs/advanced/configuring-cheerio.html,true,Header,Configuring Cheerio,footnote-label,a,8,true
+./docs/advanced/configuring-cheerio.html,true,Link,Configuring Cheerio,user-content-fnref-1,a,9,true
+./docs/advanced/extending-cheerio.html,false,,Extending Cheerio,,b,,true
+./docs/advanced/extending-cheerio.html,true,Header,Extending Cheerio,extending-cheerio,b,1,false
+./docs/advanced/extending-cheerio.html,true,Header,Extending Cheerio,adding-custom-css-pseudo-classes,b,2,true
+./docs/advanced/extending-cheerio.html,true,Header,Extending Cheerio,writing-plugins-for-cheerio,b,3,true
+./docs/advanced/extract.html,false,,Extracting Data with the  extract  Method,,c,,true
+./docs/advanced/extract.html,true,Header,Extracting Data with the  extract  Method,extracting-data-with-the-extract-method,c,1,false
+./docs/advanced/extract.html,true,Header,Extracting Data with the  extract  Method,putting-it-all-together,c,2,true
+./docs/api.html,false,,cheerio,,d,,true
+./docs/api.html,true,Header,cheerio,cheerio,d,1,false
+./docs/api.html,true,Header,cheerio,loading,d,2,true
+./docs/api.html,true,Header,cheerio,other,d,3,true
+./docs/api.html,true,Header,cheerio,static,d,4,true
+./docs/api/classes/Cheerio.html,false,,Class:  abstract  Cheerio<T>,,e,,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,class-abstract-cheeriot,e,1,false
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example,e,2,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,extends,e,3,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters,e,4,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,implements,e,5,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,indexable,e,6,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,attributes,e,7,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,addclass,e,8,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-1,e,9,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters,e,a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this,e,b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value,e,c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns,e,d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-1,e,e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see,e,f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,attr,e,g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature,e,h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-2,e,i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-1,e,j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-1,e,k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name,e,l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-1,e,m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-2,e,n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-1,e,o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-1,e,p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-3,e,q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-2,e,r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-2,e,s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-2,e,t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-3,e,u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-2,e,v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-2,e,w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-4,e,x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-3,e,y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-3,e,z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-1,e,A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value-1,e,B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-3,e,C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-4,e,D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-3,e,E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-3,e,F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-5,e,G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-4,e,H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-4,e,I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,values,e,J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-4,e,K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-5,e,L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-4,e,M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,data,e,N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-4,e,O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-6,e,P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-5,e,Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-5,e,R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-2,e,S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-5,e,T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-6,e,U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-5,e,V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-5,e,W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-7,e,X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-6,e,Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-6,e,Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-6,e,10,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-7,e,11,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-6,e,12,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-6,e,13,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-8,e,14,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-7,e,15,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-7,e,16,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-3,e,17,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value-2,e,18,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-7,e,19,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-8,e,1a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-7,e,1b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-7,e,1c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-9,e,1d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-8,e,1e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-8,e,1f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,values-1,e,1g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-8,e,1h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-9,e,1i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-8,e,1j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,hasclass,e,1k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-10,e,1l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-9,e,1m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-9,e,1n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,classname,e,1o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-9,e,1p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-10,e,1q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-9,e,1r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prop,e,1s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-8,e,1t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-11,e,1u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-10,e,1v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-10,e,1w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-4,e,1x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-10,e,1y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-11,e,1z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-10,e,1A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-9,e,1B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-12,e,1C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-11,e,1D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-11,e,1E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-5,e,1F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-11,e,1G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-12,e,1H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-11,e,1I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-10,e,1J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-13,e,1K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-12,e,1L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-12,e,1M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-6,e,1N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-12,e,1O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-11,e,1P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-14,e,1Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-13,e,1R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-13,e,1S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-7,e,1T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-13,e,1U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-13,e,1V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-12,e,1W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-15,e,1X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-14,e,1Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-14,e,1Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-8,e,20,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-14,e,21,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-13,e,22,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-16,e,23,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-15,e,24,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-15,e,25,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-9,e,26,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value-3,e,27,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-15,e,28,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-14,e,29,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-17,e,2a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-16,e,2b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-16,e,2c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,map,e,2d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-16,e,2e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-14,e,2f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-15,e,2g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-18,e,2h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-17,e,2i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-17,e,2j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-10,e,2k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value-4,e,2l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-17,e,2m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-16,e,2n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-19,e,2o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-18,e,2p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-18,e,2q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-11,e,2r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-18,e,2s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,removeattr,e,2t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-20,e,2u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-19,e,2v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-19,e,2w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-12,e,2x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-19,e,2y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-15,e,2z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-12,e,2A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,removeclass,e,2B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-21,e,2C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-20,e,2D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-20,e,2E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-13,e,2F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-20,e,2G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-16,e,2H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-13,e,2I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,toggleclass,e,2J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-22,e,2K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-21,e,2L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-21,e,2M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value-5,e,2N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,stateval,e,2O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-21,e,2P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-17,e,2Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-14,e,2R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,val,e,2S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-17,e,2T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-23,e,2U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-22,e,2V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-22,e,2W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-22,e,2X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-18,e,2Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-15,e,2Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-18,e,30,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-24,e,31,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-23,e,32,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-23,e,33,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,value-6,e,34,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-23,e,35,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-19,e,36,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-16,e,37,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,css,e,38,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,css-1,e,39,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param,e,3a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-1,e,3b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-17,e,3c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-19,e,3d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-25,e,3e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-24,e,3f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-24,e,3g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,names,e,3h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-24,e,3i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-2,e,3j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-3,e,3k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-18,e,3l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-19,e,3m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-20,e,3n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-26,e,3o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-25,e,3p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-25,e,3q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,name-14,e,3r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-25,e,3s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-4,e,3t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-5,e,3u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-20,e,3v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-21,e,3w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-21,e,3x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-27,e,3y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-26,e,3z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-26,e,3A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prop-1,e,3B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,val-1,e,3C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-26,e,3D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-6,e,3E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-7,e,3F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-22,e,3G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-23,e,3H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-22,e,3I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-28,e,3J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-27,e,3K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-27,e,3L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,map-1,e,3M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-27,e,3N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-8,e,3O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,param-9,e,3P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-24,e,3Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-25,e,3R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,forms,e,3S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,serialize,e,3T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-29,e,3U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-28,e,3V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-28,e,3W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-28,e,3X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-20,e,3Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-26,e,3Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,serializearray,e,40,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-30,e,41,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-29,e,42,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-29,e,43,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-29,e,44,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-21,e,45,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-27,e,46,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,manipulation,e,47,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,after,e,48,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-31,e,49,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-30,e,4a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-30,e,4b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,elems,e,4c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-30,e,4d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-22,e,4e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-28,e,4f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,append,e,4g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-32,e,4h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-31,e,4i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-31,e,4j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,elems-1,e,4k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-31,e,4l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-23,e,4m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-29,e,4n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,appendto,e,4o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-33,e,4p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-32,e,4q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-32,e,4r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,target,e,4s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-32,e,4t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-24,e,4u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-30,e,4v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,before,e,4w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-34,e,4x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-33,e,4y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-33,e,4z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,elems-2,e,4A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-33,e,4B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-25,e,4C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-31,e,4D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,clone,e,4E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-35,e,4F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-34,e,4G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-34,e,4H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-34,e,4I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-26,e,4J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-32,e,4K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,empty,e,4L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-36,e,4M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-35,e,4N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-35,e,4O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-35,e,4P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-27,e,4Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-33,e,4R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,html,e,4S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-23,e,4T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-37,e,4U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-36,e,4V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-36,e,4W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-36,e,4X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-28,e,4Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-34,e,4Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-24,e,50,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-38,e,51,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-37,e,52,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-37,e,53,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,str,e,54,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-37,e,55,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-29,e,56,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-35,e,57,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,insertafter,e,58,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-39,e,59,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-38,e,5a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-38,e,5b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,target-1,e,5c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-38,e,5d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-30,e,5e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-36,e,5f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,insertbefore,e,5g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-40,e,5h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-39,e,5i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-39,e,5j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,target-2,e,5k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-39,e,5l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-31,e,5m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-37,e,5n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prepend,e,5o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-41,e,5p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-40,e,5q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-40,e,5r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,elems-3,e,5s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-40,e,5t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-32,e,5u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-38,e,5v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prependto,e,5w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-42,e,5x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-41,e,5y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-41,e,5z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,target-3,e,5A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-41,e,5B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-33,e,5C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-39,e,5D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,remove,e,5E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-43,e,5F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-42,e,5G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-42,e,5H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector,e,5I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-42,e,5J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-34,e,5K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-40,e,5L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,replacewith,e,5M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-44,e,5N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-43,e,5O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-43,e,5P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,content,e,5Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-43,e,5R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-35,e,5S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-41,e,5T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,text,e,5U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-25,e,5V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-45,e,5W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-44,e,5X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-44,e,5Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-44,e,5Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-36,e,60,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-42,e,61,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-26,e,62,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-46,e,63,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-45,e,64,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-45,e,65,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,str-1,e,66,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-45,e,67,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-37,e,68,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-43,e,69,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,tostring,e,6a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-47,e,6b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-46,e,6c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-46,e,6d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-46,e,6e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,unwrap,e,6f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-48,e,6g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-47,e,6h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-47,e,6i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-1,e,6j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-47,e,6k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,examples,e,6l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-44,e,6m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,wrap,e,6n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-49,e,6o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-48,e,6p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-48,e,6q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,wrapper,e,6r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-48,e,6s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-38,e,6t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-45,e,6u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,wrapall,e,6v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-50,e,6w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-49,e,6x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-49,e,6y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,wrapper-1,e,6z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-49,e,6A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,examples-1,e,6B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-46,e,6C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,wrapinner,e,6D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-51,e,6E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-50,e,6F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-50,e,6G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,wrapper-2,e,6H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-50,e,6I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-39,e,6J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-47,e,6K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,other,e,6L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,cheerio,e,6M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,length,e,6N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,implementation-of,e,6O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,options,e,6P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prevobject,e,6Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,splice,e,6R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-51,e,6S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,start,e,6T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,deletecount,e,6U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-51,e,6V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-52,e,6W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,start-1,e,6X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,deletecount-1,e,6Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,items,e,6Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-52,e,70,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,iterator,e,71,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-53,e,72,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,extract,e,73,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-52,e,74,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-53,e,75,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-51,e,76,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,map-2,e,77,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-54,e,78,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,filterarray,e,79,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-53,e,7a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-54,e,7b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,nodes,e,7c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,match,e,7d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,xmlmode,e,7e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,root,e,7f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-55,e,7g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,foo,e,7h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-55,e,7i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-52,e,7j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-56,e,7k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,myplugin,e,7l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-56,e,7m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,args,e,7n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-57,e,7o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,args-1,e,7p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,context,e,7q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,toarray,e,7r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-54,e,7s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-57,e,7t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-53,e,7u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-58,e,7v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-40,e,7w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,traversing,e,7x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,add,e,7y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-55,e,7z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-58,e,7A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-54,e,7B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,other-1,e,7C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,context-1,e,7D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-59,e,7E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-41,e,7F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-48,e,7G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,addback,e,7H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-56,e,7I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-59,e,7J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-55,e,7K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-2,e,7L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-60,e,7M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-42,e,7N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-49,e,7O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,children,e,7P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-57,e,7Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-60,e,7R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-56,e,7S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-3,e,7T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-61,e,7U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-43,e,7V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-50,e,7W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,closest,e,7X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-58,e,7Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-61,e,7Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-57,e,80,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-4,e,81,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-62,e,82,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-44,e,83,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-51,e,84,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,contents,e,85,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-59,e,86,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-62,e,87,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-58,e,88,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-63,e,89,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-45,e,8a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-52,e,8b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,each,e,8c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-60,e,8d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-63,e,8e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-59,e,8f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,fn,e,8g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-64,e,8h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-46,e,8i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-53,e,8j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,end,e,8k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-61,e,8l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-64,e,8m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-60,e,8n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-65,e,8o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-47,e,8p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-54,e,8q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,eq,e,8r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-62,e,8s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-65,e,8t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-61,e,8u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,i,e,8v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-66,e,8w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-48,e,8x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-55,e,8y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,filter,e,8z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-27,e,8A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-63,e,8B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-66,e,8C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-62,e,8D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,match-1,e,8E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-67,e,8F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-49,e,8G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-56,e,8H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-28,e,8I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-64,e,8J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-67,e,8K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-63,e,8L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,match-2,e,8M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-68,e,8N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,examples-2,e,8O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-57,e,8P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,find,e,8Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-65,e,8R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-68,e,8S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-64,e,8T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selectororhaystack,e,8U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-69,e,8V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-50,e,8W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-58,e,8X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,first,e,8Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-66,e,8Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-69,e,90,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-65,e,91,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-70,e,92,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-51,e,93,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-59,e,94,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,get,e,95,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-29,e,96,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-67,e,97,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-70,e,98,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-66,e,99,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,i-1,e,9a,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-71,e,9b,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-52,e,9c,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-60,e,9d,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,call-signature-30,e,9e,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-68,e,9f,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-71,e,9g,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-67,e,9h,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-72,e,9i,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-53,e,9j,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-61,e,9k,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,has,e,9l,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-72,e,9m,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-68,e,9n,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selectororhaystack-1,e,9o,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-73,e,9p,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,examples-3,e,9q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-62,e,9r,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,index,e,9s,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-69,e,9t,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-73,e,9u,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-69,e,9v,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selectororneedle,e,9w,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-74,e,9x,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-54,e,9y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-63,e,9z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,is,e,9A,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-70,e,9B,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-74,e,9C,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-70,e,9D,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-5,e,9E,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-75,e,9F,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-64,e,9G,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,last,e,9H,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-71,e,9I,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-75,e,9J,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-71,e,9K,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-76,e,9L,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-55,e,9M,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-65,e,9N,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,map-3,e,9O,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-72,e,9P,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-76,e,9Q,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-72,e,9R,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,fn-1,e,9S,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-77,e,9T,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-56,e,9U,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-66,e,9V,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,next,e,9W,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-73,e,9X,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-77,e,9Y,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-73,e,9Z,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-6,e,a0,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-78,e,a1,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-57,e,a2,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-67,e,a3,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,nextall,e,a4,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-74,e,a5,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-78,e,a6,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-74,e,a7,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-7,e,a8,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-79,e,a9,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-58,e,aa,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-68,e,ab,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,nextuntil,e,ac,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-75,e,ad,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-79,e,ae,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-75,e,af,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-8,e,ag,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,filterselector,e,ah,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-80,e,ai,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-59,e,aj,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-69,e,ak,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,not,e,al,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-76,e,am,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-80,e,an,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-76,e,ao,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,match-3,e,ap,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-81,e,aq,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,examples-4,e,ar,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-70,e,as,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parent,e,at,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-77,e,au,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-81,e,av,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-77,e,aw,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-9,e,ax,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-82,e,ay,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-60,e,az,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-71,e,aA,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parents,e,aB,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-78,e,aC,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-82,e,aD,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-78,e,aE,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-10,e,aF,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-83,e,aG,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-61,e,aH,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-72,e,aI,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parentsuntil,e,aJ,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-79,e,aK,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-83,e,aL,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-79,e,aM,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-11,e,aN,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,filterselector-1,e,aO,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-84,e,aP,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-62,e,aQ,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-73,e,aR,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prev,e,aS,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-80,e,aT,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-84,e,aU,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-80,e,aV,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-12,e,aW,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-85,e,aX,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-63,e,aY,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-74,e,aZ,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prevall,e,b0,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-81,e,b1,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-85,e,b2,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-81,e,b3,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-13,e,b4,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-86,e,b5,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-64,e,b6,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-75,e,b7,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,prevuntil,e,b8,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-82,e,b9,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-86,e,ba,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-82,e,bb,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-14,e,bc,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,filterselector-2,e,bd,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-87,e,be,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-65,e,bf,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-76,e,bg,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,siblings,e,bh,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-83,e,bi,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-87,e,bj,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-83,e,bk,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,selector-15,e,bl,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-88,e,bm,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-66,e,bn,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-77,e,bo,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,slice,e,bp,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,type-parameters-84,e,bq,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,parameters-88,e,br,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,this-84,e,bs,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,start-2,e,bt,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,end-1,e,bu,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,returns-89,e,bv,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,example-67,e,bw,true
+./docs/api/classes/Cheerio.html,true,Header,Class:  abstract  Cheerio<T>,see-78,e,bx,true
+./docs/api/functions/contains.html,false,,Function: contains(),,f,,true
+./docs/api/functions/contains.html,true,Header,Function: contains(),function-contains,f,1,false
+./docs/api/functions/contains.html,true,Header,Function: contains(),parameters,f,2,true
+./docs/api/functions/contains.html,true,Header,Function: contains(),container,f,3,true
+./docs/api/functions/contains.html,true,Header,Function: contains(),contained,f,4,true
+./docs/api/functions/contains.html,true,Header,Function: contains(),returns,f,5,true
+./docs/api/functions/contains.html,true,Header,Function: contains(),alias,f,6,true
+./docs/api/functions/contains.html,true,Header,Function: contains(),see,f,7,true
+./docs/api/functions/decodeStream.html,false,,Function: decodeStream(),,g,,true
+./docs/api/functions/decodeStream.html,true,Header,Function: decodeStream(),function-decodestream,g,1,false
+./docs/api/functions/decodeStream.html,true,Header,Function: decodeStream(),parameters,g,2,true
+./docs/api/functions/decodeStream.html,true,Header,Function: decodeStream(),options,g,3,true
+./docs/api/functions/decodeStream.html,true,Header,Function: decodeStream(),cb,g,4,true
+./docs/api/functions/decodeStream.html,true,Header,Function: decodeStream(),returns,g,5,true
+./docs/api/functions/fromURL.html,false,,Function: fromURL(),,h,,true
+./docs/api/functions/fromURL.html,true,Header,Function: fromURL(),function-fromurl,h,1,false
+./docs/api/functions/fromURL.html,true,Header,Function: fromURL(),parameters,h,2,true
+./docs/api/functions/fromURL.html,true,Header,Function: fromURL(),url,h,3,true
+./docs/api/functions/fromURL.html,true,Header,Function: fromURL(),options,h,4,true
+./docs/api/functions/fromURL.html,true,Header,Function: fromURL(),returns,h,5,true
+./docs/api/functions/fromURL.html,true,Header,Function: fromURL(),example,h,6,true
+./docs/api/functions/load.html,false,,Function: load(),,i,,true
+./docs/api/functions/load.html,true,Header,Function: load(),function-load,i,1,false
+./docs/api/functions/load.html,true,Header,Function: load(),parameters,i,2,true
+./docs/api/functions/load.html,true,Header,Function: load(),content,i,3,true
+./docs/api/functions/load.html,true,Header,Function: load(),options,i,4,true
+./docs/api/functions/load.html,true,Header,Function: load(),isdocument,i,5,true
+./docs/api/functions/load.html,true,Header,Function: load(),returns,i,6,true
+./docs/api/functions/load.html,true,Header,Function: load(),see,i,7,true
+./docs/api/functions/loadBuffer.html,false,,Function: loadBuffer(),,j,,true
+./docs/api/functions/loadBuffer.html,true,Header,Function: loadBuffer(),function-loadbuffer,j,1,false
+./docs/api/functions/loadBuffer.html,true,Header,Function: loadBuffer(),parameters,j,2,true
+./docs/api/functions/loadBuffer.html,true,Header,Function: loadBuffer(),buffer,j,3,true
+./docs/api/functions/loadBuffer.html,true,Header,Function: loadBuffer(),options,j,4,true
+./docs/api/functions/loadBuffer.html,true,Header,Function: loadBuffer(),returns,j,5,true
+./docs/api/functions/loadBuffer.html,true,Header,Function: loadBuffer(),example,j,6,true
+./docs/api/functions/merge.html,false,,Function: merge(),,k,,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),function-merge,k,1,false
+./docs/api/functions/merge.html,true,Header,Function: merge(),type-parameters,k,2,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),parameters,k,3,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),arr1,k,4,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),arr2,k,5,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),returns,k,6,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),alias,k,7,true
+./docs/api/functions/merge.html,true,Header,Function: merge(),see,k,8,true
+./docs/api/functions/stringStream.html,false,,Function: stringStream(),,l,,true
+./docs/api/functions/stringStream.html,true,Header,Function: stringStream(),function-stringstream,l,1,false
+./docs/api/functions/stringStream.html,true,Header,Function: stringStream(),parameters,l,2,true
+./docs/api/functions/stringStream.html,true,Header,Function: stringStream(),options,l,3,true
+./docs/api/functions/stringStream.html,true,Header,Function: stringStream(),cb,l,4,true
+./docs/api/functions/stringStream.html,true,Header,Function: stringStream(),returns,l,5,true
+./docs/api/functions/stringStream.html,true,Header,Function: stringStream(),example,l,6,true
+./docs/api/interfaces/CheerioAPI.html,false,,Interface: CheerioAPI(),,m,,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),interface-cheerioapi,m,1,false
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),extends,m,2,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),type-parameters,m,3,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters,m,4,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),selector,m,5,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),context,m,6,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),root,m,7,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),options,m,8,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns,m,9,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),example,m,a,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),deprecated,m,b,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),load,m,c,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-1,m,d,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),content,m,e,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),options-1,m,f,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),isdocument,m,g,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-1,m,h,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),deprecated-1,m,i,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),example-1,m,j,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),other,m,k,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),fn,m,l,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),contains,m,m,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),merge,m,n,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),static,m,o,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),extract,m,p,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),type-parameters-1,m,q,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-2,m,r,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this,m,s,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),map,m,t,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-2,m,u,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from,m,v,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),html,m,w,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),call-signature,m,x,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-3,m,y,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-1,m,z,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),options-2,m,A,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-3,m,B,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-1,m,C,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),call-signature-1,m,D,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-4,m,E,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-2,m,F,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),dom,m,G,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),options-3,m,H,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-4,m,I,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-2,m,J,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parsehtml,m,K,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),call-signature-2,m,L,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-5,m,M,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-3,m,N,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),data,m,O,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),context-1,m,P,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),keepscripts,m,Q,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-5,m,R,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),alias,m,S,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),see,m,T,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-3,m,U,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),call-signature-3,m,V,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-6,m,W,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-4,m,X,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),data-1,m,Y,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-6,m,Z,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),alias-1,m,10,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),see-1,m,11,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-4,m,12,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),root-1,m,13,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-7,m,14,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-5,m,15,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-7,m,16,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),example-2,m,17,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),alias-2,m,18,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-5,m,19,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),text,m,1a,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-8,m,1b,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-6,m,1c,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),elements,m,1d,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-8,m,1e,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-6,m,1f,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),xml,m,1g,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),parameters-9,m,1h,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),this-7,m,1i,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),dom-1,m,1j,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),returns-9,m,1k,true
+./docs/api/interfaces/CheerioAPI.html,true,Header,Interface: CheerioAPI(),inherited-from-7,m,1l,true
+./docs/api/interfaces/CheerioOptions.html,false,,Interface: CheerioOptions,,n,,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,interface-cheeriooptions,n,1,false
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,extends,n,2,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,extended-by,n,3,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,properties,n,4,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,baseuri,n,5,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,onparseerror,n,6,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default,n,7,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,inherited-from,n,8,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,pseudos,n,9,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,example,n,a,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,quirksmode,n,b,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default-1,n,c,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,scriptingenabled,n,d,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default-2,n,e,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,inherited-from-1,n,f,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,sourcecodelocationinfo,n,g,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default-3,n,h,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,inherited-from-2,n,i,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,treeadapter,n,j,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default-4,n,k,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,inherited-from-3,n,l,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,xml,n,m,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default-5,n,n,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,xmlmode,n,o,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,deprecated,n,p,true
+./docs/api/interfaces/CheerioOptions.html,true,Header,Interface: CheerioOptions,default-6,n,q,true
+./docs/api/interfaces/CheerioRequestOptions.html,false,,Interface: CheerioRequestOptions,,o,,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,interface-cheeriorequestoptions,o,1,false
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,extends,o,2,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,properties,o,3,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,baseuri,o,4,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from,o,5,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,encoding,o,6,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-1,o,7,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,onparseerror,o,8,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default,o,9,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-2,o,a,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,pseudos,o,b,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,example,o,c,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-3,o,d,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,quirksmode,o,e,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default-1,o,f,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-4,o,g,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,requestoptions,o,h,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,type-declaration,o,i,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,dispatcher,o,j,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,scriptingenabled,o,k,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default-2,o,l,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-5,o,m,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,sourcecodelocationinfo,o,n,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default-3,o,o,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-6,o,p,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,treeadapter,o,q,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default-4,o,r,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-7,o,s,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,xml,o,t,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default-5,o,u,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-8,o,v,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,xmlmode,o,w,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,deprecated,o,x,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,default-6,o,y,true
+./docs/api/interfaces/CheerioRequestOptions.html,true,Header,Interface: CheerioRequestOptions,inherited-from-9,o,z,true
+./docs/api/interfaces/DecodeStreamOptions.html,false,,Interface: DecodeStreamOptions,,p,,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,interface-decodestreamoptions,p,1,false
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,extends,p,2,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,extended-by,p,3,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,properties,p,4,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,baseuri,p,5,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from,p,6,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,encoding,p,7,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,onparseerror,p,8,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default,p,9,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-1,p,a,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,pseudos,p,b,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,example,p,c,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-2,p,d,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,quirksmode,p,e,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default-1,p,f,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-3,p,g,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,scriptingenabled,p,h,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default-2,p,i,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-4,p,j,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,sourcecodelocationinfo,p,k,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default-3,p,l,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-5,p,m,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,treeadapter,p,n,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default-4,p,o,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-6,p,p,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,xml,p,q,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default-5,p,r,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-7,p,s,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,xmlmode,p,t,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,deprecated,p,u,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,default-6,p,v,true
+./docs/api/interfaces/DecodeStreamOptions.html,true,Header,Interface: DecodeStreamOptions,inherited-from-8,p,w,true
+./docs/api/interfaces/HTMLParser2Options.html,false,,Interface: HTMLParser2Options,,q,,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,interface-htmlparser2options,q,1,false
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,see,q,2,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,extends,q,3,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,properties,q,4,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,decodeentities,q,5,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default,q,6,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from,q,7,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,lowercaseattributenames,q,8,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-1,q,9,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-1,q,a,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,lowercasetags,q,b,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-2,q,c,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-2,q,d,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,recognizecdata,q,e,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-3,q,f,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-3,q,g,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,recognizeselfclosing,q,h,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-4,q,i,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-4,q,j,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,tokenizer,q,k,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-5,q,l,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,withendindices,q,m,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-5,q,n,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-6,q,o,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,withstartindices,q,p,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-6,q,q,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-7,q,r,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,xmlmode,q,s,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,default-7,q,t,true
+./docs/api/interfaces/HTMLParser2Options.html,true,Header,Interface: HTMLParser2Options,inherited-from-8,q,u,true
+./docs/api/type-aliases/AcceptedElems.html,false,,Type Alias: AcceptedElems<T>,,r,,true
+./docs/api/type-aliases/AcceptedElems.html,true,Header,Type Alias: AcceptedElems<T>,type-alias-acceptedelemst,r,1,false
+./docs/api/type-aliases/AcceptedElems.html,true,Header,Type Alias: AcceptedElems<T>,type-parameters,r,2,true
+./docs/api/type-aliases/AcceptedFilters.html,false,,Type Alias: AcceptedFilters<T>,,s,,true
+./docs/api/type-aliases/AcceptedFilters.html,true,Header,Type Alias: AcceptedFilters<T>,type-alias-acceptedfilterst,s,1,false
+./docs/api/type-aliases/AcceptedFilters.html,true,Header,Type Alias: AcceptedFilters<T>,type-parameters,s,2,true
+./docs/api/type-aliases/BasicAcceptedElems.html,false,,Type Alias: BasicAcceptedElems<T>,,t,,true
+./docs/api/type-aliases/BasicAcceptedElems.html,true,Header,Type Alias: BasicAcceptedElems<T>,type-alias-basicacceptedelemst,t,1,false
+./docs/api/type-aliases/BasicAcceptedElems.html,true,Header,Type Alias: BasicAcceptedElems<T>,type-parameters,t,2,true
+./docs/api/type-aliases/FilterFunction.html,false,,Type Alias: FilterFunction()<T>,,u,,true
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,type-alias-filterfunctiont,u,1,false
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,type-parameters,u,2,true
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,parameters,u,3,true
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,this,u,4,true
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,i,u,5,true
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,el,u,6,true
+./docs/api/type-aliases/FilterFunction.html,true,Header,Type Alias: FilterFunction()<T>,returns,u,7,true
+./docs/api/type-aliases/SelectorType.html,false,,Type Alias: SelectorType,,v,,true
+./docs/api/type-aliases/SelectorType.html,true,Header,Type Alias: SelectorType,type-alias-selectortype,v,1,false
+./docs/basics/loading.html,false,,Loading Documents,,w,,true
+./docs/basics/loading.html,true,Header,Loading Documents,loading-documents,w,1,false
+./docs/basics/loading.html,true,Header,Loading Documents,load,w,2,true
+./docs/basics/loading.html,true,Header,Loading Documents,loadbuffer,w,3,true
+./docs/basics/loading.html,true,Header,Loading Documents,stringstream,w,4,true
+./docs/basics/loading.html,true,Header,Loading Documents,decodestream,w,5,true
+./docs/basics/loading.html,true,Header,Loading Documents,fromurl,w,6,true
+./docs/basics/loading.html,true,Header,Loading Documents,conclusion,w,7,true
+./docs/basics/manipulation.html,false,,Manipulating the DOM,,x,,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,manipulating-the-dom,x,1,false
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,modifying-element-attributes-and-properties,x,2,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,adding-and-removing-classes,x,3,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,modifying-the-text-content-of-an-element,x,4,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,modifying-the-html-content-of-an-element,x,5,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,inserting-new-elements,x,6,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,wrapping-and-unwrapping-elements,x,7,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,replacing-elements,x,8,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,removing-elements,x,9,true
+./docs/basics/manipulation.html,true,Header,Manipulating the DOM,conclusion,x,a,true
+./docs/basics/selecting.html,false,,Selecting Elements,,y,,true
+./docs/basics/selecting.html,true,Header,Selecting Elements,selecting-elements,y,1,false
+./docs/basics/traversing.html,false,,Traversing the DOM,,z,,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,traversing-the-dom,z,1,false
+./docs/basics/traversing.html,true,Header,Traversing the DOM,moving-down-the-dom-tree,z,2,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,find,z,3,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,children,z,4,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,contents,z,5,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,moving-up-the-dom-tree,z,6,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,parent,z,7,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,parents-and-parentsuntil,z,8,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,closest,z,9,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,moving-sideways-within-the-dom-tree,z,a,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,next-and-prev,z,b,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,nextall-prevall-and-siblings,z,c,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,nextuntil-and-prevuntil,z,d,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,filtering-elements,z,e,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,eq,z,f,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,filter-and-not,z,g,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,has,z,h,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,first-and-last,z,i,true
+./docs/basics/traversing.html,true,Header,Traversing the DOM,conclusion,z,j,true
+./docs/category/tutorials---advanced.html,false,,Tutorials - Advanced,,A,,true
+./docs/category/tutorials---basics.html,false,,Tutorials - Basics,,B,,true
+./docs/intro.html,false,,Welcome to Cheerio!,,C,,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,welcome-to-cheerio,C,1,false
+./docs/intro.html,true,Header,Welcome to Cheerio!,getting-started,C,2,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,setting-up-nodejs,C,3,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,installing-cheerio,C,4,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,importing-cheerio,C,5,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,using-cheerio,C,6,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,loading-a-document,C,7,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,selecting-elements,C,8,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,traversing-the-dom,C,9,true
+./docs/intro.html,true,Header,Welcome to Cheerio!,manipulating-elements,C,a,true
+./index.html,false,,cheerio,,D,,true

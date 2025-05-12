@@ -8,46 +8,24 @@
 
 ## ----------------------------------------------------------------------------
 # @section External_subroutines
+
+
+function perform_filter() {
+
+    echo "Filtering vim-dan ${DOCU_NAME} on $CURRENT_DIR/../index-links/"
+    ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-f"
+
+
+
+    # Logging that into the documentation-status file
+    update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_filtered" -i $(date +"%Y%m%d_%H%M%S") -n
+
+}
+
 # @description Sub-routines that are called by external files
 #   They are mainly called by the main file
 #   Thus they are triggered by the main stages of the Dan Documentation Generation
 
-# @description Peforms a local installation of an already generated documentation
-# @stdout Return Description
-# @example perform_install -n -p 
-function perform_install() {
-
-    [ ! -d "${VIMDAN_DIR}" ] && mkdir -p "${VIMDAN_DIR}"
-    echo "Installing vim-dan ${DOCU_NAME} into ${VIMDAN_DIR}/ ..."
-
-    # If the file is compressed extract
-    if [ -e "$CURRENT_DIR"/ready-docus/"${DOCU_NAME}.dan.bz2" ]; then
-        echo "There is compression file"
-        bunzip2 -kc "$CURRENT_DIR"/ready-docus/"${DOCU_NAME}.dan.bz2" > ${VIMDAN_DIR}/${DOCU_NAME}-toupdate.dan
-    else 
-        cp $CURRENT_DIR/ready-docus/${DOCU_NAME}.dan ${VIMDAN_DIR}/${DOCU_NAME}-toupdate.dan
-    fi
-    perform_patch
-    update_tags
-    update_vim
-    install_autoload
-}
-
-# @description Updates the local file of a certain documentation, keeping when possible the dan-highlighted lines
-# @stdout Return Description
-# @example perform_update -n -p 
-function perform_update() {
-
-    echo "Updating vim-dan ${DOCU_NAME} on ${VIMDAN_DIR}/ ..."
-    echo "Note!! . In order for this to have any effect you previously should have updated the repository"
-    cp $CURRENT_DIR/ready-docus/${DOCU_NAME}.dan ${VIMDAN_DIR}/${DOCU_NAME}-toupdate.dan
-    perform_patch
-    update_tags
-    update_vim
-    install_autoload
-
-
-}
 
 # @description Performs the spidering stage of a given documentation:
 #   - For "vim-dan" spidering means the process of gathering all the links of the Files that are going to make the 
@@ -98,9 +76,11 @@ function perform_spider() {
 # @stdout Return Description
 # @example perform_index -n -p 
 function perform_index() {
+    START_ROW=${1}
+
 
     echo "Indexing vim-dan ${DOCU_NAME} on ${DOCU_PATH}/ ..."
-    ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-i"
+    ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-i" ${START_ROW}
 
     # Logging that into the documentation-status file
     update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_indexed" -i $(date +"%Y%m%d_%H%M%S") -n
@@ -144,7 +124,7 @@ function perform_arrange() {
 
 
 
-# @description Performs the parsing and writting stage of a given documentation
+# @description Performs the writting stage of a given documentation
 #   - For "vim-dan" parsing means, obtaining the necessary text from each downloaded file, such as File "Titles", and Content
 #    , taking off the rest of the redudant information that each file may have such as navigation bars footers etc...
 #    In the most common of the cases are .html files with different Selectors, some matches the Titles, some matches the content.
@@ -168,51 +148,44 @@ function perform_arrange() {
 #   In case of creating a new documentation from the scratch start from this file, changing just the DOWNLOAD_LINK.
 #   If there are issues in any of the stages, then you may need to adapt these rules.
 # @stdout Return Description
-# @example perform_parse -n -p 
+# @example perform_write -n -p 
+function perform_write() {
+
+    echo "Writting vim-dan ${DOCU_NAME} on ${VIMDAN_DIR}/ ..."
+    ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-w"
+
+    mv ${MAIN_TOUPDATE} ${MAIN_FILE}
+#    perform_patch
+
+    # Logging that into the documentation-status file
+    update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_written" -i $(date +"%Y%m%d_%H%M%S") -n
+}
+
+
+
 function perform_parse() {
 
     echo "Parsing vim-dan ${DOCU_NAME} on ${VIMDAN_DIR}/ ..."
     ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-p"
-    perform_patch
-    update_tags
-    update_vim
-    install_autoload
 
     # Logging that into the documentation-status file
     update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_parsed" -i $(date +"%Y%m%d_%H%M%S") -n
-}
-
-
-
-# @description It will remove a certain dan documentation localy. It will also remove the dan files.
-#   For this last reason is not recommended to use it, as the dan files are one per documentation just delete it manualy.
-# @stdout Return Description
-# @example perform_remove -n -p -v 
-function perform_remove() {
-
-    echo "Removing vim-dan ${DOCU_NAME} off ${DOCU_PATH}/ ..."
-    rm -r ${DOCU_PATH}
-    rm  ${VIMDAN_DIR}/${DOCU_NAME}.dan
-    rm  ${VIMDAN_DIR}/.tags${DOCU_NAME}
-    rm ${VIM_RTP_DIR}/ftdetect/dan.vim 
-    rm ${VIM_RTP_DIR}/after/ftplugin/dan.vim 
-    rm ${VIM_RTP_DIR}/syntax/dan.vim 
-    rm ${VIM_RTP_DIR}/autoload/dan.vim 
 
 }
 
-# @description Delete the Indexed files for a certain documentation.
-#   Good to save up space once the documentation has been parsed, the index files are not longer needed.
-#   Mind that if you are creating a new documentation and are defining a rule-set, if you are unsure that 
-#   Some rules may be changed it is better to keep it.
-# @stdout Return Description
-# @example delete_index -p 
-function delete_index() {
 
-    echo "Deleting previous Index ..."
-    rm -r ${DOCU_PATH}/downloaded
 
+# @description Performs the tagging stage of a documentation
+function perform_tags() {
+    
+    echo "Generating tags of ${DOCU_NAME} on ${VIMDAN_DIR}/ ..."
+
+    ctags --options=NONE --options=${CURRENT_DIR}/ctags-rules/dan.ctags --tag-relative=always -f ${VIMDAN_DIR}/.tags${DOCU_NAME} ${MAIN_FILE} 
+
+    # Logging that into the documentation-status file
+    update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_tagged" -i $(date +"%Y%m%d_%H%M%S") -n
 }
+
 ## EOF EOF EOF External_subroutines
 ## ----------------------------------------------------------------------------
 
@@ -1065,43 +1038,14 @@ function unused_snippets() {
 ## ----------------------------------------------------------------------------
 
 
-
 ## ----------------------------------------------------------------------------
 # @section Spidering Stage Utilities
 # @description Standard Spidering Subroutines implemented across different documentations
 
 # @description Performs an inte
-# @option -l <DOWNLOAD_LINK> Option Description
 # @stdout Return Description
 # @example standard_spider -l 
 function standard_spider() {
-    ## PARSING FUNCTION ARGUMENTS ------------------------
-    local OPTIND=1
-    # Initialize variables
-    DOWNLOAD_LINK=""
-
-    while getopts "l:" opt; do
-        case "${opt}" in
-            l) DOWNLOAD_LINK="${OPTARG}" ;;
-            *)
-                echo "Usage: standard_spider -l DOWNLOAD_LINK" >&2
-                echo "Example: standard_spider -l DOWNLOAD_LINK" >&2
-                return 1
-                ;;
-        esac
-    done
-    # Variable check
-    if [[ -z "${DOWNLOAD_LINK}" ]]; then
-        echo "Error: standard_spider requires -l DOWNLOAD_LINK" >&2
-        return 1
-    fi
-    ## EOF EOF EOF PARSING FUNCTION ARGUMENTS -------------
-
-
-
-    ## Create a <websiteLinks>.csv with the spidered links, 
-    ##      for further processing with download_fromlist
-    DOWNLOAD_LINK=${1}
 
     ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
     ## If there is an existing link-list, make a backup of it
@@ -1113,6 +1057,7 @@ function standard_spider() {
     echo "Spidering a new link-list" >&2
     echo "This may take a while, and has to be done in one go" >&2
     echo "Consider doing this using a VPS ..." >&2
+
 
     wget \
     `## Basic Startup Options` \
@@ -1132,8 +1077,8 @@ function standard_spider() {
       --recursive --level=inf \
       --delete-after \
     `## Recursive Accept/Reject Options` \
-      --accept '*.html,*.htm' \
       --reject-regex '.*?hel=.*|.*?hl=.*|.*[%&=?].*|\\\"' \
+      --reject '*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.mp4,*.gif,*.webp,*.ico,*.woff,*.woff2,*.ttf,*.pdf,*.java,*.sql,*.jar,*.zip,*.GIF,*.PNG,*.svgz,*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.tar,*.pcap,*.pcapng,*.lua,*.msi,*.exe,*.gz,*.csl,*.text,*.tex' \
       "${DOWNLOAD_LINK}" 2>&1  \
           | grep '^--' | awk '{ print $3 }' | awk '{ print $0 ",-1" }' | sort -u \
       > "$CURRENT_DIR/../index-links/${ntfs_filename}.csv"
@@ -1143,6 +1088,7 @@ function standard_spider() {
 
 }
 
+##      --accept '*.html,*.htm' \
 ##      --reject '*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.mp4,*.gif,*.webp,*.ico,*.woff,*.woff2,*.ttf,*.pdf,*.java,*.sql,*.jar,*.zip,*.GIF,*.PNG,*.svgz,*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.tar,*.pcap,*.pcapng,*.lua,*.msi,*.exe,*.gz,*.csl,*.text,*.tex' \
 
 
@@ -1195,37 +1141,14 @@ function download_fromlist() {
 #      Download each link
 #          - Updating the .csv with status code
 #          - Download it to DOCU_PATH/downloaded
-# @option -l <DOWNLOAD_LINK> 
-# @option -w <WAIT> Seconds to wait per link
-# @option -r <WAIT_RETRY> Seconds to wait per unsuccesful download
 # @stdout Return Description
-# @example download_fromlist_waitretry -l -w -r 
+# @example download_fromlist_waitretry 
 function download_fromlist_waitretry() {
-    ## PARSING FUNCTION ARGUMENTS ------------------------
-    local OPTIND=1
-    # Initialize variables
-    DOWNLOAD_LINK=""
-    WAIT=""
-    WAIT_RETRY=""
+    DOWNLOAD_LINK=$1
+    WAIT=$2
+    WAIT_RETRY=$3
+    START_ROW=${4:-1}  # Use $4 if provided, default to 1
 
-    while getopts "l:w:r:" opt; do
-        case "${opt}" in
-            l) DOWNLOAD_LINK="${OPTARG}" ;;
-            w) WAIT="${OPTARG}" ;;
-            r) WAIT_RETRY="${OPTARG}" ;;
-            *)
-                echo "Usage: download_fromlist_waitretry -l DOWNLOAD_LINK -w WAIT -r WAIT_RETRY" >&2
-                echo "Example: download_fromlist_waitretry -l DOWNLOAD_LINK -w WAIT -r WAIT_RETRY" >&2
-                return 1
-                ;;
-        esac
-    done
-    # Variable check
-    if [[ -z "${DOWNLOAD_LINK}" || -z "${WAIT}" || -z "${WAIT_RETRY}" ]]; then
-        echo "Error: download_fromlist_waitretry requires -l DOWNLOAD_LINK -w WAIT -r WAIT_RETRY" >&2
-        return 1
-    fi
-    ## EOF EOF EOF PARSING FUNCTION ARGUMENTS -------------
     ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
 
     ## Create downloaded directory if it doesn't exists
@@ -1245,7 +1168,19 @@ function download_fromlist_waitretry() {
 
     ## We are iterating through the .csv line by line
     total_lines=$(wc -l < ${LOCAL_CSV_PATH} ) 
-    row_no=1
+
+
+
+
+    ## Advance to the first ,0 found in the .csv
+    # adjust START_ROW to the first line_no with a pending download ,-1 given an already existent START_ROW
+#    START_ROW=$(awk -v start_row="${START_ROW}" 'NR >= start_row && /,(-1|[1-8])$/ { print NR; exit }' "${LOCAL_CSV_PATH}" )
+    START_ROW=$(awk -v start_row="${START_ROW}" 'NR >= start_row && /,(-1|[1-5]|7)$/ { print NR; exit }' "${LOCAL_CSV_PATH}" )
+
+
+
+    ## Set the starting row number, with a boundary check
+    row_no=${START_ROW}
 
     while [ "$row_no" -le "$total_lines" ]; do
         row=$(sed -n "${row_no}p" "${LOCAL_CSV_PATH}" )  # Extract the specific row number $row_no
@@ -1257,6 +1192,7 @@ function download_fromlist_waitretry() {
         
         ## If the file hasnt been attempted to download yet
         if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 8  ] && [ "$exit_status" -ne 6  ]; then 
+#        if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 6  ]; then 
             url=$(echo "$row" | cut -d',' -f1)
             dirpath=$(echo "$url" | sed 's|https://||;s|/[^/]*$||')
             filename=$(basename "$url")
@@ -1414,6 +1350,138 @@ function write_header() {
 }
     
 
+function parse_html_docu_multirule() {
+    ## PARSING FUNCTION ARGUMENTS ------------------------
+    local title_parsing_array=()
+    local content_parsing_array=()
+    local pandoc_filters_array=()
+
+    ## Parse options for title and body rules
+    while [[ "$#" -gt 0 ]]; do
+        case "$1" in
+            -f)
+                if [[ -n "$2" ]]; then
+                    title_parsing_array+=("$2")
+                    shift 2
+                else
+                    echo "Error: Missing argument for -f" >&2
+                    return 1
+                fi
+                ;;
+            -b)
+                if [[ -n "$2" ]]; then
+                    content_parsing_array+=("$2")
+                    shift 2
+                else
+                    echo "Error: Missing argument for -b" >&2
+                    return 1
+                fi
+                ;;
+            *)
+                echo "Unknown option: $1" >&2
+                return 1
+                ;;
+        esac
+    done
+    ## EOF EOF EOF PARSING FUNCTION ARGUMENTS -------------
+
+    ## IMPLICIT DEPENDENCY CHECKS -------------------------
+    if [[ -z "$DOCU_NAME" || -z "$DOCU_PATH"  ]]; then
+        echo "Error: Missing a implicit dependency, {DOCU_NAME} or {DOCU_PATH}" >&2
+        return 1
+    fi
+    ## ----------------------------------------------------
+
+    mapfile -t files_array < <(find "${DOCU_PATH}/downloaded" -type f -name "*.html" | sort -V)
+
+    ## First create the title array
+    title_array=()
+    for file in "${files_array[@]}"; do
+        # (Multi-rule) Parsing functions, add as many as needed
+        found_selector=""
+        for title_parsing in "${title_parsing_array[@]}"; do
+            # Formulating command
+            cmd="pup -i 0 --pre '${title_parsing}' | pandoc -f html -t plain --wrap=none"
+
+            title=$(eval "$cmd" < "$file" | sed -e ':a;N;$!ba;s/\n/ /g' | sed -e 's/ ¶//g' | sed -e 's/¶//g')
+            if [ -n "$title" ]; then
+                found_selector=true
+                break
+            fi
+        done
+
+        # Default case for parsing, if none of the rules return a non-zero string
+        if [ -z "$found_selector" ]; then
+            title=$(basename "$file" | sed 's/\.html$//' )
+        fi
+
+        # Append the title to the title_array
+        title_array+=("$title")
+    done
+
+    ## Creating an associative array to map titles to file paths
+    declare -A paths_linkto
+
+    # Iterate through the indices of 'files_array'
+    for index in "${!files_array[@]}"; do
+        file="${files_array[$index]}"
+        title="${title_array[$index]}"
+        paths_linkto["$file"]="$title"
+    done
+
+    ## [LINKS-INDEXING] --------------------------------------------------
+    file_no=1
+    ## [LINKS-INDEXING] Placing header on links-target-index.csv
+    links_index_csv="/dev/shm/links-index-${DOCU_NAME}.csv"
+    echo "rel_path,is_anchor,pandoc_data_type,label,anchor_id,buid,iid,in_use" > "${links_index_csv}"
+
+
+    for file in "${files_array[@]}"; do
+
+        filename="${file#${DOCU_PATH}/downloaded}"
+#echo "[DEBUG] relative_path : ${relative_path}" ## DEBUGGING
+
+
+        ## [LINKS-TARGET-INDEXING] Indexing all anchor links to links-target-index.csv
+        for content_parsing in "${content_parsing_array[@]}"; do
+
+            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o /dev/null -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua) -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv} -V parsed_title=\"${paths_linkto[$file]}\" -V file_no=${file_no}"
+
+
+            eval "$cmd" < "$file"
+        done
+
+    file_no=$((file_no + 1))
+    done
+    ## EOF EOF EOF [LINKS-INDEXING] ---------------------------------------
+
+    ## [INUSE-LINKS-INDEXING] ------------------------------------------------------
+
+    file_no=1
+    ## Now need to populate the last column of the csv, in_use
+    ## Before the writting stage we need to known what links (either source, and target)
+    ## Are going to be used, so in the link targets and the link sources are formed accordingly
+    ## Note : this step is necessary to be done previous to the writting, otherwise we could not
+    ##      recognise what link target is in_use while writting it and cannot be putting a
+    ##      link target in all the html elements with id
+    for file in "${files_array[@]}"; do
+        filename="${file#${DOCU_PATH}/downloaded}"
+
+        for content_parsing in "${content_parsing_array[@]}"; do
+
+            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o /dev/null -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua) -V docu_path=${DOCU_PATH} -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv}"
+
+
+            eval "$cmd" < "$file"
+        done
+    file_no=$((file_no + 1))
+    done
+ ## EOF EOF EOF [INUSE-LINKS-INDEXING] ------------------------------------------
+ ## Move the file from RAM memory to the disk
+    mv "${links_index_csv}" "$CURRENT_DIR/../links-parsed/${DOCU_NAME}-links-parsed.csv"
+
+
+}
 
 # @description write_html_docu_multirule Function Description
 # Similar as write_docu_multirule() but simplified, just to input html tags such as
@@ -1565,58 +1633,10 @@ function write_html_docu_multirule() {
         paths_linkto["$file"]="$title"
     done
 
-    ## [LINKS-INDEXING] --------------------------------------------------
-    file_no=1
-    ## [LINKS-INDEXING] Placing header on links-target-index.csv
-###    links_index_csv="/dev/shm/links-index-${DOCU_NAME}.csv"
-###    echo "rel_path,is_anchor,pandoc_data_type,label,anchor_id,buid,iid,in_use" > "${links_index_csv}"
-###
-###
-###    for file in "${files_array[@]}"; do
-###
-###        filename="${file#${DOCU_PATH}/downloaded}"
-####echo "[DEBUG] relative_path : ${relative_path}" ## DEBUGGING
-###
-###
-###        ## [LINKS-TARGET-INDEXING] Indexing all anchor links to links-target-index.csv
-###        for content_parsing in "${content_parsing_array[@]}"; do
-###
-###            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o /dev/null -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua) -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv} -V parsed_title=\"${paths_linkto[$file]}\" -V file_no=${file_no}"
-###
-###
-###            eval "$cmd" < "$file"
-###        done
-###
-###    file_no=$((file_no + 1))
-###    done
-###    ## EOF EOF EOF [LINKS-INDEXING] ---------------------------------------
-###
-###    ## [INUSE-LINKS-INDEXING] ------------------------------------------------------
-###
-###    file_no=1
-###    ## Now need to populate the last column of the csv, in_use
-###    ## Before the writting stage we need to known what links (either source, and target)
-###    ## Are going to be used, so in the link targets and the link sources are formed accordingly
-###    ## Note : this step is necessary to be done previous to the writting, otherwise we could not
-###    ##      recognise what link target is in_use while writting it and cannot be putting a
-###    ##      link target in all the html elements with id
-###    for file in "${files_array[@]}"; do
-###        filename="${file#${DOCU_PATH}/downloaded}"
-###
-###        for content_parsing in "${content_parsing_array[@]}"; do
-###
-###            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o /dev/null -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua) -V docu_path=${DOCU_PATH} -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv}"
-###
-###
-###            eval "$cmd" < "$file"
-###        done
-###    file_no=$((file_no + 1))
-###    done
-    ## EOF EOF EOF [INUSE-LINKS-INDEXING] ------------------------------------------
-    ## Move the file from RAM memory to the disk
-###    mv "${links_index_csv}" "${DOCU_PATH}/links-index.csv"
 
-    links_index_csv="${DOCU_PATH}/links-index.csv"
+##    links_index_csv="${DOCU_PATH}/links-index.csv"
+##    links_index_csv="$CURRENT_DIR/../links-parsed/${DOCU_NAME}-links-parsed.csv"
+    links_index_csv="$(realpath "$CURRENT_DIR/../links-parsed/${DOCU_NAME}-links-parsed.csv")"
 
 
 
@@ -1754,6 +1774,8 @@ function write_html_docu_multirule() {
     ## Removing files used in RAM Memory
     rm -f "$scr_choice_1" "$scr_choice_2" "$scr_choice_3" \
       "$scr_global_current_cb" "$scr_csv_iterator_needs_catchup" "$csv_path" "$content_dump"
+
+
 
 
 }

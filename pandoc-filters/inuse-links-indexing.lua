@@ -214,8 +214,13 @@ end
 -- @param href Link to be analized
 -- @return True if is external
 function is_external_link(href)
-    if href:match("^#$") or href:match("^https?://") or href:match("^//") then
+--    if href:match("^#$") or href:match("^https?://") or href:match("^//") then
+    if href:match("^#$") or href:match("^https?://") then
         return true
+    elseif href:match("^//") then
+dprint('[DEBUG] href starting with / : ' .. href) -- DEBUGGING
+
+        return false 
     end 
     return false
 end
@@ -436,7 +441,7 @@ function check_links(elem)
 
     -- If it doesn't exist skip and go to the next CodeBlock
     if not file_exists_result then
-        dprint('[DEBUG] This File Doesnt Exists locally : ') -- DEBUGGING
+--        dprint('[DEBUG] This File Doesnt Exists locally : ') -- DEBUGGING
 
         return
     end

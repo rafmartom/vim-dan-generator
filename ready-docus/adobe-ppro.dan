@@ -32,7 +32,7 @@
                                    |_|   |_|              
 Documentation indexed from :
  - https://ppro-scripting.docsforadobe.dev/ 
-Last parsed on : Mon 28 Apr 12:05:10 BST 2025
+Last parsed on : Mon 12 May 09:26:56 BST 2025
  _____ ___   ____ 
 |_   _/ _ \ / ___|
   | || | | | |    
@@ -120,45 +120,45 @@ Last parsed on : Mon 28 Apr 12:05:10 BST 2025
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=1#3> Attributes </L>
-    -   <L=1#4> app.anywhere </L>
-    -   <L=1#7> app.build </L>
-    -   <L=1#b> app.encoder </L>
-    -   <L=1#e> app.getAppPrefPath </L>
-    -   <L=1#i> app.getAppSystemPrefPath </L>
-    -   <L=1#m> app.getPProPrefPath </L>
-    -   <L=1#q> app.getPProSystemPrefPath </L>
-    -   <L=1#u> app.learnPanelContentDirPath </L>
-    -   <L=1#y> app.learnPanelExampleProjectDirPath </L>
-    -   <L=1#C> app.metadata </L>
-    -   <L=1#F> app.path </L>
-    -   <L=1#J> app.production </L>
-    -   <L=1#M> app.project </L>
-    -   <L=1#P> app.projectManager </L>
-    -   <L=1#S> app.projects </L>
-    -   <L=1#V> app.properties </L>
-    -   <L=1#Y> app.sourceMonitor </L>
-    -   <L=1#11> app.userGuid </L>
-    -   <L=1#14> app.version </L>
--   <L=1#18> Methods </L>
-    -   <L=1#19> app.enableQE() </L>
-    -   <L=1#1d> app.getEnableProxies() </L>
-    -   <L=1#1h> app.getWorkspaces() </L>
-    -   <L=1#1m> app.isDocument() </L>
-    -   <L=1#1r> app.isDocumentOpen() </L>
-    -   <L=1#1v> app.newProject() </L>
-    -   <L=1#1z> app.openDocument() </L>
-    -   <L=1#1D> app.openFCPXML() </L>
-    -   <L=1#1H> app.quit() </L>
-    -   <L=1#1L> app.setEnableProxies() </L>
-    -   <L=1#1P> app.setExtensionPersistent() </L>
-    -   <L=1#1U> app.setScratchDiskPath() </L>
-    -   <L=1#1Z> app.setSDKEventMessage() </L>
-    -   <L=1#23> app.setWorkspace() </L>
-    -   <L=1#28> app.trace() </L>
-    -   <L=1#2c> app.getProjectViewIDs() </L>
-    -   <L=1#2h> app.getProjectFromViewID() </L>
-    -   <L=1#2m> app.getCurrentProjectViewSelection() </L>
+- <L=1#3> Attributes </L>
+  - <L=1#4> app.anywhere </L>
+  - <L=1#7> app.build </L>
+  - <L=1#b> app.encoder </L>
+  - <L=1#e> app.getAppPrefPath </L>
+  - <L=1#i> app.getAppSystemPrefPath </L>
+  - <L=1#m> app.getPProPrefPath </L>
+  - <L=1#q> app.getPProSystemPrefPath </L>
+  - <L=1#u> app.learnPanelContentDirPath </L>
+  - <L=1#y> app.learnPanelExampleProjectDirPath </L>
+  - <L=1#C> app.metadata </L>
+  - <L=1#F> app.path </L>
+  - <L=1#J> app.production </L>
+  - <L=1#M> app.project </L>
+  - <L=1#P> app.projectManager </L>
+  - <L=1#S> app.projects </L>
+  - <L=1#V> app.properties </L>
+  - <L=1#Y> app.sourceMonitor </L>
+  - <L=1#11> app.userGuid </L>
+  - <L=1#14> app.version </L>
+- <L=1#18> Methods </L>
+  - <L=1#19> app.enableQE() </L>
+  - <L=1#1d> app.getEnableProxies() </L>
+  - <L=1#1h> app.getWorkspaces() </L>
+  - <L=1#1m> app.isDocument() </L>
+  - <L=1#1r> app.isDocumentOpen() </L>
+  - <L=1#1v> app.newProject() </L>
+  - <L=1#1z> app.openDocument() </L>
+  - <L=1#1D> app.openFCPXML() </L>
+  - <L=1#1H> app.quit() </L>
+  - <L=1#1L> app.setEnableProxies() </L>
+  - <L=1#1P> app.setExtensionPersistent() </L>
+  - <L=1#1U> app.setScratchDiskPath() </L>
+  - <L=1#1Z> app.setSDKEventMessage() </L>
+  - <L=1#23> app.setWorkspace() </L>
+  - <L=1#28> app.trace() </L>
+  - <L=1#2c> app.getProjectViewIDs() </L>
+  - <L=1#2h> app.getProjectFromViewID() </L>
+  - <L=1#2m> app.getCurrentProjectViewSelection() </L>
 
 
 Application object <L=1#1></L><I=1>
@@ -679,19 +679,19 @@ Parameters <L=1#1W></L><I=1W>
 |  scratchDiskType                 |  ScratchDiskType  enum           | Enumerated value, must be one of |
 |                                  |                                  | the following:                   |
 |                                  |                                  |                                  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstVideoCaptureFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstAudioCaptureFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstVideoPreviewFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstAudioPreviewFolder  |
-|                                  |                                  | -    Scra                        |
+|                                  |                                  | -  Scra                          |
 |                                  |                                  | tchDiskType.FirstAutoSaveFolder  |
-|                                  |                                  | -    Scratch                     |
+|                                  |                                  | -  Scratch                       |
 |                                  |                                  | DiskType.FirstCCLibrariesFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstCapsuleMediaFolder  |
 +----------------------------------+----------------------------------+----------------------------------+
 
@@ -722,9 +722,9 @@ Parameters <L=1#21></L><I=21>
 +----------------------------------+----------------------------------+----------------------------------+
 |  decorator                       | String                           | Decorator, one of:               |
 |                                  |                                  |                                  |
-|                                  |                                  | -    info                        |
-|                                  |                                  | -    warning                     |
-|                                  |                                  | -    error                       |
+|                                  |                                  | -  info                          |
+|                                  |                                  | -  warning                       |
+|                                  |                                  | -  error                         |
 +----------------------------------+----------------------------------+----------------------------------+
 
 Returns <L=1#22></L><I=22>
@@ -863,9 +863,9 @@ if (selectedItems){
  \____\___/|_|_|\___|\___|\__|_|\___/|_| |_|  \___/|_.__// |\___|\___|\__|
                                                        |__/               
 
--   <L=2#2> Objects </L>
--   <L=2#3> Attributes </L>
--   <L=2#4> Methods </L>
+- <L=2#2> Objects </L>
+- <L=2#3> Attributes </L>
+- <L=2#4> Methods </L>
 
 
 Collection object <L=2#1></L><I=1>
@@ -874,14 +874,14 @@ to them by index. However, most collection objects are read-only. You do not ass
 yourself — their contents update automatically as objects are created or deleted.
 
 Objects <L=2#2></L><I=2>
--   ComponentCollection object - todo .
--   MarkerCollection object - a collection of the Marker objects in a ProjectItem object and Sequence
-    object .
--   ProjectCollection object - a collection of Project objects .
--   ProjectItemCollection object - a collection of ProjectItem objects .
--   SequenceCollection object - a collection of Sequence objects .
--   TrackCollection object - a collection of Track objects .
--   TrackItemCollection object - a collection of TrackItem objects .
+- ComponentCollection object - todo .
+- MarkerCollection object - a collection of the Marker objects in a ProjectItem object and Sequence
+  object .
+- ProjectCollection object - a collection of Project objects .
+- ProjectItemCollection object - a collection of ProjectItem objects .
+- SequenceCollection object - a collection of Sequence objects .
+- TrackCollection object - a collection of Track objects .
+- TrackItemCollection object - a collection of TrackItem objects .
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -915,8 +915,8 @@ Methods <L=2#4></L><I=4>
  \___|\__|_|\___/|_| |_|  \___/|_.__// |\___|\___|\__|
                                    |__/               
 
--   <L=3#2> Attributes </L>
-    -   <L=3#3> ComponentCollection.numItems </L>
+- <L=3#2> Attributes </L>
+  - <L=3#3> ComponentCollection.numItems </L>
 
 
 ComponentCollection object <L=3#1></L><I=1>
@@ -961,15 +961,15 @@ Integer, read-only.
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=4#2> Attributes </L>
-    -   <L=4#3> MarkerCollection.numMarkers </L>
--   <L=4#6> Methods </L>
-    -   <L=4#7> MarkerCollection.createMarker() </L>
-    -   <L=4#b> MarkerCollection.deleteMarker() </L>
-    -   <L=4#g> MarkerCollection.getFirstMarker() </L>
-    -   <L=4#k> MarkerCollection.getLastMarker() </L>
-    -   <L=4#o> MarkerCollection.getNextMarker() </L>
-    -   <L=4#s> MarkerCollection.getPrevMarker() </L>
+- <L=4#2> Attributes </L>
+  - <L=4#3> MarkerCollection.numMarkers </L>
+- <L=4#6> Methods </L>
+  - <L=4#7> MarkerCollection.createMarker() </L>
+  - <L=4#b> MarkerCollection.deleteMarker() </L>
+  - <L=4#g> MarkerCollection.getFirstMarker() </L>
+  - <L=4#k> MarkerCollection.getLastMarker() </L>
+  - <L=4#o> MarkerCollection.getNextMarker() </L>
+  - <L=4#s> MarkerCollection.getPrevMarker() </L>
 
 
 MarkerCollection object <L=4#1></L><I=1>
@@ -1130,8 +1130,8 @@ Marker object or  undefined  .
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=5#2> Attributes </L>
-    -   <L=5#3> ProjectCollection.numProjects </L>
+- <L=5#2> Attributes </L>
+  - <L=5#3> ProjectCollection.numProjects </L>
 
 
 ProjectCollection object <L=5#1></L><I=1>
@@ -1176,8 +1176,8 @@ Integer, read-only.
  \___|\__|_|\___/|_| |_|  \___/|_.__// |\___|\___|\__|
                                    |__/               
 
--   <L=6#2> Attributes </L>
-    -   <L=6#3> ProjectItemCollection.numItems </L>
+- <L=6#2> Attributes </L>
+  - <L=6#3> ProjectItemCollection.numItems </L>
 
 
 ProjectItemCollection object <L=6#1></L><I=1>
@@ -1220,8 +1220,8 @@ Integer, read-only.
  \___/|_| |_|  \___/|_.__// |\___|\___|\__|
                         |__/               
 
--   <L=7#2> Attributes </L>
-    -   <L=7#3> SequenceCollection.numSequences </L>
+- <L=7#2> Attributes </L>
+  - <L=7#3> SequenceCollection.numSequences </L>
 
 
 SequenceCollection object <L=7#1></L><I=1>
@@ -1264,8 +1264,8 @@ Integer, read-only.
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=8#2> Attributes </L>
-    -   <L=8#3> TrackCollection.numTracks </L>
+- <L=8#2> Attributes </L>
+  - <L=8#3> TrackCollection.numTracks </L>
 
 
 TrackCollection object <L=8#1></L><I=1>
@@ -1310,8 +1310,8 @@ Integer, read-only.
  \___/|_| |_|  \___/|_.__// |\___|\___|\__|
                         |__/               
 
--   <L=9#2> Attributes </L>
-    -   <L=9#3> TrackItemCollection.numItems </L>
+- <L=9#2> Attributes </L>
+  - <L=9#3> TrackItemCollection.numItems </L>
 
 
 TrackItemCollection object <L=9#1></L><I=1>
@@ -1356,16 +1356,16 @@ Integer, read-only.
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=a#3> Attributes </L>
--   <L=a#4> Methods </L>
-    -   <L=a#5> Anywhere.getAuthenticationToken() </L>
-    -   <L=a#9> Anywhere.getCurrentEditingSessionActiveSequenceURL() </L>
-    -   <L=a#d> Anywhere.getCurrentEditingSessionSelectionURL() </L>
-    -   <L=a#h> Anywhere.getCurrentEditingSessionURL() </L>
-    -   <L=a#l> Anywhere.isProductionOpen() </L>
-    -   <L=a#p> Anywhere.listProductions() </L>
-    -   <L=a#t> Anywhere.openProduction() </L>
-    -   <L=a#x> Anywhere.setAuthenticationToken() </L>
+- <L=a#3> Attributes </L>
+- <L=a#4> Methods </L>
+  - <L=a#5> Anywhere.getAuthenticationToken() </L>
+  - <L=a#9> Anywhere.getCurrentEditingSessionActiveSequenceURL() </L>
+  - <L=a#d> Anywhere.getCurrentEditingSessionSelectionURL() </L>
+  - <L=a#h> Anywhere.getCurrentEditingSessionURL() </L>
+  - <L=a#l> Anywhere.isProductionOpen() </L>
+  - <L=a#p> Anywhere.listProductions() </L>
+  - <L=a#t> Anywhere.openProduction() </L>
+  - <L=a#x> Anywhere.setAuthenticationToken() </L>
 
 
 Anywhere object <L=a#1></L><I=1>
@@ -1512,15 +1512,15 @@ Returns  0  if successful.
 |_____|_| |_|\___\___/ \__,_|\___|_|     \___/|_.__// |\___|\___|\__|
                                                   |__/               
 
--   <L=b#3> Attributes </L>
--   <L=b#4> Methods </L>
-    -   <L=b#5> Encoder.encodeFile() </L>
-    -   <L=b#9> Encoder.encodeProjectItem() </L>
-    -   <L=b#d> Encoder.encodeSequence() </L>
-    -   <L=b#h> Encoder.launchEncoder() </L>
-    -   <L=b#l> Encoder.setEmbeddedXMPEnabled() </L>
-    -   <L=b#p> Encoder.setSidecarXMPEnabled() </L>
-    -   <L=b#t> Encoder.startBatch() </L>
+- <L=b#3> Attributes </L>
+- <L=b#4> Methods </L>
+  - <L=b#5> Encoder.encodeFile() </L>
+  - <L=b#9> Encoder.encodeProjectItem() </L>
+  - <L=b#d> Encoder.encodeSequence() </L>
+  - <L=b#h> Encoder.launchEncoder() </L>
+  - <L=b#l> Encoder.setEmbeddedXMPEnabled() </L>
+  - <L=b#p> Encoder.setSidecarXMPEnabled() </L>
+  - <L=b#t> Encoder.startBatch() </L>
 
 
 Encoder object <L=b#1></L><I=1>
@@ -1562,9 +1562,9 @@ Parameters <L=b#7></L><I=7>
 |  workArea                        | Integer                          | Integer denoting work area to be |
 |                                  |                                  | used:                            |
 |                                  |                                  |                                  |
-|                                  |                                  | -    0  -  ENCODE_ENTIRE         |
-|                                  |                                  | -    1  -  ENCODE_IN_TO_OUT      |
-|                                  |                                  | -    2  -  ENCODE_WORK_AREA      |
+|                                  |                                  | -  0  -  ENCODE_ENTIRE           |
+|                                  |                                  | -  1  -  ENCODE_IN_TO_OUT        |
+|                                  |                                  | -  2  -  ENCODE_WORK_AREA        |
 +----------------------------------+----------------------------------+----------------------------------+
 |  removeUponCompletion            | Integer                          | If  1  , job will be removed     |
 |                                  |                                  | once complete.                   |
@@ -1601,9 +1601,9 @@ Parameters <L=b#b></L><I=b>
 |  workArea                        | Integer                          | Integer denoting work area to be |
 |                                  |                                  | used:                            |
 |                                  |                                  |                                  |
-|                                  |                                  | -    0  -  ENCODE_ENTIRE         |
-|                                  |                                  | -    1  -  ENCODE_IN_TO_OUT      |
-|                                  |                                  | -    2  -  ENCODE_WORK_AREA      |
+|                                  |                                  | -  0  -  ENCODE_ENTIRE           |
+|                                  |                                  | -  1  -  ENCODE_IN_TO_OUT        |
+|                                  |                                  | -  2  -  ENCODE_WORK_AREA        |
 +----------------------------------+----------------------------------+----------------------------------+
 |  removeUponCompletion            | Integer                          | If  1  , job will be removed     |
 |                                  |                                  | once complete.                   |
@@ -1633,9 +1633,9 @@ Parameters <L=b#f></L><I=f>
 |  workArea                        | Integer                          | Integer denoting work area to be |
 |                                  |                                  | used:                            |
 |                                  |                                  |                                  |
-|                                  |                                  | -    0  -  ENCODE_ENTIRE         |
-|                                  |                                  | -    1  -  ENCODE_IN_TO_OUT      |
-|                                  |                                  | -    2  -  ENCODE_WORK_AREA      |
+|                                  |                                  | -  0  -  ENCODE_ENTIRE           |
+|                                  |                                  | -  1  -  ENCODE_IN_TO_OUT        |
+|                                  |                                  | -  2  -  ENCODE_WORK_AREA        |
 +----------------------------------+----------------------------------+----------------------------------+
 |  removeUponCompletion            | Integer                          | If  1  , job will be removed     |
 |                                  |                                  | once complete.                   |
@@ -1724,22 +1724,22 @@ Returns  0  if successful.
 |_|  |_|\__,_|_|  |_|\_\___|_|     \___/|_.__// |\___|\___|\__|
                                             |__/               
 
--   <L=c#3> Attributes </L>
-    -   <L=c#4> Marker.comments </L>
-    -   <L=c#7> Marker.end </L>
-    -   <L=c#a> Marker.guid </L>
-    -   <L=c#d> Marker.name </L>
-    -   <L=c#g> Marker.start </L>
-    -   <L=c#j> Marker.type </L>
--   <L=c#m> Methods </L>
-    -   <L=c#n> Marker.getColorByIndex() </L>
-    -   <L=c#r> Marker.getWebLinkFrameTarget() </L>
-    -   <L=c#v> Marker.getWebLinkURL() </L>
-    -   <L=c#z> Marker.setColorByIndex() </L>
-    -   <L=c#D> Marker.setTypeAsChapter() </L>
-    -   <L=c#H> Marker.setTypeAsComment() </L>
-    -   <L=c#L> Marker.setTypeAsSegmentation() </L>
-    -   <L=c#P> Marker.setTypeAsWebLink() </L>
+- <L=c#3> Attributes </L>
+  - <L=c#4> Marker.comments </L>
+  - <L=c#7> Marker.end </L>
+  - <L=c#a> Marker.guid </L>
+  - <L=c#d> Marker.name </L>
+  - <L=c#g> Marker.start </L>
+  - <L=c#j> Marker.type </L>
+- <L=c#m> Methods </L>
+  - <L=c#n> Marker.getColorByIndex() </L>
+  - <L=c#r> Marker.getWebLinkFrameTarget() </L>
+  - <L=c#v> Marker.getWebLinkURL() </L>
+  - <L=c#z> Marker.setColorByIndex() </L>
+  - <L=c#D> Marker.setTypeAsChapter() </L>
+  - <L=c#H> Marker.setTypeAsComment() </L>
+  - <L=c#L> Marker.setTypeAsSegmentation() </L>
+  - <L=c#P> Marker.setTypeAsWebLink() </L>
 
 
 Marker object <L=c#1></L><I=1>
@@ -1820,10 +1820,10 @@ Marker.type <L=c#j></L><I=j>
 Description <L=c#k></L><I=k>
 The type of marker, one of:
 
--    "Comment" 
--    "Chapter" 
--    "Segmentation" 
--    "WebLink" 
+-  "Comment" 
+-  "Chapter" 
+-  "Segmentation" 
+-  "WebLink" 
 
 Note
 
@@ -1897,14 +1897,14 @@ This functionality was added in Adobe Premire Pro 13.x.
 Description <L=c#A></L><I=A>
 Sets the marker color by index. Color indices listed below.
 
--    0  = Green
--    1  = Red
--    2  = Purple
--    3  = Orange
--    4  = Yellow
--    5  = White
--    6  = Blue
--    7  = Cyan
+-  0  = Green
+-  1  = Red
+-  2  = Purple
+-  3  = Orange
+-  4  = Yellow
+-  5  = White
+-  6  = Blue
+-  7  = Cyan
 
 Parameters <L=c#B></L><I=B>
   Argument        Type      Description
@@ -1987,14 +1987,14 @@ Returns  0  if successful.
 |_|  |_|\___|\__\__,_|\__,_|\__,_|\__\__,_|  \___/|_.__// |\___|\___|\__|
                                                       |__/               
 
--   <L=d#3> Attributes </L>
-    -   <L=d#4> Metadata.getMetadata </L>
--   <L=d#7> Methods </L>
-    -   <L=d#8> Metadata.addMarker() </L>
-    -   <L=d#c> Metadata.deleteMarker() </L>
-    -   <L=d#g> Metadata.setMarkerData() </L>
-    -   <L=d#k> Metadata.setMetadataValue() </L>
-    -   <L=d#o> Metadata.updateMarker() </L>
+- <L=d#3> Attributes </L>
+  - <L=d#4> Metadata.getMetadata </L>
+- <L=d#7> Methods </L>
+  - <L=d#8> Metadata.addMarker() </L>
+  - <L=d#c> Metadata.deleteMarker() </L>
+  - <L=d#g> Metadata.setMarkerData() </L>
+  - <L=d#k> Metadata.setMetadataValue() </L>
+  - <L=d#o> Metadata.updateMarker() </L>
 
 
 Metadata object <L=d#1></L><I=1>
@@ -2104,16 +2104,16 @@ add return value/type here
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=e#3> Attributes </L>
-    -   <L=e#4> Production.name </L>
-    -   <L=e#7> Production.path </L>
-    -   <L=e#a> Production.projects </L>
--   <L=e#d> Methods </L>
-    -   <L=e#e> Production.addProject() </L>
-    -   <L=e#i> Production.close() </L>
-    -   <L=e#m> Production.getLocked() </L>
-    -   <L=e#q> Production.moveToTrash() </L>
-    -   <L=e#u> Production.setLocked() </L>
+- <L=e#3> Attributes </L>
+  - <L=e#4> Production.name </L>
+  - <L=e#7> Production.path </L>
+  - <L=e#a> Production.projects </L>
+- <L=e#d> Methods </L>
+  - <L=e#e> Production.addProject() </L>
+  - <L=e#i> Production.close() </L>
+  - <L=e#m> Production.getLocked() </L>
+  - <L=e#q> Production.moveToTrash() </L>
+  - <L=e#u> Production.setLocked() </L>
 
 
 Production object <L=e#1></L><I=1>
@@ -2259,22 +2259,22 @@ Returns  true  if successful.
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=f#3> Attributes </L>
-    -   <L=f#4> ProjectManager.affectedSequences </L>
-    -   <L=f#7> ProjectManager.clipTranscoderOption </L>
-    -   <L=f#a> ProjectManager.clipTransferOption </L>
-    -   <L=f#c> ProjectManager.convertAECompsToClips </L>
-    -   <L=f#f> ProjectManager.convertImageSequencesToClips </L>
-    -   <L=f#i> ProjectManager.convertSyntheticsToClips </L>
-    -   <L=f#l> ProjectManager.copyToPreventAlphaLoss </L>
-    -   <L=f#o> ProjectManager.destinationPath </L>
-    -   <L=f#r> ProjectManager.encoderPresetFilePath </L>
-    -   <L=f#u> ProjectManager.excludeUnused </L>
-    -   <L=f#x> ProjectManager.handleFrameCount </L>
-    -   <L=f#A> ProjectManager.includeAllSequences </L>
-    -   <L=f#D> ProjectManager.includeConformedAudio </L>
-    -   <L=f#G> ProjectManager.includePreviews </L>
-    -   <L=f#J> ProjectManager.renameMedia </L>
+- <L=f#3> Attributes </L>
+  - <L=f#4> ProjectManager.affectedSequences </L>
+  - <L=f#7> ProjectManager.clipTranscoderOption </L>
+  - <L=f#a> ProjectManager.clipTransferOption </L>
+  - <L=f#c> ProjectManager.convertAECompsToClips </L>
+  - <L=f#f> ProjectManager.convertImageSequencesToClips </L>
+  - <L=f#i> ProjectManager.convertSyntheticsToClips </L>
+  - <L=f#l> ProjectManager.copyToPreventAlphaLoss </L>
+  - <L=f#o> ProjectManager.destinationPath </L>
+  - <L=f#r> ProjectManager.encoderPresetFilePath </L>
+  - <L=f#u> ProjectManager.excludeUnused </L>
+  - <L=f#x> ProjectManager.handleFrameCount </L>
+  - <L=f#A> ProjectManager.includeAllSequences </L>
+  - <L=f#D> ProjectManager.includeConformedAudio </L>
+  - <L=f#G> ProjectManager.includePreviews </L>
+  - <L=f#J> ProjectManager.renameMedia </L>
 
 
 ProjectManager object <L=f#1></L><I=1>
@@ -2304,9 +2304,9 @@ ProjectManager.clipTranscoderOption <L=f#7></L><I=7>
 Description <L=f#8></L><I=8>
 The specified setting for clip transcode. Value will be one of the following:
 
--    CLIP_TRANSCODE_MATCH_PRESET  - Transcode using the specified preset.
--    CLIP_TRANSCODE_MATCH_CLIPS  - Match the clips
--    CLIP_TRANSCODE_MATCH_SEQUENCE  - Match the sequence
+-  CLIP_TRANSCODE_MATCH_PRESET  - Transcode using the specified preset.
+-  CLIP_TRANSCODE_MATCH_CLIPS  - Match the clips
+-  CLIP_TRANSCODE_MATCH_SEQUENCE  - Match the sequence
 
 Type <L=f#9></L><I=9>
 String; read/write.
@@ -2319,8 +2319,8 @@ ProjectManager.clipTransferOption <L=f#a></L><I=a>
 Description <L=f#b></L><I=b>
 The specified setting for clip transfer. Value will be one of the following:
 
--    CLIP_TRANSFER_COPY  - Copy entire source media.
--    CLIP_TRANSFER_TRANSCODE  - Transcode to default output format.
+-  CLIP_TRANSFER_COPY  - Copy entire source media.
+-  CLIP_TRANSFER_TRANSCODE  - Transcode to default output format.
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -2467,46 +2467,46 @@ Boolean; read/write.
 |_|   |_|  \___// |\___|\___|\__|  \___/|_.__// |\___|\___|\__|
               |__/                          |__/               
 
--   <L=g#3> Attributes </L>
-    -   <L=g#4> Project.activeSequence </L>
-    -   <L=g#7> Project.cloudProjectlocalID </L>
-    -   <L=g#a> Project.documentID </L>
-    -   <L=g#d> Project.isCloudProject </L>
-    -   <L=g#g> Project.name </L>
-    -   <L=g#j> Project.path </L>
-    -   <L=g#n> Project.rootItem </L>
-    -   <L=g#q> Project.sequences </L>
--   <L=g#t> Methods </L>
-    -   <L=g#u> Project.addPropertyToProjectMetadataSchema() </L>
-    -   <L=g#y> Project.closeDocument() </L>
-    -   <L=g#C> Project.consolidateDuplicates() </L>
-    -   <L=g#G> Project.createNewSequence() </L>
-    -   <L=g#K> Project.createNewSequenceFromClips() </L>
-    -   <L=g#O> Project.deleteSequence() </L>
-    -   <L=g#S> Project.exportAAF() </L>
-    -   <L=g#W> Project.exportFinalCutProXML() </L>
-    -   <L=g#10> Project.exportOMF() </L>
-    -   <L=g#14> Project.exportTimeline() </L>
-    -   <L=g#18> Project.getGraphicsWhiteLuminance() </L>
-    -   <L=g#1c> Project.getInsertionBin() </L>
-    -   <L=g#1g> Project.getProjectPanelMetadata() </L>
-    -   <L=g#1k> Project.getSharedLocation() </L>
-    -   <L=g#1o> Project.getSupportedGraphicsWhiteLuminances() </L>
-    -   <L=g#1s> Project.importAEComps() </L>
-    -   <L=g#1w> Project.importAllAEComps() </L>
-    -   <L=g#1A> Project.importFiles() </L>
-    -   <L=g#1E> Project.importSequences() </L>
-    -   <L=g#1I> Project.isSharedLocationCopyEnabled() </L>
-    -   <L=g#1M> Project.newBarsAndTone() </L>
-    -   <L=g#1Q> Project.newSequence() </L>
-    -   <L=g#1U> Project.openSequence() </L>
-    -   <L=g#1Y> Project.pauseGrowing() </L>
-    -   <L=g#22> Project.save() </L>
-    -   <L=g#26> Project.saveAs() </L>
-    -   <L=g#2a> Project.setEnableTranscodeOnIngest() </L>
-    -   <L=g#2e> Project.setGraphicsWhiteLuminance() </L>
-    -   <L=g#2i> Project.setProjectPanelMetadata() </L>
-    -   <L=g#2m> Project.setScratchDiskPath() </L>
+- <L=g#3> Attributes </L>
+  - <L=g#4> Project.activeSequence </L>
+  - <L=g#7> Project.cloudProjectlocalID </L>
+  - <L=g#a> Project.documentID </L>
+  - <L=g#d> Project.isCloudProject </L>
+  - <L=g#g> Project.name </L>
+  - <L=g#j> Project.path </L>
+  - <L=g#n> Project.rootItem </L>
+  - <L=g#q> Project.sequences </L>
+- <L=g#t> Methods </L>
+  - <L=g#u> Project.addPropertyToProjectMetadataSchema() </L>
+  - <L=g#y> Project.closeDocument() </L>
+  - <L=g#C> Project.consolidateDuplicates() </L>
+  - <L=g#G> Project.createNewSequence() </L>
+  - <L=g#K> Project.createNewSequenceFromClips() </L>
+  - <L=g#O> Project.deleteSequence() </L>
+  - <L=g#S> Project.exportAAF() </L>
+  - <L=g#W> Project.exportFinalCutProXML() </L>
+  - <L=g#10> Project.exportOMF() </L>
+  - <L=g#14> Project.exportTimeline() </L>
+  - <L=g#18> Project.getGraphicsWhiteLuminance() </L>
+  - <L=g#1c> Project.getInsertionBin() </L>
+  - <L=g#1g> Project.getProjectPanelMetadata() </L>
+  - <L=g#1k> Project.getSharedLocation() </L>
+  - <L=g#1o> Project.getSupportedGraphicsWhiteLuminances() </L>
+  - <L=g#1s> Project.importAEComps() </L>
+  - <L=g#1w> Project.importAllAEComps() </L>
+  - <L=g#1A> Project.importFiles() </L>
+  - <L=g#1E> Project.importSequences() </L>
+  - <L=g#1I> Project.isSharedLocationCopyEnabled() </L>
+  - <L=g#1M> Project.newBarsAndTone() </L>
+  - <L=g#1Q> Project.newSequence() </L>
+  - <L=g#1U> Project.openSequence() </L>
+  - <L=g#1Y> Project.pauseGrowing() </L>
+  - <L=g#22> Project.save() </L>
+  - <L=g#26> Project.saveAs() </L>
+  - <L=g#2a> Project.setEnableTranscodeOnIngest() </L>
+  - <L=g#2e> Project.setGraphicsWhiteLuminance() </L>
+  - <L=g#2i> Project.setProjectPanelMetadata() </L>
+  - <L=g#2m> Project.setScratchDiskPath() </L>
 
 
 Project object <L=g#1></L><I=1>
@@ -2631,10 +2631,10 @@ Parameters <L=g#w></L><I=w>
 +----------------------------------+----------------------------------+----------------------------------+
 |  propertyType                    | Integer                          | Must be one of the following:    |
 |                                  |                                  |                                  |
-|                                  |                                  | -    0  - Integer                |
-|                                  |                                  | -    1  -  Real                  |
-|                                  |                                  | -    2  - String                 |
-|                                  |                                  | -    3  - Boolean                |
+|                                  |                                  | -  0  - Integer                  |
+|                                  |                                  | -  1  -  Real                    |
+|                                  |                                  | -  2  - String                   |
+|                                  |                                  | -  3  - Boolean                  |
 +----------------------------------+----------------------------------+----------------------------------+
 
 Returns <L=g#x></L><I=x>
@@ -3139,31 +3139,31 @@ Parameters <L=g#2o></L><I=2o>
 +----------------------------------+----------------------------------+----------------------------------+
 |  scratchDiskType                 |  ScratchDiskType  enum           | One of:                          |
 |                                  |                                  |                                  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstVideoCaptureFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstAudioCaptureFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstVideoPreviewFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstAudioPreviewFolder  |
-|                                  |                                  | -    Scra                        |
+|                                  |                                  | -  Scra                          |
 |                                  |                                  | tchDiskType.FirstAutoSaveFolder  |
-|                                  |                                  | -    Scratch                     |
+|                                  |                                  | -  Scratch                       |
 |                                  |                                  | DiskType.FirstCCLibrariesFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstCapsuleMediaFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstAudioCaptureFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstVideoPreviewFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstAudioPreviewFolder  |
-|                                  |                                  | -    Scra                        |
+|                                  |                                  | -  Scra                          |
 |                                  |                                  | tchDiskType.FirstAutoSaveFolder  |
-|                                  |                                  | -    Scratch                     |
+|                                  |                                  | -  Scratch                       |
 |                                  |                                  | DiskType.FirstCCLibrariesFolder  |
-|                                  |                                  | -    ScratchD                    |
+|                                  |                                  | -  ScratchD                      |
 |                                  |                                  | iskType.FirstCapsuleMediaFolder  |
 +----------------------------------+----------------------------------+----------------------------------+
 
@@ -3182,13 +3182,13 @@ Returns  0  if unsuccessful.
 |_|   |_|  \___/| .__/ \___|_|   \__|_|\___||___/  \___/|_.__// |\___|\___|\__|
                 |_|                                         |__/               
 
--   <L=h#3> Attributes </L>
--   <L=h#4> Methods </L>
-    -   <L=h#5> Properties.clearProperty() </L>
-    -   <L=h#9> Properties.doesPropertyExist() </L>
-    -   <L=h#e> Properties.getProperty() </L>
-    -   <L=h#j> Properties.isPropertyReadOnly() </L>
-    -   <L=h#n> Properties.setProperty() </L>
+- <L=h#3> Attributes </L>
+- <L=h#4> Methods </L>
+  - <L=h#5> Properties.clearProperty() </L>
+  - <L=h#9> Properties.doesPropertyExist() </L>
+  - <L=h#e> Properties.getProperty() </L>
+  - <L=h#j> Properties.isPropertyReadOnly() </L>
+  - <L=h#n> Properties.setProperty() </L>
 
 
 Properties object <L=h#1></L><I=1>
@@ -3359,15 +3359,15 @@ if (app.properties.doesPropertyExist(property)) {
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=i#3> Attributes </L>
--   <L=i#4> Methods </L>
-    -   <L=i#5> SourceMonitor.closeAllClips() </L>
-    -   <L=i#9> SourceMonitor.closeClip() </L>
-    -   <L=i#d> SourceMonitor.getPosition() </L>
-    -   <L=i#h> SourceMonitor.getProjectItem() </L>
-    -   <L=i#l> SourceMonitor.openFilePath() </L>
-    -   <L=i#p> SourceMonitor.openProjectItem() </L>
-    -   <L=i#t> SourceMonitor.play() </L>
+- <L=i#3> Attributes </L>
+- <L=i#4> Methods </L>
+  - <L=i#5> SourceMonitor.closeAllClips() </L>
+  - <L=i#9> SourceMonitor.closeClip() </L>
+  - <L=i#d> SourceMonitor.getPosition() </L>
+  - <L=i#h> SourceMonitor.getProjectItem() </L>
+  - <L=i#l> SourceMonitor.openFilePath() </L>
+  - <L=i#p> SourceMonitor.openProjectItem() </L>
+  - <L=i#t> SourceMonitor.play() </L>
 
 
 SourceMonitor object <L=i#1></L><I=1>
@@ -3498,10 +3498,10 @@ Returns  0  if successful.
  \____|_| |_|\__,_|_| |_|\__, |\___|_|\___/ \__, |
                          |___/              |___/ 
 
--   <L=j#2> Adobe Premiere Pro 23.0 </L>
--   <L=j#3> Adobe Premiere Pro 15.4 </L>
--   <L=j#4> Adobe Premiere Pro 14.0 </L>
--   <L=j#5> Adobe Premiere Pro 13.x </L>
+- <L=j#2> Adobe Premiere Pro 23.0 </L>
+- <L=j#3> Adobe Premiere Pro 15.4 </L>
+- <L=j#4> Adobe Premiere Pro 14.0 </L>
+- <L=j#5> Adobe Premiere Pro 13.x </L>
 
 
 Changelog <L=j#1></L><I=1>
@@ -3518,25 +3518,25 @@ Any such changes will be reconsidered, once Premiere Pro moves to UXP-based exte
 ---------------------------------------------------------------------------------------------------------
 
 Adobe Premiere Pro 15.4 <L=j#3></L><I=3>
--   Access to the currently active project selection
-    -   Added: app.getCurrentProjectViewSelection()
--   New API to move a trackItem.
-    -   Added: TrackItem.move()
--   New APIs to set the disabled state of a trackItem.
-    -   Added: TrackItem.disabled
+- Access to the currently active project selection
+  - Added: app.getCurrentProjectViewSelection()
+- New API to move a trackItem.
+  - Added: TrackItem.move()
+- New APIs to set the disabled state of a trackItem.
+  - Added: TrackItem.disabled
 
 ---------------------------------------------------------------------------------------------------------
 
 Adobe Premiere Pro 14.0 <L=j#4></L><I=4>
--   Scripting access to Auto-Reframe:
-    -   Added: Sequence.autoReframeSequence()
+- Scripting access to Auto-Reframe:
+  - Added: Sequence.autoReframeSequence()
 
 ---------------------------------------------------------------------------------------------------------
 
 Adobe Premiere Pro 13.x <L=j#5></L><I=5>
--   Scripting access to Marker colors:
-    -   Added: Marker.getColorByIndex()
-    -   Added: Marker.setColorByIndex()
+- Scripting access to Marker colors:
+  - Added: Marker.getColorByIndex()
+  - Added: Marker.setColorByIndex()
 
 [] January 25, 2025
 </B>
@@ -3550,8 +3550,8 @@ Adobe Premiere Pro 13.x <L=j#5></L><I=5>
  \___/  \_/ \___|_|    \_/ |_|\___| \_/\_/  
                                             
 
--   <L=k#2> Example code </L>
--   <L=k#3> Development and debugging tools </L>
+- <L=k#2> Example code </L>
+- <L=k#3> Development and debugging tools </L>
 
 
 Overview <L=k#1></L><I=1>
@@ -3630,62 +3630,62 @@ panels whenever possible.
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=m#3> Attributes </L>
-    -   <L=m#4> ProjectItem.children </L>
-    -   <L=m#7> ProjectItem.getAudioChannelMapping </L>
-    -   <L=m#a> ProjectItem.getOverrideColorSpaceList </L>
-    -   <L=m#d> ProjectItem.name </L>
-    -   <L=m#h> ProjectItem.nodeId </L>
-    -   <L=m#k> ProjectItem.teamProjectsAssetId </L>
-    -   <L=m#n> ProjectItem.treePath </L>
-    -   <L=m#q> ProjectItem.type </L>
--   <L=m#t> Methods </L>
-    -   <L=m#u> ProjectItem.attachProxy() </L>
-    -   <L=m#y> ProjectItem.canChangeMediaPath() </L>
-    -   <L=m#C> ProjectItem.canProxy() </L>
-    -   <L=m#G> ProjectItem.changeMediaPath() </L>
-    -   <L=m#K> ProjectItem.clearOutPoint() </L>
-    -   <L=m#O> ProjectItem.createBin() </L>
-    -   <L=m#S> ProjectItem.createSmartBin() </L>
-    -   <L=m#W> ProjectItem.createSubClip() </L>
-    -   <L=m#10> ProjectItem.deleteBin() </L>
-    -   <L=m#14> ProjectItem.findItemsMatchingMediaPath() </L>
-    -   <L=m#18> ProjectItem.getColorLabel() </L>
-    -   <L=m#1c> ProjectItem.getColorSpace() </L>
-    -   <L=m#1h> ProjectItem.getOriginalColorSpace() </L>
-    -   <L=m#1m> ProjectItem.getEmbeddedLUTID() </L>
-    -   <L=m#1r> ProjectItem.getInputLUTID() </L>
-    -   <L=m#1w> ProjectItem.getFootageInterpretation() </L>
-    -   <L=m#1A> ProjectItem.getInPoint() </L>
-    -   <L=m#1E> ProjectItem.getMarkers() </L>
-    -   <L=m#1I> ProjectItem.getMediaPath() </L>
-    -   <L=m#1M> ProjectItem.getOutPoint() </L>
-    -   <L=m#1Q> ProjectItem.getProjectMetadata() </L>
-    -   <L=m#1U> ProjectItem.getProjectColumnsMetadata() </L>
-    -   <L=m#1Y> ProjectItem.getProxyPath() </L>
-    -   <L=m#22> ProjectItem.getXMPMetadata() </L>
-    -   <L=m#26> ProjectItem.hasProxy() </L>
-    -   <L=m#2a> ProjectItem.isMergedClip() </L>
-    -   <L=m#2e> ProjectItem.isMulticamClip() </L>
-    -   <L=m#2i> ProjectItem.isOffline() </L>
-    -   <L=m#2m> ProjectItem.isSequence() </L>
-    -   <L=m#2q> ProjectItem.moveBin() </L>
-    -   <L=m#2u> ProjectItem.refreshMedia() </L>
-    -   <L=m#2y> ProjectItem.renameBin() </L>
-    -   <L=m#2C> ProjectItem.select() </L>
-    -   <L=m#2G> ProjectItem.setColorLabel() </L>
-    -   <L=m#2K> ProjectItem.setFootageInterpretation() </L>
-    -   <L=m#2O> ProjectItem.setInPoint() </L>
-    -   <L=m#2S> ProjectItem.setOffline() </L>
-    -   <L=m#2W> ProjectItem.setOutPoint() </L>
-    -   <L=m#30> ProjectItem.setOverrideFrameRate() </L>
-    -   <L=m#34> ProjectItem.setOverridePixelAspectRatio() </L>
-    -   <L=m#38> ProjectItem.setProjectMetadata() </L>
-    -   <L=m#3c> ProjectItem.setScaleToFrameSize() </L>
-    -   <L=m#3g> ProjectItem.setStartTime() </L>
-    -   <L=m#3k> ProjectItem.setXMPMetadata() </L>
-    -   <L=m#3o> ProjectItem.startTime() </L>
-    -   <L=m#3s> ProjectItem.videoComponents() </L>
+- <L=m#3> Attributes </L>
+  - <L=m#4> ProjectItem.children </L>
+  - <L=m#7> ProjectItem.getAudioChannelMapping </L>
+  - <L=m#a> ProjectItem.getOverrideColorSpaceList </L>
+  - <L=m#d> ProjectItem.name </L>
+  - <L=m#h> ProjectItem.nodeId </L>
+  - <L=m#k> ProjectItem.teamProjectsAssetId </L>
+  - <L=m#n> ProjectItem.treePath </L>
+  - <L=m#q> ProjectItem.type </L>
+- <L=m#t> Methods </L>
+  - <L=m#u> ProjectItem.attachProxy() </L>
+  - <L=m#y> ProjectItem.canChangeMediaPath() </L>
+  - <L=m#C> ProjectItem.canProxy() </L>
+  - <L=m#G> ProjectItem.changeMediaPath() </L>
+  - <L=m#K> ProjectItem.clearOutPoint() </L>
+  - <L=m#O> ProjectItem.createBin() </L>
+  - <L=m#S> ProjectItem.createSmartBin() </L>
+  - <L=m#W> ProjectItem.createSubClip() </L>
+  - <L=m#10> ProjectItem.deleteBin() </L>
+  - <L=m#14> ProjectItem.findItemsMatchingMediaPath() </L>
+  - <L=m#18> ProjectItem.getColorLabel() </L>
+  - <L=m#1c> ProjectItem.getColorSpace() </L>
+  - <L=m#1h> ProjectItem.getOriginalColorSpace() </L>
+  - <L=m#1m> ProjectItem.getEmbeddedLUTID() </L>
+  - <L=m#1r> ProjectItem.getInputLUTID() </L>
+  - <L=m#1w> ProjectItem.getFootageInterpretation() </L>
+  - <L=m#1A> ProjectItem.getInPoint() </L>
+  - <L=m#1E> ProjectItem.getMarkers() </L>
+  - <L=m#1I> ProjectItem.getMediaPath() </L>
+  - <L=m#1M> ProjectItem.getOutPoint() </L>
+  - <L=m#1Q> ProjectItem.getProjectMetadata() </L>
+  - <L=m#1U> ProjectItem.getProjectColumnsMetadata() </L>
+  - <L=m#1Y> ProjectItem.getProxyPath() </L>
+  - <L=m#22> ProjectItem.getXMPMetadata() </L>
+  - <L=m#26> ProjectItem.hasProxy() </L>
+  - <L=m#2a> ProjectItem.isMergedClip() </L>
+  - <L=m#2e> ProjectItem.isMulticamClip() </L>
+  - <L=m#2i> ProjectItem.isOffline() </L>
+  - <L=m#2m> ProjectItem.isSequence() </L>
+  - <L=m#2q> ProjectItem.moveBin() </L>
+  - <L=m#2u> ProjectItem.refreshMedia() </L>
+  - <L=m#2y> ProjectItem.renameBin() </L>
+  - <L=m#2C> ProjectItem.select() </L>
+  - <L=m#2G> ProjectItem.setColorLabel() </L>
+  - <L=m#2K> ProjectItem.setFootageInterpretation() </L>
+  - <L=m#2O> ProjectItem.setInPoint() </L>
+  - <L=m#2S> ProjectItem.setOffline() </L>
+  - <L=m#2W> ProjectItem.setOutPoint() </L>
+  - <L=m#30> ProjectItem.setOverrideFrameRate() </L>
+  - <L=m#34> ProjectItem.setOverridePixelAspectRatio() </L>
+  - <L=m#38> ProjectItem.setProjectMetadata() </L>
+  - <L=m#3c> ProjectItem.setScaleToFrameSize() </L>
+  - <L=m#3g> ProjectItem.setStartTime() </L>
+  - <L=m#3k> ProjectItem.setXMPMetadata() </L>
+  - <L=m#3o> ProjectItem.startTime() </L>
+  - <L=m#3s> ProjectItem.videoComponents() </L>
 
 
 ProjectItem object <L=m#1></L><I=1>
@@ -3819,10 +3819,10 @@ ProjectItem.type <L=m#q></L><I=q>
 Description <L=m#r></L><I=r>
 One of:
 
--    "CLIP" 
--    "BIN" 
--    "ROOT" 
--    "FILE" 
+-  "CLIP" 
+-  "BIN" 
+-  "ROOT" 
+-  "FILE" 
 
 Type <L=m#s></L><I=s>
 Enumerated value; read-only.
@@ -4004,22 +4004,22 @@ None.
 Returns <L=m#1b></L><I=1b>
 Integer, one of:
 
--    0  = Violet
--    1  = Iris
--    2  = Caribbean
--    3  = Lavender
--    4  = Cerulean
--    5  = Forest
--    6  = Rose
--    7  = Mango
--    8  = Purple
--    9  = Blue
--    10  = Teal
--    11  = Magenta
--    12  = Tan
--    13  = Green
--    14  = Brown
--    15  = Yellow
+-  0  = Violet
+-  1  = Iris
+-  2  = Caribbean
+-  3  = Lavender
+-  4  = Cerulean
+-  5  = Forest
+-  6  = Rose
+-  7  = Mango
+-  8  = Purple
+-  9  = Blue
+-  10  = Teal
+-  11  = Magenta
+-  12  = Tan
+-  13  = Green
+-  14  = Brown
+-  15  = Yellow
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -4035,10 +4035,10 @@ None.
 Returns <L=m#1f></L><I=1f>
 Returns an item's colorspace properties, an object consisting of:
 
--    name 
--    transferCharacteristic 
--    primaries 
--    matrixEquation 
+-  name 
+-  transferCharacteristic 
+-  primaries 
+-  matrixEquation 
 
 Example <L=m#1g></L><I=1g>
 this will write the above info to the Events panel.
@@ -4065,10 +4065,10 @@ None.
 Returns <L=m#1k></L><I=1k>
 Returns an item's colorspace properties, an object consisting of:
 
--    name 
--    transferCharacteristic 
--    primaries 
--    matrixEquation 
+-  name 
+-  transferCharacteristic 
+-  primaries 
+-  matrixEquation 
 
 Example <L=m#1l></L><I=1l>
 See <L=m#1c>ProjectItem.getColorSpace()</L>
@@ -4136,29 +4136,28 @@ A footage interpretation structure, or  0  if unsuccessful.
 +=========================+=========================+=========================+=========================+
 |  alphaUsage             | Integer                 | Alpha, will be one of:  |                         |
 |                         |                         |                         |                         |
-|                         |                         | -    0  -               |                         |
-|                         |                         |      ALPHACHANNEL_NONE  |                         |
-|                         |                         | -    1  -               |                         |
+|                         |                         | -  0  -                 |                         |
+|                         |                         |    ALPHACHANNEL_NONE    |                         |
+|                         |                         | -  1  -                 |                         |
 |                         |                         |                         |                         |
 |                         |                         |  ALPHACHANNEL_STRAIGHT  |                         |
-|                         |                         | -    2  -               |                         |
-|                         |                         |      ALPH               |                         |
+|                         |                         | -  2  -                 |                         |
+|                         |                         |    ALPH                 |                         |
 |                         |                         | ACHANNEL_PREMULTIPLIED  |                         |
-|                         |                         | -    3  -               |                         |
-|                         |                         |                         |                         |
+|                         |                         | -  3  -                 |                         |
 |                         |                         |    ALPHACHANNEL_IGNORE  |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
 |  fieldType              | Integer                 | Field type, one of:     |                         |
 |                         |                         |                         |                         |
-|                         |                         | -    -1  -              |                         |
-|                         |                         |      FIELDTYPE_DEFAULT  |                         |
-|                         |                         | -    0  -               |                         |
+|                         |                         | -  -1  -                |                         |
+|                         |                         |    FIELDTYPE_DEFAULT    |                         |
+|                         |                         | -  0  -                 |                         |
 |                         |                         |                         |                         |
 |                         |                         |  FIELDTYPE_PROGRESSIVE  |                         |
-|                         |                         | -    1  -               |                         |
+|                         |                         | -  1  -                 |                         |
 |                         |                         |                         |                         |
 |                         |                         |   FIELDTYPE_UPPERFIRST  |                         |
-|                         |                         | -    2  -               |                         |
+|                         |                         | -  2  -                 |                         |
 |                         |                         |                         |                         |
 |                         |                         |   FIELDTYPE_LOWERFIRST  |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
@@ -4178,24 +4177,24 @@ A footage interpretation structure, or  0  if unsuccessful.
 | rConformProjectionType  |                         | use, for VR footage.    |                         |
 |                         |                         | One of                  |                         |
 |                         |                         |                         |                         |
-|                         |                         | -    0  -               |                         |
-|                         |                         |      VR_C               |                         |
+|                         |                         | -  0  -                 |                         |
+|                         |                         |    VR_C                 |                         |
 |                         |                         | ONFORM_PROJECTION_NONE  |                         |
-|                         |                         | -    1  -               |                         |
-|                         |                         |      VR_CONFORM_PROJ    |                         |
+|                         |                         | -  1  -                 |                         |
+|                         |                         |    VR_CONFORM_PROJ      |                         |
 |                         |                         | ECTION_EQUIRECTANGULAR  |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
 |  vrLayoutType           | Integer                 | The layout of footage   |                         |
 |                         |                         | in use, for VR. One of  |                         |
 |                         |                         |                         |                         |
-|                         |                         | -    0  -               |                         |
+|                         |                         | -  0  -                 |                         |
 |                         |                         |                         |                         |
 |                         |                         |   VR_LAYOUT_MONOSCOPIC  |                         |
-|                         |                         | -    1  -               |                         |
-|                         |                         |      VR_LA              |                         |
+|                         |                         | -  1  -                 |                         |
+|                         |                         |    VR_LA                |                         |
 |                         |                         | YOUT_STEREO_OVER_UNDER  |                         |
-|                         |                         | -    2  -               |                         |
-|                         |                         |      VR_LAYO            |                         |
+|                         |                         | -  2  -                 |                         |
+|                         |                         |    VR_LAYO              |                         |
 |                         |                         | UT_STEREO_SIDE_BY_SIDE  |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
 |  vrHorizontalView       | String                  | The horizontal view in  |                         |
@@ -4302,9 +4301,9 @@ A JSON string that can be parsed with JSON.parse() method in the Javascript laye
 This generates a list of objects, each object representing a column. Each object will contain 4 key/value
 pairs: ColumnName, ColumnValue, ColumnID, ColumnPath.
 
--   ColumnName and ColumnValue serve as informational key/value.
--   ColumnID and ColumnPath can be used to modify that column via the method setProjectMetadata() or
-    setXMPMetadata().
+- ColumnName and ColumnValue serve as informational key/value.
+- ColumnID and ColumnPath can be used to modify that column via the method setProjectMetadata() or
+  setXMPMetadata().
 
 For example:
 
@@ -4687,30 +4686,30 @@ ComponentCollection object , read-only.
   |_||_|  \__,_|\___|_|\_\___|\__\___|_| |_| |_|  \___/|_.__// |\___|\___|\__|
                                                            |__/               
 
--   <L=n#3> Attributes </L>
-    -   <L=n#4> TrackItem.components </L>
-    -   <L=n#7> TrackItem.duration </L>
-    -   <L=n#a> TrackItem.end </L>
-    -   <L=n#d> TrackItem.inPoint </L>
-    -   <L=n#g> TrackItem.matchName </L>
-    -   <L=n#j> TrackItem.mediaType </L>
-    -   <L=n#m> TrackItem.name </L>
-    -   <L=n#p> TrackItem.nodeId </L>
-    -   <L=n#s> TrackItem.outPoint </L>
-    -   <L=n#v> TrackItem.projectItem </L>
-    -   <L=n#y> TrackItem.start </L>
-    -   <L=n#B> TrackItem.type </L>
--   <L=n#E> Methods </L>
-    -   <L=n#F> TrackItem.getMGTComponent() </L>
-    -   <L=n#J> TrackItem.getSpeed() </L>
-    -   <L=n#N> TrackItem.isAdjustmentLayer() </L>
-    -   <L=n#R> TrackItem.isSpeedReversed()mm </L>
-    -   <L=n#V> TrackItem.isSelected() </L>
-    -   <L=n#Z> TrackItem.setSelected() </L>
-    -   <L=n#13> TrackItem.getMatchName() </L>
-    -   <L=n#17> TrackItem.remove() </L>
-    -   <L=n#1b> TrackItem.disabled </L>
-    -   <L=n#1f> TrackItem.move() </L>
+- <L=n#3> Attributes </L>
+  - <L=n#4> TrackItem.components </L>
+  - <L=n#7> TrackItem.duration </L>
+  - <L=n#a> TrackItem.end </L>
+  - <L=n#d> TrackItem.inPoint </L>
+  - <L=n#g> TrackItem.matchName </L>
+  - <L=n#j> TrackItem.mediaType </L>
+  - <L=n#m> TrackItem.name </L>
+  - <L=n#p> TrackItem.nodeId </L>
+  - <L=n#s> TrackItem.outPoint </L>
+  - <L=n#v> TrackItem.projectItem </L>
+  - <L=n#y> TrackItem.start </L>
+  - <L=n#B> TrackItem.type </L>
+- <L=n#E> Methods </L>
+  - <L=n#F> TrackItem.getMGTComponent() </L>
+  - <L=n#J> TrackItem.getSpeed() </L>
+  - <L=n#N> TrackItem.isAdjustmentLayer() </L>
+  - <L=n#R> TrackItem.isSpeedReversed()mm </L>
+  - <L=n#V> TrackItem.isSelected() </L>
+  - <L=n#Z> TrackItem.setSelected() </L>
+  - <L=n#13> TrackItem.getMatchName() </L>
+  - <L=n#17> TrackItem.remove() </L>
+  - <L=n#1b> TrackItem.disabled </L>
+  - <L=n#1f> TrackItem.move() </L>
 
 
 TrackItem object <L=n#1></L><I=1>
@@ -4799,8 +4798,8 @@ The mediaType of media provided by this trackItem.
 Type <L=n#l></L><I=l>
 String, one of:
 
--    "Audio" 
--    "Video" 
+-  "Audio" 
+-  "Video" 
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -5060,11 +5059,11 @@ Returns  0  if successful.
 | .__/| .__/|_|_| |_|\__, |  \___/|_.__// |\___|\___|\__|
 |_|   |_|            |___/            |__/               
 
--   <L=o#3> Attributes </L>
-    -   <L=o#4> AudioChannelMapping.audioChannelsType </L>
-    -   <L=o#6> AudioChannelMapping.audioClipsNumber </L>
--   <L=o#8> Methods </L>
-    -   <L=o#9> AudioChannelMapping.setMappingForChannel() </L>
+- <L=o#3> Attributes </L>
+  - <L=o#4> AudioChannelMapping.audioChannelsType </L>
+  - <L=o#6> AudioChannelMapping.audioClipsNumber </L>
+- <L=o#8> Methods </L>
+  - <L=o#9> AudioChannelMapping.setMappingForChannel() </L>
 
 
 AudioChannelMapping object <L=o#1></L><I=1>
@@ -5121,12 +5120,12 @@ Returns  true  if successful,  false  if that mapping is unsupported.
   |_| |_|_| |_| |_|\___|  \___/|_.__// |\___|\___|\__|
                                    |__/               
 
--   <L=p#3> Attributes </L>
-    -   <L=p#4> Time.seconds </L>
-    -   <L=p#7> Time.ticks </L>
--   <L=p#a> Methods </L>
-    -   <L=p#b> Time.getFormatted() </L>
-    -   <L=p#f> Time.setSecondsAsFraction() </L>
+- <L=p#3> Attributes </L>
+  - <L=p#4> Time.seconds </L>
+  - <L=p#7> Time.ticks </L>
+- <L=p#a> Methods </L>
+  - <L=p#b> Time.getFormatted() </L>
+  - <L=p#f> Time.setSecondsAsFraction() </L>
 
 
 Time object <L=p#1></L><I=1>
@@ -5183,32 +5182,32 @@ Parameters <L=p#d></L><I=d>
 |                                  |                                  |   TIMEDISPLAY_24Timecode = 100;  |
 |                                  |                                  | -                                |
 |                                  |                                  |   TIMEDISPLAY_25Timecode = 101;  |
-|                                  |                                  | -    TIME                        |
+|                                  |                                  | -  TIME                          |
 |                                  |                                  | DISPLAY_2997DropTimecode = 102;  |
-|                                  |                                  | -    TIMEDIS                     |
+|                                  |                                  | -  TIMEDIS                       |
 |                                  |                                  | PLAY_2997NonDropTimecode = 103;  |
 |                                  |                                  | -                                |
 |                                  |                                  |   TIMEDISPLAY_30Timecode = 104;  |
 |                                  |                                  | -                                |
 |                                  |                                  |   TIMEDISPLAY_50Timecode = 105;  |
-|                                  |                                  | -    TIME                        |
+|                                  |                                  | -  TIME                          |
 |                                  |                                  | DISPLAY_5994DropTimecode = 106;  |
-|                                  |                                  | -    TIMEDIS                     |
+|                                  |                                  | -  TIMEDIS                       |
 |                                  |                                  | PLAY_5994NonDropTimecode = 107;  |
 |                                  |                                  | -                                |
 |                                  |                                  |   TIMEDISPLAY_60Timecode = 108;  |
-|                                  |                                  | -    TIMEDISPLAY_Frames = 109;   |
-|                                  |                                  | -    T                           |
+|                                  |                                  | -  TIMEDISPLAY_Frames = 109;     |
+|                                  |                                  | -  T                             |
 |                                  |                                  | IMEDISPLAY_23976Timecode = 110;  |
-|                                  |                                  | -    TI                          |
+|                                  |                                  | -  TI                            |
 |                                  |                                  | MEDISPLAY_16mmFeetFrames = 111;  |
-|                                  |                                  | -    TI                          |
+|                                  |                                  | -  TI                            |
 |                                  |                                  | MEDISPLAY_35mmFeetFrames = 112;  |
 |                                  |                                  | -                                |
 |                                  |                                  |   TIMEDISPLAY_48Timecode = 113;  |
-|                                  |                                  | -    TIMEDISP                    |
+|                                  |                                  | -  TIMEDISP                      |
 |                                  |                                  | LAY_AudioSamplesTimecode = 200;  |
-|                                  |                                  | -    TIM                         |
+|                                  |                                  | -  TIM                           |
 |                                  |                                  | EDISPLAY_AudioMsTimecode = 201;  |
 +----------------------------------+----------------------------------+----------------------------------+
 
@@ -5247,27 +5246,27 @@ Boolean;  true  if successful.
 |_| |_| |_|  \___/|_.__// |\___|\___|\__|
                       |__/               
 
--   <L=q#3> Attributes </L>
-    -   <L=q#4> ComponentParam.displayName </L>
--   <L=q#7> Methods </L>
-    -   <L=q#8> ComponentParam.addKey() </L>
-    -   <L=q#c> ComponentParam.areKeyframesSupported() </L>
-    -   <L=q#g> ComponentParam.findNearestKey() </L>
-    -   <L=q#k> ComponentParam.findNextKey() </L>
-    -   <L=q#o> ComponentParam.findPreviousKey() </L>
-    -   <L=q#s> ComponentParam.getColorValue() </L>
-    -   <L=q#w> ComponentParam.getKeys() </L>
-    -   <L=q#A> ComponentParam.getValue() </L>
-    -   <L=q#E> ComponentParam.getValueAtKey() </L>
-    -   <L=q#I> ComponentParam.getValueAtTime() </L>
-    -   <L=q#M> ComponentParam.isTimeVarying() </L>
-    -   <L=q#Q> ComponentParam.removeKey() </L>
-    -   <L=q#U> ComponentParam.removeKeyRange() </L>
-    -   <L=q#Y> ComponentParam.setColorValue() </L>
-    -   <L=q#12> ComponentParam.setInterpolationTypeAtKey() </L>
-    -   <L=q#16> ComponentParam.setTimeVarying() </L>
-    -   <L=q#1a> ComponentParam.setValue() </L>
-    -   <L=q#1e> ComponentParam.setValueAtKey() </L>
+- <L=q#3> Attributes </L>
+  - <L=q#4> ComponentParam.displayName </L>
+- <L=q#7> Methods </L>
+  - <L=q#8> ComponentParam.addKey() </L>
+  - <L=q#c> ComponentParam.areKeyframesSupported() </L>
+  - <L=q#g> ComponentParam.findNearestKey() </L>
+  - <L=q#k> ComponentParam.findNextKey() </L>
+  - <L=q#o> ComponentParam.findPreviousKey() </L>
+  - <L=q#s> ComponentParam.getColorValue() </L>
+  - <L=q#w> ComponentParam.getKeys() </L>
+  - <L=q#A> ComponentParam.getValue() </L>
+  - <L=q#E> ComponentParam.getValueAtKey() </L>
+  - <L=q#I> ComponentParam.getValueAtTime() </L>
+  - <L=q#M> ComponentParam.isTimeVarying() </L>
+  - <L=q#Q> ComponentParam.removeKey() </L>
+  - <L=q#U> ComponentParam.removeKeyRange() </L>
+  - <L=q#Y> ComponentParam.setColorValue() </L>
+  - <L=q#12> ComponentParam.setInterpolationTypeAtKey() </L>
+  - <L=q#16> ComponentParam.setTimeVarying() </L>
+  - <L=q#1a> ComponentParam.setValue() </L>
+  - <L=q#1e> ComponentParam.setValueAtKey() </L>
 
 
 ComponentParam object <L=q#1></L><I=1>
@@ -5569,25 +5568,22 @@ Parameters <L=q#14></L><I=14>
 +----------------------------------+----------------------------------+----------------------------------+
 |  interpolationType               |  type                            | One of:                          |
 |                                  |                                  |                                  |
-|                                  |                                  | -    0  -                        |
-|                                  |                                  |      KF_Interp_Mode_Linear       |
-|                                  |                                  | -    1  -                        |
-|                                  |                                  |                                  |
+|                                  |                                  | -  0  -  KF_Interp_Mode_Linear   |
+|                                  |                                  | -  1  -                          |
 |                                  |                                  |    kfInterpMode_EaseIn_Obsolete  |
-|                                  |                                  | -    2  -                        |
+|                                  |                                  | -  2  -                          |
 |                                  |                                  |                                  |
 |                                  |                                  |   kfInterpMode_EaseOut_Obsolete  |
-|                                  |                                  | -    3  -                        |
-|                                  |                                  |      kfIn                        |
+|                                  |                                  | -  3  -                          |
+|                                  |                                  |    kfIn                          |
 |                                  |                                  | terpMode_EaseInEaseOut_Obsolete  |
-|                                  |                                  | -    4  -  KF_Interp_Mode_Hold   |
-|                                  |                                  | -    5  -                        |
-|                                  |                                  |      KF_Interp_Mode_Bezier       |
-|                                  |                                  | -    6  -  KF_Interp_Mode_Time   |
-|                                  |                                  | -    7  -                        |
-|                                  |                                  |      k                           |
+|                                  |                                  | -  4  -  KF_Interp_Mode_Hold     |
+|                                  |                                  | -  5  -  KF_Interp_Mode_Bezier   |
+|                                  |                                  | -  6  -  KF_Interp_Mode_Time     |
+|                                  |                                  | -  7  -                          |
+|                                  |                                  |    k                             |
 |                                  |                                  | fInterpMode_TimeTransitionStart  |
-|                                  |                                  | -    8  -                        |
+|                                  |                                  | -  8  -                          |
 |                                  |                                  |                                  |
 |                                  |                                  |  kfInterpMode_TimeTransitionEnd  |
 +----------------------------------+----------------------------------+----------------------------------+
@@ -5672,10 +5668,10 @@ Returns  0  if successful.
  \___/|_.__// |\___|\___|\__|
           |__/               
 
--   <L=r#3> Attributes </L>
-    -   <L=r#4> Component.displayName </L>
-    -   <L=r#7> Component.matchName </L>
-    -   <L=r#a> Component.properties </L>
+- <L=r#3> Attributes </L>
+  - <L=r#4> Component.displayName </L>
+  - <L=r#7> Component.matchName </L>
+  - <L=r#a> Component.properties </L>
 
 
 Component object <L=r#1></L><I=1>
@@ -5734,59 +5730,59 @@ Array of components, read-only; (ComponentParamCollection object).
 |____/ \___|\__, |\__,_|\___|_| |_|\___\___|  \___/|_.__// |\___|\___|\__|
                |_|                                     |__/               
 
--   <L=s#3> Attributes </L>
-    -   <L=s#4> Sequence.audioDisplayFormat </L>
-    -   <L=s#7> Sequence.audioTracks </L>
-    -   <L=s#a> Sequence.end </L>
-    -   <L=s#d> Sequence.frameSizeHorizontal </L>
-    -   <L=s#g> Sequence.frameSizeVertical </L>
-    -   <L=s#j> Sequence.id </L>
-    -   <L=s#m> Sequence.markers </L>
-    -   <L=s#p> Sequence.name </L>
-    -   <L=s#s> Sequence.projectItem </L>
-    -   <L=s#v> Sequence.sequenceID </L>
-    -   <L=s#y> Sequence.timebase </L>
-    -   <L=s#B> Sequence.videoDisplayFormat </L>
-    -   <L=s#E> Sequence.videoTracks </L>
-    -   <L=s#H> Sequence.zeroPoint </L>
--   <L=s#K> Methods </L>
-    -   <L=s#L> Sequence.attachCustomProperty() </L>
-    -   <L=s#P> Sequence.autoReframeSequence() </L>
-    -   <L=s#U> Sequence.clone() </L>
-    -   <L=s#Y> Sequence.close() </L>
-    -   <L=s#12> Sequence.createCaptionTrack() </L>
-    -   <L=s#17> Sequence.createSubsequence() </L>
-    -   <L=s#1c> Sequence.exportAsFinalCutProXML() </L>
-    -   <L=s#1g> Sequence.exportAsMediaDirect() </L>
-    -   <L=s#1k> Sequence.exportAsProject() </L>
-    -   <L=s#1o> Sequence.getExportFileExtension() </L>
-    -   <L=s#1s> Sequence.getInPoint() </L>
-    -   <L=s#1w> Sequence.getInPointAsTime() </L>
-    -   <L=s#1A> Sequence.getOutPoint() </L>
-    -   <L=s#1E> Sequence.getOutPointAsTime() </L>
-    -   <L=s#1I> Sequence.getPlayerPosition() </L>
-    -   <L=s#1M> Sequence.getSelection() </L>
-    -   <L=s#1Q> Sequence.getSettings() </L>
-    -   <L=s#1U> Sequence.getWorkAreaInPoint() </L>
-    -   <L=s#1Y> Sequence.getWorkAreaInPointAsTime() </L>
-    -   <L=s#22> Sequence.getWorkAreaOutPoint() </L>
-    -   <L=s#26> Sequence.getWorkAreaOutPointAsTime() </L>
-    -   <L=s#2a> Sequence.importMGT() </L>
-    -   <L=s#2e> Sequence.importMGTFromLibrary() </L>
-    -   <L=s#2i> Sequence.insertClip() </L>
-    -   <L=s#2m> Sequence.isDoneAnalyzingForVideoEffects() </L>
-    -   <L=s#2q> Sequence.isWorkAreaEnabled() </L>
-    -   <L=s#2u> Sequence.linkSelection() </L>
-    -   <L=s#2y> Sequence.overwriteClip() </L>
-    -   <L=s#2C> Sequence.performSceneEditDetectionOnSelection() </L>
-    -   <L=s#2G> Sequence.setInPoint() </L>
-    -   <L=s#2K> Sequence.setOutPoint() </L>
-    -   <L=s#2O> Sequence.setPlayerPosition() </L>
-    -   <L=s#2S> Sequence.setSettings() </L>
-    -   <L=s#2W> Sequence.setWorkAreaInPoint() </L>
-    -   <L=s#30> Sequence.setWorkAreaOutPoint() </L>
-    -   <L=s#34> Sequence.unlinkSelection() </L>
-    -   <L=s#38> Sequence.setZeroPoint() </L>
+- <L=s#3> Attributes </L>
+  - <L=s#4> Sequence.audioDisplayFormat </L>
+  - <L=s#7> Sequence.audioTracks </L>
+  - <L=s#a> Sequence.end </L>
+  - <L=s#d> Sequence.frameSizeHorizontal </L>
+  - <L=s#g> Sequence.frameSizeVertical </L>
+  - <L=s#j> Sequence.id </L>
+  - <L=s#m> Sequence.markers </L>
+  - <L=s#p> Sequence.name </L>
+  - <L=s#s> Sequence.projectItem </L>
+  - <L=s#v> Sequence.sequenceID </L>
+  - <L=s#y> Sequence.timebase </L>
+  - <L=s#B> Sequence.videoDisplayFormat </L>
+  - <L=s#E> Sequence.videoTracks </L>
+  - <L=s#H> Sequence.zeroPoint </L>
+- <L=s#K> Methods </L>
+  - <L=s#L> Sequence.attachCustomProperty() </L>
+  - <L=s#P> Sequence.autoReframeSequence() </L>
+  - <L=s#U> Sequence.clone() </L>
+  - <L=s#Y> Sequence.close() </L>
+  - <L=s#12> Sequence.createCaptionTrack() </L>
+  - <L=s#17> Sequence.createSubsequence() </L>
+  - <L=s#1c> Sequence.exportAsFinalCutProXML() </L>
+  - <L=s#1g> Sequence.exportAsMediaDirect() </L>
+  - <L=s#1k> Sequence.exportAsProject() </L>
+  - <L=s#1o> Sequence.getExportFileExtension() </L>
+  - <L=s#1s> Sequence.getInPoint() </L>
+  - <L=s#1w> Sequence.getInPointAsTime() </L>
+  - <L=s#1A> Sequence.getOutPoint() </L>
+  - <L=s#1E> Sequence.getOutPointAsTime() </L>
+  - <L=s#1I> Sequence.getPlayerPosition() </L>
+  - <L=s#1M> Sequence.getSelection() </L>
+  - <L=s#1Q> Sequence.getSettings() </L>
+  - <L=s#1U> Sequence.getWorkAreaInPoint() </L>
+  - <L=s#1Y> Sequence.getWorkAreaInPointAsTime() </L>
+  - <L=s#22> Sequence.getWorkAreaOutPoint() </L>
+  - <L=s#26> Sequence.getWorkAreaOutPointAsTime() </L>
+  - <L=s#2a> Sequence.importMGT() </L>
+  - <L=s#2e> Sequence.importMGTFromLibrary() </L>
+  - <L=s#2i> Sequence.insertClip() </L>
+  - <L=s#2m> Sequence.isDoneAnalyzingForVideoEffects() </L>
+  - <L=s#2q> Sequence.isWorkAreaEnabled() </L>
+  - <L=s#2u> Sequence.linkSelection() </L>
+  - <L=s#2y> Sequence.overwriteClip() </L>
+  - <L=s#2C> Sequence.performSceneEditDetectionOnSelection() </L>
+  - <L=s#2G> Sequence.setInPoint() </L>
+  - <L=s#2K> Sequence.setOutPoint() </L>
+  - <L=s#2O> Sequence.setPlayerPosition() </L>
+  - <L=s#2S> Sequence.setSettings() </L>
+  - <L=s#2W> Sequence.setWorkAreaInPoint() </L>
+  - <L=s#30> Sequence.setWorkAreaOutPoint() </L>
+  - <L=s#34> Sequence.unlinkSelection() </L>
+  - <L=s#38> Sequence.setZeroPoint() </L>
 
 
 Sequence object <L=s#1></L><I=1>
@@ -5809,8 +5805,8 @@ Set this attribute with the <L=s#2S>Sequence.setSettings()</L> method.
 Type <L=s#6></L><I=6>
 An enumerated value; read/write. One of:
 
--    200  - Audio Samples
--    201  - Milliseconds
+-  200  - Audio Samples
+-  201  - Milliseconds
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -5954,20 +5950,20 @@ Set this attribute with the <L=s#2S>Sequence.setSettings()</L> method.
 Type <L=s#D></L><I=D>
 An enumerated value; read/write. One of:
 
--    100  - 24 Timecode
--    101  - 25 Timecode
--    102  - 29.97 Drop Timecode
--    103  - 29.97 Non-Drop Timecode
--    104  - 30 Timecode
--    105  - 50 Timecode
--    106  - 59.94 Drop Timecode
--    107  - 59.94 Non-Drop Timecode
--    108  - 60 Timecode
--    109  - Frames
--    110  - 23.976 Timecode
--    111  - 16mm Feet + Frames
--    112  - 35mm Feet + Frames
--    113  - 48 Timecode
+-  100  - 24 Timecode
+-  101  - 25 Timecode
+-  102  - 29.97 Drop Timecode
+-  103  - 29.97 Non-Drop Timecode
+-  104  - 30 Timecode
+-  105  - 50 Timecode
+-  106  - 59.94 Drop Timecode
+-  107  - 59.94 Non-Drop Timecode
+-  108  - 60 Timecode
+-  109  - Frames
+-  110  - 23.976 Timecode
+-  111  - 16mm Feet + Frames
+-  112  - 35mm Feet + Frames
+-  113  - 48 Timecode
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -6032,9 +6028,9 @@ Parameters <L=s#R></L><I=R>
 +----------------------------------+----------------------------------+----------------------------------+
 |  motionPreset                    | String                           | One of:                          |
 |                                  |                                  |                                  |
-|                                  |                                  | -    slower                      |
-|                                  |                                  | -    default                     |
-|                                  |                                  | -    faster                      |
+|                                  |                                  | -  slower                        |
+|                                  |                                  | -  default                       |
+|                                  |                                  | -  faster                        |
 +----------------------------------+----------------------------------+----------------------------------+
 |  newName                         | String                           | A name for a newly created       |
 |                                  |                                  | sequence.                        |
@@ -6120,27 +6116,27 @@ Parameters <L=s#14></L><I=14>
 |                                  |                                  | equence.CAPTION_FORMAT_SUBTITLE  |
 |                                  |                                  | . One of:                        |
 |                                  |                                  |                                  |
-|                                  |                                  | -    Seq                         |
+|                                  |                                  | -  Seq                           |
 |                                  |                                  | uence.CAPTION_FORMAT_SUBTITLE  - |
-|                                  |                                  |     Subtitle                     |
+|                                  |                                  |   Subtitle                       |
 |                                  |                                  | -                                |
 |                                  |                                  |   Sequence.CAPTION_FORMAT_608  - |
-|                                  |                                  |     CEA-608                      |
+|                                  |                                  |   CEA-608                        |
 |                                  |                                  | -                                |
 |                                  |                                  |   Sequence.CAPTION_FORMAT_708  - |
-|                                  |                                  |     CEA-708                      |
-|                                  |                                  | -    Seq                         |
+|                                  |                                  |   CEA-708                        |
+|                                  |                                  | -  Seq                           |
 |                                  |                                  | uence.CAPTION_FORMAT_TELETEXT  - |
-|                                  |                                  |     Teletext                     |
-|                                  |                                  | -    Seq                         |
+|                                  |                                  |   Teletext                       |
+|                                  |                                  | -  Seq                           |
 |                                  |                                  | uence.CAPTION_FORMAT_OPEN_EBU  - |
-|                                  |                                  |     EBU Subtitle                 |
+|                                  |                                  |   EBU Subtitle                   |
 |                                  |                                  | -                                |
 |                                  |                                  |  Sequence.CAPTION_FORMAT_OP42  - |
-|                                  |                                  |     OP-42                        |
+|                                  |                                  |   OP-42                          |
 |                                  |                                  | -                                |
 |                                  |                                  |  Sequence.CAPTION_FORMAT_OP47  - |
-|                                  |                                  |     OP-47                        |
+|                                  |                                  |   OP-47                          |
 +----------------------------------+----------------------------------+----------------------------------+
 
 Returns <L=s#15></L><I=15>
@@ -6240,13 +6236,12 @@ Parameters <L=s#1i></L><I=1i>
 |  workAreaType                    | Integer                          | The work area type to be         |
 |                                  |                                  | rendered (see below). One of:    |
 |                                  |                                  |                                  |
-|                                  |                                  | -    0  - Renders the entire     |
-|                                  |                                  |     sequence.                    |
-|                                  |                                  | -    1  - Renders between the in |
-|                                  |                                  |     and out point of the         |
-|                                  |                                  |     sequence.                    |
-|                                  |                                  | -    2  - Renders the work area  |
-|                                  |                                  |     of the sequence.             |
+|                                  |                                  | -  0  - Renders the entire       |
+|                                  |                                  |   sequence.                      |
+|                                  |                                  | -  1  - Renders between the in   |
+|                                  |                                  |   and out point of the sequence. |
+|                                  |                                  | -  2  - Renders the work area of |
+|                                  |                                  |   the sequence.                  |
 +----------------------------------+----------------------------------+----------------------------------+
 
 Returns <L=s#1j></L><I=1j>
@@ -6389,17 +6384,15 @@ Returns an object; a sequence settings structure.
 |                         |                         |                         | channels in the         |
 |                         |                         |                         | sequence.               |
 +-------------------------+-------------------------+-------------------------+-------------------------+
-|  audioChannelType       | Integer                 | -    0  - Mono          | Audio channel type.     |
-|                         |                         | -    1  - Stereo        |                         |
-|                         |                         | -    2  - 5.1           |                         |
-|                         |                         | -    3  - Multichannel  |                         |
-|                         |                         | -    4  - 4 Channel     |                         |
-|                         |                         | -    5  - 8 Channel     |                         |
+|  audioChannelType       | Integer                 | -  0  - Mono            | Audio channel type.     |
+|                         |                         | -  1  - Stereo          |                         |
+|                         |                         | -  2  - 5.1             |                         |
+|                         |                         | -  3  - Multichannel    |                         |
+|                         |                         | -  4  - 4 Channel       |                         |
+|                         |                         | -  5  - 8 Channel       |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
-|  audioDisplayFormat     | Integer                 | -    200  - Audio       | Audio timecode display  |
-|                         |                         |     Samples             | format.                 |
-|                         |                         | -    201  -             |                         |
-|                         |                         |     Milliseconds        |                         |
+|  audioDisplayFormat     | Integer                 | -  200  - Audio Samples | Audio timecode display  |
+|                         |                         | -  201  - Milliseconds  | format.                 |
 +-------------------------+-------------------------+-------------------------+-------------------------+
 |  audioSampleRate        | Time object             |                         | Audio sample rate.      |
 +-------------------------+-------------------------+-------------------------+-------------------------+
@@ -6434,35 +6427,35 @@ Returns an object; a sequence settings structure.
 |                         |                         |                         | being used for preview  |
 |                         |                         |                         | file rendering.         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
-|  videoDisplayFormat     | Integer                 | -    100  - 24 Timecode | Video time display      |
-|                         |                         | -    101  - 25 Timecode | format.                 |
-|                         |                         | -    102  - 29.97 Drop  |                         |
-|                         |                         |     Timecode            |                         |
-|                         |                         | -    103  - 29.97       |                         |
-|                         |                         |     Non-Drop Timecode   |                         |
-|                         |                         | -    104  - 30 Timecode |                         |
-|                         |                         | -    105  - 50 Timecode |                         |
-|                         |                         | -    106  - 59.94 Drop  |                         |
-|                         |                         |     Timecode            |                         |
-|                         |                         | -    107  - 59.94       |                         |
-|                         |                         |     Non-Drop Timecode   |                         |
-|                         |                         | -    108  - 60 Timecode |                         |
-|                         |                         | -    109  - Frames      |                         |
-|                         |                         | -    110  - 23.976      |                         |
-|                         |                         |     Timecode            |                         |
-|                         |                         | -    111  - 16mm Feet + |                         |
-|                         |                         |     Frames              |                         |
-|                         |                         | -    112  - 35mm Feet + |                         |
-|                         |                         |     Frames              |                         |
-|                         |                         | -    113  - 48 Timecode |                         |
+|  videoDisplayFormat     | Integer                 | -  100  - 24 Timecode   | Video time display      |
+|                         |                         | -  101  - 25 Timecode   | format.                 |
+|                         |                         | -  102  - 29.97 Drop    |                         |
+|                         |                         |   Timecode              |                         |
+|                         |                         | -  103  - 29.97         |                         |
+|                         |                         |   Non-Drop Timecode     |                         |
+|                         |                         | -  104  - 30 Timecode   |                         |
+|                         |                         | -  105  - 50 Timecode   |                         |
+|                         |                         | -  106  - 59.94 Drop    |                         |
+|                         |                         |   Timecode              |                         |
+|                         |                         | -  107  - 59.94         |                         |
+|                         |                         |   Non-Drop Timecode     |                         |
+|                         |                         | -  108  - 60 Timecode   |                         |
+|                         |                         | -  109  - Frames        |                         |
+|                         |                         | -  110  - 23.976        |                         |
+|                         |                         |   Timecode              |                         |
+|                         |                         | -  111  - 16mm Feet +   |                         |
+|                         |                         |   Frames                |                         |
+|                         |                         | -  112  - 35mm Feet +   |                         |
+|                         |                         |   Frames                |                         |
+|                         |                         | -  113  - 48 Timecode   |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
-|  videoFieldType         | Integer                 | -    -1  - Default      | Video field type.       |
-|                         |                         | -    0  - No Fields     |                         |
-|                         |                         |     (Progressive Scan)  |                         |
-|                         |                         | -    1  - Upper Field   |                         |
-|                         |                         |     First               |                         |
-|                         |                         | -    2  - Lower Field   |                         |
-|                         |                         |     First               |                         |
+|  videoFieldType         | Integer                 | -  -1  - Default        | Video field type.       |
+|                         |                         | -  0  - No Fields       |                         |
+|                         |                         |   (Progressive Scan)    |                         |
+|                         |                         | -  1  - Upper Field     |                         |
+|                         |                         |   First                 |                         |
+|                         |                         | -  2  - Lower Field     |                         |
+|                         |                         |   First                 |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
 |  videoFrameHeight       | Integer                 |                         | Height of sequence      |
 |                         |                         |                         | video frame.            |
@@ -6480,17 +6473,14 @@ Returns an object; a sequence settings structure.
 |                         |                         |                         | view, in degrees, for   |
 |                         |                         |                         | VR.                     |
 +-------------------------+-------------------------+-------------------------+-------------------------+
-|  vrLayout               | Integer                 | -    0  - Monoscopic    | The layout of footage   |
-|                         |                         | -    1  -               | in use, for VR.         |
-|                         |                         |     Stereoscopic -      |                         |
-|                         |                         |     Over/Under          |                         |
-|                         |                         | -    2  -               |                         |
-|                         |                         |     Stereoscopic - Side |                         |
-|                         |                         |     by Side             |                         |
+|  vrLayout               | Integer                 | -  0  - Monoscopic      | The layout of footage   |
+|                         |                         | -  1  - Stereoscopic -  | in use, for VR.         |
+|                         |                         |   Over/Under            |                         |
+|                         |                         | -  2  - Stereoscopic -  |                         |
+|                         |                         |   Side by Side          |                         |
 +-------------------------+-------------------------+-------------------------+-------------------------+
-|  vrProjection           | Integer                 | -    0  - None          | The projection type in  |
-|                         |                         | -    1  -               | use, for VR footage.    |
-|                         |                         |     Equirectangular     |                         |
+|  vrProjection           | Integer                 | -  0  - None            | The projection type in  |
+|                         |                         | -  1  - Equirectangular | use, for VR footage.    |
 +-------------------------+-------------------------+-------------------------+-------------------------+
 
 ---------------------------------------------------------------------------------------------------------
@@ -6690,17 +6680,17 @@ Parameters <L=s#2E></L><I=2E>
 +==================================+==================================+==================================+
 |  actionDesired                   | String                           | One of:                          |
 |                                  |                                  |                                  |
-|                                  |                                  | -    CreateMarkers               |
-|                                  |                                  | -    ApplyCuts                   |
+|                                  |                                  | -  CreateMarkers                 |
+|                                  |                                  | -  ApplyCuts                     |
 +----------------------------------+----------------------------------+----------------------------------+
 |  applyCutsToLinkedAudio          | Boolean                          | Whether to apply detected cuts   |
 |                                  |                                  | on linked audio.                 |
 +----------------------------------+----------------------------------+----------------------------------+
 |  sensitivity                     | String                           | One of:                          |
 |                                  |                                  |                                  |
-|                                  |                                  | -    LowSensitivity              |
-|                                  |                                  | -    MediumSensitivity           |
-|                                  |                                  | -    HighSensitivity             |
+|                                  |                                  | -  LowSensitivity                |
+|                                  |                                  | -  MediumSensitivity             |
+|                                  |                                  | -  HighSensitivity               |
 +----------------------------------+----------------------------------+----------------------------------+
 
 Returns <L=s#2F></L><I=2F>
@@ -6845,17 +6835,17 @@ Returns a boolean;  true  if successful.
   |_||_|  \__,_|\___|_|\_\  \___/|_.__// |\___|\___|\__|
                                      |__/               
 
--   <L=t#3> Attributes </L>
-    -   <L=t#4> Track.clips </L>
-    -   <L=t#7> Track.id </L>
-    -   <L=t#a> Track.mediaType </L>
-    -   <L=t#d> Track.name </L>
-    -   <L=t#g> Track.transitions </L>
--   <L=t#j> Methods </L>
-    -   <L=t#k> Track.insertClip() </L>
-    -   <L=t#o> Track.isMuted() </L>
-    -   <L=t#s> Track.overwriteClip() </L>
-    -   <L=t#w> Track.setMute() </L>
+- <L=t#3> Attributes </L>
+  - <L=t#4> Track.clips </L>
+  - <L=t#7> Track.id </L>
+  - <L=t#a> Track.mediaType </L>
+  - <L=t#d> Track.name </L>
+  - <L=t#g> Track.transitions </L>
+- <L=t#j> Methods </L>
+  - <L=t#k> Track.insertClip() </L>
+  - <L=t#o> Track.isMuted() </L>
+  - <L=t#s> Track.overwriteClip() </L>
+  - <L=t#w> Track.setMute() </L>
 
 
 Track object <L=t#1></L><I=1>
@@ -6902,8 +6892,8 @@ The type of media, contained in this track.
 Type <L=t#c></L><I=c>
 String, read-only. One of:
 
--    Audio 
--    Video 
+-  Audio 
+-  Video 
 
 ---------------------------------------------------------------------------------------------------------
 
