@@ -1,0 +1,7 @@
+--langdef=dantags
+--langmap=dantags:.dan
+--kinddef-dantags=b,block,blocks
+--kinddef-dantags=i,inline,inlines
+
+--regex-dantags=/^<B=([a-zA-Z0-9]+)>/\1/b/
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\1/i/

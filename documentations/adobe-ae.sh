@@ -1,5 +1,5 @@
 #!/bin/bash 
-# @file adobe-a2
+# @file adobe-ae
 # @brief vim-dan ruleset file for documentation on adobe ai program.
 # @description
 #   author: rafmartom <rafmartom@gmail.com>
@@ -114,26 +114,6 @@ parsing_rules(){
 
 writting_rules(){
 
-    write_header
-    ## Change below the html tags to be parsed -f for titles , -b for body
-    # Example: 
-    #    We parse the Titles of the Topics by using 'h1'
-    #    We parse the Content of the Pages by using 'article'
-    
-    #    write_html_docu_multirule -f "h1" -b "article" -cp
-    #
-    #  Other Example:
-    #    You may use various tags, the firstone to be found will be used
-    #    In the documentation downloaded some pages are different than others
-    #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
-    #
-    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
-    #
-    
-
-    write_html_docu_multirule -f "h1" -b "nav .md-nav--secondary, article" -cp -il -c "105"
-
-
     # DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
     ## Retrieving content of the files and cleaning it
@@ -145,16 +125,40 @@ writting_rules(){
     ##
     ## Change accordingly
 
+cleanup_command=$(cat <<'EOF'
     sed \
         -e '/^Page Contents$/d' \
         -e 's/¶//g' \
         -e 's/[[:space:]]\+¶//g' \
         -e '/^\[\] \[\]$/d' \
         -e '/^\[\]$/d' \
-        -i "${MAIN_TOUPDATE}"
+        -i "${content_dump}"
+EOF
+)
 
     # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
+
+
+
+    ## Change below the html tags to be parsed -f for titles , -b for body
+    # Example: 
+    #    We parse the Titles of the Topics by using 'h1'
+    #    We parse the Content of the Pages by using 'article'
+    
+    #    write_html_docu_multirule -f "h1" -b "article" -cd "javascript"
+    #
+    #  Other Example:
+    #    You may use various tags, the firstone to be found will be used
+    #    In the documentation downloaded some pages are different than others
+    #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
+    #
+    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cd "javascript"
+    #
+    
+
+    write_html_docu_multirule -f "h1" -b "nav .md-nav--secondary, article" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
+
 
     write_ext_modeline
 
@@ -192,19 +196,6 @@ writting_rules(){
     # ---------------------------------------------------------------------------
     
 
-    # TUCKING IN THE IN-LINE LINKS AS MUCH AS POSSIBLE
-    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-
-    for ((i=1; i<=5; i++)); do
-        awk -f "$CURRENT_DIR"/../scripts/pile-consecutive-inline-links.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-    done
-
-##  @todo if uncommented, in-line tags will be appended to the end of the previous line
-##         i.e: accessed and manipulated to modify the appearance of the associated text frame.<I=1><I=2>
-##        This would be desired but it seems to be breaking the functionality with the current configuration of ctags
-##
-##    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-    # ---------------------------------------------------------------------------
 
 }
 
@@ -221,7 +212,7 @@ writting_rules(){
 
 while getopts ":sfx:apwh" opt; do
     case ${opt} in
-        s) spiderind_rules ;;
+        s) spidering_rules ;;
         f) filtering_rules ;;
         x) 
             if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then

@@ -101,7 +101,27 @@ arranging_rules(){
 
 writting_rules(){
 
-    write_header
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+cleanup_command=$(cat <<'EOF'
+    sed -e 's/[[:space:]]\+¶//g' \
+        -e "s/$(echo -ne '\u200b')//g" \
+        -i "${content_dump}"
+EOF
+)
+
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
@@ -116,26 +136,9 @@ writting_rules(){
     #
     #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
     #
-    write_html_docu_multirule -f "h1.heading-element" -b "article" -cp -lp -c "105"
+    write_html_docu_multirule -f "h1.heading-element" -b "article" -cp -lp -c "105" -cc "${cleanup_command}"
 
 
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
-
-    sed -e 's/[[:space:]]\+¶//g' \
-        -e "s/$(echo -ne '\u200b')//g" \
-        -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
