@@ -118,10 +118,43 @@ parsing_rules(){
     parse_html_docu_multirule -f "article h1" -b "#content"
 
 }
-
 writting_rules(){
 
-##    write_header
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+
+cleanup_command=$(cat <<'EOF'
+    sed -e '/^\[\]$/d' \
+        -e "/^-    Previous$/d" \
+        -e "/^-    Next$/d" \
+        -e "/^Help improve MDN$/d" \
+        -e "/^Was this page helpful to you?/d" \
+        -e "/^Yes$/d" \
+        -e "/^No$/d" \
+        -e "/^Learn how to contribute \\.$/d" \
+        -e "/^This page was last modified on Dec 19, 2024 by MDN contributors \\.$/d" \
+        -e "/^View this page on GitHub • Report a problem with this content$/d" \
+        -i "${content_dump}"
+    ## Delete 6 consecutives empty lines
+    sed '/^\s*$/N; /^\s*$/N; /^\s*$/N; /^\s*$/N; /^\s*$/N; /^\s*$/N; /^\(\s*\n\)\{6\}$/d' -i "${content_dump}"
+EOF
+)
+
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+
+
+
+
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
@@ -138,19 +171,8 @@ writting_rules(){
     #
     
 
-##    write_html_docu_multirule -f "article h1" -b "#content" -il -c "105"
+    write_html_docu_multirule -f "article h1" -b "#content" -il -c "105" -cc "${cleanup_command}"
 
-
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
 
 ## Parsing codeblocks, 
 ##    upon finding a line that is ^js$ , will add ```javascript
@@ -195,23 +217,6 @@ nvim --headless -c "$cmd" -c "wq" "${MAIN_TOUPDATE}"
 
 
 
-    sed -e '/^\[\]$/d' \
-        -e "/^-    Previous$/d" \
-        -e "/^-    Next$/d" \
-        -e "/^Help improve MDN$/d" \
-        -e "/^Was this page helpful to you?/d" \
-        -e "/^Yes$/d" \
-        -e "/^No$/d" \
-        -e "/^Learn how to contribute \\.$/d" \
-        -e "/^This page was last modified on Dec 19, 2024 by MDN contributors \\.$/d" \
-        -e "/^View this page on GitHub • Report a problem with this content$/d" \
-        -i "${MAIN_TOUPDATE}"
-
-    ## Delete 6 consecutives empty lines
-    sed '/^\s*$/N; /^\s*$/N; /^\s*$/N; /^\s*$/N; /^\s*$/N; /^\s*$/N; /^\(\s*\n\)\{6\}$/d' -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
@@ -249,7 +254,6 @@ nvim --headless -c "$cmd" -c "wq" "${MAIN_TOUPDATE}"
     # ---------------------------------------------------------------------------
     
 
-    # TUCKING IN THE IN-LINE LINKS AS MUCH AS POSSIBLE
     awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
 
     for ((i=1; i<=5; i++)); do
@@ -264,7 +268,6 @@ nvim --headless -c "$cmd" -c "wq" "${MAIN_TOUPDATE}"
     # ---------------------------------------------------------------------------
 
 }
-
 
 ## EOF EOF EOF ACTION_DEFINITION
 ## ----------------------------------------------------------------------------

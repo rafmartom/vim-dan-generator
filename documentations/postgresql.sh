@@ -1,20 +1,29 @@
-#!/bin/bash
+#!/bin/bash 
+# @file postgresql 
+# @brief vim-dan ruleset file for documentation on postgresql 
+# @description
+#   author: rafmartom <rafmartom@gmail.com>
 
-# DECLARING VARIABLES AND PROCESSING ARGS
-# -------------------------------------
-# (do not touch)
+
+## ----------------------------------------------------------------------------
+# @section SCRIPT_VAR_INITIALIZATION
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
-DOCU_PATH="$1"
-shift
-DOCU_NAME=$(basename ${0} '.sh')
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
-https://www.postgresql.org
+https://www.postgresql.org/
 )
-# -------------------------------------
-# eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
+
+## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+## ----------------------------------------------------------------------------
+
+
+
+
+## ----------------------------------------------------------------------------
+# @section ACTION_DEFINITION
+# @description Ruleset for each individual stage of vim-dan
 
 spidering_rules(){
 
@@ -25,11 +34,49 @@ spidering_rules(){
 
 }
 
+
+filtering_rules() {
+
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
+        RAW_INDEX_LINKS_PATH="$CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2"
+        INDEX_LINKS_PATH=$(realpath -m "${RAW_INDEX_LINKS_PATH}")  # Normalize path
+
+        LOCAL_CSV_PATH="${DOCU_PATH}/${ntfs_filename}.csv"
+
+        ## Check if a index-links file exists
+        if [ ! -f "${INDEX_LINKS_PATH}" ]; then
+            echo "Error: Index links file not found: ${INDEX_LINKS_PATH}" >&2
+            exit 1
+        fi
+
+        ## Ensure output directory exists
+        mkdir -p "$(dirname "${LOCAL_CSV_PATH}")"
+
+        ## Pulling and extracting repo file to local path
+        bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
+
+        ## WRITE BELOW YOUR INCLUSION RULES
+        # if more than one rule needs to use temporary files
+        #incl_1=$(mktemp); sed -n '\|nodejs[.]org/docs/latest/|p' "${LOCAL_CSV_PATH}" > "$incl_1"
+        #incl_2=$(mktemp); sed -n '\|nodejs[.]org/en/guides/|p' "${LOCAL_CSV_PATH}" > "$incl_2"
+        #incl_3=$(mktemp); sed -n '\|nodejs[.]org/en/learn/|p' "${LOCAL_CSV_PATH}" > "$incl_3"
+
+        cat "$incl_1" "$incl_2" "$incl_3" > "${LOCAL_CSV_PATH}"
+        rm "$incl_1" "$incl_2" "$incl_3"
+
+        ## WRITE BELOW YOUR EXCLUSION RULES
+        #sed -i '\|developer[.]mozilla[.]org/es|d' ${LOCAL_CSV_PATH}
+    done
+
+}
+
 indexing_rules(){
+    start_row="$1"
 
     ## Iterate through each link of the documentation
     for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-        download_fromlist -l ${DOWNLOAD_LINK}
+       download_fromlist_waitretry ${DOWNLOAD_LINK} 0.05 2 ${start_row}
     done
 
 }
@@ -50,11 +97,12 @@ arranging_rules(){
 
     # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
     find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
-    
+
+    rm ${DOCU_PATH}/downloaded/docs/latest/index.html
+    rm ${DOCU_PATH}/downloaded/docs/latest/api/all.html
 
     # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
     # ---------------------------------------------------------------------------
-
 
 
     ## Files cleanup
@@ -68,9 +116,37 @@ arranging_rules(){
 }
 
 
+parsing_rules(){
+
+    parse_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main"
+
+}
+
 writting_rules(){
 
-    write_header
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+#    sed \
+#        -e '/^Page Contents$/d' \
+#        -e 's/¶//g' \
+#        -e 's/[[:space:]]\+¶//g' \
+#        -e '/^\[\] \[\]$/d' \
+#        -e '/^\[\]$/d' \
+#        -i "${MAIN_TOUPDATE}"
+
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+
+
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
@@ -85,26 +161,11 @@ writting_rules(){
     #
     #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
     #
-    write_html_docu_multirule -f "" -b "" -cp -lp -c "105"
+    
+
+    write_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main" -cp -il -c "105"
 
 
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
-
-    sed -e 's/[[:space:]]\+¶//g' \
-        -e "s/$(echo -ne '\u200b')//g" \
-        -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
@@ -124,10 +185,10 @@ writting_rules(){
     #    Note : there are Character limitations ",= and others wont be working
     
     sed -i '10a\'$'\n''&@ The following lines are used by vim-dan, do not modify them! @&' "${MAIN_TOUPDATE}"
-    sed -i '12a\'$'\n''&@ g:dan_kw_question_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '13a\'$'\n''&@ g:dan_kw_nontext_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '14a\'$'\n''&@ g:dan_kw_linenr_list = "" @&' "${MAIN_TOUPDATE}"
-    sed -i '15a\'$'\n''&@ g:dan_kw_warningmsg_list = "" @&' "${MAIN_TOUPDATE}"
+    sed -i '12a\'$'\n''&@ g:dan_kw_question_list = "^Description" @&' "${MAIN_TOUPDATE}"
+    sed -i '13a\'$'\n''&@ g:dan_kw_nontext_list = "^Parameters,^Type" @&' "${MAIN_TOUPDATE}"
+    sed -i '14a\'$'\n''&@ g:dan_kw_linenr_list = "^Parameter " @&' "${MAIN_TOUPDATE}"
+    sed -i '15a\'$'\n''&@ g:dan_kw_warningmsg_list = "^Returns" @&' "${MAIN_TOUPDATE}"
     sed -i '16a\'$'\n''&@ g:dan_kw_colorcolumn_list = "" @&' "${MAIN_TOUPDATE}"
     sed -i '17a\'$'\n''&@ g:dan_kw_underlined_list = "" @&' "${MAIN_TOUPDATE}"
     sed -i '18a\'$'\n''&@ g:dan_kw_preproc_list = "" @&' "${MAIN_TOUPDATE}"
@@ -140,41 +201,41 @@ writting_rules(){
 
     # EOF EOF EOF MODELINE FOR SYNTAX SPECIFIC PATTERNS FOR KEYWORDS
     # ---------------------------------------------------------------------------
+    
+
+
 }
 
-## PARSING ARGUMENTS
-## ------------------------------------
-# (do not touch)
-while getopts ":siap" opt; do
+
+## EOF EOF EOF ACTION_DEFINITION
+## ----------------------------------------------------------------------------
+
+
+
+
+## ----------------------------------------------------------------------------
+# @section SELECTING_ACTION
+# @brief Not to be customised
+
+while getopts ":sfx:apwh" opt; do
     case ${opt} in
-        s)
-            spidering_rules
-            ;;
-        i)
-            # Check if a start row number was provided
-            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
-                start_row="$2"
-                shift
+        s) spidering_rules ;;
+        f) filtering_rules ;;
+        x) 
+            if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then
+                indexing_rules "$OPTARG"
+            else
+                echo "Error: -x requires a numeric row number" >&2
+                exit 1
             fi
-            indexing_rules "$start_row"
             ;;
-        a)
-            arranging_rules
-            ;;
-        p)
-            parsing_rules
-            ;;
-        h | *)
-            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
-            echo "Options:"
-            echo "  -s  Spidering"
-            echo "  -i  Indexing"
-            echo "  -a  Arranging"
-            echo "  -p  Parsing"
-            echo "  -h  Help"
-            exit 0
-            ;;
+        a) arranging_rules ;;
+        p) parsing_rules ;;
+        w) writting_rules ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+        :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
     esac
 done
-## EOF EOF EOF PARSING ARGUMENTS
-## ------------------------------------
+
+## EOF EOF EOF SELECTING_ACTION 
+## ----------------------------------------------------------------------------

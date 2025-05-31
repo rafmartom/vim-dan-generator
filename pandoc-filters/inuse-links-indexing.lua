@@ -290,7 +290,6 @@ function mark_links_in_use(rel_path, anchor, entries)
         -- Check if this entry matches both rel_path and anchor
         -- Note: CSV entries are parsed as arrays when headers=false
         if entry[1] == rel_path and entry[5] == anchor then
-            -- Change the last field (in_use) to true
             entry[#entry] = "true"
         end
     end

@@ -80,7 +80,7 @@ function perform_index() {
 
 
     echo "Indexing vim-dan ${DOCU_NAME} on ${DOCU_PATH}/ ..."
-    ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-i" ${START_ROW}
+    ${CURRENT_DIR}/documentations/${DOCU_NAME}.sh "-x" ${START_ROW}
 
     # Logging that into the documentation-status file
     update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_indexed" -i $(date +"%Y%m%d_%H%M%S") -n
@@ -180,7 +180,29 @@ function perform_tags() {
     
     echo "Generating tags of ${DOCU_NAME} on ${VIMDAN_DIR}/ ..."
 
-    ctags --options=NONE --options=${CURRENT_DIR}/ctags-rules/dan.ctags --tag-relative=always -f ${VIMDAN_DIR}/.tags${DOCU_NAME} ${MAIN_FILE} 
+    ctags --options=NONE --options=${CURRENT_DIR}/ctags-rules/dan.ctags --sort=no --tag-relative=always -f ${VIMDAN_DIR}/.tags${DOCU_NAME} ${MAIN_FILE} 
+
+    ## Cleaning duplicates of nested tags
+    #
+    # See issue https://github.com/universal-ctags/ctags/issues/4253
+    #
+    # Block links and in-line links have collitions ,
+    #   cause in-line links generate both a relative (f)
+    #
+    #   for instance check the collision of :tag f with :tag e#f
+    # f	js-cheerio.dan	/^See <L=e#f><\/L><I=f>$/;"	i	line:133	language:dantags	regex:e
+    # e#f	js-cheerio.dan	/^See <L=e#f><\/L><I=f>$/;"	i	line:133	language:dantags	regex:e
+    # f	js-cheerio.dan	/^<B=f>Function: contains()$/;"	b	line:3569	language:dantags
+    #
+    # When Doing :tag f you want to go to
+    # f	js-cheerio.dan	/^<B=f>Function: contains()$/;"	b	line:3569	language:dantags
+    #
+    # Instead vim will go to the firstone found
+    # f	js-cheerio.dan	/^See <L=e#f><\/L><I=f>$/;"	i	line:133	language:dantags	regex:e
+    # Which is in fact :tag e#f
+    
+    sed -i -E '/^[a-zA-Z0-9]+\t.*\tregex:[a-zA-Z0-9]+$/d' ${VIMDAN_DIR}/.tags${DOCU_NAME}
+
 
     # Logging that into the documentation-status file
     update_csv_field -f "$CURRENT_DIR/documentation-status.csv" -r "${DOCU_NAME}" -c "last_tagged" -i $(date +"%Y%m%d_%H%M%S") -n
@@ -202,6 +224,8 @@ function perform_tags() {
 #    - Are going to use shared variables
 #    - Are not going to have type checking
 #    Thus they wont be moveable from this file without re-writting 
+
+
 
 # @description Generate shared-variables for use across the script
 #   Mostly related to filepaths that are processed through the minimal
@@ -239,11 +263,9 @@ function perform_patch() {
 # @description Update the local tags file for the current documentation
 function update_tags() {
     echo "Updating the tag file..."
-    set -x
     ctags --options=NONE --options=${CURRENT_DIR}/ctags-rules/dan.ctags --tag-relative=always -f ${VIMDAN_DIR}/.tags${DOCU_NAME} ${MAIN_FILE} 
     [ ! -d "${HOME}/.ctags.d" ] && mkdir -p "${HOME}/.ctags.d"
     cp ${CURRENT_DIR}/ctags-rules/dan.ctags ${HOME}/.ctags.d/
-    set +x
 
 }
 
@@ -266,6 +288,74 @@ function update_vim() {
 ## ----------------------------------------------------------------------------
 # @section Cross-Project Utilities
 # @description Utility functions that are usable in other projects
+
+
+# @description Reads a file in reverse (from last line to first) to find the first occurrence of a <B=${BUID}> pattern.
+# @arg $1 string The path to the file to search.
+# @stdout Outputs a space-separated string: ${BUID} line_no (the matched BUID and its original line number).
+# @exitcode 0 If a match is found.
+# @exitcode 1 If no match is found.
+# @example
+#   result=($(get_match_from_last "/path/to/file"))
+#   buid="${result[0]}"
+#   line_no="${result[1]}"
+#   echo "BUID: $buid"
+#   echo "Line Number: $line_no"
+get_match_from_last() {
+    local file=$1
+    local total_lines
+    total_lines=$(wc -l < "$file")
+
+    # Capture BUID and reverse line number from the reversed file
+    read -r buid reverse_nr < <(tac "$file" | awk '
+        match($0, /^<B=([a-zA-Z0-9]+)>/, arr) {
+            print arr[1], NR
+            exit
+        }')
+
+    if [[ -n "$buid" && -n "$reverse_nr" ]]; then
+        local line_no=$((total_lines - reverse_nr + 1))
+        echo "$buid $line_no"
+        return 0
+    else
+        return 1
+    fi
+}
+
+#get_match_from_last "/home/fakuve/downloads/vim-dan/cppreference-toupdate.dan"
+#
+#result=($(get_match_from_last "/home/fakuve/downloads/vim-dan/cppreference-toupdate.dan"))
+#buid="${result[0]}"
+#line_no="${result[1]}"
+#
+#echo "BUID: $buid"
+#echo "Line Number: $line_no"
+
+
+
+# @description A check for the writing process. Checks if a ${DOCU}-toupdate.dan file exists and extracts the last partial write.
+# @stdout Outputs an array with ($file $line_no) to be fed to ${paths_linkto[$file]}.
+# @exitcode 0 If a match is found.
+# @exitcode 1 If no match is found.
+# @example
+#   read -r file line_no <<< "$(get_writting_toupdate)"
+#   some_command "${paths_linkto[$file]}" "$line_no"
+function get_writting_toupdate() {
+    echo "Checking for previous partial write on ${MAIN_TOUPDATE} ..." >&2
+
+    # Try to get the match from the last <B=...>
+    if ! result=($(get_match_from_last "$MAIN_TOUPDATE")); then
+        return 1  # No match found
+    fi
+
+    buid="${result[0]}"
+    line_no="${result[1]}"
+
+    # Lookup file path from CSV based on BUID
+    file=$(awk -F, -v buid="$buid" 'NR > 1 && $6 == buid {print $1; exit}' "$links_index_csv" | sed 's/["'\''"]//g')
+
+    echo "$file $buid $line_no"
+}
 
 
 # @description decho Prints a debug message if DEBUG mode is enabled.
@@ -393,7 +483,37 @@ function decimal_to_alphanumeric() {
 }
 
 
+# @description Converts a base-62 alphanumeric string back to a decimal number.
+# This reverses the encoding from `decimal_to_alphanumeric`, using characters 0-9, a-z, and A-Z.
+#
+# @arg $1 <str> The base-62 alphanumeric string to convert.
+# @stdout The decimal number representation of the input string.
+# @example alphanumeric_to_decimal "3d7"  # Converts base-62 string "3d7" back to decimal
+function alphanumeric_to_decimal() {
+    local str=$1
+    local -a ALPHANUMERIC=({0..9} {a..z} {A..Z})
+    local base=${#ALPHANUMERIC[@]}
+    local -A lookup
+    local result=0
 
+    # Build lookup table: char -> value
+    for i in "${!ALPHANUMERIC[@]}"; do
+        lookup["${ALPHANUMERIC[$i]}"]=$i
+    done
+
+    local char
+    for (( i = 0; i < ${#str}; i++ )); do
+        char="${str:$i:1}"
+        value=${lookup[$char]}
+        if [[ -z "$value" ]]; then
+            echo "Invalid character in input: $char" >&2
+            return 1
+        fi
+        result=$((result * base + value))
+    done
+
+    echo "$result"
+}
 
 
 ## EOF EOF EOF Cross-Project Utilities
@@ -1080,11 +1200,14 @@ function standard_spider() {
       --reject-regex '.*?hel=.*|.*?hl=.*|.*[%&=?].*|\\\"' \
       --reject '*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.mp4,*.gif,*.webp,*.ico,*.woff,*.woff2,*.ttf,*.pdf,*.java,*.sql,*.jar,*.zip,*.GIF,*.PNG,*.svgz,*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.webp,*.mp4,*.ico,*.gif,*.jpg,*.svg,*.js,*.json,*.css,*.png,*.xml,*.txt,*.tar,*.pcap,*.pcapng,*.lua,*.msi,*.exe,*.gz,*.csl,*.text,*.tex' \
       "${DOWNLOAD_LINK}" 2>&1  \
-          | grep '^--' | awk '{ print $3 }' | awk '{ print $0 ",-1" }' | sort -u \
-      > "$CURRENT_DIR/../index-links/${ntfs_filename}.csv"
+        | grep '^--' | awk '{ print $3 }' | awk '{ print "\"" $0 "\",-1" }' > /dev/shm/${ntfs_filename}.csv
 
-      # Compressing the file
-      bzip2 "$CURRENT_DIR/../index-links/${ntfs_filename}.csv"
+        cat /dev/shm/${ntfs_filename}.csv | sort -u > "$CURRENT_DIR/../index-links/${ntfs_filename}.csv"
+        rm /dev/shm/${ntfs_filename}.csv
+
+    # Compressing the file
+    bzip2 "$CURRENT_DIR/../index-links/${ntfs_filename}.csv"
+
 
 }
 
@@ -1186,14 +1309,13 @@ function download_fromlist_waitretry() {
         row=$(sed -n "${row_no}p" "${LOCAL_CSV_PATH}" )  # Extract the specific row number $row_no
 
         ## Parsing url and exit_status
-        url=$(echo "$row" | cut -d',' -f1)
-        exit_status=$(echo "$row" | cut -d',' -f2)
+        url=$(echo "$row" | csvtool col 1 - | sed 's/^"\(.*\)"$/\1/')
+        exit_status=$(echo "$row" | csvtool col 2 -)
 
         
         ## If the file hasnt been attempted to download yet
         if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 8  ] && [ "$exit_status" -ne 6  ]; then 
 #        if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 6  ]; then 
-            url=$(echo "$row" | cut -d',' -f1)
             dirpath=$(echo "$url" | sed 's|https://||;s|/[^/]*$||')
             filename=$(basename "$url")
 
@@ -1217,7 +1339,7 @@ function download_fromlist_waitretry() {
             fi
 
             ## Update in-place the row of the file with the new wget_status
-            row="${url},${wget_status}"
+            row="\"${url}\",${wget_status}"
 
             echo "Updated row : ${row}" >&2
             echo "Completed ${row_no} out of ${total_lines}" >&2
@@ -1336,6 +1458,63 @@ prepocess_LinkSources() {
 
 }
 
+# @description Write the TOC of the documentation
+function write_toc() {
+
+    # Create the link source toc header using figlet
+    echo "TOC" | figlet >> "$MAIN_TOUPDATE"
+    prev_dirs_array=()
+
+    ## Splitting directories from filenames and building nested lists
+    file_no=1
+    for file in "${files_array[@]}"; do
+        filename=$(echo ".${file#${DOCU_PATH}/downloaded}" | sed 's|^\.||')
+        unset dirs_array
+        remaining_file=$(echo "$filename" | sed 's|^/||')
+
+        for ((i=0; i<25; i++)); do
+            if [[ "$remaining_file" =~ ([^/]+)/(.+) ]]; then
+                dirs_array[i]="${BASH_REMATCH[1]}"
+                remaining_file="${BASH_REMATCH[2]}"
+            else
+                dirs_array[i]="$remaining_file"
+                break
+            fi
+        done
+
+        ## Compare current directory structure with the previous one to determine nesting
+        for ((i=0; i<${#dirs_array[@]}; i++)); do
+            if [ "${dirs_array[$i]}" != "${prev_dirs_array[$i]}" ]; then
+                first_discrepancy_level=$i
+                break
+            fi
+        done
+
+        ## dirsy_array will have length 1 when file_nesting_level=0 etc.. , decrease it
+        file_nesting_level=$((${#dirs_array[@]} - 1))
+
+        ## Iterating through nested levels and formatting output with indentation
+        for ((current_nesting_level=first_discrepancy_level; current_nesting_level<=file_nesting_level; current_nesting_level++)); do
+            for ((i=0; i<current_nesting_level; i++)); do
+                echo -ne "\t" >> "$MAIN_TOUPDATE"
+            done
+
+            if [[ $current_nesting_level -eq $file_nesting_level ]]; then
+                unsanitized_title=$(echo ${paths_linkto[$file]} | sed -e 's/\\"/"/g' -e "s/\\'/'/g" )
+                echo "<L=$(decimal_to_alphanumeric ${file_no})>${unsanitized_title}</L>" >> "$MAIN_TOUPDATE"
+            else
+                echo -ne "- ${dirs_array[($current_nesting_level)]}\n" >> "$MAIN_TOUPDATE"
+            fi
+        done
+
+        prev_dirs_array=("${dirs_array[@]}")
+        file_no=$((file_no + 1))
+    done
+
+
+
+}
+
 
 # @description Write the vim-dan generic header
 function write_header() {
@@ -1403,7 +1582,11 @@ function parse_html_docu_multirule() {
             # Formulating command
             cmd="pup -i 0 --pre '${title_parsing}' | pandoc -f html -t plain --wrap=none"
 
-            title=$(eval "$cmd" < "$file" | sed -e ':a;N;$!ba;s/\n/ /g' | sed -e 's/ ¶//g' | sed -e 's/¶//g')
+            title=$(eval "$cmd" < "$file" \
+                    | sed -e ':a;N;$!ba;s/\n/ /g' \
+                    | sed -e 's/ ¶//g' \
+                    | sed -e 's/¶//g' \
+                    | sed -e "s/['\"]/\\\\\0/g")
             if [ -n "$title" ]; then
                 found_selector=true
                 break
@@ -1432,7 +1615,11 @@ function parse_html_docu_multirule() {
     ## [LINKS-INDEXING] --------------------------------------------------
     file_no=1
     ## [LINKS-INDEXING] Placing header on links-target-index.csv
-    links_index_csv="/dev/shm/links-index-${DOCU_NAME}.csv"
+    links_index_csv="/dev/shm/${DOCU_NAME}-links-parsed.csv"
+
+    ## A file to ensure that the selector has produced any output (has been found)
+    content_dump_check=$(mktemp /dev/shm/vim-dan-content_dump_check-XXXXXX.dan)
+
     echo "rel_path,is_anchor,pandoc_data_type,label,anchor_id,buid,iid,in_use" > "${links_index_csv}"
 
 
@@ -1445,10 +1632,14 @@ function parse_html_docu_multirule() {
         ## [LINKS-TARGET-INDEXING] Indexing all anchor links to links-target-index.csv
         for content_parsing in "${content_parsing_array[@]}"; do
 
-            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o /dev/null -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua) -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv} -V parsed_title=\"${paths_linkto[$file]}\" -V file_no=${file_no}"
-
+            cmd="sed 's/role=\"main\"/role=\"maine\"/g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o "${content_dump_check}" -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua) -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv} -V parsed_title=\"${paths_linkto[$file]}\" -V file_no=${file_no}"
 
             eval "$cmd" < "$file"
+
+            ## Selector check break clausule
+            if [ 1 -lt $(stat -c %s "${content_dump_check}") ]; then
+                break
+            fi
         done
 
     file_no=$((file_no + 1))
@@ -1469,16 +1660,23 @@ function parse_html_docu_multirule() {
 
         for content_parsing in "${content_parsing_array[@]}"; do
 
-            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o /dev/null -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua) -V docu_path=${DOCU_PATH} -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv}"
+            cmd="sed 's/role=\"main\"/role=\"maine\"/g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o "${content_dump_check}" -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua) -V docu_path=${DOCU_PATH} -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv}"
 
 
             eval "$cmd" < "$file"
+
+            ## Selector check break clausule
+            if [ 1 -lt $(stat -c %s "${content_dump_check}") ]; then
+                break
+            fi
         done
     file_no=$((file_no + 1))
     done
  ## EOF EOF EOF [INUSE-LINKS-INDEXING] ------------------------------------------
  ## Move the file from RAM memory to the disk
+
     mv "${links_index_csv}" "$CURRENT_DIR/../links-parsed/${DOCU_NAME}-links-parsed.csv"
+    rm "${content_dump_check}"
 
 
 }
@@ -1530,6 +1728,15 @@ function write_html_docu_multirule() {
                     shift 2
                 fi
                 ;;
+            -cd)
+                if [[ -n "$2" ]]; then
+                    codeblock_default_filetype="$2"
+                    shift 2
+                else
+                    echo "Error: Missing argument for -cd" >&2
+                    return 1
+                fi
+                ;;
             -cp)
                 codeblock_prompt=true
                 shift
@@ -1574,6 +1781,14 @@ function write_html_docu_multirule() {
                     return 1
                 fi
                 ;;
+            -cc)
+                if [[ -n "$2" ]]; then
+                    cleanup_command="$2"
+                    shift 2
+                else
+                    shift
+                fi
+                ;;
             *)
                 echo "Unknown option: $1" >&2
                 return 1
@@ -1591,13 +1806,6 @@ function write_html_docu_multirule() {
 
     mapfile -t files_array < <(find "${DOCU_PATH}/downloaded" -type f -name "*.html" | sort -V)
 
-    ## Prepocessing variables
-    if [[ -n "$file_mangling" ]]; then
-        file_mangling+="| sed -E ':a; N; s/\n(%\\$.*?%\\$)/ \1/'"
-    else
-        file_mangling="sed -E ':a; N; s/\n(%\\$.*?%\\$)/ \1/'"
-    fi
-
     ## First create the title array
     title_array=()
     for file in "${files_array[@]}"; do
@@ -1607,7 +1815,11 @@ function write_html_docu_multirule() {
             # Formulating command
             cmd="pup -i 0 --pre '${title_parsing}' | pandoc -f html -t plain --wrap=none"
 
-            title=$(eval "$cmd" < "$file" | sed -e ':a;N;$!ba;s/\n/ /g' | sed -e 's/ ¶//g' | sed -e 's/¶//g')
+            title=$(eval "$cmd" < "$file" \
+                    | sed -e ':a;N;$!ba;s/\n/ /g' \
+                    | sed -e 's/ ¶//g' \
+                    | sed -e 's/¶//g' \
+                    | sed -e "s/['\"]/\\\\\0/g")
             if [ -n "$title" ]; then
                 found_selector=true
                 break
@@ -1634,62 +1846,37 @@ function write_html_docu_multirule() {
     done
 
 
-##    links_index_csv="${DOCU_PATH}/links-index.csv"
-##    links_index_csv="$CURRENT_DIR/../links-parsed/${DOCU_NAME}-links-parsed.csv"
+    ## Checking for existence of links_index_csv
     links_index_csv="$(realpath "$CURRENT_DIR/../links-parsed/${DOCU_NAME}-links-parsed.csv")"
+    if [ ! -f "${links_index_csv}" ]; then
+        echo "${links_index_csv} hasn't been found, please perform parse" >&2
+        exit 1        
+    fi
+    
 
+#    set -x
+    if [ -f "${MAIN_TOUPDATE}" ]; then
+        echo "A previous ${MAIN_TOUPDATE} has been found, doing checks to resume previous writting" >&2
 
+            if  result=($(get_writting_toupdate )); then
+                file="${result[0]}"
+                buid="${result[1]}"
+                line_no="${result[2]}"
 
-    # Create the link source toc header using figlet
-    echo "TOC" | figlet >> "$MAIN_TOUPDATE"
-    prev_dirs_array=()
-
-    ## Splitting directories from filenames and building nested lists
-    file_no=1
-    for file in "${files_array[@]}"; do
-        filename=$(echo ".${file#${DOCU_PATH}/downloaded}" | sed 's|^\.||')
-        unset dirs_array
-        remaining_file=$(echo "$filename" | sed 's|^/||')
-
-        for ((i=0; i<25; i++)); do
-            if [[ "$remaining_file" =~ ([^/]+)/(.+) ]]; then
-                dirs_array[i]="${BASH_REMATCH[1]}"
-                remaining_file="${BASH_REMATCH[2]}"
+                # Delete until line_no to end of file
+                head -n "$((line_no - 1))" "$MAIN_TOUPDATE" > /tmp/temp-vim-dan.dan && mv /tmp/temp-vim-dan.dan "$MAIN_TOUPDATE"
             else
-                dirs_array[i]="$remaining_file"
-                break
+                write_toc
             fi
-        done
+    else
+        # If it didnt find the file remove any pending tag file may be
+        [[ -f ${VIMDAN_DIR}/.tags${DOCU_NAME}  ]] && rm -r ${VIMDAN_DIR}/.tags${DOCU_NAME}
 
-        ## Compare current directory structure with the previous one to determine nesting
-        for ((i=0; i<${#dirs_array[@]}; i++)); do
-            if [ "${dirs_array[$i]}" != "${prev_dirs_array[$i]}" ]; then
-                first_discrepancy_level=$i
-                break
-            fi
-        done
+        write_header
+        echo "" >> "$MAIN_TOUPDATE"  ## Adding a line break
+        write_toc
+    fi
 
-        ## dirsy_array will have length 1 when file_nesting_level=0 etc.. , decrease it
-        file_nesting_level=$((${#dirs_array[@]} - 1))
-
-        ## Iterating through nested levels and formatting output with indentation
-        for ((current_nesting_level=first_discrepancy_level; current_nesting_level<=file_nesting_level; current_nesting_level++)); do
-            for ((i=0; i<current_nesting_level; i++)); do
-                echo -ne "\t" >> "$MAIN_TOUPDATE"
-            done
-
-            if [[ $current_nesting_level -eq $file_nesting_level ]]; then
-                echo "<L=$(decimal_to_alphanumeric ${file_no})>${paths_linkto[$file]}</L>" >> "$MAIN_TOUPDATE"
-            else
-                echo -ne "- ${dirs_array[($current_nesting_level)]}\n" >> "$MAIN_TOUPDATE"
-            fi
-        done
-
-        prev_dirs_array=("${dirs_array[@]}")
-        file_no=$((file_no + 1))
-    done
-
-    echo "" >> "$MAIN_TOUPDATE"  ## Adding a line break
 
     ## Initiating variables for codeblock_prompt
     if [[ "$codeblock_prompt" == true ]]; then
@@ -1702,35 +1889,107 @@ function write_html_docu_multirule() {
         scr_csv_iterator_needs_catchup=$(mktemp /dev/shm/scr_csv_iterator_needs_catchup.XXXXXX)
     fi
 
-    file_no=1
+
+#echo "[DEBUG] buid : ${buid}" ## DEBUGGING
+
+    ## Checking for a resumed writting
+    if [[ -n "$buid" ]]; then
+#echo "WANG!!"        ## DEBUGGING
+
+        file_no=$(alphanumeric_to_decimal ${buid})
+        found_file=false
+    else
+#echo "LANG!!"        ## DEBUGGING
+        file_no=1
+        found_file=true
+    fi 
+
+
+#read -p "On Break point... Press enter to continue..." ## DEBUGGING
+
+    content_dump_nohead=$(mktemp /dev/shm/vim-dan-content_dump_nohead-XXXXXX.dan)
+    content_dump=$(mktemp /dev/shm/vim-dan-content_dump-XXXXXX.dan)
+
 
     ## Parsing and appending content, using Multi-rule
     for path in "${files_array[@]}"; do
-        filename=$(echo ".${path#${DOCU_PATH}/downloaded}" | sed 's|^\.||')
+
+        filename=$(echo "${path#${DOCU_PATH}/downloaded}")
+        file=$(echo $file | sed 's|^\.||')
+
+#echo "[DEBUG] filename : ${filename}" ## DEBUGGING
+#echo "[DEBUG] file : ${file}" ## DEBUGGING
+#echo "[DEBUG] found_file : ${found_file}" ## DEBUGGING
+#echo "[DEBUG] file_no : ${file_no}" ## DEBUGGING
+
+
+#echo "[DEBUG] found_file : ${found_file}" ## DEBUGGING
+
+        if [[ -n "$file" && $found_file == false ]]; then
+#echo "BANG!!"        ## DEBUGGING
+            if [[ "$filename" == "$file" ]]; then
+                found_file=true
+            else
+                continue  # skip until we find the match
+            fi
+
+        fi
+
+#echo "[DEBUG] found_file : ${found_file}" ## DEBUGGING
+
 
         # Generating buid sequencially
         buid=$(decimal_to_alphanumeric ${file_no})
         # @todo Checking buid against target-links-index.csv
 
-        echo "<B="${buid}">${paths_linkto[$path]}" >> "$MAIN_TOUPDATE"
-        echo "& ${paths_linkto[$path]} &" >> "$MAIN_TOUPDATE"
-        echo "${paths_linkto[$path]}" | figlet >> "$MAIN_TOUPDATE"
+
+#echo "[DEBUG] wc -l MAIN_TOUPDATE : $(wc -l ${MAIN_TOUPDATE})" ## DEBUGGING
+#echo "[DEBUG] no_empty_lines : ${no_empty_lines}" ## DEBUGGING
+
+# Create content in a variable
+content=$(
+    printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)"
+    echo "<B="${buid}">${paths_linkto[$path]}"
+    echo "& ${paths_linkto[$path]} &"
+    echo "${paths_linkto[$path]}" | figlet
+)
+
+# Get empty line count
+#no_empty_lines=$(( $(wc -l < "${MAIN_TOUPDATE}") + 14 ))
+
+
+# Write to file (empty lines + content)
+#printf '\n%.0s' $(seq 1 "$no_empty_lines") > "${content_dump}"
+echo "$content" >> "${content_dump}"
+
+#echo "[DEBUG] content_dump : ${content_dump}" ## DEBUGGING
+#echo "[DEBUG] content_dump_nohead : ${content_dump_nohead}" ## DEBUGGING
+
+#read -p "On Break point... Press enter to continue..." ## DEBUGGING
 
         found_selector=""
 
         for content_parsing in "${content_parsing_array[@]}"; do
             # Create content parsing array
-            content_dump=$(mktemp /dev/shm/content_dump.XXXXXX)
 
 
             # Formulating command
             # Initial cmd
-            cmd="sed 's/role=\"main\"//g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o ${content_dump} -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -V file_processed=\"${filename}\" -V file_no=\"${file_no}\""
+            cmd="sed 's/role=\"main\"/role=\"maine\"/g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o ${content_dump_nohead} -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -V file_processed=\"${filename}\" -V file_no=\"${file_no}\""
 
-            [[ -n "$wrap_columns" ]] && cmd+=" --columns=${wrap_columns}"
+            if [[ -n "$wrap_columns" ]]; then
+                cmd+=" --columns=${wrap_columns}"
+            else 
+                cmd+=" --wrap=none"
+            fi
 
             ## Adding codeblock_prompt
             [[ "$codeblock_prompt" == true ]] && cmd+=" -V scr_choice_1=${scr_choice_1} -V scr_choice_2=${scr_choice_2} -V scr_choice_3=${scr_choice_3} -V csv_path=${csv_path} -V scr_global_current_cb=${scr_global_current_cb} -V scr_csv_iterator_needs_catchup=${scr_csv_iterator_needs_catchup} -L $(realpath ${CURRENT_DIR}/../pandoc-filters/codeblock-prompt.lua)"
+
+
+            ## Adding codeblock_default_filetype (shouldn't be used with codeblock_prompt)
+            [[ -n "$codeblock_default_filetype" ]] && cmd+=" -V codeblock_default_filetype=${codeblock_default_filetype} -L $(realpath ${CURRENT_DIR}/../pandoc-filters/codeblock-default.lua)"
+
 
             ## Adding inline_links filter
             [[ "$inline_links" == true ]] && cmd+=" -V links_index_csv=${links_index_csv} -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inline-links-writing.lua)"
@@ -1745,37 +2004,101 @@ function write_html_docu_multirule() {
 
             eval "$cmd" < "$path"
 
-            if [ 1 -lt $(stat -c %s "${content_dump}") ]; then
-                if [[ -n "$file_mangling" ]]; then
-                    eval "cat ${content_dump} | ${file_mangling} >> ${MAIN_TOUPDATE}"
-                else
-                    cat ${content_dump} >> "${MAIN_TOUPDATE}"
-                fi
+
+
+            if [ 1 -lt $(stat -c %s "${content_dump_nohead}") ]; then
+
+                eval "cat ${content_dump_nohead} | ${file_mangling} >> ${content_dump_nohead}"
+
                 found_selector=true
                 break
             fi
+
         done
 
         # Default case for parsing , if none of the rules return a non-zero string
         if [ -z "$found_selector" ]; then
             cmd="pandoc -f html -t plain"
-            [[ -n "$wrap_columns" ]] && cmd+=" --columns=${wrap_columns}"
+            if [[ -n "$wrap_columns" ]]; then
+                cmd+=" --columns=${wrap_columns}"
+            else 
+                cmd+=" --wrap=none"
+            fi
             [[ -n "$file_mangling" ]] && cmd+=" | ${file_mangling}"
-            eval "cat ${path} | ${cmd} >> ${MAIN_TOUPDATE}"
+            eval "cat ${path} | ${cmd} >> ${content_dump_nohead}"
         fi
 
-        echo "</B>" >> "${MAIN_TOUPDATE}"                        ## ADDING A LINE BREAK
-        printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)" >> "${MAIN_TOUPDATE}"
-        rm "$content_dump"
+        echo "</B>" >> "${content_dump_nohead}"                        ## ADDING A LINE BREAK
+
+
+        cat "${content_dump_nohead}" >> "${content_dump}"
+
+        [[ -n "$cleanup_command" ]] && eval "$cleanup_command"
+
+
+        # TUCKING IN THE IN-LINE LINKS AS MUCH AS POSSIBLE
+        awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${content_dump}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${content_dump}"
+
+        for ((i=1; i<=5; i++)); do
+            awk -f "$CURRENT_DIR"/../scripts/pile-consecutive-inline-links.awk "${content_dump}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${content_dump}"
+        done
+
+        ctags --options=NONE \
+              --options=${CURRENT_DIR}/../ctags-rules/dan.ctags \
+              --sort=no \
+              --append=yes \
+              --tag-relative=no \
+              -f ${VIMDAN_DIR}/.tags${DOCU_NAME} \
+              ${content_dump}
+
+        # tail -n +$((no_empty_lines + 1)) ${content_dump} >> "${MAIN_TOUPDATE}"
+        cat ${content_dump} >> "${MAIN_TOUPDATE}"
+        truncate -s 0 "$content_dump_nohead"
+        truncate -s 0 "$content_dump"
+
+
         file_no=$((file_no + 1))
     done
 
 
     ## Removing files used in RAM Memory
     rm -f "$scr_choice_1" "$scr_choice_2" "$scr_choice_3" \
-      "$scr_global_current_cb" "$scr_csv_iterator_needs_catchup" "$csv_path" "$content_dump"
+      "$scr_global_current_cb" "$scr_csv_iterator_needs_catchup" "$content_dump"
+
+    ## Cleaning tags file
+
+    ## Deleting the header lines that are not leading lines
+    sed -i '27,$ {/^!_/d}' ${VIMDAN_DIR}/.tags${DOCU_NAME}
+    ## Ammending filename on tags file
+    sed -i "s|${content_dump}|${DOCU_NAME}.dan|" ${VIMDAN_DIR}/.tags${DOCU_NAME}
+    ## Cleaning duplicates of nested tags
+##    sed -i -E '/^[a-zA-Z0-9]+\t.*\tregex:[a-zA-Z0-9]+$/d' ${VIMDAN_DIR}/.tags${DOCU_NAME}
+#    sort -fV ${VIMDAN_DIR}/.tags${DOCU_NAME} -o ${VIMDAN_DIR}/.tags${DOCU_NAME}
+#    sort -u ${VIMDAN_DIR}/.tags${DOCU_NAME} -o ${VIMDAN_DIR}/.tags${DOCU_NAME}
+    sort -k1,1 -u ${VIMDAN_DIR}/.tags${DOCU_NAME} -o ${VIMDAN_DIR}/.tags${DOCU_NAME}
 
 
+
+    tags_header=$(mktemp /dev/shm/vim-dan-tags_header-XXXXXX.dan)
+    tags_body=$(mktemp /dev/shm/vim-dan-tags_body-XXXXXX.dan)
+
+    # Extract tag headers
+    grep '^!_TAG_' ${VIMDAN_DIR}/.tags${DOCU_NAME} > ${tags_header}
+
+    # Extract tag entries (excluding tag headers)
+    sed '/^!_TAG_/d' ${VIMDAN_DIR}/.tags${DOCU_NAME} > ${tags_body}
+
+    # Combine
+    cat ${tags_header} ${tags_body} > ${VIMDAN_DIR}/.tags${DOCU_NAME} && rm ${tags_header} ${tags_body}
+
+    # Correct the tags file so to accept (X)
+
+pattern=$(cat << 'EOF'
+s/\$\/;"/\\( (X)\\)\\?\$\/;"/
+EOF
+)
+
+    sed -i "${pattern}" ${VIMDAN_DIR}/.tags${DOCU_NAME}
 
 
 }

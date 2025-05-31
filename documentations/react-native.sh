@@ -127,7 +127,38 @@ parsing_rules(){
 
 writting_rules(){
 
-    write_header
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+cleanup_command=$(cat <<'EOF'
+tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+if [[ -s "${content_dump}".new ]]; then
+    mv -f -- "${content_dump}".new "${content_dump}";
+fi
+    sed \
+        -e '/^Previous$/d' \
+        -e '/^Next$/d' \
+        -E -e '/^(\[\] )*\[\]$/d' \
+        -E -e '/^(\[\])*\[\]$/d' \
+        -e 's/^\[\] //' \
+        -i "${content_dump}"
+EOF
+)
+
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+
+
+
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
@@ -144,31 +175,8 @@ writting_rules(){
     #
     
 
-    write_html_docu_multirule -f "h1" -b "article" -cp -L "$(realpath ${CURRENT_DIR}/../pandoc-filters/react-native.lua)" -il -c "105"
+    write_html_docu_multirule -f "h1" -b "article" -cp -L "$(realpath ${CURRENT_DIR}/../pandoc-filters/react-native.lua)" -il -c "105" -cc "${cleanup_command}"
 
-
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
-
-    sed \
-        -e '/^Previous$/d' \
-        -e '/^Next$/d' \
-        -E -e '/^(\[\] )*\[\]$/d' \
-        -E -e '/^(\[\])*\[\]$/d' \
-        -e "s/$(echo -ne '\u200b')//g" \
-        -e 's/^\[\] //' \
-        -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
@@ -206,19 +214,6 @@ writting_rules(){
     # ---------------------------------------------------------------------------
     
 
-    # TUCKING IN THE IN-LINE LINKS AS MUCH AS POSSIBLE
-    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-
-    for ((i=1; i<=5; i++)); do
-        awk -f "$CURRENT_DIR"/../scripts/pile-consecutive-inline-links.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-    done
-
-##  @todo if uncommented, in-line tags will be appended to the end of the previous line
-##         i.e: accessed and manipulated to modify the appearance of the associated text frame.<I=1><I=2>
-##        This would be desired but it seems to be breaking the functionality with the current configuration of ctags
-##
-##    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-    # ---------------------------------------------------------------------------
 
 }
 

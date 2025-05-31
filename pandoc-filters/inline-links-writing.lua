@@ -173,8 +173,7 @@ end
 --             is_anchor = 'true' and in_use = 'true'
 function check_link_source(elem)
     href = elem.target
-dprint('[DEBUG] href : ' .. href) -- DEBUGGING
-
+    dprint('[DEBUG] href : ' .. href) -- DEBUGGING
 
     local ok, result = pcall(pandoc.utils.stringify, elem.content)
     if ok then
@@ -188,34 +187,29 @@ dprint('[DEBUG] href : ' .. href) -- DEBUGGING
         return elem
     end 
 
-    -- 1 - Separate the path part from the anchor path it has such
-    path , anchor  = separate_path_from_anchor(href)
+    -- 1 - Separate the path part from the anchor path if it has such
+    path, anchor = separate_path_from_anchor(href)
 
-dprint('[DEBUG] path before NORMALIZED : ' .. tostring(path)) -- DEBUGGING
+    dprint('[DEBUG] path before NORMALIZED : ' .. tostring(path)) -- DEBUGGING
 
-    -- Add path if it doesnt have such a component
-    --   and Normalize path component to the root marked by docu_path
+    -- Add path if it doesn't have such a component
+    -- and Normalize path component to the root marked by docu_path
     if not path then
         path = file_processed
     elseif path:match("^/") then
-        -- if href is '/en-US/docs/Web/CSS/Nesting_selector' the path doesnt need to be normalized
-        
-        -- if path ends without extension
-        -- either it ends on a / directory , add index.html 
+        -- If href is '/en-US/docs/Web/CSS/Nesting_selector', the path doesn't need to be normalized
+        -- If path ends without extension
         if path:match("%/$") then
             path = path .. 'index.html'
-
-        -- or it ends on a file without extension , add .html
+        -- or it ends on a file without extension, add .html
         elseif not path:match("%.html$") then
             path = path .. '.html'
-
         end
     else 
         path = PATH.normalize(PATH.dirname(file_processed) .. '/' .. path)
     end
 
-
-dprint('[DEBUG] path after NORMALIZED : ' .. path) -- DEBUGGING
+    dprint('[DEBUG] path after NORMALIZED : ' .. path) -- DEBUGGING
 
     -- Make it relative adding './'
     -- Add './' if it doesn't start with './' or '/'
@@ -226,41 +220,50 @@ dprint('[DEBUG] path after NORMALIZED : ' .. path) -- DEBUGGING
         rel_path = '.' .. path
     end
 
-dprint('[DEBUG] rel_path after ./ /: ' .. rel_path) -- DEBUGGING
-dprint('[DEBUG] anchor : ' .. tostring(anchor)) -- DEBUGGING
-
---dprint('[DEBUG] entry[1] : ' .. entry[1]) -- DEBUGGING
---dprint('[DEBUG] entry[2] : ' .. entry[2]) -- DEBUGGING
---dprint('[DEBUG] entry[3] : ' .. entry[3]) -- DEBUGGING
---dprint('[DEBUG] entry[4] : ' .. entry[4]) -- DEBUGGING
---dprint('[DEBUG] entry[5] : ' .. entry[5]) -- DEBUGGING
---dprint('[DEBUG] entry[6] : ' .. entry[6]) -- DEBUGGING
---dprint('[DEBUG] entry[7] : ' .. entry[7]) -- DEBUGGING
---dprint('[DEBUG] entry[8] : ' .. entry[8]) -- DEBUGGING
+    dprint('[DEBUG] rel_path after ./ /: ' .. rel_path) -- DEBUGGING
+    dprint('[DEBUG] anchor : ' .. tostring(anchor)) -- DEBUGGING
 
     for i, entry in ipairs(entries) do
-        -- Parsing non anchor links sources
+        -- Parsing non-anchor link sources
         -- 2. if is_anchor = 'false' write
         if not anchor and entry[1] == rel_path and entry[2] == 'false' then
-            formed_link = '<L=' .. entry[6] .. '>' .. link_text .. '</L>'
-            dprint('Parsing non-anchor link source' .. formed_link) -- DEBUGGING
-            dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
-            return pandoc.Str(formed_link)
+            local link_id = entry[6]
+            local formed_prefix = '<L=' .. link_id .. '>'
+            local formed_suffix = '</L>'
+            dprint('Parsing non-anchor link source: ' .. formed_prefix .. link_text .. formed_suffix) -- DEBUGGING
+            
+            -- Create new inline content with <L=...> and </L> wrapping the original content
+            local new_content = pandoc.Inlines({})
+            new_content:insert(pandoc.Str(formed_prefix))
+            for _, inline in ipairs(elem.content) do
+                new_content:insert(inline)
+            end
+            new_content:insert(pandoc.Str(formed_suffix))
+            
+            -- Return a new Link with updated content
+            return pandoc.Link(new_content, elem.target, elem.title or "", elem.attr)
         -- 3. if is_anchor = 'true' and in_use = 'true' write
-        elseif entry[1] == rel_path and entry[5] == anchor and entry[2] == 'true' and entry[8] == 'true'  then
---dprint('[DEBUG] entry[6] : ' .. entry[6]) -- DEBUGGING
---dprint('[DEBUG] entry[7] : ' .. entry[7]) -- DEBUGGING
-           formed_link = '<L=' .. entry[6] .. '#' .. entry[7] .. '>' .. link_text .. '</L>'
-           dprint('Parsing anchor link source' .. formed_link) -- DEBUGGING
-           dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
---            dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
-            return pandoc.Str(formed_link)
+        elseif entry[1] == rel_path and entry[5] == anchor and entry[2] == 'true' and entry[8] == 'true' then
+            local link_id = entry[6]
+            local anchor_id = entry[7]
+            local formed_prefix = '<L=' .. link_id .. '#' .. anchor_id .. '>'
+            local formed_suffix = '</L>'
+            dprint('Parsing anchor link source: ' .. formed_prefix .. link_text .. formed_suffix) -- DEBUGGING
+            
+            -- Create new inline content with <L=...> and </L> wrapping the original content
+            local new_content = pandoc.Inlines({})
+            new_content:insert(pandoc.Str(formed_prefix))
+            for _, inline in ipairs(elem.content) do
+                new_content:insert(inline)
+            end
+            new_content:insert(pandoc.Str(formed_suffix))
+            
+            -- Return a new Link with updated content
+            return pandoc.Link(new_content, elem.target, elem.title or "", elem.attr)
         end
-
     end
 
     return elem
-
 end
 
 
@@ -276,209 +279,120 @@ function check_link_target(elem, elem_type)
         rel_path = '.' .. rel_path
     end
 
---    dprint('[DEBUG] elem_type', elem_type)
---    dprint('[DEBUG] block_counter : ' .. block_counter) -- DEBUGGING
-
-    -- if element doesnt have id then it cannot be link_target
+    -- If element doesn't have id, it cannot be a link target
     anchor_id = elem.identifier or ""  -- Default to empty string if nil
     if anchor_id == "" then
         return elem  -- Return unchanged if no anchor_id
     end
 
---    dprint('[DEBUG] rel_path : ' .. rel_path)
---    dprint('[DEBUG] anchor_id : ' .. anchor_id)
 
-    -- Rest of your function remains the same...
-    local ok, result = pcall(pandoc.utils.stringify, elem.content)
-    if ok then
-        link_text = result
-    else
-        return elem
-    end
-
--- dprint('[DEBUG] link_text : ' .. link_text) -- DEBUGGING
+    dprint('[DEBUG] elem_type', elem_type)
+    dprint('[DEBUG] block_counter : ' .. block_counter) -- DEBUGGING
+    dprint('[DEBUG] rel_path : ' .. rel_path)
+    dprint('[DEBUG] anchor_id : ' .. anchor_id)
+--    dprint('[DEBUG] link_text : ' .. link_text) -- DEBUGGING
 
     for i, entry in ipairs(entries) do
+        if entry[1] == rel_path and entry[5] == anchor_id and entry[8] == 'true' then
+            local formed_link = '<I=' .. entry[6] .. '#' .. entry[7] .. '>'
+            dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
 
-        if entry[1] == rel_path and entry[5] == anchor_id and entry[8] == 'true'  then
 
-        local new_content = {}
-
-
-        -- Traverse through the content of the div
-        for _, block in ipairs(elem.content) do
-            -- For Para elements, we will wrap the inline content with Emph
-            if block.t == "Para" then
-                local inline_content = {}
-                for _, inline in ipairs(block.content) do
-                    table.insert(inline_content, inline)
+            if elem_type == 'Table' then
+                -- Convert Table to SimpleTable for easier manipulation
+                local simple_table = pandoc.utils.to_simple_table(elem)
+                
+                -- Prepend formed_link to the caption (or another part if desired)
+                local new_caption = {}
+                table.insert(new_caption, pandoc.Str(formed_link))
+                for _, inline in ipairs(simple_table.caption) do
+                    table.insert(new_caption, inline)
                 end
-                -- Add the modified Para to the new content
-                table.insert(new_content, pandoc.Para(inline_content))
+                
+                -- Create new SimpleTable with modified caption
+                local new_simple_table = pandoc.SimpleTable(
+                    new_caption,               -- Updated caption with formed_link
+                    simple_table.aligns,       -- Original alignments
+                    simple_table.widths,       -- Original widths
+                    simple_table.headers,      -- Original headers
+                    simple_table.rows          -- Original rows
+                )
+                
+                -- Convert back to Table
+                return pandoc.utils.from_simple_table(new_simple_table)
+            elseif elem_type == 'CodeBlock' then
+                -- Append formed_link to the text field
+                local new_text = (elem.text or "") .. "\n" .. formed_link
+                return pandoc.CodeBlock(new_text, elem.attr)
+            elseif elem_type == 'Code' then
+                -- Append formed_link as a separate inline element
+                return pandoc.Span({elem, pandoc.Str(" "), pandoc.Str(formed_link)}, elem.attr)
             else
-                -- If it's not a Para, keep the block as is (you could add more conditions here)
-                table.insert(new_content, block)
+                -- Handle other element types as before
+                local new_content = {}
+
+                -- Traverse through the content of the element
+                for _, block in ipairs(elem.content or {}) do
+                    if block.t == "Para" then
+                        local inline_content = {}
+                        for _, inline in ipairs(block.content) do
+                            table.insert(inline_content, inline)
+                        end
+                        table.insert(new_content, pandoc.Para(inline_content))
+                    else
+                        table.insert(new_content, block)
+                    end
+                end
+
+                -- Append formed_link to content
+                table.insert(new_content, pandoc.Str(formed_link))
+
+                -- Return appropriate element type
+                if elem_type == 'CodeBlock' then
+                    return pandoc.CodeBlock(new_content, elem.attr)
+                elseif elem_type == 'Div' then
+                    return pandoc.Div(new_content, elem.attr)
+                elseif elem_type == 'Figure' then
+                    return pandoc.Div(new_content, elem.attr)  -- fallback
+                elseif elem_type == 'Header' then
+                    return pandoc.Header(elem.level, new_content, elem.attr)
+                elseif elem_type == 'Code' then
+                    return pandoc.Code(new_content, elem.attr)
+                elseif elem_type == 'Link' then
+                    -- Create a new inline content list
+                    local new_content = pandoc.Inlines({})
+                    
+                    -- Copy existing inline content from the Link element
+                    for _, inline in ipairs(elem.content or {}) do
+                        table.insert(new_content, inline)
+                    end
+                    
+                    -- Append the formed_link as an inline Str element
+                    table.insert(new_content, pandoc.Str(formed_link))
+                    
+                    -- Return a new Link element with updated content, preserving target and attr
+                    return pandoc.Link(new_content, elem.target, elem.title or "", elem.attr)
+                elseif elem_type == 'Span' then
+                    return pandoc.Span(new_content, elem.attr)
+                elseif elem_type == 'Cell' then
+                    return pandoc.Plain(new_content)
+                elseif elem_type == 'Para' then
+                    return pandoc.Para(new_content, elem.attr)
+                elseif elem_type == 'BlockQuote' then
+                    return pandoc.BlockQuote(new_content, elem.attr)
+                elseif elem_type == 'BulletList' then
+                    return pandoc.BulletList(new_content, elem.attr)
+                elseif elem_type == 'OrderedList' then
+                    return pandoc.OrderedList(new_content, elem.attr)
+                else
+                    return elem
+                end
             end
         end
-
-
-        -- All link target that are referred to in_use = 'true'
-            formed_link = '<I=' .. entry[7] .. '>' 
-
-            dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
-            table.insert(new_content, pandoc.Str(formed_link))
-
-            if elem_type == 'CodeBlock'  then 
-                return pandoc.CodeBlock(new_content, elem.attr)
-            elseif elem_type == 'Div'  then
---                dprint('[DEBUG] returning a Div : ') -- DEBUGGING
-                return pandoc.Div(new_content, elem.attr)
-            elseif elem_type == 'Figure' then
-                return pandoc.Div(new_content, elem.attr)  -- fallback
-            elseif elem_type == 'Header'  then
-                dprint('[DEBUG] returning a Header: ') -- DEBUGGING
---                return pandoc.Header(new_content, elem.attr)
-                return pandoc.Header(elem.level, new_content, elem.attr)
-            elseif elem_type == 'Table'  then
-                return pandoc.Table(new_content, elem.attr)
-            elseif elem_type == 'Code'  then
-                return pandoc.Code(new_content, elem.attr)
-            elseif elem_type == 'Image'  then
-                return pandoc.Image(new_content, elem.attr)
-            elseif elem_type == 'Link'  then
-                return pandoc.Link(new_content, elem.attr)
-            elseif elem_type == 'Span'  then
-                return pandoc.Span(new_content, elem.attr)
-            elseif elem_type == 'Cell'  then
-                return pandoc.Plain(new_content) -- or handle specially
-            elseif elem_type == 'TableFoot' or elem_type == 'TableHead'  then
-                return pandoc.Plain(new_content)  -- also custom
-            elseif elem_type == 'Para'  then
-                return pandoc.Para(new_content, elem.attr)
-            elseif elem_type == 'BlockQuote'  then
-                return pandoc.BlockQuote(new_content, elem.attr)
-            elseif elem_type == 'BulletList'  then
-                return pandoc.BulletList(new_content, elem.attr)
-            elseif elem_type == 'OrderedList'  then
-                return pandoc.OrderedList(new_content, elem.attr)
-            else
---                dprint('[DEBUG] unrecognised AST object : ' ) -- DEBUGGING
-                return elem
-            end
-
-        end 
     end
 
     return elem
-
 end
-
-------- Check for each element found against 'links-index.csv'
-------    Form its appropriate link target if it is
-------              is_anchor = 'true' and in_use = 'true'
-----function check_link_target(elem, elem_type)
-----    -- Get the normalized path of the file being processed
-----    rel_path = PATH.normalize(file_processed)
-----
-----    -- Normalize relative paths:
-----    -- Add './' if it doesn't start with './' or '/'
-----    -- If it starts with '/', just prepend '.'
-----    if not rel_path:match('^%./') and not rel_path:match('^/') then
-----        rel_path = './' .. rel_path
-----    elseif rel_path:match('^/') then
-----        rel_path = '.' .. rel_path
-----    end
-----
-----    anchor_id = elem.identifier
-----
-----dprint('[DEBUG] rel_path : ' .. rel_path) -- DEBUGGING
-----dprint('[DEBUG] anchor_id : ' .. anchor_id) -- DEBUGGING
-----
-------    link_text = pandoc.utils.stringify(elem.content)
-----
-----    local ok, result = pcall(pandoc.utils.stringify, elem.content)
-----    if ok then
-----        link_text = result
-----    else
-----        return elem
-----    end
-----
-----dprint('[DEBUG] link_text : ' .. link_text) -- DEBUGGING
-----
-----    for i, entry in ipairs(entries) do
-----
-----        if entry[1] == rel_path and entry[5] == anchor_id and entry[8] == 'true'  then
-----
-----        local new_content = {}
-----
-----
-----        -- Traverse through the content of the div
-----        for _, block in ipairs(elem.content) do
-----            -- For Para elements, we will wrap the inline content with Emph
-----            if block.t == "Para" then
-----                local inline_content = {}
-----                for _, inline in ipairs(block.content) do
-----                    table.insert(inline_content, inline)
-----                end
-----                -- Add the modified Para to the new content
-----                table.insert(new_content, pandoc.Para(inline_content))
-----            else
-----                -- If it's not a Para, keep the block as is (you could add more conditions here)
-----                table.insert(new_content, block)
-----            end
-----        end
-----
-----
-----        -- All link target that are referred to in_use = 'true'
-----            formed_link = '<I=' .. entry[7] .. '>' 
-----
-----            dprint('[DEBUG] formed_link : ' .. formed_link) -- DEBUGGING
-----            table.insert(new_content, pandoc.Str(formed_link))
-----
-----            if elem_type == 'CodeBlock'  then 
-----                return pandoc.CodeBlock(new_content, elem.attr)
-----            elseif elem_type == 'Div'  then
-------                dprint('[DEBUG] returning a Div : ') -- DEBUGGING
-----                return pandoc.Div(new_content, elem.attr)
-----            elseif elem_type == 'Figure' then
-----                return pandoc.Div(new_content, elem.attr)  -- fallback
-----            elseif elem_type == 'Header'  then
-------                dprint('[DEBUG] returning a Header: ') -- DEBUGGING
-------                return pandoc.Header(new_content, elem.attr)
-----                return pandoc.Header(elem.level, new_content, elem.attr)
-----            elseif elem_type == 'Table'  then
-----                return pandoc.Table(new_content, elem.attr)
-----            elseif elem_type == 'Code'  then
-----                return pandoc.Code(new_content, elem.attr)
-----            elseif elem_type == 'Image'  then
-----                return pandoc.Image(new_content, elem.attr)
-----            elseif elem_type == 'Link'  then
-----                return pandoc.Link(new_content, elem.attr)
-----            elseif elem_type == 'Span'  then
-----                return pandoc.Span(new_content, elem.attr)
-----            elseif elem_type == 'Cell'  then
-----                return pandoc.Plain(new_content) -- or handle specially
-----            elseif elem_type == 'TableFoot' or elem_type == 'TableHead'  then
-----                return pandoc.Plain(new_content)  -- also custom
-----            elseif elem_type == 'Para'  then
-----                return pandoc.Para(new_content, elem.attr)
-----            elseif elem_type == 'BlockQuote'  then
-----                return pandoc.BlockQuote(new_content, elem.attr)
-----            elseif elem_type == 'BulletList'  then
-----                return pandoc.BulletList(new_content, elem.attr)
-----            elseif elem_type == 'OrderedList'  then
-----                return pandoc.OrderedList(new_content, elem.attr)
-----            else
-------                dprint('[DEBUG] unrecognised AST object : ' ) -- DEBUGGING
-----                return elem
-----            end
-----
-----        end 
-----    end
-----
-----    return elem
-----
-----end
 
 
 
@@ -494,7 +408,6 @@ end
 -- Define the flow of execution of the filter, calling the previously defined subroutines.
 -- @section SUBROUTINE_CALLS
 
-
 return {
 
     { Pandoc = loading_arguments },
@@ -506,19 +419,19 @@ return {
     { Header = function(e) return check_link_target(e, "Header") end },
     { Table = function(e) return check_link_target(e, "Table") end },
     { Code = function(e) return check_link_target(e, "Code") end },
-    { Image = function(e) return check_link_target(e, "Image") end },
+--    { Image = function(e) return check_link_target(e, "Image") end },
     { Link = function(e) return check_link_target(e, "Link") end },
     { Span = function(e) return check_link_target(e, "Span") end },
     { Cell = function(e) return check_link_target(e, "Cell") end },
-    { TableFoot = function(e) return check_link_target(e, "TableFoot") end },
-    { TableHead = function(e) return check_link_target(e, "TableHead") end },
+--    { TableHead = function(e) return check_link_target(e, "TableHead") end },
+--    { TableBody = function(e) return check_link_target(e, "TableBody") end },
+--    { TableFoot = function(e) return check_link_target(e, "TableFoot") end },
     { Para = function(e) return check_link_target(e, "Para") end },
     { BlockQuote = function(e) return check_link_target(e, "BlockQuote") end },
     { BulletList = function(e) return check_link_target(e, "BulletList") end },
     { OrderedList = function(e) return check_link_target(e, "OrderedList") end }
 
 }
-
 
 -- EOF EOF EOF SUBROUTINE_CALLS 
 -- ----------------------------------------------------------------------------

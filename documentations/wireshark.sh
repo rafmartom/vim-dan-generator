@@ -132,20 +132,47 @@ parsing_rules(){
 
 writting_rules(){
 
-    write_header
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+cleanup_command=$(cat <<'EOF'
+tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+if [[ -s "${content_dump}".new ]]; then
+    mv -f -- "${content_dump}".new "${content_dump}";
+fi
+
+    sed \
+        -e '/^Discussion$/d' \
+        -e 's/[[:space:]]\+¶//g' \
+        -i "${content_dump}"
+EOF
+)
+
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
     #    We parse the Content of the Pages by using 'article'
     
-    #    write_html_docu_multirule -f "h1" -b "article" -cp
+    #    write_html_docu_multirule -f "h1" -b "article" -cd "sh"
     #
     #  Other Example:
     #    You may use various tags, the firstone to be found will be used
     #    In the documentation downloaded some pages are different than others
     #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
     #
-    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
+    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cd "sh"
     #
     
 
@@ -159,29 +186,10 @@ writting_rules(){
         -b "body.manpage" \
         -b "div.main-container section section" \
         -b "main" \
-        -cp -il -c "105"
+        -cc "${cleanup_command}" \
+        -cd "sh" -il -c "105"
 
 
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
-
-
-    sed \
-        -e '/^Discussion$/d' \
-        -e 's/[[:space:]]\+¶//g' \
-        -e "s/$(echo -ne '\u200b')//g" \
-        -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
@@ -219,19 +227,6 @@ writting_rules(){
     # ---------------------------------------------------------------------------
     
 
-    # TUCKING IN THE IN-LINE LINKS AS MUCH AS POSSIBLE
-    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-
-    for ((i=1; i<=5; i++)); do
-        awk -f "$CURRENT_DIR"/../scripts/pile-consecutive-inline-links.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-    done
-
-##  @todo if uncommented, in-line tags will be appended to the end of the previous line
-##         i.e: accessed and manipulated to modify the appearance of the associated text frame.<I=1><I=2>
-##        This would be desired but it seems to be breaking the functionality with the current configuration of ctags
-##
-##    awk -f "$CURRENT_DIR"/../scripts/append-inline-links-prev.awk "${MAIN_TOUPDATE}" > /tmp/${DOCU_NAME}-tmp && mv /tmp/${DOCU_NAME}-tmp "${MAIN_TOUPDATE}"
-    # ---------------------------------------------------------------------------
 
 }
 

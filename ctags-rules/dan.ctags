@@ -1,19 +1,13 @@
---langdef=dantags{_autoFQTag}
+--langdef=dantags
 --langmap=dantags:.dan
+--kinddef-dantags=b,block,blocks
 --kinddef-dantags=i,inline,inlines
 
---_tabledef-dantags=toplevel
---_tabledef-dantags=blocktab
---_tabledef-dantags=inlinetab
+--regex-dantags=/^<B=([a-zA-Z0-9]+)>/\1/b/
 
---_mtable-regex-dantags=toplevel/^<B=([a-zA-Z0-9]+)>/\1/b/{scope=set}{tenter=blocktab}
---_mtable-regex-dantags=toplevel/.//
-
---_mtable-regex-dantags=blocktab/<\/B>//{tleave}
---_mtable-regex-dantags=blocktab/<I=([a-zA-Z0-9]+)>/\1/i/{scope=ref}
---_mtable-regex-dantags=blocktab/.//
-
-
---fields=+ln
---extras=+q
---_scopesep-dantags=*/*:#
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\1/i/
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\2/i/
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\3/i/
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\1/i/
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>[^<]*<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\2/i/
+--regex-dantags=/<I=([a-zA-Z0-9]+#[a-zA-Z0-9]+)>/\1/i/

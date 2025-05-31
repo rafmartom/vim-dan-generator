@@ -214,7 +214,7 @@ function append_block_link(doc)
     buid = generate_uid(tonumber(file_no))
     iid = ''
 
-    output_str = string.format("%s,%s,%s,%s,%s,%s,%s,true\n", rel_path, is_anchor, pandoc_data_type, surround_by_quotes(label), surround_by_quotes(anchor_id), buid, iid)
+    output_str = string.format("%s,%s,%s,%s,%s,%s,%s,true\n", surround_by_quotes(rel_path), is_anchor, pandoc_data_type, surround_by_quotes(label), surround_by_quotes(anchor_id), buid, iid)
 
     -- Append to file (like "echo ... >> file" in bash)
     local file = io.open(links_index_csv, "a")  -- "a" = append mode
@@ -249,7 +249,7 @@ function append_inline_link(elem, elem_type)
     anchor_id = elem.identifier
     iid = generate_uid(inline_link_target_counter)
 
-    output_str = string.format("%s,%s,%s,%s,%s,%s,%s,false\n", rel_path, is_anchor, pandoc_data_type, surround_by_quotes(label), surround_by_quotes(anchor_id), buid, iid )
+    output_str = string.format("%s,%s,%s,%s,%s,%s,%s,false\n", surround_by_quotes(rel_path), is_anchor, pandoc_data_type, surround_by_quotes(label), surround_by_quotes(anchor_id), buid, iid )
 
 
     -- Append to file (like "echo ... >> file" in bash)
@@ -260,6 +260,10 @@ function append_inline_link(elem, elem_type)
     else
         io.stderr:write("Failed to open links_index_csv for appending: " .. links_index_csv .. "\n")
     end
+
+dprint('[DEBUG] inline_link_target_counter : ' .. inline_link_target_counter) -- DEBUGGING
+dprint('[DEBUG] elem_type : ' .. elem_type) -- DEBUGGING
+
 
 
     inline_link_target_counter = inline_link_target_counter + 1

@@ -8,11 +8,16 @@ Generator of .dan files in use on vim's plugin vim-dan
 
 ```
 npm install puppeteer-core csv-parser json2csv commander unbzip2-stream
+sudo apt install csvtool
 # Universal ctags build from source
 # https://github.com/universal-ctags/ctags
 ```
 
 ## Limitations
+
+- Note that the tagging stage of a documentation is the longest stage. It may be even exponential with the size of the `.dan` been tagged, but it is estimated that a 100 MB `.dan` may take more than 10 days of tagging.  When dealing with this big files it is important that the file has been formed properly and it is not going to be modified.
+
+- As the algorithm has grown in complexity, the stages are taking longer, so it is better to stage the processes in a server , using for  instance `tsp` , also as `pandoc` and `ctags` are single threaded, you should be executing tasks in more than one thread at a time (parallel execution) , for instance use `tsp -S 2` or more.
 
 - You can place highlight ticks `(X)` in any line of the document except on the Block Link Targets as it will break their functionality.
 
@@ -37,6 +42,17 @@ The following is good
 
 ## Pending documentations
 
+- GNU (strange issue with moved links on spidering)
+- PostgreSQL
+- PHP
+- Pug
+- Playwright
+- https://miller.readthedocs.io/en/latest/
+- (Good documentations for SQL and databases)
+mongodb
+- Java , JavaAPI
+-
+https://fullstackopen.com/
 - https://www.perl.org/
 https://perldoc.perl.org/
 - sql

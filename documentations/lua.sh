@@ -80,24 +80,6 @@ parsing_rules(){
 
 writting_rules(){
 
-    write_header
-    ## Change below the html tags to be parsed -f for titles , -b for body
-    # Example: 
-    #    We parse the Titles of the Topics by using 'h1'
-    #    We parse the Content of the Pages by using 'article'
-    
-    #    write_html_docu_multirule -f "h1" -b "article" -cp
-    #
-    #  Other Example:
-    #    You may use various tags, the firstone to be found will be used
-    #    In the documentation downloaded some pages are different than others
-    #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
-    #
-    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
-    #
-    write_html_docu_multirule -f "nothing" -b "body" -cp -lp -c "105"
-
-
     # DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
     ## Retrieving content of the files and cleaning it
@@ -109,13 +91,35 @@ writting_rules(){
     ##
     ## Change accordingly
 
+cleanup_command=$(cat <<'EOF'
     sed \
         -E -e '/^(\[\] )*\[\]$/d' \
         -e 's/^\[\] //' \
-        -i "${MAIN_TOUPDATE}"
+        -i "${content_dump}"
+EOF
+)
 
     # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
+
+    ## Change below the html tags to be parsed -f for titles , -b for body
+    # Example: 
+    #    We parse the Titles of the Topics by using 'h1'
+    #    We parse the Content of the Pages by using 'article'
+    
+    #    write_html_docu_multirule -f "h1" -b "article" -cd "lua"
+    #
+    #  Other Example:
+    #    You may use various tags, the firstone to be found will be used
+    #    In the documentation downloaded some pages are different than others
+    #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
+    #
+    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cd "lua"
+    #
+    
+    write_html_docu_multirule -f "nothing" -b "body" -cd "lua" -lp -c "105" -cc "${cleanup_command}"
+
+
 
     write_ext_modeline
 

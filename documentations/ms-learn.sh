@@ -68,7 +68,6 @@ arranging_rules(){
 
 writting_rules(){
 
-    write_header
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
