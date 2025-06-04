@@ -1,6 +1,6 @@
 #!/bin/bash 
-# @file template
-# @brief vim-dan ruleset file for documentation on template
+# @file node-nadlebars
+# @brief vim-dan ruleset file for documentation on handlebarsjs library
 # @description
 #   author: rafmartom <rafmartom@gmail.com>
 
@@ -12,6 +12,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
 DOWNLOAD_LINKS=(
+https://handlebarsjs.com/
 )
 
 ## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
@@ -59,7 +60,8 @@ filtering_rules() {
         #sed -ni '\|developer[.]mozilla[.]org|p' ${LOCAL_CSV_PATH}
 
         ## WRITE BELOW YOUR EXCLUSION RULES
-        #sed -i '\|developer[.]mozilla[.]org/es|d' ${LOCAL_CSV_PATH}
+        sed -i '\|handlebarsjs[.]com/zh|d' ${LOCAL_CSV_PATH}
+        sed -i '\|handlebarsjs[.]com/ko|d' ${LOCAL_CSV_PATH}
     done
 
 }
@@ -111,7 +113,7 @@ arranging_rules(){
 
 parsing_rules(){
 
-    parse_html_docu_multirule -f "" -b ""
+    parse_html_docu_multirule -f "h1" -b "main"
 
 }
 
@@ -135,14 +137,10 @@ if [[ -s "${content_dump}".new ]]; then
     mv -f -- "${content_dump}".new "${content_dump}";
 fi
 #    sed \
-#        -e 's/¶//g' \
-#        -e 's/[[:space:]]\+¶//g' \
 #        -e '/^\[\] \[\]$/d' \
-#        -e '/^\[\]$/d' \
 #        -i "${content_dump}"
 EOF
 )
-
 
     # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
@@ -163,7 +161,8 @@ EOF
     #
     
 
-    write_html_docu_multirule -f "" -b "" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
+    write_html_docu_multirule -f "h1" -b "main" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
+
 
 
     write_ext_modeline
