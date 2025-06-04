@@ -1,6 +1,5 @@
 ./.vimdan_config
 ./.env
-./tucked-docus
 
 # Node.js modules
 node_modules/

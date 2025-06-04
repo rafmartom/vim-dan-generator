@@ -1,6 +1,6 @@
 #!/bin/bash 
-# @file template
-# @brief vim-dan ruleset file for documentation on template
+# @file git
+# @brief vim-dan ruleset file for documentation on git
 # @description
 #   author: rafmartom <rafmartom@gmail.com>
 
@@ -12,6 +12,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
 DOWNLOAD_LINKS=(
+https://git-scm.com/
 )
 
 ## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
@@ -59,7 +60,16 @@ filtering_rules() {
         #sed -ni '\|developer[.]mozilla[.]org|p' ${LOCAL_CSV_PATH}
 
         ## WRITE BELOW YOUR EXCLUSION RULES
-        #sed -i '\|developer[.]mozilla[.]org/es|d' ${LOCAL_CSV_PATH}
+#        sed -Ei '/git-scm\.com\/docs\/[^\/]*\/(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)/d' ${LOCAL_CSV_PATH}
+        sed -Ei '/git-scm\.com\/docs\/[^\/]*\/(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)/d' ${LOCAL_CSV_PATH}
+
+        sed -Ei '/git-scm\.com\/docs\/[^/]*\/(az|be|bq|cs|de|es|fa|fr|gr|id|is|it|ja|ko|ms|mk|nl|pl|pt-br|pt-pt|pt_BR|ro|ru|sl|sr|sv|tl|uk|uz|zh-tw|zh|zh_HANS-CN|zh_HANT)/d' ${LOCAL_CSV_PATH}
+        sed -Ei '/git-scm\.com\/book\/(az|be|bg|bq|cs|de|es|fa|fr|gr|id|is|it|ja|ko|ms|mk|nl|tr|pl|pt-br|pt-pt|pt_BR|ro|ru|sl|sr|sv|tl|uk|uz|zh-tw|zh|zh_HANS-CN|zh_HANT)/d' ${LOCAL_CSV_PATH}
+        sed -Ei '/git-scm\.com\/video/d' ${LOCAL_CSV_PATH}
+        sed -Ei '/git-scm\.com\/images/d' ${LOCAL_CSV_PATH}
+        sed -Ei '/git-scm\.com\/download/d' ${LOCAL_CSV_PATH}
+        sed -Ei '/git-scm\.com\/downloads/d' ${LOCAL_CSV_PATH}
+
     done
 
 }
@@ -92,8 +102,6 @@ arranging_rules(){
     find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
 
 
-    
-
     # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
     # ---------------------------------------------------------------------------
 
@@ -111,7 +119,7 @@ arranging_rules(){
 
 parsing_rules(){
 
-    parse_html_docu_multirule -f "" -b ""
+    parse_html_docu_multirule -f "h1" -b "div#main"
 
 }
 
@@ -163,7 +171,7 @@ EOF
     #
     
 
-    write_html_docu_multirule -f "" -b "" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
+    write_html_docu_multirule -f "h1" -b "div#main" -cd "sh" -il -c "105" -cc "${cleanup_command}"
 
 
     write_ext_modeline

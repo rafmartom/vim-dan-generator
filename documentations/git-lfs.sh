@@ -1,6 +1,6 @@
 #!/bin/bash 
-# @file template
-# @brief vim-dan ruleset file for documentation on template
+# @file git-lfs
+# @brief vim-dan ruleset file for documentation on git-lfs
 # @description
 #   author: rafmartom <rafmartom@gmail.com>
 
@@ -26,60 +26,24 @@ DOWNLOAD_LINKS=(
 
 spidering_rules(){
 
-    ## Iterate through each link of the documentation
-    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-        standard_spider -l ${DOWNLOAD_LINK}
-    done
+    echo "No spidering in this documentation.Jump to indexing"
 
 }
 
 
 filtering_rules() {
 
-    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-        ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
-        RAW_INDEX_LINKS_PATH="$CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2"
-        INDEX_LINKS_PATH=$(realpath -m "${RAW_INDEX_LINKS_PATH}")  # Normalize path
-
-        LOCAL_CSV_PATH="${DOCU_PATH}/${ntfs_filename}.csv"
-
-        ## Check if a index-links file exists
-        if [ ! -f "${INDEX_LINKS_PATH}" ]; then
-            echo "Error: Index links file not found: ${INDEX_LINKS_PATH}" >&2
-            exit 1
-        fi
-
-        ## Ensure output directory exists
-        mkdir -p "$(dirname "${LOCAL_CSV_PATH}")"
-
-        ## Pulling and extracting repo file to local path
-        bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
-
-        ## WRITE BELOW YOUR INCLUSION RULES
-        #sed -ni '\|developer[.]mozilla[.]org|p' ${LOCAL_CSV_PATH}
-
-        ## WRITE BELOW YOUR EXCLUSION RULES
-        #sed -i '\|developer[.]mozilla[.]org/es|d' ${LOCAL_CSV_PATH}
-    done
+    echo "No filtering in this documentation.Jump to indexing"
 
 }
 
 indexing_rules(){
-    start_row="$1"
 
-    ## Iterate through each link of the documentation
-    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-       download_fromlist_waitretry ${DOWNLOAD_LINK} 0.05 2 ${start_row}
-    done
+    git clone https://github.com/git-lfs/git-lfs ${DOCU_PATH}/downloaded/git-lfs
 
 }
 
 arranging_rules(){
-
-    ## Making a backup of the index, if it doesnt exist
-    if [[ ! -d "${DOCU_PATH}/downloaded-bk" || ! "$(ls -A "${DOCU_PATH}/downloaded-bk" 2>/dev/null)" ]]; then
-        cp -r ${DOCU_PATH}/downloaded ${DOCU_PATH}/downloaded-bk/
-    fi
 
     # DOCUMENTATION SPECIFIC RULES
     # ---------------------------------------------------------------------------
@@ -89,10 +53,10 @@ arranging_rules(){
     # rm -r ${DOCU_PATH}/downloaded/blog
 
     # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
-    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
 
-
-    
+    #find "${DOCU_PATH}/downloaded" -mindepth 1 -not -path "${DOCU_PATH}/downloaded/docs/man" -not -path "${DOCU_PATH}/downloaded/docs/man/*" -exec rm -rf {} +
+    mv "${DOCU_PATH}/downloaded/git-lfs/docs/man" "${DOCU_PATH}/downloaded"
+    rm -rf "${DOCU_PATH}/downloaded/git-lfs" 
 
     # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
     # ---------------------------------------------------------------------------
@@ -102,7 +66,7 @@ arranging_rules(){
 
     ## Clean up the duplicate files
     # Keeping the least nested one
-    jdupes -r -N -d ${DOCU_PATH}/downloaded/
+   # jdupes -r -N -d ${DOCU_PATH}/downloaded/
 
 
     ## Modifying documents
@@ -111,11 +75,123 @@ arranging_rules(){
 
 parsing_rules(){
 
-    parse_html_docu_multirule -f "" -b ""
+    echo "No Parsing in this Documentation"
 
 }
 
 writting_rules(){
+
+    mapfile -t files_array < <(find "${DOCU_PATH}/downloaded" -type f -name "*.adoc" | sort -V)
+
+    ## First create the title array
+    title_array=()
+    for file in "${files_array[@]}"; do
+        title=$(basename "$file" | sed 's/\.adoc$//' )
+        title_array+=("$title")
+    done
+
+    ## Creating an associative array to map titles to file paths
+    declare -A paths_linkto
+
+    # Iterate through the indices of 'files_array'
+    for index in "${!files_array[@]}"; do
+        file="${files_array[$index]}"
+        title="${title_array[$index]}"
+        paths_linkto["$file"]="$title"
+    done
+
+
+    write_header
+    echo "" >> "$MAIN_TOUPDATE"  ## Adding a line break
+    write_toc
+
+
+
+    content_dump=$(mktemp /dev/shm/vim-dan-content_dump-XXXXXX.dan)
+
+    file_no=1
+
+    for path in "${files_array[@]}"; do
+
+        filename=$(echo "${path#${DOCU_PATH}/downloaded}")
+        file=$(echo $file | sed 's|^\.||')
+
+
+        buid=$(decimal_to_alphanumeric ${file_no})
+
+
+
+    content=$(
+        printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)"
+        echo "<B="${buid}">${paths_linkto[$path]}"
+        echo "& ${paths_linkto[$path]} &"
+        echo "${paths_linkto[$path]}" | figlet
+    )
+
+
+    echo "$content" > "${content_dump}"
+
+    asciidoctor -b docbook5 -o - "$path" | pandoc -f docbook -t plain >> "${content_dump}"
+
+    echo "</B>" >> "${content_dump}"
+
+    ## Cleanup Command
+    tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+    if [[ -s "${content_dump}".new ]]; then
+        mv -f -- "${content_dump}".new "${content_dump}";
+    fi
+    ## EOF EOF cleanup command
+
+
+    ctags --options=NONE \
+          --options=${CURRENT_DIR}/../ctags-rules/dan.ctags \
+          --sort=no \
+          --append=yes \
+          --tag-relative=no \
+          -f ${VIMDAN_DIR}/.tags${DOCU_NAME} \
+              ${content_dump}
+        
+    cat ${content_dump} >> "${MAIN_TOUPDATE}"
+    file_no=$((file_no + 1))
+
+
+    done
+
+    ## Cleaning tags file
+
+    ## Deleting the header lines that are not leading lines
+    sed -i '27,$ {/^!_/d}' ${VIMDAN_DIR}/.tags${DOCU_NAME}
+    ## Ammending filename on tags file
+    sed -i "s|${content_dump}|${DOCU_NAME}.dan|" ${VIMDAN_DIR}/.tags${DOCU_NAME}
+    ## Cleaning duplicates of nested tags
+    sort -k1,1 -u ${VIMDAN_DIR}/.tags${DOCU_NAME} -o ${VIMDAN_DIR}/.tags${DOCU_NAME}
+
+
+
+    tags_header=$(mktemp /dev/shm/vim-dan-tags_header-XXXXXX.dan)
+    tags_body=$(mktemp /dev/shm/vim-dan-tags_body-XXXXXX.dan)
+
+    # Extract tag headers
+    grep '^!_TAG_' ${VIMDAN_DIR}/.tags${DOCU_NAME} > ${tags_header}
+
+    # Extract tag entries (excluding tag headers)
+    sed '/^!_TAG_/d' ${VIMDAN_DIR}/.tags${DOCU_NAME} > ${tags_body}
+
+    # Combine
+    cat ${tags_header} ${tags_body} > ${VIMDAN_DIR}/.tags${DOCU_NAME} && rm ${tags_header} ${tags_body}
+
+
+    # Correct the tags file so to accept (X)
+
+pattern=$(cat << 'EOF'
+s/\$\/;"/\\( (X)\\)\\?\$\/;"/
+EOF
+)
+
+    sed -i "${pattern}" ${VIMDAN_DIR}/.tags${DOCU_NAME}
+
+
 
     # DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
@@ -127,43 +203,6 @@ writting_rules(){
     ##     Removing <200b>
     ##
     ## Change accordingly
-
-cleanup_command=$(cat <<'EOF'
-tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
-
-if [[ -s "${content_dump}".new ]]; then
-    mv -f -- "${content_dump}".new "${content_dump}";
-fi
-#    sed \
-#        -e 's/¶//g' \
-#        -e 's/[[:space:]]\+¶//g' \
-#        -e '/^\[\] \[\]$/d' \
-#        -e '/^\[\]$/d' \
-#        -i "${content_dump}"
-EOF
-)
-
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-
-    ## Change below the html tags to be parsed -f for titles , -b for body
-    # Example: 
-    #    We parse the Titles of the Topics by using 'h1'
-    #    We parse the Content of the Pages by using 'article'
-    
-    #    write_html_docu_multirule -f "h1" -b "article" -cd "javascript"
-    #
-    #  Other Example:
-    #    You may use various tags, the firstone to be found will be used
-    #    In the documentation downloaded some pages are different than others
-    #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
-    #
-    #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cd "javascript"
-    #
-    
-
-    write_html_docu_multirule -f "" -b "" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
 
 
     write_ext_modeline
