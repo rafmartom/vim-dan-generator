@@ -1,7 +1,7 @@
 name: Document Release
 
-on:
-  push:
+#on:
+#  push:
     tags:
       - 'docus-release-*'
 
