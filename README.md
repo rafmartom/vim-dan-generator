@@ -14,6 +14,19 @@ sudo apt install lua5.4 luarocks liblua5.4-dev -y
 # https://github.com/universal-ctags/ctags
 ```
 
+## Documentation release script
+
+If you have parsed your own .dan documentation, you have it locally and you want to post it in your fork, you can use the `package-docu.sh` script
+
+Place the resulting `<docu>.dan` and `.tags<docu>` file/s into `./ready-docus/` and just do
+
+```
+$ ./scripts/package-docus.sh --create-release
+```
+
+It will create a public release for those documentations,available for everyone.
+You need to have `gh` installed and logged in.
+
 ## Limitations
 
 - Note that the tagging stage of a documentation is the longest stage. It may be even exponential with the size of the `.dan` been tagged, but it is estimated that a 100 MB `.dan` may take more than 10 days of tagging.  When dealing with this big files it is important that the file has been formed properly and it is not going to be modified.
