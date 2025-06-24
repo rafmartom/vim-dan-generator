@@ -8,7 +8,8 @@ Generator of .dan files in use on vim's plugin vim-dan
 
 ```
 npm install puppeteer-core csv-parser json2csv commander unbzip2-stream
-sudo apt install csvtool
+sudo apt install csvtool -y
+sudo apt install lua5.4 luarocks liblua5.4-dev -y
 # Universal ctags build from source
 # https://github.com/universal-ctags/ctags
 ```
