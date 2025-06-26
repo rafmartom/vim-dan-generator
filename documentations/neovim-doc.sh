@@ -12,6 +12,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
 DOWNLOAD_LINKS=(
+https://neovim.io/doc/
 )
 
 ## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
@@ -56,16 +57,14 @@ filtering_rules() {
         bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
 
         ## WRITE BELOW YOUR INCLUSION RULES
-        #incl_1=$(mktemp); sed -n '\|nodejs[.]org/docs/latest/|p' "${LOCAL_CSV_PATH}" > "$incl_1"
-        #incl_2=$(mktemp); sed -n '\|nodejs[.]org/en/guides/|p' "${LOCAL_CSV_PATH}" > "$incl_2"
-        #incl_3=$(mktemp); sed -n '\|nodejs[.]org/en/learn/|p' "${LOCAL_CSV_PATH}" > "$incl_3"
+        incl_1=$(mktemp); sed -n '\|neovim[.]io/doc/user/|p' "${LOCAL_CSV_PATH}" > "$incl_1"
+        #incl_2=$(mktemp); sed -n '\|neovim[.]io/node-client/|p' "${LOCAL_CSV_PATH}" > "$incl_2"
 
-        #cat "$incl_1" "$incl_2" "$incl_3" > "${LOCAL_CSV_PATH}"
-        #rm "$incl_1" "$incl_2" "$incl_3"
+        cat "$incl_1" > "${LOCAL_CSV_PATH}"
+        rm "$incl_1"
 
         ## WRITE BELOW YOUR EXCLUSION RULES
         #sed -i '\|developer[.]mozilla[.]org/es|d' ${LOCAL_CSV_PATH}
-
     done
 
 }
@@ -117,7 +116,7 @@ arranging_rules(){
 
 parsing_rules(){
 
-    parse_html_docu_multirule -f "" -b ""
+    parse_html_docu_multirule -f "h1" -b ".toc, .col-wide"
 
 }
 
@@ -169,7 +168,7 @@ EOF
     #
     
 
-    write_html_docu_multirule -f "" -b "" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
+    write_html_docu_multirule -f "h1" -b ".toc, .col-wide" -cd "vim" -il -c "105" -cc "${cleanup_command}"
 
 
     write_ext_modeline

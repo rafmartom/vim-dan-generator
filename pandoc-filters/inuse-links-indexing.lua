@@ -218,7 +218,7 @@ function is_external_link(href)
     if href:match("^#$") or href:match("^https?://") then
         return true
     elseif href:match("^//") then
-dprint('[DEBUG] href starting with / : ' .. href) -- DEBUGGING
+    dprint('[DEBUG] href starting with / : ' .. href) -- DEBUGGING
 
         return false 
     end 
@@ -365,6 +365,10 @@ function loading_arguments (doc)
     links_index_csv = tostring(PANDOC_WRITER_OPTIONS["variables"]["links_index_csv"]) or nil
     file_processed = tostring(PANDOC_WRITER_OPTIONS["variables"]["file_processed"]) or nil
 
+    dprint('[DEBUG] docu_path : ' .. docu_path) -- DEBUGGING
+    dprint('[DEBUG] links_index_csv : ' .. links_index_csv) -- DEBUGGING
+    dprint('[DEBUG] file_processed : ' .. file_processed) -- DEBUGGING
+
     return doc
 end
 
@@ -390,6 +394,8 @@ function check_links(elem)
 
     href_basename = PATH.basename(href)
 
+    dprint('[DEBUG] checking href : ' .. href) -- DEBUGGING
+
     -- Correction for urls that finnish in path
     --  for instance href="../footagesource/" that will be pointing to
     --         href="../footagesource/index.html"
@@ -413,6 +419,8 @@ function check_links(elem)
 
     -- 0 - Discard all External Links or Unknown
     if is_external_link(href) then
+        dprint('[DEBUG] Discarding cause is a external link href : ' .. href) -- DEBUGGING
+
         return
     end 
 
@@ -441,10 +449,16 @@ function check_links(elem)
     -- If it doesn't exist skip and go to the next CodeBlock
     if not file_exists_result then
 --        dprint('[DEBUG] This File Doesnt Exists locally : ') -- DEBUGGING
+        dprint('[DEBUG] File doesnt exists localy href : ' .. href) -- DEBUGGING
 
         return
     end
     
+    dprint('[DEBUG] Marking link in use !!') -- DEBUGGING
+    dprint('[DEBUG] rel_path : ' .. rel_path) -- DEBUGGING
+    dprint('[DEBUG] anchor : ' .. tostring(anchor)) -- DEBUGGING
+
+
 
     mark_links_in_use('.' .. rel_path, anchor, entries)
 

@@ -12,6 +12,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
 DOWNLOAD_LINKS=(
+https://vimdoc.sourceforge.net/htmldoc/
 )
 
 ## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
@@ -56,16 +57,10 @@ filtering_rules() {
         bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
 
         ## WRITE BELOW YOUR INCLUSION RULES
-        #incl_1=$(mktemp); sed -n '\|nodejs[.]org/docs/latest/|p' "${LOCAL_CSV_PATH}" > "$incl_1"
-        #incl_2=$(mktemp); sed -n '\|nodejs[.]org/en/guides/|p' "${LOCAL_CSV_PATH}" > "$incl_2"
-        #incl_3=$(mktemp); sed -n '\|nodejs[.]org/en/learn/|p' "${LOCAL_CSV_PATH}" > "$incl_3"
-
-        #cat "$incl_1" "$incl_2" "$incl_3" > "${LOCAL_CSV_PATH}"
-        #rm "$incl_1" "$incl_2" "$incl_3"
+        #sed -ni '\|developer[.]mozilla[.]org|p' ${LOCAL_CSV_PATH}
 
         ## WRITE BELOW YOUR EXCLUSION RULES
         #sed -i '\|developer[.]mozilla[.]org/es|d' ${LOCAL_CSV_PATH}
-
     done
 
 }
@@ -95,8 +90,10 @@ arranging_rules(){
     # rm -r ${DOCU_PATH}/downloaded/blog
 
     # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
-    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
+    find ${DOCU_PATH}/downloaded -mindepth 2 -maxdepth 2 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
 
+    rm ${DOCU_PATH}/downloaded/help.html
+    rmdir ${DOCU_PATH}/downloaded/vimdoc.sourceforge.net
 
     
 
@@ -108,7 +105,7 @@ arranging_rules(){
 
     ## Clean up the duplicate files
     # Keeping the least nested one
-    jdupes -r -N -d ${DOCU_PATH}/downloaded/
+    # jdupes -r -N -d ${DOCU_PATH}/downloaded/
 
 
     ## Modifying documents
