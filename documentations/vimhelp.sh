@@ -86,7 +86,7 @@ arranging_rules(){
     # rm -r ${DOCU_PATH}/downloaded/blog
 
     # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
-#    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
+    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
 
 
     
@@ -103,6 +103,34 @@ arranging_rules(){
 
 
     ## Modifying documents
+
+### Tried to solve problem of everything embedded in <pre>
+###    echo 'Modifying files that have got all the content in <pre> tags'
+###    echo 'Re formatting files'
+###
+###    mapfile -t files_array < <(find "${DOCU_PATH}/downloaded" -type f -name "*.html" | sort -V)
+###
+###    for file in "${files_array[@]}"; do
+###
+###
+###    perl -i -pe '
+###    BEGIN { $in = 0; }
+###    if (/^<pre>$/) {
+###        $in = 1;
+###        $_ .= "\n";
+###    } elsif (/^<\/pre>$/) {
+###        $in = 0;
+###        $_ .= "\n";
+###    } elsif ($in) {
+###        s/\t/&emsp;/g;
+###        s/ (?![^<]*>)/&nbsp;/g;  # Replace spaces not inside tags
+###        $_ .= "<br>\n" if /\S/;  # Only append <br> if line has non-whitespace
+###    }
+###    ' ${file}
+###
+###    sed -i '{/<pre>/d; /<\/pre>/d}' ${file}
+
+    done
 }
 
 parsing_rules(){
