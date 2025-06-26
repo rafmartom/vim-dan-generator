@@ -959,8 +959,7 @@ function find_same_name_sibling_directory() {
     local ext="$2"
     # Find all .EXT files in the directory
     ext_files=$(find "$dir" -maxdepth 1 -type f -name "*.${ext}" -printf "%f\n")
-    
-    # Loop through EXT files
+    # Loop through EXT files for ext_file in $ext_files; do
     for ext_file in $ext_files; do
         # Check if there's a corresponding directory with the same name
         if [ -d "${dir}/${ext_file%.*}" ]; then
@@ -1292,7 +1291,7 @@ function download_fromlist_waitretry() {
     ## We are iterating through the .csv line by line
     total_lines=$(wc -l < ${LOCAL_CSV_PATH} ) 
 
-
+    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"
 
 
     ## Advance to the first ,0 found in the .csv
@@ -1316,6 +1315,7 @@ function download_fromlist_waitretry() {
         ## If the file hasnt been attempted to download yet
         if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 8  ] && [ "$exit_status" -ne 6  ]; then 
 #        if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 6  ]; then 
+# --execute robots=off --user-agent=${user_agent}
             dirpath=$(echo "$url" | sed 's|https://||;s|/[^/]*$||')
             filename=$(basename "$url")
 
@@ -1328,8 +1328,9 @@ function download_fromlist_waitretry() {
                 wget_status="0"
             fi
 
-            if [ "$wget_status" -eq 8 ]; then
-                echo "There was a server error"
+            if [[ "$wget_status" -eq 4 || "$wget_status" -eq 8 ]]; then
+                echo "Wget failed with Network (4) or Server Error (8)"
+#                echo "There was a server error"
                 echo "Cooling it down and retrying after the wait_retry : ${WAIT_RETRY}"
                 sleep ${WAIT_RETRY} 
             fi
@@ -1352,6 +1353,97 @@ function download_fromlist_waitretry() {
 
 
 }
+
+
+
+# @description
+# Out of a <websiteLinks>.csv created from standard_spider()
+#      Download each link
+#          - Updating the .csv with status code
+#          - Download it to DOCU_PATH/downloaded
+# @stdout Return Description
+# @example download_fromlist_waitretry_curl
+function download_fromlist_waitretry_curl() {
+    DOWNLOAD_LINK=$1
+    WAIT=$2
+    WAIT_RETRY=$3
+    START_ROW=${4:-1}  # Use $4 if provided, default to 1
+
+    ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
+
+    ## Create downloaded directory if it doesn't exists
+    [ ! -d "${DOCU_PATH}/downloaded" ] && mkdir -p "${DOCU_PATH}/downloaded"
+
+    ## Check if a local csv has been copied, if not copy the one from the repository
+    LOCAL_CSV_PATH="${DOCU_PATH}/${ntfs_filename}.csv"
+    if [ ! -f ${DOCU_PATH}/${ntfs_filename}.csv ]; then
+        echo "No previous local csv has been found" >&2
+        echo "Starting the index from the scratch ..." >&2
+        bunzip2 -kc "$CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2" > "${LOCAL_CSV_PATH}"
+#        cp "$CURRENT_DIR/../index-links/${ntfs_filename}.csv" "${LOCAL_CSV_PATH}"
+    else
+        echo "Resuming a previous download ..." >&2
+    fi
+
+
+    ## We are iterating through the .csv line by line
+    total_lines=$(wc -l < ${LOCAL_CSV_PATH} )
+
+    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59"
+
+
+    ## Advance to the first ,0 found in the .csv
+    # adjust START_ROW to the first line_no with a pending download ,-1 given an already existent START_ROW
+#    START_ROW=$(awk -v start_row="${START_ROW}" 'NR >= start_row && /,(-1|[1-8])$/ { print NR; exit }' "${LOCAL_CSV_PATH}" )
+    START_ROW=$(awk -v start_row="${START_ROW}" 'NR >= start_row && /,(-1|[1-5]|7)$/ { print NR; exit }' "${LOCAL_CSV_PATH}" )
+
+
+
+    ## Set the starting row number, with a boundary check
+    row_no=${START_ROW}
+
+    while [ "$row_no" -le "$total_lines" ]; do
+        row=$(sed -n "${row_no}p" "${LOCAL_CSV_PATH}" )  # Extract the specific row number $row_no
+
+        ## Parsing url and exit_status
+        url=$(echo "$row" | csvtool col 1 - | sed 's/^"\(.*\)"$/\1/')
+        exit_status=$(echo "$row" | csvtool col 2 -)
+
+
+        ## If the file hasnt been attempted to download yet
+        if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 8  ] && [ "$exit_status" -ne 6  ]; then
+#        if [ "$exit_status" -ne 0 ] && [ "$exit_status" -ne 6  ]; then
+            dirpath=$(echo "$url" | sed 's|https://||;s|/[^/]*$||')
+            filename=$(basename "$url")
+
+            curl -L --fail --create-dirs -o "${DOCU_PATH}/downloaded/${dirpath}/${filename}" "$url" > /dev/null 2>&1
+            wget_status=${?}
+
+            if [ "$wget_status" -eq 0 ]; then
+                echo "Succesfull download, waiting...: ${url}"
+                sleep ${WAIT}
+            else
+                echo "Curl detected some error"
+                sleep ${WAIT_RETRY}
+                echo "Cooling it down and retrying after the wait_retry : ${WAIT_RETRY}"
+            fi
+
+
+            ## Update in-place the row of the file with the new wget_status
+            row="\"${url}\",${wget_status}"
+
+            echo "Updated row : ${row}" >&2
+            echo "Completed ${row_no} out of ${total_lines}" >&2
+
+            sed -i "${row_no}c\\${row}" "${LOCAL_CSV_PATH}"
+        fi
+            ((row_no++))
+    done
+
+
+
+}
+
 
 
 # @description standard_index Function Description
@@ -1500,7 +1592,7 @@ function write_toc() {
             done
 
             if [[ $current_nesting_level -eq $file_nesting_level ]]; then
-                unsanitized_title=$(echo ${paths_linkto[$file]} | sed -e 's/\\"/"/g' -e "s/\\'/'/g" )
+                unsanitized_title=$(echo ${paths_linkto[$file]} | sed -e 's/\\"/"/g' -e 's/\\\x27/\x27/g')
                 echo "<L=$(decimal_to_alphanumeric ${file_no})>${unsanitized_title}</L>" >> "$MAIN_TOUPDATE"
             else
                 echo -ne "- ${dirs_array[($current_nesting_level)]}\n" >> "$MAIN_TOUPDATE"
@@ -1509,6 +1601,7 @@ function write_toc() {
 
         prev_dirs_array=("${dirs_array[@]}")
         file_no=$((file_no + 1))
+
     done
 
 
@@ -1586,7 +1679,14 @@ function parse_html_docu_multirule() {
                     | sed -e ':a;N;$!ba;s/\n/ /g' \
                     | sed -e 's/ ¶//g' \
                     | sed -e 's/¶//g' \
-                    | sed -e "s/['\"]/\\\\\0/g")
+                    | sed -e "s/['\"]/\\\\\0/g" \
+#                    | sed -e 's/\$/DollarSign/g' \
+#                    | sed -e "s/'\''/SingleQuote/g" \
+#                    | sed -e 's/(/OpenParen/g' \
+#                    | sed -e 's/)/CloseParen/g' \
+#                    | sed -e 's/;/SemiColon/g' \
+#                    | sed -e 's/\*/Asterisk/g' \
+            )
             if [ -n "$title" ]; then
                 found_selector=true
                 break
@@ -1632,7 +1732,26 @@ function parse_html_docu_multirule() {
         ## [LINKS-TARGET-INDEXING] Indexing all anchor links to links-target-index.csv
         for content_parsing in "${content_parsing_array[@]}"; do
 
-            cmd="sed 's/role=\"main\"/role=\"maine\"/g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o "${content_dump_check}" -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua) -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv} -V parsed_title=\"${paths_linkto[$file]}\" -V file_no=${file_no}"
+        ## Sanitizing filenames
+        # See: GitHub Issue #2 (https://github.com/rafmartom/vim-dan-generator/issues/2)
+        ##sane_title=$(sed -e 's/\$/dollarSign/g' \
+        ##        -e "s/'/SingleQuote/g" \
+        ##        -e 's/\\(/OpenParen/g' \
+        ##        -e 's/\\)/CloseParen/g' \
+        ##        -e 's/;/SemiColon/g' \
+        ##        <<<"${paths_linkto[$file]}")
+        title=${paths_linkto[$file]}
+
+            cmd=$(cat <<EOF
+            sed 's/role="main"/role="maine"/g' | pup -i 0 --pre '${content_parsing}'\
+            | pandoc -f html -t plain -o "${content_dump_check}" \
+            -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) \
+            -L $(realpath ${CURRENT_DIR}/../pandoc-filters/indexing-links-target.lua) \
+            -V file_processed="${filename}" -V links_index_csv=${links_index_csv} \
+            -V parsed_title="${title}" -V file_no=${file_no}
+ 
+EOF
+)
 
             eval "$cmd" < "$file"
 
@@ -1660,7 +1779,15 @@ function parse_html_docu_multirule() {
 
         for content_parsing in "${content_parsing_array[@]}"; do
 
-            cmd="sed 's/role=\"main\"/role=\"maine\"/g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o "${content_dump_check}" -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua) -V docu_path=${DOCU_PATH} -V file_processed=\"${filename}\" -V links_index_csv=${links_index_csv}"
+
+            cmd=$(cat <<EOF
+            sed 's/role="main"/role="maine"/g' | pup -i 0 --pre '${content_parsing}' \
+            | pandoc -f html -t plain -o "${content_dump_check}" \
+            -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) \
+            -L $(realpath ${CURRENT_DIR}/../pandoc-filters/inuse-links-indexing.lua) \
+            -V docu_path=${DOCU_PATH} -V file_processed="${filename}" -V links_index_csv=${links_index_csv}
+EOF
+)
 
 
             eval "$cmd" < "$file"
@@ -1680,6 +1807,7 @@ function parse_html_docu_multirule() {
 
 
 }
+
 
 # @description write_html_docu_multirule Function Description
 # Similar as write_docu_multirule() but simplified, just to input html tags such as
@@ -1819,7 +1947,14 @@ function write_html_docu_multirule() {
                     | sed -e ':a;N;$!ba;s/\n/ /g' \
                     | sed -e 's/ ¶//g' \
                     | sed -e 's/¶//g' \
-                    | sed -e "s/['\"]/\\\\\0/g")
+                    | sed -e "s/['\"]/\\\\\0/g" \
+#                    | sed -e 's/\$/DollarSign/g' \
+#                    | sed -e "s/'\''/SingleQuote/g" \
+#                    | sed -e 's/(/OpenParen/g' \
+#                    | sed -e 's/)/CloseParen/g' \
+#                    | sed -e 's/;/SemiColon/g' \
+#                    | sed -e 's/\*/Asterisk/g' \
+            )
             if [ -n "$title" ]; then
                 found_selector=true
                 break
@@ -1833,6 +1968,7 @@ function write_html_docu_multirule() {
 
         # Append the title to the title_array
         title_array+=("$title")
+
     done
 
     ## Creating an associative array to map titles to file paths
@@ -1854,7 +1990,6 @@ function write_html_docu_multirule() {
     fi
     
 
-#    set -x
     if [ -f "${MAIN_TOUPDATE}" ]; then
         echo "A previous ${MAIN_TOUPDATE} has been found, doing checks to resume previous writting" >&2
 
@@ -1889,23 +2024,14 @@ function write_html_docu_multirule() {
         scr_csv_iterator_needs_catchup=$(mktemp /dev/shm/scr_csv_iterator_needs_catchup.XXXXXX)
     fi
 
-
-#echo "[DEBUG] buid : ${buid}" ## DEBUGGING
-
     ## Checking for a resumed writting
     if [[ -n "$buid" ]]; then
-#echo "WANG!!"        ## DEBUGGING
-
         file_no=$(alphanumeric_to_decimal ${buid})
         found_file=false
     else
-#echo "LANG!!"        ## DEBUGGING
         file_no=1
         found_file=true
     fi 
-
-
-#read -p "On Break point... Press enter to continue..." ## DEBUGGING
 
     content_dump_nohead=$(mktemp /dev/shm/vim-dan-content_dump_nohead-XXXXXX.dan)
     content_dump=$(mktemp /dev/shm/vim-dan-content_dump-XXXXXX.dan)
@@ -1917,16 +2043,8 @@ function write_html_docu_multirule() {
         filename=$(echo "${path#${DOCU_PATH}/downloaded}")
         file=$(echo $file | sed 's|^\.||')
 
-#echo "[DEBUG] filename : ${filename}" ## DEBUGGING
-#echo "[DEBUG] file : ${file}" ## DEBUGGING
-#echo "[DEBUG] found_file : ${found_file}" ## DEBUGGING
-#echo "[DEBUG] file_no : ${file_no}" ## DEBUGGING
-
-
-#echo "[DEBUG] found_file : ${found_file}" ## DEBUGGING
 
         if [[ -n "$file" && $found_file == false ]]; then
-#echo "BANG!!"        ## DEBUGGING
             if [[ "$filename" == "$file" ]]; then
                 found_file=true
             else
@@ -1935,7 +2053,6 @@ function write_html_docu_multirule() {
 
         fi
 
-#echo "[DEBUG] found_file : ${found_file}" ## DEBUGGING
 
 
         # Generating buid sequencially
@@ -1943,29 +2060,17 @@ function write_html_docu_multirule() {
         # @todo Checking buid against target-links-index.csv
 
 
-#echo "[DEBUG] wc -l MAIN_TOUPDATE : $(wc -l ${MAIN_TOUPDATE})" ## DEBUGGING
-#echo "[DEBUG] no_empty_lines : ${no_empty_lines}" ## DEBUGGING
-
 # Create content in a variable
 content=$(
     printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)"
     echo "<B="${buid}">${paths_linkto[$path]}"
-    echo "& ${paths_linkto[$path]} &"
+    echo "&${paths_linkto[$path]}&"
     echo "${paths_linkto[$path]}" | figlet
 )
 
-# Get empty line count
-#no_empty_lines=$(( $(wc -l < "${MAIN_TOUPDATE}") + 14 ))
 
-
-# Write to file (empty lines + content)
-#printf '\n%.0s' $(seq 1 "$no_empty_lines") > "${content_dump}"
 echo "$content" >> "${content_dump}"
 
-#echo "[DEBUG] content_dump : ${content_dump}" ## DEBUGGING
-#echo "[DEBUG] content_dump_nohead : ${content_dump_nohead}" ## DEBUGGING
-
-#read -p "On Break point... Press enter to continue..." ## DEBUGGING
 
         found_selector=""
 
@@ -1975,7 +2080,17 @@ echo "$content" >> "${content_dump}"
 
             # Formulating command
             # Initial cmd
-            cmd="sed 's/role=\"main\"/role=\"maine\"/g' | pup -i 0 --pre '${content_parsing}' | pandoc -f html -t plain -o ${content_dump_nohead} -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) -V file_processed=\"${filename}\" -V file_no=\"${file_no}\""
+            
+
+
+            cmd=$(cat <<EOF
+            sed 's/role="main"/role="maine"/g' | pup -i 0 --pre '${content_parsing}' \
+            | pandoc -f html -t plain -o ${content_dump_nohead} \
+            -L $(realpath ${CURRENT_DIR}/../pandoc-filters/no-permalinks-writing.lua) \
+            -V file_processed="${filename}" -V file_no="${file_no}"
+EOF
+)
+
 
             if [[ -n "$wrap_columns" ]]; then
                 cmd+=" --columns=${wrap_columns}"

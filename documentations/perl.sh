@@ -97,8 +97,15 @@ arranging_rules(){
     # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
     find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
 
-    rm ${DOCU_PATH}/downloaded/docs/latest/index.html
-    rm ${DOCU_PATH}/downloaded/docs/latest/api/all.html
+
+    # Replace $'(); with 'dollarSign' in filenames to prevent eval-related bugs.
+    # See: GitHub Issue #2 (https://github.com/rafmartom/vim-dan-generator/issues/2)
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/\$/DollarSign/g' {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename "s/'/SingleQuote/g" {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/\(/OpenParen/g' {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/\)/CloseParen/g' {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/;/SemiColon/g' {} +
+
 
     # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
     # ---------------------------------------------------------------------------
@@ -117,7 +124,7 @@ arranging_rules(){
 
 parsing_rules(){
 
-    parse_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main"
+    parse_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main" -b "div#wrapperlicious"
 
 }
 
@@ -134,13 +141,17 @@ writting_rules(){
     ##
     ## Change accordingly
 
+cleanup_command=$(cat <<'EOF'
+tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+if [[ -s "${content_dump}".new ]]; then
+    mv -f -- "${content_dump}".new "${content_dump}";
+fi
 #    sed \
-#        -e '/^Page Contents$/d' \
-#        -e 's/¶//g' \
-#        -e 's/[[:space:]]\+¶//g' \
 #        -e '/^\[\] \[\]$/d' \
-#        -e '/^\[\]$/d' \
-#        -i "${MAIN_TOUPDATE}"
+#        -i "${content_dump}"
+EOF
+)
 
     # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
@@ -162,7 +173,7 @@ writting_rules(){
     #
     
 
-    write_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main" -cp -il -c "105"
+    write_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main" -b "div#wrapperlicious" -cd "perl" -il -c "105" -cc "${cleanup_command}"
 
 
 

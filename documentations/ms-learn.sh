@@ -1,20 +1,28 @@
-#!/bin/bash
+#!/bin/bash 
+# @file ms-learn
+# @brief vim-dan ruleset file for documentation on ms-learn
+# @description
+#   author: rafmartom <rafmartom@gmail.com>
 
-# DECLARING VARIABLES AND PROCESSING ARGS
-# -------------------------------------
-# (do not touch)
+
+## ----------------------------------------------------------------------------
+# @section SCRIPT_VAR_INITIALIZATION
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
-DOCU_PATH="$1"
-shift
-DOCU_NAME=$(basename ${0} '.sh')
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
 https://learn.microsoft.com
 )
-# -------------------------------------
-# eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
+
+## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+## ----------------------------------------------------------------------------
+
+
+## ----------------------------------------------------------------------------
+# @section ACTION_DEFINITION
+# @description Ruleset for each individual stage of vim-dan
+
 
 spidering_rules(){
 
@@ -25,11 +33,50 @@ spidering_rules(){
 
 }
 
+
+filtering_rules() {
+
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
+        RAW_INDEX_LINKS_PATH="$CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2"
+        INDEX_LINKS_PATH=$(realpath -m "${RAW_INDEX_LINKS_PATH}")  # Normalize path
+
+        LOCAL_CSV_PATH="${DOCU_PATH}/${ntfs_filename}.csv"
+
+        ## Check if a index-links file exists
+        if [ ! -f "${INDEX_LINKS_PATH}" ]; then
+            echo "Error: Index links file not found: ${INDEX_LINKS_PATH}" >&2
+            exit 1
+        fi
+
+        ## Ensure output directory exists
+        mkdir -p "$(dirname "${LOCAL_CSV_PATH}")"
+
+        ## Pulling and extracting repo file to local path
+        bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
+
+        ## WRITE BELOW YOUR INCLUSION RULES
+        # if more than one rule needs to use temporary files
+        incl_1=$(mktemp); sed -n '\|learn[.]microsoft[.]com/en-us|p' "${LOCAL_CSV_PATH}" > "$incl_1"
+        incl_2=$(mktemp); sed -n '\|learn[.]microsoft[.]com/azure|p' "${LOCAL_CSV_PATH}" > "$incl_2"
+        #incl_2=$(mktemp); sed -n '\|nodejs[.]org/en/guides/|p' "${LOCAL_CSV_PATH}" > "$incl_2"
+
+        cat "$incl_1" "$incl_2" > "${LOCAL_CSV_PATH}"
+        rm "$incl_1" "$incl_2"
+
+        ## WRITE BELOW YOUR EXCLUSION RULES
+        sed -i '\|learn[.]microsoft[.]com/en-us/answers/*|d' ${LOCAL_CSV_PATH}
+    done
+
+}
+
+
 indexing_rules(){
+    start_row="$1"
 
     ## Iterate through each link of the documentation
     for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
-        download_fromlist -l ${DOWNLOAD_LINK}
+       download_fromlist_waitretry ${DOWNLOAD_LINK} 0.05 2 ${start_row}
     done
 
 }
@@ -48,11 +95,21 @@ arranging_rules(){
     # Example, you want to remove the blog section that has been indexed
     # rm -r ${DOCU_PATH}/downloaded/blog
 
-    
+    # If there is only one DOWNLOAD_LINK , (so one hostname), unnest the files
+    find ${DOCU_PATH}/downloaded -mindepth 1 -maxdepth 1 -type d -exec sh -c 'mv "$0"/* "$1"/ && rmdir "$0"' {} ${DOCU_PATH}/downloaded \;
+
+
+    # Replace $'(); with 'dollarSign' in filenames to prevent eval-related bugs.
+    # See: GitHub Issue #2 (https://github.com/rafmartom/vim-dan-generator/issues/2)
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/\$/DollarSign/g' {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename "s/'/SingleQuote/g" {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/\(/OpenParen/g' {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/\)/CloseParen/g' {} +
+    find ${DOCU_PATH}/downloaded/ -type f -exec rename 's/;/SemiColon/g' {} +
+
 
     # EOF EOF EOF DOCUMENTATION SPECIFIC RULES
     # ---------------------------------------------------------------------------
-
 
 
     ## Files cleanup
@@ -65,8 +122,38 @@ arranging_rules(){
     ## Modifying documents
 }
 
+parsing_rules(){
+
+    parse_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main" -b "div#wrapperlicious"
+
+}
+
+
 
 writting_rules(){
+
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+cleanup_command=$(cat <<'EOF'
+tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+if [[ -s "${content_dump}".new ]]; then
+    mv -f -- "${content_dump}".new "${content_dump}";
+fi
+#    sed \
+#        -e '/^\[\] \[\]$/d' \
+#        -i "${content_dump}"
+EOF
+)
 
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
@@ -81,27 +168,10 @@ writting_rules(){
     #        The Content of the Pages sometimes is under "div.guide-content" sometimes under "body"
     #
     #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
-    #
-    write_html_docu_multirule -f "" -b "" -cp -lp -c "105"
+    
 
+    write_html_docu_multirule -f "#apicontent h2" -f "main h1" -b "div[role=maine]" -b "main" -b "div#wrapperlicious" -cd "perl" -il -c "105" -cc "${cleanup_command}"
 
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
-
-    sed -e 's/[[:space:]]\+¶//g' \
-        -e "s/$(echo -ne '\u200b')//g" \
-        -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 
@@ -140,39 +210,34 @@ writting_rules(){
     # ---------------------------------------------------------------------------
 }
 
-## PARSING ARGUMENTS
-## ------------------------------------
-# (do not touch)
-while getopts ":siap" opt; do
+
+## EOF EOF EOF ACTION_DEFINITION
+## ----------------------------------------------------------------------------
+
+
+## ----------------------------------------------------------------------------
+# @section SELECTING_ACTION
+# @brief Not to be customised
+
+while getopts ":sfx:apwh" opt; do
     case ${opt} in
-        s)
-            spidering_rules
-            ;;
-        i)
-            # Check if a start row number was provided
-            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
-                start_row="$2"
-                shift
+        s) spidering_rules ;;
+        f) filtering_rules ;;
+        x) 
+            if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then
+                indexing_rules "$OPTARG"
+            else
+                echo "Error: -x requires a numeric row number" >&2
+                exit 1
             fi
-            indexing_rules "$start_row"
             ;;
-        a)
-            arranging_rules
-            ;;
-        p)
-            parsing_rules
-            ;;
-        h | *)
-            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
-            echo "Options:"
-            echo "  -s  Spidering"
-            echo "  -i  Indexing"
-            echo "  -a  Arranging"
-            echo "  -p  Parsing"
-            echo "  -h  Help"
-            exit 0
-            ;;
+        a) arranging_rules ;;
+        p) parsing_rules ;;
+        w) writting_rules ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+        :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
     esac
 done
-## EOF EOF EOF PARSING ARGUMENTS
-## ------------------------------------
+
+## EOF EOF EOF SELECTING_ACTION 
+## ----------------------------------------------------------------------------

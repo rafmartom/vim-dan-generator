@@ -12,6 +12,7 @@ CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
 DOWNLOAD_LINKS=(
+https://github.com/git-lfs/git-lfs
 )
 
 ## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 

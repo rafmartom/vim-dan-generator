@@ -1,20 +1,31 @@
-#!/bin/bash
+#!/bin/bash 
+# @file luarocks
+# @brief vim-dan ruleset file for documentation on luarocks
+# @description
+#   author: rafmartom <rafmartom@gmail.com>
 
-# DECLARING VARIABLES AND PROCESSING ARGS
-# -------------------------------------
-# (do not touch)
+
+## ----------------------------------------------------------------------------
+# @section SCRIPT_VAR_INITIALIZATION
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
-DOCU_PATH="$1"
-shift
-DOCU_NAME=$(basename ${0} '.sh')
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
 https://luarocks.org
 )
-# -------------------------------------
-# eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
+
+## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+## ----------------------------------------------------------------------------
+
+
+
+
+## ----------------------------------------------------------------------------
+# @section ACTION_DEFINITION
+# @description Ruleset for each individual stage of vim-dan
+
+
 
 spidering_rules(){
 
@@ -24,6 +35,39 @@ spidering_rules(){
     done
 
 }
+
+filtering_rules() {
+
+    for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
+        ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
+        RAW_INDEX_LINKS_PATH="$CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2"
+        INDEX_LINKS_PATH=$(realpath -m "${RAW_INDEX_LINKS_PATH}")  # Normalize path
+
+        LOCAL_CSV_PATH="${DOCU_PATH}/${ntfs_filename}.csv"
+
+        ## Check if a index-links file exists
+        if [ ! -f "${INDEX_LINKS_PATH}" ]; then
+            echo "Error: Index links file not found: ${INDEX_LINKS_PATH}" >&2
+            exit 1
+        fi
+
+        ## Ensure output directory exists
+        mkdir -p "$(dirname "${LOCAL_CSV_PATH}")"
+
+        ## Pulling and extracting repo file to local path
+        bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
+
+        ## WRITE BELOW YOUR INCLUSION RULES
+        #sed -ni '\|developer[.]mozilla[.]org|p' ${LOCAL_CSV_PATH}
+
+        ## WRITE BELOW YOUR EXCLUSION RULES
+        #sed -i '\|socket[.]io/fr|d' ${LOCAL_CSV_PATH}
+    done
+
+}
+
+
+
 
 indexing_rules(){
 
@@ -65,24 +109,27 @@ arranging_rules(){
 
     ## DOWNLOADING ALL GITHUB LINKS
     echo "Parsing github README pages"
-    mapfile -t files_array < <(find ${DOCU_PATH}/downloaded/modules -mindepth 2 -maxdepth 2 -type f | sort -V)
+    mapfile -t files_array < <(find ${DOCU_PATH}/downloaded/luarocks.org/modules -mindepth 2 -maxdepth 2 -type f | sort -V)
 
     links_array=()
     for file in "${files_array[@]}"; do
         # Store the output of the grep command in a temporary variable
-        link=$(cat ${file} | pup 'a.external_url' | pandoc -f html -t plain | grep 'github.com')
+        link=$(cat ${file} | pup 'a.external_url attr{href}')
 
         # Check if the temporary variable is not empty
         if [[ -n "$link" ]]; then
 #            echo "Found github link ${link} on ${file} "
-            links_array+=("https://$link")
+#            links_array+=("https://$link")
+            links_array+=("$link")
         fi
     done
 
-    mkdir -p ${DOCU_PATH}/downloaded/github-links
+    mkdir -p ${DOCU_PATH}/downloaded/github.com
 
     for link in "${links_array[@]}"; do
-        wget -P ${DOCU_PATH}/downloaded/github-links "${link}"
+        if [[ "$link" == https://github.com/* ]]; then
+            wget --adjust-extension -P ${DOCU_PATH}/downloaded/github.com "${link}"
+        fi
     done
 
 
@@ -99,6 +146,14 @@ arranging_rules(){
 }
 
 
+parsing_rules(){
+
+    parse_html_docu_multirule -f "title" -b "main"
+
+}
+
+
+
 writting_rules(){
 
     # DOCUMENT CLEANUP RULES
@@ -113,11 +168,19 @@ writting_rules(){
     ## Change accordingly
 
 cleanup_command=$(cat <<'EOF'
-    sed -e 's/[[:space:]]\+¶//g' \
-        -e "s/$(echo -ne '\u200b')//g" \
+tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+if [[ -s "${content_dump}".new ]]; then
+    mv -f -- "${content_dump}".new "${content_dump}";
+fi
+    sed \
+        -e '/^\[\]$/d' \
+        -e 's/\[\]//g' \
+        -e '/^\[\] \[\]$/d' \
         -i "${content_dump}"
 EOF
 )
+
 
     # EOF EOF EOF DOCUMENT CLEANUP RULES
     # ---------------------------------------------------------------------------
@@ -136,7 +199,7 @@ EOF
     #
     #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
     #
-    write_html_docu_multirule -f "h1.heading-element" -b "article" -cp -lp -c "105" -cc "${cleanup_command}"
+    write_html_docu_multirule -f "title" -b "main" -cd "lua" -lp -c "105" -cc "${cleanup_command}"
 
 
 
@@ -176,39 +239,33 @@ EOF
     # ---------------------------------------------------------------------------
 }
 
-## PARSING ARGUMENTS
-## ------------------------------------
-# (do not touch)
-while getopts ":siap" opt; do
+## EOF EOF EOF ACTION_DEFINITION
+## ----------------------------------------------------------------------------
+
+
+## ----------------------------------------------------------------------------
+# @section SELECTING_ACTION
+# @brief Not to be customised
+
+while getopts ":sfx:apwh" opt; do
     case ${opt} in
-        s)
-            spidering_rules
-            ;;
-        i)
-            # Check if a start row number was provided
-            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
-                start_row="$2"
-                shift
+        s) spidering_rules ;;
+        f) filtering_rules ;;
+        x) 
+            if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then
+                indexing_rules "$OPTARG"
+            else
+                echo "Error: -x requires a numeric row number" >&2
+                exit 1
             fi
-            indexing_rules "$start_row"
             ;;
-        a)
-            arranging_rules
-            ;;
-        p)
-            parsing_rules
-            ;;
-        h | *)
-            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
-            echo "Options:"
-            echo "  -s  Spidering"
-            echo "  -i  Indexing"
-            echo "  -a  Arranging"
-            echo "  -p  Parsing"
-            echo "  -h  Help"
-            exit 0
-            ;;
+        a) arranging_rules ;;
+        p) parsing_rules ;;
+        w) writting_rules ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+        :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
     esac
 done
-## EOF EOF EOF PARSING ARGUMENTS
-## ------------------------------------
+
+## EOF EOF EOF SELECTING_ACTION 
+## ----------------------------------------------------------------------------

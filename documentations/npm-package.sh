@@ -123,6 +123,35 @@ parsing_rules(){
 
 writting_rules(){
 
+    # DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+    ## Retrieving content of the files and cleaning it
+    ## Change below patterns of text to be cleaned from the main document
+    ## 
+    ## For example the below patterns are used for
+    ##     Removing ¶
+    ##     Removing <200b>
+    ##
+    ## Change accordingly
+
+cleanup_command=$(cat <<'EOF'
+tr -cd '[:print:]\t\n ' < "${content_dump}" > "${content_dump}.new"
+
+if [[ -s "${content_dump}".new ]]; then
+    mv -f -- "${content_dump}".new "${content_dump}";
+fi
+#    sed \
+#        -e '/^\[\] \[\]$/d' \
+#        -i "${content_dump}"
+EOF
+)
+
+    # EOF EOF EOF DOCUMENT CLEANUP RULES
+    # ---------------------------------------------------------------------------
+
+
+
+
     ## Change below the html tags to be parsed -f for titles , -b for body
     # Example: 
     #    We parse the Titles of the Topics by using 'h1'
@@ -139,28 +168,8 @@ writting_rules(){
     #
     
 
-    write_html_docu_multirule -f "h1" -b "section, div.w-third-l" -cd "javascript" -il -c "105"
+    write_html_docu_multirule -f "h1" -b "section, div.w-third-l" -cd "javascript" -il -c "105" -cc "${cleanup_command}"
 
-
-    # DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
-    ## Retrieving content of the files and cleaning it
-    ## Change below patterns of text to be cleaned from the main document
-    ## 
-    ## For example the below patterns are used for
-    ##     Removing ¶
-    ##     Removing <200b>
-    ##
-    ## Change accordingly
-
-    sed \
-        -E -e '/^(\[\] )*\[\]$/d' \
-        -e '/^\[\]$/d' \
-        -e 's/\[\]//g' \
-        -i "${MAIN_TOUPDATE}"
-
-    # EOF EOF EOF DOCUMENT CLEANUP RULES
-    # ---------------------------------------------------------------------------
 
     write_ext_modeline
 

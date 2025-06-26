@@ -1,96 +1,94 @@
-const puppeteer = require('puppeteer-core');
 const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
-const { parse } = require('json2csv');
-const bz2 = require('unbzip2-stream');
-//const Command = require('commander');
-const { program } = require('commander');
-//import { Command } from 'commander'
-//const program = new Command();
+const puppeteer = require('puppeteer-core');
 
-program
-    .requiredOption('-d, --docu-path <path>', 'Path to the downloads directory')
-    .requiredOption('-c, --csv-path <path>', 'Path to the CSV file (bz2 compressed)')
-    .option('-w, --wait <ms>', 'Wait time between downloads', 2000)
-    .option('-r, --wait-retry <ms>', 'Wait time after a failed download', 5000);
-program.parse(process.argv);
+/**
+ * Reads a CSV of `url,status`, navigates to each URL with Puppeteer,
+ * saves the page content as .html, and updates statuses accordingly.
+ * @param {string} csvPath - Path to the input CSV file.
+ * @param {string} outputDir - Directory to save downloaded HTML.
+ * @param {number} start_row - Line number to start processing from (0-based, excluding header).
+ * @param {object} opts - Options: { wait, waitRetry, browserPath }.
+ */
+async function processCsvUrls(csvPath, outputDir, start_row = 0, opts = {}) {
+  const { wait = 2000, waitRetry = 5000, browserPath = '/usr/bin/chromium' } = opts;
 
-const options = program.opts();
-const DOCU_PATH = options.docuPath;
-const CSV_PATH = options.csvPath;
-const WAIT = parseInt(options.wait, 10);
-const WAIT_RETRY = parseInt(options.waitRetry, 10);
+  // Ensure output directory exists
+  if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
-/*
-if (!fs.existsSync(DOCU_PATH)) {
-    fs.mkdirSync(DOCU_PATH, { recursive: true });
+  // Load CSV
+  const entries = [];
+  let currentRow = 0;
+  await new Promise((resolve, reject) => {
+    fs.createReadStream(csvPath)
+      .pipe(csv(['url','status']))
+      .on('data', row => {
+        if (currentRow >= start_row) {
+          entries.push({ url: row.url, status: row.status });
+        }
+        currentRow++;
+      })
+      .on('end', resolve)
+      .on('error', reject);
+  });
+
+  const browser = await puppeteer.launch({
+    executablePath: browserPath,
+    headless: true
+  });
+  const page = await browser.newPage();
+
+  for (let entry of entries) {
+    if (!['0','6','8'].includes(entry.status)) {
+      try {
+        console.log(`👉 Navigating to ${entry.url}`);
+        await page.goto(entry.url, { waitUntil: 'networkidle2', timeout: 30000 });
+        const html = await page.content();
+
+        const { pathname } = new URL(entry.url);
+        const segments = pathname.split('/').filter(Boolean);
+        const name = segments.pop() || segments[segments.length - 1];
+        const filename = `${name}.html`;
+        fs.writeFileSync(path.join(outputDir, filename), html);
+        entry.status = '0';
+        console.log(`✅ Saved ${filename}`);
+        await new Promise(r => setTimeout(r, wait));
+      } catch (err) {
+        console.error(`❌ Error on ${entry.url}: ${err.message}`);
+        entry.status = '8';
+        console.log(`⏳ Retrying after ${waitRetry}ms`);
+        await new Promise(r => setTimeout(r, waitRetry));
+      }
+    } else {
+      console.log(`⏭ Skipping ${entry.url} (status=${entry.status})`);
+    }
+  }
+
+  await browser.close();
+
+  // Read original CSV to preserve rows before start_row
+  const allEntries = [];
+  await new Promise((resolve, reject) => {
+    fs.createReadStream(csvPath)
+      .pipe(csv(['url','status']))
+      .on('data', row => allEntries.push({ url: row.url, status: row.status }))
+      .on('end', resolve)
+      .on('error', reject);
+  });
+
+  // Update statuses for processed rows
+  for (let i = 0; i < entries.length; i++) {
+    const index = i + start_row;
+    if (index < allEntries.length) {
+      allEntries[index].status = entries[i].status;
+    }
+  }
+
+  // Write updated CSV
+  const lines = allEntries.map(e => `${e.url},${e.status}`);
+  fs.writeFileSync(csvPath, ['url,status', ...lines].join('\n'));
+  console.log('✅ All done! CSV updated.');
 }
 
-async function downloadFromListWaitRetry(csvFilePath) {
-    const urls = [];
-    const decompressedCsvPath = csvFilePath.replace(/\.bz2$/, '');
-    
-    // Decompress bz2 file if necessary
-    if (csvFilePath.endsWith('.bz2')) {
-        console.log('Decompressing CSV file...');
-        const fileStream = fs.createReadStream(csvFilePath).pipe(bz2());
-        const outputStream = fs.createWriteStream(decompressedCsvPath);
-        fileStream.pipe(outputStream);
-        await new Promise(resolve => outputStream.on('finish', resolve));
-    }
-    
-    if (!fs.existsSync(decompressedCsvPath)) {
-        console.error('CSV file not found:', decompressedCsvPath);
-        return;
-    }
-    
-    fs.createReadStream(decompressedCsvPath)
-        .pipe(csv())
-        .on('data', (row) => {
-            urls.push({ url: row.url, status: row.status || 'pending' });
-        })
-        .on('end', async () => {
-            const browser = await puppeteer.launch({
-                executablePath: '/usr/bin/chromium',
-                headless: true 
-            });
-
-
-            const page = await browser.newPage();
-            
-            for (let i = 0; i < urls.length; i++) {
-                const { url, status } = urls[i];
-                if (status !== '0' && status !== '6' && status !== '8') {
-                    try {
-                        console.log(`Downloading: ${url}`);
-                        await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
-                        const content = await page.content();
-                        
-                        const sanitizedFilename = url.replace(/[^a-zA-Z0-9]/g, '_') + '.html';
-                        const filePath = path.join(DOCU_PATH, sanitizedFilename);
-                        fs.writeFileSync(filePath, content);
-                        
-                        urls[i].status = '0';
-                        console.log(`Downloaded: ${url}`);
-                        await new Promise(resolve => setTimeout(resolve, WAIT));
-                    } catch (error) {
-                        console.error(`Error downloading ${url}:`, error.message);
-                        urls[i].status = '8';
-                        console.log(`Retrying in ${WAIT_RETRY / 1000} seconds...`);
-                        await new Promise(resolve => setTimeout(resolve, WAIT_RETRY));
-                    }
-                }
-            }
-            
-            await browser.close();
-            
-            // Save updated CSV
-            const updatedCsv = parse(urls, { fields: ['url', 'status'] });
-            fs.writeFileSync(decompressedCsvPath, updatedCsv);
-            console.log('Download process completed.');
-        });
-}
-
-downloadFromListWaitRetry(CSV_PATH);
-*/
+module.exports = { processCsvUrls };

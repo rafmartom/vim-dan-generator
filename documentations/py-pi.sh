@@ -1,20 +1,27 @@
-#!/bin/bash
+#!/bin/bash 
+# @file py-pi
+# @brief vim-dan ruleset file for documentation on py-pi
+# @description
+#   author: rafmartom <rafmartom@gmail.com>
 
-# DECLARING VARIABLES AND PROCESSING ARGS
-# -------------------------------------
-# (do not touch)
+
+## ----------------------------------------------------------------------------
+# @section SCRIPT_VAR_INITIALIZATION
+
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$CURRENT_DIR/../scripts/helpers.sh"
 
-DOCU_PATH="$1"
-shift
-DOCU_NAME=$(basename ${0} '.sh')
-MAIN_TOUPDATE="${DOCU_PATH}/${DOCU_NAME}-toupdate.dan"
 DOWNLOAD_LINKS=(
 https://pypi.org
 )
-# -------------------------------------
-# eof eof eof DECLARING VARIABLES AND PROCESSING ARGS
+
+## EOF EOF EOF SCRIPT_VAR_INITIALIZATION 
+## ----------------------------------------------------------------------------
+
+
+## ----------------------------------------------------------------------------
+# @section ACTION_DEFINITION
+# @description Ruleset for each individual stage of vim-dan
 
 spidering_rules(){
 
@@ -50,15 +57,48 @@ spidering_rules(){
 
 }
 
-indexing_rules(){
 
-    ## Iterate through each link of the documentation
+filtering_rules() {
+
     for DOWNLOAD_LINK in "${DOWNLOAD_LINKS[@]}"; do
         ntfs_filename=$(echo "${DOWNLOAD_LINK}" | sed 's/[<>:"\/\\|?*]/_/g')
-        set -x
-        node "$CURRENT_DIR/../scripts/download_from_list_wait_retry_pupp.js" --docu-path ${DOCU_PATH}/downloaded/ --csv-path $CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2 -w 3 -wr 80
-        set +x
+        RAW_INDEX_LINKS_PATH="$CURRENT_DIR/../index-links/${ntfs_filename}.csv.bz2"
+        INDEX_LINKS_PATH=$(realpath -m "${RAW_INDEX_LINKS_PATH}")  # Normalize path
+
+        LOCAL_CSV_PATH="${DOCU_PATH}/${ntfs_filename}.csv"
+
+        ## Check if a index-links file exists
+        if [ ! -f "${INDEX_LINKS_PATH}" ]; then
+            echo "Error: Index links file not found: ${INDEX_LINKS_PATH}" >&2
+            exit 1
+        fi
+
+        ## Ensure output directory exists
+        mkdir -p "$(dirname "${LOCAL_CSV_PATH}")"
+
+        ## Pulling and extracting repo file to local path
+        bunzip2 -kc "${INDEX_LINKS_PATH}" > "${LOCAL_CSV_PATH}"
+
+        ## WRITE BELOW YOUR INCLUSION RULES
+        # if more than one rule needs to use temporary files
+        #incl_1=$(mktemp); sed -n '\|perldoc[.]perl[.]org/|p' "${LOCAL_CSV_PATH}" > "$incl_1"
+        #incl_2=$(mktemp); sed -n '\|nodejs[.]org/en/guides/|p' "${LOCAL_CSV_PATH}" > "$incl_2"
+
+        #cat "$incl_1" > "${LOCAL_CSV_PATH}"
+        #rm "$incl_1"
+
+        ## WRITE BELOW YOUR EXCLUSION RULES
+        #sed -i '\|perldoc[.]perl[.]org/5.*|d' ${LOCAL_CSV_PATH}
     done
+
+}
+
+
+indexing_rules(){
+    start_row="$1"
+
+    mkdir -p ${DOCU_PATH}/downloaded/project
+    node "$CURRENT_DIR/../scripts/run_pupp-py-pi.js" -r "${start_row}"
 
 }
 
@@ -98,39 +138,33 @@ writting_rules(){
 
 }
 
-## PARSING ARGUMENTS
-## ------------------------------------
-# (do not touch)
-while getopts ":siap" opt; do
+## EOF EOF EOF ACTION_DEFINITION
+## ----------------------------------------------------------------------------
+
+
+## ----------------------------------------------------------------------------
+# @section SELECTING_ACTION
+# @brief Not to be customised
+
+while getopts ":sfx:apwh" opt; do
     case ${opt} in
-        s)
-            spidering_rules
-            ;;
-        i)
-            # Check if a start row number was provided
-            if [[ -n "$2" && "$2" =~ ^[0-9]+$ ]]; then
-                start_row="$2"
-                shift
+        s) spidering_rules ;;
+        f) filtering_rules ;;
+        x) 
+            if [[ -n "$OPTARG" && "$OPTARG" =~ ^[0-9]+$ ]]; then
+                indexing_rules "$OPTARG"
+            else
+                echo "Error: -x requires a numeric row number" >&2
+                exit 1
             fi
-            indexing_rules "$start_row"
             ;;
-        a)
-            arranging_rules
-            ;;
-        p)
-            parsing_rules
-            ;;
-        h | *)
-            echo "Usage: $0 [-s] [-i] [-a] [-p] [-h] "
-            echo "Options:"
-            echo "  -s  Spidering"
-            echo "  -i  Indexing"
-            echo "  -a  Arranging"
-            echo "  -p  Parsing"
-            echo "  -h  Help"
-            exit 0
-            ;;
+        a) arranging_rules ;;
+        p) parsing_rules ;;
+        w) writting_rules ;;
+        \?) echo "Invalid option: -$OPTARG" >&2; exit 1 ;;
+        :) echo "Option -$OPTARG requires an argument." >&2; exit 1 ;;
     esac
 done
-## EOF EOF EOF PARSING ARGUMENTS
-## ------------------------------------
+
+## EOF EOF EOF SELECTING_ACTION 
+## ----------------------------------------------------------------------------
