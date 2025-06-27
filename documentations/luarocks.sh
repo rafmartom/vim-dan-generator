@@ -199,7 +199,7 @@ EOF
     #
     #    write_html_docu_multirule -f "head title" -b "div.guide-content" -b "body" -cp
     #
-    write_html_docu_multirule -f "title" -b "main" -cd "lua" -lp -c "105" -cc "${cleanup_command}"
+    write_html_docu_multirule -f "title" -b "main" -cd "lua" -il -c "105" -cc "${cleanup_command}"
 
 
 
