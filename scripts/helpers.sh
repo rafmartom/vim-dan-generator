@@ -1553,6 +1553,11 @@ prepocess_LinkSources() {
 # @description Write the TOC of the documentation
 function write_toc() {
 
+    ## Equal sign <hr>
+    printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)" >> "$MAIN_TOUPDATE"
+    ## Link target for TOC
+    echo "<B=0>Table of Contents TOC" >> "$MAIN_TOUPDATE"
+
     # Create the link source toc header using figlet
     echo "TOC" | figlet >> "$MAIN_TOUPDATE"
     prev_dirs_array=()
@@ -1604,7 +1609,15 @@ function write_toc() {
 
     done
 
+    echo "</B><L=0>To TOC</L>" >> "$MAIN_TOUPDATE"
 
+    ctags --options=NONE \
+          --options=${CURRENT_DIR}/../ctags-rules/dan.ctags \
+          --sort=no \
+          --append=yes \
+          --tag-relative=no \
+          -f ${VIMDAN_DIR}/.tags${DOCU_NAME} \
+          ${MAIN_TOUPDATE}
 
 }
 
@@ -2008,7 +2021,6 @@ function write_html_docu_multirule() {
         [[ -f ${VIMDAN_DIR}/.tags${DOCU_NAME}  ]] && rm -r ${VIMDAN_DIR}/.tags${DOCU_NAME}
 
         write_header
-        echo "" >> "$MAIN_TOUPDATE"  ## Adding a line break
         write_toc
     fi
 
@@ -2062,7 +2074,7 @@ function write_html_docu_multirule() {
 
 # Create content in a variable
 content=$(
-    printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)"
+    printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)" ## Equal sign <hr>
     echo "<B="${buid}">${paths_linkto[$path]}"
     echo "&${paths_linkto[$path]}&"
     echo "${paths_linkto[$path]}" | figlet
@@ -2143,7 +2155,7 @@ EOF
             eval "cat ${path} | ${cmd} >> ${content_dump_nohead}"
         fi
 
-        echo "</B>" >> "${content_dump_nohead}"                        ## ADDING A LINE BREAK
+        echo "</B><L=0>To TOC</L>" >> "${content_dump_nohead}"
 
 
         cat "${content_dump_nohead}" >> "${content_dump}"
@@ -2186,6 +2198,7 @@ EOF
     sed -i '27,$ {/^!_/d}' ${VIMDAN_DIR}/.tags${DOCU_NAME}
     ## Ammending filename on tags file
     sed -i "s|${content_dump}|${DOCU_NAME}.dan|" ${VIMDAN_DIR}/.tags${DOCU_NAME}
+    sed -i "s|${MAIN_TOUPDATE}|${DOCU_NAME}.dan|" ${VIMDAN_DIR}/.tags${DOCU_NAME}
     ## Cleaning duplicates of nested tags
 ##    sed -i -E '/^[a-zA-Z0-9]+\t.*\tregex:[a-zA-Z0-9]+$/d' ${VIMDAN_DIR}/.tags${DOCU_NAME}
 #    sort -fV ${VIMDAN_DIR}/.tags${DOCU_NAME} -o ${VIMDAN_DIR}/.tags${DOCU_NAME}
