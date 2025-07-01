@@ -2076,7 +2076,6 @@ function write_html_docu_multirule() {
 content=$(
     printf '%s\n' "$(for ((i=1; i<=${wrap_columns:-80}; i++)); do printf '='; done)" ## Equal sign <hr>
     echo "<B="${buid}">${paths_linkto[$path]}"
-    echo "&${paths_linkto[$path]}&"
     echo "${paths_linkto[$path]}" | figlet
 )
 
@@ -2155,7 +2154,7 @@ EOF
             eval "cat ${path} | ${cmd} >> ${content_dump_nohead}"
         fi
 
-        echo "</B><L=0>To TOC</L>" >> "${content_dump_nohead}"
+        echo "</B><L=0>To TOC</L> | <L=${buid}>Back to Article Top</L>" >> "${content_dump_nohead}"
 
 
         cat "${content_dump_nohead}" >> "${content_dump}"
