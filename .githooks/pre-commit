@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Regenerate danotes/egid/parsed-mds.md and stage it with the commit.
+# Enable once per clone:  git config core.hooksPath .githooks && git lfs install
+set -euo pipefail
+REPO_ROOT=$(git rev-parse --show-toplevel)
+DOC=danotes/egid/parsed-mds.md
+command -v danotes2 >/dev/null || { echo "pre-commit: danotes2 not found, skipping $DOC" >&2; exit 0; }
+"$REPO_ROOT/scripts/build-parsed-mds.sh" >/dev/null
+
+# $DOC is LFS-tracked (see .gitattributes), so git stores a 3-line POINTER and
+# `git diff` compares pointers, not text. A re-source that only rewrote each
+# block's `fetched_at:` still yields a new oid, and `-I '^fetched_at: '` can
+# never match inside a pointer — so the text-diff form of this check always
+# reported "changed" and appended a fresh multi-MB LFS object to EVERY commit.
+# Compare the SMUDGED bytes instead: `git cat-file --filters` resolves the
+# staged pointer back to the real content, so timestamp-only churn is still
+# discarded. Compared against the INDEX (`:$DOC`), so a genuine already-staged
+# change is kept rather than reverted.
+if ! git ls-files --error-unmatch -- "$DOC" >/dev/null 2>&1; then
+  git add -- "$DOC"
+  echo "pre-commit: regenerated $DOC (now tracked)" >&2
+  exit 0
+fi
+
+prev=$(mktemp); trap 'rm -f "$prev"' EXIT
+if git cat-file --filters ":$DOC" > "$prev" 2>/dev/null \
+   && diff -a -I '^fetched_at: ' "$prev" "$REPO_ROOT/$DOC" >/dev/null 2>&1; then
+  # Unchanged but for the timestamps: drop the churn so the commit stays clean.
+  git checkout --quiet -- "$DOC"
+else
+  git add -- "$DOC"
+  echo "pre-commit: regenerated $DOC" >&2
+fi
