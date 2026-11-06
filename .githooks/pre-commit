@@ -5,29 +5,71 @@ set -euo pipefail
 REPO_ROOT=$(git rev-parse --show-toplevel)
 DOC=danotes/egid/parsed-mds.md
 command -v danotes2 >/dev/null || { echo "pre-commit: danotes2 not found, skipping $DOC" >&2; exit 0; }
-"$REPO_ROOT/scripts/build-parsed-mds.sh" >/dev/null
+# The generator's own last command is a bare `danotes2 block list ... --status`
+# (no `|| true`), and it exit 1s when it finds no .md files, or when the
+# generated document fails grammar validation (duplicate anchor ids - the
+# danotes repo's own .md files do this to themselves). Same spirit as the
+# command -v guard above: a generator failure must WARN and skip the doc,
+# never block every commit in the repo until someone finds this hook.
+"$REPO_ROOT/scripts/build-parsed-mds.sh" >/dev/null || {
+  echo "pre-commit: build-parsed-mds.sh failed, skipping $DOC" >&2
+  exit 0
+}
 
 # $DOC is LFS-tracked (see .gitattributes), so git stores a 3-line POINTER and
 # `git diff` compares pointers, not text. A re-source that only rewrote each
 # block's `fetched_at:` still yields a new oid, and `-I '^fetched_at: '` can
-# never match inside a pointer — so the text-diff form of this check always
+# never match inside a pointer - so the text-diff form of this check always
 # reported "changed" and appended a fresh multi-MB LFS object to EVERY commit.
 # Compare the SMUDGED bytes instead: `git cat-file --filters` resolves the
 # staged pointer back to the real content, so timestamp-only churn is still
 # discarded. Compared against the INDEX (`:$DOC`), so a genuine already-staged
 # change is kept rather than reverted.
 if ! git ls-files --error-unmatch -- "$DOC" >/dev/null 2>&1; then
-  git add -- "$DOC"
+  git add -- "$DOC" || { echo "pre-commit: could not stage $DOC, skipping" >&2; exit 0; }
   echo "pre-commit: regenerated $DOC (now tracked)" >&2
   exit 0
 fi
 
 prev=$(mktemp); trap 'rm -f "$prev"' EXIT
-if git cat-file --filters ":$DOC" > "$prev" 2>/dev/null \
-   && diff -a -I '^fetched_at: ' "$prev" "$REPO_ROOT/$DOC" >/dev/null 2>&1; then
+cat_ok=0
+git cat-file --filters ":$DOC" > "$prev" 2>/dev/null && cat_ok=1
+
+# There are TWO ways the staged pointer fails to resolve to real content, and
+# they fail DIFFERENTLY - which is what an earlier form of this guard got
+# wrong by gating the whole check on cat_ok=1:
+#   * skip-smudge (LFS installed with --skip-smudge, or GIT_LFS_SKIP_SMUDGE=1):
+#     `git cat-file --filters` exits 0 and hands back the 3-line POINTER.
+#     That is what the pointer/size check below catches.
+#   * the object missing from the local cache with the remote unreachable
+#     (CLAUDE.md documents networks that routinely block this repo's access
+#     paths; `git lfs prune` and an interrupted `git lfs pull` do it too):
+#     it exits 128 having written ZERO bytes - measured - so cat_ok=0 and the
+#     pointer check never runs. That is what the cat_ok test below catches.
+# Either way the diff further down would differ from the real working file and
+# stage a fresh multi-MB LFS object on EVERY commit - the exact churn this
+# check exists to prevent, and the same shape of fault CLAUDE.md records for a
+# substring `changed_when` that can never be false.
+if [ "$cat_ok" != 1 ] \
+   || git lfs pointer --check --file "$prev" >/dev/null 2>&1 \
+   || [ "$(wc -c < "$prev")" -lt 200 ]; then
+  echo "pre-commit: $DOC's LFS object could not be smudged (skip-smudge" >&2
+  echo "pre-commit: set, or the object is missing from the local cache and" >&2
+  echo "pre-commit: the LFS remote is unreachable) - staging nothing for it" >&2
+  echo "pre-commit: this commit. Run 'git lfs pull', or commit with" >&2
+  echo "pre-commit: --no-verify if you must commit without it." >&2
+  # Only restore from the index when the object actually smudged. With the
+  # object missing there is nothing good to restore FROM, so leave the freshly
+  # regenerated working-tree file alone rather than risk replacing it.
+  if [ "$cat_ok" = 1 ]; then git checkout --quiet -- "$DOC" || true; fi
+  exit 0
+fi
+
+# Past the guard, cat_ok is necessarily 1, so it needs no re-test here.
+if diff -a -I '^fetched_at: ' "$prev" "$REPO_ROOT/$DOC" >/dev/null 2>&1; then
   # Unchanged but for the timestamps: drop the churn so the commit stays clean.
-  git checkout --quiet -- "$DOC"
+  git checkout --quiet -- "$DOC" || true
 else
-  git add -- "$DOC"
+  git add -- "$DOC" || { echo "pre-commit: could not stage $DOC, skipping" >&2; exit 0; }
   echo "pre-commit: regenerated $DOC" >&2
 fi
